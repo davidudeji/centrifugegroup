@@ -57,9 +57,6 @@ export const Header: React.FC = () => {
                 alt="Centrifuge Group"
                 className="h-9 w-auto object-contain transition-transform group-hover:scale-102"
               />
-              <span className="hidden sm:inline-block font-heading font-bold text-lg tracking-tight text-[#0B1F33]">
-                Centrifuge<span className="text-[#16C7D9]">.</span>
-              </span>
             </Link>
 
             {/* Desktop Navigation Links */}
@@ -386,9 +383,6 @@ export const Header: React.FC = () => {
           <div className="flex items-center justify-between p-4 border-b border-[#E2E8F0]">
             <Link to="/" onClick={() => setMobileNavOpen(false)} className="flex items-center gap-2">
               <img src={brandAssets.logo} alt="Centrifuge Group" className="h-8 w-auto" />
-              <span className="font-heading font-bold text-base text-[#0B1F33]">
-                Centrifuge<span className="text-[#16C7D9]">.</span>
-              </span>
             </Link>
             <button
               onClick={() => setMobileNavOpen(false)}

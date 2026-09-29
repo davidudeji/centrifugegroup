@@ -40,6 +40,7 @@ import { CustomerAccountPage } from './pages/shop/CustomerAccountPage'
 // Auth Pages
 import { LoginPage } from './pages/LoginPage'
 import { AdminLoginPage } from './pages/AdminLoginPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 // Admin Pages
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage'
@@ -147,8 +148,22 @@ export default function App() {
             <Route path="users" element={<AdminUsersPage />} />
           </Route>
 
-          {/* Catch-all */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* ─── Legacy URL Redirects (spec §50) ─── */}
+          <Route path="/career" element={<Navigate to="/careers" replace />} />
+          <Route path="/career/" element={<Navigate to="/careers" replace />} />
+          <Route path="/job-openings" element={<Navigate to="/careers/jobs" replace />} />
+          <Route path="/job-openings/" element={<Navigate to="/careers/jobs" replace />} />
+          <Route path="/our-clients" element={<Navigate to="/clients" replace />} />
+          <Route path="/our-clients/" element={<Navigate to="/clients" replace />} />
+          <Route path="/logistic-management-software" element={<Navigate to="/solutions/logistics" replace />} />
+          <Route path="/logistic-management-software/" element={<Navigate to="/solutions/logistics" replace />} />
+          <Route path="/web-application-development" element={<Navigate to="/services/software-development" replace />} />
+          <Route path="/web-application-development/" element={<Navigate to="/services/software-development" replace />} />
+          <Route path="/human-resource-for-health-information-system" element={<Navigate to="/solutions/healthcare" replace />} />
+          <Route path="/human-resource-for-health-information-system/" element={<Navigate to="/solutions/healthcare" replace />} />
+
+          {/* Catch-all → 404 */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

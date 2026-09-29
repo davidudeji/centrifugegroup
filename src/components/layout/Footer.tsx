@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { brandAssets } from '../../assets'
-import { Mail, Phone, MapPin, Globe, Shield, ArrowUpRight } from 'lucide-react'
+import { Mail, Phone, MapPin, Shield, ArrowUpRight, Linkedin, Twitter, Youtube, Globe } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   return (
@@ -16,9 +16,6 @@ export const Footer: React.FC = () => {
                 alt="Centrifuge Group"
                 className="h-9 w-auto object-contain brightness-110"
               />
-              <span className="font-heading font-bold text-xl tracking-tight text-white">
-                Centrifuge<span className="text-[#16C7D9]">.</span>
-              </span>
             </Link>
 
             <p className="text-sm text-[#94A3B8] leading-relaxed max-w-sm">
@@ -42,6 +39,46 @@ export const Footer: React.FC = () => {
                   +234 (0) 803 000 1234
                 </a>
               </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-3 pt-1">
+              <a
+                href="https://www.linkedin.com/company/centrifuge-information-technology"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Centrifuge Group on LinkedIn"
+                className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://twitter.com/centrifugegroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Centrifuge Group on X (Twitter)"
+                className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
+              >
+                <Twitter className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@centrifugegroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Centrifuge Group on YouTube"
+                className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
+              >
+                <Youtube className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://centrifugegroup.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Centrifuge Group Website"
+                className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
+              >
+                <Globe className="h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
 
