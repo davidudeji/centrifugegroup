@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { mockProjects } from '../../data/mockData'
 import type { Project } from '../../types'
 import {
-  Plus, Edit2, Trash2, Star, ExternalLink, Search, Eye, EyeOff,
-  Globe, Github, BookOpen, Play,
+  Plus, Edit2, Trash2, Star, ExternalLink, Search,
+  Globe, GitBranch, BookOpen, Play,
 } from 'lucide-react'
 
 const statusColors: Record<Project['status'], string> = {
@@ -291,7 +291,7 @@ export const AdminProjectsPage: React.FC = () => {
                 )}
                 {project.githubUrl && (
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[10px] text-[#64748B] font-semibold hover:underline">
-                    <Github className="h-3 w-3" />GitHub
+                    <GitBranch className="h-3 w-3" />GitHub
                   </a>
                 )}
                 {project.documentationUrl && (
