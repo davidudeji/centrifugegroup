@@ -128,7 +128,7 @@ export const AdminAnalyticsPage: React.FC = () => {
             <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} tickFormatter={(v) => formatCurrency(v)} />
             <Tooltip
-              formatter={(v: number) => [formatCurrency(v), 'Revenue']}
+              formatter={(value) => [formatCurrency(Number(value ?? 0)), 'Revenue']}
               contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }}
             />
             <Area type="monotone" dataKey="revenue" stroke="#0B1F33" strokeWidth={2} fill="url(#revenueGrad)" dot={false} />
@@ -162,7 +162,7 @@ export const AdminAnalyticsPage: React.FC = () => {
                     <Cell key={index} fill={entry.color} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(v: number) => [`${v}%`, 'Share']} contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }} />
+                <Tooltip formatter={(value) => [`${Number(value ?? 0)}%`, 'Share']} contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }} />
               </PieChart>
             </ResponsiveContainer>
             <div className="space-y-3 flex-1">

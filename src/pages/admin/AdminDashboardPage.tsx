@@ -129,7 +129,7 @@ export const AdminDashboardPage: React.FC = () => {
           title="Pending Orders"
           value="28"
           badgeText="In Fulfillment"
-          badgeVariant="info"
+          badgeVariant="neutral"
           icon={<Clock className="h-4 w-4 text-[#0284C7]" />}
         />
       </div>

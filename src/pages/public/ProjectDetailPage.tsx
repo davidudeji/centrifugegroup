@@ -15,7 +15,6 @@ export const ProjectDetailPage: React.FC = () => {
   useEffect(() => {
     if (!slug) return
     setIsLoading(true)
-    projectService.getProductBySlug
     projectService.getProjectBySlug(slug).then((proj) => {
       setProject(proj)
       if (proj) {

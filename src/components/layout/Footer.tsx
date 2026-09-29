@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { brandAssets } from '../../assets'
-import { Mail, Phone, MapPin, Shield, ArrowUpRight, Linkedin, Twitter, Youtube, Globe } from 'lucide-react'
+import { Mail, Phone, MapPin, Shield, ArrowUpRight, Briefcase, MessageCircle, Play, Globe } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   return (
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                 aria-label="Centrifuge Group on LinkedIn"
                 className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
               >
-                <Linkedin className="h-3.5 w-3.5" />
+                <Briefcase className="h-3.5 w-3.5" />
               </a>
               <a
                 href="https://twitter.com/centrifugegroup"
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                 aria-label="Centrifuge Group on X (Twitter)"
                 className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
               >
-                <Twitter className="h-3.5 w-3.5" />
+                <MessageCircle className="h-3.5 w-3.5" />
               </a>
               <a
                 href="https://www.youtube.com/@centrifugegroup"
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
                 aria-label="Centrifuge Group on YouTube"
                 className="h-8 w-8 rounded-[6px] bg-[#0B1F33] border border-[#1E3A5F] flex items-center justify-center text-[#64748B] hover:text-[#16C7D9] hover:border-[#16C7D9]/40 transition-colors"
               >
-                <Youtube className="h-3.5 w-3.5" />
+                <Play className="h-3.5 w-3.5" />
               </a>
               <a
                 href="https://centrifugegroup.co"
