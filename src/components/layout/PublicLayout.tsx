@@ -7,7 +7,7 @@ import { ToastContainer } from '../ui/ToastContainer'
 
 export const PublicLayout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F9FA] text-[#172333] font-sans antialiased selection:bg-[#16C7D9]/20 selection:text-[#0B1F33]">
+    <div className="min-h-screen flex flex-col bg-[#000000] text-[#faf9f6] font-sans antialiased selection:bg-[#cbb0f7]/25 selection:text-[#ffffff]">
       <Header />
       <main className="flex-1">
         <Outlet />
@@ -18,3 +18,4 @@ export const PublicLayout: React.FC = () => {
     </div>
   )
 }
+export default PublicLayout

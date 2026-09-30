@@ -23,10 +23,10 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="block text-xs font-semibold text-[#1D242F] tracking-tight"
+            className="block text-[12px] font-normal text-[#b4b4b2] tracking-[-0.14px]"
           >
             {label}
-            {props.required && <span className="text-[#DC2626] ml-1">*</span>}
+            {props.required && <span className="text-[#ef4444] ml-1">*</span>}
           </label>
         )}
         <div className="relative flex items-center">
@@ -35,27 +35,27 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             className={twMerge(
               clsx(
-                'w-full bg-white text-[#111827] text-sm border rounded-[8px] py-2 pl-3.5 pr-9 appearance-none transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#16C7D9]/30 focus:border-[#16C7D9] disabled:bg-[#F3F4F6] disabled:cursor-not-allowed',
+                'w-full bg-[#121212] text-[#faf9f6] text-[14px] border rounded-[7px] py-2.5 pl-3.5 pr-9 appearance-none transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-[#cbb0f7] focus:border-[#cbb0f7] disabled:bg-[#1e1e1d] disabled:cursor-not-allowed tracking-[-0.14px]',
                 error
-                  ? 'border-[#DC2626] focus:border-[#DC2626]'
-                  : 'border-[#E2E8F0] hover:border-[#CBD5E1]',
+                  ? 'border-[#ef4444] focus:border-[#ef4444]'
+                  : 'border-[#333333] hover:border-[#868684]',
                 className
               )
             )}
             {...props}
           >
             {options.map((opt) => (
-              <option key={opt.value} value={opt.value}>
+              <option key={opt.value} value={opt.value} className="bg-[#121212] text-[#faf9f6]">
                 {opt.label}
               </option>
             ))}
           </select>
-          <div className="absolute right-3 text-[#64748B] pointer-events-none flex items-center">
+          <div className="absolute right-3 text-[#868684] pointer-events-none flex items-center">
             <ChevronDown className="h-4 w-4" />
           </div>
         </div>
         {error && (
-          <p className="text-xs text-[#DC2626] font-medium flex items-center gap-1">
+          <p className="text-[12px] text-[#f87171] font-normal flex items-center gap-1">
             <span>•</span> {error}
           </p>
         )}

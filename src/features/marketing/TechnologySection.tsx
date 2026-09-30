@@ -1,5 +1,5 @@
 import React from 'react'
-import { Terminal, Database, Server, Smartphone, Cpu, ShieldCheck } from 'lucide-react'
+import { Terminal } from 'lucide-react'
 
 export const TechnologySection: React.FC = () => {
   const stack = [
@@ -12,39 +12,54 @@ export const TechnologySection: React.FC = () => {
   ]
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-[#E2E8F0]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-24 bg-[#121212] border-b border-[#1e1e1d]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
-          {/* Left Column */}
+          {/* Left Column: Command Cockpit */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#0B1F33]/5 text-xs font-mono font-semibold text-[#0B1F33]">
-              <Terminal className="h-3.5 w-3.5 text-[#16C7D9]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+              <Terminal className="h-3 w-3 text-[#cbb0f7]" />
               <span>SYSTEM ARCHITECTURE</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1F33] font-heading tracking-tight leading-[1.15]">
+            <h2 className="text-[32px] sm:text-[42px] font-normal text-[#faf9f6] tracking-[-1.13px] leading-[1.05]">
               Built for complexity.
             </h2>
 
-            <p className="text-base text-[#64748B] leading-relaxed">
+            <p className="text-[15px] text-[#868684] tracking-[-0.14px] leading-relaxed">
               We choose battle-tested, open, and scalable foundations. Our architectures are engineered to run reliably under unpredictable network conditions, high concurrent user loads, and strict data protection regulations.
             </p>
 
-            <div className="p-4 rounded-[10px] bg-[#F8FAFC] border border-[#E2E8F0] space-y-2 font-mono text-xs">
-              <div className="text-[#64748B]">// Centrifuge Reliability Principle:</div>
-              <div className="text-[#111827]">
-                <span className="text-[#0E7490]">type</span> <span className="text-[#0B1F33] font-bold">SystemSLA</span> = &#123;
+            {/* Faux Code Terminal Window (warp_design.md §187-191) */}
+            <div className="rounded-[12px] bg-[#000000] border border-[#1e1e1d] overflow-hidden font-mono text-[12px]">
+              <div className="flex items-center justify-between px-3 py-2 bg-[#121212] border-b border-[#1e1e1d]">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-[#333333]" />
+                  <span className="h-2 w-2 rounded-full bg-[#333333]" />
+                  <span className="h-2 w-2 rounded-full bg-[#333333]" />
+                </div>
+                <span className="text-[10px] text-[#868684]">reliability.ts</span>
+                <span className="text-[10px] text-[#cbb0f7]">v4.0</span>
               </div>
-              <div className="pl-4 text-[#475569]">
-                offlineFirst: <span className="text-[#16A34A]">true</span>;
+              <div className="p-4 space-y-1.5 text-[#b4b4b2] bg-[#000000]">
+                <div className="text-[#666469]">// Centrifuge Reliability SLA Specification</div>
+                <div>
+                  <span className="text-[#cbb0f7]">export type</span> <span className="text-[#faf9f6]">SystemSLA</span> = &#123;
+                </div>
+                <div className="pl-4">
+                  offlineFirst: <span className="text-[#cbb0f7]">true</span>,
+                </div>
+                <div className="pl-4">
+                  dataEncryption: <span className="text-[#faf9f6]">'AES-256-GCM'</span>,
+                </div>
+                <div className="pl-4">
+                  auditTrailImmutable: <span className="text-[#cbb0f7]">true</span>,
+                </div>
+                <div className="pl-4">
+                  telemetryLatencyMs: <span className="text-[#cbb0f7]">&lt; 10</span>,
+                </div>
+                <div>&#125;</div>
               </div>
-              <div className="pl-4 text-[#475569]">
-                dataEncryption: <span className="text-[#B45309]">'AES-256-GCM'</span>;
-              </div>
-              <div className="pl-4 text-[#475569]">
-                auditTrailImmutable: <span className="text-[#16A34A]">true</span>;
-              </div>
-              <div className="text-[#111827]">&#125;</div>
             </div>
           </div>
 
@@ -54,12 +69,12 @@ export const TechnologySection: React.FC = () => {
               {stack.map((item, index) => (
                 <div
                   key={index}
-                  className="p-5 rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#CBD5E1] transition-colors text-left"
+                  className="p-5 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] transition-colors text-left"
                 >
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#64748B] block">
+                  <span className="text-[10px] font-mono uppercase tracking-[1px] text-[#cbb0f7] block">
                     {item.category}
                   </span>
-                  <p className="text-xs font-mono font-medium text-[#111827] mt-2 leading-relaxed">
+                  <p className="text-[13px] font-mono text-[#faf9f6] mt-2 leading-relaxed">
                     {item.tools}
                   </p>
                 </div>
@@ -71,3 +86,4 @@ export const TechnologySection: React.FC = () => {
     </section>
   )
 }
+export default TechnologySection

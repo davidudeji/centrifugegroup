@@ -54,68 +54,68 @@ export const SolutionsPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
         title="Enterprise Solutions & Platforms"
         description="Explore Centrifuge Group platforms: Optimax ERP, Logistics & Mobility, Healthcare Informatics, and Spatial GIS Data."
       />
 
-      {/* Header */}
-      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-[#172333]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Header ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono font-bold text-[#16C7D9] tracking-wider uppercase">
-              CENTRIFUGE PLATFORM SUITE
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+              <span>CENTRIFUGE PLATFORM SUITE</span>
+            </div>
+            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
               Integrated platforms for complex operations.
             </h1>
-            <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
+            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
               We design, build, and operate digital systems that eliminate operational blind spots, connect departments, and scale seamlessly with organizational growth.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Solutions List */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {/* ─── Solutions List (Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           {solutions.map((sol, index) => {
             const Icon = sol.icon
             return (
               <div
                 key={sol.slug}
-                className="bg-white rounded-[18px] border border-[#E2E8F0] p-8 lg:p-10 shadow-sm hover:border-[#CBD5E1] transition-all grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] p-8 lg:p-10 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left"
               >
                 <div className="lg:col-span-8 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <div className="h-9 w-9 rounded-[8px] bg-[#0B1F33]/5 text-[#0B1F33] flex items-center justify-center">
-                      <Icon className="h-5 w-5 text-[#16C7D9]" />
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-[4px] bg-[#121212] border border-[#333333] flex items-center justify-center">
+                      <Icon className="h-4 w-4 text-[#cbb0f7]" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-[#64748B] uppercase">
+                    <span className="text-[11px] font-mono text-[#cbb0f7] uppercase tracking-[1px]">
                       0{index + 1} · {sol.category}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#0B1F33] font-heading">
+                  <h3 className="text-[22px] sm:text-[24px] font-semibold text-[#faf9f6] tracking-[-0.29px]">
                     {sol.name}
                   </h3>
 
-                  <p className="text-sm text-[#475569] leading-relaxed max-w-2xl">
+                  <p className="text-[14px] text-[#868684] leading-relaxed max-w-2xl tracking-[-0.14px]">
                     {sol.description}
                   </p>
 
                   <div className="pt-2">
-                    <span className="text-xs font-semibold text-[#111827] block mb-2">
+                    <span className="text-[11px] font-mono uppercase tracking-[1px] text-[#faf9f6] block mb-2">
                       Core Modules & Capabilities:
                     </span>
                     <div className="flex flex-wrap gap-2">
                       {sol.modules.map((mod) => (
                         <span
                           key={mod}
-                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px] bg-[#F1F5F9] text-xs font-medium text-[#334155]"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[50px] bg-[#121212] border border-[#333333] text-[11px] text-[#b4b4b2]"
                         >
-                          <CheckCircle2 className="h-3 w-3 text-[#16A34A]" />
+                          <CheckCircle2 className="h-3 w-3 text-[#cbb0f7]" />
                           {mod}
                         </span>
                       ))}
@@ -124,14 +124,16 @@ export const SolutionsPage: React.FC = () => {
                 </div>
 
                 <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
-                  <Link to={`/solutions/${sol.slug}`}>
-                    <Button variant="primary" size="md" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                      Explore {sol.name.split(' ')[0]}
-                    </Button>
+                  <Link
+                    to={`/solutions/${sol.slug}`}
+                    className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
+                  >
+                    <span>Explore {sol.name.split(' ')[0]}</span>
+                    <ArrowRight className="h-3.5 w-3.5 ml-2" />
                   </Link>
                   <Link
                     to="/contact"
-                    className="text-xs font-semibold text-[#64748B] hover:text-[#0B1F33] transition-colors"
+                    className="text-[13px] text-[#868684] hover:text-[#faf9f6] hover:underline transition-colors"
                   >
                     Request Technical Overview →
                   </Link>
