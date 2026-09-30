@@ -29,6 +29,7 @@ import { JobDetailPage } from './pages/public/JobDetailPage'
 import { ContactPage } from './pages/public/ContactPage'
 import { ProjectsPage } from './pages/public/ProjectsPage'
 import { ProjectDetailPage } from './pages/public/ProjectDetailPage'
+import { VideoPreviewPage } from './pages/public/VideoPreviewPage'
 
 // Shop Pages
 import { ShopPage } from './pages/shop/ShopPage'
@@ -118,6 +119,9 @@ export default function App() {
             {/* Projects Showcase */}
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+
+            {/* Video Preview Showcase (video_preview-spec.md) */}
+            <Route path="/video-preview" element={<VideoPreviewPage />} />
 
             {/* Shop / Ecommerce */}
             <Route path="/shop" element={<ShopPage />} />
