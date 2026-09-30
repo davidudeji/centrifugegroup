@@ -13,19 +13,18 @@ export const ProjectsShowcaseSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 text-left gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
-              <span>PORTFOLIO OF DEPLOYED SYSTEMS</span>
-            </div>
             <h2 className="text-[32px] sm:text-[42px] font-normal text-[#faf9f6] tracking-[-1.13px] leading-[1.05]">
               What we've built.
             </h2>
             <p className="text-[15px] text-[#868684] tracking-[-0.14px] mt-3 max-w-2xl leading-[1.4]">
-              Explore the platforms, products, and digital systems we've designed and delivered for governments, institutions, and enterprises.
+              Explore the platforms, products, and digital systems we've
+              designed and delivered for governments, institutions, and
+              enterprises.
             </p>
           </div>
           <Link
             to="/projects"
-            className="inline-flex items-center gap-1.5 text-[14px] text-[#faf9f6] hover:text-[#cbb0f7] transition-colors shrink-0 tracking-[-0.14px]"
+            className="inline-flex items-center gap-1.5 text-[14px] text-[#faf9f6] hover:text-[#f0b66d] transition-colors shrink-0 tracking-[-0.14px]"
           >
             <span>Explore all projects</span>
             <ArrowRight className="h-4 w-4" />
@@ -43,7 +42,7 @@ export const ProjectsShowcaseSection: React.FC = () => {
                 className="w-full h-full object-cover opacity-80 hover:opacity-95 transition-opacity duration-300"
               />
               <div className="absolute top-4 left-4 flex gap-2">
-                <span className="px-2.5 py-1 rounded-[50px] bg-[#000000]/80 text-[10px] font-mono uppercase tracking-[1px] text-[#cbb0f7] border border-[#333333]">
+                <span className="px-2.5 py-1 rounded-[50px] bg-[#000000]/80 text-[10px] font-mono uppercase tracking-[1px] text-[#f0b66d] border border-[#333333]">
                   FEATURED PLATFORM
                 </span>
                 <span className="px-2.5 py-1 rounded-[50px] bg-[#000000]/80 text-[#faf9f6] border border-[#333333] text-[10px] font-mono">
@@ -83,7 +82,7 @@ export const ProjectsShowcaseSection: React.FC = () => {
               <div className="pt-4 flex flex-wrap items-center gap-3">
                 <Link
                   to={`/projects/${featuredProject.slug}`}
-                  className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
+                  className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
                 >
                   <span>View Project Details</span>
                   <ArrowRight className="h-3.5 w-3.5 ml-2" />
@@ -97,7 +96,7 @@ export const ProjectsShowcaseSection: React.FC = () => {
                     className="inline-flex items-center justify-center px-[18px] py-[9px] rounded-[33px] text-[13px] font-normal bg-transparent border border-[#333333] text-[#b4b4b2] hover:border-[#b4b4b2] hover:text-[#faf9f6] transition-colors"
                   >
                     <span>View Demo</span>
-                    <ExternalLink className="h-3 w-3 ml-1.5 text-[#cbb0f7]" />
+                    <ExternalLink className="h-3 w-3 ml-1.5 text-[#f0b66d]" />
                   </a>
                 )}
 
@@ -137,7 +136,7 @@ export const ProjectsShowcaseSection: React.FC = () => {
                   <div className="text-[10px] font-mono text-[#868684] uppercase tracking-[1px]">
                     {proj.industry}
                   </div>
-                  <h4 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-1 group-hover:text-[#cbb0f7] transition-colors">
+                  <h4 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-1 group-hover:text-[#f0b66d] transition-colors">
                     {proj.name}
                   </h4>
                   <p className="text-[13px] text-[#868684] mt-2 line-clamp-3 leading-relaxed tracking-[-0.14px]">
@@ -160,7 +159,7 @@ export const ProjectsShowcaseSection: React.FC = () => {
               <div className="px-6 py-4 bg-[#121212] border-t border-[#1e1e1d] flex items-center justify-between">
                 <Link
                   to={`/projects/${proj.slug}`}
-                  className="text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] inline-flex items-center gap-1 transition-colors"
+                  className="text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] inline-flex items-center gap-1 transition-colors"
                 >
                   <span>View Project</span>
                   <ArrowRight className="h-3 w-3" />
@@ -183,6 +182,6 @@ export const ProjectsShowcaseSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
+  );
 }
 export default ProjectsShowcaseSection

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { Button } from '../../components/ui/Button'
 import {
   ArrowRight,
   Truck,
@@ -10,8 +9,6 @@ import {
   Radio,
   FileCheck2,
   Gauge,
-  MapPin,
-  CheckCircle2
 } from 'lucide-react'
 
 export const LogisticsPage: React.FC = () => {
@@ -21,51 +18,56 @@ export const LogisticsPage: React.FC = () => {
     { name: 'CAN-Bus Fuel Auditing', icon: Gauge, desc: 'Monitors fuel levels second-by-second to detect unauthorized siphoning, idling waste, and generator consumption.' },
     { name: 'Digital Proof of Delivery (ePOD)', icon: FileCheck2, desc: 'Offline mobile signature capture, timestamped photos of unloaded cargo, and instant consignee receipt generation.' },
     { name: 'Cold-Chain Telemetry Alerts', icon: ShieldCheck, desc: 'Integrated temperature & humidity sensors for pharmaceutical and perishable freight with emergency alarm broadcasts.' },
-    { name: 'Carrier & Driver Management', icon: Truck, desc: 'Driver safety scoring, license validity tracking, hours-of-service compliance, and automated trip allowances.' }
+    { name: 'Carrier & Driver Management', icon: Truck, desc: 'Driver safety scoring, license validity tracking, hours-of-service compliance, and automated trip allowances.' },
   ]
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
         title="Centrifuge Logistics & Mobility | Fleet Telematics & Dispatch Suite"
         description="Hardware-agnostic GPS fleet tracking, dispatch control room, and electronic proof of delivery software."
       />
 
-      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-[#172333]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono font-bold text-[#16C7D9] tracking-wider uppercase">
-              CENTRIFUGE LOGISTICS & MOBILITY
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+              <span>CENTRIFUGE LOGISTICS & MOBILITY</span>
+            </div>
+            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
               Move smarter. Deliver with visibility.
             </h1>
-            <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
+            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
               We turn unpredictable transit corridors into audited, efficient supply chains with real-time GPS telematics, intelligent dispatch, and mobile driver apps.
             </p>
-            <div className="pt-4 flex flex-wrap gap-3">
-              <Link to="/contact">
-                <Button variant="primary" size="lg" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                  Request Logistics Demo
-                </Button>
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+              >
+                <span>Request Logistics Demo</span>
+                <ArrowRight className="h-3.5 w-3.5 ml-2" />
               </Link>
-              <Link to="/shop">
-                <Button variant="outline" size="lg" className="bg-transparent text-white border-[#334155]">
-                  Browse GPS & Telemetry Hardware
-                </Button>
+              <Link
+                to="/shop"
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+              >
+                <span>Browse Telemetry Hardware</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Platform Modules (Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#16C7D9]">
-              Platform Modules
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1F33] font-heading mt-2">
+            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
+              PLATFORM MODULES
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
               End-to-end freight & dispatch infrastructure.
             </h2>
           </div>
@@ -76,16 +78,16 @@ export const LogisticsPage: React.FC = () => {
               return (
                 <div
                   key={cap.name}
-                  className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] hover:border-[#CBD5E1] transition-all flex flex-col justify-between"
+                  className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-all flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-[8px] bg-[#0B1F33]/5 text-[#0B1F33] flex items-center justify-center mb-4">
-                      <Icon className="h-5 w-5 text-[#16C7D9]" />
+                    <div className="h-10 w-10 rounded-[8px] bg-[#121212] border border-[#333333] flex items-center justify-center mb-4 group-hover:border-[#f0b66d] transition-colors">
+                      <Icon className="h-5 w-5 text-[#f0b66d]" />
                     </div>
-                    <h3 className="text-lg font-bold text-[#0B1F33] font-heading">
+                    <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
                       {cap.name}
                     </h3>
-                    <p className="text-xs text-[#64748B] mt-2 leading-relaxed">
+                    <p className="text-[13px] text-[#868684] mt-2.5 leading-relaxed tracking-[-0.14px]">
                       {cap.desc}
                     </p>
                   </div>
@@ -98,4 +100,5 @@ export const LogisticsPage: React.FC = () => {
     </div>
   )
 }
+
 export default LogisticsPage

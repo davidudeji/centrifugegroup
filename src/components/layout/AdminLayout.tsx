@@ -76,13 +76,13 @@ export const AdminLayout: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F9FA] text-[#172333] flex flex-col font-sans antialiased text-left">
+    <div className="min-h-screen bg-[#000000] text-[#faf9f6] flex flex-col font-sans antialiased text-left">
       {/* Top Admin Header Bar */}
-      <header className="sticky top-0 z-30 h-16 bg-white border-b border-[#E2E8F0] px-4 sm:px-6 flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+      <header className="sticky top-0 z-30 h-16 bg-[#121212] border-b border-[#333333] px-4 sm:px-6 flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
         <div className="flex items-center gap-3">
           <button
             onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-            className="lg:hidden p-2 rounded-[6px] text-[#64748B] hover:bg-[#F1F5F9]"
+            className="lg:hidden p-2 rounded-[6px] text-[#868684] hover:bg-[#1e1e1d]"
             aria-label="Toggle navigation drawer"
           >
             <Menu className="h-5 w-5" />
@@ -90,8 +90,8 @@ export const AdminLayout: React.FC = () => {
 
           <Link to="/admin" className="flex items-center gap-2.5">
             <img src={brandAssets.logo} alt="Centrifuge" className="h-7 w-auto object-contain" />
-            <span className="font-heading font-bold text-base text-[#0B1F33]">
-              Centrifuge <span className="text-[#16C7D9] font-mono text-xs">Admin</span>
+            <span className="font-heading font-bold text-base text-[#faf9f6]">
+              Centrifuge <span className="text-[#f0b66d] font-mono text-xs">Admin</span>
             </span>
           </Link>
         </div>
@@ -102,29 +102,29 @@ export const AdminLayout: React.FC = () => {
             to="/shop"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-[6px] text-[#64748B] hover:text-[#0B1F33] hover:bg-[#F1F5F9] border border-[#E2E8F0] transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-[6px] text-[#868684] hover:text-[#faf9f6] hover:bg-[#1e1e1d] border border-[#333333] transition-colors"
           >
             <span>Live Store</span>
             <ExternalLink className="h-3 w-3" />
           </Link>
 
           <button
-            className="relative p-2 rounded-[6px] text-[#64748B] hover:text-[#111827] hover:bg-[#F1F5F9]"
+            className="relative p-2 rounded-[6px] text-[#868684] hover:text-[#faf9f6] hover:bg-[#1e1e1d]"
             title="System notifications"
           >
             <Bell className="h-4.5 w-4.5" />
-            <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-[#16C7D9]" />
+            <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-[#f0b66d]" />
           </button>
 
-          <div className="h-6 w-px bg-[#E2E8F0]" />
+          <div className="h-6 w-px bg-[#333333]" />
 
           {/* Admin User Profile */}
           <div className="flex items-center gap-2.5">
-            <div className="h-8 w-8 rounded-full bg-[#0B1F33] text-white flex items-center justify-center font-bold text-xs font-heading">
+            <div className="h-8 w-8 rounded-full bg-[#000000] text-white flex items-center justify-center font-bold text-xs font-heading">
               {user?.name ? user.name.charAt(0) : 'A'}
             </div>
             <div className="hidden md:block text-left">
-              <span className="text-xs font-bold text-[#111827] block leading-tight">
+              <span className="text-xs font-bold text-[#faf9f6] block leading-tight">
                 {user?.name || 'Kelechi Nwosu'}
               </span>
               <span className="text-[10px] text-[#16A34A] font-semibold">
@@ -136,12 +136,12 @@ export const AdminLayout: React.FC = () => {
       </header>
 
       <div className="flex-1 flex overflow-hidden">
-        {/* Desktop Sidebar (Theme: #071521 / #0B1F33 per centrifuge_spec.md line 1986) */}
-        <aside className="hidden lg:flex flex-col w-64 bg-[#071521] text-white border-r border-[#172333] shrink-0 overflow-y-auto">
+        {/* Desktop Sidebar */}
+        <aside className="hidden lg:flex flex-col w-64 bg-[#000000] text-white border-r border-[#1e1e1d] shrink-0 overflow-y-auto">
           <div className="p-4 space-y-6 flex-1">
             {navSections.map((sec) => (
               <div key={sec.title} className="space-y-1">
-                <span className="text-[10px] font-mono font-bold tracking-wider text-[#64748B] uppercase px-3 block">
+                <span className="text-[10px] font-mono font-bold tracking-wider text-[#868684] uppercase px-3 block">
                   {sec.title}
                 </span>
                 <div className="space-y-0.5 mt-1.5">
@@ -154,11 +154,11 @@ export const AdminLayout: React.FC = () => {
                         to={item.path}
                         className={`flex items-center gap-3 px-3 py-2 rounded-[8px] text-xs font-medium transition-all ${
                           active
-                            ? 'bg-[#16C7D9] text-[#071521] font-bold shadow-xs'
-                            : 'text-[#CBD5E1] hover:text-white hover:bg-white/5'
+                            ? 'bg-[#a55d0c] text-white font-bold shadow-xs'
+                            : 'text-[#CBD5E1] hover:text-white hover:bg-[#121212]/5'
                         }`}
                       >
-                        <Icon className={`h-4 w-4 shrink-0 ${active ? 'text-[#071521]' : 'text-[#64748B]'}`} />
+                        <Icon className={`h-4 w-4 shrink-0 ${active ? 'text-[#faf9f6]' : 'text-[#868684]'}`} />
                         <span>{item.label}</span>
                       </Link>
                     )
@@ -169,10 +169,10 @@ export const AdminLayout: React.FC = () => {
           </div>
 
           {/* Bottom Sidebar Footer */}
-          <div className="p-4 border-t border-[#172333] space-y-2">
+          <div className="p-4 border-t border-[#1e1e1d] space-y-2">
             <Link
               to="/"
-              className="flex items-center justify-between text-xs text-[#94A3B8] hover:text-white px-2 py-1.5 transition-colors"
+              className="flex items-center justify-between text-xs text-[#868684] hover:text-white px-2 py-1.5 transition-colors"
             >
               <span>Back to Corporate Site</span>
               <ExternalLink className="h-3 w-3" />
@@ -197,12 +197,12 @@ export const AdminLayout: React.FC = () => {
               className="fixed inset-0 bg-black/60 backdrop-blur-xs"
               onClick={() => setMobileSidebarOpen(false)}
             />
-            <div className="relative w-64 bg-[#071521] text-white flex flex-col h-full z-10 p-4 overflow-y-auto">
-              <div className="flex items-center justify-between pb-4 border-b border-[#172333] mb-4">
+            <div className="relative w-64 bg-[#000000] text-white flex flex-col h-full z-10 p-4 overflow-y-auto">
+              <div className="flex items-center justify-between pb-4 border-b border-[#1e1e1d] mb-4">
                 <span className="font-heading font-bold text-sm text-white">Centrifuge Admin</span>
                 <button
                   onClick={() => setMobileSidebarOpen(false)}
-                  className="p-1 rounded text-[#94A3B8] hover:text-white"
+                  className="p-1 rounded text-[#868684] hover:text-white"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -211,7 +211,7 @@ export const AdminLayout: React.FC = () => {
               <div className="space-y-6 flex-1">
                 {navSections.map((sec) => (
                   <div key={sec.title} className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold tracking-wider text-[#64748B] uppercase px-3 block">
+                    <span className="text-[10px] font-mono font-bold tracking-wider text-[#868684] uppercase px-3 block">
                       {sec.title}
                     </span>
                     <div className="space-y-0.5 mt-1">
@@ -225,8 +225,8 @@ export const AdminLayout: React.FC = () => {
                             onClick={() => setMobileSidebarOpen(false)}
                             className={`flex items-center gap-3 px-3 py-2 rounded-[8px] text-xs font-medium transition-all ${
                               active
-                                ? 'bg-[#16C7D9] text-[#071521] font-bold'
-                                : 'text-[#CBD5E1] hover:text-white hover:bg-white/5'
+                                ? 'bg-[#a55d0c] text-white font-bold'
+                                : 'text-[#CBD5E1] hover:text-white hover:bg-[#121212]/5'
                             }`}
                           >
                             <Icon className="h-4 w-4 shrink-0" />

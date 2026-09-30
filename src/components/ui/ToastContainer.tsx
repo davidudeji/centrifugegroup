@@ -8,10 +8,10 @@ export const ToastContainer: React.FC = () => {
   if (toasts.length === 0) return null
 
   const icons = {
-    success: <CheckCircle2 className="h-4 w-4 text-[#cbb0f7] shrink-0" />,
+    success: <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0" />,
     warning: <AlertTriangle className="h-4 w-4 text-[#fbbf24] shrink-0" />,
     error: <AlertCircle className="h-4 w-4 text-[#f87171] shrink-0" />,
-    info: <Info className="h-4 w-4 text-[#cbb0f7] shrink-0" />,
+    info: <Info className="h-4 w-4 text-[#f0b66d] shrink-0" />,
   }
 
   return (

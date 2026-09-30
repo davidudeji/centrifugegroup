@@ -39,13 +39,13 @@ export const Header: React.FC = () => {
       {/* ─── Warp Announcement Banner (warp_design.md §137-141) ─── */}
       <aside aria-label="Announcement" className="w-full h-9 bg-[#000000] border-b border-[#1e1e1d] flex items-center justify-center px-4 text-[12px] text-[#b4b4b2] tracking-[-0.14px]">
         <div className="flex items-center gap-2 text-center">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#cbb0f7]" />
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#f0b66d]" />
           <span>
-            Introducing Centrifuge v4: Connected mission-critical architecture for enterprise operations.
+            Introducing Optimax ERP - Enterprise Resource Planning System.
           </span>
           <Link
-            to="/solutions/optimax"
-            className="text-[#cbb0f7] hover:text-[#faf9f6] underline underline-offset-4 decoration-[#cbb0f7]/70 transition-colors font-medium inline-flex items-center gap-0.5 ml-1"
+            to="https://www.optimaxsuites.com/"
+            className="text-[#f0b66d] hover:text-[#faf9f6] underline underline-offset-4 decoration-[#f0b66d]/70 transition-colors font-medium inline-flex items-center gap-0.5 ml-1"
           >
             <span>Learn more</span>
             <ArrowUpRight className="h-3 w-3" />
@@ -56,27 +56,27 @@ export const Header: React.FC = () => {
       {/* ─── Warp Top Navigation Bar (warp_design.md §132-136) ─── */}
       <header
         className={`sticky top-0 z-40 w-full transition-colors duration-150 ${isScrolled
-            ? 'bg-[#000000]/95 backdrop-blur-md border-b border-[#1e1e1d]'
-            : 'bg-[#000000] border-b border-[#1e1e1d]'
+          ? 'bg-[#000000]/95 backdrop-blur-md border-b border-[#1e1e1d]'
+          : 'bg-[#000000] border-b border-[#1e1e1d]'
           }`}
       >
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[64px]">
-            {/* Brand Logo & Wordmark */}
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between min-h-[76px] py-2">
+            {/* Brand Logo & Wordmark (250px to 400px wide by 50px to 100px high) */}
             <Link
               to="/"
-              className="flex items-center gap-3 group focus:outline-none rounded-[4px]"
+              className="flex items-center gap-3 group focus:outline-none rounded-[4px] shrink-0 mr-4"
               aria-label="Centrifuge Group Home"
             >
               <img
                 src={brandAssets.logo}
                 alt="Centrifuge Group"
-                className="h-30 w-auto object-contain brightness-110"
+                className="w-[260px] sm:w-[320px] h-[52px] sm:h-[64px] object-contain object-left brightness-110"
               />
             </Link>
 
-            {/* Desktop Navigation Links (Matter/Inter 400, 14px, #868684, 24px gap) */}
-            <nav className="hidden lg:flex items-center gap-6">
+            {/* Desktop Navigation Links (Matter/Inter 400, 14px, #868684) */}
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
               {/* Solutions Dropdown */}
               <div
                 className="relative"
@@ -85,8 +85,8 @@ export const Header: React.FC = () => {
               >
                 <button
                   className={`flex items-center gap-1.5 text-[14px] tracking-[-0.14px] transition-colors ${location.pathname.startsWith('/solutions')
-                      ? 'text-[#faf9f6]'
-                      : 'text-[#868684] hover:text-[#faf9f6]'
+                    ? 'text-[#faf9f6]'
+                    : 'text-[#868684] hover:text-[#faf9f6]'
                     }`}
                   aria-expanded={activeDropdown === 'solutions'}
                 >
@@ -101,10 +101,10 @@ export const Header: React.FC = () => {
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                        <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                           Optimax ERP
                         </span>
-                        <span className="text-[10px] uppercase tracking-[1px] px-2 py-0.5 rounded-[50px] border border-[#333333] text-[#cbb0f7] bg-[#cbb0f7]/10">
+                        <span className="text-[10px] uppercase tracking-[1px] px-2 py-0.5 rounded-[50px] border border-[#333333] text-[#f0b66d] bg-[#f0b66d]/10">
                           Featured
                         </span>
                       </div>
@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
                       to="/solutions/logistics"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Logistics & Mobility
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5 line-clamp-1">
@@ -129,7 +129,7 @@ export const Header: React.FC = () => {
                       to="/solutions/healthcare"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Healthcare Technology
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5 line-clamp-1">
@@ -141,7 +141,7 @@ export const Header: React.FC = () => {
                       to="/solutions/enterprise"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Enterprise Systems
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5 line-clamp-1">
@@ -153,7 +153,7 @@ export const Header: React.FC = () => {
                       to="/solutions/data-analytics"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Data & Analytics
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5 line-clamp-1">
@@ -172,8 +172,8 @@ export const Header: React.FC = () => {
               >
                 <button
                   className={`flex items-center gap-1.5 text-[14px] tracking-[-0.14px] transition-colors ${location.pathname.startsWith('/services')
-                      ? 'text-[#faf9f6]'
-                      : 'text-[#868684] hover:text-[#faf9f6]'
+                    ? 'text-[#faf9f6]'
+                    : 'text-[#868684] hover:text-[#faf9f6]'
                     }`}
                   aria-expanded={activeDropdown === 'services'}
                 >
@@ -187,7 +187,7 @@ export const Header: React.FC = () => {
                       to="/services/software-development"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Software Development
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5">
@@ -198,7 +198,7 @@ export const Header: React.FC = () => {
                       to="/services/mobile-development"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Mobile Development
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5">
@@ -209,7 +209,7 @@ export const Header: React.FC = () => {
                       to="/services/cloud"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Cloud & Infrastructure
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5">
@@ -220,7 +220,7 @@ export const Header: React.FC = () => {
                       to="/services/managed-it"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Managed IT & Consulting
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5">
@@ -231,7 +231,7 @@ export const Header: React.FC = () => {
                       to="/services/training"
                       className="block p-2.5 rounded-[10px] hover:bg-[#121212] transition-colors group"
                     >
-                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors">
+                      <span className="text-[14px] font-semibold text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors">
                         Training & Capacity Building
                       </span>
                       <p className="text-[12px] text-[#868684] mt-0.5">
@@ -246,8 +246,8 @@ export const Header: React.FC = () => {
               <Link
                 to="/projects"
                 className={`text-[14px] tracking-[-0.14px] transition-colors ${location.pathname.startsWith('/projects')
-                    ? 'text-[#faf9f6]'
-                    : 'text-[#868684] hover:text-[#faf9f6]'
+                  ? 'text-[#faf9f6]'
+                  : 'text-[#868684] hover:text-[#faf9f6]'
                   }`}
               >
                 Projects
@@ -257,8 +257,8 @@ export const Header: React.FC = () => {
               <Link
                 to="/industries"
                 className={`text-[14px] tracking-[-0.14px] transition-colors ${location.pathname.startsWith('/industries')
-                    ? 'text-[#faf9f6]'
-                    : 'text-[#868684] hover:text-[#faf9f6]'
+                  ? 'text-[#faf9f6]'
+                  : 'text-[#868684] hover:text-[#faf9f6]'
                   }`}
               >
                 Industries
@@ -274,8 +274,8 @@ export const Header: React.FC = () => {
                   className={`flex items-center gap-1.5 text-[14px] tracking-[-0.14px] transition-colors ${['/about', '/clients', '/case-studies', '/careers'].some((p) =>
                     location.pathname.startsWith(p)
                   )
-                      ? 'text-[#faf9f6]'
-                      : 'text-[#868684] hover:text-[#faf9f6]'
+                    ? 'text-[#faf9f6]'
+                    : 'text-[#868684] hover:text-[#faf9f6]'
                     }`}
                   aria-expanded={activeDropdown === 'company'}
                 >
@@ -317,8 +317,8 @@ export const Header: React.FC = () => {
               <Link
                 to="/insights"
                 className={`text-[14px] tracking-[-0.14px] transition-colors ${location.pathname.startsWith('/insights')
-                    ? 'text-[#faf9f6]'
-                    : 'text-[#868684] hover:text-[#faf9f6]'
+                  ? 'text-[#faf9f6]'
+                  : 'text-[#868684] hover:text-[#faf9f6]'
                   }`}
               >
                 Insights
@@ -328,8 +328,8 @@ export const Header: React.FC = () => {
               <Link
                 to="/shop"
                 className={`text-[14px] tracking-[-0.14px] transition-colors flex items-center gap-1.5 ${location.pathname.startsWith('/shop')
-                    ? 'text-[#faf9f6]'
-                    : 'text-[#868684] hover:text-[#faf9f6]'
+                  ? 'text-[#faf9f6]'
+                  : 'text-[#868684] hover:text-[#faf9f6]'
                   }`}
               >
                 <span>Store</span>
@@ -346,7 +346,7 @@ export const Header: React.FC = () => {
               >
                 <ShoppingBag className="h-4.5 w-4.5" />
                 {totalCartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 h-4 min-w-4 px-1 bg-[#cbb0f7] text-[#080808] text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 h-4 min-w-4 px-1 bg-[#f0b66d] text-[#080808] text-[10px] font-bold rounded-full flex items-center justify-center">
                     {totalCartCount}
                   </span>
                 )}
@@ -358,14 +358,14 @@ export const Header: React.FC = () => {
                 className="hidden xl:inline-flex items-center gap-1.5 text-[13px] font-normal px-3.5 py-1.5 rounded-[33px] text-[#b4b4b2] border border-[#333333] hover:border-[#b4b4b2] hover:text-[#faf9f6] transition-colors"
                 title="Enter Store Administration Dashboard"
               >
-                <ShieldCheck className="h-3.5 w-3.5 text-[#cbb0f7]" />
+                <ShieldCheck className="h-3.5 w-3.5 text-[#f0b66d]" />
                 <span>Admin</span>
               </Link>
 
               {/* Primary Filled Pill Button: Talk to an Expert (warp_design.md §142-146) */}
               <Link
                 to="/contact"
-                className="hidden sm:inline-flex items-center justify-center px-[22px] py-[9px] rounded-[33px] text-[14px] font-semibold bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 shadow-none tracking-[-0.14px]"
+                className="hidden sm:inline-flex items-center justify-center px-[22px] py-[9px] rounded-[33px] text-[14px] font-semibold bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 shadow-none tracking-[-0.14px]"
               >
                 Talk to an Expert
               </Link>
@@ -472,7 +472,7 @@ export const Header: React.FC = () => {
                 <Link
                   to="/shop"
                   onClick={() => setMobileNavOpen(false)}
-                  className="block py-1.5 text-[14px] text-[#cbb0f7]"
+                  className="block py-1.5 text-[14px] text-[#f0b66d]"
                 >
                   Commercial Hardware Store
                 </Link>
@@ -526,7 +526,7 @@ export const Header: React.FC = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileNavOpen(false)}
-                className="w-full flex items-center justify-center py-2.5 px-4 rounded-[33px] bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] text-[14px] font-semibold transition-colors"
+                className="w-full flex items-center justify-center py-2.5 px-4 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[14px] font-semibold transition-colors"
               >
                 Talk to an Expert
               </Link>
@@ -535,7 +535,7 @@ export const Header: React.FC = () => {
                 onClick={() => setMobileNavOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-[33px] border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
               >
-                <ShieldCheck className="h-3.5 w-3.5 text-[#cbb0f7]" />
+                <ShieldCheck className="h-3.5 w-3.5 text-[#f0b66d]" />
                 <span>Admin Dashboard</span>
               </Link>
             </div>

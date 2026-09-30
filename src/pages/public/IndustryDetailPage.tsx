@@ -1,8 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { Button } from '../../components/ui/Button'
-import { ArrowLeft, ArrowRight, CheckCircle2, Shield, HeartPulse, Truck, Landmark, Building2, Store } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react'
 
 interface IndustryData {
   title: string
@@ -18,7 +17,8 @@ const industryDetails: Record<string, IndustryData> = {
   healthcare: {
     title: 'Healthcare & Public Health Information Systems',
     subtitle: 'Digitizing medical personnel governance, clinical workflows, and emergency health tracking.',
-    problem: 'Disjointed medical record-keeping, multi-month accreditation backlogs, and lack of real-time epidemiological visibility hamper patient care and regulatory governance across regional hospitals.',
+    problem:
+      'Disjointed medical record-keeping, multi-month accreditation backlogs, and lack of real-time epidemiological visibility hamper patient care and regulatory governance across regional hospitals.',
     howCentrifugeHelps: [
       'National Human Resource for Health Information System (HRHIS) tracking healthcare workers nationwide.',
       'Paperless hospital EMR managing outpatient triage, lab LIS, pharmacy dispensing, and insurance claims.',
@@ -36,12 +36,13 @@ const industryDetails: Record<string, IndustryData> = {
     caseStudy: {
       title: 'FMOH National Health Workforce HRHIS Modernization',
       url: '/case-studies/fmoh-national-health-workforce',
-    }
+    },
   },
   logistics: {
     title: 'Logistics, Freight & Inter-State Mobility',
     subtitle: 'Real-time telemetry, automated dispatch, and digital delivery auditing.',
-    problem: 'High cargo transit risks, undetected fuel pilferage along transit corridors, and reliance on physical delivery notes that delay freight invoicing cycles by up to 30 days.',
+    problem:
+      'High cargo transit risks, undetected fuel pilferage along transit corridors, and reliance on physical delivery notes that delay freight invoicing cycles by up to 30 days.',
     howCentrifugeHelps: [
       'Hardware-agnostic telematics integration providing live second-by-second vehicle tracking.',
       'CAN-Bus engine sensor monitoring for automated fuel drop detection.',
@@ -59,12 +60,13 @@ const industryDetails: Record<string, IndustryData> = {
     caseStudy: {
       title: 'Inter-State Logistics Telematics & Visibility',
       url: '/case-studies/nationwide-fleet-telematics',
-    }
+    },
   },
   government: {
     title: 'Government Ministries, Departments & Agencies',
     subtitle: 'Institutional platforms, verified citizen registries, and automated fee collections.',
-    problem: 'Manual paper queues for accreditation, reconciliation leakages with treasury accounts, and high overhead maintaining outdated local servers.',
+    problem:
+      'Manual paper queues for accreditation, reconciliation leakages with treasury accounts, and high overhead maintaining outdated local servers.',
     howCentrifugeHelps: [
       'High-concurrency digital licensing portals integrated with Remita payment gateways.',
       'Tamper-proof verifiable digital certificates with instant QR validation.',
@@ -82,12 +84,13 @@ const industryDetails: Record<string, IndustryData> = {
     caseStudy: {
       title: 'Nursing & Midwifery Council Digital Licensing Portal',
       url: '/case-studies/nursing-council-digital-licensing',
-    }
+    },
   },
   enterprise: {
     title: 'Large Commercial Enterprises & Energy Conglomerates',
     subtitle: 'Connected ERP architectures, automated multi-depot inventory, and secure cloud clusters.',
-    problem: 'Multi-entity corporate groups struggle with fragmented reporting, disconnected branches, and slow financial consolidation across divisions.',
+    problem:
+      'Multi-entity corporate groups struggle with fragmented reporting, disconnected branches, and slow financial consolidation across divisions.',
     howCentrifugeHelps: [
       'Optimax unified ERP connecting sales, multi-warehouse stock, and double-entry general ledgers.',
       'Custom API middleware integrating existing legacy accounting systems.',
@@ -100,12 +103,13 @@ const industryDetails: Record<string, IndustryData> = {
     relevantServices: [
       { name: 'Custom Software Development', url: '/services/software-development' },
       { name: 'Managed IT & Support SLAs', url: '/services/managed-it' },
-    ]
+    ],
   },
   smes: {
     title: 'Growing Commercial SMEs & Multi-Branch Retailers',
     subtitle: 'Fast-deploy cloud POS, stock auditing, and continuous solar power infrastructure.',
-    problem: 'Erratic grid power disrupting point-of-sale operations, internal inventory shrinkage, and lack of real-time sales visibility.',
+    problem:
+      'Erratic grid power disrupting point-of-sale operations, internal inventory shrinkage, and lack of real-time sales visibility.',
     howCentrifugeHelps: [
       'Turnkey point-of-sale and barcode inventory software running offline and online.',
       'Industrial pure sine wave hybrid inverters and UPS backup power for zero downtime.',
@@ -118,8 +122,8 @@ const industryDetails: Record<string, IndustryData> = {
     relevantServices: [
       { name: 'Hardware & Infrastructure Setup', url: '/services/infrastructure' },
       { name: 'Custom Software Development', url: '/services/software-development' },
-    ]
-  }
+    ],
+  },
 }
 
 export const IndustryDetailPage: React.FC = () => {
@@ -127,66 +131,75 @@ export const IndustryDetailPage: React.FC = () => {
   const ind = (slug && industryDetails[slug]) || industryDetails['healthcare']
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
         title={`${ind.title} | Centrifuge Industry Solutions`}
         description={ind.subtitle}
       />
 
-      <section className="bg-[#0B1F33] text-white py-16 sm:py-20 border-b border-[#172333]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <Link
             to="/industries"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#94A3B8] hover:text-[#16C7D9] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Industries</span>
           </Link>
 
-          <div className="pt-2">
-            <span className="text-xs font-mono font-bold text-[#16C7D9] tracking-wider uppercase">
-              INDUSTRY SPECIFICATION
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight mt-1">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
+              <span>INDUSTRY SPECIFICATION</span>
+            </div>
+            <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-[1.05]">
               {ind.title}
             </h1>
           </div>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-3xl">
+          <p className="text-[16px] text-[#868684] leading-relaxed max-w-3xl tracking-[-0.14px]">
             {ind.subtitle}
           </p>
 
-          <div className="pt-4">
-            <Link to="/contact">
-              <Button variant="primary" size="md" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                Consult Industry Experts
-              </Button>
+          <div className="pt-3 flex flex-wrap items-center gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+            >
+              <span>Consult Industry Experts</span>
+              <ArrowRight className="h-3.5 w-3.5 ml-2" />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Operational Challenge */}
-          <div className="bg-[#FEF2F2] p-8 rounded-[16px] border border-[#FEE2E2] space-y-2">
-            <span className="text-xs font-mono font-bold text-[#DC2626] uppercase">
-              The Operational Problem In This Sector
+      {/* ─── Main Content (Warp Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          {/* Operational Challenge (Onyx card) */}
+          <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-2">
+            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
+              THE OPERATIONAL CHALLENGE IN THIS SECTOR
             </span>
-            <p className="text-sm text-[#7F1D1D] leading-relaxed">
+            <p className="text-[14px] text-[#b4b4b2] leading-relaxed">
               {ind.problem}
             </p>
           </div>
 
-          {/* How Centrifuge Helps */}
-          <div className="bg-white p-8 rounded-[16px] border border-[#E2E8F0] space-y-4">
-            <h3 className="text-xl font-bold text-[#0B1F33] font-heading">
-              How Centrifuge Solves It
-            </h3>
+          {/* How Centrifuge Solves It */}
+          <div className="bg-[#1e1e1d] p-8 rounded-[20px] border border-[#1e1e1d] space-y-5">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+                DEPLOYED CAPABILITIES
+              </span>
+              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mt-1">
+                How Centrifuge Solves It
+              </h3>
+            </div>
             <div className="space-y-3 pt-2">
               {ind.howCentrifugeHelps.map((point, i) => (
-                <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-[#334155]">
-                  <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0 mt-0.5" />
+                <div key={i} className="flex items-start gap-3 text-[13px] text-[#b4b4b2]">
+                  <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">{point}</span>
                 </div>
               ))}
@@ -194,9 +207,9 @@ export const IndustryDetailPage: React.FC = () => {
           </div>
 
           {/* Solutions & Services Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
                 Relevant Centrifuge Platforms
               </span>
               <div className="space-y-2 pt-1">
@@ -204,17 +217,17 @@ export const IndustryDetailPage: React.FC = () => {
                   <Link
                     key={sol.name}
                     to={sol.url}
-                    className="flex items-center justify-between p-2.5 rounded-[6px] bg-[#F8FAFC] hover:bg-[#F1F5F9] text-xs font-semibold text-[#0B1F33] transition-colors"
+                    className="flex items-center justify-between p-3 rounded-[10px] bg-[#121212] hover:bg-[#1e1e1d] border border-[#333333] text-[13px] font-medium text-[#faf9f6] group transition-colors"
                   >
                     <span>{sol.name}</span>
-                    <ArrowRight className="h-3 w-3 text-[#16C7D9]" />
+                    <ArrowRight className="h-3 w-3 text-[#f0b66d] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
+            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
                 Related Engineering Services
               </span>
               <div className="space-y-2 pt-1">
@@ -222,10 +235,10 @@ export const IndustryDetailPage: React.FC = () => {
                   <Link
                     key={svc.name}
                     to={svc.url}
-                    className="flex items-center justify-between p-2.5 rounded-[6px] bg-[#F8FAFC] hover:bg-[#F1F5F9] text-xs font-semibold text-[#0B1F33] transition-colors"
+                    className="flex items-center justify-between p-3 rounded-[10px] bg-[#121212] hover:bg-[#1e1e1d] border border-[#333333] text-[13px] font-medium text-[#faf9f6] group transition-colors"
                   >
                     <span>{svc.name}</span>
-                    <ArrowRight className="h-3 w-3 text-[#16C7D9]" />
+                    <ArrowRight className="h-3 w-3 text-[#f0b66d] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
@@ -234,19 +247,21 @@ export const IndustryDetailPage: React.FC = () => {
 
           {/* Case Study Callout */}
           {ind.caseStudy && (
-            <div className="p-8 rounded-[16px] bg-[#071521] text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="p-8 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] flex flex-col sm:flex-row items-center justify-between gap-6">
               <div>
-                <span className="text-[11px] font-mono text-[#16C7D9] uppercase font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
                   PROVEN OUTCOME
                 </span>
-                <h4 className="text-lg font-bold font-heading mt-1">
+                <h4 className="text-[18px] font-semibold text-[#faf9f6] mt-1 tracking-[-0.18px]">
                   {ind.caseStudy.title}
                 </h4>
               </div>
-              <Link to={ind.caseStudy.url}>
-                <Button variant="primary" size="md">
-                  Read Case Study
-                </Button>
+              <Link
+                to={ind.caseStudy.url}
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold shrink-0 transition-colors"
+              >
+                <span>Read Case Study</span>
+                <ArrowRight className="h-3.5 w-3.5 ml-2" />
               </Link>
             </div>
           )}
@@ -255,4 +270,5 @@ export const IndustryDetailPage: React.FC = () => {
     </div>
   )
 }
+
 export default IndustryDetailPage

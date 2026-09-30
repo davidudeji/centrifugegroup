@@ -36,7 +36,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             className={twMerge(
               clsx(
-                'w-full bg-[#121212] text-[#faf9f6] text-[14px] placeholder:text-[#666469] border rounded-[7px] transition-colors duration-150 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#cbb0f7] focus:border-[#cbb0f7] disabled:bg-[#1e1e1d] disabled:text-[#666469] disabled:cursor-not-allowed tracking-[-0.14px]',
+                'w-full bg-[#121212] text-[#faf9f6] text-[14px] placeholder:text-[#666469] border rounded-[7px] transition-colors duration-150 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:border-[#f0b66d] disabled:bg-[#1e1e1d] disabled:text-[#666469] disabled:cursor-not-allowed tracking-[-0.14px]',
                 leftIcon ? 'pl-9.5' : 'pl-3.5',
                 rightIcon ? 'pr-9.5' : 'pr-3.5',
                 error

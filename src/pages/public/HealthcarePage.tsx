@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { Button } from '../../components/ui/Button'
-import { ArrowRight, Activity, Users, Database, ShieldCheck, HeartPulse, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export const HealthcarePage: React.FC = () => {
   const systems = [
     {
       title: 'Human Resource for Health Information System (HRHIS)',
       desc: 'National and state-level healthcare workforce database tracking accreditation, postings, credentials, and capacity building for healthcare practitioners across Nigeria.',
-      badge: 'Deployed with FMOH',
+      badge: 'Deployed with FMOH, WHO, UNICEF',
       features: ['Digital licensing & CPD tracking', 'Health facility workforce modeling', 'Biometric validation', 'Interoperable DHIS2 APIs'],
     },
     {
@@ -33,88 +32,83 @@ export const HealthcarePage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
         title="Centrifuge Healthcare Solutions | Health Informatics & Hospital Systems"
         description="Public health informatics, national health workforce registries (HRHIS), and hospital information systems."
       />
 
-      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-[#172333]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-mono font-bold text-[#16C7D9] tracking-wider uppercase">
-              CENTRIFUGE HEALTH INFORMATICS
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+              <span>CENTRIFUGE HEALTH INFORMATICS</span>
+            </div>
+            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
               Digital systems for better healthcare operations.
             </h1>
-            <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
-              We design and operate resilient health information systems in partnership with federal ministries, healthcare regulatory councils, and major hospitals.
+            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+              We design and operate resilient health information systems in partnership with federal ministries, healthcare regulatory councils, and major multilateral agencies including WHO and UNICEF.
             </p>
-            <div className="pt-4 flex flex-wrap gap-3">
-              <Link to="/contact">
-                <Button variant="primary" size="lg" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                  Consult Health Informatics Team
-                </Button>
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+              >
+                <span>Consult Health Informatics Team</span>
+                <ArrowRight className="h-3.5 w-3.5 ml-2" />
               </Link>
-              <Link to="/case-studies/fmoh-national-health-workforce">
-                <Button variant="outline" size="lg" className="bg-transparent text-white border-[#334155]">
-                  FMOH Case Study
-                </Button>
+              <Link
+                to="/case-studies/fmoh-national-health-workforce"
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+              >
+                <span>FMOH Case Study</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      {/* ─── Systems Grid (Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#16C7D9]">
-              Specialized Healthcare Suites
-            </p>
-            <h2 className="text-3xl font-extrabold text-[#0B1F33] font-heading mt-1">
+            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
+              SPECIALIZED HEALTHCARE SUITES
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
               Field-proven healthcare infrastructure.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {systems.map((sys) => (
               <div
                 key={sys.title}
-                className="bg-white p-8 rounded-[16px] border border-[#E2E8F0] shadow-sm flex flex-col justify-between"
+                className="bg-[#1e1e1d] p-8 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="px-2.5 py-0.5 rounded bg-[#16A34A]/10 text-[#15803D] text-[11px] font-bold">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[#f0b66d] text-[10px] font-mono uppercase tracking-[1px]">
                       {sys.badge}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#0B1F33] font-heading">
+                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px]">
                     {sys.title}
                   </h3>
-                  <p className="text-xs text-[#64748B] mt-2.5 leading-relaxed">
+                  <p className="text-[13px] text-[#868684] mt-2.5 leading-relaxed tracking-[-0.14px]">
                     {sys.desc}
                   </p>
 
-                  <div className="mt-5 space-y-2">
-                    {sys.features.map((feat) => (
-                      <div key={feat} className="flex items-center gap-2 text-xs text-[#334155]">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A] shrink-0" />
+                  <div className="mt-5 space-y-2 pt-4 border-t border-[#333333]/50">
+                    {sys.features.map((feat, i) => (
+                      <div key={i} className="flex items-center gap-2 text-[12.5px] text-[#b4b4b2]">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-[#f0b66d] shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
                   </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-[#E2E8F0]">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1F33] hover:text-[#16C7D9] transition-colors"
-                  >
-                    <span>Request technical architecture note</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </Link>
                 </div>
               </div>
             ))}
@@ -124,4 +118,5 @@ export const HealthcarePage: React.FC = () => {
     </div>
   )
 }
+
 export default HealthcarePage

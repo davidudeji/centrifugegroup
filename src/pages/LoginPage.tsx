@@ -24,30 +24,30 @@ export const LoginPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F9FA] flex flex-col">
+    <div className="min-h-screen bg-[#000000] flex flex-col">
       {/* Top bar */}
-      <header className="h-16 bg-white border-b border-[#E2E8F0] flex items-center px-6">
+      <header className="h-16 bg-[#121212] border-b border-[#333333] flex items-center px-6">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={brandAssets.logo} alt="Centrifuge Group" className="h-7 w-auto object-contain" />
-          <span className="font-heading font-bold text-[#0B1F33] text-base">Centrifuge Group</span>
+          <span className="font-heading font-bold text-[#faf9f6] text-base">Centrifuge Group</span>
         </Link>
       </header>
 
       <main className="flex-1 flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-md">
           {/* Card */}
-          <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_2px_8px_rgba(11,31,51,0.05)] p-8">
+          <div className="bg-[#121212] rounded-2xl border border-[#333333] shadow-[0_2px_8px_rgba(11,31,51,0.05)] p-8">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-[#0B1F33] mb-4">
-                <Shield className="h-6 w-6 text-[#16C7D9]" />
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-[#000000] mb-4">
+                <Shield className="h-6 w-6 text-[#f0b66d]" />
               </div>
-              <h1 className="font-heading font-bold text-2xl text-[#0B1F33] mb-1">Sign in to your account</h1>
-              <p className="text-sm text-[#64748B]">Access your orders, wishlist and profile</p>
+              <h1 className="font-heading font-bold text-2xl text-[#faf9f6] mb-1">Sign in to your account</h1>
+              <p className="text-sm text-[#868684]">Access your orders, wishlist and profile</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="block text-xs font-semibold text-[#172333] mb-1.5" htmlFor="email">
+                <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5" htmlFor="email">
                   Email address
                 </label>
                 <input
@@ -57,12 +57,12 @@ export const LoginPage: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full h-11 px-4 bg-[#F7F9FA] border border-[#E2E8F0] rounded-lg text-sm text-[#172333] placeholder-[#94A3B8] focus:outline-none focus:border-[#16C7D9] focus:ring-2 focus:ring-[#16C7D9]/20 transition-all"
+                  className="w-full h-11 px-4 bg-[#000000] border border-[#333333] rounded-lg text-sm text-[#faf9f6] placeholder-[#868684] focus:outline-none focus:border-[#f0b66d] focus:ring-2 focus:ring-[#f0b66d]/20 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#172333] mb-1.5" htmlFor="password">
+                <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5" htmlFor="password">
                   Password
                 </label>
                 <div className="relative">
@@ -73,12 +73,12 @@ export const LoginPage: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Your password"
-                    className="w-full h-11 px-4 pr-11 bg-[#F7F9FA] border border-[#E2E8F0] rounded-lg text-sm text-[#172333] placeholder-[#94A3B8] focus:outline-none focus:border-[#16C7D9] focus:ring-2 focus:ring-[#16C7D9]/20 transition-all"
+                    className="w-full h-11 px-4 pr-11 bg-[#000000] border border-[#333333] rounded-lg text-sm text-[#faf9f6] placeholder-[#868684] focus:outline-none focus:border-[#f0b66d] focus:ring-2 focus:ring-[#f0b66d]/20 transition-all"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#868684] hover:text-[#868684]"
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
@@ -92,7 +92,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-11 bg-[#0B1F33] text-white rounded-lg text-sm font-semibold hover:bg-[#071521] transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full h-11 bg-[#000000] text-white rounded-lg text-sm font-semibold hover:bg-[#000000] transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 {isLoading ? 'Signing in…' : (
                   <>
@@ -103,25 +103,25 @@ export const LoginPage: React.FC = () => {
               </button>
             </form>
 
-            <div className="mt-6 pt-6 border-t border-[#E2E8F0] text-center">
-              <p className="text-sm text-[#64748B]">
+            <div className="mt-6 pt-6 border-t border-[#333333] text-center">
+              <p className="text-sm text-[#868684]">
                 Don't have an account?{' '}
-                <Link to="/contact" className="text-[#16C7D9] font-semibold hover:underline">
+                <Link to="/contact" className="text-[#f0b66d] font-semibold hover:underline">
                   Contact us
                 </Link>
               </p>
             </div>
 
             {/* Demo hint */}
-            <div className="mt-4 p-3 bg-[#F7F9FA] rounded-lg border border-[#E2E8F0]">
-              <p className="text-xs text-[#64748B] text-center">
-                <span className="font-semibold text-[#172333]">Demo:</span> Any email/password combination works
+            <div className="mt-4 p-3 bg-[#000000] rounded-lg border border-[#333333]">
+              <p className="text-xs text-[#868684] text-center">
+                <span className="font-semibold text-[#faf9f6]">Demo:</span> Any email/password combination works
               </p>
             </div>
           </div>
 
-          <p className="text-center text-xs text-[#94A3B8] mt-6">
-            <Link to="/" className="hover:text-[#64748B] transition-colors">← Back to Centrifuge Group</Link>
+          <p className="text-center text-xs text-[#868684] mt-6">
+            <Link to="/" className="hover:text-[#868684] transition-colors">← Back to Centrifuge Group</Link>
           </p>
         </div>
       </main>

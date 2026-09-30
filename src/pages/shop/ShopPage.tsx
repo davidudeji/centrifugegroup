@@ -66,16 +66,16 @@ export const ShopPage: React.FC = () => {
       />
 
       {/* Header Banner */}
-      <section className="bg-[#0B1F33] text-white py-14 sm:py-20 border-b border-[#172333]">
+      <section className="bg-[#000000] text-white py-14 sm:py-20 border-b border-[#1e1e1d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#16C7D9]/15 border border-[#16C7D9]/30 text-xs font-mono font-bold text-[#67E8F9]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#f0b66d]/15 border border-[#f0b66d]/30 text-xs font-mono font-bold text-[#f0b66d]">
               <span>COMMERCIAL HARDWARE STORE · DEMO INVENTORY</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight">
               Technology for the way you work.
             </h1>
-            <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#868684] leading-relaxed">
               Industrial-grade pure sine wave hybrid inverters, online double-conversion UPS units, MPPT solar controllers, and ruggedized IoT fleet telemetry gateways.
             </p>
           </div>
@@ -83,18 +83,18 @@ export const ShopPage: React.FC = () => {
       </section>
 
       {/* Store Container */}
-      <section className="py-12 bg-[#F8FAFC]">
+      <section className="py-12 bg-[#000000]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Controls Bar: Search, Category Filter, and Sorting */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E2E8F0]">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#333333]">
             {/* Category tabs */}
             <div className="flex flex-wrap items-center gap-1.5">
               <button
                 onClick={() => setSelectedCategory('all')}
                 className={`text-xs px-3 py-1.5 rounded-[6px] font-medium transition-colors ${
                   selectedCategory === 'all'
-                    ? 'bg-[#0B1F33] text-white font-semibold shadow-xs'
-                    : 'bg-white text-[#475569] border border-[#E2E8F0] hover:bg-[#F1F5F9]'
+                    ? 'bg-[#000000] text-white font-semibold shadow-xs'
+                    : 'bg-[#121212] text-[#b4b4b2] border border-[#333333] hover:bg-[#1e1e1d]'
                 }`}
               >
                 All Products ({products.length})
@@ -105,8 +105,8 @@ export const ShopPage: React.FC = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`text-xs px-3 py-1.5 rounded-[6px] font-medium transition-colors ${
                     selectedCategory === cat.id
-                      ? 'bg-[#0B1F33] text-white font-semibold shadow-xs'
-                      : 'bg-white text-[#475569] border border-[#E2E8F0] hover:bg-[#F1F5F9]'
+                      ? 'bg-[#000000] text-white font-semibold shadow-xs'
+                      : 'bg-[#121212] text-[#b4b4b2] border border-[#333333] hover:bg-[#1e1e1d]'
                   }`}
                 >
                   {cat.name}
@@ -129,7 +129,7 @@ export const ShopPage: React.FC = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-white text-xs text-[#111827] border border-[#E2E8F0] rounded-[8px] py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#16C7D9]/30"
+                  className="bg-[#121212] text-xs text-[#faf9f6] border border-[#333333] rounded-[8px] py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#f0b66d]/30"
                 >
                   <option value="featured">Featured First</option>
                   <option value="price-low">Price: Low to High</option>
@@ -142,13 +142,13 @@ export const ShopPage: React.FC = () => {
 
           {/* Product Grid */}
           {isLoading ? (
-            <div className="py-20 text-center text-xs text-[#64748B]">
+            <div className="py-20 text-center text-xs text-[#868684]">
               Loading commercial catalog...
             </div>
           ) : filteredProducts.length === 0 ? (
-            <div className="py-20 text-center bg-white rounded-[12px] border border-[#E2E8F0] p-8 space-y-3">
-              <p className="text-sm font-semibold text-[#111827]">No products found</p>
-              <p className="text-xs text-[#64748B]">Try clearing your search query or selecting a different category.</p>
+            <div className="py-20 text-center bg-[#121212] rounded-[12px] border border-[#333333] p-8 space-y-3">
+              <p className="text-sm font-semibold text-[#faf9f6]">No products found</p>
+              <p className="text-xs text-[#868684]">Try clearing your search query or selecting a different category.</p>
               <Button
                 variant="secondary"
                 size="sm"
@@ -166,11 +166,11 @@ export const ShopPage: React.FC = () => {
                 <Link
                   key={prod.id}
                   to={`/shop/product/${prod.slug}`}
-                  className="bg-white rounded-[14px] border border-[#E2E8F0] overflow-hidden flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-md transition-all group"
+                  className="bg-[#121212] rounded-[14px] border border-[#333333] overflow-hidden flex flex-col justify-between hover:border-[#333333] hover:shadow-md transition-all group"
                 >
                   <div>
                     {/* Image Area */}
-                    <div className="h-52 relative overflow-hidden bg-[#F8FAFC] p-4 flex items-center justify-center border-b border-[#E2E8F0]/80">
+                    <div className="h-52 relative overflow-hidden bg-[#000000] p-4 flex items-center justify-center border-b border-[#333333]/80">
                       <img
                         src={prod.images[0]}
                         alt={prod.name}
@@ -191,16 +191,16 @@ export const ShopPage: React.FC = () => {
 
                     {/* Content */}
                     <div className="p-5">
-                      <div className="flex items-center justify-between text-[11px] text-[#64748B] font-mono">
+                      <div className="flex items-center justify-between text-[11px] text-[#868684] font-mono">
                         <span>{prod.brand}</span>
                         <span>{prod.sku}</span>
                       </div>
 
-                      <h3 className="text-sm font-bold text-[#111827] font-heading mt-1.5 group-hover:text-[#16C7D9] transition-colors line-clamp-2 leading-snug">
+                      <h3 className="text-sm font-bold text-[#faf9f6] font-heading mt-1.5 group-hover:text-[#f0b66d] transition-colors line-clamp-2 leading-snug">
                         {prod.name}
                       </h3>
 
-                      <p className="text-[11px] text-[#64748B] mt-1.5 line-clamp-2 leading-relaxed">
+                      <p className="text-[11px] text-[#868684] mt-1.5 line-clamp-2 leading-relaxed">
                         {prod.shortDescription}
                       </p>
                     </div>
@@ -208,13 +208,13 @@ export const ShopPage: React.FC = () => {
 
                   {/* Price & Add to Cart Footer */}
                   <div className="p-5 pt-0">
-                    <div className="pt-3 border-t border-[#E2E8F0]/80 flex items-center justify-between">
+                    <div className="pt-3 border-t border-[#333333]/80 flex items-center justify-between">
                       <div>
-                        <div className="text-base font-extrabold text-[#0B1F33] font-heading">
+                        <div className="text-base font-extrabold text-[#faf9f6] font-heading">
                           ₦{prod.price.toLocaleString()}
                         </div>
                         {prod.compareAtPrice && (
-                          <div className="text-[10px] text-[#94A3B8] line-through font-mono">
+                          <div className="text-[10px] text-[#868684] line-through font-mono">
                             ₦{prod.compareAtPrice.toLocaleString()}
                           </div>
                         )}

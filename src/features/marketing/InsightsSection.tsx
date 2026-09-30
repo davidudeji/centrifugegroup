@@ -21,7 +21,7 @@ export const InsightsSection: React.FC = () => {
           </div>
           <Link
             to="/insights"
-            className="inline-flex items-center gap-1.5 text-[14px] text-[#faf9f6] hover:text-[#cbb0f7] transition-colors shrink-0 tracking-[-0.14px]"
+            className="inline-flex items-center gap-1.5 text-[14px] text-[#faf9f6] hover:text-[#f0b66d] transition-colors shrink-0 tracking-[-0.14px]"
           >
             <span>View all articles</span>
             <ArrowRight className="h-4 w-4" />
@@ -57,7 +57,7 @@ export const InsightsSection: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-2 group-hover:text-[#cbb0f7] transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-2 group-hover:text-[#f0b66d] transition-colors line-clamp-2 leading-snug">
                     {art.title}
                   </h3>
 
@@ -73,7 +73,7 @@ export const InsightsSection: React.FC = () => {
                 </span>
                 <Link
                   to={`/insights/${art.slug}`}
-                  className="text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] inline-flex items-center gap-1 transition-colors"
+                  className="text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] inline-flex items-center gap-1 transition-colors"
                 >
                   <span>Read article</span>
                   <ArrowRight className="h-3 w-3" />

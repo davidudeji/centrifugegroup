@@ -3,13 +3,12 @@ import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { projectService } from '../../services/projectService'
 import type { Project } from '../../types'
-import { ArrowLeft, ExternalLink, ArrowRight, CheckCircle2, Shield, Layers } from 'lucide-react'
+import { ArrowLeft, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 
 export const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
   const [project, setProject] = useState<Project | null>(null)
-  const [relatedProjects, setRelatedProjects] = useState<Project[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
@@ -17,18 +16,13 @@ export const ProjectDetailPage: React.FC = () => {
     setIsLoading(true)
     projectService.getProjectBySlug(slug).then((proj) => {
       setProject(proj)
-      if (proj) {
-        projectService.getProjects().then((all) => {
-          setRelatedProjects(all.filter((p) => p.id !== proj.id && p.category === proj.category).slice(0, 2))
-        })
-      }
       setIsLoading(false)
     })
   }, [slug])
 
   if (isLoading) {
     return (
-      <div className="py-32 text-center text-xs text-[#64748B]">
+      <div className="py-32 text-center text-[12px] font-mono text-[#868684] bg-[#000000]">
         Loading project specification...
       </div>
     )
@@ -36,64 +30,63 @@ export const ProjectDetailPage: React.FC = () => {
 
   if (!project) {
     return (
-      <div className="py-32 text-center space-y-4">
-        <h2 className="text-xl font-bold text-[#111827]">Project not found</h2>
-        <p className="text-xs text-[#64748B]">The requested project does not exist or has been archived.</p>
+      <div className="py-32 text-center space-y-4 bg-[#000000] text-[#faf9f6]">
+        <h2 className="text-[20px] font-semibold">Project not found</h2>
+        <p className="text-[13px] text-[#868684]">The requested project does not exist or has been archived.</p>
         <Link to="/projects">
-          <Button variant="dark" size="sm">Back to Projects</Button>
+          <Button variant="secondary" size="sm">Back to Projects</Button>
         </Link>
       </div>
     )
   }
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
         title={`${project.name} | Projects Showcase`}
         description={project.description}
       />
 
-      {/* Top Breadcrumb & Title */}
-      <section className="bg-[#0B1F33] text-white py-12 sm:py-16 border-b border-[#172333]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#94A3B8] hover:text-[#16C7D9] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Projects & Products</span>
           </Link>
 
           <div className="flex flex-wrap items-center gap-2 pt-2">
-            <span className="px-2.5 py-0.5 rounded bg-[#16C7D9]/20 text-[#67E8F9] text-xs font-mono font-bold">
+            <span className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[#f0b66d] text-[11px] font-mono">
               {project.category}
             </span>
-            <span className="text-xs text-[#94A3B8] font-mono">
+            <span className="text-[12px] text-[#868684] font-mono">
               • {project.industry}
             </span>
             {project.status === 'live' && (
-              <span className="px-2 py-0.5 rounded bg-[#16A34A]/20 text-[#4ADE80] text-[11px] font-semibold">
+              <span className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[#faf9f6] text-[10px] font-mono">
                 STATUS: PRODUCTION LIVE
               </span>
             )}
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight">
+          <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-tight">
             {project.name}
           </h1>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-3xl">
+          <p className="text-[16px] text-[#868684] leading-relaxed max-w-3xl tracking-[-0.14px]">
             {project.description}
           </p>
 
-          {/* Action Row per project_spec.md */}
           <div className="pt-4 flex flex-wrap items-center gap-3">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[8px] bg-[#16C7D9] text-[#071521] text-xs font-bold hover:bg-[#14b8a6] transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
               >
                 <span>Visit Live Project</span>
                 <ExternalLink className="h-3.5 w-3.5" />
@@ -105,94 +98,92 @@ export const ProjectDetailPage: React.FC = () => {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[8px] bg-[#1E293B] text-white text-xs font-semibold hover:bg-[#334155] transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[33px] bg-[#1e1e1d] border border-[#333333] text-[#faf9f6] text-[13px] hover:border-[#666469] transition-colors"
               >
-                <span>View Interactive Demo</span>
-                <ExternalLink className="h-3.5 w-3.5 text-[#16C7D9]" />
+                <span>Interactive Demo</span>
+                <ExternalLink className="h-3.5 w-3.5 text-[#f0b66d]" />
               </a>
             )}
 
             {project.caseStudySlug && (
               <Link
                 to={`/case-studies/${project.caseStudySlug}`}
-                className="inline-flex items-center gap-1 px-4 py-2 rounded-[8px] border border-[#334155] text-white text-xs font-semibold hover:bg-white/5 transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
               >
                 <span>View Case Study</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             )}
-
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-2 rounded-[8px] text-xs font-mono text-[#94A3B8] hover:text-white"
-              >
-                <span>Repository ↗</span>
-              </a>
-            )}
           </div>
         </div>
       </section>
 
-      {/* Main Detail Content */}
-      <section className="py-14 bg-[#F8FAFC]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Hero Visual Container */}
-          <div className="rounded-[16px] overflow-hidden border border-[#E2E8F0] shadow-md bg-white">
+      {/* ─── Main Content (Warp Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Visual Container */}
+          <div className="rounded-[20px] overflow-hidden border border-[#1e1e1d] bg-[#000000]">
             <img
               src={project.image}
               alt={project.name}
-              className="w-full h-80 sm:h-[450px] object-cover"
+              className="w-full h-80 sm:h-[450px] object-cover opacity-90"
             />
           </div>
 
-          {/* Editorial Grid: Overview, Challenge, Solution */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <div className="lg:col-span-8 space-y-8 bg-white p-8 rounded-[16px] border border-[#E2E8F0]">
+          {/* Grid Overview */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-8 space-y-8 bg-[#1e1e1d] p-8 sm:p-10 rounded-[20px] border border-[#1e1e1d]">
               {project.overview && (
                 <div>
-                  <h3 className="text-xl font-bold text-[#0B1F33] font-heading mb-2">
-                    System Overview
+                  <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+                    SYSTEM OVERVIEW
+                  </span>
+                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
+                    Architectural Overview
                   </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-[14px] text-[#868684] leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
               )}
 
               {project.challenge && (
-                <div className="pt-6 border-t border-[#E2E8F0]">
-                  <h3 className="text-lg font-bold text-[#0B1F33] font-heading mb-2">
+                <div className="pt-6 border-t border-[#333333]/50">
+                  <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+                    THE PROBLEM
+                  </span>
+                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
                     Operational Challenge
                   </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-[14px] text-[#868684] leading-relaxed">
                     {project.challenge}
                   </p>
                 </div>
               )}
 
               {project.solution && (
-                <div className="pt-6 border-t border-[#E2E8F0]">
-                  <h3 className="text-lg font-bold text-[#0B1F33] font-heading mb-2">
-                    Centrifuge Architectural Solution
+                <div className="pt-6 border-t border-[#333333]/50">
+                  <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d] block mb-2">
+                    THE SOLUTION
+                  </span>
+                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
+                    Centrifuge Solution
                   </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-[14px] text-[#faf9f6] leading-relaxed">
                     {project.solution}
                   </p>
                 </div>
               )}
 
               {project.capabilities && project.capabilities.length > 0 && (
-                <div className="pt-6 border-t border-[#E2E8F0]">
-                  <h3 className="text-lg font-bold text-[#0B1F33] font-heading mb-3">
+                <div className="pt-6 border-t border-[#333333]/50">
+                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-3">
                     Key Engineered Capabilities
                   </h3>
                   <div className="space-y-2.5">
                     {project.capabilities.map((cap, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-[#334155]">
-                        <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2.5 text-[13px] text-[#b4b4b2]">
+                        <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                         <span>{cap}</span>
                       </div>
                     ))}
@@ -203,50 +194,52 @@ export const ProjectDetailPage: React.FC = () => {
 
             {/* Sidebar Meta Box */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="bg-white p-6 rounded-[16px] border border-[#E2E8F0] space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
+              <div className="bg-[#1e1e1d] p-6 rounded-[20px] border border-[#1e1e1d] space-y-4">
+                <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
                   Technology Stack
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-[4px] bg-[#F1F5F9] text-xs font-mono text-[#0B1F33]"
+                      className="px-3 py-1 rounded-[50px] bg-[#121212] border border-[#333333] text-[11px] font-mono text-[#b4b4b2]"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-[#E2E8F0] space-y-2 text-xs">
+                <div className="pt-4 border-t border-[#333333]/50 space-y-2.5 text-[12.5px]">
                   <div className="flex justify-between">
-                    <span className="text-[#64748B]">Industry</span>
-                    <span className="font-semibold text-[#111827]">{project.industry}</span>
+                    <span className="text-[#868684]">Industry</span>
+                    <span className="font-medium text-[#faf9f6]">{project.industry}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#64748B]">Category</span>
-                    <span className="font-semibold text-[#111827]">{project.category}</span>
+                    <span className="text-[#868684]">Category</span>
+                    <span className="font-medium text-[#faf9f6]">{project.category}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#64748B]">Delivery Status</span>
-                    <span className="font-semibold text-[#16A34A]">Production Live</span>
+                    <span className="text-[#868684]">Delivery Status</span>
+                    <span className="font-mono text-[#f0b66d]">Production Live</span>
                   </div>
                 </div>
               </div>
 
               {/* Consultation Card */}
-              <div className="p-6 rounded-[16px] bg-[#071521] text-white border border-[#172333] space-y-3">
-                <h4 className="text-sm font-bold font-heading">
+              <div className="p-6 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] text-center space-y-3">
+                <h4 className="text-[16px] font-semibold text-[#faf9f6]">
                   Deploy a similar platform?
                 </h4>
-                <p className="text-xs text-[#94A3B8] leading-relaxed">
+                <p className="text-[12.5px] text-[#868684] leading-relaxed">
                   Our senior engineering team can evaluate your operational requirements and provide architectural recommendations.
                 </p>
                 <div className="pt-2">
-                  <Link to="/contact">
-                    <Button variant="primary" size="sm" className="w-full">
-                      Talk to an Expert
-                    </Button>
+                  <Link
+                    to="/contact"
+                    className="w-full inline-flex items-center justify-center h-10 px-5 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+                  >
+                    <span>Talk to an Expert</span>
+                    <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
                   </Link>
                 </div>
               </div>
@@ -257,4 +250,5 @@ export const ProjectDetailPage: React.FC = () => {
     </div>
   )
 }
+
 export default ProjectDetailPage

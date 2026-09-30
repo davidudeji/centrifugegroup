@@ -1,8 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { Button } from '../../components/ui/Button'
-import { ArrowLeft, ArrowRight, CheckCircle2, Shield, Layers, Cpu, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Terminal, Layers } from 'lucide-react'
 
 interface ServiceData {
   title: string
@@ -17,16 +16,20 @@ interface ServiceData {
 
 const serviceDatabase: Record<string, ServiceData> = {
   'software-development': {
-    title: 'Custom Enterprise Software Development',
-    category: 'Engineering & Architecture',
-    problem: 'Commercial off-the-shelf software rarely fits intricate multi-department workflows, causing organizations to run critical processes on chaotic spreadsheets and disconnected tools.',
-    solution: 'We architect and build tailored web applications and API ecosystems engineered specifically for your organizational structure, governance rules, and scaling roadmap.',
+    title: 'Application Development & Custom Software',
+    category: 'Pillar 1: Application Development',
+    problem:
+      'Commercial off-the-shelf software rarely fits intricate multi-department workflows, causing organizations to run critical processes on chaotic spreadsheets and disconnected tools.',
+    solution:
+      'We believe in building softwares that are not just great, but memorable, inspiring, remarkable and entertaining. We work with companies to understand their users and to shape and guide their strategy across web, mobile, cloud, and enterprise e-commerce.',
     capabilities: [
-      'Modern web application engineering with React, TypeScript, and Node.js',
+      'Web application development (React, TypeScript, Node.js)',
+      'Mobile application development (React Native, iOS, Android offline-first)',
+      'Cloud & infrastructure application development with automated scaling',
+      'E-commerce platforms and high-security transactional portals',
       'High-performance relational database schemas (PostgreSQL) with audit triggers',
-      'Event-driven asynchronous background job queues and micro-services',
-      'Automated testing suites ensuring zero-regression releases',
-      'Role-based security complying with ISO and NDPR regulations',
+      'Event-driven background job queues and resilient microservices',
+      'Role-based access control complying with ISO and NDPR regulations',
     ],
     process: [
       { step: '01', title: 'Operational Discovery', desc: 'Detailed workflow mapping with departmental leads and end users.' },
@@ -39,15 +42,17 @@ const serviceDatabase: Record<string, ServiceData> = {
       'Centralized enterprise ERP and financial accounting suites',
       'National professional credentialing and digital licensing registries',
       'Multi-branch retail inventory and warehouse stock management',
-    ]
+    ],
   },
   'mobile-development': {
     title: 'Mobile Application Engineering',
-    category: 'Field & Consumer Mobility',
-    problem: 'Field workers, truck drivers, and community healthcare workers frequently operate in remote regions with unstable or absent cellular network coverage.',
-    solution: 'We engineer offline-first mobile applications with local-first transactional stores and automated background delta synchronization when reconnected.',
+    category: 'Pillar 1: Application Development',
+    problem:
+      'Field workers, truck drivers, and community healthcare workers frequently operate in remote regions with unstable or absent cellular network coverage.',
+    solution:
+      'We engineer offline-first mobile applications with local-first transactional stores and automated background delta synchronization when reconnected.',
     capabilities: [
-      'Offline-first data architectures using encrypted local stores',
+      'Offline-first data architectures using encrypted local SQLite stores',
       'Biometric fingerprint and camera OCR identification',
       'Bluetooth integration with portable POS printers and medical probes',
       'Mobile Device Management (MDM) deployment for corporate fleets',
@@ -63,13 +68,15 @@ const serviceDatabase: Record<string, ServiceData> = {
       'Logistics driver delivery and proof-of-delivery (ePOD) handhelds',
       'Community health worker patient survey and triage tools',
       'Mobile POS cash collection for distributors and FMCG sales teams',
-    ]
+    ],
   },
-  'cloud': {
+  cloud: {
     title: 'Cloud & Infrastructure Services',
-    category: 'DevOps & Scalability',
-    problem: 'Self-hosted servers and poorly configured cloud instances suffer catastrophic outages during traffic spikes, unmonitored disk fills, and lack automated disaster recovery.',
-    solution: 'Centrifuge engineers automated containerized cloud environments with automated scaling, multi-region failovers, and 99.9% uptime SLA commitments.',
+    category: 'Pillar 4: Infrastructure & Connectivity',
+    problem:
+      'Self-hosted servers and poorly configured cloud instances suffer catastrophic outages during traffic spikes, unmonitored disk fills, and lack automated disaster recovery.',
+    solution:
+      'Centrifuge engineers automated containerized cloud environments with automated scaling, multi-region failovers, and 99.9% uptime SLA commitments.',
     capabilities: [
       'Container orchestration using Docker and Kubernetes',
       'Infrastructure as Code (Terraform / Ansible)',
@@ -87,18 +94,21 @@ const serviceDatabase: Record<string, ServiceData> = {
       'Hosting high-concurrency national examination registration portals',
       'Mission-critical hospital EMR cloud backups',
       'Enterprise ERP application clusters',
-    ]
+    ],
   },
-  'infrastructure': {
-    title: 'Hardware & Telemetry Infrastructure',
-    category: 'Hardware & Power',
-    problem: 'Erratic national power grids and harsh tropical temperatures damage sensitive server hardware and interrupt commercial point of sale.',
-    solution: 'Turnkey hardware provisioning: pure sine wave hybrid inverters, zero-transfer online UPS cabinets, and ruggedized IP67 IoT telemetry devices.',
+  infrastructure: {
+    title: 'Hardware & Connectivity Services',
+    category: 'Pillar 4: Infrastructure & Connectivity',
+    problem:
+      'Erratic national power grids and harsh tropical temperatures damage sensitive server hardware and interrupt commercial operations and point-of-sale systems.',
+    solution:
+      'Turnkey hardware and connectivity provisioning: pure sine wave hybrid inverters, zero-transfer online UPS cabinets, and ruggedized IP67 IoT telemetry devices.',
     capabilities: [
-      'Data-center grade online double-conversion UPS installations (<0ms transfer)',
-      'Heavy-duty industrial pure sine wave inverters with smart solar hybrid integration',
-      'IP67 waterproof GPS/CAN-Bus telematics tracking gateways',
-      'Cold-chain vaccine depot wireless temperature & humidity logging',
+      'Managed IT Services and continuous operational monitoring',
+      'Cloud Services and server colocation support',
+      'Hardware and Software Integration for industrial setups',
+      'Hardware Solutions: UPS cabinets, pure sine wave inverters, surge suppression',
+      'Network Services: low-latency multi-branch interconnects and SD-WAN',
     ],
     process: [
       { step: '01', title: 'Load Audit', desc: 'On-site power and telemetry audit measuring true surge requirements.' },
@@ -111,18 +121,20 @@ const serviceDatabase: Record<string, ServiceData> = {
       'Hospital diagnostic laboratory uninterrupted power backup',
       'Commercial logistics interstate fleet GPS telemetry tracking',
       'Enterprise server room modular UPS power conditioning',
-    ]
+    ],
   },
   'managed-it': {
-    title: 'Managed IT & Enterprise Support',
-    category: 'Ongoing Operations',
-    problem: 'Hiring full-time in-house specialist teams for network security, database tuning, and hardware maintenance is expensive and difficult to retain.',
-    solution: 'Centrifuge acts as your dedicated enterprise systems custodian, providing guaranteed response times, regular security audits, and continuous system maintenance.',
+    title: 'Managed IT & Enterprise Connectivity',
+    category: 'Pillar 4: Infrastructure & Connectivity',
+    problem:
+      'Hiring full-time in-house specialist teams for network security, database tuning, and hardware maintenance is expensive and difficult to retain.',
+    solution:
+      'Centrifuge acts as your dedicated enterprise systems custodian, providing guaranteed response times, regular security audits, and continuous system maintenance.',
     capabilities: [
-      'Dedicated Tier-2 and Tier-3 technical support engineers',
+      'Managed IT Services and 24/7 dedicated support engineers',
       'Continuous performance tuning and database index optimization',
       'Regular penetration testing and compliance audits',
-      'Quarterly executive technology roadmap reviews',
+      'Network Service engineering, firewall administration, and secure VPNs',
     ],
     process: [
       { step: '01', title: 'SLA Baseline', desc: 'Defining clear response times and priority incident escalation trees.' },
@@ -130,22 +142,25 @@ const serviceDatabase: Record<string, ServiceData> = {
       { step: '03', title: 'Continuous Maintenance', desc: 'Patch management, security updates, and automated backups.' },
       { step: '04', title: 'Reporting', desc: 'Monthly SLA reports and optimization recommendations.' },
     ],
-    technologies: ['Grafana', 'Prometheus', 'Zendesk', 'PostgreSQL Admin Tools', 'Network Scanners'],
+    technologies: ['Grafana', 'Prometheus', 'PostgreSQL Admin Tools', 'Network Scanners', 'OpenVPN'],
     useCases: [
       'Public sector ministry national platform operations',
       'Enterprise corporate headquarters network maintenance',
-    ]
+    ],
   },
-  'consulting': {
-    title: 'Technology Consulting & Architecture Advisory',
-    category: 'Strategic Advisory',
-    problem: 'Organizations waste millions on software licenses and failed implementations due to vendor lock-in, poor architectural planning, or misunderstood requirements.',
-    solution: 'Senior architectural guidance evaluating system feasibility, designing vendor-neutral technical blueprints, and safeguarding technology investments.',
+  consulting: {
+    title: 'IT Consultancy & Strategic Advisory',
+    category: 'Pillar 3: IT Consultancy',
+    problem:
+      'Organizations waste millions on software licenses and failed implementations due to vendor lock-in, poor architectural planning, or misunderstood requirements.',
+    solution:
+      'Our IT Consulting team provides clients with access to a specialized group of professional resources experienced in a range of programme and project-related activities, trusted by multilateral agencies like WHO, UNICEF, and MSH.',
     capabilities: [
-      'Comprehensive software architecture audits',
+      'Strategic IT Consulting for international agencies and government ministries',
+      'Programme and project development & management advisory',
+      'Comprehensive software architecture and database audits',
       'Technical RFP drafting and vendor proposal evaluation',
       'Data governance and NDPR privacy compliance advisory',
-      'Digital transformation roadmaps for legacy enterprises',
     ],
     process: [
       { step: '01', title: 'Stakeholder Interviews', desc: 'Engaging executive management, operations teams, and IT staff.' },
@@ -156,18 +171,23 @@ const serviceDatabase: Record<string, ServiceData> = {
     technologies: ['TOGAF Framework', 'Enterprise Architecture', 'NDPR Standards', 'OpenHIE'],
     useCases: [
       'Federal ministry health informatics architecture review',
+      'Multilateral institutional programme systems evaluation',
       'Enterprise logistics digital modernization feasibility study',
-    ]
+    ],
   },
-  'training': {
-    title: 'Institutional Training & Capacity Building',
-    category: 'Workforce Enablement',
-    problem: 'Sophisticated software systems fail when end-users are intimidated by the interface or lack structured hands-on training.',
-    solution: 'Empowering civil servants, health workers, and enterprise employees with practical, role-specific training curricula, interactive labs, and clear job aids.',
+  training: {
+    title: 'IT Training & Institutional Capacity Building',
+    category: 'Pillar 2: IT Training',
+    problem:
+      'Sophisticated software systems fail when end-users are intimidated by the interface or lack structured hands-on training.',
+    solution:
+      'Are you driving your organization to becoming more standardized, simplified and automated? Our consultants can help your team assess the current state of your organizational processes, establish a new strategic vision and prioritize a roadmap of change programs designed to help you transform your business and reach for greater productivity.',
     capabilities: [
-      'Customized role-specific curriculum design',
+      'Database administration training (PostgreSQL, MySQL, Schema Optimization)',
+      'Project development and management methodologies (Agile, Scrum, Prince2)',
+      'Big Data analytics, ingestion pipelines, and business intelligence',
+      'Customized role-specific curriculum design and digital sandboxes',
       'Nationwide train-the-trainer cascading workshops',
-      'Bilingual documentation and illustrated visual quick-guides',
       'Post-training competency assessments and certification',
     ],
     process: [
@@ -176,12 +196,13 @@ const serviceDatabase: Record<string, ServiceData> = {
       { step: '03', title: 'Interactive Delivery', desc: 'Conducting in-person and hybrid hands-on sandbox workshops.' },
       { step: '04', title: 'Post-Training Support', desc: 'Providing ongoing desk support and refresher modules.' },
     ],
-    technologies: ['Interactive Sandbox LMS', 'Video Guides', 'Illustrated Job Aids'],
+    technologies: ['Interactive Sandbox LMS', 'Video Guides', 'Illustrated Job Aids', 'PostgreSQL Labs'],
     useCases: [
       'Training federal and state health planning officers on HRHIS registries',
-      'Training warehouse staff on Optimax barcode inventory scanning',
-    ]
-  }
+      'Training warehouse and dispatch staff on Optimax ERP systems',
+      'Corporate big data and relational database administrator workshops',
+    ],
+  },
 }
 
 export const ServiceDetailPage: React.FC = () => {
@@ -189,79 +210,92 @@ export const ServiceDetailPage: React.FC = () => {
   const service = (slug && serviceDatabase[slug]) || serviceDatabase['software-development']
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
-        title={`${service.title} | Centrifuge Engineering`}
+        title={`${service.title} | Centrifuge Group Capabilities`}
         description={service.solution}
       />
 
-      {/* Top Banner */}
-      <section className="bg-[#0B1F33] text-white py-16 sm:py-20 border-b border-[#172333]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
           <Link
             to="/services"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#94A3B8] hover:text-[#16C7D9] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Engineering Services</span>
           </Link>
 
-          <div className="pt-2">
-            <span className="text-xs font-mono font-bold text-[#16C7D9] tracking-wider uppercase">
-              {service.category}
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight mt-1">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#f0b66d] mb-3">
+              <span>{service.category}</span>
+            </div>
+            <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-[1.05]">
               {service.title}
             </h1>
           </div>
 
-          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed max-w-3xl">
+          <p className="text-[16px] text-[#868684] leading-relaxed max-w-3xl tracking-[-0.14px]">
             {service.solution}
           </p>
 
-          <div className="pt-4 flex items-center gap-3">
-            <Link to="/contact">
-              <Button variant="primary" size="md" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                Discuss Your Requirements
-              </Button>
+          <div className="pt-3 flex flex-wrap items-center gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+            >
+              <span>Discuss Your Requirements</span>
+              <ArrowRight className="h-3.5 w-3.5 ml-2" />
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+            >
+              <span>Explore all 6 pillars</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Main Body: Problem, Capabilities, Process */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Problem vs Solution */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] space-y-3">
-              <span className="text-xs font-mono font-bold text-[#DC2626] uppercase">
+      {/* ─── Main Body (Warp Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Problem vs Solution (Onyx #1e1e1d cards) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
                 The Operational Bottleneck
               </span>
-              <p className="text-sm text-[#475569] leading-relaxed">
+              <p className="text-[14px] text-[#b4b4b2] leading-relaxed">
                 {service.problem}
               </p>
             </div>
 
-            <div className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] space-y-3">
-              <span className="text-xs font-mono font-bold text-[#16A34A] uppercase">
+            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d] block">
                 The Centrifuge Approach
               </span>
-              <p className="text-sm text-[#475569] leading-relaxed">
+              <p className="text-[14px] text-[#faf9f6] leading-relaxed">
                 {service.solution}
               </p>
             </div>
           </div>
 
-          {/* Capabilities */}
-          <div className="bg-white p-8 rounded-[16px] border border-[#E2E8F0] space-y-4">
-            <h3 className="text-xl font-bold text-[#0B1F33] font-heading">
-              Engineered Capabilities & Deliverables
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          {/* Capabilities Grid */}
+          <div className="bg-[#1e1e1d] p-8 rounded-[20px] border border-[#1e1e1d] space-y-5">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+                SCOPE & DELIVERABLES
+              </span>
+              <h3 className="text-[22px] font-normal text-[#faf9f6] tracking-[-0.29px] mt-1">
+                Engineered Capabilities
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {service.capabilities.map((cap, i) => (
-                <div key={i} className="flex items-start gap-2.5 text-xs text-[#334155]">
-                  <CheckCircle2 className="h-4 w-4 text-[#16A34A] shrink-0 mt-0.5" />
+                <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#b4b4b2]">
+                  <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">{cap}</span>
                 </div>
               ))}
@@ -270,43 +304,60 @@ export const ServiceDetailPage: React.FC = () => {
 
           {/* 4-Step Process */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-[#0B1F33] font-heading">
-              Our Implementation Process
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+                METHODOLOGY
+              </span>
+              <h3 className="text-[22px] font-normal text-[#faf9f6] tracking-[-0.29px] mt-1">
+                Implementation Workflow
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {service.process.map((p) => (
-                <div key={p.step} className="bg-white p-6 rounded-[12px] border border-[#E2E8F0]">
-                  <span className="text-xl font-mono font-bold text-[#16C7D9] block">{p.step}</span>
-                  <h4 className="text-sm font-bold text-[#0B1F33] font-heading mt-2">{p.title}</h4>
-                  <p className="text-xs text-[#64748B] mt-1.5 leading-relaxed">{p.desc}</p>
+                <div
+                  key={p.step}
+                  className="bg-[#1e1e1d] p-6 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-colors"
+                >
+                  <span className="text-[11px] font-mono text-[#f0b66d] px-2 py-0.5 rounded-[50px] border border-[#333333] bg-[#121212]">
+                    {p.step}
+                  </span>
+                  <h4 className="text-[15px] font-semibold text-[#faf9f6] mt-4 tracking-[-0.18px]">
+                    {p.title}
+                  </h4>
+                  <p className="text-[12.5px] text-[#868684] mt-2 leading-relaxed">
+                    {p.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Technologies & Use Cases */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-4">
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
                 Technology Standards
               </span>
-              <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="flex flex-wrap gap-2">
                 {service.technologies.map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded bg-[#F1F5F9] text-xs font-mono text-[#0B1F33]">
+                  <span
+                    key={t}
+                    className="px-3 py-1 rounded-[50px] bg-[#121212] border border-[#333333] text-[12px] font-mono text-[#b4b4b2]"
+                  >
                     {t}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white p-7 rounded-[14px] border border-[#E2E8F0] space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#64748B] block">
+            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-4">
+              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
                 Representative Deployments
               </span>
-              <div className="space-y-2 pt-1">
+              <div className="space-y-2.5">
                 {service.useCases.map((uc, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-[#334155]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#16C7D9]" />
+                  <div key={i} className="flex items-center gap-2.5 text-[13px] text-[#b4b4b2]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#f0b66d] shrink-0" />
                     <span>{uc}</span>
                   </div>
                 ))}
@@ -314,20 +365,22 @@ export const ServiceDetailPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom CTA */}
-          <div className="p-8 rounded-[16px] bg-[#071521] text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Bottom Card CTA */}
+          <div className="p-8 sm:p-10 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-bold font-heading">
-                Ready to scope your {service.title}?
+              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px]">
+                Ready to scope your requirements?
               </h3>
-              <p className="text-xs text-[#94A3B8] mt-1">
+              <p className="text-[13px] text-[#868684] mt-1">
                 Consult with our senior technical architects today.
               </p>
             </div>
-            <Link to="/contact">
-              <Button variant="primary" size="md">
-                Talk to Centrifuge
-              </Button>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold shrink-0 transition-colors"
+            >
+              <span>Talk to Centrifuge</span>
+              <ArrowRight className="h-3.5 w-3.5 ml-2" />
             </Link>
           </div>
         </div>
@@ -335,4 +388,5 @@ export const ServiceDetailPage: React.FC = () => {
     </div>
   )
 }
+
 export default ServiceDetailPage

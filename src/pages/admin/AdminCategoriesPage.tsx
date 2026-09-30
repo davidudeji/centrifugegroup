@@ -77,12 +77,12 @@ export const AdminCategoriesPage: React.FC = () => {
     <div className="space-y-6 text-left">
       <SEO title="Category Management | Centrifuge Admin" />
 
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E2E8F0]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#333333]">
         <div>
-          <h1 className="text-2xl font-bold text-[#0B1F33] font-heading">
+          <h1 className="text-2xl font-bold text-[#faf9f6] font-heading">
             Hardware Categories
           </h1>
-          <p className="text-xs text-[#64748B] mt-0.5">
+          <p className="text-xs text-[#868684] mt-0.5">
             Organize products into hierarchical categories and store navigation tags.
           </p>
         </div>
@@ -97,9 +97,9 @@ export const AdminCategoriesPage: React.FC = () => {
         </Button>
       </div>
 
-      <div className="bg-white rounded-[16px] border border-[#E2E8F0] shadow-xs overflow-hidden">
-        <table className="w-full text-left text-xs divide-y divide-[#E2E8F0]">
-          <thead className="bg-[#F8FAFC] text-[#475569] font-bold">
+      <div className="bg-[#121212] rounded-[16px] border border-[#333333] shadow-xs overflow-hidden">
+        <table className="w-full text-left text-xs divide-y divide-[#333333]">
+          <thead className="bg-[#000000] text-[#b4b4b2] font-bold">
             <tr>
               <th className="px-6 py-3.5">Category Name</th>
               <th className="px-6 py-3.5">Slug</th>
@@ -108,25 +108,25 @@ export const AdminCategoriesPage: React.FC = () => {
               <th className="px-6 py-3.5 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#E2E8F0]">
+          <tbody className="divide-y divide-[#333333]">
             {categories.map((cat) => (
-              <tr key={cat.id} className="hover:bg-[#F8FAFC]">
-                <td className="px-6 py-4 font-semibold text-[#111827]">
+              <tr key={cat.id} className="hover:bg-[#000000]">
+                <td className="px-6 py-4 font-semibold text-[#faf9f6]">
                   {cat.name}
                 </td>
-                <td className="px-6 py-4 font-mono text-[#64748B]">
+                <td className="px-6 py-4 font-mono text-[#868684]">
                   {cat.slug}
                 </td>
-                <td className="px-6 py-4 text-[#64748B] max-w-sm truncate">
+                <td className="px-6 py-4 text-[#868684] max-w-sm truncate">
                   {cat.description}
                 </td>
-                <td className="px-6 py-4 font-semibold text-[#0B1F33]">
+                <td className="px-6 py-4 font-semibold text-[#faf9f6]">
                   {cat.productCount} items
                 </td>
                 <td className="px-6 py-4 text-right space-x-2">
                   <button
                     onClick={() => handleOpenEdit(cat)}
-                    className="p-1 text-[#64748B] hover:text-[#0B1F33]"
+                    className="p-1 text-[#868684] hover:text-[#faf9f6]"
                     title="Edit category"
                   >
                     <Edit className="h-4 w-4" />
@@ -158,17 +158,17 @@ export const AdminCategoriesPage: React.FC = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <div>
-            <label className="block text-xs font-semibold text-[#1D242F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">
               Description
             </label>
             <textarea
               rows={3}
-              className="w-full text-xs p-2.5 border border-[#E2E8F0] rounded-[8px]"
+              className="w-full text-xs p-2.5 border border-[#333333] rounded-[8px]"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <div className="flex justify-end gap-2 pt-2 border-t border-[#E2E8F0]">
+          <div className="flex justify-end gap-2 pt-2 border-t border-[#333333]">
             <Button type="button" variant="outline" size="sm" onClick={() => setIsModalOpen(false)}>
               Cancel
             </Button>

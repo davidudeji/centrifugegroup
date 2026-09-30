@@ -23,20 +23,20 @@ export const Badge: React.FC<BadgeProps> = ({
 
   const variantStyles = {
     default: 'bg-transparent text-[#b4b4b2] border border-[#333333]',
-    violet: 'bg-[#cbb0f7]/10 text-[#cbb0f7] border border-[#cbb0f7]/30',
-    teal: 'bg-[#cbb0f7]/10 text-[#cbb0f7] border border-[#cbb0f7]/30',
+    violet: 'bg-[#f0b66d]/10 text-[#f0b66d] border border-[#f0b66d]/30',
+    teal: 'bg-[#f0b66d]/10 text-[#f0b66d] border border-[#f0b66d]/30',
     success: 'bg-[#10b981]/10 text-[#34d399] border border-[#10b981]/25',
     warning: 'bg-[#f59e0b]/10 text-[#fbbf24] border border-[#f59e0b]/25',
     error: 'bg-[#ef4444]/10 text-[#f87171] border border-[#ef4444]/25',
-    info: 'bg-[#3b82f6]/10 text-[#60a5fa] border border-[#3b82f6]/25',
+    info: 'bg-[#3b82f6]/10 text-[#f0b66d] border border-[#3b82f6]/25',
     neutral: 'bg-[#1e1e1d] text-[#868684] border border-[#333333]',
     outline: 'bg-transparent text-[#868684] border border-[#333333]',
   }
 
   const dotColors = {
     default: 'bg-[#b4b4b2]',
-    violet: 'bg-[#cbb0f7]',
-    teal: 'bg-[#cbb0f7]',
+    violet: 'bg-[#f0b66d]',
+    teal: 'bg-[#f0b66d]',
     success: 'bg-[#34d399]',
     warning: 'bg-[#fbbf24]',
     error: 'bg-[#f87171]',

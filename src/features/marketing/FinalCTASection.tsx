@@ -15,14 +15,16 @@ export const FinalCTASection: React.FC = () => {
         </h2>
 
         <p className="mt-4 text-[15px] sm:text-[16px] text-[#868684] tracking-[-0.18px] max-w-2xl mx-auto leading-[1.4]">
-          Whether you need an integrated commercial platform, specialized healthcare software, or a nationwide telematics network, Centrifuge delivers systems you can depend on.
+          Whether you need an integrated commercial platform, specialized
+          healthcare software, or a nationwide telematics network, Centrifuge
+          delivers systems you can depend on.
         </p>
 
         {/* Dual Pill Buttons (warp_design.md §142-150) */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center px-[24px] py-[11px] rounded-[33px] text-[14px] font-semibold bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
+            className="inline-flex items-center justify-center px-[24px] py-[11px] rounded-[33px] text-[14px] font-semibold bg-[#e9e8e4] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
           >
             <span>Talk to Centrifuge</span>
             <ArrowRight className="h-3.5 w-3.5 ml-2" />
@@ -38,20 +40,26 @@ export const FinalCTASection: React.FC = () => {
         {/* Bottom Contacts Row */}
         <div className="mt-12 pt-8 border-t border-[#1e1e1d] flex flex-wrap items-center justify-center gap-8 text-[12px] text-[#868684]">
           <div className="flex items-center gap-2">
-            <Mail className="h-3.5 w-3.5 text-[#cbb0f7]" />
-            <a href="mailto:info@centrifugegroup.co" className="hover:text-[#faf9f6] transition-colors">
-              info@centrifugegroup.co
+            <Mail className="h-3.5 w-3.5 text-[#f0b66d]" />
+            <a
+              href="mailto:info@centrifugegroup.co"
+              className="hover:text-[#faf9f6] transition-colors"
+            >
+              enquiries@centrifugegroup.com
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <Phone className="h-3.5 w-3.5 text-[#cbb0f7]" />
-            <a href="tel:+2348030001234" className="hover:text-[#faf9f6] transition-colors">
-              +234 (0) 803 000 1234
+            <Phone className="h-3.5 w-3.5 text-[#f0b66d]" />
+            <a
+              href="tel:234 815 5026 555"
+              className="hover:text-[#faf9f6] transition-colors"
+            >
+              +234 815 5026 555
             </a>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 export default FinalCTASection

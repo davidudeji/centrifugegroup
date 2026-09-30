@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
               <img
                 src={brandAssets.logo}
                 alt="Centrifuge Group"
-                className="h-30 w-auto object-contain brightness-110"
+                className="w-[280px] sm:w-[320px] h-[56px] sm:h-[68px] object-contain object-left brightness-110"
               />
             </Link>
 
@@ -24,17 +24,17 @@ export const Footer: React.FC = () => {
 
             <div className="pt-2 text-[12px] text-[#666469] space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="h-3.5 w-3.5 text-[#cbb0f7] shrink-0 mt-0.5" />
-                <span>Suite 203, 2nd Floor, Jinifa Plaza, Plot 1014, Samuel Adesoji Ademulegun Street, Central Business District, Federal Capital Territory- Abuja, Nigeria.ria</span>
+                <MapPin className="h-3.5 w-3.5 text-[#f0b66d] shrink-0 mt-0.5" />
+                <span>Suite 203, 2nd Floor, Jinifa Plaza, Plot 1014, Samuel Adesoji Ademulegun Street, Central Business District, Federal Capital Territory- Abuja, Nigeria.</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-3.5 w-3.5 text-[#cbb0f7] shrink-0" />
+                <Mail className="h-3.5 w-3.5 text-[#f0b66d] shrink-0" />
                 <a href="mailto:info@centrifugegroup.co" className="hover:text-[#faf9f6] transition-colors">
                   enquiries@centrifugegroup.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-[#cbb0f7] shrink-0" />
+                <Phone className="h-3.5 w-3.5 text-[#f0b66d] shrink-0" />
                 <a href="tel:+2348030001234" className="hover:text-[#faf9f6] transition-colors">
                   +234 815 5026 555
                 </a>
@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/solutions/optimax" className="hover:text-[#faf9f6] transition-colors flex items-center gap-1.5">
                   <span>Optimax ERP</span>
-                  <span className="text-[9px] bg-[#1e1e1d] text-[#cbb0f7] border border-[#333333] px-1 py-0.2 rounded font-mono">v4</span>
+                  <span className="text-[9px] bg-[#1e1e1d] text-[#f0b66d] border border-[#333333] px-1 py-0.2 rounded font-mono">v4</span>
                 </Link>
               </li>
               <li>
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/projects" className="hover:text-[#faf9f6] transition-colors flex items-center gap-1 text-[#faf9f6]">
                   <span>Projects Showcase</span>
-                  <ArrowUpRight className="h-3 w-3 text-[#cbb0f7]" />
+                  <ArrowUpRight className="h-3 w-3 text-[#f0b66d]" />
                 </Link>
               </li>
             </ul>
@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/careers" className="hover:text-[#faf9f6] transition-colors flex items-center gap-1.5">
                   <span>Careers</span>
-                  <span className="text-[9px] bg-[#1e1e1d] text-[#cbb0f7] border border-[#333333] px-1 py-0.2 rounded font-mono">Hiring</span>
+                  <span className="text-[9px] bg-[#1e1e1d] text-[#f0b66d] border border-[#333333] px-1 py-0.2 rounded font-mono">Hiring</span>
                 </Link>
               </li>
               <li>
@@ -235,7 +235,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/admin" className="hover:text-[#faf9f6] transition-colors flex items-center gap-1">
-                  <Shield className="h-3 w-3 text-[#cbb0f7]" />
+                  <Shield className="h-3 w-3 text-[#f0b66d]" />
                   <span>Admin Portal</span>
                 </Link>
               </li>

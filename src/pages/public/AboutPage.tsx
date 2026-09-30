@@ -71,7 +71,7 @@ export const AboutPage: React.FC = () => {
               <p className="text-[12px] text-[#868684] mt-1">States with active Centrifuge healthcare or logistics instances.</p>
             </div>
             <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
-              <div className="text-[32px] font-normal text-[#cbb0f7] font-mono tracking-[-0.64px]">100%</div>
+              <div className="text-[32px] font-normal text-[#f0b66d] font-mono tracking-[-0.64px]">100%</div>
               <p className="text-[12px] text-[#868684] mt-1">Indigenously owned and engineered enterprise IP.</p>
             </div>
             <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
@@ -79,7 +79,7 @@ export const AboutPage: React.FC = () => {
               <p className="text-[12px] text-[#868684] mt-1">Health practitioners managed on our HRHIS registries.</p>
             </div>
             <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
-              <div className="text-[32px] font-normal text-[#cbb0f7] font-mono tracking-[-0.64px]">24/7</div>
+              <div className="text-[32px] font-normal text-[#f0b66d] font-mono tracking-[-0.64px]">24/7</div>
               <p className="text-[12px] text-[#868684] mt-1">Uptime telemetry and enterprise support guarantees.</p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export const AboutPage: React.FC = () => {
                 <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
                   {v.title}
                 </h3>
-                <p className="text-[12px] font-mono text-[#cbb0f7]">
+                <p className="text-[12px] font-mono text-[#f0b66d]">
                   "{v.motto}"
                 </p>
                 <p className="text-[13px] text-[#868684] leading-relaxed pt-1 tracking-[-0.14px]">
@@ -131,7 +131,7 @@ export const AboutPage: React.FC = () => {
                 Verified Enterprise & Public Sector Partners
               </h2>
             </div>
-            <Link to="/clients" className="text-[13px] text-[#faf9f6] hover:text-[#cbb0f7] flex items-center gap-1">
+            <Link to="/clients" className="text-[13px] text-[#faf9f6] hover:text-[#f0b66d] flex items-center gap-1">
               <span>View full client directory</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>

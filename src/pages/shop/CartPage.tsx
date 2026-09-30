@@ -43,13 +43,13 @@ export const CartPage: React.FC = () => {
     return (
       <div className="py-28 max-w-xl mx-auto px-4 text-center space-y-4">
         <SEO title="Your Hardware Cart | Centrifuge Store" />
-        <div className="h-18 w-18 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[#94A3B8] mx-auto mb-2">
+        <div className="h-18 w-18 rounded-full bg-[#121212] flex items-center justify-center text-[#868684] mx-auto mb-2">
           <ShoppingBag className="h-9 w-9" />
         </div>
-        <h2 className="text-2xl font-bold text-[#111827] font-heading">
+        <h2 className="text-2xl font-bold text-[#faf9f6] font-heading">
           Your cart is currently empty
         </h2>
-        <p className="text-sm text-[#64748B]">
+        <p className="text-sm text-[#868684]">
           Explore our pure sine wave hybrid inverters, modular server room UPS units, and solar charge controllers.
         </p>
         <div className="pt-2">
@@ -64,12 +64,12 @@ export const CartPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left py-12 bg-[#F8FAFC]">
+    <div className="w-full text-left py-12 bg-[#000000]">
       <SEO title="Shopping Cart | Centrifuge Group" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between pb-6 border-b border-[#E2E8F0]">
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F33] font-heading">
+        <div className="flex items-center justify-between pb-6 border-b border-[#333333]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#faf9f6] font-heading">
             Hardware Order Cart ({items.reduce((s, i) => s + i.quantity, 0)} items)
           </h1>
           <button
@@ -82,60 +82,60 @@ export const CartPage: React.FC = () => {
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Items Table / Cards */}
-          <div className="lg:col-span-8 bg-white rounded-[16px] border border-[#E2E8F0] overflow-hidden divide-y divide-[#E2E8F0]">
+          <div className="lg:col-span-8 bg-[#121212] rounded-[16px] border border-[#333333] overflow-hidden divide-y divide-[#333333]">
             {items.map((item) => (
               <div key={item.product.id} className="p-6 flex flex-col sm:flex-row gap-5 items-start sm:items-center justify-between">
                 <div className="flex gap-4 items-center">
                   <img
                     src={item.product.images[0]}
                     alt={item.product.name}
-                    className="h-20 w-20 object-contain rounded-[8px] border border-[#E2E8F0] p-1 bg-[#F8FAFC] shrink-0"
+                    className="h-20 w-20 object-contain rounded-[8px] border border-[#333333] p-1 bg-[#000000] shrink-0"
                   />
                   <div>
-                    <span className="text-[10px] font-mono text-[#64748B] block">
+                    <span className="text-[10px] font-mono text-[#868684] block">
                       {item.product.brand} · SKU: {item.product.sku}
                     </span>
                     <Link
                       to={`/shop/product/${item.product.slug}`}
-                      className="text-sm font-bold text-[#111827] hover:text-[#16C7D9] transition-colors"
+                      className="text-sm font-bold text-[#faf9f6] hover:text-[#f0b66d] transition-colors"
                     >
                       {item.product.name}
                     </Link>
-                    <div className="text-xs font-semibold text-[#0B1F33] mt-1">
+                    <div className="text-xs font-semibold text-[#faf9f6] mt-1">
                       ₦{item.product.price.toLocaleString()} each
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-0 border-[#E2E8F0]/60">
+                <div className="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto pt-3 sm:pt-0 border-t sm:border-0 border-[#333333]/60">
                   {/* Quantity Control */}
-                  <div className="flex items-center border border-[#CBD5E1] rounded-[6px] bg-white">
+                  <div className="flex items-center border border-[#333333] rounded-[6px] bg-[#121212]">
                     <button
                       onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                      className="p-1.5 hover:bg-[#F1F5F9] text-[#64748B] transition-colors rounded-l-[5px]"
+                      className="p-1.5 hover:bg-[#1e1e1d] text-[#868684] transition-colors rounded-l-[5px]"
                     >
                       <Minus className="h-3 w-3" />
                     </button>
-                    <span className="px-3 text-xs font-bold text-[#111827]">
+                    <span className="px-3 text-xs font-bold text-[#faf9f6]">
                       {item.quantity}
                     </span>
                     <button
                       onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                      className="p-1.5 hover:bg-[#F1F5F9] text-[#64748B] transition-colors rounded-r-[5px]"
+                      className="p-1.5 hover:bg-[#1e1e1d] text-[#868684] transition-colors rounded-r-[5px]"
                     >
                       <Plus className="h-3 w-3" />
                     </button>
                   </div>
 
                   {/* Subtotal */}
-                  <div className="text-sm font-bold text-[#0B1F33] font-heading min-w-[100px] text-right">
+                  <div className="text-sm font-bold text-[#faf9f6] font-heading min-w-[100px] text-right">
                     ₦{(item.product.price * item.quantity).toLocaleString()}
                   </div>
 
                   {/* Remove Button */}
                   <button
                     onClick={() => removeItem(item.product.id)}
-                    className="p-1 text-[#94A3B8] hover:text-[#DC2626] transition-colors"
+                    className="p-1 text-[#868684] hover:text-[#DC2626] transition-colors"
                     aria-label="Remove item"
                   >
                     <Trash2 className="h-4 w-4" />
@@ -146,8 +146,8 @@ export const CartPage: React.FC = () => {
           </div>
 
           {/* Order Summary Column */}
-          <div className="lg:col-span-4 bg-white rounded-[16px] border border-[#E2E8F0] p-6 space-y-6">
-            <h3 className="text-base font-bold text-[#0B1F33] font-heading">
+          <div className="lg:col-span-4 bg-[#121212] rounded-[16px] border border-[#333333] p-6 space-y-6">
+            <h3 className="text-base font-bold text-[#faf9f6] font-heading">
               Order Summary
             </h3>
 
@@ -163,20 +163,20 @@ export const CartPage: React.FC = () => {
               </Button>
             </form>
 
-            <div className="space-y-3 text-xs border-t border-[#E2E8F0] pt-4">
-              <div className="flex justify-between text-[#64748B]">
+            <div className="space-y-3 text-xs border-t border-[#333333] pt-4">
+              <div className="flex justify-between text-[#868684]">
                 <span>Items Subtotal</span>
-                <span className="font-semibold text-[#111827]">₦{subtotal.toLocaleString()}</span>
+                <span className="font-semibold text-[#faf9f6]">₦{subtotal.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-[#64748B]">
+              <div className="flex justify-between text-[#868684]">
                 <span>Estimated Freight Shipping</span>
-                <span className="font-semibold text-[#111827]">
+                <span className="font-semibold text-[#faf9f6]">
                   {shipping === 0 ? <span className="text-[#16A34A]">Free Shipping</span> : `₦${shipping.toLocaleString()}`}
                 </span>
               </div>
-              <div className="flex justify-between text-[#64748B]">
+              <div className="flex justify-between text-[#868684]">
                 <span>Statutory 7.5% VAT</span>
-                <span className="font-semibold text-[#111827]">₦{tax.toLocaleString()}</span>
+                <span className="font-semibold text-[#faf9f6]">₦{tax.toLocaleString()}</span>
               </div>
               {appliedDiscount > 0 && (
                 <div className="flex justify-between text-[#16A34A]">
@@ -185,9 +185,9 @@ export const CartPage: React.FC = () => {
                 </div>
               )}
 
-              <div className="pt-3 border-t border-[#E2E8F0] flex justify-between items-baseline">
-                <span className="text-sm font-bold text-[#0B1F33]">Total Payable</span>
-                <span className="text-xl font-extrabold text-[#0B1F33] font-heading">
+              <div className="pt-3 border-t border-[#333333] flex justify-between items-baseline">
+                <span className="text-sm font-bold text-[#faf9f6]">Total Payable</span>
+                <span className="text-xl font-extrabold text-[#faf9f6] font-heading">
                   ₦{total.toLocaleString()}
                 </span>
               </div>
@@ -203,7 +203,7 @@ export const CartPage: React.FC = () => {
               Proceed to Checkout
             </Button>
 
-            <div className="pt-2 text-[11px] text-[#64748B] flex items-center justify-center gap-1.5">
+            <div className="pt-2 text-[11px] text-[#868684] flex items-center justify-center gap-1.5">
               <ShieldCheck className="h-4 w-4 text-[#16A34A]" />
               <span>Secured checkout via Paystack / Direct Transfer</span>
             </div>

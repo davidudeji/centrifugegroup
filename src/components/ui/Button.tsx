@@ -26,7 +26,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-1 focus:ring-[#cbb0f7] focus:ring-offset-1 focus:ring-offset-black disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99]'
+      'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:ring-offset-1 focus:ring-offset-black disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99]'
 
     const sizeStyles = {
       sm: 'text-xs px-3.5 py-1.5 rounded-[33px] gap-1.5 tracking-[-0.14px]',
@@ -36,7 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        'bg-[#ffffff] text-[#080808] font-semibold hover:bg-[#e3e2e0] shadow-none',
+        'bg-[#121212] text-[#080808] font-semibold hover:bg-[#e3e2e0] shadow-none',
       secondary:
         'bg-[#1e1e1d] text-[#faf9f6] border border-[#333333] hover:bg-[#333333] hover:border-[#40403f]',
       dark:
@@ -46,7 +46,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ghost:
         'bg-transparent text-[#b4b4b2] hover:text-[#faf9f6] hover:bg-[#1e1e1d]',
       'code-pill':
-        'bg-[#121212] text-[#cbb0f7] border border-[#333333] font-mono text-xs px-3 py-1.5 rounded-[33px] hover:border-[#cbb0f7]',
+        'bg-[#121212] text-[#f0b66d] border border-[#333333] font-mono text-xs px-3 py-1.5 rounded-[33px] hover:border-[#f0b66d]',
       danger:
         'bg-[#ef4444]/15 text-[#fca5a5] border border-[#ef4444]/30 hover:bg-[#ef4444]/25',
     }

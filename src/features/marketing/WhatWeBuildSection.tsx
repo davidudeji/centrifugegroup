@@ -25,7 +25,7 @@ export const WhatWeBuildSection: React.FC = () => {
           <div className="md:col-span-7 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#cbb0f7]">01</span>
+                <span className="text-[12px] font-mono text-[#f0b66d]">01</span>
                 <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
                   <Layers className="h-3.5 w-3.5 text-[#faf9f6]" />
                 </div>
@@ -44,7 +44,7 @@ export const WhatWeBuildSection: React.FC = () => {
               </span>
               <Link
                 to="/solutions/optimax"
-                className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
               >
                 <span>Learn more</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -56,7 +56,7 @@ export const WhatWeBuildSection: React.FC = () => {
           <div className="md:col-span-5 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#cbb0f7]">02</span>
+                <span className="text-[12px] font-mono text-[#f0b66d]">02</span>
                 <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
                   <Activity className="h-3.5 w-3.5 text-[#faf9f6]" />
                 </div>
@@ -75,7 +75,7 @@ export const WhatWeBuildSection: React.FC = () => {
               </span>
               <Link
                 to="/solutions/healthcare"
-                className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
               >
                 <span>Explore Healthcare</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -87,7 +87,7 @@ export const WhatWeBuildSection: React.FC = () => {
           <div className="md:col-span-4 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#cbb0f7]">03</span>
+                <span className="text-[12px] font-mono text-[#f0b66d]">03</span>
                 <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
                   <Truck className="h-3.5 w-3.5 text-[#faf9f6]" />
                 </div>
@@ -106,7 +106,7 @@ export const WhatWeBuildSection: React.FC = () => {
               </span>
               <Link
                 to="/solutions/logistics"
-                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
               >
                 <span>Details</span>
                 <ArrowRight className="h-3 w-3" />
@@ -118,7 +118,7 @@ export const WhatWeBuildSection: React.FC = () => {
           <div className="md:col-span-4 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#cbb0f7]">04</span>
+                <span className="text-[12px] font-mono text-[#f0b66d]">04</span>
                 <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
                   <BarChart3 className="h-3.5 w-3.5 text-[#faf9f6]" />
                 </div>
@@ -137,7 +137,7 @@ export const WhatWeBuildSection: React.FC = () => {
               </span>
               <Link
                 to="/solutions/data-analytics"
-                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
               >
                 <span>Details</span>
                 <ArrowRight className="h-3 w-3" />
@@ -149,7 +149,7 @@ export const WhatWeBuildSection: React.FC = () => {
           <div className="md:col-span-4 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#cbb0f7]">05</span>
+                <span className="text-[12px] font-mono text-[#f0b66d]">05</span>
                 <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#faf9f6]" />
                 </div>
@@ -168,7 +168,7 @@ export const WhatWeBuildSection: React.FC = () => {
               </span>
               <Link
                 to="/services/cloud"
-                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
               >
                 <span>Details</span>
                 <ArrowRight className="h-3 w-3" />

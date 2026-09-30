@@ -90,9 +90,9 @@ export const SolutionsPage: React.FC = () => {
                 <div className="lg:col-span-8 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-[4px] bg-[#121212] border border-[#333333] flex items-center justify-center">
-                      <Icon className="h-4 w-4 text-[#cbb0f7]" />
+                      <Icon className="h-4 w-4 text-[#f0b66d]" />
                     </div>
-                    <span className="text-[11px] font-mono text-[#cbb0f7] uppercase tracking-[1px]">
+                    <span className="text-[11px] font-mono text-[#f0b66d] uppercase tracking-[1px]">
                       0{index + 1} · {sol.category}
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export const SolutionsPage: React.FC = () => {
                           key={mod}
                           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[50px] bg-[#121212] border border-[#333333] text-[11px] text-[#b4b4b2]"
                         >
-                          <CheckCircle2 className="h-3 w-3 text-[#cbb0f7]" />
+                          <CheckCircle2 className="h-3 w-3 text-[#f0b66d]" />
                           {mod}
                         </span>
                       ))}
@@ -126,7 +126,7 @@ export const SolutionsPage: React.FC = () => {
                 <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
                   <Link
                     to={`/solutions/${sol.slug}`}
-                    className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
+                    className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
                   >
                     <span>Explore {sol.name.split(' ')[0]}</span>
                     <ArrowRight className="h-3.5 w-3.5 ml-2" />

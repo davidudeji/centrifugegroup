@@ -29,7 +29,7 @@ export const CartDrawer: React.FC = () => {
           {/* Header */}
           <div className="p-4 sm:p-5 border-b border-[#1e1e1d] flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="h-4.5 w-4.5 text-[#cbb0f7]" />
+              <ShoppingBag className="h-4.5 w-4.5 text-[#f0b66d]" />
               <h2 className="text-[16px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
                 Hardware Cart ({items.reduce((s, i) => s + i.quantity, 0)})
               </h2>
@@ -47,7 +47,7 @@ export const CartDrawer: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-4 sm:p-5 divide-y divide-[#1e1e1d]">
             {items.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center p-6">
-                <div className="h-14 w-14 rounded-full bg-[#121212] border border-[#333333] flex items-center justify-center text-[#cbb0f7] mb-4">
+                <div className="h-14 w-14 rounded-full bg-[#121212] border border-[#333333] flex items-center justify-center text-[#f0b66d] mb-4">
                   <ShoppingBag className="h-6 w-6" />
                 </div>
                 <h3 className="text-[14px] font-semibold text-[#faf9f6]">Your cart is empty</h3>

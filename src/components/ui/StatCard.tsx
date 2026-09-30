@@ -30,7 +30,7 @@ export const StatCard: React.FC<StatCardProps> = ({
           {title}
         </span>
         {icon && (
-          <div className="h-7 w-7 rounded-[4px] bg-[#121212] border border-[#333333] text-[#cbb0f7] flex items-center justify-center shrink-0">
+          <div className="h-7 w-7 rounded-[4px] bg-[#121212] border border-[#333333] text-[#f0b66d] flex items-center justify-center shrink-0">
             {icon}
           </div>
         )}

@@ -7,7 +7,7 @@ import { ToastContainer } from '../ui/ToastContainer'
 
 export const PublicLayout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#000000] text-[#faf9f6] font-sans antialiased selection:bg-[#cbb0f7]/25 selection:text-[#ffffff]">
+    <div className="min-h-screen flex flex-col bg-[#000000] text-[#faf9f6] font-sans antialiased selection:bg-[#f0b66d]/25 selection:text-[#ffffff]">
       <Header />
       <main className="flex-1">
         <Outlet />

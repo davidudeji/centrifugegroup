@@ -24,7 +24,7 @@ export const CaseStudiesSection: React.FC = () => {
           </div>
           <Link
             to="/case-studies"
-            className="inline-flex items-center gap-1.5 text-[14px] text-[#faf9f6] hover:text-[#cbb0f7] transition-colors shrink-0 tracking-[-0.14px]"
+            className="inline-flex items-center gap-1.5 text-[14px] text-[#faf9f6] hover:text-[#f0b66d] transition-colors shrink-0 tracking-[-0.14px]"
           >
             <span>View all case studies</span>
             <ArrowRight className="h-4 w-4" />
@@ -48,7 +48,7 @@ export const CaseStudiesSection: React.FC = () => {
             </div>
 
             <div className="lg:col-span-6 p-8 sm:p-10 space-y-4">
-              <div className="text-[10px] font-mono text-[#cbb0f7] uppercase tracking-[1px]">
+              <div className="text-[10px] font-mono text-[#f0b66d] uppercase tracking-[1px]">
                 {featured.industry}
               </div>
               <h3 className="text-[24px] sm:text-[28px] font-normal text-[#faf9f6] tracking-[-0.64px] leading-snug">
@@ -62,7 +62,7 @@ export const CaseStudiesSection: React.FC = () => {
                 <span className="text-[11px] font-mono uppercase tracking-[1px] text-[#faf9f6] block">Key Measurable Outcomes:</span>
                 {featured.results.slice(0, 2).map((res, i) => (
                   <div key={i} className="flex items-start gap-2 text-[13px] text-[#b4b4b2]">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#cbb0f7] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-[#f0b66d] shrink-0 mt-0.5" />
                     <span>{res}</span>
                   </div>
                 ))}
@@ -71,7 +71,7 @@ export const CaseStudiesSection: React.FC = () => {
               <div className="pt-4">
                 <Link
                   to={`/case-studies/${featured.slug}`}
-                  className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#ffffff] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
+                  className="inline-flex items-center justify-center px-[22px] py-[10px] rounded-[33px] text-[14px] font-semibold bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
                 >
                   <span>Read Full Case Study</span>
                   <ArrowRight className="h-3.5 w-3.5 ml-2" />
@@ -90,7 +90,7 @@ export const CaseStudiesSection: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-mono text-[#cbb0f7] uppercase tracking-[1px]">
+                  <span className="text-[10px] font-mono text-[#f0b66d] uppercase tracking-[1px]">
                     {cs.industry}
                   </span>
                   {cs.clientLogo && (
@@ -111,7 +111,7 @@ export const CaseStudiesSection: React.FC = () => {
                 </span>
                 <Link
                   to={`/case-studies/${cs.slug}`}
-                  className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                  className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
                 >
                   <span>Read Study</span>
                   <ArrowRight className="h-3 w-3" />

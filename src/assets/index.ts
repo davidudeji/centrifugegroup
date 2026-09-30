@@ -71,4 +71,28 @@ export const verifiedClients = [
     sector: 'Civil Society & Socioeconomic',
     description: 'Digital tools and training platforms fostering socioeconomic inclusion and capacity building.',
   },
+  {
+    id: 'who',
+    name: 'World Health Organization (WHO)',
+    role: 'IT Consultancy & Programme Advisory',
+    logo: fmohLogo,
+    sector: 'International NGO & Health',
+    description: 'Specialized IT consulting, health systems integration, and program-related advisory services.',
+  },
+  {
+    id: 'unicef',
+    name: 'United Nations Children’s Fund (UNICEF)',
+    role: 'IT Consultancy & Child Health Tracking Systems',
+    logo: carterCenterLogo,
+    sector: 'International NGO & Health',
+    description: 'Consultancy and field technology solutions supporting child welfare, education, and health informatics.',
+  },
+  {
+    id: 'msh',
+    name: 'Management Sciences for Health (MSH)',
+    role: 'IT Consultancy & Health System Strengthening',
+    logo: heartlandLogo,
+    sector: 'International NGO & Health',
+    description: 'Advisory and technical support for health systems modernization and supply chain management.',
+  },
 ]

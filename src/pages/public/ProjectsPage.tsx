@@ -76,7 +76,7 @@ export const ProjectsPage: React.FC = () => {
                   onClick={() => setSelectedCategory(cat)}
                   className={`text-[11px] uppercase tracking-[1px] px-3.5 py-1.5 rounded-[50px] font-normal transition-colors ${
                     selectedCategory === cat
-                      ? 'border border-[#cbb0f7] text-[#cbb0f7] bg-[#cbb0f7]/10'
+                      ? 'border border-[#f0b66d] text-[#f0b66d] bg-[#f0b66d]/10'
                       : 'border border-[#333333] text-[#868684] hover:border-[#868684] hover:text-[#faf9f6] bg-transparent'
                   }`}
                 >
@@ -124,7 +124,7 @@ export const ProjectsPage: React.FC = () => {
                           {proj.category}
                         </span>
                         {proj.status === 'live' && (
-                          <span className="px-2.5 py-0.5 rounded-[50px] bg-[#000000]/80 border border-[#cbb0f7]/40 text-[10px] font-mono text-[#cbb0f7]">
+                          <span className="px-2.5 py-0.5 rounded-[50px] bg-[#000000]/80 border border-[#f0b66d]/40 text-[10px] font-mono text-[#f0b66d]">
                             LIVE
                           </span>
                         )}
@@ -135,7 +135,7 @@ export const ProjectsPage: React.FC = () => {
                       <div className="text-[10px] font-mono text-[#868684] uppercase tracking-[1px]">
                         {proj.industry}
                       </div>
-                      <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-1 group-hover:text-[#cbb0f7] transition-colors leading-snug">
+                      <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-1 group-hover:text-[#f0b66d] transition-colors leading-snug">
                         {proj.name}
                       </h3>
                       <p className="text-[13px] text-[#868684] mt-2 line-clamp-3 leading-relaxed tracking-[-0.14px]">
@@ -158,7 +158,7 @@ export const ProjectsPage: React.FC = () => {
                   <div className="px-6 py-4 bg-[#121212] border-t border-[#1e1e1d] flex items-center justify-between">
                     <Link
                       to={`/projects/${proj.slug}`}
-                      className="text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] inline-flex items-center gap-1 transition-colors"
+                      className="text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] inline-flex items-center gap-1 transition-colors"
                     >
                       <span>View Project Details</span>
                       <ArrowRight className="h-3 w-3" />

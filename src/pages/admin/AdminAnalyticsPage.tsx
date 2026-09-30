@@ -22,10 +22,10 @@ const revenueData = [
 ]
 
 const categoryData = [
-  { name: 'Inverters', value: 42, color: '#0B1F33' },
-  { name: 'UPS Systems', value: 28, color: '#16C7D9' },
-  { name: 'Solar Controllers', value: 18, color: '#67E8F9' },
-  { name: 'IoT / Hardware', value: 12, color: '#64748B' },
+  { name: 'Inverters', value: 42, color: '#a55d0c' },
+  { name: 'UPS Systems', value: 28, color: '#f0b66d' },
+  { name: 'Solar Controllers', value: 18, color: '#d9943b' },
+  { name: 'IoT / Hardware', value: 12, color: '#868684' },
 ]
 
 const topProducts = [
@@ -62,10 +62,10 @@ export const AdminAnalyticsPage: React.FC = () => {
 
   const summaryStats = [
     { label: 'Total Revenue', value: '₦35.7M', change: '+18%', icon: DollarSign, color: 'text-[#16A34A]' },
-    { label: 'Total Orders', value: '254', change: '+12%', icon: ShoppingBag, color: 'text-[#16C7D9]' },
+    { label: 'Total Orders', value: '254', change: '+12%', icon: ShoppingBag, color: 'text-[#f0b66d]' },
     { label: 'Avg. Order Value', value: '₦140.5K', change: '+5%', icon: TrendingUp, color: 'text-[#D97706]' },
-    { label: 'Total Customers', value: '278', change: '+23%', icon: Users, color: 'text-[#0B1F33]' },
-    { label: 'Active Products', value: '126', change: '+4', icon: Package, color: 'text-[#64748B]' },
+    { label: 'Total Customers', value: '278', change: '+23%', icon: Users, color: 'text-[#faf9f6]' },
+    { label: 'Active Products', value: '126', change: '+4', icon: Package, color: 'text-[#868684]' },
   ]
 
   return (
@@ -73,19 +73,19 @@ export const AdminAnalyticsPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-[#0B1F33]">Analytics</h1>
-          <p className="text-sm text-[#64748B] mt-0.5">Store performance overview — demo data</p>
+          <h1 className="font-heading font-bold text-2xl text-[#faf9f6]">Analytics</h1>
+          <p className="text-sm text-[#868684] mt-0.5">Store performance overview — demo data</p>
         </div>
         {/* Period selector */}
-        <div className="flex items-center gap-1 bg-white border border-[#E2E8F0] rounded-lg p-1">
+        <div className="flex items-center gap-1 bg-[#121212] border border-[#333333] rounded-lg p-1">
           {periods.map((p) => (
             <button
               key={p}
               onClick={() => setPeriod(p)}
               className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
                 period === p
-                  ? 'bg-[#0B1F33] text-white'
-                  : 'text-[#64748B] hover:text-[#172333]'
+                  ? 'bg-[#000000] text-white'
+                  : 'text-[#868684] hover:text-[#faf9f6]'
               }`}
             >
               {p}
@@ -99,14 +99,14 @@ export const AdminAnalyticsPage: React.FC = () => {
         {summaryStats.map((stat) => {
           const Icon = stat.icon
           return (
-            <div key={stat.label} className="bg-white rounded-xl border border-[#E2E8F0] p-4">
+            <div key={stat.label} className="bg-[#121212] rounded-xl border border-[#333333] p-4">
               <div className="flex items-center gap-2 mb-3">
-                <div className={`p-1.5 rounded-lg bg-[#F7F9FA]`}>
+                <div className={`p-1.5 rounded-lg bg-[#000000]`}>
                   <Icon className={`h-4 w-4 ${stat.color}`} />
                 </div>
-                <span className="text-xs text-[#94A3B8] font-semibold leading-tight">{stat.label}</span>
+                <span className="text-xs text-[#868684] font-semibold leading-tight">{stat.label}</span>
               </div>
-              <p className="font-heading font-bold text-xl text-[#0B1F33]">{stat.value}</p>
+              <p className="font-heading font-bold text-xl text-[#faf9f6]">{stat.value}</p>
               <p className="text-xs text-[#16A34A] font-semibold mt-0.5">{stat.change} vs last period</p>
             </div>
           )
@@ -114,46 +114,46 @@ export const AdminAnalyticsPage: React.FC = () => {
       </div>
 
       {/* Revenue chart */}
-      <div className="bg-white rounded-xl border border-[#E2E8F0] p-6">
-        <h2 className="font-heading font-bold text-base text-[#0B1F33] mb-6">Revenue Over Time</h2>
+      <div className="bg-[#121212] rounded-xl border border-[#333333] p-6">
+        <h2 className="font-heading font-bold text-base text-[#faf9f6] mb-6">Revenue Over Time</h2>
         <ResponsiveContainer width="100%" height={260}>
           <AreaChart data={revenueData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#0B1F33" stopOpacity={0.12} />
-                <stop offset="95%" stopColor="#0B1F33" stopOpacity={0} />
+                <stop offset="5%" stopColor="#f0b66d" stopOpacity={0.12} />
+                <stop offset="95%" stopColor="#f0b66d" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#333333" />
             <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} tickFormatter={(v) => formatCurrency(v)} />
             <Tooltip
               formatter={(value) => [formatCurrency(Number(value ?? 0)), 'Revenue']}
-              contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }}
+              contentStyle={{ backgroundColor: '#121212', border: '1px solid #333333', borderRadius: '8px', fontSize: '12px', color: '#faf9f6' }}
             />
-            <Area type="monotone" dataKey="revenue" stroke="#0B1F33" strokeWidth={2} fill="url(#revenueGrad)" dot={false} />
+            <Area type="monotone" dataKey="revenue" stroke="#f0b66d" strokeWidth={2} fill="url(#revenueGrad)" dot={false} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Orders chart */}
-        <div className="bg-white rounded-xl border border-[#E2E8F0] p-6">
-          <h2 className="font-heading font-bold text-base text-[#0B1F33] mb-6">Orders Per Month</h2>
+        <div className="bg-[#121212] rounded-xl border border-[#333333] p-6">
+          <h2 className="font-heading font-bold text-base text-[#faf9f6] mb-6">Orders Per Month</h2>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={revenueData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#333333" vertical={false} />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
-              <Tooltip contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }} />
-              <Bar dataKey="orders" fill="#16C7D9" radius={[4, 4, 0, 0]} />
+              <Tooltip contentStyle={{ backgroundColor: '#121212', border: '1px solid #333333', borderRadius: '8px', fontSize: '12px', color: '#faf9f6' }} />
+              <Bar dataKey="orders" fill="#f0b66d" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         {/* Sales by category */}
-        <div className="bg-white rounded-xl border border-[#E2E8F0] p-6">
-          <h2 className="font-heading font-bold text-base text-[#0B1F33] mb-6">Sales by Category</h2>
+        <div className="bg-[#121212] rounded-xl border border-[#333333] p-6">
+          <h2 className="font-heading font-bold text-base text-[#faf9f6] mb-6">Sales by Category</h2>
           <div className="flex items-center gap-6">
             <ResponsiveContainer width="50%" height={200}>
               <PieChart>
@@ -162,7 +162,7 @@ export const AdminAnalyticsPage: React.FC = () => {
                     <Cell key={index} fill={entry.color} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value) => [`${Number(value ?? 0)}%`, 'Share']} contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }} />
+                <Tooltip formatter={(value) => [`${Number(value ?? 0)}%`, 'Share']} contentStyle={{ backgroundColor: '#121212', border: '1px solid #333333', borderRadius: '8px', fontSize: '12px', color: '#faf9f6' }} />
               </PieChart>
             </ResponsiveContainer>
             <div className="space-y-3 flex-1">
@@ -170,9 +170,9 @@ export const AdminAnalyticsPage: React.FC = () => {
                 <div key={item.name} className="flex items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold text-[#172333] truncate">{item.name}</p>
+                    <p className="text-xs font-semibold text-[#faf9f6] truncate">{item.name}</p>
                   </div>
-                  <span className="text-xs font-bold text-[#64748B]">{item.value}%</span>
+                  <span className="text-xs font-bold text-[#868684]">{item.value}%</span>
                 </div>
               ))}
             </div>
@@ -182,40 +182,40 @@ export const AdminAnalyticsPage: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Top products */}
-        <div className="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden">
-          <div className="px-5 py-4 border-b border-[#E2E8F0]">
-            <h2 className="font-heading font-bold text-base text-[#0B1F33]">Top Products</h2>
+        <div className="bg-[#121212] rounded-xl border border-[#333333] overflow-hidden">
+          <div className="px-5 py-4 border-b border-[#333333]">
+            <h2 className="font-heading font-bold text-base text-[#faf9f6]">Top Products</h2>
           </div>
-          <div className="divide-y divide-[#F1F5F9]">
+          <div className="divide-y divide-[#333333]">
             {topProducts.map((p, idx) => (
               <div key={p.name} className="flex items-center gap-4 px-5 py-3.5">
-                <span className="font-mono text-xs font-bold text-[#94A3B8] w-4">{idx + 1}</span>
+                <span className="font-mono text-xs font-bold text-[#868684] w-4">{idx + 1}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold text-[#172333] truncate">{p.name}</p>
-                  <p className="text-[11px] text-[#94A3B8]">{p.units} units sold</p>
+                  <p className="text-xs font-semibold text-[#faf9f6] truncate">{p.name}</p>
+                  <p className="text-[11px] text-[#868684]">{p.units} units sold</p>
                 </div>
-                <span className="text-xs font-bold text-[#0B1F33]">{formatCurrency(p.revenue)}</span>
+                <span className="text-xs font-bold text-[#faf9f6]">{formatCurrency(p.revenue)}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Customer growth */}
-        <div className="bg-white rounded-xl border border-[#E2E8F0] p-6">
-          <h2 className="font-heading font-bold text-base text-[#0B1F33] mb-6">Customer Growth</h2>
+        <div className="bg-[#121212] rounded-xl border border-[#333333] p-6">
+          <h2 className="font-heading font-bold text-base text-[#faf9f6] mb-6">Customer Growth</h2>
           <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={customerGrowth} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
               <defs>
                 <linearGradient id="custGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#16C7D9" stopOpacity={0.15} />
-                  <stop offset="95%" stopColor="#16C7D9" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#f0b66d" stopOpacity={0.15} />
+                  <stop offset="95%" stopColor="#f0b66d" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#333333" />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 11, fill: '#94A3B8' }} axisLine={false} tickLine={false} />
-              <Tooltip contentStyle={{ border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '12px' }} />
-              <Area type="monotone" dataKey="customers" stroke="#16C7D9" strokeWidth={2} fill="url(#custGrad)" dot={false} />
+              <Tooltip contentStyle={{ backgroundColor: '#121212', border: '1px solid #333333', borderRadius: '8px', fontSize: '12px', color: '#faf9f6' }} />
+              <Area type="monotone" dataKey="customers" stroke="#f0b66d" strokeWidth={2} fill="url(#custGrad)" dot={false} />
             </AreaChart>
           </ResponsiveContainer>
         </div>

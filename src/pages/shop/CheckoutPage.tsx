@@ -104,7 +104,7 @@ export const CheckoutPage: React.FC = () => {
   if (items.length === 0 && step !== 4) {
     return (
       <div className="py-24 text-center space-y-4">
-        <h2 className="text-xl font-bold text-[#111827]">Your cart is empty</h2>
+        <h2 className="text-xl font-bold text-[#faf9f6]">Your cart is empty</h2>
         <Link to="/shop">
           <Button variant="primary" size="sm">Go to Hardware Store</Button>
         </Link>
@@ -113,7 +113,7 @@ export const CheckoutPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left py-12 bg-[#F8FAFC]">
+    <div className="w-full text-left py-12 bg-[#000000]">
       <SEO title="Secure Checkout | Centrifuge Group Store" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,15 +129,15 @@ export const CheckoutPage: React.FC = () => {
               <div
                 className={`h-7 w-7 rounded-full flex items-center justify-center font-bold font-mono transition-colors ${
                   step === s.num
-                    ? 'bg-[#16C7D9] text-[#071521]'
+                    ? 'bg-[#a55d0c] text-white'
                     : step > s.num
                     ? 'bg-[#16A34A] text-white'
-                    : 'bg-[#E2E8F0] text-[#64748B]'
+                    : 'bg-[#1e1e1d] text-[#868684]'
                 }`}
               >
                 {step > s.num ? <Check className="h-3.5 w-3.5" /> : s.num}
               </div>
-              <span className={`font-semibold hidden sm:inline ${step === s.num ? 'text-[#0B1F33]' : 'text-[#64748B]'}`}>
+              <span className={`font-semibold hidden sm:inline ${step === s.num ? 'text-[#faf9f6]' : 'text-[#868684]'}`}>
                 {s.label}
               </span>
             </div>
@@ -146,8 +146,8 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Step 1: Customer Information */}
         {step === 1 && (
-          <div className="bg-white p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-6">
-            <h2 className="text-xl font-bold text-[#0B1F33] font-heading">
+          <div className="bg-[#121212] p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-6">
+            <h2 className="text-xl font-bold text-[#faf9f6] font-heading">
               1. Customer Information
             </h2>
 
@@ -180,8 +180,8 @@ export const CheckoutPage: React.FC = () => {
               />
             </div>
 
-            <div className="pt-4 flex justify-between items-center border-t border-[#E2E8F0]">
-              <Link to="/cart" className="text-xs text-[#64748B] hover:text-[#111827]">
+            <div className="pt-4 flex justify-between items-center border-t border-[#333333]">
+              <Link to="/cart" className="text-xs text-[#868684] hover:text-[#faf9f6]">
                 ← Return to Cart
               </Link>
               <Button
@@ -198,8 +198,8 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Step 2: Shipping Destination */}
         {step === 2 && (
-          <div className="bg-white p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-6">
-            <h2 className="text-xl font-bold text-[#0B1F33] font-heading">
+          <div className="bg-[#121212] p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-6">
+            <h2 className="text-xl font-bold text-[#faf9f6] font-heading">
               2. Delivery & Freight Destination
             </h2>
 
@@ -233,7 +233,7 @@ export const CheckoutPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-4 flex justify-between items-center border-t border-[#E2E8F0]">
+            <div className="pt-4 flex justify-between items-center border-t border-[#333333]">
               <Button variant="ghost" size="sm" onClick={() => setStep(1)}>
                 Back to Customer Info
               </Button>
@@ -251,8 +251,8 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Step 3: Payment Method & Review */}
         {step === 3 && (
-          <div className="bg-white p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-6">
-            <h2 className="text-xl font-bold text-[#0B1F33] font-heading">
+          <div className="bg-[#121212] p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-6">
+            <h2 className="text-xl font-bold text-[#faf9f6] font-heading">
               3. Payment Method & Confirmation
             </h2>
 
@@ -261,15 +261,15 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setPaymentMethod('paystack')}
                 className={`p-4 rounded-[10px] border cursor-pointer transition-all ${
                   paymentMethod === 'paystack'
-                    ? 'border-[#16C7D9] bg-[#16C7D9]/5 ring-1 ring-[#16C7D9]'
-                    : 'border-[#E2E8F0] hover:border-[#CBD5E1]'
+                    ? 'border-[#f0b66d] bg-[#f0b66d]/5 ring-1 ring-[#f0b66d]'
+                    : 'border-[#333333] hover:border-[#333333]'
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <CreditCard className="h-5 w-5 text-[#16C7D9]" />
-                  <span className="text-sm font-bold text-[#111827]">Instant Card & Transfer (Paystack)</span>
+                  <CreditCard className="h-5 w-5 text-[#f0b66d]" />
+                  <span className="text-sm font-bold text-[#faf9f6]">Instant Card & Transfer (Paystack)</span>
                 </div>
-                <p className="text-xs text-[#64748B] mt-1">
+                <p className="text-xs text-[#868684] mt-1">
                   Mastercard, Visa, Verve, USSD, and instant Nigerian bank account transfer.
                 </p>
               </div>
@@ -278,41 +278,41 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setPaymentMethod('transfer')}
                 className={`p-4 rounded-[10px] border cursor-pointer transition-all ${
                   paymentMethod === 'transfer'
-                    ? 'border-[#16C7D9] bg-[#16C7D9]/5 ring-1 ring-[#16C7D9]'
-                    : 'border-[#E2E8F0] hover:border-[#CBD5E1]'
+                    ? 'border-[#f0b66d] bg-[#f0b66d]/5 ring-1 ring-[#f0b66d]'
+                    : 'border-[#333333] hover:border-[#333333]'
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <Building className="h-5 w-5 text-[#0B1F33]" />
-                  <span className="text-sm font-bold text-[#111827]">Direct Corporate Invoice Transfer</span>
+                  <Building className="h-5 w-5 text-[#faf9f6]" />
+                  <span className="text-sm font-bold text-[#faf9f6]">Direct Corporate Invoice Transfer</span>
                 </div>
-                <p className="text-xs text-[#64748B] mt-1">
+                <p className="text-xs text-[#868684] mt-1">
                   Generates an electronic commercial proforma invoice for corporate wire transfer.
                 </p>
               </div>
             </div>
 
             {/* Total Review Box */}
-            <div className="p-4 rounded-[10px] bg-[#F8FAFC] border border-[#E2E8F0] space-y-2 text-xs">
-              <div className="flex justify-between text-[#64748B]">
+            <div className="p-4 rounded-[10px] bg-[#000000] border border-[#333333] space-y-2 text-xs">
+              <div className="flex justify-between text-[#868684]">
                 <span>Items Subtotal:</span>
-                <span className="font-semibold text-[#111827]">₦{subtotal.toLocaleString()}</span>
+                <span className="font-semibold text-[#faf9f6]">₦{subtotal.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-[#64748B]">
+              <div className="flex justify-between text-[#868684]">
                 <span>Freight Shipping:</span>
-                <span className="font-semibold text-[#111827]">₦{shipping.toLocaleString()}</span>
+                <span className="font-semibold text-[#faf9f6]">₦{shipping.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-[#64748B]">
+              <div className="flex justify-between text-[#868684]">
                 <span>VAT (7.5%):</span>
-                <span className="font-semibold text-[#111827]">₦{tax.toLocaleString()}</span>
+                <span className="font-semibold text-[#faf9f6]">₦{tax.toLocaleString()}</span>
               </div>
-              <div className="pt-2 border-t border-[#E2E8F0] flex justify-between items-baseline font-bold text-sm text-[#0B1F33]">
+              <div className="pt-2 border-t border-[#333333] flex justify-between items-baseline font-bold text-sm text-[#faf9f6]">
                 <span>Total Amount Due:</span>
-                <span className="text-lg font-extrabold text-[#0B1F33] font-heading">₦{total.toLocaleString()}</span>
+                <span className="text-lg font-extrabold text-[#faf9f6] font-heading">₦{total.toLocaleString()}</span>
               </div>
             </div>
 
-            <div className="pt-4 flex justify-between items-center border-t border-[#E2E8F0]">
+            <div className="pt-4 flex justify-between items-center border-t border-[#333333]">
               <Button variant="ghost" size="sm" onClick={() => setStep(2)}>
                 Back to Shipping
               </Button>
@@ -331,7 +331,7 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Step 4: Order Confirmation */}
         {step === 4 && (
-          <div className="bg-white p-10 rounded-[18px] border border-[#E2E8F0] shadow-sm text-center space-y-6">
+          <div className="bg-[#121212] p-10 rounded-[18px] border border-[#333333] shadow-sm text-center space-y-6">
             <div className="h-16 w-16 rounded-full bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center mx-auto">
               <CheckCircle2 className="h-10 w-10" />
             </div>
@@ -340,29 +340,29 @@ export const CheckoutPage: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#16A34A] uppercase tracking-wider">
                 PAYMENT AUTHORIZED & LOGGED
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F33] font-heading mt-1">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#faf9f6] font-heading mt-1">
                 Thank you for your order!
               </h2>
-              <p className="text-xs font-mono text-[#64748B] mt-2">
-                Order Reference: <strong className="text-[#0B1F33]">{completedOrderNumber}</strong>
+              <p className="text-xs font-mono text-[#868684] mt-2">
+                Order Reference: <strong className="text-[#faf9f6]">{completedOrderNumber}</strong>
               </p>
             </div>
 
-            <div className="p-5 rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] max-w-md mx-auto text-left text-xs space-y-2">
+            <div className="p-5 rounded-[12px] bg-[#000000] border border-[#333333] max-w-md mx-auto text-left text-xs space-y-2">
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Customer:</span>
-                <span className="font-semibold text-[#111827]">{customerInfo.fullName}</span>
+                <span className="text-[#868684]">Customer:</span>
+                <span className="font-semibold text-[#faf9f6]">{customerInfo.fullName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Dispatch City:</span>
-                <span className="font-semibold text-[#111827]">{shippingAddress.city}, {shippingAddress.state}</span>
+                <span className="text-[#868684]">Dispatch City:</span>
+                <span className="font-semibold text-[#faf9f6]">{shippingAddress.city}, {shippingAddress.state}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Total Paid:</span>
-                <span className="font-bold text-[#0B1F33]">₦{total.toLocaleString()}</span>
+                <span className="text-[#868684]">Total Paid:</span>
+                <span className="font-bold text-[#faf9f6]">₦{total.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#64748B]">Status:</span>
+                <span className="text-[#868684]">Status:</span>
                 <span className="font-semibold text-[#16A34A]">Processing in Warehouse</span>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { Button } from '../../components/ui/Button'
 import {
   ArrowRight,
   CheckCircle2,
@@ -13,7 +12,7 @@ import {
   Cpu,
   ShieldCheck,
   Building2,
-  TrendingUp,
+  ArrowUpRight,
 } from 'lucide-react'
 
 export const OptimaxPage: React.FC = () => {
@@ -32,95 +31,101 @@ export const OptimaxPage: React.FC = () => {
     'Reduced end-of-month financial reconciliation from 14 days to under 4 hours.',
     'Eliminated stock shrinkage across multi-depot distribution networks.',
     'Centralized visibility across executive leadership, finance, and warehouse managers in real time.',
-    'Zero-loss offline point-of-sale ensuring uninterrupted retail billing during network outages.'
+    'Zero-loss offline point-of-sale ensuring uninterrupted retail billing during network outages.',
   ]
 
   return (
-    <div className="w-full text-left">
+    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
       <SEO
         title="Optimax Enterprise ERP Platform | Centrifuge Group"
         description="Optimax connects commerce, finance, HR, inventory, analytics, and business operations into one unified enterprise platform."
       />
 
-      {/* Hero */}
-      <section className="bg-[#071521] text-white py-16 sm:py-24 border-b border-[#172333] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#16C7D9]/10 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
+      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
-            <span className="px-3 py-1 rounded-[6px] bg-[#16C7D9]/15 border border-[#16C7D9]/30 text-xs font-mono font-bold text-[#67E8F9] inline-block">
-              ENTERPRISE RESOURCE PLANNING · VERSION 4
-            </span>
-            <h1 className="text-4xl sm:text-6xl font-extrabold font-heading tracking-tight">
-              Optimax. <span className="text-[#16C7D9]">Your business. Connected.</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#f0b66d]">
+              <span>ENTERPRISE RESOURCE PLANNING · VERSION 4</span>
+            </div>
+            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
+              Optimax ERP. Your business connected.
             </h1>
-            <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
-              An all-in-one, modular business management platform that unifies commerce, accounting, inventory, human resources, and real-time business intelligence into a single source of truth.
+            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+              An all-in-one, modular business management platform that unifies commerce, financial ledgers, inventory, human resources, and real-time business intelligence into a single source of truth.
             </p>
-            <div className="pt-4 flex flex-wrap items-center gap-3">
-              <Link to="/contact">
-                <Button variant="primary" size="lg" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                  Schedule Enterprise Walkthrough
-                </Button>
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+              >
+                <span>Schedule Enterprise Walkthrough</span>
+                <ArrowRight className="h-3.5 w-3.5 ml-2" />
               </Link>
-              <Link to="/projects/optimax-enterprise-erp">
-                <Button variant="outline" size="lg" className="bg-transparent text-white border-[#334155] hover:bg-white/10">
-                  View Project Architecture
-                </Button>
-              </Link>
+              <a
+                href="https://www.optimaxsuites.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+              >
+                <span>Visit OptimaxSuites.com</span>
+                <ArrowUpRight className="h-3.5 w-3.5 ml-1.5" />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Problem & The Solution */}
-      <section className="py-16 bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="p-8 rounded-[16px] bg-[#FEF2F2] border border-[#FEE2E2] space-y-3">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#DC2626]">
-              The Operational Problem
+      {/* ─── Problem vs Solution (Graphite #121212) ─── */}
+      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="p-8 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] space-y-3">
+            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+              THE OPERATIONAL PROBLEM
             </span>
-            <h3 className="text-2xl font-bold text-[#991B1B] font-heading">
+            <h3 className="text-[22px] font-semibold text-[#faf9f6] tracking-[-0.29px]">
               The Disconnected Enterprise Trap
             </h3>
-            <p className="text-sm text-[#7F1D1D] leading-relaxed">
+            <p className="text-[13.5px] text-[#868684] leading-relaxed">
               Growing companies typically juggle 6 to 8 disparate tools: standalone spreadsheets for inventory, separate desktop accounting software, manual paper payroll files, and unconnected retail cash registers.
             </p>
-            <p className="text-xs text-[#991B1B]/80 leading-relaxed pt-2">
+            <p className="text-[12.5px] text-[#868684]/80 leading-relaxed pt-2">
               Result: Stock discrepancies, slow financial closes, blind executive decision-making, and high vulnerability to internal fraud.
             </p>
           </div>
 
-          <div className="p-8 rounded-[16px] bg-[#F0FDF4] border border-[#DCFCE7] space-y-3">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16A34A]">
-              The Centrifuge Solution
+          <div className="p-8 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] space-y-3">
+            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d] block">
+              THE CENTRIFUGE SOLUTION
             </span>
-            <h3 className="text-2xl font-bold text-[#14532D] font-heading">
+            <h3 className="text-[22px] font-semibold text-[#faf9f6] tracking-[-0.29px]">
               Unified Single Source of Truth
             </h3>
-            <p className="text-sm text-[#166534] leading-relaxed">
-              Optimax replaces disparate point solutions with a cohesive web-native operating system. When a product is sold at a branch, stock is decremented immediately, accounting ledgers reflect the revenue, and replenishment signals fire automatically.
+            <p className="text-[13.5px] text-[#faf9f6] leading-relaxed">
+              Optimax unifies transactional data across all branches and subsidiaries into a single real-time ledger. When a cashier completes a sale, the ledger balances immediately update, inventory decrements instantly, and audit logs record the event.
             </p>
-            <p className="text-xs text-[#166534]/80 leading-relaxed pt-2">
-              Result: 100% operational transparency, instant auditability, and radical efficiency gains across every department.
-            </p>
+            <div className="space-y-2 pt-2">
+              {outcomes.map((o, i) => (
+                <div key={i} className="flex items-start gap-2 text-[12.5px] text-[#b4b4b2]">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-[#f0b66d] shrink-0 mt-0.5" />
+                  <span>{o}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Modules Grid */}
-      <section className="py-20 bg-[#F8FAFC] border-b border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Modules Grid (Obsidian #000000) ─── */}
+      <section className="py-20 bg-[#000000] border-b border-[#1e1e1d]">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#16C7D9]">
-              Modular Architecture
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1F33] font-heading mt-2">
-              Everything required to run operations.
+            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+              MODULAR ARCHITECTURE
+            </span>
+            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
+              Engineered for multi-entity scale.
             </h2>
-            <p className="text-sm text-[#64748B] mt-2">
-              Activate the modules you need today and seamlessly plug in additional capabilities as your footprint expands.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -129,16 +134,16 @@ export const OptimaxPage: React.FC = () => {
               return (
                 <div
                   key={m.name}
-                  className="bg-white p-6 rounded-[14px] border border-[#E2E8F0] hover:border-[#CBD5E1] transition-all flex flex-col justify-between"
+                  className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-all flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="h-9 w-9 rounded-[6px] bg-[#0B1F33]/5 text-[#0B1F33] flex items-center justify-center mb-3">
-                      <Icon className="h-5 w-5 text-[#16C7D9]" />
+                    <div className="h-10 w-10 rounded-[8px] bg-[#121212] border border-[#333333] flex items-center justify-center mb-4 group-hover:border-[#f0b66d] transition-colors">
+                      <Icon className="h-5 w-5 text-[#f0b66d]" />
                     </div>
-                    <h4 className="text-base font-bold text-[#0B1F33] font-heading">
+                    <h4 className="text-[17px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
                       {m.name}
                     </h4>
-                    <p className="text-xs text-[#64748B] mt-2 leading-relaxed">
+                    <p className="text-[12.5px] text-[#868684] mt-2 leading-relaxed">
                       {m.desc}
                     </p>
                   </div>
@@ -148,34 +153,8 @@ export const OptimaxPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Business Outcomes */}
-      <section className="py-16 bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <h3 className="text-2xl font-bold text-[#0B1F33] font-heading text-center">
-            Proven Operational Outcomes
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {outcomes.map((out, i) => (
-              <div key={i} className="flex items-start gap-3 p-4 bg-[#F8FAFC] rounded-[10px] border border-[#E2E8F0]">
-                <CheckCircle2 className="h-5 w-5 text-[#16A34A] shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-[#1E293B] font-medium leading-relaxed">
-                  {out}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center pt-4">
-            <Link to="/contact">
-              <Button variant="dark" size="lg">
-                Request Deployment Proposal
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
+
 export default OptimaxPage

@@ -71,8 +71,8 @@ export const IndustriesSection: React.FC = () => {
                 className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors text-left group"
               >
                 <div>
-                  <div className="h-8 w-8 rounded-[4px] bg-[#121212] border border-[#333333] text-[#faf9f6] flex items-center justify-center group-hover:border-[#cbb0f7] transition-colors">
-                    <Icon className="h-4 w-4 text-[#cbb0f7]" />
+                  <div className="h-8 w-8 rounded-[4px] bg-[#121212] border border-[#333333] text-[#faf9f6] flex items-center justify-center group-hover:border-[#f0b66d] transition-colors">
+                    <Icon className="h-4 w-4 text-[#f0b66d]" />
                   </div>
                   <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-4 leading-snug">
                     {ind.name}
@@ -92,7 +92,7 @@ export const IndustriesSection: React.FC = () => {
                 <div className="mt-6 pt-4 border-t border-[#333333]/50">
                   <Link
                     to={ind.slug}
-                    className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#cbb0f7] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
                   >
                     <span>Industry solutions & case studies</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

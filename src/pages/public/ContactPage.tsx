@@ -113,7 +113,7 @@ export const ContactPage: React.FC = () => {
                     Operational Domain / Subject
                   </label>
                   <select
-                    className="w-full bg-[#121212] text-[#faf9f6] text-[14px] p-2.5 border border-[#333333] rounded-[7px] focus:outline-none focus:ring-1 focus:ring-[#cbb0f7] focus:border-[#cbb0f7] tracking-[-0.14px]"
+                    className="w-full bg-[#121212] text-[#faf9f6] text-[14px] p-2.5 border border-[#333333] rounded-[7px] focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:border-[#f0b66d] tracking-[-0.14px]"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   >
@@ -134,7 +134,7 @@ export const ContactPage: React.FC = () => {
                     rows={4}
                     required
                     placeholder="Describe your current system challenge, number of facilities/users, and desired implementation timeline..."
-                    className="w-full bg-[#121212] text-[#faf9f6] text-[14px] p-3 border border-[#333333] rounded-[7px] focus:outline-none focus:ring-1 focus:ring-[#cbb0f7] focus:border-[#cbb0f7] tracking-[-0.14px]"
+                    className="w-full bg-[#121212] text-[#faf9f6] text-[14px] p-3 border border-[#333333] rounded-[7px] focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:border-[#f0b66d] tracking-[-0.14px]"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
@@ -163,7 +163,7 @@ export const ContactPage: React.FC = () => {
 
                 <div className="space-y-4 text-[13px] text-[#868684]">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-4 w-4 text-[#cbb0f7] shrink-0 mt-0.5" />
+                    <MapPin className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-[#faf9f6]">Principal Office</p>
                       <p className="mt-0.5 leading-relaxed">
@@ -173,7 +173,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Mail className="h-4 w-4 text-[#cbb0f7] shrink-0 mt-0.5" />
+                    <Mail className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-[#faf9f6]">Inquiries</p>
                       <p className="mt-0.5">info@centrifugegroup.co</p>
@@ -182,7 +182,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Phone className="h-4 w-4 text-[#cbb0f7] shrink-0 mt-0.5" />
+                    <Phone className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-[#faf9f6]">Direct Telephone</p>
                       <p className="mt-0.5">+234 (0) 803 000 1234</p>
@@ -191,11 +191,11 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Clock className="h-4 w-4 text-[#cbb0f7] shrink-0 mt-0.5" />
+                    <Clock className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-[#faf9f6]">Operational Hours</p>
                       <p className="mt-0.5">Monday – Friday: 08:00 – 17:30 WAT</p>
-                      <p className="text-[#cbb0f7] text-[11px] font-mono mt-0.5">24/7 Priority SLA for active hospital & logistics clusters</p>
+                      <p className="text-[#f0b66d] text-[11px] font-mono mt-0.5">24/7 Priority SLA for active hospital & logistics clusters</p>
                     </div>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Data Privacy Note */}
               <div className="p-6 rounded-[20px] bg-[#000000] text-[#faf9f6] border border-[#1e1e1d] space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-[1px] text-[#cbb0f7]">
+                <span className="text-[10px] font-mono uppercase tracking-[1px] text-[#f0b66d]">
                   CONFIDENTIALITY ASSURANCE
                 </span>
                 <p className="text-[12px] text-[#868684] leading-relaxed">
