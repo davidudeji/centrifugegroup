@@ -22,34 +22,34 @@ export const Badge: React.FC<BadgeProps> = ({
   }
 
   const variantStyles = {
-    default: 'bg-transparent text-[#b4b4b2] border border-[#333333]',
-    violet: 'bg-[#f0b66d]/10 text-[#f0b66d] border border-[#f0b66d]/30',
-    teal: 'bg-[#f0b66d]/10 text-[#f0b66d] border border-[#f0b66d]/30',
-    success: 'bg-[#10b981]/10 text-[#34d399] border border-[#10b981]/25',
-    warning: 'bg-[#f59e0b]/10 text-[#fbbf24] border border-[#f59e0b]/25',
-    error: 'bg-[#ef4444]/10 text-[#f87171] border border-[#ef4444]/25',
-    info: 'bg-[#3b82f6]/10 text-[#f0b66d] border border-[#3b82f6]/25',
-    neutral: 'bg-[#1e1e1d] text-[#868684] border border-[#333333]',
-    outline: 'bg-transparent text-[#868684] border border-[#333333]',
+    default: 'bg-[#FFF7ED] text-[#F27A22] border border-[#FDBA74]/30',
+    violet: 'bg-[#FFF7ED] text-[#F27A22] border border-[#FDBA74]/30',
+    teal: 'bg-[#F0FDF4] text-[#16A34A] border border-[#86EFAC]/30',
+    success: 'bg-[#F0FDF4] text-[#16A34A] border border-[#86EFAC]/30',
+    warning: 'bg-[#FFFBEB] text-[#D97706] border border-[#FCD34D]/30',
+    error: 'bg-[#FEF2F2] text-[#DC2626] border border-[#FCA5A5]/30',
+    info: 'bg-[#EFF6FF] text-[#2563EB] border border-[#93C5FD]/30',
+    neutral: 'bg-[#F8FAFC] text-[#64748B] border border-[#E2E8F0]',
+    outline: 'bg-transparent text-[#475569] border border-[#E2E8F0]',
   }
 
   const dotColors = {
-    default: 'bg-[#b4b4b2]',
-    violet: 'bg-[#f0b66d]',
-    teal: 'bg-[#f0b66d]',
-    success: 'bg-[#34d399]',
-    warning: 'bg-[#fbbf24]',
-    error: 'bg-[#f87171]',
-    info: 'bg-[#60a5fa]',
-    neutral: 'bg-[#868684]',
-    outline: 'bg-[#868684]',
+    default: 'bg-[#F27A22]',
+    violet: 'bg-[#F27A22]',
+    teal: 'bg-[#16A34A]',
+    success: 'bg-[#16A34A]',
+    warning: 'bg-[#D97706]',
+    error: 'bg-[#DC2626]',
+    info: 'bg-[#2563EB]',
+    neutral: 'bg-[#94A3B8]',
+    outline: 'bg-[#94A3B8]',
   }
 
   return (
     <span
       className={twMerge(
         clsx(
-          'inline-flex items-center gap-1.5 rounded-[50px] font-normal transition-colors',
+          'inline-flex items-center gap-1.5 rounded-[4px] font-semibold transition-colors',
           sizeStyles[size],
           variantStyles[variant],
           className

@@ -19,81 +19,90 @@ export const AboutPage: React.FC = () => {
     {
       title: '3. Long-Term Partnership',
       motto: 'We work alongside organizations beyond deployment.',
-      desc: 'We don’t abandon clients post-launch. We provide institutional capacity building, proactive system monitoring, and ongoing feature evolution.',
+      desc: "We don't abandon clients post-launch. We provide institutional capacity building, proactive system monitoring, and ongoing feature evolution.",
     },
   ]
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-white text-[#0F172A]">
       <SEO
         title="About Centrifuge Group | Enterprise Technology Company"
         description="Learn about Centrifuge Group, our mission, core engineering values, and institutional partnerships across Africa."
       />
 
-      {/* ─── Hero Header (Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Header */}
+      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+        <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
-              <span>ABOUT CENTRIFUGE GROUP</span>
+            <div className="flex items-center gap-2">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">ABOUT CENTRIFUGE GROUP</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
+            <h1
+              className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)' }}
+            >
               Technology that moves business forward.
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+            <p className="text-[16px] text-[#94A3B8] leading-relaxed max-w-2xl">
               Centrifuge is an enterprise technology company that designs and delivers software, healthcare technology, logistics systems, enterprise platforms, cloud/infrastructure services, consulting, and training.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Mission & Purpose (Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-4">
-            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
-              OUR IDENTITY & PURPOSE
-            </span>
-            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] leading-snug">
+      {/* Mission & Purpose */}
+      <section className="py-20 bg-white border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6 space-y-5">
+            <div className="flex items-center gap-2">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">OUR IDENTITY & PURPOSE</span>
+            </div>
+            <h2
+              className="font-bold text-[#0F172A] leading-[1.1] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)' }}
+            >
               Engineered for the operational realities of Africa.
             </h2>
-            <p className="text-[14px] text-[#868684] leading-relaxed tracking-[-0.14px]">
+            <p className="text-[15px] text-[#475569] leading-relaxed">
               Headquartered in Abuja, Nigeria, Centrifuge Information Technology Limited was founded to address the deep systemic gap between commercial software promises and complex on-the-ground operational demands.
             </p>
-            <p className="text-[14px] text-[#868684] leading-relaxed tracking-[-0.14px]">
+            <p className="text-[15px] text-[#475569] leading-relaxed">
               We recognized early that foreign-built software often breaks down when exposed to unstable internet grids, paper-dependent ministerial workflows, and multi-currency volatility. We set out to build technology that works under any condition.
             </p>
           </div>
 
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-            <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
-              <div className="text-[32px] font-normal text-[#faf9f6] font-mono tracking-[-0.64px]">36+</div>
-              <p className="text-[12px] text-[#868684] mt-1">States with active Centrifuge healthcare or logistics instances.</p>
-            </div>
-            <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
-              <div className="text-[32px] font-normal text-[#f0b66d] font-mono tracking-[-0.64px]">100%</div>
-              <p className="text-[12px] text-[#868684] mt-1">Indigenously owned and engineered enterprise IP.</p>
-            </div>
-            <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
-              <div className="text-[32px] font-normal text-[#faf9f6] font-mono tracking-[-0.64px]">140k+</div>
-              <p className="text-[12px] text-[#868684] mt-1">Health practitioners managed on our HRHIS registries.</p>
-            </div>
-            <div className="p-6 bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d]">
-              <div className="text-[32px] font-normal text-[#f0b66d] font-mono tracking-[-0.64px]">24/7</div>
-              <p className="text-[12px] text-[#868684] mt-1">Uptime telemetry and enterprise support guarantees.</p>
-            </div>
+            {[
+              { value: '36+', label: 'States with active Centrifuge healthcare or logistics instances.', accent: false },
+              { value: '100%', label: 'Indigenously owned and engineered enterprise IP.', accent: true },
+              { value: '140k+', label: 'Health practitioners managed on our HRHIS registries.', accent: false },
+              { value: '24/7', label: 'Uptime telemetry and enterprise support guarantees.', accent: true },
+            ].map((stat) => (
+              <div key={stat.value} className="p-6 bg-[#F8FAFC] rounded-[12px] border border-[#E2E8F0]">
+                <div className={`text-[32px] font-bold leading-none tracking-[-0.025em] ${stat.accent ? 'text-[#F27A22]' : 'text-[#0F172A]'}`}>
+                  {stat.value}
+                </div>
+                <p className="text-[12px] text-[#475569] mt-2 leading-relaxed">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ─── Core Brand Values (Obsidian #000000) ─── */}
-      <section className="py-20 bg-[#000000] border-b border-[#1e1e1d]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
-              <span>THE CENTRIFUGE STANDARD</span>
+      {/* Core Brand Values */}
+      <section className="py-20 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+          <div className="mb-12">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">THE CENTRIFUGE STANDARD</span>
             </div>
-            <h2 className="text-[32px] sm:text-[42px] font-normal text-[#faf9f6] tracking-[-1.13px] leading-[1.05]">
+            <h2
+              className="font-bold text-[#0F172A] leading-[1.1] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            >
               Our Core Brand Values
             </h2>
           </div>
@@ -102,45 +111,40 @@ export const AboutPage: React.FC = () => {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-colors space-y-3"
+                className="bg-white p-7 rounded-[12px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 space-y-3"
               >
-                <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
-                  {v.title}
-                </h3>
-                <p className="text-[12px] font-mono text-[#f0b66d]">
-                  "{v.motto}"
-                </p>
-                <p className="text-[13px] text-[#868684] leading-relaxed pt-1 tracking-[-0.14px]">
-                  {v.desc}
-                </p>
+                <h3 className="text-[17px] font-bold text-[#0F172A]">{v.title}</h3>
+                <p className="text-[12px] font-medium text-[#F27A22] italic">"{v.motto}"</p>
+                <p className="text-[13px] text-[#475569] leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── Verified Partnerships Recap (Graphite #121212) ─── */}
-      <section className="py-16 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      {/* Verified Partnerships */}
+      <section className="py-16 bg-white border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
-              <p className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
-                TRUSTED ACROSS SECTORS
-              </p>
-              <h2 className="text-[24px] font-normal text-[#faf9f6] tracking-[-0.29px] mt-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">TRUSTED ACROSS SECTORS</span>
+              </div>
+              <h2 className="text-[22px] font-bold text-[#0F172A] tracking-[-0.02em]">
                 Verified Enterprise & Public Sector Partners
               </h2>
             </div>
-            <Link to="/clients" className="text-[13px] text-[#faf9f6] hover:text-[#f0b66d] flex items-center gap-1">
-              <span>View full client directory</span>
+            <Link to="/clients" className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#475569] hover:text-[#F27A22] transition-colors whitespace-nowrap shrink-0">
+              View full client directory
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
             {verifiedClients.slice(0, 6).map((c) => (
-              <div key={c.id} className="h-16 flex items-center justify-center">
-                <img src={c.logo} alt={c.name} className="max-h-10 max-w-[110px] object-contain invert brightness-200 opacity-45 hover:opacity-90 transition-opacity" />
+              <div key={c.id} className="h-16 flex items-center justify-center rounded-[8px] border border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#CBD5E1] transition-colors p-3">
+                <img src={c.logo} alt={c.name} className="max-h-8 max-w-full object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-200" />
               </div>
             ))}
           </div>
@@ -149,4 +153,5 @@ export const AboutPage: React.FC = () => {
     </div>
   )
 }
+
 export default AboutPage

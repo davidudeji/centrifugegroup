@@ -9,14 +9,6 @@ import {
   BarChart3,
   Briefcase,
   ArrowRight,
-  CheckCircle2,
-  Code2,
-  Smartphone,
-  Cloud,
-  Database,
-  ShieldCheck,
-  Server,
-  Terminal,
 } from 'lucide-react'
 
 export const ServicesPage: React.FC = () => {
@@ -24,15 +16,15 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'application-development',
       icon: Cog,
-      title: 'APPLICATION DEVELOPMENT',
+      title: 'Application Development',
       subtitle: 'Modern Web, Native Mobile & Resilient Cloud Architecture',
       description:
-        'We believe in building softwares that are not just great, but memorable, inspiring, remarkable and entertaining. We work with companies to understand their users and to shape and guide their strategy.',
+        'We build software that is not just functional, but resilient, scalable, and memorable. We work with organizations to understand their operational workflows and shape their digital strategy.',
       links: [
         { label: 'Web application development', href: '/services/software-development' },
         { label: 'Mobile application development', href: '/services/mobile-development' },
         { label: 'Cloud/infrastructure application development', href: '/services/cloud' },
-        { label: 'E-commerce and professional website', href: '/services/software-development' },
+        { label: 'E-commerce and professional websites', href: '/services/software-development' },
       ],
       deliverables: [
         'Responsive High-Concurrency Web Apps (React, TypeScript)',
@@ -45,14 +37,14 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'it-training',
       icon: GraduationCap,
-      title: 'IT TRAINING',
+      title: 'IT Training',
       subtitle: 'Workforce Enablement, Data Mastery & Agile Transformation',
       description:
-        'Are you driving your organization to becoming more standardized, simplified and automated? Our consultants can help your team assess the current state of your organizational processes, establish a new strategic vision and priorities a road map of change programs designed to help you transform your business and reach for a greater productivity.',
+        'Our consultants help organizations assess their current state, establish a strategic vision, and build internal capability through hands-on digital training programmes designed for lasting impact.',
       links: [
         { label: 'Database administration', href: '/services/training' },
         { label: 'Project development and management', href: '/services/training' },
-        { label: 'Big Data', href: '/services/training' },
+        { label: 'Big Data engineering', href: '/services/training' },
       ],
       deliverables: [
         'PostgreSQL & High-Scale Database Administration',
@@ -65,13 +57,13 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'it-consultancy',
       icon: PieChart,
-      title: 'IT CONSULTANCY',
+      title: 'IT Consultancy',
       subtitle: 'Institutional Advisory, Regulatory Audits & Programme Strategy',
       description:
-        'Our IT Consulting team provides clients with access to a specialized group of professional resources experienced in a range of programme and project-related activities.',
+        'Our IT Consulting team provides clients with access to specialized professional resources experienced in programme management, systems audits, and institutional technology advisory.',
       links: [
-        { label: 'World Health Organization - WHO', href: '/clients' },
-        { label: 'United Nation Children Emergency Fund - UNICEF', href: '/clients' },
+        { label: 'World Health Organization – WHO', href: '/clients' },
+        { label: 'United Nations Children Emergency Fund – UNICEF', href: '/clients' },
         { label: 'Management Science for Health (MSH)', href: '/clients' },
       ],
       deliverables: [
@@ -85,16 +77,15 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'infrastructure-connectivity',
       icon: Layers,
-      title: 'Infrastructure and Connectivity Services',
+      title: 'Infrastructure & Connectivity',
       subtitle: 'Turnkey Hardware, Power Conditioning & Cloud Networks',
       description:
-        'In the realm of software development, Infrastructure and Connectivity services play a pivotal role in establishing a robust foundation for seamless operations. These services encompass the essential components that ensure the reliability, scalability, and efficiency of a company’s IT environment.',
+        'We establish robust digital foundations covering managed IT operations, multi-cloud orchestration, hardware deployment, and zero-transfer power conditioning for uninterrupted operations.',
       links: [
         { label: 'Managed IT Services', href: '/services/managed-it' },
         { label: 'Cloud Services', href: '/services/cloud' },
         { label: 'Hardware and Software Integration', href: '/services/infrastructure' },
-        { label: 'Hardware Solution', href: '/services/infrastructure' },
-        { label: 'Network Service', href: '/services/managed-it' },
+        { label: 'Network Services', href: '/services/managed-it' },
       ],
       deliverables: [
         '24/7 Managed IT System & Network Operations Center (NOC)',
@@ -110,7 +101,7 @@ export const ServicesPage: React.FC = () => {
       title: 'Enterprise Solutions',
       subtitle: 'Integrated ERP, Workflow Automation & Core Ledgers',
       description:
-        'These solutions often include Enterprise Resource Planning (ERP) systems, IT consulting, and custom IT solutions tailored to the specific requirements of an organization. ERP systems integrate core business processes such as finance, human resources, supply chain management, and customer relationship management into a unified platform, providing a comprehensive view of organizational data.',
+        'We deliver ERP systems and custom enterprise architectures that integrate finance, human resources, supply chain, and reporting into a unified operational platform.',
       links: [
         { label: 'ERP (Enterprise Resource Planning)', href: '/solutions/optimax' },
         { label: 'Custom IT Solutions', href: '/solutions/enterprise' },
@@ -130,7 +121,7 @@ export const ServicesPage: React.FC = () => {
       title: 'Business Solutions',
       subtitle: 'SaaS Platforms, Analytics & Operational Growth Tools',
       description:
-        'Business Solutions, within the realm of software development services, encompass a range of offerings aimed at addressing and optimizing various aspects of a company’s operations. These services are tailored to enhance efficiency, productivity, and overall performance, contributing to the growth and success of businesses across industries.',
+        'We design and engineer SaaS products, digital commerce platforms, and data governance frameworks tailored to enhance efficiency and performance across diverse business verticals.',
       links: [
         { label: 'Software as a Service (SaaS) Development', href: '/solutions/optimax' },
         { label: 'Digital Marketing Services', href: '/services/software-development' },
@@ -148,119 +139,121 @@ export const ServicesPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-white text-[#0F172A]">
       <SEO
         title="Services & Core Capabilities | Centrifuge Group"
         description="Explore our six core engineering and advisory pillars: Application Development, IT Training, IT Consultancy, Infrastructure and Connectivity, Enterprise Solutions, and Business Solutions."
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Header */}
+      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+        <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
-              <span>FULL LIFECYCLE CAPABILITIES</span>
+            <div className="flex items-center gap-2">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">FULL LIFECYCLE CAPABILITIES</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
+            <h1
+              className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)' }}
+            >
               From strategy to systems in production.
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+            <p className="text-[16px] text-[#94A3B8] leading-relaxed max-w-2xl">
               We provide end-to-end engineering, institutional capacity building, robust connectivity infrastructure, and specialized enterprise systems designed for maximum resilience and operational scale.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Six Core Pillars Section (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-[#1e1e1d] gap-4">
+      {/* Six Core Pillars */}
+      <section className="py-14 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-[#E2E8F0] gap-4">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
-                CORE PILLARS
-              </span>
-              <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">CORE PILLARS</span>
+              </div>
+              <h2
+                className="font-bold text-[#0F172A] tracking-[-0.025em]"
+                style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)' }}
+              >
                 Our Engineering & Advisory Pillars
               </h2>
             </div>
-            <p className="text-[13px] text-[#868684] max-w-md">
+            <p className="text-[13px] text-[#475569] max-w-md leading-relaxed">
               Each pillar represents deep subject-matter expertise, tested frameworks, and verified track records with commercial and institutional leaders.
             </p>
           </div>
 
-          {/* 6 Cards Grid (Onyx #1e1e1d, 20px radius) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pillars.map((pillar) => {
+          {/* 6 Pillar Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {pillars.map((pillar, index) => {
               const Icon = pillar.icon
               return (
                 <div
                   key={pillar.id}
-                  className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] p-7 flex flex-col justify-between transition-all group"
+                  className="bg-white rounded-[12px] border border-[#E2E8F0] p-7 flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 group"
                 >
                   <div>
-                    {/* Icon & Badge */}
-                    <div className="flex items-center justify-between">
-                      <div className="h-10 w-10 rounded-[8px] bg-[#121212] border border-[#333333] flex items-center justify-center group-hover:border-[#f0b66d] transition-colors">
-                        <Icon className="h-5 w-5 text-[#f0b66d]" />
+                    {/* Icon & Index */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="h-10 w-10 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 flex items-center justify-center">
+                        <Icon className="h-5 w-5 text-[#F27A22]" />
                       </div>
-                      <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#868684] bg-[#121212]">
-                        Pillar
+                      <span className="text-[11px] font-semibold text-[#94A3B8] tracking-[1px]">
+                        0{index + 1}
                       </span>
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mt-5 leading-snug">
+                    <h3 className="text-[18px] font-bold text-[#0F172A] leading-snug tracking-[-0.02em] group-hover:text-[#334155] transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-[11px] font-mono text-[#f0b66d] mt-1 uppercase tracking-[0.5px]">
+                    <p className="text-[11px] font-semibold text-[#F27A22] mt-1 uppercase tracking-[0.5px]">
                       {pillar.subtitle}
                     </p>
 
-                    {/* Paragraph */}
-                    <p className="text-[13px] text-[#868684] mt-3 leading-relaxed tracking-[-0.14px]">
+                    <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
                       {pillar.description}
                     </p>
 
-                    {/* Arrow Sub-links (from reference images) */}
-                    <div className="mt-5 pt-4 border-t border-[#333333]/50 space-y-2">
-                      <span className="text-[10px] font-mono uppercase tracking-[1.5px] text-[#666469] block mb-1">
+                    {/* Sub-links */}
+                    <div className="mt-5 pt-4 border-t border-[#E2E8F0] space-y-1.5">
+                      <span className="text-[10px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                         Offerings & Specialized Focus:
                       </span>
                       {pillar.links.map((link) => (
                         <Link
                           key={link.label}
                           to={link.href}
-                          className="group/link flex items-start gap-2 text-[12.5px] text-[#b4b4b2] hover:text-[#f0b66d] transition-colors"
+                          className="flex items-start gap-2 text-[12.5px] text-[#475569] hover:text-[#F27A22] transition-colors group/link"
                         >
-                          <span className="text-[#f0b66d] font-semibold text-[13px] leading-tight shrink-0 transition-transform group-hover/link:translate-x-0.5">
-                            →
-                          </span>
-                          <span className="hover:underline underline-offset-2">
-                            {link.label}
-                          </span>
+                          <ArrowRight className="h-3.5 w-3.5 text-[#F27A22] shrink-0 mt-0.5 transition-transform group-hover/link:translate-x-0.5" />
+                          <span className="hover:underline underline-offset-2">{link.label}</span>
                         </Link>
                       ))}
                     </div>
 
-                    {/* Core Deliverables */}
-                    <div className="mt-5 pt-4 border-t border-[#333333]/30 space-y-1.5">
-                      <span className="text-[10px] font-mono uppercase tracking-[1.5px] text-[#666469] block mb-1">
+                    {/* Deliverables */}
+                    <div className="mt-5 pt-4 border-t border-[#E2E8F0] space-y-1.5">
+                      <span className="text-[10px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                         Key Deliverables:
                       </span>
                       {pillar.deliverables.map((deliv) => (
-                        <div key={deliv} className="text-[12px] text-[#868684] flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-[#f0b66d] shrink-0" />
-                          <span className="truncate">{deliv}</span>
+                        <div key={deliv} className="text-[12px] text-[#475569] flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#F27A22] shrink-0" />
+                          <span>{deliv}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Card Bottom CTA */}
-                  <div className="mt-8 pt-4 border-t border-[#333333]/50">
+                  <div className="mt-8 pt-4 border-t border-[#E2E8F0]">
                     <Link
                       to={`/services/${pillar.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#F27A22] transition-colors"
                     >
                       <span>Explore detailed scope & process</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -273,22 +266,26 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Technical Process & Quality Guarantee (Obsidian #000000) ─── */}
-      <section className="py-20 bg-[#000000] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl text-left mb-12">
-            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
-              OPERATIONAL EXCELLENCE
-            </span>
-            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
+      {/* Technical Process */}
+      <section className="py-20 bg-white border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+          <div className="max-w-2xl mb-12">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">OPERATIONAL EXCELLENCE</span>
+            </div>
+            <h2
+              className="font-bold text-[#0F172A] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)' }}
+            >
               How we execute enterprise deliveries.
             </h2>
-            <p className="text-[14px] text-[#868684] mt-2">
+            <p className="text-[14px] text-[#475569] mt-2 leading-relaxed">
               Every project follows stringent technical milestones, ISO and NDPR security compliance, and direct architect oversight.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
             {[
               {
                 step: '01',
@@ -313,15 +310,15 @@ export const ServicesPage: React.FC = () => {
             ].map((p) => (
               <div
                 key={p.step}
-                className="p-6 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] transition-colors"
+                className="p-6 rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-sm transition-all"
               >
-                <span className="text-[12px] font-mono text-[#f0b66d] px-2 py-0.5 rounded-[50px] border border-[#333333] bg-[#121212]">
+                <span className="inline-block text-[11px] font-semibold text-[#F27A22] px-2.5 py-0.5 rounded-[4px] bg-[#FFF7ED] border border-[#FDBA74]/30 mb-4">
                   {p.step}
                 </span>
-                <h4 className="text-[16px] font-semibold text-[#faf9f6] mt-4 tracking-[-0.18px]">
+                <h4 className="text-[16px] font-bold text-[#0F172A] tracking-[-0.02em]">
                   {p.title}
                 </h4>
-                <p className="text-[12.5px] text-[#868684] mt-2 leading-relaxed">
+                <p className="text-[13px] text-[#475569] mt-2 leading-relaxed">
                   {p.desc}
                 </p>
               </div>
@@ -330,27 +327,30 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Bottom CTA ─── */}
-      <section className="py-20 bg-[#121212]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] text-center max-w-3xl mx-auto space-y-6">
-            <h3 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px]">
+      {/* Bottom CTA */}
+      <section className="py-20 bg-[#F8FAFC]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+          <div className="p-8 sm:p-12 rounded-[12px] bg-[#0F172A] border border-white/10 text-center max-w-3xl mx-auto space-y-6">
+            <h3
+              className="font-bold text-white tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.25rem)' }}
+            >
               Ready to architect your next system?
             </h3>
-            <p className="text-[14px] text-[#868684] max-w-xl mx-auto leading-relaxed">
+            <p className="text-[14px] text-[#94A3B8] max-w-xl mx-auto leading-relaxed">
               Schedule an executive discovery session with our engineering directors to evaluate project scope, system architecture, and deployment schedules.
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold transition-colors"
               >
                 <span>Initiate a technical conversation</span>
-                <ArrowRight className="h-3.5 w-3.5 ml-2" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] hover:border-[#666469] text-[13px] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-transparent border border-white/20 text-[#CBD5E1] hover:text-white hover:border-white/40 text-[14px] font-medium transition-colors"
               >
                 <span>View completed projects</span>
               </Link>

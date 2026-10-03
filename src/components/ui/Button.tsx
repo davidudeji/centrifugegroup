@@ -26,29 +26,29 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:ring-offset-1 focus:ring-offset-black disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99]'
+      'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#F27A22] focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99]'
 
     const sizeStyles = {
-      sm: 'text-xs px-3.5 py-1.5 rounded-[33px] gap-1.5 tracking-[-0.14px]',
-      md: 'text-sm px-5 py-2.5 rounded-[33px] gap-2 tracking-[-0.14px]',
-      lg: 'text-sm sm:text-base px-6 py-3 rounded-[33px] gap-2.5 font-semibold tracking-[-0.18px]',
+      sm: 'text-xs px-3.5 py-1.5 rounded-[6px] gap-1.5',
+      md: 'text-sm px-5 py-2.5 rounded-[6px] gap-2',
+      lg: 'text-sm sm:text-base px-6 py-3 rounded-[6px] gap-2.5 font-semibold',
     }
 
     const variantStyles = {
       primary:
-        'bg-[#121212] text-[#080808] font-semibold hover:bg-[#e3e2e0] shadow-none',
+        'bg-[#F27A22] text-[#0F172A] font-semibold hover:bg-[#E06910] shadow-[0_1px_3px_rgba(242,122,34,0.3)]',
       secondary:
-        'bg-[#1e1e1d] text-[#faf9f6] border border-[#333333] hover:bg-[#333333] hover:border-[#40403f]',
+        'bg-[#334155] text-white hover:bg-[#1E293B]',
       dark:
-        'bg-[#121212] text-[#faf9f6] border border-[#1e1e1d] hover:bg-[#1e1e1d]',
+        'bg-[#0F172A] text-white hover:bg-[#1E293B]',
       outline:
-        'bg-transparent text-[#b4b4b2] border border-[#333333] hover:border-[#b4b4b2] hover:text-[#faf9f6]',
+        'bg-white text-[#334155] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:bg-[#F8FAFC]',
       ghost:
-        'bg-transparent text-[#b4b4b2] hover:text-[#faf9f6] hover:bg-[#1e1e1d]',
+        'bg-transparent text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9]',
       'code-pill':
-        'bg-[#121212] text-[#f0b66d] border border-[#333333] font-mono text-xs px-3 py-1.5 rounded-[33px] hover:border-[#f0b66d]',
+        'bg-[#F8FAFC] text-[#F27A22] border border-[#E2E8F0] font-mono text-xs px-3 py-1.5 rounded-[6px] hover:border-[#F27A22]/40',
       danger:
-        'bg-[#ef4444]/15 text-[#fca5a5] border border-[#ef4444]/30 hover:bg-[#ef4444]/25',
+        'bg-[#FEF2F2] text-[#DC2626] border border-[#FCA5A5]/40 hover:bg-[#FEE2E2]',
     }
 
     return (

@@ -2,103 +2,122 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, HeartPulse, Truck, Building2, Landmark, Store } from 'lucide-react'
 
-export const IndustriesSection: React.FC = () => {
-  const industries = [
-    {
-      id: 'healthcare',
-      name: 'Healthcare & Medical Systems',
-      icon: HeartPulse,
-      challenge: 'Fragmented patient records and paper workforce registries cause clinical blindspots.',
-      solution: 'Turnkey EMRs, national health workforce platforms, and automated laboratory diagnostics.',
-      slug: '/industries/healthcare',
-    },
-    {
-      id: 'logistics',
-      name: 'Logistics & Inter-State Freight',
-      icon: Truck,
-      challenge: 'High fuel pilferage, unexpected vehicle downtime, and delayed paper delivery notes.',
-      solution: 'Sub-second GPS/CAN-Bus telematics, automated dispatch scheduling, and digital ePOD.',
-      slug: '/industries/logistics',
-    },
-    {
-      id: 'government',
-      name: 'Government & Regulatory Councils',
-      icon: Landmark,
-      challenge: 'Manual queues for licensing, counterfeit credentials, and delayed revenue reporting.',
-      solution: 'Tamper-proof digital licensing, Remita automated payments, and verified registries.',
-      slug: '/industries/government',
-    },
-    {
-      id: 'enterprise',
-      name: 'Large Enterprise & Energy',
-      icon: Building2,
-      challenge: 'Disconnected ERP modules leading to multi-week manual financial reconciliations.',
-      solution: 'Modular connected business architectures, automated ledger postings, and audit trails.',
-      slug: '/industries/enterprise',
-    },
-    {
-      id: 'smes',
-      name: 'Growing Commercial SMEs',
-      icon: Store,
-      challenge: 'Stock shrinkage and unreliable power grids disrupting day-to-day point of sale.',
-      solution: 'Cloud inventory POS combined with industrial pure sine wave inverters and solar backup.',
-      slug: '/industries/smes',
-    },
-  ]
+const industries = [
+  {
+    id: 'healthcare',
+    name: 'Healthcare & Medical Systems',
+    icon: HeartPulse,
+    challenge: 'Fragmented patient records and paper workforce registries create clinical blindspots.',
+    solution: 'Turnkey EMRs, national health workforce platforms, and automated laboratory diagnostics.',
+    slug: '/industries/healthcare',
+    accent: '#16C7D9',
+  },
+  {
+    id: 'logistics',
+    name: 'Logistics & Inter-State Freight',
+    icon: Truck,
+    challenge: 'High fuel pilferage, unexpected vehicle downtime, and delayed paper delivery notes.',
+    solution: 'Sub-second GPS/CAN-Bus telematics, automated dispatch scheduling, and digital ePOD.',
+    slug: '/industries/logistics',
+    accent: '#16C7D9',
+  },
+  {
+    id: 'government',
+    name: 'Government & Regulatory Councils',
+    icon: Landmark,
+    challenge: 'Manual queues for licensing, counterfeit credentials, and delayed revenue reporting.',
+    solution: 'Tamper-proof digital licensing, Remita automated payments, and verified registries.',
+    slug: '/industries/government',
+    accent: '#16C7D9',
+  },
+  {
+    id: 'enterprise',
+    name: 'Large Enterprise & Energy',
+    icon: Building2,
+    challenge: 'Disconnected ERP modules leading to multi-week manual financial reconciliations.',
+    solution: 'Modular connected business architectures, automated ledger postings, and audit trails.',
+    slug: '/industries/enterprise',
+    accent: '#16C7D9',
+  },
+  {
+    id: 'smes',
+    name: 'Growing Commercial SMEs',
+    icon: Store,
+    challenge: 'Stock shrinkage and unreliable power grids disrupting day-to-day point of sale.',
+    solution: 'Cloud inventory POS combined with industrial pure sine wave inverters and solar backup.',
+    slug: '/industries/smes',
+    accent: '#16C7D9',
+  },
+]
 
+export const IndustriesSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-24 bg-[#000000] border-b border-[#1e1e1d]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl text-left mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
-            <span>SECTOR-SPECIFIC ARCHITECTURE</span>
+    <section className="section-py bg-white border-b border-[#E2E8F0]">
+      <div className="section-container">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+          <div className="max-w-2xl">
+            <div className="badge-eyebrow mb-4">Industries</div>
+            <h2 className="text-h2 text-[#0B1F33] mb-4">
+              Industries we transform.
+            </h2>
+            <p className="text-body-lg text-[#64748B]">
+              We engineer systems purpose-built for the operational realities
+              of African institutions and commercial enterprises.
+            </p>
           </div>
-          <h2 className="text-[32px] sm:text-[42px] font-normal text-[#faf9f6] tracking-[-1.13px] leading-[1.05]">
-            Industries we transform.
-          </h2>
-          <p className="text-[15px] text-[#868684] tracking-[-0.14px] mt-3 max-w-2xl leading-[1.4]">
-            We engineer systems purpose-built for the operational realities of African institutions and commercial enterprises.
-          </p>
+          <Link
+            to="/industries"
+            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+            id="industries-view-all"
+          >
+            All industries
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
 
-        {/* ─── Warp Industry Cards (Onyx #1e1e1d, 20px radius) ─── */}
+        {/* Industry cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {industries.map((ind) => {
             const Icon = ind.icon
             return (
-              <div
+              <Link
                 key={ind.id}
-                className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors text-left group"
+                to={ind.slug}
+                className="group card flex flex-col justify-between min-h-[260px]"
+                aria-label={`${ind.name} — industry solutions`}
               >
                 <div>
-                  <div className="h-8 w-8 rounded-[4px] bg-[#121212] border border-[#333333] text-[#faf9f6] flex items-center justify-center group-hover:border-[#f0b66d] transition-colors">
-                    <Icon className="h-4 w-4 text-[#f0b66d]" />
+                  {/* Icon */}
+                  <div className="h-11 w-11 rounded-[10px] bg-[#F7F9FA] border border-[#E2E8F0] flex items-center justify-center mb-5 group-hover:bg-[#0B1F33] group-hover:border-[#0B1F33] transition-all duration-200">
+                    <Icon className="h-5 w-5 text-[#0B1F33] group-hover:text-[#16C7D9] transition-colors" />
                   </div>
-                  <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-4 leading-snug">
+
+                  {/* Name */}
+                  <h3 className="text-[18px] font-heading font-700 text-[#0B1F33] tracking-tight mb-3 group-hover:text-[#16C7D9] transition-colors leading-snug">
                     {ind.name}
                   </h3>
-                  <div className="mt-3 space-y-2 text-[13px] tracking-[-0.14px]">
+
+                  {/* Challenge + solution */}
+                  <div className="space-y-2 text-[13px]">
                     <div>
-                      <span className="text-[#868684] font-medium">Challenge:</span>{' '}
-                      <span className="text-[#b4b4b2]">{ind.challenge}</span>
+                      <span className="font-semibold text-[#94A3B8]">Challenge: </span>
+                      <span className="text-[#64748B]">{ind.challenge}</span>
                     </div>
                     <div>
-                      <span className="text-[#868684] font-medium">Centrifuge Solution:</span>{' '}
-                      <span className="text-[#faf9f6]">{ind.solution}</span>
+                      <span className="font-semibold text-[#0B1F33]">Solution: </span>
+                      <span className="text-[#64748B]">{ind.solution}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#333333]/50">
-                  <Link
-                    to={ind.slug}
-                    className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
-                  >
-                    <span>Industry solutions & case studies</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
+                <div className="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
+                  <span className="text-[13px] font-medium text-[#64748B] group-hover:text-[#16C7D9] transition-colors">
+                    Solutions &amp; case studies
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-[#CBD5E1] group-hover:text-[#16C7D9] group-hover:translate-x-0.5 transition-all" />
                 </div>
-              </div>
+              </Link>
             )
           })}
         </div>
@@ -106,4 +125,5 @@ export const IndustriesSection: React.FC = () => {
     </section>
   )
 }
+
 export default IndustriesSection

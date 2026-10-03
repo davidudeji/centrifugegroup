@@ -1,183 +1,131 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Layers, Activity, Truck, BarChart3, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Layers, Activity, Truck, BarChart3, Globe, Cpu } from 'lucide-react'
+
+const capabilities = [
+  {
+    id: 'enterprise',
+    icon: Layers,
+    label: 'Enterprise Software',
+    tag: 'OPTIMAX SUITE',
+    desc: 'Modern ERP platforms, unified accounting, multi-warehouse inventory, and automated operational pipelines tailored to high-growth organisations.',
+    href: '/solutions/enterprise',
+    span: 'lg:col-span-7',
+  },
+  {
+    id: 'healthcare',
+    icon: Activity,
+    label: 'Healthcare Technology',
+    tag: 'FMOH · NMCN',
+    desc: 'Hospital information systems, national health workforce registries (HRHIS), digital credentialing, and interoperable health data infrastructure.',
+    href: '/solutions/healthcare',
+    span: 'lg:col-span-5',
+  },
+  {
+    id: 'logistics',
+    icon: Truck,
+    label: 'Logistics & Mobility',
+    tag: 'TELEMATICS',
+    desc: 'GPS telematics, automated dispatch, fuel auditing, route planning, and offline-capable mobile proof-of-delivery.',
+    href: '/solutions/logistics',
+    span: 'lg:col-span-4',
+  },
+  {
+    id: 'data',
+    icon: BarChart3,
+    label: 'Data & Analytics',
+    tag: 'SPATIAL GIS',
+    desc: 'GIS spatial mapping, executive BI dashboards, real-time event streaming, and automated regulatory reporting.',
+    href: '/solutions/data-analytics',
+    span: 'lg:col-span-4',
+  },
+  {
+    id: 'cloud',
+    icon: Globe,
+    label: 'Cloud & Infrastructure',
+    tag: 'CLOUD · IOT',
+    desc: 'High-availability cloud infrastructure, cold-chain pharmaceutical monitoring, and industrial power systems.',
+    href: '/services/cloud',
+    span: 'lg:col-span-4',
+  },
+  {
+    id: 'digital',
+    icon: Cpu,
+    label: 'Digital Platforms',
+    tag: 'CUSTOM DEV',
+    desc: 'Bespoke digital platforms, mobile applications, systems integrations, and business process automation.',
+    href: '/services/software-development',
+    span: 'lg:col-span-4',
+  },
+]
 
 export const WhatWeBuildSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-24 bg-[#121212] border-b border-[#1e1e1d]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading (warp_design.md §177-180 & §260) */}
-        <div className="max-w-3xl text-left mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
-            <span>CORE DOMAINS & ENGINEERING CAPABILITY</span>
-          </div>
-          <h2 className="text-[32px] sm:text-[42px] font-normal text-[#faf9f6] tracking-[-1.13px] leading-[1.05]">
-            We build the systems businesses depend on.
+    <section className="section-py bg-[#F7F9FA] border-b border-[#E2E8F0]">
+      <div className="section-container">
+        {/* Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="badge-eyebrow mb-4">What We Build</div>
+          <h2 className="text-h2 text-[#0B1F33] mb-4">
+            Systems businesses depend on.
           </h2>
-          <p className="text-[15px] text-[#868684] tracking-[-0.14px] mt-3 max-w-2xl leading-[1.4]">
-            From national clinical workforce registries to heavy freight telematics and integrated commercial ERPs, we deliver engineered reliability.
+          <p className="text-body-lg text-[#64748B] max-w-2xl">
+            From national clinical workforce registries to heavy freight telematics
+            and integrated commercial ERPs — we deliver engineered reliability.
           </p>
         </div>
 
-        {/* ─── Warp Bento Grid (Onyx #1e1e1d cards, 20px radius, hairline #1e1e1d border) ─── */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-          {/* Card 01: Enterprise Software (Span 7) */}
-          <div className="md:col-span-7 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#f0b66d]">01</span>
-                <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
-                  <Layers className="h-3.5 w-3.5 text-[#faf9f6]" />
-                </div>
-              </div>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.22px] mt-4">
-                Enterprise Software
-              </h3>
-              <p className="text-[14px] text-[#868684] mt-2 max-w-xl leading-relaxed tracking-[-0.14px]">
-                Modern ERP platforms, unified accounting, multi-warehouse inventory systems, and automated operational pipelines custom-tailored to high-growth organizations.
-              </p>
-            </div>
-
-            <div className="mt-8 pt-5 border-t border-[#333333]/50 flex items-center justify-between">
-              <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#b4b4b2]">
-                OPTIMAX SUITE
-              </span>
+        {/* Bento grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          {capabilities.map((cap, i) => {
+            const Icon = cap.icon
+            return (
               <Link
-                to="/solutions/optimax"
-                className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
+                key={cap.id}
+                to={cap.href}
+                className={`group card-feature flex flex-col justify-between ${cap.span} min-h-[220px]`}
+                aria-label={`Learn about ${cap.label}`}
               >
-                <span>Learn more</span>
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </div>
-          </div>
+                <div>
+                  {/* Icon + tag row */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="h-10 w-10 rounded-[10px] bg-[#0B1F33] flex items-center justify-center group-hover:bg-[#16C7D9] transition-colors duration-200">
+                      <Icon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-[#94A3B8] px-2.5 py-1 rounded-full border border-[#E2E8F0] bg-[#F7F9FA]">
+                      {cap.tag}
+                    </span>
+                  </div>
 
-          {/* Card 02: Healthcare Technology (Span 5) */}
-          <div className="md:col-span-5 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#f0b66d]">02</span>
-                <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
-                  <Activity className="h-3.5 w-3.5 text-[#faf9f6]" />
+                  {/* Number */}
+                  <p className="text-[11px] font-mono text-[#CBD5E1] mb-1">
+                    {String(i + 1).padStart(2, '0')}
+                  </p>
+
+                  {/* Title */}
+                  <h3 className="text-[20px] font-heading font-700 text-[#0B1F33] tracking-tight mb-2 group-hover:text-[#16C7D9] transition-colors">
+                    {cap.label}
+                  </h3>
+
+                  {/* Desc */}
+                  <p className="text-[14px] text-[#64748B] leading-relaxed">
+                    {cap.desc}
+                  </p>
                 </div>
-              </div>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.22px] mt-4">
-                Healthcare Technology
-              </h3>
-              <p className="text-[14px] text-[#868684] mt-2 leading-relaxed tracking-[-0.14px]">
-                Hospital information systems, national health workforce registries (HRHIS), digital medical credentialing, and interoperable health data infrastructure.
-              </p>
-            </div>
 
-            <div className="mt-8 pt-5 border-t border-[#333333]/50 flex items-center justify-between">
-              <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#b4b4b2]">
-                FMOH & NMCN
-              </span>
-              <Link
-                to="/solutions/healthcare"
-                className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
-              >
-                <span>Explore Healthcare</span>
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 03: Logistics & Mobility (Span 4) */}
-          <div className="md:col-span-4 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#f0b66d]">03</span>
-                <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
-                  <Truck className="h-3.5 w-3.5 text-[#faf9f6]" />
+                <div className="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
+                  <span className="text-[13px] font-medium text-[#0B1F33] group-hover:text-[#16C7D9] transition-colors">
+                    Learn more
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-[#94A3B8] group-hover:text-[#16C7D9] group-hover:translate-x-0.5 transition-all" />
                 </div>
-              </div>
-              <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-4">
-                Logistics & Mobility
-              </h3>
-              <p className="text-[13px] text-[#868684] mt-2 leading-relaxed tracking-[-0.14px]">
-                GPS telematics, automated dispatch, fuel auditing, route planning, and offline-capable mobile driver proof-of-delivery.
-              </p>
-            </div>
-
-            <div className="mt-8 pt-5 border-t border-[#333333]/50 flex items-center justify-between">
-              <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#b4b4b2]">
-                TELEMATICS
-              </span>
-              <Link
-                to="/solutions/logistics"
-                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
-              >
-                <span>Details</span>
-                <ArrowRight className="h-3 w-3" />
               </Link>
-            </div>
-          </div>
-
-          {/* Card 04: Data & Analytics (Span 4) */}
-          <div className="md:col-span-4 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#f0b66d]">04</span>
-                <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
-                  <BarChart3 className="h-3.5 w-3.5 text-[#faf9f6]" />
-                </div>
-              </div>
-              <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-4">
-                Data & Analytics
-              </h3>
-              <p className="text-[13px] text-[#868684] mt-2 leading-relaxed tracking-[-0.14px]">
-                GIS spatial mapping, executive business intelligence dashboards, real-time event streaming, and automated regulatory reporting.
-              </p>
-            </div>
-
-            <div className="mt-8 pt-5 border-t border-[#333333]/50 flex items-center justify-between">
-              <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#b4b4b2]">
-                SPATIAL GIS
-              </span>
-              <Link
-                to="/solutions/data-analytics"
-                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
-              >
-                <span>Details</span>
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 05: Infrastructure & IoT (Span 4) */}
-          <div className="md:col-span-4 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors group text-left">
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-[12px] font-mono text-[#f0b66d]">05</span>
-                <div className="h-7 w-7 rounded-[4px] border border-[#333333] bg-[#121212] flex items-center justify-center">
-                  <ShieldCheck className="h-3.5 w-3.5 text-[#faf9f6]" />
-                </div>
-              </div>
-              <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-4">
-                Infrastructure & IoT
-              </h3>
-              <p className="text-[13px] text-[#868684] mt-2 leading-relaxed tracking-[-0.14px]">
-                Cold-chain pharmaceutical monitoring, high-efficiency pure sine wave solar inverters, and high-availability cloud infrastructure.
-              </p>
-            </div>
-
-            <div className="mt-8 pt-5 border-t border-[#333333]/50 flex items-center justify-between">
-              <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#b4b4b2]">
-                TELEMETRY
-              </span>
-              <Link
-                to="/services/cloud"
-                className="inline-flex items-center gap-1 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
-              >
-                <span>Details</span>
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     </section>
   )
 }
+
 export default WhatWeBuildSection

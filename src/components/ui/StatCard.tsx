@@ -24,30 +24,30 @@ export const StatCard: React.FC<StatCardProps> = ({
   badgeVariant = 'neutral',
 }) => {
   return (
-    <Card className="p-5 flex flex-col justify-between bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333]">
+    <Card className="p-5 flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-md">
       <div className="flex items-center justify-between">
-        <span className="text-[10px] font-mono uppercase tracking-[1px] text-[#868684]">
+        <span className="text-[10px] font-semibold uppercase tracking-[1px] text-[#94A3B8]">
           {title}
         </span>
         {icon && (
-          <div className="h-7 w-7 rounded-[4px] bg-[#121212] border border-[#333333] text-[#f0b66d] flex items-center justify-center shrink-0">
+          <div className="h-8 w-8 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 text-[#F27A22] flex items-center justify-center shrink-0">
             {icon}
           </div>
         )}
       </div>
 
       <div className="mt-3 flex items-baseline justify-between">
-        <span className="text-[24px] font-normal tracking-[-0.29px] text-[#faf9f6] font-mono">
+        <span className="text-[26px] font-bold tracking-[-0.025em] text-[#0F172A]">
           {value}
         </span>
         {badgeText && (
           <span
             className={clsx(
-              'text-[10px] font-mono uppercase tracking-[1px] px-2 py-0.5 rounded-[50px] border',
-              badgeVariant === 'warning' && 'bg-[#f59e0b]/10 text-[#fbbf24] border-[#f59e0b]/30',
-              badgeVariant === 'error' && 'bg-[#ef4444]/10 text-[#f87171] border-[#ef4444]/30',
-              badgeVariant === 'success' && 'bg-[#10b981]/10 text-[#34d399] border-[#10b981]/30',
-              badgeVariant === 'neutral' && 'bg-[#121212] text-[#868684] border-[#333333]'
+              'text-[10px] font-semibold uppercase tracking-[1px] px-2 py-0.5 rounded-[4px] border',
+              badgeVariant === 'warning' && 'bg-[#FFFBEB] text-[#D97706] border-[#FCD34D]/30',
+              badgeVariant === 'error' && 'bg-[#FEF2F2] text-[#DC2626] border-[#FCA5A5]/30',
+              badgeVariant === 'success' && 'bg-[#F0FDF4] text-[#16A34A] border-[#86EFAC]/30',
+              badgeVariant === 'neutral' && 'bg-[#F8FAFC] text-[#64748B] border-[#E2E8F0]'
             )}
           >
             {badgeText}
@@ -56,12 +56,12 @@ export const StatCard: React.FC<StatCardProps> = ({
       </div>
 
       {(change || description) && (
-        <div className="mt-2 flex items-center gap-1.5 text-[12px] text-[#868684]">
+        <div className="mt-2 flex items-center gap-1.5 text-[12px] text-[#94A3B8]">
           {change && (
             <span
               className={clsx(
-                'font-mono font-medium',
-                isPositive ? 'text-[#34d399]' : 'text-[#f87171]'
+                'font-semibold',
+                isPositive ? 'text-[#16A34A]' : 'text-[#DC2626]'
               )}
             >
               {isPositive ? '↑' : '↓'} {change}

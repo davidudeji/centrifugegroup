@@ -16,22 +16,22 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   const variantStyles = {
     default:
-      'bg-[#1e1e1d] border border-[#1e1e1d] text-[#faf9f6]',
+      'bg-white border border-[#E2E8F0] text-[#0F172A]',
     bordered:
-      'bg-[#121212] border border-[#1e1e1d] text-[#faf9f6]',
+      'bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A]',
     subtle:
-      'bg-[#1e1e1d]/50 border border-[#333333] text-[#faf9f6]',
+      'bg-[#F8FAFC] border border-[#E2E8F0] text-[#334155]',
     dark:
-      'bg-[#000000] border border-[#1e1e1d] text-[#faf9f6]',
+      'bg-[#0F172A] border border-white/10 text-white',
   }
 
   return (
     <div
       className={twMerge(
         clsx(
-          'rounded-[20px] p-6 transition-colors duration-150',
+          'rounded-[12px] p-6 transition-all duration-200',
           variantStyles[variant],
-          hoverEffect && 'hover:border-[#333333]',
+          hoverEffect && 'hover:border-[#CBD5E1] hover:shadow-md',
           className
         )
       )}

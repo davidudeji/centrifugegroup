@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { verifiedClients } from '../../assets'
-import { CheckCircle2, ArrowRight, ShieldCheck, Building2 } from 'lucide-react'
+import { CheckCircle2, ArrowRight } from 'lucide-react'
 
 export const ClientsPage: React.FC = () => {
   const [selectedSector, setSelectedSector] = useState<string>('all')
@@ -26,92 +26,101 @@ export const ClientsPage: React.FC = () => {
         )
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-white text-[#0F172A]">
       <SEO
         title="Verified Clients & Institutional Partners | Centrifuge Group"
         description="Explore the federal ministries, healthcare councils, multilateral agencies (WHO, UNICEF, MSH), and enterprise organizations that trust Centrifuge Group."
       />
 
-      {/* ─── Header Banner (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Header */}
+      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+        <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
-              <span>PROVEN PARTNERSHIPS</span>
+            <div className="flex items-center gap-2">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">PROVEN PARTNERSHIPS</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
+            <h1
+              className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)' }}
+            >
               Organizations that depend on Centrifuge.
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+            <p className="text-[16px] text-[#94A3B8] leading-relaxed max-w-2xl">
               We design and deliver mission-critical software, healthcare registries, cloud connectivity, and institutional capacity for multilateral institutions, federal ministries, and corporate enterprises across Nigeria and Africa.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Client Directory (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Sector Filter Tabs (50px pill radius) */}
-          <div className="flex flex-wrap items-center gap-2 mb-12 pb-6 border-b border-[#1e1e1d]">
-            <span className="text-[12px] font-mono text-[#868684] mr-2">Filter by Sector:</span>
-            {sectors.map((sec) => (
-              <button
-                key={sec}
-                onClick={() => setSelectedSector(sec)}
-                className={`text-[12px] font-medium px-4 py-1.5 rounded-[50px] transition-colors ${
-                  selectedSector === sec
-                    ? 'bg-[#121212] text-[#080808] font-semibold'
-                    : 'bg-[#1e1e1d] text-[#868684] border border-[#333333] hover:text-[#faf9f6]'
-                }`}
-              >
-                {sec === 'all' ? 'All Partners' : sec}
-              </button>
-            ))}
+      {/* Client Directory */}
+      <section className="py-14 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+
+          {/* Sector Filter */}
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-10 pb-6 border-b border-[#E2E8F0]">
+            <span className="text-[11px] font-semibold uppercase tracking-[1px] text-[#94A3B8] shrink-0">
+              Filter by Sector:
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {sectors.map((sec) => (
+                <button
+                  key={sec}
+                  onClick={() => setSelectedSector(sec)}
+                  className={`text-[11px] uppercase tracking-[1px] px-3.5 py-1.5 rounded-[6px] font-semibold transition-colors ${
+                    selectedSector === sec
+                      ? 'bg-[#F27A22] text-[#0F172A] shadow-sm'
+                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0F172A]'
+                  }`}
+                >
+                  {sec === 'all' ? 'All Partners' : sec}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Client Directory Grid (Onyx #1e1e1d cards) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Client Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredClients.map((client) => (
               <div
                 key={client.id}
-                className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] p-7 flex flex-col justify-between hover:border-[#333333] transition-all group"
+                className="bg-white rounded-[12px] border border-[#E2E8F0] p-7 flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 group"
               >
                 <div>
                   {/* Logo Container */}
-                  <div className="h-20 w-full flex items-center justify-start border-b border-[#333333]/50 pb-4 mb-5">
+                  <div className="h-16 w-full flex items-center justify-start border-b border-[#E2E8F0] pb-4 mb-5">
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="max-h-14 max-w-[190px] object-contain brightness-95 contrast-125"
+                      className="max-h-12 max-w-[170px] object-contain grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
 
-                  <span className="text-[10px] font-mono uppercase tracking-[1.5px] text-[#f0b66d]">
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#F27A22] block mb-1">
                     {client.sector}
                   </span>
-                  <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-2 group-hover:text-[#f0b66d] transition-colors">
+                  <h3 className="text-[17px] font-bold text-[#0F172A] leading-snug group-hover:text-[#334155] transition-colors">
                     {client.name}
                   </h3>
-                  <div className="text-[12px] font-mono text-[#b4b4b2] mt-1">
+                  <div className="text-[12px] font-medium text-[#94A3B8] mt-0.5">
                     {client.role}
                   </div>
-                  <p className="text-[13px] text-[#868684] mt-3 leading-relaxed">
+                  <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
                     {client.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#333333]/40 flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-[11px] text-[#faf9f6] font-mono">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#f0b66d]" />
+                <div className="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-[11px] text-[#475569] font-medium">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-[#F27A22]" />
                     <span>Verified Partner</span>
                   </div>
                   <Link
                     to="/case-studies"
-                    className="text-[12px] font-medium text-[#b4b4b2] group-hover:text-[#faf9f6] flex items-center gap-1 transition-colors"
+                    className="text-[12px] font-semibold text-[#334155] group-hover:text-[#F27A22] flex items-center gap-1 transition-colors"
                   >
                     <span>View work</span>
-                    <ArrowRight className="h-3 w-3" />
+                    <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
               </div>
@@ -120,27 +129,30 @@ export const ClientsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Institutional Engagement Callout ─── */}
-      <section className="py-20 bg-[#000000]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] flex flex-col sm:flex-row items-center justify-between gap-6">
+      {/* Institutional Engagement Callout */}
+      <section className="py-20 bg-[#0F172A]">
+        <div className="w-[min(92%,1440px)] mx-auto">
+          <div className="p-8 sm:p-12 rounded-[12px] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22] block mb-2">
                 GOVERNMENT & MULTILATERAL ADVISORY
               </span>
-              <h3 className="text-[22px] sm:text-[28px] font-normal text-[#faf9f6] tracking-[-0.29px] mt-2">
+              <h3
+                className="font-bold text-white leading-snug tracking-[-0.025em]"
+                style={{ fontSize: 'clamp(1.375rem, 3vw, 1.75rem)' }}
+              >
                 Partner with Centrifuge on your next institutional program.
               </h3>
-              <p className="text-[13px] text-[#868684] mt-1 max-w-xl">
+              <p className="text-[13px] text-[#94A3B8] mt-2 max-w-xl">
                 Our consultancy practice assists development agencies and state ministries from planning through national deployment.
               </p>
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold shrink-0 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold shrink-0 transition-colors whitespace-nowrap"
             >
               <span>Initiate institutional dialogue</span>
-              <ArrowRight className="h-3.5 w-3.5 ml-2" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

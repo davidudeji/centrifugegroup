@@ -1,315 +1,344 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 @theme {
-  /* Colors from Warp Design System */
-  --color-obsidian: #000000;
-  --color-graphite: #121212;
-  --color-onyx: #1e1e1d;
-  --color-carbon: #333333;
-  --color-slate-deep: #40403f;
-  --color-bone: #faf9f6;
-  --color-paper: #ffffff;
-  --color-ash-light: #e3e2e0;
-  --color-ash-mid: #b4b4b2;
-  --color-ash: #868684;
-  --color-ash-mute: #a0a0a0;
-  --color-iron: #666469;
-  --color-ink: #080808;
-  --color-phosphor-violet: #f0b66d;
-  --color-amber-accent: #f0b66d;
-  --color-amber-deep: #a55d0c;
+  /* ── Brand Colours (spec §3) ── */
+  --color-primary:       #0B1F33;
+  --color-primary-dark:  #071521;
+  --color-accent:        #16C7D9;
+  --color-accent-light:  #67E8F9;
+  --color-dark-text:     #172333;
+  --color-secondary-text:#64748B;
+  --color-bg:            #F7F9FA;
+  --color-surface:       #FFFFFF;
+  --color-border:        #E2E8F0;
+  --color-success:       #16A34A;
+  --color-warning:       #D97706;
+  --color-error:         #DC2626;
 
-  /* Typography — Font Families */
-  --font-matter-regular: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-matter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-geist-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-matter-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-system-ui-sans-serif: 'system-ui sans-serif', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* ── Typography (spec §4) ── */
+  --font-heading: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    'Inter',   ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Typography — Scale */
-  --text-eyebrow: 10px;
-  --leading-eyebrow: 1.2;
-  --tracking-eyebrow: 2px;
-  --text-caption: 12px;
-  --leading-caption: 1.2;
-  --tracking-caption: 0.12px;
-  --text-body: 14px;
-  --leading-body: 1.25;
-  --tracking-body: -0.14px;
-  --text-body-lg: 16px;
-  --leading-body-lg: 1.33;
-  --tracking-body-lg: -0.18px;
-  --text-subheading: 18px;
-  --leading-subheading: 1.2;
-  --tracking-subheading: -0.18px;
-  --text-heading-sm: 20px;
-  --leading-heading-sm: 1.2;
-  --tracking-heading-sm: -0.22px;
-  --text-heading: 24px;
-  --leading-heading: 1.19;
-  --tracking-heading: -0.29px;
-  --text-heading-lg: 32px;
-  --leading-heading-lg: 1.15;
-  --tracking-heading-lg: -0.64px;
-  --text-display: 42px;
-  --leading-display: 1;
-  --tracking-display: -1.13px;
-  --text-display-lg: 56px;
-  --leading-display-lg: 0.96;
-  --tracking-display-lg: -2.24px;
+  /* ── Spacing scale (spec §5: 8 16 24 32 48 64 80 96 120 160) ── */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-30: 120px;
+  --spacing-40: 160px;
 
-  /* Spacing */
-  --spacing-4: 4px;
-  --spacing-5: 5px;
-  --spacing-6: 6px;
-  --spacing-7: 7px;
-  --spacing-8: 8px;
-  --spacing-10: 10px;
-  --spacing-11: 11px;
-  --spacing-12: 12px;
-  --spacing-14: 14px;
-  --spacing-16: 16px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-  --spacing-25: 25px;
-  --spacing-30: 30px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
-
-  /* Border Radius */
-  --radius-md: 4px;
-  --radius-md-2: 7px;
-  --radius-lg: 10px;
-  --radius-2xl: 20px;
-  --radius-3xl: 33px;
-  --radius-full: 50px;
-  --radius-tags: 50px;
-  --radius-cards: 20px;
-  --radius-icons: 4px;
-  --radius-links: 7px;
-  --radius-inputs: 7px;
-  --radius-buttons: 33px;
-
-  /* Surfaces */
-  --surface-obsidian: #000000;
-  --surface-graphite: #121212;
-  --surface-onyx: #1e1e1d;
-  --surface-carbon: #333333;
-  --surface-slate-deep: #40403f;
+  /* ── Border Radius (spec §5) ── */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-btn: 10px;
+  --radius-full: 9999px;
 }
 
 :root {
-  /* Colors */
-  --color-obsidian: #000000;
-  --color-graphite: #121212;
-  --color-onyx: #1e1e1d;
-  --color-carbon: #333333;
-  --color-slate-deep: #40403f;
-  --color-bone: #faf9f6;
-  --color-paper: #ffffff;
-  --color-ash-light: #e3e2e0;
-  --color-ash-mid: #b4b4b2;
-  --color-ash: #868684;
-  --color-ash-mute: #a0a0a0;
-  --color-iron: #666469;
-  --color-ink: #080808;
-  --color-phosphor-violet: #f0b66d;
-  --color-amber-accent: #f0b66d;
-  --color-amber-deep: #a55d0c;
+  /* ── Brand Colours ── */
+  --color-primary:        #0B1F33;
+  --color-primary-dark:   #071521;
+  --color-accent:         #16C7D9;
+  --color-accent-light:   #67E8F9;
+  --color-dark-text:      #172333;
+  --color-secondary-text: #64748B;
+  --color-bg:             #F7F9FA;
+  --color-surface:        #FFFFFF;
+  --color-border:         #E2E8F0;
+  --color-success:        #16A34A;
+  --color-warning:        #D97706;
+  --color-error:          #DC2626;
 
-  /* Surfaces */
-  --surface-obsidian: #000000;
-  --surface-graphite: #121212;
-  --surface-onyx: #1e1e1d;
-  --surface-carbon: #333333;
-  --surface-slate-deep: #40403f;
+  /* ── Layout ── */
+  --page-max-width: 1440px;
+  --content-max-width: 1200px;
+  --section-py: 96px;
 
-  /* Layout */
-  --page-max-width: 1200px;
-  --section-gap: 64px;
-  --card-padding: 24px;
-  --element-gap: 10px;
-
-  /* Fonts */
-  --font-matter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-matter-regular: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-geist-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-matter-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  color-scheme: dark;
+  /* ── Admin sidebar ── */
+  --admin-sidebar-bg: #071521;
+  --admin-bg: #F7F9FA;
 }
 
+/* ─── Base Reset ─────────────────────────────────── */
 html {
   scroll-behavior: smooth;
-  background-color: #000000;
-  color: #faf9f6;
-  font-family: var(--font-matter);
-  letter-spacing: -0.012em;
+  background-color: #F7F9FA;
+  color: #172333;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 body {
-  background-color: #000000;
-  color: #faf9f6;
+  background-color: #F7F9FA;
+  color: #172333;
   min-height: 100vh;
 }
 
-/* Custom dark terminal scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #F7F9FA; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* ─── Focus ──────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #16C7D9;
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar-track {
-  background: #000000;
+/* ─── Typography Utilities (spec §4) ───────────────
+   Headings: Manrope  |  Body: Inter
+─────────────────────────────────────────────────── */
+.font-heading { font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif; }
+.font-body    { font-family: 'Inter',   ui-sans-serif, system-ui, sans-serif; }
+
+/* Hero headline — 72-88px desktop */
+.text-hero {
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 3px;
+/* H1 — 56-64px */
+.text-h1 {
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #40403f;
+/* H2 — 40-48px */
+.text-h2 {
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-/* Warp Typography Utility Classes */
-.text-display-lg {
-  font-size: 56px;
-  line-height: 0.96;
-  letter-spacing: -2.24px;
-}
-
-.text-display {
-  font-size: 42px;
-  line-height: 1;
-  letter-spacing: -1.13px;
-}
-
-.text-heading-lg {
-  font-size: 32px;
-  line-height: 1.15;
-  letter-spacing: -0.64px;
-}
-
-.text-heading {
-  font-size: 24px;
-  line-height: 1.19;
-  letter-spacing: -0.29px;
-}
-
-.text-heading-sm {
-  font-size: 20px;
+/* H3 — 24-32px */
+.text-h3 {
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.22px;
+  letter-spacing: -0.015em;
 }
 
-.text-subheading {
-  font-size: 18px;
-  line-height: 1.2;
-  letter-spacing: -0.18px;
-}
-
+/* Body large — 18-20px */
 .text-body-lg {
-  font-size: 16px;
-  line-height: 1.33;
-  letter-spacing: -0.18px;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.65;
 }
 
+/* Body — 16px */
 .text-body {
-  font-size: 14px;
-  line-height: 1.25;
-  letter-spacing: -0.14px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.text-caption {
-  font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: 0.12px;
-}
-
+/* Caption / Eyebrow */
 .text-eyebrow {
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-/* Warp Signature Component Classes */
-.warp-btn-primary {
+/* ─── Design-System Buttons ──────────────────────── */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #ffffff;
-  color: #080808;
-  font-size: 14px;
+  padding: 12px 28px;
+  background-color: #0B1F33;
+  color: #FFFFFF;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
   font-weight: 600;
-  border-radius: 33px;
-  padding: 9px 22px;
-  transition: all 150ms ease;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 100ms ease, box-shadow 150ms ease;
   white-space: nowrap;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-decoration: none;
 }
-
-.warp-btn-primary:hover {
-  background-color: #e3e2e0;
+.btn-primary:hover {
+  background-color: #071521;
+  box-shadow: 0 4px 12px rgba(11, 31, 51, 0.25);
+  transform: translateY(-1px);
 }
+.btn-primary:active { transform: translateY(0); }
 
-.warp-btn-ghost {
+.btn-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: transparent;
-  border: 1px solid #333333;
-  color: #b4b4b2;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 33px;
-  padding: 9px 20px;
-  transition: all 150ms ease;
+  padding: 12px 28px;
+  background-color: #16C7D9;
+  color: #0B1F33;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 100ms ease;
   white-space: nowrap;
+  text-decoration: none;
+}
+.btn-accent:hover { background-color: #10b8ca; transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 27px;
+  background-color: transparent;
+  color: #0B1F33;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1.5px solid #E2E8F0;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: #0B1F33;
+  background-color: #F7F9FA;
 }
 
-.warp-btn-ghost:hover {
-  border-color: #b4b4b2;
-  color: #faf9f6;
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 27px;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn-outline-white:hover {
+  border-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0.08);
 }
 
-.warp-pill-tag {
+/* ─── Cards ──────────────────────────────────────── */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+.card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 20px rgba(11, 31, 51, 0.06);
+  transform: translateY(-2px);
+}
+
+.card-feature {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 32px;
+  transition: border-color 150ms ease, box-shadow 200ms ease;
+}
+.card-feature:hover {
+  border-color: #16C7D9;
+  box-shadow: 0 8px 32px rgba(22, 199, 217, 0.08);
+}
+
+/* ─── Section Containers ─────────────────────────── */
+.section-container {
+  width: min(92%, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-py {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+/* ─── Badge / Eyebrow chip ───────────────────────── */
+.badge-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border-radius: 50px;
-  border: 1px solid #333333;
-  background: transparent;
-  font-size: 10px;
-  font-weight: 400;
+  padding: 5px 14px;
+  background-color: rgba(22, 199, 217, 0.08);
+  border: 1px solid rgba(22, 199, 217, 0.25);
+  border-radius: 9999px;
+  color: #0EA5B9;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #b4b4b2;
-  padding: 4px 12px;
 }
 
-.warp-pill-tag-active {
-  border-color: #cbb0f7;
-  color: #cbb0f7;
-  background-color: rgba(203, 176, 247, 0.08);
+/* On dark backgrounds */
+.badge-eyebrow-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  color: rgba(255,255,255,0.75);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.warp-card {
-  border-radius: 20px;
-  background-color: #1e1e1d;
-  border: 1px solid #1e1e1d;
-  padding: 24px;
-  transition: border-color 150ms ease;
+/* ─── Admin Layout Specifics ─────────────────────── */
+.admin-sidebar {
+  background-color: #071521;
+  color: #94A3B8;
+}
+.admin-content {
+  background-color: #F7F9FA;
 }
 
-.warp-card:hover {
-  border-color: #333333;
+/* ─── Reduced Motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

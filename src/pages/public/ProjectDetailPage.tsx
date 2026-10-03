@@ -22,7 +22,7 @@ export const ProjectDetailPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="py-32 text-center text-[12px] font-mono text-[#868684] bg-[#000000]">
+      <div className="py-32 text-center text-[13px] font-medium text-[#94A3B8] bg-white">
         Loading project specification...
       </div>
     )
@@ -30,9 +30,9 @@ export const ProjectDetailPage: React.FC = () => {
 
   if (!project) {
     return (
-      <div className="py-32 text-center space-y-4 bg-[#000000] text-[#faf9f6]">
-        <h2 className="text-[20px] font-semibold">Project not found</h2>
-        <p className="text-[13px] text-[#868684]">The requested project does not exist or has been archived.</p>
+      <div className="py-32 text-center space-y-4 bg-white text-[#0F172A]">
+        <h2 className="text-[20px] font-bold">Project not found</h2>
+        <p className="text-[14px] text-[#475569]">The requested project does not exist or has been archived.</p>
         <Link to="/projects">
           <Button variant="secondary" size="sm">Back to Projects</Button>
         </Link>
@@ -41,52 +41,55 @@ export const ProjectDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-white text-[#0F172A]">
       <SEO
         title={`${project.name} | Projects Showcase`}
         description={project.description}
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* Hero Header */}
+      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+        <div className="w-[min(92%,1440px)] mx-auto space-y-4">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#F27A22] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Projects & Products</span>
           </Link>
 
-          <div className="flex flex-wrap items-center gap-2 pt-2">
-            <span className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[#f0b66d] text-[11px] font-mono">
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#FFF7ED]/10 border border-[#F27A22]/30 text-[#F27A22] text-[11px] font-semibold">
               {project.category}
             </span>
-            <span className="text-[12px] text-[#868684] font-mono">
+            <span className="text-[12px] text-[#94A3B8]">
               • {project.industry}
             </span>
             {project.status === 'live' && (
-              <span className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[#faf9f6] text-[10px] font-mono">
+              <span className="px-2.5 py-0.5 rounded-[4px] bg-white/10 border border-white/20 text-white text-[10px] font-semibold uppercase tracking-[1px]">
                 STATUS: PRODUCTION LIVE
               </span>
             )}
           </div>
 
-          <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-tight">
+          <h1
+            className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+          >
             {project.name}
           </h1>
 
-          <p className="text-[16px] text-[#868684] leading-relaxed max-w-3xl tracking-[-0.14px]">
+          <p className="text-[16px] text-[#94A3B8] leading-relaxed max-w-3xl">
             {project.description}
           </p>
 
-          <div className="pt-4 flex flex-wrap items-center gap-3">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold transition-colors"
               >
                 <span>Visit Live Project</span>
                 <ExternalLink className="h-3.5 w-3.5" />
@@ -98,17 +101,17 @@ export const ProjectDetailPage: React.FC = () => {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[33px] bg-[#1e1e1d] border border-[#333333] text-[#faf9f6] text-[13px] hover:border-[#666469] transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] bg-transparent border border-white/20 text-white hover:border-white/40 text-[13px] transition-colors"
               >
                 <span>Interactive Demo</span>
-                <ExternalLink className="h-3.5 w-3.5 text-[#f0b66d]" />
+                <ExternalLink className="h-3.5 w-3.5 text-[#F27A22]" />
               </a>
             )}
 
             {project.caseStudySlug && (
               <Link
                 to={`/case-studies/${project.caseStudySlug}`}
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[6px] bg-transparent border border-white/20 text-[#94A3B8] hover:text-white text-[13px] transition-colors"
               >
                 <span>View Case Study</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -118,11 +121,11 @@ export const ProjectDetailPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Main Content (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* Main Content */}
+      <section className="py-16 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto space-y-10">
           {/* Visual Container */}
-          <div className="rounded-[20px] overflow-hidden border border-[#1e1e1d] bg-[#000000]">
+          <div className="rounded-[12px] overflow-hidden border border-[#E2E8F0] bg-[#0F172A]">
             <img
               src={project.image}
               alt={project.name}
@@ -131,59 +134,59 @@ export const ProjectDetailPage: React.FC = () => {
           </div>
 
           {/* Grid Overview */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-8 space-y-8 bg-[#1e1e1d] p-8 sm:p-10 rounded-[20px] border border-[#1e1e1d]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-8 space-y-8 bg-white p-8 sm:p-10 rounded-[12px] border border-[#E2E8F0]">
               {project.overview && (
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                     SYSTEM OVERVIEW
                   </span>
-                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
+                  <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-3">
                     Architectural Overview
                   </h3>
-                  <p className="text-[14px] text-[#868684] leading-relaxed">
+                  <p className="text-[14px] text-[#475569] leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
               )}
 
               {project.challenge && (
-                <div className="pt-6 border-t border-[#333333]/50">
-                  <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+                <div className="pt-6 border-t border-[#E2E8F0]">
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                     THE PROBLEM
                   </span>
-                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
+                  <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-3">
                     Operational Challenge
                   </h3>
-                  <p className="text-[14px] text-[#868684] leading-relaxed">
+                  <p className="text-[14px] text-[#475569] leading-relaxed">
                     {project.challenge}
                   </p>
                 </div>
               )}
 
               {project.solution && (
-                <div className="pt-6 border-t border-[#333333]/50">
-                  <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d] block mb-2">
+                <div className="pt-6 border-t border-[#E2E8F0]">
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#F27A22] block mb-2">
                     THE SOLUTION
                   </span>
-                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
+                  <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-3">
                     Centrifuge Solution
                   </h3>
-                  <p className="text-[14px] text-[#faf9f6] leading-relaxed">
+                  <p className="text-[14px] text-[#334155] leading-relaxed">
                     {project.solution}
                   </p>
                 </div>
               )}
 
               {project.capabilities && project.capabilities.length > 0 && (
-                <div className="pt-6 border-t border-[#333333]/50">
-                  <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-3">
+                <div className="pt-6 border-t border-[#E2E8F0]">
+                  <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-4">
                     Key Engineered Capabilities
                   </h3>
                   <div className="space-y-2.5">
                     {project.capabilities.map((cap, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-[13px] text-[#b4b4b2]">
-                        <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2.5 text-[13px] text-[#475569]">
+                        <CheckCircle2 className="h-4 w-4 text-[#F27A22] shrink-0 mt-0.5" />
                         <span>{cap}</span>
                       </div>
                     ))}
@@ -193,53 +196,53 @@ export const ProjectDetailPage: React.FC = () => {
             </div>
 
             {/* Sidebar Meta Box */}
-            <div className="lg:col-span-4 space-y-6">
-              <div className="bg-[#1e1e1d] p-6 rounded-[20px] border border-[#1e1e1d] space-y-4">
-                <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+            <div className="lg:col-span-4 space-y-5">
+              <div className="bg-white p-6 rounded-[12px] border border-[#E2E8F0] space-y-4">
+                <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block">
                   Technology Stack
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 rounded-[50px] bg-[#121212] border border-[#333333] text-[11px] font-mono text-[#b4b4b2]"
+                      className="px-2.5 py-0.5 rounded-[4px] bg-[#F8FAFC] border border-[#E2E8F0] text-[11px] text-[#475569] font-medium"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-[#333333]/50 space-y-2.5 text-[12.5px]">
+                <div className="pt-4 border-t border-[#E2E8F0] space-y-2.5 text-[13px]">
                   <div className="flex justify-between">
-                    <span className="text-[#868684]">Industry</span>
-                    <span className="font-medium text-[#faf9f6]">{project.industry}</span>
+                    <span className="text-[#94A3B8]">Industry</span>
+                    <span className="font-semibold text-[#0F172A]">{project.industry}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#868684]">Category</span>
-                    <span className="font-medium text-[#faf9f6]">{project.category}</span>
+                    <span className="text-[#94A3B8]">Category</span>
+                    <span className="font-semibold text-[#0F172A]">{project.category}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#868684]">Delivery Status</span>
-                    <span className="font-mono text-[#f0b66d]">Production Live</span>
+                    <span className="text-[#94A3B8]">Delivery Status</span>
+                    <span className="font-semibold text-[#F27A22]">Production Live</span>
                   </div>
                 </div>
               </div>
 
               {/* Consultation Card */}
-              <div className="p-6 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] text-center space-y-3">
-                <h4 className="text-[16px] font-semibold text-[#faf9f6]">
+              <div className="p-6 rounded-[12px] bg-[#0F172A] text-center space-y-3">
+                <h4 className="text-[16px] font-bold text-white">
                   Deploy a similar platform?
                 </h4>
-                <p className="text-[12.5px] text-[#868684] leading-relaxed">
+                <p className="text-[12.5px] text-[#94A3B8] leading-relaxed">
                   Our senior engineering team can evaluate your operational requirements and provide architectural recommendations.
                 </p>
-                <div className="pt-2">
+                <div className="pt-1">
                   <Link
                     to="/contact"
-                    className="w-full inline-flex items-center justify-center h-10 px-5 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 h-10 px-5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold transition-colors"
                   >
                     <span>Talk to an Expert</span>
-                    <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>

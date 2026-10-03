@@ -38,36 +38,41 @@ export const ContactPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-white text-[#0F172A]">
       <SEO
         title="Contact Us | Centrifuge Group"
         description="Have a problem worth solving? Speak directly with Centrifuge enterprise systems architects and specialists."
       />
 
-      {/* ─── Header Strip ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Header Strip */}
+      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+        <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
-              <span>DIRECT TECHNICAL ACCESS</span>
+            <div className="flex items-center gap-2">
+              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">DIRECT TECHNICAL ACCESS</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
+            <h1
+              className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
+              style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)' }}
+            >
               Have a problem worth solving?
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+            <p className="text-[16px] text-[#94A3B8] leading-relaxed max-w-2xl">
               Whether you represent a federal ministry, commercial enterprise, or hospital network, our senior technology architects are ready to evaluate your operational requirements.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Contact Body (Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Contact Body */}
+      <section className="py-20 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Contact Form (Onyx #1e1e1d, 20px radius) */}
-            <div className="lg:col-span-7 bg-[#1e1e1d] p-8 sm:p-10 rounded-[20px] border border-[#1e1e1d]">
-              <h2 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.22px] mb-6">
+
+            {/* Contact Form */}
+            <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-[12px] border border-[#E2E8F0] shadow-sm">
+              <h2 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.02em] mb-6">
                 Send an Inquiry to Our Senior Engineers
               </h2>
 
@@ -109,11 +114,11 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[12px] font-normal text-[#b4b4b2] mb-1.5 tracking-[-0.14px]">
+                  <label className="block text-[12px] font-semibold text-[#475569] mb-1.5">
                     Operational Domain / Subject
                   </label>
                   <select
-                    className="w-full bg-[#121212] text-[#faf9f6] text-[14px] p-2.5 border border-[#333333] rounded-[7px] focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:border-[#f0b66d] tracking-[-0.14px]"
+                    className="w-full bg-white text-[#0F172A] text-[14px] p-2.5 border border-[#E2E8F0] rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[#F27A22] focus:border-[#F27A22] transition-colors"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   >
@@ -127,14 +132,14 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[12px] font-normal text-[#b4b4b2] mb-1.5 tracking-[-0.14px]">
+                  <label className="block text-[12px] font-semibold text-[#475569] mb-1.5">
                     Project Details & Operational Bottlenecks *
                   </label>
                   <textarea
                     rows={4}
                     required
                     placeholder="Describe your current system challenge, number of facilities/users, and desired implementation timeline..."
-                    className="w-full bg-[#121212] text-[#faf9f6] text-[14px] p-3 border border-[#333333] rounded-[7px] focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:border-[#f0b66d] tracking-[-0.14px]"
+                    className="w-full bg-white text-[#0F172A] text-[14px] p-3 border border-[#E2E8F0] rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[#F27A22] focus:border-[#F27A22] transition-colors resize-none"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
@@ -154,59 +159,67 @@ export const ContactPage: React.FC = () => {
               </form>
             </div>
 
-            {/* Contact Details & Direct Channels */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="bg-[#1e1e1d] p-8 rounded-[20px] border border-[#1e1e1d] space-y-6">
-                <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
+            {/* Contact Details */}
+            <div className="lg:col-span-5 space-y-5">
+              <div className="bg-white p-8 rounded-[12px] border border-[#E2E8F0] space-y-6">
+                <h3 className="text-[17px] font-bold text-[#0F172A]">
                   Headquarters & Regional Reach
                 </h3>
 
-                <div className="space-y-4 text-[13px] text-[#868684]">
+                <div className="space-y-5 text-[13px]">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                    <div className="h-8 w-8 rounded-[6px] bg-[#FFF7ED] flex items-center justify-center shrink-0">
+                      <MapPin className="h-4 w-4 text-[#F27A22]" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-[#faf9f6]">Principal Office</p>
-                      <p className="mt-0.5 leading-relaxed">
+                      <p className="font-semibold text-[#0F172A]">Principal Office</p>
+                      <p className="mt-0.5 text-[#475569] leading-relaxed">
                         Plot 1083, Cadastral Zone B06, Mabushi District, Abuja, Federal Capital Territory, Nigeria.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Mail className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                    <div className="h-8 w-8 rounded-[6px] bg-[#FFF7ED] flex items-center justify-center shrink-0">
+                      <Mail className="h-4 w-4 text-[#F27A22]" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-[#faf9f6]">Inquiries</p>
-                      <p className="mt-0.5">info@centrifugegroup.co</p>
-                      <p className="text-[#666469]">solutions@centrifugegroup.co</p>
+                      <p className="font-semibold text-[#0F172A]">Inquiries</p>
+                      <p className="mt-0.5 text-[#475569]">info@centrifugegroup.co</p>
+                      <p className="text-[#94A3B8]">solutions@centrifugegroup.co</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Phone className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                    <div className="h-8 w-8 rounded-[6px] bg-[#FFF7ED] flex items-center justify-center shrink-0">
+                      <Phone className="h-4 w-4 text-[#F27A22]" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-[#faf9f6]">Direct Telephone</p>
-                      <p className="mt-0.5">+234 (0) 803 000 1234</p>
-                      <p className="text-[#666469]">+234 (0) 901 000 5678</p>
+                      <p className="font-semibold text-[#0F172A]">Direct Telephone</p>
+                      <p className="mt-0.5 text-[#475569]">+234 (0) 803 000 1234</p>
+                      <p className="text-[#94A3B8]">+234 (0) 901 000 5678</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Clock className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                    <div className="h-8 w-8 rounded-[6px] bg-[#FFF7ED] flex items-center justify-center shrink-0">
+                      <Clock className="h-4 w-4 text-[#F27A22]" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-[#faf9f6]">Operational Hours</p>
-                      <p className="mt-0.5">Monday – Friday: 08:00 – 17:30 WAT</p>
-                      <p className="text-[#f0b66d] text-[11px] font-mono mt-0.5">24/7 Priority SLA for active hospital & logistics clusters</p>
+                      <p className="font-semibold text-[#0F172A]">Operational Hours</p>
+                      <p className="mt-0.5 text-[#475569]">Monday – Friday: 08:00 – 17:30 WAT</p>
+                      <p className="text-[#F27A22] text-[11px] font-semibold mt-1">24/7 Priority SLA for active hospital & logistics clusters</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Data Privacy Note */}
-              <div className="p-6 rounded-[20px] bg-[#000000] text-[#faf9f6] border border-[#1e1e1d] space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-[1px] text-[#f0b66d]">
+              <div className="p-6 rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
+                <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#F27A22]">
                   CONFIDENTIALITY ASSURANCE
                 </span>
-                <p className="text-[12px] text-[#868684] leading-relaxed">
+                <p className="text-[12px] text-[#475569] leading-relaxed mt-1">
                   All enterprise technical requests are safeguarded by strict confidentiality and non-disclosure standards in accordance with the Nigeria Data Protection Act (NDPA).
                 </p>
               </div>
@@ -217,4 +230,5 @@ export const ContactPage: React.FC = () => {
     </div>
   )
 }
+
 export default ContactPage

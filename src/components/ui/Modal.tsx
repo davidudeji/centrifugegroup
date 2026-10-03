@@ -49,26 +49,26 @@ export const Modal: React.FC<ModalProps> = ({
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-[#000000]/80 transition-opacity"
+        className="fixed inset-0 bg-[#0F172A]/60 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
 
-      {/* Modal Container (Onyx #1e1e1d, 20px radius, 1px #333333 border) */}
+      {/* Modal Container */}
       <div
-        className={`relative w-full ${maxWidthStyles[maxWidth]} bg-[#1e1e1d] rounded-[20px] border border-[#333333] p-6 z-10 animate-in fade-in duration-150`}
+        className={`relative w-full ${maxWidthStyles[maxWidth]} bg-white rounded-[12px] border border-[#E2E8F0] shadow-xl p-6 z-10 animate-in fade-in duration-150`}
       >
-        <div className="flex items-start justify-between pb-3 border-b border-[#333333]/70">
+        <div className="flex items-start justify-between pb-4 border-b border-[#E2E8F0]">
           <div>
-            <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
+            <h3 className="text-[18px] font-bold text-[#0F172A] tracking-[-0.025em]">
               {title}
             </h3>
             {description && (
-              <p className="mt-1 text-[13px] text-[#868684]">{description}</p>
+              <p className="mt-1 text-[13px] text-[#475569]">{description}</p>
             )}
           </div>
           <button
             onClick={onClose}
-            className="rounded-[4px] p-1 text-[#868684] hover:text-[#faf9f6] hover:bg-[#121212] transition-colors"
+            className="rounded-[6px] p-1.5 text-[#94A3B8] hover:text-[#0F172A] hover:bg-[#F8FAFC] transition-colors"
             aria-label="Close modal"
           >
             <X className="h-4 w-4" />

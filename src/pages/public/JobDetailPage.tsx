@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { mockJobs } from '../../data/mockData'
-import { ArrowLeft, MapPin, Briefcase, CheckCircle2, UploadCloud } from 'lucide-react'
+import { ArrowLeft, MapPin, CheckCircle2, UploadCloud } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import { Modal } from '../../components/ui/Modal'
@@ -46,95 +46,97 @@ export const JobDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-white text-[#0F172A]">
       <SEO
         title={`${job.title} | Centrifuge Careers`}
         description={job.shortDescription}
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* Hero Header */}
+      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+        <div className="w-[min(92%,1440px)] mx-auto max-w-[1000px] space-y-4">
           <Link
             to="/careers/jobs"
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#F27A22] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Open Positions</span>
           </Link>
 
-          <div className="flex flex-wrap items-center gap-2 pt-2">
-            <span className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[#f0b66d] text-[11px] font-mono">
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#FFF7ED]/10 border border-[#F27A22]/30 text-[#F27A22] text-[11px] font-semibold">
               {job.department}
             </span>
-            <span className="text-[12px] text-[#868684] font-mono">• {job.type}</span>
+            <span className="text-[12px] text-[#94A3B8]">• {job.type}</span>
           </div>
 
-          <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-tight">
+          <h1
+            className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+          >
             {job.title}
           </h1>
 
-          <div className="flex items-center gap-2 text-[13px] text-[#868684] font-mono">
-            <MapPin className="h-4 w-4 text-[#f0b66d]" />
+          <div className="flex items-center gap-1.5 text-[13px] text-[#94A3B8]">
+            <MapPin className="h-4 w-4 text-[#F27A22]" />
             <span>{job.location}</span>
           </div>
 
           <div className="pt-4">
-            <Button
-              variant="primary"
-              size="lg"
+            <button
               onClick={() => setIsApplyModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold transition-colors"
             >
               Apply for this Position
-            </Button>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* ─── Main Content (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="bg-[#1e1e1d] p-8 sm:p-10 rounded-[20px] border border-[#1e1e1d] space-y-8">
+      {/* Main Content */}
+      <section className="py-16 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="w-[min(92%,1440px)] mx-auto max-w-[1000px] space-y-6">
+          <div className="bg-white p-8 sm:p-10 rounded-[12px] border border-[#E2E8F0] space-y-8">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+              <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                 OVERVIEW
               </span>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-2">
+              <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-3">
                 About the Role
               </h3>
-              <p className="text-[14px] text-[#868684] leading-relaxed">
+              <p className="text-[14px] text-[#475569] leading-relaxed">
                 {job.aboutRole}
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[#333333]/50">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+            <div className="pt-6 border-t border-[#E2E8F0]">
+              <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                 DUTIES
               </span>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-3">
+              <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-4">
                 Key Responsibilities
               </h3>
               <div className="space-y-2.5">
                 {job.responsibilities.map((resp, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#b4b4b2]">
-                    <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                  <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#475569]">
+                    <CheckCircle2 className="h-4 w-4 text-[#F27A22] shrink-0 mt-0.5" />
                     <span>{resp}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#333333]/50">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+            <div className="pt-6 border-t border-[#E2E8F0]">
+              <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                 QUALIFICATIONS
               </span>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-3">
+              <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-4">
                 Requirements & Experience
               </h3>
               <div className="space-y-2.5">
                 {job.requirements.map((req, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#b4b4b2]">
-                    <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
+                  <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#475569]">
+                    <CheckCircle2 className="h-4 w-4 text-[#F27A22] shrink-0 mt-0.5" />
                     <span>{req}</span>
                   </div>
                 ))}
@@ -142,14 +144,14 @@ export const JobDetailPage: React.FC = () => {
             </div>
 
             {job.niceToHave.length > 0 && (
-              <div className="pt-6 border-t border-[#333333]/50">
-                <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-3">
+              <div className="pt-6 border-t border-[#E2E8F0]">
+                <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-4">
                   Nice to Have
                 </h3>
                 <div className="space-y-2.5">
                   {job.niceToHave.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#868684]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#f0b66d] shrink-0 mt-1.5" />
+                    <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#475569]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#F27A22] shrink-0 mt-1.5" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -157,34 +159,33 @@ export const JobDetailPage: React.FC = () => {
               </div>
             )}
 
-            <div className="pt-6 border-t border-[#333333]/50">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block mb-2">
+            <div className="pt-6 border-t border-[#E2E8F0]">
+              <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                 COMPENSATION & PERKS
               </span>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mb-3">
+              <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em] mb-4">
                 What We Offer
               </h3>
               <div className="space-y-2.5">
                 {job.benefits.map((b, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#faf9f6]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#f0b66d] shrink-0 mt-1.5" />
+                  <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#334155]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#F27A22] shrink-0 mt-1.5" />
                     <span>{b}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[#333333]/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <span className="text-[11px] font-mono text-[#868684]">
+            <div className="pt-6 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <span className="text-[11px] text-[#94A3B8]">
                 Position ID: {job.id} · Centrifuge Talent Team
               </span>
-              <Button
-                variant="primary"
-                size="md"
+              <button
                 onClick={() => setIsApplyModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold transition-colors"
               >
                 Apply for this Role
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -227,28 +228,28 @@ export const JobDetailPage: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-[12px] font-semibold text-[#faf9f6] mb-1.5">
+            <label className="block text-[12px] font-semibold text-[#334155] mb-1.5">
               Cover Letter / Introduction
             </label>
             <textarea
               rows={3}
               required
               placeholder="Tell us briefly why you want to build technology at Centrifuge..."
-              className="w-full text-[13px] p-3 bg-[#121212] text-[#faf9f6] border border-[#333333] rounded-[7px] focus:outline-none focus:border-[#f0b66d]"
+              className="w-full text-[13px] p-3 bg-white text-[#0F172A] border border-[#E2E8F0] rounded-[6px] focus:outline-none focus:border-[#F27A22] focus:ring-1 focus:ring-[#F27A22]/30 placeholder-[#94A3B8]"
               value={formData.coverLetter}
               onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
             />
           </div>
 
           <div>
-            <label className="block text-[12px] font-semibold text-[#faf9f6] mb-1.5">
+            <label className="block text-[12px] font-semibold text-[#334155] mb-1.5">
               Resume / Curriculum Vitae (PDF or DOCX) *
             </label>
-            <div className="border border-dashed border-[#333333] rounded-[8px] p-4 text-center bg-[#121212]">
-              <UploadCloud className="h-6 w-6 text-[#868684] mx-auto mb-1" />
-              <p className="text-[12px] text-[#868684]">
+            <div className="border border-dashed border-[#E2E8F0] rounded-[8px] p-4 text-center bg-[#F8FAFC] hover:border-[#CBD5E1] transition-colors">
+              <UploadCloud className="h-6 w-6 text-[#94A3B8] mx-auto mb-1" />
+              <p className="text-[12px] text-[#475569]">
                 {formData.cvFileName ? (
-                  <span className="font-semibold text-[#f0b66d]">{formData.cvFileName} attached</span>
+                  <span className="font-semibold text-[#F27A22]">{formData.cvFileName} attached</span>
                 ) : (
                   <span>Click to select or drag and drop your resume file</span>
                 )}
@@ -256,7 +257,7 @@ export const JobDetailPage: React.FC = () => {
               <input
                 type="file"
                 accept=".pdf,.docx,.doc"
-                className="mt-2 text-[11px] text-[#868684] file:mr-2 file:py-1 file:px-2.5 file:rounded-[50px] file:border-0 file:text-[11px] file:bg-[#1e1e1d] file:text-[#faf9f6]"
+                className="mt-2 text-[11px] text-[#475569] file:mr-2 file:py-1 file:px-2.5 file:rounded-[4px] file:border-0 file:text-[11px] file:bg-[#F27A22] file:text-[#0F172A] file:font-semibold"
                 onChange={(e) => {
                   if (e.target.files?.[0]) {
                     setFormData({ ...formData, cvFileName: e.target.files[0].name })
@@ -273,9 +274,9 @@ export const JobDetailPage: React.FC = () => {
               required
               checked={formData.consent}
               onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-              className="rounded border-[#333333] bg-[#121212] text-[#f0b66d]"
+              className="rounded border-[#E2E8F0] text-[#F27A22] accent-[#F27A22]"
             />
-            <label htmlFor="consent" className="text-[12px] text-[#868684]">
+            <label htmlFor="consent" className="text-[12px] text-[#475569]">
               I confirm that the details provided are accurate and consent to NDPR data storage.
             </label>
           </div>

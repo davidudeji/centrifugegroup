@@ -5,50 +5,52 @@ import { ArrowRight } from 'lucide-react'
 
 export const TrustSection: React.FC = () => {
   return (
-    <section className="bg-[#000000] py-16 border-y border-[#333333]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-[10px] uppercase tracking-[2px] font-semibold text-[#f0b66d]">
-            TRUSTED BY MINISTRIES & ENTERPRISES
-          </p>
-          <h2 className="text-[28px] sm:text-[32px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-2 leading-[1.15]">
-            Technology built for real operations.
-          </h2>
+    <section className="bg-white border-b border-[#E2E8F0] py-16" aria-label="Trusted partners">
+      <div className="section-container">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
+          <div>
+            <p className="text-eyebrow text-[#16C7D9] mb-1">
+              Trusted By
+            </p>
+            <h2 className="text-[22px] font-heading font-700 text-[#0B1F33] tracking-tight">
+              Ministries, agencies &amp; enterprises
+            </h2>
+          </div>
+          <Link
+            to="/clients"
+            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+            id="trust-view-all-clients"
+          >
+            View all clients
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
 
-        {/* ───  Trusted-By Logo Grid ─── */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-5 items-center justify-items-center">
+        {/* Logo grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
           {verifiedClients.map((client) => (
             <div
               key={client.id}
-              className="group relative flex flex-col items-center justify-center w-full min-h-[112px] px-3 py-4 rounded-[12px] border border-[#1e1e1d] bg-[#121212] hover:border-[#333333] transition-colors"
-              title={`${client.name} — ${client.role}`}
+              className="group flex flex-col items-center justify-center gap-2.5 min-h-[90px] px-3 py-4 rounded-[12px] border border-[#E2E8F0] bg-[#F7F9FA] hover:bg-white hover:border-[#CBD5E1] hover:shadow-sm transition-all duration-150"
+              title={`${client.name}${client.role ? ` — ${client.role}` : ''}`}
             >
-              <div className="h-16 w-full flex items-center justify-center">
+              <div className="h-10 w-full flex items-center justify-center">
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="max-h-full max-w-[160px] object-contain grayscale invert brightness-200 opacity-75 group-hover:opacity-100 transition-opacity duration-150"
+                  className="max-h-full max-w-[100px] object-contain grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-200"
                 />
               </div>
-              <span className="text-[11px] text-center font-medium text-[#b4b4b2] line-clamp-1 mt-2 group-hover:text-[#faf9f6] transition-colors">
+              <span className="text-[11px] text-center font-medium text-[#94A3B8] group-hover:text-[#64748B] transition-colors leading-snug line-clamp-2">
                 {client.name}
               </span>
             </div>
           ))}
         </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            to="/clients"
-            className="inline-flex items-center gap-1.5 text-[13px] text-[#b4b4b2] hover:text-[#f0b66d] hover:underline transition-colors tracking-[-0.14px]"
-          >
-            <span>Explore our public sector & enterprise client directory</span>
-            <ArrowRight className="h-3 w-3" />
-          </Link>
-        </div>
       </div>
     </section>
-  );
+  )
 }
+
 export default TrustSection
