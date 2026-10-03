@@ -6,19 +6,19 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export const CaseStudiesPage: React.FC = () => {
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="Case Studies & Client Outcomes | Centrifuge Group"
         description="Authentic case studies of enterprise systems and national health workforce platforms delivered by Centrifuge."
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">VERIFIED CLIENT OUTCOMES</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">VERIFIED CLIENT OUTCOMES</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -59,10 +59,10 @@ export const CaseStudiesPage: React.FC = () => {
               <div className="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div>
-                    <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#F27A22] block mb-1">
+                    <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#16C7D9] block mb-1">
                       {cs.industry} · {cs.client}
                     </span>
-                    <h3 className="text-[20px] sm:text-[24px] font-bold text-[#0F172A] leading-snug tracking-[-0.025em]">
+                    <h3 className="text-[20px] sm:text-[24px] font-bold text-[#0B1F33] leading-snug tracking-[-0.025em]">
                       {cs.title}
                     </h3>
                   </div>
@@ -76,8 +76,8 @@ export const CaseStudiesPage: React.FC = () => {
                       Results Achieved:
                     </span>
                     {cs.results.map((res, i) => (
-                      <div key={i} className="flex items-start gap-2 text-[13px] text-[#0F172A]">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[#F27A22] shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2 text-[13px] text-[#0B1F33]">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-[#16C7D9] shrink-0 mt-0.5" />
                         <span>{res}</span>
                       </div>
                     ))}
@@ -97,7 +97,7 @@ export const CaseStudiesPage: React.FC = () => {
                   </div>
                   <Link
                     to={`/case-studies/${cs.slug}`}
-                    className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] hover:text-[#F27A22] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] hover:text-[#16C7D9] transition-colors"
                   >
                     Read Full Case Study
                     <ArrowRight className="h-3.5 w-3.5 transition-transform hover:translate-x-0.5" />

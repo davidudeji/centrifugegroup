@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, HeartPulse, Truck, Building2, Landmark, Store } from 'lucide-react'
+import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 const industries = [
   {
@@ -55,29 +56,36 @@ export const IndustriesSection: React.FC = () => {
     <section className="section-py bg-white border-b border-[#E2E8F0]">
       <div className="section-container">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
-          <div className="max-w-2xl">
-            <div className="badge-eyebrow mb-4">Industries</div>
-            <h2 className="text-h2 text-[#0B1F33] mb-4">
-              Industries we transform.
-            </h2>
-            <p className="text-body-lg text-[#64748B]">
-              We engineer systems purpose-built for the operational realities
-              of African institutions and commercial enterprises.
-            </p>
+        <Reveal from="up" duration={700}>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <div className="max-w-2xl">
+              <div className="badge-eyebrow mb-4">Industries</div>
+              <h2 className="text-h2 text-[#0B1F33] mb-4">
+                Industries we transform.
+              </h2>
+              <p className="text-body-lg text-[#64748B]">
+                We engineer systems purpose-built for the operational realities
+                of African institutions and commercial enterprises.
+              </p>
+            </div>
+            <Link
+              to="/industries"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+              id="industries-view-all"
+            >
+              All industries
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <Link
-            to="/industries"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
-            id="industries-view-all"
-          >
-            All industries
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+        </Reveal>
 
         {/* Industry cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <StaggerReveal
+          stagger={80}
+          from="up"
+          duration={600}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
           {industries.map((ind) => {
             const Icon = ind.icon
             return (
@@ -120,7 +128,7 @@ export const IndustriesSection: React.FC = () => {
               </Link>
             )
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

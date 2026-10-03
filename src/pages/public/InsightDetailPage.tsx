@@ -22,25 +22,25 @@ export const InsightDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title={`${article.title} | Insights`}
         description={article.summary}
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto max-w-[1000px] space-y-5">
           <Link
             to="/insights"
-            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#F27A22] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#16C7D9] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Articles</span>
           </Link>
 
           <div className="pt-1 flex items-center gap-3 text-[12px]">
-            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#FFF7ED]/10 border border-[#F27A22]/30 text-[#F27A22] font-semibold text-[11px]">
+            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#EFF9FA]/10 border border-[#16C7D9]/30 text-[#16C7D9] font-semibold text-[11px]">
               {article.category}
             </span>
             <span className="text-[#94A3B8]">• {article.date}</span>
@@ -59,7 +59,7 @@ export const InsightDetailPage: React.FC = () => {
 
           <div className="pt-4 flex items-center justify-between border-t border-white/10">
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-[#F27A22]/20 border border-[#F27A22]/40 text-[#F27A22] font-bold flex items-center justify-center text-[13px]">
+              <div className="h-9 w-9 rounded-full bg-[#16C7D9]/20 border border-[#16C7D9]/40 text-[#16C7D9] font-bold flex items-center justify-center text-[13px]">
                 {article.author.name.charAt(0)}
               </div>
               <div>
@@ -82,13 +82,13 @@ export const InsightDetailPage: React.FC = () => {
       {/* Main Content */}
       <section className="py-16 bg-[#F8FAFC] border-b border-[#E2E8F0]">
         <div className="w-[min(92%,1440px)] mx-auto max-w-[1000px] space-y-8">
-          <div className="rounded-[12px] overflow-hidden border border-[#E2E8F0] bg-[#0F172A]">
+          <div className="rounded-[12px] overflow-hidden border border-[#E2E8F0] bg-[#0B1F33]">
             <img src={article.image} alt={article.title} className="w-full h-80 sm:h-96 object-cover opacity-90" />
           </div>
 
           {/* Article Body */}
           <div className="bg-white p-8 sm:p-12 rounded-[12px] border border-[#E2E8F0] space-y-6 text-[#475569] leading-relaxed text-[15px]">
-            <p className="text-[17px] text-[#334155] leading-relaxed border-l-2 border-[#F27A22] pl-5 italic">
+            <p className="text-[17px] text-[#334155] leading-relaxed border-l-2 border-[#16C7D9] pl-5 italic">
               {article.summary}
             </p>
 
@@ -96,7 +96,7 @@ export const InsightDetailPage: React.FC = () => {
               <p>
                 When building clinical software for regional hospitals, logistics telematics, or financial ledgers across emerging markets, assuming constant high-speed connectivity is an architectural flaw.
               </p>
-              <h3 className="text-[22px] font-bold text-[#0F172A] tracking-[-0.025em] pt-4">
+              <h3 className="text-[22px] font-bold text-[#0B1F33] tracking-[-0.025em] pt-4">
                 The Problem of Network Latency in Critical Operations
               </h3>
               <p>
@@ -110,14 +110,14 @@ export const InsightDetailPage: React.FC = () => {
             <div className="pt-8 border-t border-[#E2E8F0] flex items-center justify-between">
               <Link
                 to="/insights"
-                className="inline-flex items-center gap-1.5 text-[13px] text-[#334155] hover:text-[#F27A22] transition-colors"
+                className="inline-flex items-center gap-1.5 text-[13px] text-[#334155] hover:text-[#16C7D9] transition-colors"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
                 <span>Back to all insights</span>
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 h-9 px-5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-9 px-5 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[13px] font-semibold transition-colors"
               >
                 <span>Discuss with our architects</span>
                 <ArrowRight className="h-3.5 w-3.5" />

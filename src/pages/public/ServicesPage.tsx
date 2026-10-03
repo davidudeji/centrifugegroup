@@ -139,19 +139,19 @@ export const ServicesPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="Services & Core Capabilities | Centrifuge Group"
         description="Explore our six core engineering and advisory pillars: Application Development, IT Training, IT Consultancy, Infrastructure and Connectivity, Enterprise Solutions, and Business Solutions."
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">FULL LIFECYCLE CAPABILITIES</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">FULL LIFECYCLE CAPABILITIES</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -172,11 +172,11 @@ export const ServicesPage: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-[#E2E8F0] gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-                <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">CORE PILLARS</span>
+                <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">CORE PILLARS</span>
               </div>
               <h2
-                className="font-bold text-[#0F172A] tracking-[-0.025em]"
+                className="font-bold text-[#0B1F33] tracking-[-0.025em]"
                 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)' }}
               >
                 Our Engineering & Advisory Pillars
@@ -199,8 +199,8 @@ export const ServicesPage: React.FC = () => {
                   <div>
                     {/* Icon & Index */}
                     <div className="flex items-center justify-between mb-5">
-                      <div className="h-10 w-10 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 flex items-center justify-center">
-                        <Icon className="h-5 w-5 text-[#F27A22]" />
+                      <div className="h-10 w-10 rounded-[8px] bg-[#EFF9FA] border border-[#67E8F9]/30 flex items-center justify-center">
+                        <Icon className="h-5 w-5 text-[#16C7D9]" />
                       </div>
                       <span className="text-[11px] font-semibold text-[#94A3B8] tracking-[1px]">
                         0{index + 1}
@@ -208,10 +208,10 @@ export const ServicesPage: React.FC = () => {
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="text-[18px] font-bold text-[#0F172A] leading-snug tracking-[-0.02em] group-hover:text-[#334155] transition-colors">
+                    <h3 className="text-[18px] font-bold text-[#0B1F33] leading-snug tracking-[-0.02em] group-hover:text-[#334155] transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-[11px] font-semibold text-[#F27A22] mt-1 uppercase tracking-[0.5px]">
+                    <p className="text-[11px] font-semibold text-[#16C7D9] mt-1 uppercase tracking-[0.5px]">
                       {pillar.subtitle}
                     </p>
 
@@ -228,9 +228,9 @@ export const ServicesPage: React.FC = () => {
                         <Link
                           key={link.label}
                           to={link.href}
-                          className="flex items-start gap-2 text-[12.5px] text-[#475569] hover:text-[#F27A22] transition-colors group/link"
+                          className="flex items-start gap-2 text-[12.5px] text-[#475569] hover:text-[#16C7D9] transition-colors group/link"
                         >
-                          <ArrowRight className="h-3.5 w-3.5 text-[#F27A22] shrink-0 mt-0.5 transition-transform group-hover/link:translate-x-0.5" />
+                          <ArrowRight className="h-3.5 w-3.5 text-[#16C7D9] shrink-0 mt-0.5 transition-transform group-hover/link:translate-x-0.5" />
                           <span className="hover:underline underline-offset-2">{link.label}</span>
                         </Link>
                       ))}
@@ -243,7 +243,7 @@ export const ServicesPage: React.FC = () => {
                       </span>
                       {pillar.deliverables.map((deliv) => (
                         <div key={deliv} className="text-[12px] text-[#475569] flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#F27A22] shrink-0" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#16C7D9] shrink-0" />
                           <span>{deliv}</span>
                         </div>
                       ))}
@@ -253,7 +253,7 @@ export const ServicesPage: React.FC = () => {
                   <div className="mt-8 pt-4 border-t border-[#E2E8F0]">
                     <Link
                       to={`/services/${pillar.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#F27A22] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#16C7D9] transition-colors"
                     >
                       <span>Explore detailed scope & process</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -271,11 +271,11 @@ export const ServicesPage: React.FC = () => {
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-2xl mb-12">
             <div className="flex items-center gap-2 mb-3">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">OPERATIONAL EXCELLENCE</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">OPERATIONAL EXCELLENCE</span>
             </div>
             <h2
-              className="font-bold text-[#0F172A] tracking-[-0.025em]"
+              className="font-bold text-[#0B1F33] tracking-[-0.025em]"
               style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)' }}
             >
               How we execute enterprise deliveries.
@@ -312,10 +312,10 @@ export const ServicesPage: React.FC = () => {
                 key={p.step}
                 className="p-6 rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-sm transition-all"
               >
-                <span className="inline-block text-[11px] font-semibold text-[#F27A22] px-2.5 py-0.5 rounded-[4px] bg-[#FFF7ED] border border-[#FDBA74]/30 mb-4">
+                <span className="inline-block text-[11px] font-semibold text-[#16C7D9] px-2.5 py-0.5 rounded-[4px] bg-[#EFF9FA] border border-[#67E8F9]/30 mb-4">
                   {p.step}
                 </span>
-                <h4 className="text-[16px] font-bold text-[#0F172A] tracking-[-0.02em]">
+                <h4 className="text-[16px] font-bold text-[#0B1F33] tracking-[-0.02em]">
                   {p.title}
                 </h4>
                 <p className="text-[13px] text-[#475569] mt-2 leading-relaxed">
@@ -330,7 +330,7 @@ export const ServicesPage: React.FC = () => {
       {/* Bottom CTA */}
       <section className="py-20 bg-[#F8FAFC]">
         <div className="w-[min(92%,1440px)] mx-auto">
-          <div className="p-8 sm:p-12 rounded-[12px] bg-[#0F172A] border border-white/10 text-center max-w-3xl mx-auto space-y-6">
+          <div className="p-8 sm:p-12 rounded-[12px] bg-[#0B1F33] border border-white/10 text-center max-w-3xl mx-auto space-y-6">
             <h3
               className="font-bold text-white tracking-[-0.025em]"
               style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.25rem)' }}
@@ -343,7 +343,7 @@ export const ServicesPage: React.FC = () => {
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[14px] font-semibold transition-colors"
               >
                 <span>Initiate a technical conversation</span>
                 <ArrowRight className="h-4 w-4" />

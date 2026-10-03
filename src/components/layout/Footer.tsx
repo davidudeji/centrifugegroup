@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
               <img
                 src={brandAssets.logo}
                 alt="Centrifuge Group"
-                className="h-11 w-auto object-contain object-left brightness-0 invert"
+                style={{ filter: 'brightness(0) saturate(100%) invert(52%) sepia(94%) saturate(617%) hue-rotate(346deg) brightness(102%)', height: '44px', width: 'auto', objectFit: 'contain' }}
               />
             </Link>
 

@@ -210,26 +210,26 @@ export const ServiceDetailPage: React.FC = () => {
   const service = (slug && serviceDatabase[slug]) || serviceDatabase['software-development']
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title={`${service.title} | Centrifuge Group Capabilities`}
         description={service.solution}
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto space-y-5">
           <Link
             to="/services"
-            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#F27A22] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#16C7D9] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Engineering Services</span>
           </Link>
 
           <div className="flex items-center gap-2 pt-1">
-            <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-            <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">
+            <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+            <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">
               {service.category}
             </span>
           </div>
@@ -248,7 +248,7 @@ export const ServiceDetailPage: React.FC = () => {
           <div className="pt-3 flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[13px] font-semibold transition-colors"
             >
               <span>Discuss Your Requirements</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -279,7 +279,7 @@ export const ServiceDetailPage: React.FC = () => {
             </div>
 
             <div className="bg-white p-7 rounded-[12px] border border-[#E2E8F0] space-y-3">
-              <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#F27A22] block">
+              <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#16C7D9] block">
                 The Centrifuge Approach
               </span>
               <p className="text-[14px] text-[#334155] leading-relaxed">
@@ -294,14 +294,14 @@ export const ServiceDetailPage: React.FC = () => {
               <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#94A3B8] block mb-1">
                 SCOPE & DELIVERABLES
               </span>
-              <h3 className="text-[22px] font-bold text-[#0F172A] tracking-[-0.025em]">
+              <h3 className="text-[22px] font-bold text-[#0B1F33] tracking-[-0.025em]">
                 Engineered Capabilities
               </h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {service.capabilities.map((cap, i) => (
                 <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#475569]">
-                  <CheckCircle2 className="h-4 w-4 text-[#F27A22] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-4 w-4 text-[#16C7D9] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">{cap}</span>
                 </div>
               ))}
@@ -314,7 +314,7 @@ export const ServiceDetailPage: React.FC = () => {
               <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#94A3B8] block mb-1">
                 METHODOLOGY
               </span>
-              <h3 className="text-[22px] font-bold text-[#0F172A] tracking-[-0.025em]">
+              <h3 className="text-[22px] font-bold text-[#0B1F33] tracking-[-0.025em]">
                 Implementation Workflow
               </h3>
             </div>
@@ -324,10 +324,10 @@ export const ServiceDetailPage: React.FC = () => {
                   key={p.step}
                   className="bg-white p-6 rounded-[12px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200"
                 >
-                  <span className="inline-block text-[11px] font-bold text-[#F27A22] px-2 py-0.5 rounded-[4px] border border-[#FDBA74]/30 bg-[#FFF7ED]">
+                  <span className="inline-block text-[11px] font-bold text-[#16C7D9] px-2 py-0.5 rounded-[4px] border border-[#67E8F9]/30 bg-[#EFF9FA]">
                     {p.step}
                   </span>
-                  <h4 className="text-[15px] font-bold text-[#0F172A] mt-4 tracking-[-0.015em]">
+                  <h4 className="text-[15px] font-bold text-[#0B1F33] mt-4 tracking-[-0.015em]">
                     {p.title}
                   </h4>
                   <p className="text-[12.5px] text-[#475569] mt-2 leading-relaxed">
@@ -363,7 +363,7 @@ export const ServiceDetailPage: React.FC = () => {
               <div className="space-y-2.5">
                 {service.useCases.map((uc, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[13px] text-[#475569]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#F27A22] shrink-0" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#16C7D9] shrink-0" />
                     <span>{uc}</span>
                   </div>
                 ))}
@@ -372,7 +372,7 @@ export const ServiceDetailPage: React.FC = () => {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="p-8 sm:p-10 rounded-[12px] bg-[#0F172A] flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="p-8 sm:p-10 rounded-[12px] bg-[#0B1F33] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-[20px] font-bold text-white tracking-[-0.025em]">
                 Ready to scope your requirements?
@@ -383,7 +383,7 @@ export const ServiceDetailPage: React.FC = () => {
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold shrink-0 transition-colors"
+              className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[13px] font-semibold shrink-0 transition-colors"
             >
               <span>Talk to Centrifuge</span>
               <ArrowRight className="h-3.5 w-3.5" />

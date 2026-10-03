@@ -4,7 +4,9 @@ import { HeroSection } from '../../features/marketing/HeroSection'
 import { TrustSection } from '../../features/marketing/TrustSection'
 import { WhatWeBuildSection } from '../../features/marketing/WhatWeBuildSection'
 import { OptimaxShowcaseSection } from '../../features/marketing/OptimaxShowcaseSection'
+import { SystemArchitectureSection } from '../../features/marketing/SystemArchitectureSection'
 import { ProjectsShowcaseSection } from '../../features/marketing/ProjectsShowcaseSection'
+import { WhyCentrifugeSection } from '../../features/marketing/WhyCentrifugeSection'
 import { IndustriesSection } from '../../features/marketing/IndustriesSection'
 import { ServicesSection } from '../../features/marketing/ServicesSection'
 import { CaseStudiesSection } from "../../features/marketing/CaseStudiesSection";
@@ -22,11 +24,12 @@ export const HomePage: React.FC = () => {
       <TrustSection />
       <WhatWeBuildSection />
       <OptimaxShowcaseSection />
+      <SystemArchitectureSection />
       <ProjectsShowcaseSection />
+      <WhyCentrifugeSection />
       <IndustriesSection />
       <ServicesSection />
       <CaseStudiesSection />
-
       <InsightsSection />
       <FinalCTASection />
     </div>

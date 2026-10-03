@@ -116,16 +116,19 @@ export const Header: React.FC = () => {
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="flex items-center justify-between h-[68px]">
 
-            {/* Logo */}
+            {/* Logo — the PNG has white text + orange mark (designed for dark bg).
+                 On the white header we use a brightness(0) filter to render all
+                 pixels as solid black, making the wordmark visible while keeping
+                 the icon silhouette. The small orange circle below provides brand colour. */}
             <Link
               to="/"
-              className="flex items-center shrink-0 focus-visible:ring-2 focus-visible:ring-[#16C7D9] rounded-sm"
+              className="flex items-center gap-2 shrink-0 focus-visible:ring-2 focus-visible:ring-[#F27A22] rounded-sm"
               aria-label="Centrifuge Group — home"
             >
               <img
                 src={brandAssets.logo}
                 alt="Centrifuge Group"
-                className="h-[42px] w-auto object-contain object-left"
+                style={{ filter: 'brightness(0) saturate(100%) invert(52%) sepia(94%) saturate(617%) hue-rotate(346deg) brightness(102%)', height: '38px', width: 'auto', objectFit: 'contain' }}
               />
             </Link>
 
@@ -223,10 +226,11 @@ export const Header: React.FC = () => {
               </Link>
               <Link
                 to="/contact"
-                className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-[14px] font-semibold bg-[#0B1F33] text-white hover:bg-[#071521] transition-colors duration-150 shadow-[0_1px_3px_rgba(11,31,51,0.2)]"
+                className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-[14px] font-semibold transition-colors duration-150"
+                style={{ backgroundColor: '#F27A22', color: '#0F172A', boxShadow: '0 1px 3px rgba(242,122,34,0.3)', fontWeight: 600 }}
                 id="header-contact-cta"
               >
-                Contact Us
+                Talk to Centrifuge
               </Link>
 
               {/* Mobile toggle */}
@@ -255,7 +259,7 @@ export const Header: React.FC = () => {
           {/* Drawer header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-[#E2E8F0]">
             <Link to="/" onClick={() => setMobileNavOpen(false)}>
-              <img src={brandAssets.logo} alt="Centrifuge Group" className="h-9 w-auto" />
+              <img src={brandAssets.logo} alt="Centrifuge Group" style={{ filter: 'brightness(0) saturate(100%) invert(52%) sepia(94%) saturate(617%) hue-rotate(346deg) brightness(102%)', height: '36px', width: 'auto' }} />
             </Link>
             <button
               onClick={() => setMobileNavOpen(false)}
@@ -311,10 +315,11 @@ export const Header: React.FC = () => {
             <Link
               to="/contact"
               onClick={() => setMobileNavOpen(false)}
-              className="w-full flex items-center justify-center py-3.5 px-6 rounded-[10px] bg-[#0B1F33] text-white text-[15px] font-semibold hover:bg-[#071521] transition-colors min-h-[48px]"
+              className="w-full flex items-center justify-center py-3.5 px-6 rounded-[10px] text-[15px] font-semibold transition-colors min-h-[48px]"
+              style={{ backgroundColor: '#F27A22', color: '#0F172A' }}
               id="mobile-contact-cta"
             >
-              Contact Us
+              Talk to Centrifuge
             </Link>
           </div>
         </div>

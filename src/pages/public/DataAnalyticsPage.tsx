@@ -5,19 +5,19 @@ import { ArrowRight, BarChart3, Map, Cpu } from 'lucide-react'
 
 export const DataAnalyticsPage: React.FC = () => {
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="Data Analytics & Spatial GIS Solutions | Centrifuge Group"
         description="Geospatial health mapping, real-time vehicle stream processing, and executive business intelligence dashboards."
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">BUSINESS SOLUTIONS · DATA & ANALYTICS</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">BUSINESS SOLUTIONS · DATA & ANALYTICS</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -31,7 +31,7 @@ export const DataAnalyticsPage: React.FC = () => {
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[14px] font-semibold transition-colors"
               >
                 <span>Consult Data Architects</span>
                 <ArrowRight className="h-4 w-4" />
@@ -45,10 +45,10 @@ export const DataAnalyticsPage: React.FC = () => {
       <section className="py-16 bg-[#F8FAFC] border-b border-[#E2E8F0]">
         <div className="w-[min(92%,1440px)] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="bg-white p-7 rounded-[12px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 flex flex-col group">
-            <div className="h-10 w-10 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 flex items-center justify-center mb-5">
-              <Map className="h-5 w-5 text-[#F27A22]" />
+            <div className="h-10 w-10 rounded-[8px] bg-[#EFF9FA] border border-[#67E8F9]/30 flex items-center justify-center mb-5">
+              <Map className="h-5 w-5 text-[#16C7D9]" />
             </div>
-            <h3 className="text-[18px] font-bold text-[#0F172A] leading-snug mb-2">
+            <h3 className="text-[18px] font-bold text-[#0B1F33] leading-snug mb-2">
               Geospatial GIS Health Mapping
             </h3>
             <p className="text-[13px] text-[#475569] leading-relaxed">
@@ -57,10 +57,10 @@ export const DataAnalyticsPage: React.FC = () => {
           </div>
 
           <div className="bg-white p-7 rounded-[12px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 flex flex-col group">
-            <div className="h-10 w-10 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 flex items-center justify-center mb-5">
-              <BarChart3 className="h-5 w-5 text-[#F27A22]" />
+            <div className="h-10 w-10 rounded-[8px] bg-[#EFF9FA] border border-[#67E8F9]/30 flex items-center justify-center mb-5">
+              <BarChart3 className="h-5 w-5 text-[#16C7D9]" />
             </div>
-            <h3 className="text-[18px] font-bold text-[#0F172A] leading-snug mb-2">
+            <h3 className="text-[18px] font-bold text-[#0B1F33] leading-snug mb-2">
               Executive BI Dashboards
             </h3>
             <p className="text-[13px] text-[#475569] leading-relaxed">
@@ -69,10 +69,10 @@ export const DataAnalyticsPage: React.FC = () => {
           </div>
 
           <div className="bg-white p-7 rounded-[12px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 flex flex-col group">
-            <div className="h-10 w-10 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 flex items-center justify-center mb-5">
-              <Cpu className="h-5 w-5 text-[#F27A22]" />
+            <div className="h-10 w-10 rounded-[8px] bg-[#EFF9FA] border border-[#67E8F9]/30 flex items-center justify-center mb-5">
+              <Cpu className="h-5 w-5 text-[#16C7D9]" />
             </div>
-            <h3 className="text-[18px] font-bold text-[#0F172A] leading-snug mb-2">
+            <h3 className="text-[18px] font-bold text-[#0B1F33] leading-snug mb-2">
               Telemetry Event Streaming
             </h3>
             <p className="text-[13px] text-[#475569] leading-relaxed">

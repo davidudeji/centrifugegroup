@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { mockCaseStudies } from '../../data/mockData'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 export const CaseStudiesSection: React.FC = () => {
   const featured = mockCaseStudies[0]
@@ -11,29 +12,32 @@ export const CaseStudiesSection: React.FC = () => {
     <section className="section-py bg-[#F7F9FA] border-b border-[#E2E8F0]">
       <div className="section-container">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <div className="max-w-2xl">
-            <div className="badge-eyebrow mb-4">Case Studies</div>
-            <h2 className="text-h2 text-[#0B1F33] mb-4">
-              Verified client outcomes.
-            </h2>
-            <p className="text-body-lg text-[#64748B]">
-              Authentic stories of how Centrifuge technology resolved operational
-              bottlenecks for federal ministries and commercial enterprises.
-            </p>
+        <Reveal from="up" duration={700}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div className="max-w-2xl">
+              <div className="badge-eyebrow mb-4">Case Studies</div>
+              <h2 className="text-h2 text-[#0B1F33] mb-4">
+                Verified client outcomes.
+              </h2>
+              <p className="text-body-lg text-[#64748B]">
+                Authentic stories of how Centrifuge technology resolved operational
+                bottlenecks for federal ministries and commercial enterprises.
+              </p>
+            </div>
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+              id="case-studies-view-all"
+            >
+              View all case studies
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <Link
-            to="/case-studies"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
-            id="case-studies-view-all"
-          >
-            View all case studies
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+        </Reveal>
 
         {/* Featured case study */}
-        <div className="bg-white rounded-[16px] border border-[#E2E8F0] overflow-hidden mb-6 group hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200">
+        <Reveal from="up" duration={750}>
+          <div className="bg-white rounded-[16px] border border-[#E2E8F0] overflow-hidden mb-6 group hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Image */}
             <div className="lg:col-span-5 h-64 lg:h-auto relative bg-[#0B1F33] overflow-hidden">
@@ -98,10 +102,16 @@ export const CaseStudiesSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </Reveal>
 
         {/* Secondary cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <StaggerReveal
+          stagger={100}
+          from="up"
+          duration={600}
+          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
           {secondary.map((cs) => (
             <Link
               key={cs.id}
@@ -140,7 +150,7 @@ export const CaseStudiesSection: React.FC = () => {
               </div>
             </Link>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

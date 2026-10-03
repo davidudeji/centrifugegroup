@@ -43,19 +43,19 @@ export const IndustriesPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="Industries We Transform | Centrifuge Group"
         description="Sector-specific enterprise systems for healthcare, logistics, government, corporate enterprises, and SMEs."
       />
 
       {/* Hero Banner */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">SECTOR SPECIALIZATION</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">SECTOR SPECIALIZATION</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -82,10 +82,10 @@ export const IndustriesPage: React.FC = () => {
                   className="bg-white rounded-[12px] border border-[#E2E8F0] p-7 flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-md transition-all duration-200 group"
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-[8px] bg-[#FFF7ED] border border-[#FDBA74]/30 flex items-center justify-center mb-5">
-                      <Icon className="h-5 w-5 text-[#F27A22]" />
+                    <div className="h-10 w-10 rounded-[8px] bg-[#EFF9FA] border border-[#67E8F9]/30 flex items-center justify-center mb-5">
+                      <Icon className="h-5 w-5 text-[#16C7D9]" />
                     </div>
-                    <h3 className="text-[17px] font-bold text-[#0F172A] leading-snug group-hover:text-[#334155] transition-colors mb-2">
+                    <h3 className="text-[17px] font-bold text-[#0B1F33] leading-snug group-hover:text-[#334155] transition-colors mb-2">
                       {ind.title}
                     </h3>
                     <p className="text-[13px] text-[#475569] leading-relaxed">
@@ -102,7 +102,7 @@ export const IndustriesPage: React.FC = () => {
                   <div className="mt-6 pt-4 border-t border-[#E2E8F0]">
                     <Link
                       to={`/industries/${ind.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#F27A22] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#16C7D9] transition-colors"
                     >
                       <span>Explore industry solutions</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

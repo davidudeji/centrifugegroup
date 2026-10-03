@@ -40,19 +40,19 @@ export const ProjectsPage: React.FC = () => {
   })
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="What We've Built | Projects & Products Showcase"
         description="Explore the platforms, products, and digital systems designed and delivered by Centrifuge Group."
       />
 
       {/* Header Banner */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">DELIVERED SYSTEMS & DIGITAL PRODUCTS</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">DELIVERED SYSTEMS & DIGITAL PRODUCTS</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -80,8 +80,8 @@ export const ProjectsPage: React.FC = () => {
                   onClick={() => setSelectedCategory(cat)}
                   className={`text-[11px] uppercase tracking-[1px] px-3.5 py-1.5 rounded-[6px] font-semibold transition-colors ${
                     selectedCategory === cat
-                      ? 'bg-[#F27A22] text-[#0F172A] shadow-sm'
-                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0F172A]'
+                      ? 'bg-[#16C7D9] text-[#0B1F33] shadow-sm'
+                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0B1F33]'
                   }`}
                 >
                   {cat === 'all' ? 'All Projects' : cat}
@@ -127,7 +127,7 @@ export const ProjectsPage: React.FC = () => {
                           {proj.category}
                         </span>
                         {proj.status === 'live' && (
-                          <span className="px-2.5 py-0.5 rounded-[4px] bg-[#0F172A]/80 text-[10px] font-semibold text-[#22C55E] flex items-center gap-1 backdrop-blur-sm">
+                          <span className="px-2.5 py-0.5 rounded-[4px] bg-[#0B1F33]/80 text-[10px] font-semibold text-[#22C55E] flex items-center gap-1 backdrop-blur-sm">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#22C55E]" />
                             LIVE
                           </span>
@@ -136,10 +136,10 @@ export const ProjectsPage: React.FC = () => {
                     </div>
 
                     <div className="p-6">
-                      <div className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#F27A22] mb-1">
+                      <div className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#16C7D9] mb-1">
                         {proj.industry}
                       </div>
-                      <h3 className="text-[17px] font-bold text-[#0F172A] leading-snug group-hover:text-[#334155] transition-colors">
+                      <h3 className="text-[17px] font-bold text-[#0B1F33] leading-snug group-hover:text-[#334155] transition-colors">
                         {proj.name}
                       </h3>
                       <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
@@ -162,7 +162,7 @@ export const ProjectsPage: React.FC = () => {
                   <div className="mt-auto px-6 py-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-between">
                     <Link
                       to={`/projects/${proj.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#F27A22] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#334155] group-hover:text-[#16C7D9] transition-colors"
                     >
                       View Project Details
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

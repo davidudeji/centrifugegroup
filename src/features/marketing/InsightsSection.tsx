@@ -2,35 +2,44 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { mockArticles } from '../../data/mockData'
 import { ArrowRight, Clock, User } from 'lucide-react'
+import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 export const InsightsSection: React.FC = () => {
   return (
     <section className="section-py bg-white border-b border-[#E2E8F0]">
       <div className="section-container">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <div className="max-w-2xl">
-            <div className="badge-eyebrow mb-4">Insights</div>
-            <h2 className="text-h2 text-[#0B1F33] mb-4">
-              Insights &amp; research.
-            </h2>
-            <p className="text-body-lg text-[#64748B]">
-              Architectural lessons, field notes, and perspectives from building
-              enterprise systems across emerging markets.
-            </p>
+        <Reveal from="up" duration={700}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div className="max-w-2xl">
+              <div className="badge-eyebrow mb-4">Insights</div>
+              <h2 className="text-h2 text-[#0B1F33] mb-4">
+                Insights &amp; research.
+              </h2>
+              <p className="text-body-lg text-[#64748B]">
+                Architectural lessons, field notes, and perspectives from building
+                enterprise systems across emerging markets.
+              </p>
+            </div>
+            <Link
+              to="/insights"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+              id="insights-view-all"
+            >
+              View all articles
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <Link
-            to="/insights"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
-            id="insights-view-all"
-          >
-            View all articles
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+        </Reveal>
 
         {/* Article grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerReveal
+          stagger={90}
+          from="up"
+          variant="scale"
+          duration={600}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {mockArticles.slice(0, 3).map((art) => (
             <article
               key={art.id}
@@ -92,7 +101,7 @@ export const InsightsSection: React.FC = () => {
               </div>
             </article>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

@@ -2,30 +2,33 @@ import React from 'react'
 import { verifiedClients } from '../../assets'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { Reveal } from '../../components/ui/Reveal'
 
 export const TrustSection: React.FC = () => {
   return (
     <section className="bg-white border-b border-[#E2E8F0] py-16" aria-label="Trusted partners">
       <div className="section-container">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
-          <div>
-            <p className="text-eyebrow text-[#16C7D9] mb-1">
-              Trusted By
-            </p>
-            <h2 className="text-[22px] font-heading font-700 text-[#0B1F33] tracking-tight">
-              Ministries, agencies &amp; enterprises
-            </h2>
+        <Reveal>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
+            <div>
+              <p className="text-eyebrow text-[#16C7D9] mb-1">
+                Trusted By
+              </p>
+              <h2 className="text-[22px] font-heading font-700 text-[#0B1F33] tracking-tight">
+                Ministries, agencies &amp; enterprises
+              </h2>
+            </div>
+            <Link
+              to="/clients"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+              id="trust-view-all-clients"
+            >
+              View all clients
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <Link
-            to="/clients"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
-            id="trust-view-all-clients"
-          >
-            View all clients
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+        </Reveal>
 
         {/* Logo grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">

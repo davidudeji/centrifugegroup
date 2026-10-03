@@ -10,6 +10,7 @@ import {
   GraduationCap,
   ArrowRight,
 } from 'lucide-react'
+import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 const services = [
   {
@@ -68,29 +69,37 @@ export const ServicesSection: React.FC = () => {
     <section className="section-py bg-[#F7F9FA] border-b border-[#E2E8F0]">
       <div className="section-container">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
-          <div className="max-w-2xl">
-            <div className="badge-eyebrow mb-4">Services</div>
-            <h2 className="text-h2 text-[#0B1F33] mb-4">
-              End-to-end technology services.
-            </h2>
-            <p className="text-body-lg text-[#64748B]">
-              From strategy to deployment to long-term support — we work alongside
-              organisations through every phase of technology delivery.
-            </p>
+        <Reveal from="up" duration={700}>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <div className="max-w-2xl">
+              <div className="badge-eyebrow mb-4">Services</div>
+              <h2 className="text-h2 text-[#0B1F33] mb-4">
+                End-to-end technology services.
+              </h2>
+              <p className="text-body-lg text-[#64748B]">
+                From strategy to deployment to long-term support — we work alongside
+                organisations through every phase of technology delivery.
+              </p>
+            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
+              id="services-view-all"
+            >
+              All services
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#64748B] hover:text-[#0B1F33] transition-colors shrink-0"
-            id="services-view-all"
-          >
-            All services
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+        </Reveal>
 
         {/* Services list — editorial left-aligned layout */}
-        <div className="divide-y divide-[#E2E8F0]">
+        <StaggerReveal
+          stagger={60}
+          from="up"
+          distance={20}
+          duration={550}
+          className="divide-y divide-[#E2E8F0]"
+        >
           {services.map((svc, i) => {
             const Icon = svc.icon
             return (
@@ -125,10 +134,11 @@ export const ServicesSection: React.FC = () => {
               </Link>
             )
           })}
-        </div>
+        </StaggerReveal>
 
         {/* Bottom CTA */}
-        <div className="mt-12 p-8 rounded-[16px] bg-[#0B1F33] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+        <Reveal from="up" delay={150} variant="scale" duration={650}>
+          <div className="mt-12 p-8 rounded-[16px] bg-[#0B1F33] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
           <div>
             <h3 className="text-[20px] font-heading font-700 text-white mb-1">
               Not sure where to start?
@@ -145,7 +155,8 @@ export const ServicesSection: React.FC = () => {
             Talk to an Expert
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

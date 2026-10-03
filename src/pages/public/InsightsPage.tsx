@@ -21,19 +21,19 @@ export const InsightsPage: React.FC = () => {
   })
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="Engineering Insights & Perspectives | Centrifuge Group"
         description="Architectural lessons, field notes, and perspectives from building enterprise systems across emerging markets."
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">EDITORIAL & RESEARCH</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">EDITORIAL & RESEARCH</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -61,8 +61,8 @@ export const InsightsPage: React.FC = () => {
                   onClick={() => setSelectedCat(cat)}
                   className={`text-[11px] uppercase tracking-[1px] px-3.5 py-1.5 rounded-[6px] font-semibold transition-colors ${
                     selectedCat === cat
-                      ? 'bg-[#F27A22] text-[#0F172A] shadow-sm'
-                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0F172A]'
+                      ? 'bg-[#16C7D9] text-[#0B1F33] shadow-sm'
+                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0B1F33]'
                   }`}
                 >
                   {cat}
@@ -94,7 +94,7 @@ export const InsightsPage: React.FC = () => {
                       alt={art.title}
                       className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                     />
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-[4px] bg-white/90 border border-[#E2E8F0] text-[11px] font-semibold uppercase tracking-[1px] text-[#F27A22] backdrop-blur-sm">
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-[4px] bg-white/90 border border-[#E2E8F0] text-[11px] font-semibold uppercase tracking-[1px] text-[#16C7D9] backdrop-blur-sm">
                       {art.category}
                     </span>
                   </div>
@@ -109,7 +109,7 @@ export const InsightsPage: React.FC = () => {
                       </span>
                     </div>
 
-                    <h3 className="text-[17px] font-bold text-[#0F172A] leading-snug mt-2 group-hover:text-[#334155] transition-colors">
+                    <h3 className="text-[17px] font-bold text-[#0B1F33] leading-snug mt-2 group-hover:text-[#334155] transition-colors">
                       {art.title}
                     </h3>
                     <p className="text-[13px] text-[#475569] mt-2 leading-relaxed line-clamp-3">
@@ -124,7 +124,7 @@ export const InsightsPage: React.FC = () => {
                   </span>
                   <Link
                     to={`/insights/${art.slug}`}
-                    className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#334155] group-hover:text-[#F27A22] transition-colors"
+                    className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#334155] group-hover:text-[#16C7D9] transition-colors"
                   >
                     Read article
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

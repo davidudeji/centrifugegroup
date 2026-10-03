@@ -26,19 +26,19 @@ export const ClientsPage: React.FC = () => {
         )
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title="Verified Clients & Institutional Partners | Centrifuge Group"
         description="Explore the federal ministries, healthcare councils, multilateral agencies (WHO, UNICEF, MSH), and enterprise organizations that trust Centrifuge Group."
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2">
-              <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">PROVEN PARTNERSHIPS</span>
+              <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">PROVEN PARTNERSHIPS</span>
             </div>
             <h1
               className="font-bold text-white leading-[1.05] tracking-[-0.025em]"
@@ -69,8 +69,8 @@ export const ClientsPage: React.FC = () => {
                   onClick={() => setSelectedSector(sec)}
                   className={`text-[11px] uppercase tracking-[1px] px-3.5 py-1.5 rounded-[6px] font-semibold transition-colors ${
                     selectedSector === sec
-                      ? 'bg-[#F27A22] text-[#0F172A] shadow-sm'
-                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0F172A]'
+                      ? 'bg-[#16C7D9] text-[#0B1F33] shadow-sm'
+                      : 'bg-white border border-[#E2E8F0] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0B1F33]'
                   }`}
                 >
                   {sec === 'all' ? 'All Partners' : sec}
@@ -96,10 +96,10 @@ export const ClientsPage: React.FC = () => {
                     />
                   </div>
 
-                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#F27A22] block mb-1">
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#16C7D9] block mb-1">
                     {client.sector}
                   </span>
-                  <h3 className="text-[17px] font-bold text-[#0F172A] leading-snug group-hover:text-[#334155] transition-colors">
+                  <h3 className="text-[17px] font-bold text-[#0B1F33] leading-snug group-hover:text-[#334155] transition-colors">
                     {client.name}
                   </h3>
                   <div className="text-[12px] font-medium text-[#94A3B8] mt-0.5">
@@ -112,12 +112,12 @@ export const ClientsPage: React.FC = () => {
 
                 <div className="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-[11px] text-[#475569] font-medium">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#F27A22]" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-[#16C7D9]" />
                     <span>Verified Partner</span>
                   </div>
                   <Link
                     to="/case-studies"
-                    className="text-[12px] font-semibold text-[#334155] group-hover:text-[#F27A22] flex items-center gap-1 transition-colors"
+                    className="text-[12px] font-semibold text-[#334155] group-hover:text-[#16C7D9] flex items-center gap-1 transition-colors"
                   >
                     <span>View work</span>
                     <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
@@ -130,11 +130,11 @@ export const ClientsPage: React.FC = () => {
       </section>
 
       {/* Institutional Engagement Callout */}
-      <section className="py-20 bg-[#0F172A]">
+      <section className="py-20 bg-[#0B1F33]">
         <div className="w-[min(92%,1440px)] mx-auto">
           <div className="p-8 sm:p-12 rounded-[12px] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22] block mb-2">
+              <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9] block mb-2">
                 GOVERNMENT & MULTILATERAL ADVISORY
               </span>
               <h3
@@ -149,7 +149,7 @@ export const ClientsPage: React.FC = () => {
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[14px] font-semibold shrink-0 transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[14px] font-semibold shrink-0 transition-colors whitespace-nowrap"
             >
               <span>Initiate institutional dialogue</span>
               <ArrowRight className="h-4 w-4" />

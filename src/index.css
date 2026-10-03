@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
 @theme {
   /* ── Brand Colours (spec §3) ── */
@@ -341,4 +341,107 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ─── Keyframe Library ───────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blurIn {
+  from { opacity: 0; filter: blur(16px); transform: translateY(16px); }
+  to   { opacity: 1; filter: blur(0);    transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Floating bob — for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Shimmer sweep — for skeleton / highlight effects */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Pulse glow — for accent dots/indicators */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(22, 199, 217, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(22, 199, 217, 0); }
+}
+
+/* Line draw — for horizontal dividers / underlines */
+@keyframes lineDraw {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+
+/* Counter pop — subtle scale on number reveal */
+@keyframes counterPop {
+  0%   { opacity: 0; transform: scale(0.8) translateY(12px); }
+  60%  { transform: scale(1.04) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ─── Animation Utility Classes ──────────────────────── */
+.anim-fade-up    { animation: fadeUp    0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-fade-down  { animation: fadeDown  0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-fade-in    { animation: fadeIn    0.5s  ease both; }
+.anim-scale-up   { animation: scaleUp   0.6s  cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-blur-in    { animation: blurIn    0.7s  cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-slide-left { animation: slideInLeft  0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-slide-right{ animation: slideInRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-float      { animation: float     3.5s  ease-in-out infinite; }
+.anim-pulse-glow { animation: pulseGlow 2.2s  ease-in-out infinite; }
+.anim-line-draw  { animation: lineDraw  0.8s  cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-counter-pop{ animation: counterPop 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Delay helpers (staggering pure-CSS animations) */
+.anim-delay-100 { animation-delay: 100ms; }
+.anim-delay-150 { animation-delay: 150ms; }
+.anim-delay-200 { animation-delay: 200ms; }
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-400 { animation-delay: 400ms; }
+.anim-delay-500 { animation-delay: 500ms; }
+.anim-delay-600 { animation-delay: 600ms; }
+.anim-delay-700 { animation-delay: 700ms; }
+.anim-delay-800 { animation-delay: 800ms; }
+
+/* Shimmer gradient utility */
+.shimmer {
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(22, 199, 217, 0.12) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.4s linear infinite;
 }

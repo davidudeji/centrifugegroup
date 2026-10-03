@@ -131,26 +131,26 @@ export const IndustryDetailPage: React.FC = () => {
   const ind = (slug && industryDetails[slug]) || industryDetails['healthcare']
 
   return (
-    <div className="w-full text-left bg-white text-[#0F172A]">
+    <div className="w-full text-left bg-white text-[#0B1F33]">
       <SEO
         title={`${ind.title} | Centrifuge Industry Solutions`}
         description={ind.subtitle}
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F172A] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="bg-[#0B1F33] text-white py-16 sm:py-24 border-b border-white/10">
         <div className="w-[min(92%,1440px)] mx-auto space-y-4">
           <Link
             to="/industries"
-            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#F27A22] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#16C7D9] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Industries</span>
           </Link>
 
           <div className="flex items-center gap-2 pt-1">
-            <span className="h-px w-6 bg-[#F27A22]" aria-hidden="true" />
-            <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#F27A22]">
+            <span className="h-px w-6 bg-[#16C7D9]" aria-hidden="true" />
+            <span className="text-[11px] font-semibold uppercase tracking-[2px] text-[#16C7D9]">
               INDUSTRY SPECIFICATION
             </span>
           </div>
@@ -169,7 +169,7 @@ export const IndustryDetailPage: React.FC = () => {
           <div className="pt-3">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[13px] font-semibold transition-colors"
             >
               <span>Consult Industry Experts</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -184,7 +184,7 @@ export const IndustryDetailPage: React.FC = () => {
 
           {/* Operational Challenge */}
           <div className="bg-white p-7 rounded-[12px] border border-[#E2E8F0] space-y-2">
-            <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#F27A22] block">
+            <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#16C7D9] block">
               THE OPERATIONAL CHALLENGE IN THIS SECTOR
             </span>
             <p className="text-[14px] text-[#475569] leading-relaxed">
@@ -198,14 +198,14 @@ export const IndustryDetailPage: React.FC = () => {
               <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#94A3B8] block mb-1">
                 DEPLOYED CAPABILITIES
               </span>
-              <h3 className="text-[20px] font-bold text-[#0F172A] tracking-[-0.025em]">
+              <h3 className="text-[20px] font-bold text-[#0B1F33] tracking-[-0.025em]">
                 How Centrifuge Solves It
               </h3>
             </div>
             <div className="space-y-3 pt-2">
               {ind.howCentrifugeHelps.map((point, i) => (
                 <div key={i} className="flex items-start gap-3 text-[13px] text-[#475569]">
-                  <CheckCircle2 className="h-4 w-4 text-[#F27A22] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-4 w-4 text-[#16C7D9] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">{point}</span>
                 </div>
               ))}
@@ -226,7 +226,7 @@ export const IndustryDetailPage: React.FC = () => {
                     className="flex items-center justify-between p-3 rounded-[8px] bg-[#F8FAFC] hover:bg-[#F1F5F9] border border-[#E2E8F0] text-[13px] font-medium text-[#334155] group transition-colors"
                   >
                     <span>{sol.name}</span>
-                    <ArrowRight className="h-3 w-3 text-[#F27A22] group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="h-3 w-3 text-[#16C7D9] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
@@ -244,7 +244,7 @@ export const IndustryDetailPage: React.FC = () => {
                     className="flex items-center justify-between p-3 rounded-[8px] bg-[#F8FAFC] hover:bg-[#F1F5F9] border border-[#E2E8F0] text-[13px] font-medium text-[#334155] group transition-colors"
                   >
                     <span>{svc.name}</span>
-                    <ArrowRight className="h-3 w-3 text-[#F27A22] group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="h-3 w-3 text-[#16C7D9] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
@@ -253,9 +253,9 @@ export const IndustryDetailPage: React.FC = () => {
 
           {/* Case Study Callout */}
           {ind.caseStudy && (
-            <div className="p-8 rounded-[12px] bg-[#0F172A] flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="p-8 rounded-[12px] bg-[#0B1F33] flex flex-col sm:flex-row items-center justify-between gap-6">
               <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#F27A22] block mb-1">
+                <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#16C7D9] block mb-1">
                   PROVEN OUTCOME
                 </span>
                 <h4 className="text-[18px] font-bold text-white tracking-[-0.025em]">
@@ -264,7 +264,7 @@ export const IndustryDetailPage: React.FC = () => {
               </div>
               <Link
                 to={ind.caseStudy.url}
-                className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#F27A22] text-[#0F172A] hover:bg-[#E06910] text-[13px] font-semibold shrink-0 transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[13px] font-semibold shrink-0 transition-colors"
               >
                 <span>Read Case Study</span>
                 <ArrowRight className="h-3.5 w-3.5" />
