@@ -20,7 +20,6 @@ interface RevealProps {
   threshold?: number
   className?: string
   style?: React.CSSProperties
-  as?: keyof JSX.IntrinsicElements
 }
 
 const directionMap: Record<Direction, string> = {
@@ -89,20 +88,18 @@ export const Reveal: React.FC<RevealProps> = ({
   threshold = 0.1,
   className,
   style,
-  as: Tag = 'div',
 }) => {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold, rootMargin: '0px 0px -48px 0px' })
   const { hidden, visible } = buildStyles(inView, variant, from, distance, duration, delay)
 
   return (
-    // @ts-ignore — dynamic tag
-    <Tag
+    <div
       ref={ref}
       className={className}
       style={{ ...style, ...(inView ? visible : hidden) }}
     >
       {children}
-    </Tag>
+    </div>
   )
 }
 

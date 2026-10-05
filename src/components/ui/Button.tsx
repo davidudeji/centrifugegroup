@@ -27,7 +27,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     // Global transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1) per spec §5.2
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-200 ease-in-out disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99] rounded-[4px] cursor-pointer'
+      'inline-flex items-center justify-center font-medium transition-fin disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99] rounded-[4px] cursor-pointer'
 
     const sizeStyles = {
       sm: 'text-xs px-3 py-1.5 gap-1.5',

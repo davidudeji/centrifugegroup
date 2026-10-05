@@ -26,14 +26,14 @@ export const FinalCTASection: React.FC = () => {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-[#008DDA] text-white hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-[#0F2C59] transition-all duration-200 shadow-xs"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-[#008DDA] text-white hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-[#0F2C59] transition-fin shadow-xs"
           >
             <span>Speak with an Enterprise Architect</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/solutions/banking-framework"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-transparent border border-white/60 text-white hover:bg-white hover:text-[#0F2C59] transition-all duration-200"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-transparent border border-white/60 text-white hover:bg-white hover:text-[#0F2C59] transition-fin"
           >
             <span>Launch Visual Studio</span>
           </Link>
@@ -56,7 +56,6 @@ export const FinalCTASection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
   )
 }
 

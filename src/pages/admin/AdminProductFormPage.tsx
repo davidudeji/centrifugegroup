@@ -155,7 +155,7 @@ export const AdminProductFormPage: React.FC = () => {
   }
 
   if (isLoading) {
-    return <div className="py-20 text-center text-xs text-[#868684]">Loading product details...</div>
+    return <div className="py-20 text-center text-xs text-[#64748B]">Loading product details...</div>
   }
 
   return (
@@ -163,19 +163,19 @@ export const AdminProductFormPage: React.FC = () => {
       <SEO title={isEditing ? 'Edit Product | Admin' : 'New Product | Admin'} />
 
       {/* Top Action Bar */}
-      <div className="flex items-center justify-between pb-4 border-b border-[#333333]">
+      <div className="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
         <div className="flex items-center gap-3">
           <Link
             to="/admin/products"
-            className="p-1.5 rounded-[6px] text-[#868684] hover:text-[#faf9f6] hover:bg-[#1e1e1d]"
+            className="p-1.5 rounded-[6px] text-[#64748B] hover:text-[#1A1A1A] hover:bg-[#F5F7FA]"
           >
             <ArrowLeft className="h-4 w-4" />
           </Link>
           <div>
-            <h1 className="text-xl font-bold text-[#faf9f6] font-heading">
+            <h1 className="text-xl font-bold text-[#1A1A1A] font-heading">
               {isEditing ? `Edit: ${formData.name}` : 'Create New Hardware Product'}
             </h1>
-            <p className="text-xs text-[#868684]">
+            <p className="text-xs text-[#64748B]">
               Configure hardware specs, pricing, and stock visibility.
             </p>
           </div>
@@ -203,8 +203,8 @@ export const AdminProductFormPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Column (Span 8) */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="bg-[#121212] p-6 rounded-[16px] border border-[#333333] shadow-xs space-y-4">
-            <h3 className="text-sm font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-6 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4">
+            <h3 className="text-sm font-bold text-[#1A1A1A] font-heading">
               Product Information
             </h3>
 
@@ -233,26 +233,26 @@ export const AdminProductFormPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">
                 Short Description (Listing Summary)
               </label>
               <textarea
                 rows={2}
                 required
-                className="w-full text-xs p-3 border border-[#333333] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#f0b66d]/30"
+                className="w-full text-xs p-3 border border-[#E2E8F0] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/30"
                 value={formData.shortDescription}
                 onChange={(e) => setFormData({ ...formData, shortDescription: e.target.value })}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">
                 Full Technical Specifications & Overview
               </label>
               <textarea
                 rows={4}
                 required
-                className="w-full text-xs p-3 border border-[#333333] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#f0b66d]/30"
+                className="w-full text-xs p-3 border border-[#E2E8F0] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/30"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               />
@@ -260,8 +260,8 @@ export const AdminProductFormPage: React.FC = () => {
           </div>
 
           {/* Media / Image URL */}
-          <div className="bg-[#121212] p-6 rounded-[16px] border border-[#333333] shadow-xs space-y-4">
-            <h3 className="text-sm font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-6 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4">
+            <h3 className="text-sm font-bold text-[#1A1A1A] font-heading">
               Product Image
             </h3>
             <Input
@@ -270,7 +270,7 @@ export const AdminProductFormPage: React.FC = () => {
               onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
             />
             {formData.imageUrl && (
-              <div className="h-36 w-36 rounded-[8px] border border-[#333333] p-2 bg-[#000000]">
+              <div className="h-36 w-36 rounded-[8px] border border-[#E2E8F0] p-2 bg-[#F5F7FA]">
                 <img src={formData.imageUrl} alt="Preview" className="h-full w-full object-contain" />
               </div>
             )}
@@ -280,19 +280,19 @@ export const AdminProductFormPage: React.FC = () => {
         {/* Right Column (Span 4) */}
         <div className="lg:col-span-4 space-y-6">
           {/* Status & Category */}
-          <div className="bg-[#121212] p-6 rounded-[16px] border border-[#333333] shadow-xs space-y-4">
-            <h3 className="text-sm font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-6 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4">
+            <h3 className="text-sm font-bold text-[#1A1A1A] font-heading">
               Organization
             </h3>
 
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">
                 Catalog Category *
               </label>
               <select
                 value={formData.categoryId}
                 onChange={(e) => setFormData({ ...formData, categoryId: e.target.value })}
-                className="w-full bg-[#121212] text-xs border border-[#333333] rounded-[8px] py-2 px-3 focus:outline-none"
+                className="w-full bg-[#FFFFFF] text-xs border border-[#E2E8F0] rounded-[8px] py-2 px-3 focus:outline-none"
               >
                 {mockCategories.map((c) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
@@ -301,13 +301,13 @@ export const AdminProductFormPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">
                 Publishing Status
               </label>
               <select
                 value={formData.status}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value as ProductStatus })}
-                className="w-full bg-[#121212] text-xs border border-[#333333] rounded-[8px] py-2 px-3 focus:outline-none"
+                className="w-full bg-[#FFFFFF] text-xs border border-[#E2E8F0] rounded-[8px] py-2 px-3 focus:outline-none"
               >
                 <option value="active">Active (Visible in Store)</option>
                 <option value="draft">Draft (Hidden)</option>
@@ -321,17 +321,17 @@ export const AdminProductFormPage: React.FC = () => {
                 id="featured"
                 checked={formData.featured}
                 onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                className="rounded text-[#f0b66d] focus:ring-[#f0b66d]"
+                className="rounded text-[#008DDA] focus:ring-[#008DDA]"
               />
-              <label htmlFor="featured" className="text-xs font-medium text-[#faf9f6]">
+              <label htmlFor="featured" className="text-xs font-medium text-[#1A1A1A]">
                 Feature on Homepage
               </label>
             </div>
           </div>
 
           {/* Pricing */}
-          <div className="bg-[#121212] p-6 rounded-[16px] border border-[#333333] shadow-xs space-y-4">
-            <h3 className="text-sm font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-6 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4">
+            <h3 className="text-sm font-bold text-[#1A1A1A] font-heading">
               Pricing & Margins (NGN)
             </h3>
 
@@ -360,8 +360,8 @@ export const AdminProductFormPage: React.FC = () => {
           </div>
 
           {/* Inventory */}
-          <div className="bg-[#121212] p-6 rounded-[16px] border border-[#333333] shadow-xs space-y-4">
-            <h3 className="text-sm font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-6 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4">
+            <h3 className="text-sm font-bold text-[#1A1A1A] font-heading">
               Inventory Controls
             </h3>
 

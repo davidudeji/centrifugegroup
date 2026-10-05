@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { useUIStore } from '../../stores/uiStore'
+import { useCartStore } from '../../stores/cartStore'
 import {
   ChevronDown,
   Menu,
@@ -22,6 +23,10 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const { mobileNavOpen, setMobileNavOpen } = useUIStore()
+  const toggleCart = useCartStore((state) => state.toggleCart)
+  const totalCartCount = useCartStore((state) =>
+    state.items.reduce((total, item) => total + item.quantity, 0)
+  )
   const location = useLocation()
 
   useEffect(() => {
@@ -88,11 +93,17 @@ export const Header: React.FC = () => {
                 className="flex items-center gap-3 focus:outline-none shrink-0"
                 aria-label="Centrifuge Group Home"
               >
-                <img
-                  src={brandAssets.logo}
-                  alt="Centrifuge Group"
-                  className="w-[200px] sm:w-[240px] h-[46px] object-contain object-left"
-                />
+                <span className="h-[46px] w-[52px] shrink-0 overflow-hidden">
+                  <img
+                    src={brandAssets.logo}
+                    alt=""
+                    aria-hidden="true"
+                    className="max-w-none w-[200px] sm:w-[240px] h-[46px] object-contain object-left"
+                  />
+                </span>
+                <span className="font-heading text-base font-bold text-[#0F2C59]">
+                  Centrifuge Group
+                </span>
               </Link>
 
               {/* Wireframe 4.1 Global Nav: Solutions, Products, Company, Resources */}

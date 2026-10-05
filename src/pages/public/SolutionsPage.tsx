@@ -63,8 +63,7 @@ export const SolutionsPage: React.FC = () => {
     },
   ]
 
-  export const SolutionsPage: React.FC = () => {
-    return (
+  return (
       <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
         <SEO
           title="Enterprise Solutions & Banking Architecture | Centrifuge Group"
@@ -116,7 +115,7 @@ export const SolutionsPage: React.FC = () => {
 
                     <h3 className="text-[22px] sm:text-[24px] font-bold text-[#0F2C59] tracking-tight">
                       {sol.name}
-                    </h2>
+                    </h3>
 
                     <p className="text-[14px] text-[#475569] leading-relaxed max-w-2xl">
                       {sol.description}
@@ -162,7 +161,7 @@ export const SolutionsPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#0B1F33] py-20">
+        <section className="bg-[#0F2C59] py-20">
           <div className="section-container text-center">
             <h2 className="text-h2 text-white mb-4">Not sure which platform fits?</h2>
             <p className="text-body-lg text-[#94A3B8] mb-8 max-w-xl mx-auto">

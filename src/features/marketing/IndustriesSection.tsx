@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, HeartPulse, Truck, Building2, Landmark, Store, Landmark as Bank } from 'lucide-react'
 
-export const IndustriesSection: React.FC = () => {
-  const industries = [
+const industries = [
     {
       id: 'banking',
       name: 'Financial Services & Digital Banking',
@@ -52,7 +51,7 @@ export const IndustriesSection: React.FC = () => {
       solution: 'Cloud inventory POS combined with industrial pure sine wave inverters and solar backup.',
       slug: '/industries/smes',
     },
-  ]
+]
 
   export const IndustriesSection: React.FC = () => {
     return (
@@ -75,7 +74,7 @@ export const IndustriesSection: React.FC = () => {
             {industries.map((ind) => {
               const Icon = ind.icon
               return (
-                <Link
+                <div
                   key={ind.id}
                   className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
                 >
@@ -105,12 +104,12 @@ export const IndustriesSection: React.FC = () => {
                     >
                       <span>Industry solutions & case studies</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                    </Link>
+                  </Link>
                   </div>
-                </Link>
+                </div>
               )
             })}
-          </StaggerReveal>
+          </div>
         </div>
       </section>
     )

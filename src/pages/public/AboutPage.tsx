@@ -180,12 +180,12 @@ export const AboutPage: React.FC = () => {
                 />
               </div>
             ))}
-          </StaggerReveal>
+          </div>
         </div>
       </section>
 
       {/* ── CTA ─────────────────────────────────── */}
-      <section className="bg-[#0B1F33] py-20">
+      <section className="bg-[#0F2C59] py-20">
         <div className="section-container text-center">
           <Reveal variant="blur" from="up" distance={20} duration={800}>
             <h2 className="text-h2 text-white mb-4">Ready to work with us?</h2>

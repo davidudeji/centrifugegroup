@@ -48,7 +48,7 @@ export const CaseStudiesSection: React.FC = () => {
               )}
               {/* Industry badge */}
               <div className="absolute bottom-4 left-4">
-                <span className="text-[11px] font-semibold uppercase tracking-widest bg-[#16C7D9] text-[#0B1F33] px-2.5 py-1 rounded-full">
+                <span className="text-[11px] font-semibold uppercase tracking-widest bg-[#008DDA] text-white px-2.5 py-1 rounded-[4px]">
                   {featured.industry}
                 </span>
               </div>
@@ -89,12 +89,12 @@ export const CaseStudiesSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </Reveal>
+
 
       {/* ─── Secondary Case Study Cards ─── */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {secondary.map((cs) => (
-          <Link
+          <div
             key={cs.id}
             className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
           >
@@ -133,11 +133,11 @@ export const CaseStudiesSection: React.FC = () => {
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>
-          </Link>
+          </div>
         ))}
-      </StaggerReveal>
+      </div>
     </div>
-    </section >
+    </section>
   )
 }
 

@@ -59,12 +59,12 @@ export const AdminProductsPage: React.FC = () => {
       <SEO title="Product Catalog Management | Centrifuge Admin" />
 
       {/* Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#333333]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E2E8F0]">
         <div>
-          <h1 className="text-2xl font-bold text-[#faf9f6] font-heading">
+          <h1 className="text-2xl font-bold text-[#1A1A1A] font-heading">
             Commercial Hardware Products
           </h1>
-          <p className="text-xs text-[#868684] mt-0.5">
+          <p className="text-xs text-[#64748B] mt-0.5">
             Manage your hardware inventory, pricing, specifications, and live store availability.
           </p>
         </div>
@@ -77,7 +77,7 @@ export const AdminProductsPage: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-[#121212] p-4 rounded-[12px] border border-[#333333] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#FFFFFF] p-4 rounded-[12px] border border-[#E2E8F0] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="w-full md:w-80">
           <Input
             placeholder="Search by product name or SKU..."
@@ -91,7 +91,7 @@ export const AdminProductsPage: React.FC = () => {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="bg-[#121212] text-xs border border-[#333333] rounded-[8px] py-2 px-3 focus:outline-none"
+            className="bg-[#FFFFFF] text-xs border border-[#E2E8F0] rounded-[8px] py-2 px-3 focus:outline-none"
           >
             <option value="all">All Categories</option>
             {mockCategories.map((c) => (
@@ -102,7 +102,7 @@ export const AdminProductsPage: React.FC = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="bg-[#121212] text-xs border border-[#333333] rounded-[8px] py-2 px-3 focus:outline-none"
+            className="bg-[#FFFFFF] text-xs border border-[#E2E8F0] rounded-[8px] py-2 px-3 focus:outline-none"
           >
             <option value="all">All Statuses</option>
             <option value="active">Active</option>
@@ -113,10 +113,10 @@ export const AdminProductsPage: React.FC = () => {
       </div>
 
       {/* Table */}
-      <div className="bg-[#121212] rounded-[16px] border border-[#333333] shadow-xs overflow-hidden">
+      <div className="bg-[#FFFFFF] rounded-[16px] border border-[#E2E8F0] shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs divide-y divide-[#333333]">
-            <thead className="bg-[#000000] text-[#b4b4b2] font-bold">
+          <table className="w-full text-left text-xs divide-y divide-[#E2E8F0]">
+            <thead className="bg-[#F5F7FA] text-[#64748B] font-bold">
               <tr>
                 <th className="px-6 py-3.5">Product</th>
                 <th className="px-6 py-3.5">SKU</th>
@@ -127,44 +127,44 @@ export const AdminProductsPage: React.FC = () => {
                 <th className="px-6 py-3.5 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#333333]">
+            <tbody className="divide-y divide-[#E2E8F0]">
               {isLoading ? (
                 <tr>
-                  <td colSpan={7} className="px-6 py-12 text-center text-[#868684]">
+                  <td colSpan={7} className="px-6 py-12 text-center text-[#64748B]">
                     Loading products...
                   </td>
                 </tr>
               ) : filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-6 py-12 text-center text-[#868684]">
+                  <td colSpan={7} className="px-6 py-12 text-center text-[#64748B]">
                     No products found matching filters.
                   </td>
                 </tr>
               ) : (
                 filtered.map((prod) => (
-                  <tr key={prod.id} className="hover:bg-[#000000]">
+                  <tr key={prod.id} className="hover:bg-[#F5F7FA]">
                     <td className="px-6 py-3.5">
                       <div className="flex items-center gap-3">
                         <img
                           src={prod.images[0]}
                           alt=""
-                          className="h-10 w-10 object-contain rounded border p-0.5 bg-[#000000] shrink-0"
+                          className="h-10 w-10 object-contain rounded border p-0.5 bg-[#F5F7FA] shrink-0"
                         />
                         <div>
-                          <span className="font-semibold text-[#faf9f6] block line-clamp-1">
+                          <span className="font-semibold text-[#1A1A1A] block line-clamp-1">
                             {prod.name}
                           </span>
-                          <span className="text-[10px] text-[#868684]">{prod.brand}</span>
+                          <span className="text-[10px] text-[#64748B]">{prod.brand}</span>
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-3.5 font-mono text-[#faf9f6]">
+                    <td className="px-6 py-3.5 font-mono text-[#1A1A1A]">
                       {prod.sku}
                     </td>
-                    <td className="px-6 py-3.5 text-[#b4b4b2]">
+                    <td className="px-6 py-3.5 text-[#64748B]">
                       {prod.categoryName || 'Hardware'}
                     </td>
-                    <td className="px-6 py-3.5 font-bold text-[#faf9f6]">
+                    <td className="px-6 py-3.5 font-bold text-[#1A1A1A]">
                       ₦{prod.price.toLocaleString()}
                     </td>
                     <td className="px-6 py-3.5">
@@ -187,14 +187,14 @@ export const AdminProductsPage: React.FC = () => {
                     <td className="px-6 py-3.5 text-right space-x-2">
                       <Link
                         to={`/admin/products/edit/${prod.id}`}
-                        className="inline-flex p-1 text-[#868684] hover:text-[#faf9f6]"
+                        className="inline-flex p-1 text-[#64748B] hover:text-[#1A1A1A]"
                         title="Edit product"
                       >
                         <Edit className="h-4 w-4" />
                       </Link>
                       <button
                         onClick={() => setDeleteModalProduct(prod)}
-                        className="inline-flex p-1 text-[#DC2626] hover:text-[#B91C1C]"
+                        className="inline-flex p-1 text-[#EF4444] hover:text-[#B91C1C]"
                         title="Delete product"
                       >
                         <Trash2 className="h-4 w-4" />
@@ -217,8 +217,8 @@ export const AdminProductsPage: React.FC = () => {
         maxWidth="sm"
       >
         <div className="space-y-4">
-          <p className="text-xs text-[#b4b4b2]">
-            Are you sure you want to delete <strong className="text-[#faf9f6]">{deleteModalProduct?.name}</strong> (SKU: {deleteModalProduct?.sku})?
+          <p className="text-xs text-[#64748B]">
+            Are you sure you want to delete <strong className="text-[#1A1A1A]">{deleteModalProduct?.name}</strong> (SKU: {deleteModalProduct?.sku})?
           </p>
           <div className="flex justify-end gap-3 pt-2">
             <Button variant="outline" size="sm" onClick={() => setDeleteModalProduct(null)}>

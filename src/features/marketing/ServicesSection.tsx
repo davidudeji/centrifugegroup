@@ -10,6 +10,11 @@ import {
   GraduationCap,
   ArrowRight,
   ShieldCheck,
+  Cog,
+  PieChart,
+  Layers,
+  BarChart3,
+  Briefcase,
 } from 'lucide-react'
 
 export const ServicesSection: React.FC = () => {
@@ -221,10 +226,8 @@ export const ServicesSection: React.FC = () => {
             <span>Request Technical Consultation</span>
           </Link>
         </div>
-      </Reveal>
-    </div>
-    </section >
-  )
+      </div>
+      </section>
   )
 }
 export default ServicesSection

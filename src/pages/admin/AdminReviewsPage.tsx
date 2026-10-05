@@ -109,7 +109,7 @@ function StarRating({ rating }: { rating: number }) {
           className={`h-3.5 w-3.5 ${
             star <= rating
               ? 'fill-[#F59E0B] text-[#F59E0B]'
-              : 'fill-[#333333] text-[#868684]'
+              : 'fill-[#E2E8F0] text-[#64748B]'
           }`}
         />
       ))}
@@ -166,16 +166,16 @@ export const AdminReviewsPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-[#faf9f6] font-heading">Customer Reviews</h1>
-          <p className="text-sm text-[#868684] mt-0.5">
+          <h1 className="text-2xl font-bold text-[#1A1A1A] font-heading">Customer Reviews</h1>
+          <p className="text-sm text-[#64748B] mt-0.5">
             Moderate and manage product reviews from store customers.
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <div className="px-4 py-2 bg-[#121212] border border-[#333333] rounded-[8px] flex items-center gap-2">
+          <div className="px-4 py-2 bg-[#FFFFFF] border border-[#E2E8F0] rounded-[8px] flex items-center gap-2">
             <Star className="h-4 w-4 fill-[#F59E0B] text-[#F59E0B]" />
-            <span className="text-sm font-bold text-[#faf9f6]">{avgRating}</span>
-            <span className="text-xs text-[#868684]">avg. approved rating</span>
+            <span className="text-sm font-bold text-[#1A1A1A]">{avgRating}</span>
+            <span className="text-xs text-[#64748B]">avg. approved rating</span>
           </div>
         </div>
       </div>
@@ -183,25 +183,25 @@ export const AdminReviewsPage: React.FC = () => {
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { label: 'Total Reviews', value: counts.all, color: '#f0b66d' },
+          { label: 'Total Reviews', value: counts.all, color: '#008DDA' },
           { label: 'Pending', value: counts.pending, color: '#D97706' },
-          { label: 'Approved', value: counts.approved, color: '#16A34A' },
-          { label: 'Rejected', value: counts.rejected, color: '#DC2626' },
+          { label: 'Approved', value: counts.approved, color: '#10B981' },
+          { label: 'Rejected', value: counts.rejected, color: '#EF4444' },
         ].map((stat) => (
           <div
             key={stat.label}
-            className="bg-[#121212] rounded-[12px] border border-[#333333] p-4"
+            className="bg-[#FFFFFF] rounded-[12px] border border-[#E2E8F0] p-4"
           >
             <div className="text-2xl font-bold font-heading" style={{ color: stat.color }}>
               {stat.value}
             </div>
-            <div className="text-xs text-[#868684] mt-0.5">{stat.label}</div>
+            <div className="text-xs text-[#64748B] mt-0.5">{stat.label}</div>
           </div>
         ))}
       </div>
 
       {/* Filters */}
-      <div className="bg-[#121212] rounded-[12px] border border-[#333333] p-4">
+      <div className="bg-[#FFFFFF] rounded-[12px] border border-[#E2E8F0] p-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="w-full sm:w-72">
             <Input
@@ -213,15 +213,15 @@ export const AdminReviewsPage: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs text-[#868684] font-medium">Status:</span>
+            <span className="text-xs text-[#64748B] font-medium">Status:</span>
             {(['all', 'pending', 'approved', 'rejected'] as const).map((s) => (
               <button
                 key={s}
                 onClick={() => setStatusFilter(s)}
                 className={`text-xs px-3 py-1.5 rounded-[6px] font-medium capitalize transition-colors ${
                   statusFilter === s
-                    ? 'bg-[#000000] text-white font-semibold'
-                    : 'bg-[#1e1e1d] text-[#b4b4b2] hover:bg-[#333333]'
+                    ? 'bg-[#008DDA] text-white font-semibold'
+                    : 'bg-[#F5F7FA] text-[#64748B] hover:bg-[#E2E8F0]'
                 }`}
               >
                 {s === 'all' ? `All (${counts.all})` : `${s} (${counts[s]})`}
@@ -230,11 +230,11 @@ export const AdminReviewsPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs text-[#868684] font-medium">Rating:</span>
+            <span className="text-xs text-[#64748B] font-medium">Rating:</span>
             <select
               value={ratingFilter}
               onChange={(e) => setRatingFilter(e.target.value)}
-              className="text-xs border border-[#333333] rounded-[6px] py-1.5 px-2 bg-[#121212] text-[#faf9f6] focus:outline-none focus:ring-2 focus:ring-[#f0b66d]/30"
+              className="text-xs border border-[#E2E8F0] rounded-[6px] py-1.5 px-2 bg-[#FFFFFF] text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/30"
             >
               <option value="all">All Ratings</option>
               <option value="5">⭐⭐⭐⭐⭐ 5 stars</option>
@@ -249,10 +249,10 @@ export const AdminReviewsPage: React.FC = () => {
 
       {/* Reviews List */}
       {filtered.length === 0 ? (
-        <div className="bg-[#121212] rounded-[12px] border border-[#333333] py-16 text-center">
+        <div className="bg-[#FFFFFF] rounded-[12px] border border-[#E2E8F0] py-16 text-center">
           <MessageSquare className="h-10 w-10 text-[#CBD5E1] mx-auto mb-3" />
-          <p className="text-sm font-semibold text-[#faf9f6]">No reviews found</p>
-          <p className="text-xs text-[#868684] mt-1">Try adjusting your filters or search query.</p>
+          <p className="text-sm font-semibold text-[#1A1A1A]">No reviews found</p>
+          <p className="text-xs text-[#64748B] mt-1">Try adjusting your filters or search query.</p>
         </div>
       ) : (
         <div className="space-y-3">
@@ -264,17 +264,17 @@ export const AdminReviewsPage: React.FC = () => {
             return (
               <div
                 key={review.id}
-                className="bg-[#121212] rounded-[12px] border border-[#333333] overflow-hidden hover:border-[#333333] transition-colors"
+                className="bg-[#FFFFFF] rounded-[12px] border border-[#E2E8F0] overflow-hidden hover:border-[#E2E8F0] transition-colors"
               >
                 {/* Review Header */}
                 <div className="p-5 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
                   <div className="flex items-start gap-3 flex-1 min-w-0">
-                    <div className="h-10 w-10 rounded-full bg-[#1e1e1d] flex items-center justify-center text-sm font-bold text-[#faf9f6] shrink-0">
+                    <div className="h-10 w-10 rounded-full bg-[#F5F7FA] flex items-center justify-center text-sm font-bold text-[#1A1A1A] shrink-0">
                       {review.customerName.charAt(0)}
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-sm font-bold text-[#faf9f6]">
+                        <span className="text-sm font-bold text-[#1A1A1A]">
                           {review.customerName}
                         </span>
                         <StarRating rating={review.rating} />
@@ -282,11 +282,11 @@ export const AdminReviewsPage: React.FC = () => {
                           {status.label}
                         </Badge>
                       </div>
-                      <p className="text-xs font-semibold text-[#faf9f6] mt-0.5 truncate">
+                      <p className="text-xs font-semibold text-[#1A1A1A] mt-0.5 truncate">
                         "{review.title}"
                       </p>
-                      <p className="text-[11px] text-[#868684] mt-0.5 truncate">
-                        On: <span className="font-medium text-[#b4b4b2]">{review.productName}</span>
+                      <p className="text-[11px] text-[#64748B] mt-0.5 truncate">
+                        On: <span className="font-medium text-[#64748B]">{review.productName}</span>
                         {' · '}
                         {review.productSku}
                         {' · '}
@@ -302,7 +302,7 @@ export const AdminReviewsPage: React.FC = () => {
                   <div className="flex items-center gap-2 shrink-0">
                     <button
                       onClick={() => setExpandedId(isExpanded ? null : review.id)}
-                      className="text-xs font-medium text-[#868684] hover:text-[#faf9f6] flex items-center gap-1 transition-colors"
+                      className="text-xs font-medium text-[#64748B] hover:text-[#1A1A1A] flex items-center gap-1 transition-colors"
                     >
                       <Eye className="h-3.5 w-3.5" />
                       {isExpanded ? 'Collapse' : 'Read'}
@@ -351,11 +351,11 @@ export const AdminReviewsPage: React.FC = () => {
 
                 {/* Expanded Body */}
                 {isExpanded && (
-                  <div className="px-5 pb-5 border-t border-[#333333] pt-4 space-y-3">
-                    <div className="text-sm text-[#b4b4b2] leading-relaxed bg-[#000000] p-4 rounded-[8px] border border-[#333333]">
+                  <div className="px-5 pb-5 border-t border-[#E2E8F0] pt-4 space-y-3">
+                    <div className="text-sm text-[#64748B] leading-relaxed bg-[#F5F7FA] p-4 rounded-[8px] border border-[#E2E8F0]">
                       {review.body}
                     </div>
-                    <div className="flex items-center justify-between text-xs text-[#868684]">
+                    <div className="flex items-center justify-between text-xs text-[#64748B]">
                       <span className="flex items-center gap-1.5">
                         <ThumbsUp className="h-3.5 w-3.5" />
                         <span>{review.helpful} customers found this helpful</span>

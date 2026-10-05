@@ -86,10 +86,10 @@ export const JobDetailPage: React.FC = () => {
               variant="primary"
               size="md"
               onClick={() => setIsApplyModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[14px] font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[4px] text-[14px] font-semibold"
             >
               Apply for this Position
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -106,9 +106,8 @@ export const JobDetailPage: React.FC = () => {
                 About the Role
               </h3>
               <p className="text-[14px] text-[#475569] leading-relaxed">
-                <p className="text-[14px] text-[#475569] leading-relaxed">
-                  {job.aboutRole}
-                </p>
+                {job.aboutRole}
+              </p>
             </div>
 
             <div className="pt-6 border-t border-[#F1F5F9]">
@@ -184,7 +183,7 @@ export const JobDetailPage: React.FC = () => {
               </span>
               <button
                 onClick={() => setIsApplyModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[6px] bg-[#16C7D9] text-[#0B1F33] hover:bg-[#10b8ca] text-[14px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-[14px] font-semibold transition-fin"
               >
                 Apply for this Role
               </button>

@@ -111,7 +111,7 @@ export const ProjectsPage: React.FC = () => {
                     {/* Media Thumbnail */}
                     <div className="h-48 w-full relative bg-[#F1F5F9] overflow-hidden">
                       <img
-                        src={proj.featuredImage}
+                        src={proj.image}
                         alt={proj.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -130,12 +130,11 @@ export const ProjectsPage: React.FC = () => {
                         <Link to={`/projects/${proj.slug}`}>{proj.name}</Link>
                       </h3>
                       <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
-                        <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
-                          {proj.description}
-                        </p>
+                        {proj.description}
+                      </p>
 
                         <div className="mt-4 pt-3 border-t border-[#F1F5F9] flex flex-wrap gap-1.5">
-                          {proj.tags.slice(0, 3).map((tag) => (
+                          {proj.technologies.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
                               className="px-2 py-0.5 rounded-[4px] bg-[#F1F5F9] border border-[#E2E8F0] text-[10px] font-mono font-medium text-[#64748B]"

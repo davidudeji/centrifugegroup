@@ -31,8 +31,7 @@ export const HealthcarePage: React.FC = () => {
     },
   ]
 
-  export const HealthcarePage: React.FC = () => {
-    return (
+  return (
       <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
         <SEO
           title="Centrifuge Healthcare Solutions | Health Informatics & Hospital Systems"
@@ -72,7 +71,7 @@ export const HealthcarePage: React.FC = () => {
               </div>
             </div>
           </div>
-        </PageHero>
+        </section>
 
         {/* ─── Systems Grid (UI/UX Spec §3.3 Data Card Module) ─── */}
         <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
@@ -115,16 +114,16 @@ export const HealthcarePage: React.FC = () => {
                           <span>{feat}</span>
                         </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                  )
-            })}
                 </div>
-        </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* CTA */}
-        <section className="bg-[#0B1F33] py-20">
+        <section className="bg-[#0F2C59] py-20">
           <div className="section-container text-center">
             <h2 className="text-h2 text-white mb-4">Serving Nigeria's healthcare infrastructure.</h2>
             <p className="text-body-lg text-[#94A3B8] mb-8 max-w-xl mx-auto">
@@ -137,6 +136,6 @@ export const HealthcarePage: React.FC = () => {
         </section>
       </div>
     )
-  }
+}
 
-  export default HealthcarePage
+export default HealthcarePage

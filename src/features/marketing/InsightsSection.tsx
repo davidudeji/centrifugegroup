@@ -82,7 +82,7 @@ export const InsightsSection: React.FC = () => {
               </div>
             </article>
           ))}
-        </StaggerReveal>
+        </div>
       </div>
     </section>
   )

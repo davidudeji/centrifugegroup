@@ -32,7 +32,7 @@ const PILLARS = [
 
 export const WhyCentrifugeSection: React.FC = () => {
   return (
-    <section style={{ backgroundColor: '#0F172A', borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="section-py">
+    <section style={{ backgroundColor: '#0F2C59', borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="section-py">
       <div className="section-container">
 
         {/* Header */}
@@ -40,22 +40,22 @@ export const WhyCentrifugeSection: React.FC = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '64px', maxWidth: '680px' }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '6px',
-              padding: '5px 14px', backgroundColor: 'rgba(242,122,34,0.1)',
-              border: '1px solid rgba(242,122,34,0.25)', borderRadius: '9999px',
-              color: '#F27A22', fontSize: '11px', fontWeight: 700,
+              padding: '5px 14px', backgroundColor: 'rgba(0,141,218,0.1)',
+              border: '1px solid rgba(0,141,218,0.25)', borderRadius: '4px',
+              color: '#008DDA', fontSize: '11px', fontWeight: 700,
               letterSpacing: '0.12em', textTransform: 'uppercase',
               width: 'fit-content', marginBottom: '12px'
             }}>
-              <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: '#F27A22' }} />
+              <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: '#008DDA' }} />
               04 / WHY CENTRIFUGE
             </div>
             <h2 style={{
-              fontFamily: 'Manrope, sans-serif', fontSize: 'clamp(32px, 4vw, 52px)',
+              fontFamily: 'Inter, Segoe UI, sans-serif', fontSize: 'clamp(32px, 4vw, 52px)',
               fontWeight: 700, color: '#fff', lineHeight: 1.08, letterSpacing: '-0.025em',
               margin: 0
             }}>
               Built for organizations where<br />
-              <span style={{ color: '#F27A22', fontStyle: 'italic' }}>technology has to work.</span>
+              <span style={{ color: '#008DDA', fontStyle: 'italic' }}>technology has to work.</span>
             </h2>
             <p style={{ fontSize: '17px', color: 'rgba(148,163,184,0.85)', lineHeight: 1.7, margin: '16px 0 0', maxWidth: '540px' }}>
               We build systems for ministries, enterprises, and institutions that operate in environments where downtime, data loss, and integration failures have real consequences.
@@ -70,34 +70,34 @@ export const WhyCentrifugeSection: React.FC = () => {
           duration={600}
           className=""
           childClassName=""
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', overflow: 'hidden', marginBottom: '64px' }}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '8px', overflow: 'hidden', marginBottom: '64px' }}
         >
           {PILLARS.map(({ num, icon: Icon, title, desc }) => (
             <div key={num} style={{
-              backgroundColor: '#0F172A',
+              backgroundColor: '#0F2C59',
               padding: '40px',
               display: 'flex',
               flexDirection: 'column',
               gap: '16px',
-              transition: 'background-color 200ms'
+              transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.backgroundColor = '#172033' }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.backgroundColor = '#0F172A' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.backgroundColor = '#1E3A8A' }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.backgroundColor = '#0F2C59' }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
                 <div style={{
-                  width: 44, height: 44, borderRadius: '12px', flexShrink: 0,
-                  backgroundColor: 'rgba(242,122,34,0.1)',
-                  border: '1px solid rgba(242,122,34,0.2)',
+                  width: 44, height: 44, borderRadius: '4px', flexShrink: 0,
+                  backgroundColor: 'rgba(0,141,218,0.1)',
+                  border: '1px solid rgba(0,141,218,0.2)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }}>
-                  <Icon style={{ width: 20, height: 20, color: '#F27A22' }} />
+                  <Icon style={{ width: 20, height: 20, color: '#008DDA' }} />
                 </div>
                 <p style={{ fontFamily: 'monospace', fontSize: '11px', color: 'rgba(255,255,255,0.2)', margin: '14px 0 0', letterSpacing: '0.06em' }}>
                   {num}
                 </p>
               </div>
-              <h3 style={{ fontFamily: 'Manrope, sans-serif', fontSize: '20px', fontWeight: 700, color: '#fff', letterSpacing: '-0.015em', margin: 0 }}>
+              <h3 style={{ fontFamily: 'Inter, Segoe UI, sans-serif', fontSize: '20px', fontWeight: 700, color: '#fff', letterSpacing: '-0.015em', margin: 0 }}>
                 {title}
               </h3>
               <p style={{ fontSize: '14px', color: 'rgba(148,163,184,0.8)', lineHeight: 1.7, margin: 0 }}>
@@ -110,7 +110,7 @@ export const WhyCentrifugeSection: React.FC = () => {
         {/* Bottom CTA row */}
         <Reveal from="up" delay={100}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <p style={{ fontSize: '18px', fontWeight: 600, color: '#fff', fontFamily: 'Manrope, sans-serif', margin: 0 }}>
+            <p style={{ fontSize: '18px', fontWeight: 600, color: '#fff', fontFamily: 'Inter, Segoe UI, sans-serif', margin: 0 }}>
               Ready to discuss your organization's technology needs?
             </p>
           <Link
@@ -118,9 +118,9 @@ export const WhyCentrifugeSection: React.FC = () => {
             id="why-centrifuge-cta"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
-              padding: '14px 28px', backgroundColor: '#F27A22', color: '#0F172A',
-              borderRadius: '10px', fontSize: '15px', fontWeight: 700,
-              textDecoration: 'none', flexShrink: 0, transition: 'background-color 150ms'
+              padding: '14px 28px', backgroundColor: '#008DDA', color: '#FFFFFF',
+              borderRadius: '4px', fontSize: '15px', fontWeight: 700,
+              textDecoration: 'none', flexShrink: 0, transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
             Talk to Centrifuge

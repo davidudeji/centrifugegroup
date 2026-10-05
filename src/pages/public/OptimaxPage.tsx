@@ -80,7 +80,7 @@ export const OptimaxPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </PageHero>
+      </section>
 
       {/* ─── Operational Problem vs Institutional Solution ─── */}
       <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
@@ -151,7 +151,7 @@ export const OptimaxPage: React.FC = () => {
                       {m.desc}
                     </p>
                   </div>
-                  <h4 className="text-[16px] font-heading font-700 text-[#0B1F33] mb-2">{m.name}</h4>
+                  <h4 className="text-[16px] font-semibold text-[#0F2C59] mb-2">{m.name}</h4>
                   <p className="text-[13px] text-[#64748B] leading-relaxed">{m.desc}</p>
                 </div>
               )

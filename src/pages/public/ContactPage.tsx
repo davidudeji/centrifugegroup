@@ -4,7 +4,6 @@ import { PageHero } from '../../components/ui/PageHero'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from 'lucide-react'
-import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from 'lucide-react'
 import { useUIStore } from '../../stores/uiStore'
 
 const contactDetails = [

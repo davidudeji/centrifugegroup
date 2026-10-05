@@ -122,12 +122,12 @@ export const AdminUsersPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-[#faf9f6]">Users & Roles</h1>
-          <p className="text-sm text-[#868684] mt-0.5">{users.length} admin users</p>
+          <h1 className="font-heading font-bold text-2xl text-[#1A1A1A]">Users & Roles</h1>
+          <p className="text-sm text-[#64748B] mt-0.5">{users.length} admin users</p>
         </div>
         <button
           onClick={() => { setShowForm(true); setEditId(null); setForm({ name: '', email: '', role: 'Store Manager', status: 'active' }) }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-[#000000] text-white rounded-lg text-xs font-bold hover:bg-[#000000] transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-[#008DDA] text-white rounded-lg text-xs font-bold hover:bg-[#0077B6] transition-colors"
         >
           <Plus className="h-4 w-4" />
           Invite User
@@ -137,53 +137,53 @@ export const AdminUsersPage: React.FC = () => {
       {/* Important note */}
       <div className="flex items-start gap-3 p-4 bg-[#D97706]/5 border border-[#D97706]/20 rounded-xl">
         <Shield className="h-4 w-4 text-[#D97706] shrink-0 mt-0.5" />
-        <p className="text-xs text-[#868684]">
-          <span className="font-bold text-[#faf9f6]">Security note:</span> Frontend permissions are UI-only controls. 
+        <p className="text-xs text-[#64748B]">
+          <span className="font-bold text-[#1A1A1A]">Security note:</span> Frontend permissions are UI-only controls.
           Real authorization must be enforced at the API/backend level. Never rely solely on frontend permission checks.
         </p>
       </div>
 
       {/* Invite/Edit Form */}
       {showForm && (
-        <div className="bg-[#121212] rounded-xl border border-[#333333] p-6 space-y-5">
-          <h2 className="font-heading font-bold text-base text-[#faf9f6]">
+        <div className="bg-[#FFFFFF] rounded-xl border border-[#E2E8F0] p-6 space-y-5">
+          <h2 className="font-heading font-bold text-base text-[#1A1A1A]">
             {editId ? 'Edit User' : 'Invite New User'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">Full Name *</label>
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">Full Name *</label>
               <input
                 type="text"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full h-9 px-3 bg-[#000000] border border-[#333333] rounded-lg text-sm text-[#faf9f6] focus:outline-none focus:border-[#f0b66d]"
+                className="w-full h-9 px-3 bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg text-sm text-[#1A1A1A] focus:outline-none focus:border-[#008DDA]"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">Email Address *</label>
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">Email Address *</label>
               <input
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full h-9 px-3 bg-[#000000] border border-[#333333] rounded-lg text-sm text-[#faf9f6] focus:outline-none focus:border-[#f0b66d]"
+                className="w-full h-9 px-3 bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg text-sm text-[#1A1A1A] focus:outline-none focus:border-[#008DDA]"
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">Role</label>
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">Role</label>
               <select
                 value={form.role}
                 onChange={(e) => setForm({ ...form, role: e.target.value })}
-                className="w-full h-9 px-3 bg-[#000000] border border-[#333333] rounded-lg text-sm text-[#faf9f6] focus:outline-none focus:border-[#f0b66d]"
+                className="w-full h-9 px-3 bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg text-sm text-[#1A1A1A] focus:outline-none focus:border-[#008DDA]"
               >
                 {ROLES.map((r) => <option key={r}>{r}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-[#faf9f6] mb-1.5">Status</label>
+              <label className="block text-xs font-semibold text-[#1A1A1A] mb-1.5">Status</label>
               <select
                 value={form.status}
                 onChange={(e) => setForm({ ...form, status: e.target.value as AdminUser['status'] })}
-                className="w-full h-9 px-3 bg-[#000000] border border-[#333333] rounded-lg text-sm text-[#faf9f6] focus:outline-none focus:border-[#f0b66d]"
+                className="w-full h-9 px-3 bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg text-sm text-[#1A1A1A] focus:outline-none focus:border-[#008DDA]"
               >
                 <option value="active">Active</option>
                 <option value="inactive">Inactive</option>
@@ -192,20 +192,20 @@ export const AdminUsersPage: React.FC = () => {
           </div>
 
           {/* Preview permissions */}
-          <div className="p-4 bg-[#000000] rounded-xl border border-[#333333]">
-            <p className="text-xs font-semibold text-[#faf9f6] mb-2">Permissions for {form.role}:</p>
+          <div className="p-4 bg-[#F5F7FA] rounded-xl border border-[#E2E8F0]">
+            <p className="text-xs font-semibold text-[#1A1A1A] mb-2">Permissions for {form.role}:</p>
             <div className="flex flex-wrap gap-2">
               {(ROLE_PERMISSIONS[form.role] ?? []).map((p) => (
-                <span key={p} className="px-2 py-1 bg-[#121212] border border-[#333333] rounded text-[10px] font-mono text-[#868684]">{p}</span>
+                <span key={p} className="px-2 py-1 bg-[#FFFFFF] border border-[#E2E8F0] rounded text-[10px] font-mono text-[#64748B]">{p}</span>
               ))}
             </div>
           </div>
 
-          <div className="flex gap-3 pt-2 border-t border-[#333333]">
-            <button onClick={handleSave} className="px-5 py-2 bg-[#000000] text-white rounded-lg text-xs font-bold hover:bg-[#000000]">
+          <div className="flex gap-3 pt-2 border-t border-[#E2E8F0]">
+            <button onClick={handleSave} className="px-5 py-2 bg-[#008DDA] text-white rounded-lg text-xs font-bold hover:bg-[#0077B6]">
               {editId ? 'Save Changes' : 'Send Invitation'}
             </button>
-            <button onClick={() => { setShowForm(false); setEditId(null) }} className="px-5 py-2 border border-[#333333] rounded-lg text-xs font-semibold text-[#868684] hover:bg-[#000000]">
+            <button onClick={() => { setShowForm(false); setEditId(null) }} className="px-5 py-2 border border-[#E2E8F0] rounded-lg text-xs font-semibold text-[#64748B] hover:bg-[#F5F7FA]">
               Cancel
             </button>
           </div>
@@ -215,58 +215,58 @@ export const AdminUsersPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Users table */}
         <div className="lg:col-span-2">
-          <div className="bg-[#121212] rounded-xl border border-[#333333] overflow-hidden">
+          <div className="bg-[#FFFFFF] rounded-xl border border-[#E2E8F0] overflow-hidden">
             <table className="w-full text-sm">
-              <thead className="bg-[#000000] border-b border-[#333333]">
+              <thead className="bg-[#F5F7FA] border-b border-[#E2E8F0]">
                 <tr>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#868684] uppercase tracking-wide">User</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#868684] uppercase tracking-wide">Role</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#868684] uppercase tracking-wide">Last Login</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#868684] uppercase tracking-wide">Status</th>
-                  <th className="text-right px-4 py-3 text-xs font-semibold text-[#868684] uppercase tracking-wide">Actions</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">User</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Role</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Last Login</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Status</th>
+                  <th className="text-right px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#333333]">
+              <tbody className="divide-y divide-[#E2E8F0]">
                 {users.map((user) => (
                   <tr
                     key={user.id}
-                    className={`hover:bg-[#000000] transition-colors cursor-pointer ${selectedUser?.id === user.id ? 'bg-[#000000]' : ''}`}
+                    className={`hover:bg-[#F5F7FA] transition-colors cursor-pointer ${selectedUser?.id === user.id ? 'bg-[#F5F7FA]' : ''}`}
                     onClick={() => setSelectedUser(selectedUser?.id === user.id ? null : user)}
                   >
                     <td className="px-4 py-3.5">
                       <div className="flex items-center gap-3">
-                        <div className="h-8 w-8 rounded-full bg-[#000000] text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
+                        <div className="h-8 w-8 rounded-full bg-[#008DDA] text-white flex items-center justify-center font-bold text-xs font-heading shrink-0">
                           {user.name.charAt(0)}
                         </div>
                         <div>
-                          <p className="font-semibold text-[#faf9f6] text-xs">{user.name}</p>
-                          <p className="text-[11px] text-[#868684]">{user.email}</p>
+                          <p className="font-semibold text-[#1A1A1A] text-xs">{user.name}</p>
+                          <p className="text-[11px] text-[#64748B]">{user.email}</p>
                         </div>
                       </div>
                     </td>
                     <td className="px-4 py-3.5">
-                      <span className="px-2.5 py-1 bg-[#000000]/5 text-[#faf9f6] rounded-full text-[11px] font-bold">{user.role}</span>
+                      <span className="px-2.5 py-1 bg-[#F5F7FA]/5 text-[#1A1A1A] rounded-full text-[11px] font-bold">{user.role}</span>
                     </td>
-                    <td className="px-4 py-3.5 text-xs text-[#868684]">{formatDate(user.lastLogin)}</td>
+                    <td className="px-4 py-3.5 text-xs text-[#64748B]">{formatDate(user.lastLogin)}</td>
                     <td className="px-4 py-3.5">
                       <button
                         onClick={(e) => { e.stopPropagation(); toggleStatus(user.id) }}
                         className="flex items-center gap-1.5"
                       >
                         {user.status === 'active' ? (
-                          <><CheckCircle2 className="h-3.5 w-3.5 text-[#16A34A]" /><span className="text-xs text-[#16A34A] font-semibold">Active</span></>
+                          <><CheckCircle2 className="h-3.5 w-3.5 text-[#10B981]" /><span className="text-xs text-[#10B981] font-semibold">Active</span></>
                         ) : (
-                          <><XCircle className="h-3.5 w-3.5 text-[#868684]" /><span className="text-xs text-[#868684] font-semibold">Inactive</span></>
+                          <><XCircle className="h-3.5 w-3.5 text-[#64748B]" /><span className="text-xs text-[#64748B] font-semibold">Inactive</span></>
                         )}
                       </button>
                     </td>
                     <td className="px-4 py-3.5 text-right">
                       <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => handleEdit(user)} className="p-1.5 rounded hover:bg-[#1e1e1d] text-[#868684]">
+                        <button onClick={() => handleEdit(user)} className="p-1.5 rounded hover:bg-[#F5F7FA] text-[#64748B]">
                           <Edit2 className="h-3.5 w-3.5" />
                         </button>
                         {user.role !== 'Super Admin' && (
-                          <button onClick={() => handleDelete(user.id)} className="p-1.5 rounded hover:bg-[#DC2626]/10 text-[#868684] hover:text-[#DC2626]">
+                          <button onClick={() => handleDelete(user.id)} className="p-1.5 rounded hover:bg-[#EF4444]/10 text-[#64748B] hover:text-[#EF4444]">
                             <Trash2 className="h-3.5 w-3.5" />
                           </button>
                         )}
@@ -281,9 +281,9 @@ export const AdminUsersPage: React.FC = () => {
 
         {/* Permission viewer */}
         <div>
-          <div className="bg-[#121212] rounded-xl border border-[#333333] overflow-hidden">
-            <div className="px-5 py-4 border-b border-[#333333]">
-              <h2 className="font-heading font-bold text-sm text-[#faf9f6]">
+          <div className="bg-[#FFFFFF] rounded-xl border border-[#E2E8F0] overflow-hidden">
+            <div className="px-5 py-4 border-b border-[#E2E8F0]">
+              <h2 className="font-heading font-bold text-sm text-[#1A1A1A]">
                 {selectedUser ? `${selectedUser.name}'s Permissions` : 'Permission Reference'}
               </h2>
             </div>
@@ -298,31 +298,31 @@ export const AdminUsersPage: React.FC = () => {
                   : false
 
                 return (
-                  <div key={group.group} className="rounded-lg border border-[#333333] overflow-hidden">
+                  <div key={group.group} className="rounded-lg border border-[#E2E8F0] overflow-hidden">
                     <button
                       onClick={() => setExpandedGroup(isExpanded ? null : group.group)}
-                      className="w-full flex items-center justify-between px-3 py-2.5 text-xs font-semibold text-[#faf9f6] hover:bg-[#000000] transition-colors"
+                      className="w-full flex items-center justify-between px-3 py-2.5 text-xs font-semibold text-[#1A1A1A] hover:bg-[#F5F7FA] transition-colors"
                     >
                       <div className="flex items-center gap-2">
                         {selectedUser && (
-                          <div className={`h-2 w-2 rounded-full ${hasAll ? 'bg-[#16A34A]' : hasSome ? 'bg-[#D97706]' : 'bg-[#1e1e1d]'}`} />
+                          <div className={`h-2 w-2 rounded-full ${hasAll ? 'bg-[#10B981]' : hasSome ? 'bg-[#D97706]' : 'bg-[#F5F7FA]'}`} />
                         )}
                         <span>{group.group}</span>
                       </div>
-                      {isExpanded ? <ChevronDown className="h-3.5 w-3.5 text-[#868684]" /> : <ChevronRight className="h-3.5 w-3.5 text-[#868684]" />}
+                      {isExpanded ? <ChevronDown className="h-3.5 w-3.5 text-[#64748B]" /> : <ChevronRight className="h-3.5 w-3.5 text-[#64748B]" />}
                     </button>
                     {isExpanded && (
-                      <div className="px-3 pb-3 bg-[#000000] space-y-1.5">
+                      <div className="px-3 pb-3 bg-[#F5F7FA] space-y-1.5">
                         {group.permissions.map((p) => {
                           const hasPermission = selectedUser ? selectedUser.permissions.includes(p) : true
                           return (
                             <div key={p} className="flex items-center gap-2">
                               {selectedUser ? (
                                 hasPermission
-                                  ? <CheckCircle2 className="h-3 w-3 text-[#16A34A] shrink-0" />
-                                  : <XCircle className="h-3 w-3 text-[#868684] shrink-0" />
+                                  ? <CheckCircle2 className="h-3 w-3 text-[#10B981] shrink-0" />
+                                  : <XCircle className="h-3 w-3 text-[#64748B] shrink-0" />
                               ) : <div className="h-3 w-3" />}
-                              <span className={`font-mono text-[10px] ${hasPermission && selectedUser ? 'text-[#faf9f6]' : 'text-[#868684]'}`}>{p}</span>
+                              <span className={`font-mono text-[10px] ${hasPermission && selectedUser ? 'text-[#1A1A1A]' : 'text-[#64748B]'}`}>{p}</span>
                             </div>
                           )
                         })}

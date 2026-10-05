@@ -175,7 +175,7 @@ export const WhatWeBuildSection: React.FC = () => {
               </Link>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   )

@@ -33,21 +33,21 @@ export const CustomerAccountPage: React.FC = () => {
   }, [])
 
   return (
-    <div className="w-full text-left py-12 bg-[#000000]">
+    <div className="w-full text-left py-12 bg-[#F5F7FA]">
       <SEO title="Customer Account | Centrifuge Group Store" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Account Header */}
-        <div className="bg-[#121212] p-6 sm:p-8 rounded-[16px] border border-[#333333] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="h-14 w-14 rounded-full bg-[#000000] text-[#f0b66d] flex items-center justify-center font-bold text-xl font-heading shrink-0">
+            <div className="h-14 w-14 rounded-full bg-[#F5F7FA] text-[#008DDA] flex items-center justify-center font-bold text-xl font-heading shrink-0">
               {user?.name ? user.name.charAt(0) : 'A'}
             </div>
             <div>
-              <h1 className="text-xl font-bold text-[#faf9f6] font-heading">
+              <h1 className="text-xl font-bold text-[#1A1A1A] font-heading">
                 {user?.name || 'Amina Bello (Apex Logistics)'}
               </h1>
-              <p className="text-xs text-[#868684] mt-0.5">
+              <p className="text-xs text-[#64748B] mt-0.5">
                 {user?.email || 'amina.bello@apexlogistics.ng'} · Verified Enterprise Customer
               </p>
             </div>
@@ -66,7 +66,7 @@ export const CustomerAccountPage: React.FC = () => {
         </div>
 
         {/* Account Navigation Tabs */}
-        <div className="flex gap-2 border-b border-[#333333] pb-3">
+        <div className="flex gap-2 border-b border-[#E2E8F0] pb-3">
           {[
             { id: 'orders', label: 'Order History', icon: Package },
             { id: 'profile', label: 'Profile Settings', icon: User },
@@ -83,8 +83,8 @@ export const CustomerAccountPage: React.FC = () => {
                 }}
                 className={`flex items-center gap-2 px-4 py-2 rounded-[8px] text-xs font-semibold transition-all ${
                   activeTab === t.id
-                    ? 'bg-[#000000] text-white shadow-xs'
-                    : 'bg-[#121212] text-[#b4b4b2] border border-[#333333] hover:bg-[#1e1e1d]'
+                    ? 'bg-[#008DDA] text-white shadow-xs'
+                    : 'bg-[#FFFFFF] text-[#64748B] border border-[#E2E8F0] hover:bg-[#F5F7FA]'
                 }`}
               >
                 <Icon className="h-3.5 w-3.5" />
@@ -99,19 +99,19 @@ export const CustomerAccountPage: React.FC = () => {
           <div className="space-y-6">
             {selectedOrder ? (
               // Order Detail Subview
-              <div className="bg-[#121212] p-6 sm:p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-[#333333]">
+              <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-[#E2E8F0]">
                   <div>
                     <button
                       onClick={() => setSelectedOrder(null)}
-                      className="text-xs font-semibold text-[#f0b66d] hover:underline mb-1 block"
+                      className="text-xs font-semibold text-[#008DDA] hover:underline mb-1 block"
                     >
                       ← Back to All Orders
                     </button>
-                    <h2 className="text-lg font-bold text-[#faf9f6]">
+                    <h2 className="text-lg font-bold text-[#1A1A1A]">
                       Order {selectedOrder.orderNumber}
                     </h2>
-                    <span className="text-xs text-[#868684]">Placed on {new Date(selectedOrder.createdAt).toLocaleDateString()}</span>
+                    <span className="text-xs text-[#64748B]">Placed on {new Date(selectedOrder.createdAt).toLocaleDateString()}</span>
                   </div>
                   <Badge
                     variant={
@@ -130,38 +130,38 @@ export const CustomerAccountPage: React.FC = () => {
 
                 {/* Items */}
                 <div className="space-y-3">
-                  <h4 className="text-xs font-bold uppercase text-[#868684]">Purchased Items</h4>
-                  <div className="divide-y divide-[#333333] border rounded-[10px]">
+                  <h4 className="text-xs font-bold uppercase text-[#64748B]">Purchased Items</h4>
+                  <div className="divide-y divide-[#E2E8F0] border rounded-[10px]">
                     {selectedOrder.items.map((i, idx) => (
                       <div key={idx} className="p-4 flex items-center justify-between text-xs">
                         <div className="flex items-center gap-3">
                           <img src={i.productImage} alt="" className="h-12 w-12 object-contain rounded border" />
                           <div>
-                            <span className="font-semibold text-[#faf9f6] block">{i.productName}</span>
-                            <span className="text-[#868684] font-mono">SKU: {i.sku} · Qty: {i.quantity}</span>
+                            <span className="font-semibold text-[#1A1A1A] block">{i.productName}</span>
+                            <span className="text-[#64748B] font-mono">SKU: {i.sku} · Qty: {i.quantity}</span>
                           </div>
                         </div>
-                        <span className="font-bold text-[#faf9f6]">₦{i.total.toLocaleString()}</span>
+                        <span className="font-bold text-[#1A1A1A]">₦{i.total.toLocaleString()}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Financial Summary */}
-                <div className="p-4 bg-[#000000] rounded-[10px] space-y-2 text-xs">
-                  <div className="flex justify-between text-[#868684]">
+                <div className="p-4 bg-[#F5F7FA] rounded-[10px] space-y-2 text-xs">
+                  <div className="flex justify-between text-[#64748B]">
                     <span>Subtotal</span>
-                    <span className="font-semibold text-[#faf9f6]">₦{selectedOrder.subtotal.toLocaleString()}</span>
+                    <span className="font-semibold text-[#1A1A1A]">₦{selectedOrder.subtotal.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-[#868684]">
+                  <div className="flex justify-between text-[#64748B]">
                     <span>Shipping</span>
-                    <span className="font-semibold text-[#faf9f6]">₦{selectedOrder.shipping.toLocaleString()}</span>
+                    <span className="font-semibold text-[#1A1A1A]">₦{selectedOrder.shipping.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-[#868684]">
+                  <div className="flex justify-between text-[#64748B]">
                     <span>VAT</span>
-                    <span className="font-semibold text-[#faf9f6]">₦{selectedOrder.tax.toLocaleString()}</span>
+                    <span className="font-semibold text-[#1A1A1A]">₦{selectedOrder.tax.toLocaleString()}</span>
                   </div>
-                  <div className="pt-2 border-t flex justify-between font-bold text-sm text-[#faf9f6]">
+                  <div className="pt-2 border-t flex justify-between font-bold text-sm text-[#1A1A1A]">
                     <span>Total Paid</span>
                     <span className="font-extrabold">₦{selectedOrder.total.toLocaleString()}</span>
                   </div>
@@ -169,16 +169,16 @@ export const CustomerAccountPage: React.FC = () => {
               </div>
             ) : (
               // Orders Table
-              <div className="bg-[#121212] rounded-[16px] border border-[#333333] shadow-xs overflow-hidden">
-                <div className="p-5 border-b border-[#333333]">
-                  <h3 className="text-sm font-bold text-[#faf9f6] font-heading">
+              <div className="bg-[#FFFFFF] rounded-[16px] border border-[#E2E8F0] shadow-xs overflow-hidden">
+                <div className="p-5 border-b border-[#E2E8F0]">
+                  <h3 className="text-sm font-bold text-[#1A1A1A] font-heading">
                     Past Hardware Orders ({orders.length})
                   </h3>
                 </div>
 
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs divide-y divide-[#333333]">
-                    <thead className="bg-[#000000] text-[#b4b4b2] font-bold">
+                  <table className="w-full text-left text-xs divide-y divide-[#E2E8F0]">
+                    <thead className="bg-[#F5F7FA] text-[#64748B] font-bold">
                       <tr>
                         <th className="px-6 py-3.5">Order Ref</th>
                         <th className="px-6 py-3.5">Date</th>
@@ -189,19 +189,19 @@ export const CustomerAccountPage: React.FC = () => {
                         <th className="px-6 py-3.5 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#333333]">
+                    <tbody className="divide-y divide-[#E2E8F0]">
                       {orders.map((ord) => (
-                        <tr key={ord.id} className="hover:bg-[#000000] transition-colors">
-                          <td className="px-6 py-4 font-mono font-bold text-[#faf9f6]">
+                        <tr key={ord.id} className="hover:bg-[#F5F7FA] transition-colors">
+                          <td className="px-6 py-4 font-mono font-bold text-[#1A1A1A]">
                             {ord.orderNumber}
                           </td>
-                          <td className="px-6 py-4 text-[#868684]">
+                          <td className="px-6 py-4 text-[#64748B]">
                             {new Date(ord.createdAt).toLocaleDateString()}
                           </td>
-                          <td className="px-6 py-4 text-[#faf9f6]">
+                          <td className="px-6 py-4 text-[#1A1A1A]">
                             {ord.items.length} product(s)
                           </td>
-                          <td className="px-6 py-4 font-bold text-[#faf9f6]">
+                          <td className="px-6 py-4 font-bold text-[#1A1A1A]">
                             ₦{ord.total.toLocaleString()}
                           </td>
                           <td className="px-6 py-4">
@@ -245,26 +245,26 @@ export const CustomerAccountPage: React.FC = () => {
 
         {/* Tab 2: Profile */}
         {activeTab === 'profile' && (
-          <div className="bg-[#121212] p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-4 max-w-xl">
-            <h3 className="text-base font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4 max-w-xl">
+            <h3 className="text-base font-bold text-[#1A1A1A] font-heading">
               Personal & Company Information
             </h3>
             <div className="space-y-3 text-xs">
               <div>
-                <span className="text-[#868684] block">Full Name</span>
-                <span className="font-semibold text-sm text-[#faf9f6]">Amina Bello</span>
+                <span className="text-[#64748B] block">Full Name</span>
+                <span className="font-semibold text-sm text-[#1A1A1A]">Amina Bello</span>
               </div>
               <div>
-                <span className="text-[#868684] block">Company</span>
-                <span className="font-semibold text-sm text-[#faf9f6]">Apex Logistics Limited</span>
+                <span className="text-[#64748B] block">Company</span>
+                <span className="font-semibold text-sm text-[#1A1A1A]">Apex Logistics Limited</span>
               </div>
               <div>
-                <span className="text-[#868684] block">Registered Email</span>
-                <span className="font-semibold text-sm text-[#faf9f6]">amina.bello@apexlogistics.ng</span>
+                <span className="text-[#64748B] block">Registered Email</span>
+                <span className="font-semibold text-sm text-[#1A1A1A]">amina.bello@apexlogistics.ng</span>
               </div>
               <div>
-                <span className="text-[#868684] block">Phone</span>
-                <span className="font-semibold text-sm text-[#faf9f6]">+234 803 234 5678</span>
+                <span className="text-[#64748B] block">Phone</span>
+                <span className="font-semibold text-sm text-[#1A1A1A]">+234 803 234 5678</span>
               </div>
             </div>
           </div>
@@ -272,26 +272,26 @@ export const CustomerAccountPage: React.FC = () => {
 
         {/* Tab 3: Saved Addresses */}
         {activeTab === 'addresses' && (
-          <div className="bg-[#121212] p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-4 max-w-xl">
-            <h3 className="text-base font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4 max-w-xl">
+            <h3 className="text-base font-bold text-[#1A1A1A] font-heading">
               Primary Delivery Address
             </h3>
-            <div className="p-4 rounded-[10px] bg-[#000000] border border-[#333333] text-xs space-y-1">
-              <span className="font-bold text-[#faf9f6] block">Amina Bello (Warehouse Receiving)</span>
-              <p className="text-[#868684]">Plot 14B Commercial Boulevard, Ikeja Industrial Estate</p>
-              <p className="text-[#868684]">Ikeja, Lagos State, Nigeria (100001)</p>
-              <p className="text-[#868684] pt-1">Tel: +234 803 234 5678</p>
+            <div className="p-4 rounded-[10px] bg-[#F5F7FA] border border-[#E2E8F0] text-xs space-y-1">
+              <span className="font-bold text-[#1A1A1A] block">Amina Bello (Warehouse Receiving)</span>
+              <p className="text-[#64748B]">Plot 14B Commercial Boulevard, Ikeja Industrial Estate</p>
+              <p className="text-[#64748B]">Ikeja, Lagos State, Nigeria (100001)</p>
+              <p className="text-[#64748B] pt-1">Tel: +234 803 234 5678</p>
             </div>
           </div>
         )}
 
         {/* Tab 4: Security */}
         {activeTab === 'security' && (
-          <div className="bg-[#121212] p-8 rounded-[16px] border border-[#333333] shadow-xs space-y-4 max-w-xl">
-            <h3 className="text-base font-bold text-[#faf9f6] font-heading">
+          <div className="bg-[#FFFFFF] p-8 rounded-[16px] border border-[#E2E8F0] shadow-xs space-y-4 max-w-xl">
+            <h3 className="text-base font-bold text-[#1A1A1A] font-heading">
               Account Security & Sessions
             </h3>
-            <p className="text-xs text-[#868684]">
+            <p className="text-xs text-[#64748B]">
               Authenticated via encrypted demo credential session. Password change and two-factor authentication can be managed by account administrators.
             </p>
             <div className="pt-2">

@@ -69,7 +69,7 @@ export const LogisticsPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </PageHero>
+      </section>
 
       {/* ─── Platform Capabilities (UI/UX Spec §3.3 Data Card Module) ─── */}
       <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
@@ -104,8 +104,6 @@ export const LogisticsPage: React.FC = () => {
                       {cap.desc}
                     </p>
                   </div>
-                  <h3 className="text-[16px] font-heading font-700 text-[#0B1F33] mb-2">{cap.name}</h3>
-                  <p className="text-[13px] text-[#64748B] leading-relaxed">{cap.desc}</p>
                 </div>
               )
             })}
@@ -114,7 +112,7 @@ export const LogisticsPage: React.FC = () => {
       </section>
 
       {/* Outcomes */}
-      <section className="section-py bg-[#0B1F33] text-white">
+      <section className="section-py bg-[#0F2C59] text-white">
         <div className="section-container">
           <div className="max-w-2xl mb-12">
             <div className="badge-eyebrow-dark mb-4">Proven Outcomes</div>
@@ -123,8 +121,8 @@ export const LogisticsPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {outcomes.map((o, i) => (
               <div key={i} className="flex items-start gap-4 p-6 rounded-[16px] bg-white/[0.05] border border-white/[0.08]">
-                <div className="h-7 w-7 rounded-full bg-[#16C7D9]/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-[11px] font-mono font-bold text-[#16C7D9]">{i + 1}</span>
+                <div className="h-7 w-7 rounded-[4px] bg-[#008DDA]/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-[11px] font-mono font-bold text-[#008DDA]">{i + 1}</span>
                 </div>
                 <p className="text-[15px] text-[#94A3B8] leading-relaxed">{o}</p>
               </div>

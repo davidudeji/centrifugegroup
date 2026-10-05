@@ -101,9 +101,8 @@ export const ClientsPage: React.FC = () => {
                     {client.role}
                   </div>
                   <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
-                    <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
-                      {client.description}
-                    </p>
+                    {client.description}
+                  </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-[#F1F5F9] flex items-center justify-between">

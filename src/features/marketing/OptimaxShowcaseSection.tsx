@@ -90,7 +90,6 @@ export const OptimaxShowcaseSection: React.FC = () => {
                   <span>{m.label}</span>
                 </button>
               )
-              )
             })}
           </div>
 
@@ -147,7 +146,6 @@ export const OptimaxShowcaseSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
   )
 }
 

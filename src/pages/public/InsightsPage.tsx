@@ -51,8 +51,7 @@ export const InsightsPage: React.FC = () => {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Bar */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E2E8F0]">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E2E8F0]">
-              <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
                   <button
                     key={cat}
@@ -65,9 +64,9 @@ export const InsightsPage: React.FC = () => {
                     {cat}
                   </button>
                 ))}
-              </div>
+            </div>
 
-              <div className="w-full md:w-72 relative">
+            <div className="w-full md:w-72 relative">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-[#64748B] pointer-events-none" />
                 <input
                   type="text"
@@ -76,10 +75,11 @@ export const InsightsPage: React.FC = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-9 pr-3.5 py-2 text-xs bg-[#FFFFFF] border border-[#CBD5E1] rounded-[4px] text-[#1A1A1A] placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA]"
                 />
-              </div>
             </div>
 
-            {/* Articles Grid */}
+          </div>
+
+          {/* Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((article) => (
                 <div
