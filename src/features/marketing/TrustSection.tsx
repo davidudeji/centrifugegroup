@@ -8,16 +8,9 @@ export const TrustSection: React.FC = () => {
     <section className="bg-[#FFFFFF] py-16 border-b border-[#E2E8F0] text-left">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-[#0077B6] text-xs font-semibold uppercase tracking-wider mb-2">
-            <CheckCircle2 className="h-3.5 w-3.5" />
-            <span>INSTITUTIONAL TRUST & GOVERNANCE</span>
-          </div>
           <h2 className="text-[26px] sm:text-[30px] font-bold text-[#0F2C59] tracking-tight">
             Trusted by Federal Ministries, Financial Regulators & Multinationals
           </h2>
-          <p className="text-xs sm:text-[13px] text-[#64748B] mt-1.5">
-            Mission-critical systems engineered to adhere to stringent enterprise standards and data sovereignty requirements.
-          </p>
         </div>
 
         {/* ─── Client Logo Grid (UI/UX Spec §3.3 Data Card Module: 8px radius, #FFFFFF, 1px #E2E8F0) ─── */}
@@ -47,13 +40,15 @@ export const TrustSection: React.FC = () => {
             to="/clients"
             className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
           >
-            <span>Explore our full public sector & enterprise client directory</span>
+            <span>
+              Explore our full public sector & enterprise client directory
+            </span>
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default TrustSection

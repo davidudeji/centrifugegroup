@@ -17,79 +17,83 @@ export const OptimaxShowcaseSection: React.FC = () => {
 
   const modules = [
     {
-      id: 'commerce',
-      label: 'Commerce & POS',
+      id: "commerce",
+      label: "Commerce & POS",
       icon: PackageCheck,
-      desc: 'Omnichannel B2B wholesale & retail POS synchronization.',
+      desc: "Omnichannel B2B wholesale & retail POS synchronization.",
     },
     {
-      id: 'finance',
-      label: 'Financial Ledgers',
+      id: "finance",
+      label: "Financial Ledgers",
       icon: DollarSign,
-      desc: 'Automated double-entry journals, tax computation & bank reconciliation.',
+      desc: "Automated double-entry journals, tax computation & bank reconciliation.",
     },
     {
-      id: 'hr',
-      label: 'HR & Payroll',
+      id: "hr",
+      label: "HR & Payroll",
       icon: Users,
-      desc: 'Workforce records, timesheets, PAYE deductions & automated pensions.',
+      desc: "Workforce records, timesheets, PAYE deductions & automated pensions.",
     },
     {
-      id: 'inventory',
-      label: 'Multi-Warehouse',
+      id: "inventory",
+      label: "Inventory Management",
       icon: Layers,
-      desc: 'Multi-depot inventory tracking, threshold reorders & barcode scanning.',
+      desc: "Multi-depot inventory tracking, threshold reorders & barcode scanning.",
     },
     {
-      id: 'analytics',
-      label: 'Executive Analytics',
+      id: "Analytics",
+      label: "Analytics & Reporting",
       icon: BarChart2,
-      desc: 'Real-time financial turnover, gross margins & consolidated cash flows.',
+      desc: "Real-time reporting, analytics dashboards & KPI monitoring.",
     },
     {
-      id: 'crm',
-      label: 'Client Accounts',
+      id: "crm",
+      label: "CRM",
       icon: Cpu,
-      desc: 'Enterprise accounts receivable, credit limits & customer engagement.',
+      desc: "Enterprise accounts receivable, credit limits & customer engagement.",
     },
-  ]
+  ];
 
-  const activeModData = modules.find((m) => m.id === activeModule) || modules[1]
+  const activeModData =
+    modules.find((m) => m.id === activeModule) || modules[1];
 
   return (
     <section className="bg-[#FFFFFF] text-[#1A1A1A] py-20 lg:py-24 border-b border-[#E2E8F0] relative text-left">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
-            <span>OPTIMAX CONNECTED ENTERPRISE PLATFORM</span>
+            <span>OPTIMAX SUITE ENTERPRISE PLATFORM</span>
           </div>
 
           <h2 className="text-[28px] sm:text-[38px] font-bold text-[#0F2C59] tracking-tight">
-            Unified Commercial Operations & Automated Financial Intelligence
+            Everything your business needs. Finally in one place.
           </h2>
 
           <p className="mt-3 text-[15px] sm:text-[16px] text-[#64748B] max-w-2xl mx-auto leading-relaxed">
-            Optimax brings commerce, finance, HR, inventory, analytics, and business operations into one connected, enterprise-grade architecture.
+            Optimax brings commerce, finance, HR, inventory, analytics, and
+            business operations into one connected, enterprise-grade
+            architecture.
           </p>
 
           {/* Module Selector Chips */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
             {modules.map((m) => {
-              const Icon = m.icon
-              const isActive = activeModule === m.id
+              const Icon = m.icon;
+              const isActive = activeModule === m.id;
               return (
                 <button
                   key={m.id}
                   onClick={() => setActiveModule(m.id)}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[4px] text-xs font-semibold transition-fin cursor-pointer ${isActive
-                      ? 'border border-[#008DDA] text-[#0077B6] bg-[#008DDA]/10 shadow-xs'
-                      : 'border border-[#E2E8F0] text-[#64748B] hover:text-[#0F2C59] hover:border-[#CBD5E1] bg-[#F8FAFC]'
-                    }`}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[4px] text-xs font-semibold transition-fin cursor-pointer ${
+                    isActive
+                      ? "border border-[#008DDA] text-[#0077B6] bg-[#008DDA]/10 shadow-xs"
+                      : "border border-[#E2E8F0] text-[#64748B] hover:text-[#0F2C59] hover:border-[#CBD5E1] bg-[#F8FAFC]"
+                  }`}
                 >
                   <Icon className="h-3.5 w-3.5" />
                   <span>{m.label}</span>
                 </button>
-              )
+              );
             })}
           </div>
 
@@ -118,8 +122,12 @@ export const OptimaxShowcaseSection: React.FC = () => {
               <span className="text-xs font-mono font-bold text-[#008DDA] uppercase tracking-wider">
                 SELECTED MODULE CAPABILITY
               </span>
-              <h3 className="text-xl font-bold text-[#0F2C59] mt-0.5">{activeModData.label}</h3>
-              <p className="text-sm text-[#64748B] mt-1">{activeModData.desc}</p>
+              <h3 className="text-xl font-bold text-[#0F2C59] mt-0.5">
+                {activeModData.label}
+              </h3>
+              <p className="text-sm text-[#64748B] mt-1">
+                {activeModData.desc}
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-[4px] bg-[#D1FAE5] text-[#065F46] border border-[#A7F3D0]">
@@ -131,22 +139,34 @@ export const OptimaxShowcaseSection: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 text-xs text-[#475569]">
             <div className="p-3 bg-[#FFFFFF] rounded-[4px] border border-[#E2E8F0]">
-              <span className="text-[#64748B] block mb-1">Reconciliation Model</span>
-              <span className="font-semibold text-[#0F2C59] text-sm">Automated Real-Time</span>
+              <span className="text-[#64748B] block mb-1">
+                Reconciliation Model
+              </span>
+              <span className="font-semibold text-[#0F2C59] text-sm">
+                Automated Real-Time
+              </span>
             </div>
             <div className="p-3 bg-[#FFFFFF] rounded-[4px] border border-[#E2E8F0]">
-              <span className="text-[#64748B] block mb-1">Audit Compliance</span>
-              <span className="font-semibold text-[#0F2C59] text-sm">IFRS / FIRS Certified</span>
+              <span className="text-[#64748B] block mb-1">
+                Audit Compliance
+              </span>
+              <span className="font-semibold text-[#0F2C59] text-sm">
+                IFRS / FIRS Certified
+              </span>
             </div>
             <div className="p-3 bg-[#FFFFFF] rounded-[4px] border border-[#E2E8F0]">
-              <span className="text-[#64748B] block mb-1">Multi-Tenant Isolation</span>
-              <span className="font-semibold text-[#0F2C59] text-sm">Dedicated DB Schema</span>
+              <span className="text-[#64748B] block mb-1">
+                Multi-Tenant Isolation
+              </span>
+              <span className="font-semibold text-[#0F2C59] text-sm">
+                Dedicated DB Schema
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default OptimaxShowcaseSection
