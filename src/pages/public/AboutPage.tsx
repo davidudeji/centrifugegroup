@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
+import { PageHero } from '../../components/ui/PageHero'
+import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 import { verifiedClients } from '../../assets'
 import { ArrowRight, ShieldCheck, Cpu, Building2, CheckCircle2 } from 'lucide-react'
 
@@ -178,10 +180,36 @@ export const AboutPage: React.FC = () => {
                 />
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
+
+      {/* ── CTA ─────────────────────────────────── */}
+      <section className="bg-[#0B1F33] py-20">
+        <div className="section-container text-center">
+          <Reveal variant="blur" from="up" distance={20} duration={800}>
+            <h2 className="text-h2 text-white mb-4">Ready to work with us?</h2>
+          </Reveal>
+          <Reveal from="up" delay={150} duration={700}>
+            <p className="text-body-lg text-[#94A3B8] mb-8 max-w-xl mx-auto">
+              Let's understand your operational challenge and design the right technology response.
+            </p>
+          </Reveal>
+          <Reveal from="up" delay={300} variant="scale">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link to="/contact" className="btn-accent" id="about-cta-primary">
+                Talk to an Expert <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link to="/case-studies" className="btn-outline-white" id="about-cta-secondary">
+                Read Case Studies
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
     </div>
   )
 }
+
 export default AboutPage

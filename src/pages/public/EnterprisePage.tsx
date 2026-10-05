@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { ArrowRight, BarChart3, Building2, Layers, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, BarChart3, Building2, Layers } from 'lucide-react'
 
 export const EnterprisePage: React.FC = () => {
   return (
@@ -33,6 +33,7 @@ export const EnterprisePage: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-sm font-semibold transition-colors duration-200"
               >
                 <span>Explore Optimax ERP</span>
+                <ArrowRight className="h-4 w-4" />
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -68,7 +69,7 @@ export const EnterprisePage: React.FC = () => {
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
                 >
                   <span>Explore Optimax platform</span>
-                  <ArrowRight className="h-3 w-3" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>
@@ -91,7 +92,7 @@ export const EnterprisePage: React.FC = () => {
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
                 >
                   <span>Request custom architecture</span>
-                  <ArrowRight className="h-3 w-3" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>
@@ -114,7 +115,7 @@ export const EnterprisePage: React.FC = () => {
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
                 >
                   <span>Explore engineering capabilities</span>
-                  <ArrowRight className="h-3 w-3" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>

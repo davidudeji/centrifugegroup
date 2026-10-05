@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Terminal, Layers } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react'
 
 interface ServiceData {
   title: string
@@ -181,7 +181,7 @@ const serviceDatabase: Record<string, ServiceData> = {
     problem:
       'Sophisticated software systems fail when end-users are intimidated by the interface or lack structured hands-on training.',
     solution:
-      'Are you driving your organization to becoming more standardized, simplified and automated? Our consultants can help your team assess the current state of your organizational processes, establish a new strategic vision and prioritize a roadmap of change programs designed to help you transform your business and reach for greater productivity.',
+      'Are you driving your organization to becoming more standardized, simplified and automated? Our consultants can help your team assess the current state of your organizational processes, establish a new strategic vision and prioritize a roadmap of change programs designed to help you transform your business.',
     capabilities: [
       'Database administration training (PostgreSQL, MySQL, Schema Optimization)',
       'Project development and management methodologies (Agile, Scrum, Prince2)',

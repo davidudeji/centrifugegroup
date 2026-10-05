@@ -57,5 +57,7 @@ export const FinalCTASection: React.FC = () => {
       </div>
     </section>
   )
+  )
 }
+
 export default FinalCTASection

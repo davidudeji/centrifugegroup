@@ -81,15 +81,15 @@ export const OptimaxShowcaseSection: React.FC = () => {
                 <button
                   key={m.id}
                   onClick={() => setActiveModule(m.id)}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[4px] text-xs font-semibold transition-fin cursor-pointer ${
-                    isActive
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[4px] text-xs font-semibold transition-fin cursor-pointer ${isActive
                       ? 'border border-[#008DDA] text-[#0077B6] bg-[#008DDA]/10 shadow-xs'
                       : 'border border-[#E2E8F0] text-[#64748B] hover:text-[#0F2C59] hover:border-[#CBD5E1] bg-[#F8FAFC]'
-                  }`}
+                    }`}
                 >
                   <Icon className="h-3.5 w-3.5" />
                   <span>{m.label}</span>
                 </button>
+              )
               )
             })}
           </div>
@@ -148,5 +148,7 @@ export const OptimaxShowcaseSection: React.FC = () => {
       </div>
     </section>
   )
+  )
 }
+
 export default OptimaxShowcaseSection

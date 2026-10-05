@@ -34,6 +34,7 @@ export const DataAnalyticsPage: React.FC = () => {
               >
                 <span>Consult Data Architects</span>
                 <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

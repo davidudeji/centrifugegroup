@@ -26,7 +26,7 @@ export const ProjectsPage: React.FC = () => {
     'HRHIS',
     'Electronic Hospital Management',
     'Geospatial & Mapping',
-    'IoT Solutions'
+    'IoT Solutions',
   ]
 
   const filtered = projects.filter((p) => {
@@ -76,11 +76,10 @@ export const ProjectsPage: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${
-                    selectedCategory === cat
+                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${selectedCategory === cat
                       ? 'bg-[#008DDA] text-white shadow-xs'
                       : 'bg-[#FFFFFF] text-[#475569] border border-[#CBD5E1] hover:border-[#008DDA] hover:text-[#008DDA]'
-                  }`}
+                    }`}
                 >
                   {cat === 'all' ? 'All Systems' : cat}
                 </button>
@@ -102,7 +101,7 @@ export const ProjectsPage: React.FC = () => {
           {isLoading ? (
             <LoadingState message="Loading engineering portfolio..." />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {filtered.map((proj) => (
                 <div
                   key={proj.id}
@@ -131,19 +130,20 @@ export const ProjectsPage: React.FC = () => {
                         <Link to={`/projects/${proj.slug}`}>{proj.name}</Link>
                       </h3>
                       <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
-                        {proj.description}
-                      </p>
+                        <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
+                          {proj.description}
+                        </p>
 
-                      <div className="mt-4 pt-3 border-t border-[#F1F5F9] flex flex-wrap gap-1.5">
-                        {proj.tags.slice(0, 3).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 rounded-[4px] bg-[#F1F5F9] border border-[#E2E8F0] text-[10px] font-mono font-medium text-[#64748B]"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                        <div className="mt-4 pt-3 border-t border-[#F1F5F9] flex flex-wrap gap-1.5">
+                          {proj.tags.slice(0, 3).map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2 py-0.5 rounded-[4px] bg-[#F1F5F9] border border-[#E2E8F0] text-[10px] font-mono font-medium text-[#64748B]"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                     </div>
                   </div>
 
@@ -177,5 +177,6 @@ export const ProjectsPage: React.FC = () => {
     </div>
   )
 }
+
 
 export default ProjectsPage

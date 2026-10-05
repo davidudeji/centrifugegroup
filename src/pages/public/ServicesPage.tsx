@@ -17,7 +17,7 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'application-development',
       icon: Cog,
-      title: 'APPLICATION DEVELOPMENT',
+      title: 'Application Development',
       subtitle: 'Modern Web, Native Mobile & Resilient Cloud Architecture',
       description:
         'We engineer institutional-grade applications that combine rigorous architectural integrity with high-availability cloud performance and human-centered design across web, mobile, cloud, and enterprise e-commerce.',
@@ -25,7 +25,7 @@ export const ServicesPage: React.FC = () => {
         { label: 'Web application development', href: '/services/software-development' },
         { label: 'Mobile application development', href: '/services/mobile-development' },
         { label: 'Cloud/infrastructure application development', href: '/services/cloud' },
-        { label: 'E-commerce and professional website', href: '/services/software-development' },
+        { label: 'E-commerce and professional websites', href: '/services/software-development' },
       ],
       deliverables: [
         'Responsive High-Concurrency Web Apps (React, TypeScript)',

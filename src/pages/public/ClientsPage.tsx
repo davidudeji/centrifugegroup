@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { verifiedClients } from '../../assets'
-import { CheckCircle2, ArrowRight, ShieldCheck, Building2 } from 'lucide-react'
+import { CheckCircle2, ArrowRight } from 'lucide-react'
 
 export const ClientsPage: React.FC = () => {
   const [selectedSector, setSelectedSector] = useState<string>('all')
@@ -20,10 +20,10 @@ export const ClientsPage: React.FC = () => {
     selectedSector === 'all'
       ? verifiedClients
       : verifiedClients.filter(
-          (c) =>
-            c.sector.toLowerCase().includes(selectedSector.toLowerCase()) ||
-            selectedSector.toLowerCase().includes(c.sector.toLowerCase())
-        )
+        (c) =>
+          c.sector.toLowerCase().includes(selectedSector.toLowerCase()) ||
+          selectedSector.toLowerCase().includes(c.sector.toLowerCase())
+      )
 
   return (
     <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
@@ -64,11 +64,10 @@ export const ClientsPage: React.FC = () => {
               <button
                 key={sec}
                 onClick={() => setSelectedSector(sec)}
-                className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${
-                  selectedSector === sec
+                className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${selectedSector === sec
                     ? 'bg-[#008DDA] text-white shadow-xs'
                     : 'bg-[#FFFFFF] text-[#475569] border border-[#CBD5E1] hover:border-[#008DDA] hover:text-[#008DDA]'
-                }`}
+                  }`}
               >
                 {sec === 'all' ? 'All Partners' : sec}
               </button>
@@ -102,8 +101,9 @@ export const ClientsPage: React.FC = () => {
                     {client.role}
                   </div>
                   <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
-                    {client.description}
-                  </p>
+                    <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
+                      {client.description}
+                    </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-[#F1F5F9] flex items-center justify-between">
@@ -116,7 +116,7 @@ export const ClientsPage: React.FC = () => {
                     className="text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] flex items-center gap-1 transition-colors"
                   >
                     <span>View work</span>
-                    <ArrowRight className="h-3 w-3" />
+                    <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
               </div>

@@ -4,6 +4,8 @@ import { brandAssets } from '../../assets'
 import { Mail, Phone, MapPin, ArrowUpRight, Briefcase, MessageCircle, Play, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react'
 
 export const Footer: React.FC = () => {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="bg-[#0F2C59] text-[#A0AEC0] pt-16 pb-12 border-t border-[#1E3A8A]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,6 +54,7 @@ export const Footer: React.FC = () => {
               >
                 <Briefcase className="h-4 w-4" />
               </a>
+              {/* X / Twitter */}
               <a
                 href="https://twitter.com/centrifugegroup"
                 target="_blank"
@@ -61,6 +64,7 @@ export const Footer: React.FC = () => {
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
+              {/* YouTube */}
               <a
                 href="https://www.youtube.com/@centrifugegroup"
                 target="_blank"
@@ -276,4 +280,5 @@ export const Footer: React.FC = () => {
     </footer>
   )
 }
+
 export default Footer

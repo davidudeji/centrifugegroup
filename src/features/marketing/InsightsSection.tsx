@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { mockArticles } from '../../data/mockData'
-import { ArrowRight, Clock } from 'lucide-react'
+import { ArrowRight, Clock, User } from 'lucide-react'
+import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 export const InsightsSection: React.FC = () => {
   return (
@@ -81,9 +82,10 @@ export const InsightsSection: React.FC = () => {
               </div>
             </article>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )
 }
+
 export default InsightsSection

@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { mockArticles } from '../../data/mockData'
-import { ArrowLeft, Clock, Share2 } from 'lucide-react'
+import { ArrowLeft, Clock, Share2, ArrowRight } from 'lucide-react'
 import { useUIStore } from '../../stores/uiStore'
 
 export const InsightDetailPage: React.FC = () => {

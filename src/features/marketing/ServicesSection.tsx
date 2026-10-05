@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Cog,
+  Code2,
+  Smartphone,
+  Cloud,
+  Server,
+  Shield,
+  Lightbulb,
   GraduationCap,
-  PieChart,
-  Layers,
-  BarChart3,
-  Briefcase,
   ArrowRight,
   ShieldCheck,
 } from 'lucide-react'
@@ -220,8 +221,10 @@ export const ServicesSection: React.FC = () => {
             <span>Request Technical Consultation</span>
           </Link>
         </div>
-      </div>
-    </section>
+      </Reveal>
+    </div>
+    </section >
+  )
   )
 }
 export default ServicesSection

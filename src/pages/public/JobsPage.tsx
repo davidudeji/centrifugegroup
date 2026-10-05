@@ -54,17 +54,17 @@ export const JobsPage: React.FC = () => {
               <button
                 key={dept}
                 onClick={() => setSelectedDept(dept)}
-                className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${
-                  selectedDept === dept
+                className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${selectedDept === dept
                     ? 'bg-[#008DDA] text-white shadow-xs'
                     : 'bg-[#FFFFFF] text-[#475569] border border-[#CBD5E1] hover:border-[#008DDA] hover:text-[#008DDA]'
-                }`}
+                  }`}
               >
                 {dept}
               </button>
             ))}
           </div>
 
+          {/* Job Cards */}
           {/* Job Cards */}
           <div className="space-y-4">
             {filtered.map((job) => (
@@ -95,6 +95,7 @@ export const JobsPage: React.FC = () => {
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold shrink-0 transition-colors"
                 >
                   <span>View Role & Apply</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>

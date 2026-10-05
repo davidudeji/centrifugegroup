@@ -54,5 +54,7 @@ export const TrustSection: React.FC = () => {
       </div>
     </section>
   )
+  )
 }
+
 export default TrustSection

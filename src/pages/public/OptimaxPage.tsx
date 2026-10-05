@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
+import { PageHero } from '../../components/ui/PageHero'
 import {
   ArrowRight,
   CheckCircle2,
@@ -16,25 +17,26 @@ import {
   TrendingUp,
 } from 'lucide-react'
 
+const modules = [
+  { name: 'Commerce & Omnichannel', icon: PackageCheck, desc: 'Centralised product catalogue, retail POS synchronisation, and automated order routing across physical stores and web channels.' },
+  { name: 'Financial Ledgers & Tax', icon: DollarSign, desc: 'Automated double-entry general ledgers, multi-currency accounting, FIRS tax compliance, and automated bank feeds reconciliation.' },
+  { name: 'Human Resources & Payroll', icon: Users, desc: 'Comprehensive personnel records, biometric clock-in, automated salary deductions, pension computation, and leave tracking.' },
+  { name: 'Multi-Warehouse Inventory', icon: Layers, desc: 'Real-time multi-location stock movements, low-stock threshold triggers, barcode batch tracking, and supplier replenishment.' },
+  { name: 'Procurement & Purchasing', icon: Building2, desc: 'Purchase requisition approval hierarchies, vendor scoring, automated purchase order generation, and delivery matching.' },
+  { name: 'Sales & CRM', icon: TrendingUp, desc: 'Lead pipeline, customer relationship management, quotation, and sales performance dashboards.' },
+  { name: 'Executive Analytics & BI', icon: BarChart2, desc: 'Consolidated P&L dashboards, inventory turnover velocity, departmental spend audits, and cashflow projections.' },
+  { name: 'AI & Demand Forecasting', icon: Cpu, desc: 'Machine learning algorithms forecasting replenishment schedules based on seasonal sales spikes and supply transit lead times.' },
+  { name: 'Security & Audit Mesh', icon: ShieldCheck, desc: 'Granular permissions, tamper-proof activity logs, dual-authorisation for large payments, and enterprise encryption.' },
+]
+
+const outcomes = [
+  'Reduced end-of-month financial reconciliation from 14 days to under 4 hours.',
+  'Eliminated stock shrinkage across multi-depot distribution networks.',
+  'Centralised visibility across executive leadership, finance, and warehouse managers in real time.',
+  'Zero-loss offline point-of-sale ensuring uninterrupted retail billing during network outages.',
+]
+
 export const OptimaxPage: React.FC = () => {
-  const modules = [
-    { name: 'Commerce & Omnichannel', icon: PackageCheck, desc: 'Centralized product catalogue, retail POS synchronization, and automated order routing across physical stores and web channels.' },
-    { name: 'Financial Ledgers & Tax', icon: DollarSign, desc: 'Automated double-entry general ledgers, multi-currency accounting, FIRS tax compliance, and automated bank feeds reconciliation.' },
-    { name: 'Human Resources & Payroll', icon: Users, desc: 'Comprehensive personnel records, biometric clock-in, automated salary deductions, pension computation, and leave tracking.' },
-    { name: 'Multi-Warehouse Inventory', icon: Layers, desc: 'Real-time multi-location stock movements, low-stock threshold triggers, barcode batch tracking, and supplier replenishment.' },
-    { name: 'Procurement & Purchasing', icon: Building2, desc: 'Purchase requisition approval hierarchies, vendor scoring, automated purchase order generation, and delivery matching.' },
-    { name: 'Executive Analytics & BI', icon: BarChart2, desc: 'Consolidated profit-and-loss dashboards, inventory turnover velocity, departmental spend audits, and cashflow projections.' },
-    { name: 'Predictive Demand AI', icon: Cpu, desc: 'Machine learning algorithms forecasting replenishment schedules based on seasonal sales spikes and supply transit lead times.' },
-    { name: 'Role-Based Security Mesh', icon: ShieldCheck, desc: 'Granular permissions, tamper-proof activity logs, dual-authorization for large payments, and enterprise encryption.' },
-  ]
-
-  const outcomes = [
-    'Reduced end-of-month financial reconciliation from 14 days to under 4 hours.',
-    'Eliminated stock shrinkage across multi-depot distribution networks.',
-    'Centralized visibility across executive leadership, finance, and warehouse managers in real time.',
-    'Zero-loss offline point-of-sale ensuring uninterrupted retail billing during network outages.',
-  ]
-
   return (
     <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
@@ -78,7 +80,7 @@ export const OptimaxPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* ─── Operational Problem vs Institutional Solution ─── */}
       <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
@@ -130,7 +132,7 @@ export const OptimaxPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {modules.map((m) => {
               const Icon = m.icon
               return (
@@ -149,6 +151,8 @@ export const OptimaxPage: React.FC = () => {
                       {m.desc}
                     </p>
                   </div>
+                  <h4 className="text-[16px] font-heading font-700 text-[#0B1F33] mb-2">{m.name}</h4>
+                  <p className="text-[13px] text-[#64748B] leading-relaxed">{m.desc}</p>
                 </div>
               )
             })}

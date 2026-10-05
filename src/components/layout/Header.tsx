@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { brandAssets } from '../../assets'
-import { useCartStore } from '../../stores/cartStore'
 import { useUIStore } from '../../stores/uiStore'
 import {
   ChevronDown,
@@ -23,9 +22,7 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const { mobileNavOpen, setMobileNavOpen } = useUIStore()
-  const { getTotalCount, toggleCart } = useCartStore()
   const location = useLocation()
-  const totalCartCount = getTotalCount()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,11 +32,12 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close menus on route change
   useEffect(() => {
     setActiveDropdown(null)
     setMobileNavOpen(false)
   }, [location.pathname, setMobileNavOpen])
+
+  const isActive = (basePath: string) => location.pathname.startsWith(basePath)
 
   return (
     <>
@@ -78,9 +76,8 @@ export const Header: React.FC = () => {
 
       {/* ─── Global Top Navigation Bar (UI/UX Spec §3.1: 72px Fixed Height, #FFFFFF, 1px #E2E8F0 Border) ─── */}
       <header
-        className={`sticky top-0 z-40 w-full h-[72px] bg-[#FFFFFF] border-b border-[#E2E8F0] transition-shadow duration-200 ${
-          isScrolled ? 'shadow-xs' : ''
-        }`}
+        className={`sticky top-0 z-40 w-full h-[72px] bg-[#FFFFFF] border-b border-[#E2E8F0] transition-shadow duration-200 ${isScrolled ? 'shadow-xs' : ''
+          }`}
       >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
@@ -107,11 +104,10 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
-                    className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${
-                      location.pathname.startsWith('/solutions')
+                    className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${location.pathname.startsWith('/solutions')
                         ? 'text-[#008DDA] font-semibold bg-[#008DDA]/5'
                         : 'text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]'
-                    }`}
+                      }`}
                     aria-expanded={activeDropdown === 'solutions'}
                   >
                     <span>Solutions</span>
@@ -207,11 +203,10 @@ export const Header: React.FC = () => {
                 {/* 2. Products / Store */}
                 <Link
                   to="/shop"
-                  className={`px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${
-                    location.pathname.startsWith('/shop')
+                  className={`px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${location.pathname.startsWith('/shop')
                       ? 'text-[#008DDA] font-semibold bg-[#008DDA]/5'
                       : 'text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]'
-                  }`}
+                    }`}
                 >
                   Products & Hardware
                 </Link>
@@ -223,13 +218,12 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
-                    className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${
-                      ['/about', '/clients', '/case-studies', '/careers'].some((p) =>
-                        location.pathname.startsWith(p)
-                      )
+                    className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${['/about', '/clients', '/case-studies', '/careers'].some((p) =>
+                      location.pathname.startsWith(p)
+                    )
                         ? 'text-[#008DDA] font-semibold bg-[#008DDA]/5'
                         : 'text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]'
-                    }`}
+                      }`}
                     aria-expanded={activeDropdown === 'company'}
                   >
                     <span>Company</span>
@@ -279,11 +273,10 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
-                    className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${
-                      ['/insights', '/services'].some((p) => location.pathname.startsWith(p))
+                    className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${['/insights', '/services'].some((p) => location.pathname.startsWith(p))
                         ? 'text-[#008DDA] font-semibold bg-[#008DDA]/5'
                         : 'text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]'
-                    }`}
+                      }`}
                     aria-expanded={activeDropdown === 'resources'}
                   >
                     <span>Resources</span>
@@ -358,6 +351,7 @@ export const Header: React.FC = () => {
                 {mobileNavOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
+
           </div>
         </div>
       </header>
@@ -476,4 +470,5 @@ export const Header: React.FC = () => {
     </>
   )
 }
+
 export default Header

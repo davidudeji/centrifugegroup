@@ -39,7 +39,7 @@ export const CaseStudyDetailPage: React.FC = () => {
             {cs.title}
           </h1>
 
-          <div className="pt-3 flex flex-wrap gap-2">
+          <div className="pt-2 flex flex-wrap gap-2">
             {cs.technologies.map((t) => (
               <span
                 key={t}
@@ -71,8 +71,9 @@ export const CaseStudyDetailPage: React.FC = () => {
                   The Institutional Challenge
                 </h3>
                 <p className="text-[14px] text-[#475569] leading-relaxed">
-                  {cs.challenge}
-                </p>
+                  <p className="text-[14px] text-[#475569] leading-relaxed">
+                    {cs.challenge}
+                  </p>
               </div>
 
               <div className="pt-6 border-t border-[#F1F5F9]">
@@ -92,16 +93,17 @@ export const CaseStudyDetailPage: React.FC = () => {
                   Capabilities & Implementation Scope
                 </h3>
                 <p className="text-[14px] text-[#475569] leading-relaxed mb-4">
-                  {cs.implementation}
-                </p>
-                <div className="space-y-2.5">
-                  {cs.capabilities.map((cap, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#1A1A1A]">
-                      <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
-                      <span className="font-medium">{cap}</span>
-                    </div>
-                  ))}
-                </div>
+                  <p className="text-[14px] text-[#475569] leading-relaxed mb-4">
+                    {cs.implementation}
+                  </p>
+                  <div className="space-y-2.5">
+                    {cs.capabilities.map((cap, i) => (
+                      <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#1A1A1A]">
+                        <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
+                        <span className="font-medium">{cap}</span>
+                      </div>
+                    ))}
+                  </div>
               </div>
 
               <div className="pt-6 border-t border-[#F1F5F9]">

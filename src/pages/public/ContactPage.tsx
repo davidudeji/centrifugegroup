@@ -1,9 +1,41 @@
 import React, { useState } from 'react'
 import { SEO } from '../../components/ui/SEO'
+import { PageHero } from '../../components/ui/PageHero'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from 'lucide-react'
 import { useUIStore } from '../../stores/uiStore'
+
+const contactDetails = [
+  {
+    icon: MapPin,
+    label: 'Principal Office',
+    lines: [
+      'Suite 203, 2nd Floor, Jinifa Plaza,',
+      'Plot 1014, Samuel Adesoji Ademulegun St,',
+      'Central Business District, Abuja, Nigeria.',
+    ],
+  },
+  {
+    icon: Mail,
+    label: 'Enquiries',
+    lines: ['enquiries@centrifugegroup.com', 'solutions@centrifugegroup.com'],
+    hrefs: ['mailto:enquiries@centrifugegroup.com', 'mailto:solutions@centrifugegroup.com'],
+  },
+  {
+    icon: Phone,
+    label: 'Direct Telephone',
+    lines: ['+234 815 5026 555'],
+    hrefs: ['tel:+2348155026555'],
+  },
+  {
+    icon: Clock,
+    label: 'Operational Hours',
+    lines: ['Monday – Friday: 08:00 – 17:30 WAT'],
+    note: '24/7 Priority SLA for active hospital & logistics clusters',
+  },
+]
 
 export const ContactPage: React.FC = () => {
   const { addToast } = useUIStore()
@@ -20,21 +52,14 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 600))
+    await new Promise((r) => setTimeout(r, 700))
     setIsSubmitting(false)
     addToast({
       title: 'Message Sent Successfully',
       description: `Thank you ${formData.name}. A senior technical specialist will respond within 24 business hours.`,
       type: 'success',
     })
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      subject: 'Enterprise Platform Inquiry',
-      message: '',
-    })
+    setFormData({ name: '', email: '', company: '', phone: '', subject: 'Enterprise Platform Inquiry', message: '' })
   }
 
   return (
@@ -73,18 +98,21 @@ export const ContactPage: React.FC = () => {
               <h2 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-6">
                 Send an Inquiry to Our Senior Engineers
               </h2>
+              <p className="text-[14px] text-[#64748B] mb-6">
+                All fields marked * are required.
+              </p>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input
-                    label="Full Name"
+                    label="Full Name *"
                     required
                     placeholder="e.g. Dr. Aliyu Ibrahim"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                   <Input
-                    label="Work Email"
+                    label="Work Email *"
                     type="email"
                     required
                     placeholder="aliyu@organization.gov.ng"
@@ -95,14 +123,14 @@ export const ContactPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Input
-                    label="Organization / Company"
+                    label="Organisation / Company *"
                     required
                     placeholder="e.g. State Ministry of Health"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   />
                   <Input
-                    label="Phone Number"
+                    label="Phone Number *"
                     type="tel"
                     required
                     placeholder="+234 803 000 0000"
@@ -135,7 +163,7 @@ export const ContactPage: React.FC = () => {
                     Project Details & Operational Bottlenecks <span className="text-[#EF4444]">*</span>
                   </label>
                   <textarea
-                    rows={4}
+                    rows={5}
                     required
                     placeholder="Describe your current system challenge, facility count or user volume, and desired implementation timeline..."
                     className="w-full bg-[#FFFFFF] text-[#1A1A1A] text-[14px] p-3 border border-[#CBD5E1] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA] transition-colors"
@@ -218,10 +246,12 @@ export const ContactPage: React.FC = () => {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
     </div>
   )
 }
+
 export default ContactPage
