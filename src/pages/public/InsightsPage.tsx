@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { mockArticles } from '../../data/mockData'
 import { Search, Clock, ArrowRight } from 'lucide-react'
-import { Input } from '../../components/ui/Input'
 
 export const InsightsPage: React.FC = () => {
   const [selectedCat, setSelectedCat] = useState<string>('All')
@@ -21,43 +20,46 @@ export const InsightsPage: React.FC = () => {
   })
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title="Engineering Insights & Perspectives | Centrifuge Group"
         description="Architectural lessons, field notes, and perspectives from building enterprise systems across emerging markets."
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>EDITORIAL & RESEARCH</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
-              Engineering insights & perspectives.
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+              Engineering Insights & Architectural Perspectives
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
               In-depth articles from our software architects, health informatics engineers, and logistics specialists on building production systems for scale.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Main Content (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Main Content (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Bar */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 pb-6 border-b border-[#1e1e1d]">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E2E8F0]">
             <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCat(cat)}
-                  className={`text-[12px] px-4 py-1.5 rounded-[50px] font-medium transition-colors ${
+                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${
                     selectedCat === cat
-                      ? 'bg-[#121212] text-[#080808] font-semibold'
-                      : 'bg-[#1e1e1d] text-[#868684] border border-[#333333] hover:text-[#faf9f6]'
+                      ? 'bg-[#008DDA] text-white shadow-xs'
+                      : 'bg-[#FFFFFF] text-[#475569] border border-[#CBD5E1] hover:border-[#008DDA] hover:text-[#008DDA]'
                   }`}
                 >
                   {cat}
@@ -65,67 +67,58 @@ export const InsightsPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="w-full md:w-72">
-              <Input
+            <div className="w-full md:w-72 relative">
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-[#64748B] pointer-events-none" />
+              <input
+                type="text"
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                leftIcon={<Search className="h-4 w-4 text-[#868684]" />}
+                className="w-full pl-9 pr-3.5 py-2 text-xs bg-[#FFFFFF] border border-[#CBD5E1] rounded-[4px] text-[#1A1A1A] placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA]"
               />
             </div>
           </div>
 
-          {/* Articles Grid (Onyx #1e1e1d cards) */}
+          {/* Articles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((art) => (
-              <article
-                key={art.id}
-                className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] overflow-hidden flex flex-col justify-between hover:border-[#333333] transition-all group"
+            {filtered.map((article) => (
+              <div
+                key={article.id}
+                className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] p-6 hover:border-[#CBD5E1] hover:shadow-xs transition-fin flex flex-col justify-between group text-left"
               >
                 <div>
-                  <div className="h-52 relative overflow-hidden bg-[#000000]">
-                    <img
-                      src={art.image}
-                      alt={art.title}
-                      className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-[50px] bg-[#000000]/80 backdrop-blur-md border border-[#333333] text-[10px] font-mono text-[#f0b66d]">
-                      {art.category}
+                  <div className="flex items-center justify-between text-xs mb-3">
+                    <span className="px-2 py-0.5 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/30 text-[#008DDA] text-[11px] font-mono font-bold uppercase tracking-wider">
+                      {article.category}
+                    </span>
+                    <span className="text-[#64748B] flex items-center gap-1 font-mono text-[11px]">
+                      <Clock className="h-3 w-3" />
+                      {article.readingTime}
                     </span>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-[11px] font-mono text-[#868684]">
-                      <span>{art.date}</span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        <span>{art.readingTime}</span>
-                      </span>
-                    </div>
-
-                    <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-2 group-hover:text-[#f0b66d] transition-colors leading-snug">
-                      {art.title}
-                    </h3>
-                    <p className="text-[13px] text-[#868684] mt-2 leading-relaxed tracking-[-0.14px]">
-                      {art.summary}
-                    </p>
-                  </div>
+                  <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight leading-snug group-hover:text-[#008DDA] transition-colors">
+                    <Link to={`/insights/${article.slug}`}>{article.title}</Link>
+                  </h3>
+                  <p className="text-[13.5px] text-[#475569] mt-2.5 leading-relaxed">
+                    {article.summary}
+                  </p>
                 </div>
 
-                <div className="p-6 pt-0 border-t border-[#333333]/40 mt-4 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-[#868684]">
-                    {art.author.name}
-                  </span>
+                <div className="mt-6 pt-4 border-t border-[#F1F5F9] flex items-center justify-between">
+                  <div className="text-xs text-[#64748B]">
+                    <span className="font-semibold text-[#1A1A1A]">{article.author.name}</span>
+                    <span className="block text-[11px] text-[#64748B]">{article.date}</span>
+                  </div>
                   <Link
-                    to={`/insights/${art.slug}`}
-                    className="inline-flex items-center gap-1 text-[12px] font-medium text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
+                    to={`/insights/${article.slug}`}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6]"
                   >
-                    <span>Read article</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <span>Read</span>
+                    <ArrowRight className="h-3 w-3" />
                   </Link>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>

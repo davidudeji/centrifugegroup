@@ -25,30 +25,32 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    // Global transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1) per spec §5.2
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:ring-offset-1 focus:ring-offset-black disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99]'
+      'inline-flex items-center justify-center font-medium transition-all duration-200 ease-in-out disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99] rounded-[4px] cursor-pointer'
 
     const sizeStyles = {
-      sm: 'text-xs px-3.5 py-1.5 rounded-[33px] gap-1.5 tracking-[-0.14px]',
-      md: 'text-sm px-5 py-2.5 rounded-[33px] gap-2 tracking-[-0.14px]',
-      lg: 'text-sm sm:text-base px-6 py-3 rounded-[33px] gap-2.5 font-semibold tracking-[-0.18px]',
+      sm: 'text-xs px-3 py-1.5 gap-1.5',
+      md: 'text-sm px-4.5 py-2 gap-2',
+      lg: 'text-base px-6 py-2.5 gap-2.5 font-semibold',
     }
 
+    // Button state styling per UI/UX Spec §5.1
     const variantStyles = {
       primary:
-        'bg-[#121212] text-[#080808] font-semibold hover:bg-[#e3e2e0] shadow-none',
+        'bg-[#008DDA] text-[#FFFFFF] font-semibold hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-[#0F2C59] focus:ring-offset-1 border border-transparent shadow-xs',
       secondary:
-        'bg-[#1e1e1d] text-[#faf9f6] border border-[#333333] hover:bg-[#333333] hover:border-[#40403f]',
+        'bg-transparent text-[#008DDA] border border-[#008DDA] hover:bg-[#008DDA] hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/40',
       dark:
-        'bg-[#121212] text-[#faf9f6] border border-[#1e1e1d] hover:bg-[#1e1e1d]',
+        'bg-[#0F2C59] text-[#FFFFFF] hover:bg-[#1E3A8A] focus:outline-none focus:ring-2 focus:ring-[#008DDA] border border-transparent',
       outline:
-        'bg-transparent text-[#b4b4b2] border border-[#333333] hover:border-[#b4b4b2] hover:text-[#faf9f6]',
+        'bg-[#FFFFFF] text-[#1A1A1A] border border-[#E2E8F0] hover:bg-[#F5F7FA] hover:border-[#CBD5E1] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/30',
       ghost:
-        'bg-transparent text-[#b4b4b2] hover:text-[#faf9f6] hover:bg-[#1e1e1d]',
+        'bg-transparent text-[#1A1A1A] hover:bg-[#E2E8F0]/60 hover:text-[#0F2C59] focus:outline-none',
       'code-pill':
-        'bg-[#121212] text-[#f0b66d] border border-[#333333] font-mono text-xs px-3 py-1.5 rounded-[33px] hover:border-[#f0b66d]',
+        'bg-[#F5F7FA] text-[#0F2C59] border border-[#E2E8F0] font-mono text-xs px-2.5 py-1 hover:border-[#008DDA] hover:bg-[#FFFFFF]',
       danger:
-        'bg-[#ef4444]/15 text-[#fca5a5] border border-[#ef4444]/30 hover:bg-[#ef4444]/25',
+        'bg-[#EF4444] text-[#FFFFFF] hover:bg-[#DC2626] focus:outline-none focus:ring-2 focus:ring-[#EF4444]/40 border border-transparent',
     }
 
     return (

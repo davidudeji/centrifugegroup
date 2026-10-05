@@ -5,14 +5,15 @@ export interface LoadingStateProps {
 }
 
 export const LoadingState: React.FC<LoadingStateProps> = ({
-  message = 'Loading platform data...',
+  message = 'Loading platform telemetry & records...',
 }) => {
   return (
     <div className="py-16 flex flex-col items-center justify-center text-center">
       <div className="relative">
-        <div className="w-8 h-8 border-2 border-[#333333] border-t-[#f0b66d] rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-[#E2E8F0] border-t-[#008DDA] rounded-full animate-spin" />
       </div>
-      <p className="mt-4 text-[12px] font-mono text-[#868684]">{message}</p>
+      <p className="mt-3.5 text-[12px] font-medium text-[#64748B] tracking-wide">{message}</p>
     </div>
   )
 }
+export default LoadingState

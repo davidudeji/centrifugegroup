@@ -7,6 +7,12 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   hoverEffect?: boolean
 }
 
+/**
+ * Data Card Module (UI/UX Spec §3.3)
+ * - Border Radius: 8px
+ * - Background & Border: #FFFFFF fill with an explicit #E2E8F0 1px border profile. No deep drop shadows.
+ * - Padding Matrix: 24px internal inset padding uniformly applied.
+ */
 export const Card: React.FC<CardProps> = ({
   children,
   variant = 'default',
@@ -16,22 +22,22 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   const variantStyles = {
     default:
-      'bg-[#1e1e1d] border border-[#1e1e1d] text-[#faf9f6]',
+      'bg-[#FFFFFF] border border-[#E2E8F0] text-[#1A1A1A]',
     bordered:
-      'bg-[#121212] border border-[#1e1e1d] text-[#faf9f6]',
+      'bg-[#FFFFFF] border border-[#E2E8F0] text-[#1A1A1A] shadow-xs',
     subtle:
-      'bg-[#1e1e1d]/50 border border-[#333333] text-[#faf9f6]',
+      'bg-[#F5F7FA] border border-[#E2E8F0] text-[#1A1A1A]',
     dark:
-      'bg-[#000000] border border-[#1e1e1d] text-[#faf9f6]',
+      'bg-[#0F2C59] border border-[#1E3A8A] text-[#FFFFFF]',
   }
 
   return (
     <div
       className={twMerge(
         clsx(
-          'rounded-[20px] p-6 transition-colors duration-150',
+          'rounded-[8px] p-6 transition-all duration-200 ease-in-out',
           variantStyles[variant],
-          hoverEffect && 'hover:border-[#333333]',
+          hoverEffect && 'hover:border-[#CBD5E1] hover:shadow-xs',
           className
         )
       )}
@@ -41,3 +47,4 @@ export const Card: React.FC<CardProps> = ({
     </div>
   )
 }
+export default Card

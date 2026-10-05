@@ -14,47 +14,50 @@ export const JobsPage: React.FC = () => {
       : mockJobs.filter((j) => j.department === selectedDept)
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title="Open Positions | Centrifuge Careers"
         description="Explore open engineering, product design, and health informatics roles at Centrifuge Group."
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <Link
             to="/careers"
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#64748B] hover:text-[#008DDA] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Careers Overview</span>
           </Link>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-1">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-1">
+            <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
             <span>ENGINEERING & PRODUCT VACANCIES</span>
           </div>
-          <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
-            Job Openings at Centrifuge
+          <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+            Job Openings at Centrifuge Group
           </h1>
-          <p className="text-[16px] text-[#868684] max-w-2xl leading-relaxed tracking-[-0.14px]">
-            We are actively expanding our software engineering, health informatics, and product design teams in Abuja and remote locations.
+          <p className="text-[16px] text-[#475569] max-w-2xl leading-relaxed">
+            We are actively expanding our software engineering, health informatics, and product design teams across Abuja and remote African hubs.
           </p>
         </div>
       </section>
 
-      {/* ─── Main Content (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          {/* Department Filter (50px pill radius) */}
-          <div className="flex flex-wrap gap-2 pb-6 border-b border-[#1e1e1d]">
+      {/* ─── Main Content (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          {/* Department Filter */}
+          <div className="flex flex-wrap gap-2 pb-6 border-b border-[#E2E8F0]">
             {departments.map((dept) => (
               <button
                 key={dept}
                 onClick={() => setSelectedDept(dept)}
-                className={`text-[12px] px-4 py-1.5 rounded-[50px] font-medium transition-colors ${
+                className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${
                   selectedDept === dept
-                    ? 'bg-[#121212] text-[#080808] font-semibold'
-                    : 'bg-[#1e1e1d] text-[#868684] border border-[#333333] hover:text-[#faf9f6]'
+                    ? 'bg-[#008DDA] text-white shadow-xs'
+                    : 'bg-[#FFFFFF] text-[#475569] border border-[#CBD5E1] hover:border-[#008DDA] hover:text-[#008DDA]'
                 }`}
               >
                 {dept}
@@ -62,37 +65,37 @@ export const JobsPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Job Cards (Onyx #1e1e1d cards, 20px radius) */}
+          {/* Job Cards */}
           <div className="space-y-4">
             {filtered.map((job) => (
               <div
                 key={job.id}
-                className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-5"
+                className="bg-[#FFFFFF] p-6 sm:p-7 rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs transition-fin flex flex-col sm:flex-row sm:items-center justify-between gap-5 text-left"
               >
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#f0b66d] bg-[#121212]">
+                    <span className="text-[11px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 rounded-[4px] border border-[#008DDA]/30 text-[#008DDA] bg-[#008DDA]/10">
                       {job.department}
                     </span>
-                    <span className="text-[11px] font-mono text-[#868684]">
+                    <span className="text-xs font-mono text-[#64748B]">
                       {job.type}
                     </span>
                   </div>
-                  <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
+                  <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight">
                     {job.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-[12px] text-[#868684] font-mono">
-                    <MapPin className="h-3.5 w-3.5 text-[#f0b66d]" />
+                  <div className="flex items-center gap-1.5 text-xs text-[#64748B] font-mono">
+                    <MapPin className="h-3.5 w-3.5 text-[#008DDA]" />
                     <span>{job.location}</span>
                   </div>
                 </div>
 
                 <Link
                   to={`/careers/jobs/${job.slug}`}
-                  className="inline-flex items-center justify-center h-10 px-5 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[12.5px] font-semibold shrink-0 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold shrink-0 transition-colors"
                 >
                   <span>View Role & Apply</span>
-                  <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             ))}

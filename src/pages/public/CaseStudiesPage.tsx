@@ -6,92 +6,95 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export const CaseStudiesPage: React.FC = () => {
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title="Case Studies & Client Outcomes | Centrifuge Group"
         description="Authentic case studies of enterprise systems and national health workforce platforms delivered by Centrifuge."
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>VERIFIED CLIENT OUTCOMES</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
-              Case studies in production.
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+              Case Studies in Production
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
-              Explore how we solved critical operational problems for government ministries, medical councils, and corporate enterprises across the continent.
+            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
+              Explore how we solved critical operational challenges for government ministries, medical regulatory councils, and corporate enterprises across the continent.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Case Studies List (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      {/* ─── Case Studies List (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {mockCaseStudies.map((cs) => (
             <div
               key={cs.id}
-              className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] overflow-hidden hover:border-[#333333] transition-all grid grid-cols-1 lg:grid-cols-12"
+              className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] overflow-hidden hover:border-[#CBD5E1] hover:shadow-xs transition-fin grid grid-cols-1 lg:grid-cols-12 text-left"
             >
-              <div className="lg:col-span-5 h-64 sm:h-80 lg:h-auto relative bg-[#000000] overflow-hidden">
+              <div className="lg:col-span-5 h-64 sm:h-80 lg:h-auto relative bg-[#F1F5F9] overflow-hidden">
                 <img
                   src={cs.image}
                   alt={cs.title}
-                  className="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
                 {cs.clientLogo && (
-                  <div className="absolute top-4 left-4 bg-[#000000]/90 backdrop-blur-md border border-[#333333] p-2 rounded-[8px]">
-                    <img src={cs.clientLogo} alt={cs.client} className="h-7 max-w-[130px] object-contain brightness-110" />
+                  <div className="absolute top-4 left-4 bg-[#FFFFFF]/95 backdrop-blur-md border border-[#E2E8F0] p-2 rounded-[4px] shadow-xs">
+                    <img src={cs.clientLogo} alt={cs.client} className="h-7 max-w-[130px] object-contain" />
                   </div>
                 )}
               </div>
 
-              <div className="lg:col-span-7 p-8 lg:p-10 space-y-4 flex flex-col justify-between">
+              <div className="lg:col-span-7 p-6 sm:p-8 space-y-4 flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-mono text-[#f0b66d] uppercase tracking-[1.5px]">
+                  <div className="text-[11px] font-mono font-bold text-[#008DDA] uppercase tracking-wider">
                     {cs.industry} · {cs.client}
                   </div>
-                  <h3 className="text-[22px] sm:text-[26px] font-semibold text-[#faf9f6] tracking-[-0.29px] mt-2 leading-snug">
+                  <h3 className="text-[20px] sm:text-[24px] font-bold text-[#0F2C59] tracking-tight mt-1 leading-snug">
                     {cs.title}
                   </h3>
-                  <p className="text-[13px] text-[#868684] mt-3 leading-relaxed tracking-[-0.14px]">
-                    {cs.challenge}
+                  <p className="text-[14px] text-[#475569] mt-3 leading-relaxed">
+                    {cs.solution}
                   </p>
 
-                  <div className="mt-5 space-y-2 pt-4 border-t border-[#333333]/50">
-                    <span className="text-[11px] font-mono uppercase tracking-[1.5px] text-[#666469] block">
-                      Results Achieved:
-                    </span>
+                  <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {cs.results.map((res, i) => (
-                      <div key={i} className="flex items-start gap-2 text-[12.5px] text-[#b4b4b2]">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[#f0b66d] shrink-0 mt-0.5" />
+                      <div
+                        key={i}
+                        className="bg-[#F8FAFC] border border-[#E2E8F0] p-3 rounded-[4px] text-xs font-semibold text-[#1A1A1A] flex items-start gap-2"
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5 text-[#10B981] shrink-0 mt-0.5" />
                         <span>{res}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-[#333333]/50 flex flex-wrap items-center justify-between gap-4">
+                <div className="pt-5 border-t border-[#F1F5F9] flex items-center justify-between">
                   <div className="flex flex-wrap gap-1.5">
-                    {cs.technologies.slice(0, 4).map((tech) => (
+                    {cs.technologies.slice(0, 3).map((t) => (
                       <span
-                        key={tech}
-                        className="px-2.5 py-0.5 rounded-[50px] bg-[#121212] border border-[#333333] text-[10px] text-[#868684] font-mono"
+                        key={t}
+                        className="px-2 py-0.5 rounded-[4px] bg-[#F1F5F9] border border-[#E2E8F0] text-[11px] font-mono font-medium text-[#64748B]"
                       >
-                        {tech}
+                        {t}
                       </span>
                     ))}
                   </div>
                   <Link
                     to={`/case-studies/${cs.slug}`}
-                    className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#faf9f6] hover:text-[#f0b66d] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold transition-colors"
                   >
-                    <span>Read Full Case Study</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform hover:translate-x-0.5" />
+                    <span>Read Case Study</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>

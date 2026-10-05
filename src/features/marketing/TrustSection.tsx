@@ -1,54 +1,58 @@
 import React from 'react'
 import { verifiedClients } from '../../assets'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export const TrustSection: React.FC = () => {
   return (
-    <section className="bg-[#000000] py-16 border-y border-[#333333]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-[10px] uppercase tracking-[2px] font-semibold text-[#f0b66d]">
-            TRUSTED BY MINISTRIES & ENTERPRISES
-          </p>
-          <h2 className="text-[28px] sm:text-[32px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-2 leading-[1.15]">
-            Technology built for real operations.
+    <section className="bg-[#FFFFFF] py-16 border-b border-[#E2E8F0] text-left">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-[#0077B6] text-xs font-semibold uppercase tracking-wider mb-2">
+            <CheckCircle2 className="h-3.5 w-3.5" />
+            <span>INSTITUTIONAL TRUST & GOVERNANCE</span>
+          </div>
+          <h2 className="text-[26px] sm:text-[30px] font-bold text-[#0F2C59] tracking-tight">
+            Trusted by Federal Ministries, Financial Regulators & Multinationals
           </h2>
+          <p className="text-xs sm:text-[13px] text-[#64748B] mt-1.5">
+            Mission-critical systems engineered to adhere to stringent enterprise standards and data sovereignty requirements.
+          </p>
         </div>
 
-        {/* ───  Trusted-By Logo Grid ─── */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-5 items-center justify-items-center">
+        {/* ─── Client Logo Grid (UI/UX Spec §3.3 Data Card Module: 8px radius, #FFFFFF, 1px #E2E8F0) ─── */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 items-center justify-items-center">
           {verifiedClients.map((client) => (
             <div
               key={client.id}
-              className="group relative flex flex-col items-center justify-center w-full min-h-[112px] px-3 py-4 rounded-[12px] border border-[#1e1e1d] bg-[#121212] hover:border-[#333333] transition-colors"
+              className="group relative flex flex-col items-center justify-center w-full min-h-[110px] p-3 rounded-[8px] border border-[#E2E8F0] bg-[#FFFFFF] hover:border-[#008DDA]/50 hover:shadow-xs transition-fin"
               title={`${client.name} — ${client.role}`}
             >
-              <div className="h-16 w-full flex items-center justify-center">
+              <div className="h-14 w-full flex items-center justify-center">
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="max-h-full max-w-[160px] object-contain grayscale invert brightness-200 opacity-75 group-hover:opacity-100 transition-opacity duration-150"
+                  className="max-h-full max-w-[140px] object-contain opacity-85 group-hover:opacity-100 transition-opacity duration-200"
                 />
               </div>
-              <span className="text-[11px] text-center font-medium text-[#b4b4b2] line-clamp-1 mt-2 group-hover:text-[#faf9f6] transition-colors">
+              <span className="text-[11px] text-center font-medium text-[#475569] line-clamp-1 mt-2 group-hover:text-[#0F2C59] transition-colors">
                 {client.name}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-8 text-center">
           <Link
             to="/clients"
-            className="inline-flex items-center gap-1.5 text-[13px] text-[#b4b4b2] hover:text-[#f0b66d] hover:underline transition-colors tracking-[-0.14px]"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
           >
-            <span>Explore our public sector & enterprise client directory</span>
-            <ArrowRight className="h-3 w-3" />
+            <span>Explore our full public sector & enterprise client directory</span>
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </div>
     </section>
-  );
+  )
 }
 export default TrustSection

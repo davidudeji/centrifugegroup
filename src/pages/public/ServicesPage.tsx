@@ -10,13 +10,6 @@ import {
   Briefcase,
   ArrowRight,
   CheckCircle2,
-  Code2,
-  Smartphone,
-  Cloud,
-  Database,
-  ShieldCheck,
-  Server,
-  Terminal,
 } from 'lucide-react'
 
 export const ServicesPage: React.FC = () => {
@@ -27,7 +20,7 @@ export const ServicesPage: React.FC = () => {
       title: 'APPLICATION DEVELOPMENT',
       subtitle: 'Modern Web, Native Mobile & Resilient Cloud Architecture',
       description:
-        'We believe in building softwares that are not just great, but memorable, inspiring, remarkable and entertaining. We work with companies to understand their users and to shape and guide their strategy.',
+        'We engineer institutional-grade applications that combine rigorous architectural integrity with high-availability cloud performance and human-centered design across web, mobile, cloud, and enterprise e-commerce.',
       links: [
         { label: 'Web application development', href: '/services/software-development' },
         { label: 'Mobile application development', href: '/services/mobile-development' },
@@ -45,14 +38,14 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'it-training',
       icon: GraduationCap,
-      title: 'IT TRAINING',
+      title: 'IT TRAINING & CAPACITY',
       subtitle: 'Workforce Enablement, Data Mastery & Agile Transformation',
       description:
-        'Are you driving your organization to becoming more standardized, simplified and automated? Our consultants can help your team assess the current state of your organizational processes, establish a new strategic vision and priorities a road map of change programs designed to help you transform your business and reach for a greater productivity.',
+        'Help your teams adopt standardized, automated modern engineering workflows with comprehensive institutional onboarding, database administration, and DevOps best practices.',
       links: [
         { label: 'Database administration', href: '/services/training' },
         { label: 'Project development and management', href: '/services/training' },
-        { label: 'Big Data', href: '/services/training' },
+        { label: 'Big Data & telemetry engineering', href: '/services/training' },
       ],
       deliverables: [
         'PostgreSQL & High-Scale Database Administration',
@@ -65,14 +58,14 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'it-consultancy',
       icon: PieChart,
-      title: 'IT CONSULTANCY',
+      title: 'IT CONSULTANCY & AUDIT',
       subtitle: 'Institutional Advisory, Regulatory Audits & Programme Strategy',
       description:
-        'Our IT Consulting team provides clients with access to a specialized group of professional resources experienced in a range of programme and project-related activities.',
+        'Our technical advisory practice provides international agencies, multilateral institutions, and government ministries with seasoned specialists in system auditability, regulatory alignment, and digital modernization.',
       links: [
         { label: 'World Health Organization - WHO', href: '/clients' },
-        { label: 'United Nation Children Emergency Fund - UNICEF', href: '/clients' },
-        { label: 'Management Science for Health (MSH)', href: '/clients' },
+        { label: 'United Nations Children Emergency Fund - UNICEF', href: '/clients' },
+        { label: 'Management Sciences for Health (MSH)', href: '/clients' },
       ],
       deliverables: [
         'Enterprise Technical Feasibility & Architecture Audits',
@@ -85,16 +78,16 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'infrastructure-connectivity',
       icon: Layers,
-      title: 'Infrastructure and Connectivity Services',
+      title: 'INFRASTRUCTURE & CONNECTIVITY',
       subtitle: 'Turnkey Hardware, Power Conditioning & Cloud Networks',
       description:
-        'In the realm of software development, Infrastructure and Connectivity services play a pivotal role in establishing a robust foundation for seamless operations. These services encompass the essential components that ensure the reliability, scalability, and efficiency of a company’s IT environment.',
+        'Establish a rock-solid foundation for continuous enterprise operations. Covers active-active cloud hosting, container orchestration, hardware telematics, and secure SD-WAN.',
       links: [
         { label: 'Managed IT Services', href: '/services/managed-it' },
         { label: 'Cloud Services', href: '/services/cloud' },
         { label: 'Hardware and Software Integration', href: '/services/infrastructure' },
-        { label: 'Hardware Solution', href: '/services/infrastructure' },
-        { label: 'Network Service', href: '/services/managed-it' },
+        { label: 'Hardware Solutions & Clean Power', href: '/shop' },
+        { label: 'Network & Telemetry Operations', href: '/services/managed-it' },
       ],
       deliverables: [
         '24/7 Managed IT System & Network Operations Center (NOC)',
@@ -107,10 +100,10 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'enterprise-solutions',
       icon: BarChart3,
-      title: 'Enterprise Solutions',
+      title: 'ENTERPRISE SOLUTIONS',
       subtitle: 'Integrated ERP, Workflow Automation & Core Ledgers',
       description:
-        'These solutions often include Enterprise Resource Planning (ERP) systems, IT consulting, and custom IT solutions tailored to the specific requirements of an organization. ERP systems integrate core business processes such as finance, human resources, supply chain management, and customer relationship management into a unified platform, providing a comprehensive view of organizational data.',
+        'Turnkey ERP implementations, banking rails, and automated compliance pipelines tailored to complex regulatory environments across West Africa and emerging markets.',
       links: [
         { label: 'ERP (Enterprise Resource Planning)', href: '/solutions/optimax' },
         { label: 'Custom IT Solutions', href: '/solutions/enterprise' },
@@ -127,13 +120,13 @@ export const ServicesPage: React.FC = () => {
     {
       id: 'business-solutions',
       icon: Briefcase,
-      title: 'Business Solutions',
+      title: 'BUSINESS SOLUTIONS',
       subtitle: 'SaaS Platforms, Analytics & Operational Growth Tools',
       description:
-        'Business Solutions, within the realm of software development services, encompass a range of offerings aimed at addressing and optimizing various aspects of a company’s operations. These services are tailored to enhance efficiency, productivity, and overall performance, contributing to the growth and success of businesses across industries.',
+        'Multi-tenant SaaS platforms, omnichannel commercial solutions, and geospatial analytics engines designed to accelerate institutional growth and streamline operational efficiency.',
       links: [
         { label: 'Software as a Service (SaaS) Development', href: '/solutions/optimax' },
-        { label: 'Digital Marketing Services', href: '/services/software-development' },
+        { label: 'Digital Marketing & Growth Services', href: '/services/software-development' },
         { label: 'E-commerce Solutions', href: '/shop' },
         { label: 'Data Management and Analytics', href: '/solutions/data-analytics' },
       ],
@@ -148,122 +141,123 @@ export const ServicesPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title="Services & Core Capabilities | Centrifuge Group"
         description="Explore our six core engineering and advisory pillars: Application Development, IT Training, IT Consultancy, Infrastructure and Connectivity, Enterprise Solutions, and Business Solutions."
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>FULL LIFECYCLE CAPABILITIES</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
-              From strategy to systems in production.
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+              From Architectural Strategy to High-Scale Production Systems
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
+            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
               We provide end-to-end engineering, institutional capacity building, robust connectivity infrastructure, and specialized enterprise systems designed for maximum resilience and operational scale.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Six Core Pillars Section (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-[#1e1e1d] gap-4">
+      {/* ─── Six Core Pillars Section (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-[#E2E8F0] gap-4">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
                 CORE PILLARS
               </span>
-              <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
+              <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight mt-1">
                 Our Engineering & Advisory Pillars
               </h2>
             </div>
-            <p className="text-[13px] text-[#868684] max-w-md">
+            <p className="text-[14px] text-[#64748B] max-w-md">
               Each pillar represents deep subject-matter expertise, tested frameworks, and verified track records with commercial and institutional leaders.
             </p>
           </div>
 
-          {/* 6 Cards Grid (Onyx #1e1e1d, 20px radius) */}
+          {/* 6 Cards Grid (Data Card Module: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pillars.map((pillar) => {
               const Icon = pillar.icon
               return (
                 <div
                   key={pillar.id}
-                  className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] p-7 flex flex-col justify-between transition-all group"
+                  className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
                 >
                   <div>
                     {/* Icon & Badge */}
                     <div className="flex items-center justify-between">
-                      <div className="h-10 w-10 rounded-[8px] bg-[#121212] border border-[#333333] flex items-center justify-center group-hover:border-[#f0b66d] transition-colors">
-                        <Icon className="h-5 w-5 text-[#f0b66d]" />
+                      <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
+                        <Icon className="h-5 w-5" />
                       </div>
-                      <span className="text-[10px] uppercase font-mono tracking-[1px] px-2.5 py-0.5 rounded-[50px] border border-[#333333] text-[#868684] bg-[#121212]">
+                      <span className="text-[11px] uppercase font-mono font-semibold px-2 py-0.5 rounded-[4px] border border-[#E2E8F0] text-[#64748B] bg-[#F1F5F9]">
                         Pillar
                       </span>
                     </div>
 
                     {/* Title & Subtitle */}
-                    <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mt-5 leading-snug">
+                    <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight mt-5 leading-snug">
                       {pillar.title}
                     </h3>
-                    <p className="text-[11px] font-mono text-[#f0b66d] mt-1 uppercase tracking-[0.5px]">
+                    <p className="text-[12px] font-semibold text-[#008DDA] mt-1 uppercase tracking-wider">
                       {pillar.subtitle}
                     </p>
 
                     {/* Paragraph */}
-                    <p className="text-[13px] text-[#868684] mt-3 leading-relaxed tracking-[-0.14px]">
+                    <p className="text-[13px] text-[#475569] mt-3 leading-relaxed">
                       {pillar.description}
                     </p>
 
-                    {/* Arrow Sub-links (from reference images) */}
-                    <div className="mt-5 pt-4 border-t border-[#333333]/50 space-y-2">
-                      <span className="text-[10px] font-mono uppercase tracking-[1.5px] text-[#666469] block mb-1">
+                    {/* Sublinks */}
+                    <div className="mt-5 pt-4 border-t border-[#F1F5F9] space-y-2">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#64748B] block mb-1">
                         Offerings & Specialized Focus:
                       </span>
                       {pillar.links.map((link) => (
                         <Link
                           key={link.label}
                           to={link.href}
-                          className="group/link flex items-start gap-2 text-[12.5px] text-[#b4b4b2] hover:text-[#f0b66d] transition-colors"
+                          className="group/link flex items-start gap-2 text-[13px] text-[#64748B] hover:text-[#008DDA] transition-colors"
                         >
-                          <span className="text-[#f0b66d] font-semibold text-[13px] leading-tight shrink-0 transition-transform group-hover/link:translate-x-0.5">
+                          <span className="text-[#008DDA] font-bold text-xs shrink-0 transition-transform group-hover/link:translate-x-0.5">
                             →
                           </span>
-                          <span className="hover:underline underline-offset-2">
-                            {link.label}
-                          </span>
+                          <span>{link.label}</span>
                         </Link>
                       ))}
                     </div>
 
                     {/* Core Deliverables */}
-                    <div className="mt-5 pt-4 border-t border-[#333333]/30 space-y-1.5">
-                      <span className="text-[10px] font-mono uppercase tracking-[1.5px] text-[#666469] block mb-1">
+                    <div className="mt-5 pt-4 border-t border-[#F1F5F9] space-y-2">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#64748B] block mb-1">
                         Key Deliverables:
                       </span>
                       {pillar.deliverables.map((deliv) => (
-                        <div key={deliv} className="text-[12px] text-[#868684] flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-[#f0b66d] shrink-0" />
-                          <span className="truncate">{deliv}</span>
+                        <div key={deliv} className="flex items-start gap-2 text-[12px] text-[#1A1A1A]">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-[#10B981] shrink-0 mt-0.5" />
+                          <span>{deliv}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Card Bottom CTA */}
-                  <div className="mt-8 pt-4 border-t border-[#333333]/50">
+                  <div className="mt-6 pt-4 border-t border-[#F1F5F9] flex items-center justify-between">
                     <Link
                       to={`/services/${pillar.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
                     >
-                      <span>Explore detailed scope & process</span>
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                      <span>Explore service specifications</span>
+                      <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 </div>
@@ -273,93 +267,32 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Technical Process & Quality Guarantee (Obsidian #000000) ─── */}
-      <section className="py-20 bg-[#000000] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl text-left mb-12">
-            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
-              OPERATIONAL EXCELLENCE
-            </span>
-            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
-              How we execute enterprise deliveries.
-            </h2>
-            <p className="text-[14px] text-[#868684] mt-2">
-              Every project follows stringent technical milestones, ISO and NDPR security compliance, and direct architect oversight.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              {
-                step: '01',
-                title: 'Architecture Blueprint',
-                desc: 'Workflow audits, data schema modeling, and zero-trust security planning with your teams.',
-              },
-              {
-                step: '02',
-                title: 'Iterative Sprints',
-                desc: 'Two-week agile release cadence with automated continuous integration and testing suites.',
-              },
-              {
-                step: '03',
-                title: 'Field Verification',
-                desc: 'On-site stress-testing, low-bandwidth validation, and power failover commissioning.',
-              },
-              {
-                step: '04',
-                title: 'Institutional Handover',
-                desc: 'Hands-on user enablement, documentation job aids, and SLA-backed maintenance.',
-              },
-            ].map((p) => (
-              <div
-                key={p.step}
-                className="p-6 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] hover:border-[#333333] transition-colors"
-              >
-                <span className="text-[12px] font-mono text-[#f0b66d] px-2 py-0.5 rounded-[50px] border border-[#333333] bg-[#121212]">
-                  {p.step}
-                </span>
-                <h4 className="text-[16px] font-semibold text-[#faf9f6] mt-4 tracking-[-0.18px]">
-                  {p.title}
-                </h4>
-                <p className="text-[12.5px] text-[#868684] mt-2 leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Bottom CTA ─── */}
-      <section className="py-20 bg-[#121212]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] text-center max-w-3xl mx-auto space-y-6">
-            <h3 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px]">
-              Ready to architect your next system?
-            </h3>
-            <p className="text-[14px] text-[#868684] max-w-xl mx-auto leading-relaxed">
-              Schedule an executive discovery session with our engineering directors to evaluate project scope, system architecture, and deployment schedules.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
-              >
-                <span>Initiate a technical conversation</span>
-                <ArrowRight className="h-3.5 w-3.5 ml-2" />
-              </Link>
-              <Link
-                to="/projects"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] hover:border-[#666469] text-[13px] transition-colors"
-              >
-                <span>View completed projects</span>
-              </Link>
+      {/* ─── Bottom CTA Banner ─── */}
+      <section className="py-16 bg-[#FFFFFF] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-10 rounded-[8px] bg-[#F8FAFC] border border-[#E2E8F0] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#008DDA]">
+                CUSTOM ENGAGEMENTS
+              </span>
+              <h3 className="text-[22px] font-bold text-[#0F2C59] mt-1">
+                Require a Multi-Pillar Institutional Partnership?
+              </h3>
+              <p className="text-sm text-[#64748B] mt-1 max-w-xl">
+                We frequently assemble interdisciplinary teams spanning software architects, cloud engineers, and field trainers for enterprise programs.
+              </p>
             </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-sm font-semibold transition-colors shrink-0"
+            >
+              <span>Schedule Architecture Consultation</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
     </div>
   )
 }
-
 export default ServicesPage

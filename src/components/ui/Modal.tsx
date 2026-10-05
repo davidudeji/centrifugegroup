@@ -49,34 +49,35 @@ export const Modal: React.FC<ModalProps> = ({
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-[#000000]/80 transition-opacity"
+        className="fixed inset-0 bg-[#0F2C59]/40 backdrop-blur-xs transition-opacity"
         onClick={onClose}
       />
 
-      {/* Modal Container (Onyx #1e1e1d, 20px radius, 1px #333333 border) */}
+      {/* Modal Container: 8px border radius, #FFFFFF fill, #E2E8F0 border per Spec §3.3 */}
       <div
-        className={`relative w-full ${maxWidthStyles[maxWidth]} bg-[#1e1e1d] rounded-[20px] border border-[#333333] p-6 z-10 animate-in fade-in duration-150`}
+        className={`relative w-full ${maxWidthStyles[maxWidth]} bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] p-6 z-10 shadow-lg animate-in fade-in duration-150`}
       >
-        <div className="flex items-start justify-between pb-3 border-b border-[#333333]/70">
+        <div className="flex items-start justify-between pb-3 border-b border-[#E2E8F0]">
           <div>
-            <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
+            <h3 className="text-[18px] font-semibold text-[#1A1A1A] tracking-tight">
               {title}
             </h3>
             {description && (
-              <p className="mt-1 text-[13px] text-[#868684]">{description}</p>
+              <p className="mt-1 text-[13px] text-[#64748B]">{description}</p>
             )}
           </div>
           <button
             onClick={onClose}
-            className="rounded-[4px] p-1 text-[#868684] hover:text-[#faf9f6] hover:bg-[#121212] transition-colors"
+            className="rounded-[4px] p-1 text-[#64748B] hover:text-[#1A1A1A] hover:bg-[#F1F5F9] transition-colors"
             aria-label="Close modal"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="mt-4">{children}</div>
+        <div className="mt-4 text-[#1A1A1A]">{children}</div>
       </div>
     </div>
   )
 }
+export default Modal

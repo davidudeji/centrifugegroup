@@ -43,62 +43,65 @@ export const IndustriesPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title="Industries We Transform | Centrifuge Group"
         description="Sector-specific enterprise systems for healthcare, logistics, government, corporate enterprises, and SMEs."
       />
 
-      {/* ─── Hero Banner (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Banner (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>SECTOR SPECIALIZATION</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
-              Deep domain expertise for complex industries.
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+              Deep Domain Expertise for Complex Industries
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
-              We design software, cloud connectivity, and institutional capacity around the exact operational, legal, and environmental realities of our partner sectors.
+            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
+              We design software, cloud connectivity, and institutional capacity around the exact operational, legal, and regulatory requirements of our partner sectors.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Industries Grid (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Industries Grid (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((ind) => {
               const Icon = ind.icon
               return (
                 <div
                   key={ind.slug}
-                  className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] p-8 flex flex-col justify-between hover:border-[#333333] transition-all group"
+                  className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] p-6 sm:p-8 flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-xs transition-fin group text-left"
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-[8px] bg-[#121212] border border-[#333333] flex items-center justify-center group-hover:border-[#f0b66d] transition-colors mb-5">
-                      <Icon className="h-5 w-5 text-[#f0b66d]" />
+                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200 mb-5">
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] group-hover:text-[#f0b66d] transition-colors">
+                    <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight group-hover:text-[#008DDA] transition-colors">
                       {ind.title}
                     </h3>
-                    <p className="text-[13px] text-[#868684] mt-2.5 leading-relaxed tracking-[-0.14px]">
+                    <p className="text-[14px] text-[#475569] mt-2.5 leading-relaxed">
                       {ind.desc}
                     </p>
-                    <div className="mt-5 pt-4 border-t border-[#333333]/50 text-[12px]">
-                      <span className="font-mono text-[#b4b4b2] text-[11px] block uppercase tracking-[1px] mb-1">
+                    <div className="mt-5 pt-4 border-t border-[#F1F5F9] text-xs">
+                      <span className="font-mono text-[#008DDA] text-[11px] block uppercase font-bold tracking-wider mb-1">
                         Verified Partners:
                       </span>
-                      <span className="text-[#868684]">{ind.clients}</span>
+                      <span className="text-[#64748B] leading-relaxed block">{ind.clients}</span>
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-[#333333]/50">
+                  <div className="mt-8 pt-4 border-t border-[#F1F5F9]">
                     <Link
                       to={`/industries/${ind.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
                     >
                       <span>Explore industry solutions</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

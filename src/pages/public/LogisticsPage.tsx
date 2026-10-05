@@ -9,6 +9,7 @@ import {
   Radio,
   FileCheck2,
   Gauge,
+  Cpu,
 } from 'lucide-react'
 
 export const LogisticsPage: React.FC = () => {
@@ -22,36 +23,39 @@ export const LogisticsPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title="Centrifuge Logistics & Mobility | Fleet Telematics & Dispatch Suite"
         description="Hardware-agnostic GPS fleet tracking, dispatch control room, and electronic proof of delivery software."
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>CENTRIFUGE LOGISTICS & MOBILITY</span>
             </div>
-            <h1 className="text-[36px] sm:text-[56px] font-normal text-[#faf9f6] tracking-[-2.24px] leading-[0.98]">
-              Move smarter. Deliver with visibility.
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+              Fleet Telematics & Intelligent Dispatch Architecture
             </h1>
-            <p className="text-[16px] text-[#868684] tracking-[-0.18px] leading-relaxed">
-              We turn unpredictable transit corridors into audited, efficient supply chains with real-time GPS telematics, intelligent dispatch, and mobile driver apps.
+            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
+              Transform unpredictable transit corridors into audited, high-efficiency supply networks with sub-second GPS telematics, automated dispatch algorithms, CAN-Bus fuel sensors, and offline driver proof-of-delivery.
             </p>
             <div className="pt-2 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-sm font-semibold transition-colors duration-200"
               >
-                <span>Request Logistics Demo</span>
-                <ArrowRight className="h-3.5 w-3.5 ml-2" />
+                <span>Request Logistics Walkthrough</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/shop"
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-transparent border border-[#008DDA] text-[#008DDA] hover:bg-[#008DDA] hover:text-white text-sm font-semibold transition-all duration-200"
               >
                 <span>Browse Telemetry Hardware</span>
               </Link>
@@ -60,16 +64,19 @@ export const LogisticsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Platform Modules (Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
-              PLATFORM MODULES
+      {/* ─── Platform Capabilities (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl text-left mb-12">
+            <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
+              PLATFORM CAPABILITIES
             </span>
-            <h2 className="text-[28px] sm:text-[36px] font-normal text-[#faf9f6] tracking-[-0.64px] mt-1">
-              End-to-end freight & dispatch infrastructure.
+            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight mt-2">
+              End-to-End Fleet & Dispatch Infrastructure
             </h2>
+            <p className="text-[14px] text-[#64748B] mt-2">
+              Engineered to endure severe heat, remote satellite gaps, and multi-depot transit operations.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -78,16 +85,16 @@ export const LogisticsPage: React.FC = () => {
               return (
                 <div
                   key={cap.name}
-                  className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-all flex flex-col justify-between group"
+                  className="bg-[#FFFFFF] p-6 rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs transition-fin flex flex-col justify-between group text-left"
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-[8px] bg-[#121212] border border-[#333333] flex items-center justify-center mb-4 group-hover:border-[#f0b66d] transition-colors">
-                      <Icon className="h-5 w-5 text-[#f0b66d]" />
+                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center mb-4 group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px]">
+                    <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight">
                       {cap.name}
                     </h3>
-                    <p className="text-[13px] text-[#868684] mt-2.5 leading-relaxed tracking-[-0.14px]">
+                    <p className="text-[13px] text-[#475569] mt-2 leading-relaxed">
                       {cap.desc}
                     </p>
                   </div>

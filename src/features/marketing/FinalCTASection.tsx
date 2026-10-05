@@ -1,65 +1,61 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Mail, Phone } from 'lucide-react'
+import { ArrowRight, Mail, Phone, ShieldCheck } from 'lucide-react'
 
 export const FinalCTASection: React.FC = () => {
   return (
-    <section className="bg-[#000000] text-[#faf9f6] py-20 lg:py-28 border-b border-[#1e1e1d] text-center relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-4">
-          <span>READY TO OPERATE AT ENTERPRISE SCALE?</span>
+    <section className="bg-[#0F2C59] text-white py-20 lg:py-24 border-b border-[#1E3A8A] text-center relative overflow-hidden">
+      {/* Background glow effect */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#008DDA_1px,transparent_1px)] [background-size:24px_24px]" />
+
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[4px] bg-[#008DDA]/20 border border-[#008DDA]/40 text-xs font-semibold uppercase tracking-wider text-[#008DDA] mb-4">
+          <ShieldCheck className="h-3.5 w-3.5" />
+          <span>READY TO OPERATE AT INSTITUTIONAL SCALE?</span>
         </div>
 
-        <h2 className="text-[36px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-[1.05] max-w-3xl mx-auto">
-          Let's build what your business needs.
+        <h2 className="text-[32px] sm:text-[44px] font-bold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+          Let's Build the Architecture Your Enterprise Needs
         </h2>
 
-        <p className="mt-4 text-[15px] sm:text-[16px] text-[#868684] tracking-[-0.18px] max-w-2xl mx-auto leading-[1.4]">
-          Whether you need an integrated commercial platform, specialized
-          healthcare software, or a nationwide telematics network, Centrifuge
-          delivers systems you can depend on.
+        <p className="mt-4 text-[16px] text-[#A0AEC0] max-w-2xl mx-auto leading-relaxed">
+          Whether you require modern coreless financial infrastructure, specialized healthcare registries, or an integrated commercial ERP, Centrifuge engineers systems you can depend on.
         </p>
 
-        {/* Dual Pill Buttons (warp_design.md §142-150) */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        {/* Action Button Row (UI/UX Spec §5.1) */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center px-[24px] py-[11px] rounded-[33px] text-[14px] font-semibold bg-[#e9e8e4] text-[#080808] hover:bg-[#e3e2e0] transition-colors duration-150 tracking-[-0.14px]"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-[#008DDA] text-white hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-[#0F2C59] transition-all duration-200 shadow-xs"
           >
-            <span>Talk to Centrifuge</span>
-            <ArrowRight className="h-3.5 w-3.5 ml-2" />
+            <span>Speak with an Enterprise Architect</span>
+            <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            to="/projects"
-            className="inline-flex items-center justify-center px-[22px] py-[11px] rounded-[33px] text-[14px] font-normal bg-transparent border border-[#333333] text-[#b4b4b2] hover:border-[#b4b4b2] hover:text-[#faf9f6] transition-colors duration-150 tracking-[-0.14px]"
+            to="/solutions/banking-framework"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-transparent border border-white/60 text-white hover:bg-white hover:text-[#0F2C59] transition-all duration-200"
           >
-            <span>Explore Portfolio</span>
+            <span>Launch Visual Studio</span>
           </Link>
         </div>
 
         {/* Bottom Contacts Row */}
-        <div className="mt-12 pt-8 border-t border-[#1e1e1d] flex flex-wrap items-center justify-center gap-8 text-[12px] text-[#868684]">
+        <div className="mt-12 pt-8 border-t border-[#1E3A8A] flex flex-wrap items-center justify-center gap-8 text-xs text-[#A0AEC0]">
           <div className="flex items-center gap-2">
-            <Mail className="h-3.5 w-3.5 text-[#f0b66d]" />
-            <a
-              href="mailto:info@centrifugegroup.co"
-              className="hover:text-[#faf9f6] transition-colors"
-            >
+            <Mail className="h-4 w-4 text-[#008DDA]" />
+            <a href="mailto:enquiries@centrifugegroup.com" className="hover:text-white transition-colors">
               enquiries@centrifugegroup.com
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <Phone className="h-3.5 w-3.5 text-[#f0b66d]" />
-            <a
-              href="tel:234 815 5026 555"
-              className="hover:text-[#faf9f6] transition-colors"
-            >
+            <Phone className="h-4 w-4 text-[#008DDA]" />
+            <a href="tel:+2348155026555" className="hover:text-white transition-colors">
               +234 815 5026 555
             </a>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 export default FinalCTASection

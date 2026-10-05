@@ -9,6 +9,7 @@ import { AdminLayout } from './components/layout/AdminLayout'
 import { HomePage } from './pages/public/HomePage'
 import { AboutPage } from './pages/public/AboutPage'
 import { SolutionsPage } from './pages/public/SolutionsPage'
+import { BankingFrameworkPage } from './pages/public/BankingFrameworkPage'
 import { OptimaxPage } from './pages/public/OptimaxPage'
 import { LogisticsPage } from './pages/public/LogisticsPage'
 import { HealthcarePage } from './pages/public/HealthcarePage'
@@ -84,6 +85,8 @@ export default function App() {
 
             {/* Solutions */}
             <Route path="/solutions" element={<SolutionsPage />} />
+            <Route path="/solutions/banking-framework" element={<BankingFrameworkPage />} />
+            <Route path="/studio" element={<Navigate to="/solutions/banking-framework" replace />} />
             <Route path="/solutions/optimax" element={<OptimaxPage />} />
             <Route path="/solutions/logistics" element={<LogisticsPage />} />
             <Route path="/solutions/healthcare" element={<HealthcarePage />} />

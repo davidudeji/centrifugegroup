@@ -1,22 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, HeartPulse, Truck, Building2, Landmark, Store } from 'lucide-react'
+import { ArrowRight, HeartPulse, Truck, Building2, Landmark, Store, Landmark as Bank } from 'lucide-react'
 
 export const IndustriesSection: React.FC = () => {
   const industries = [
     {
+      id: 'banking',
+      name: 'Financial Services & Digital Banking',
+      icon: Bank,
+      challenge: 'Rigid monolithic legacy core banking stacks with multi-day reconciliation windows.',
+      solution: 'Decoupled event-sourced ledger, ISO 20022 clearing gateways, and real-time fraud scoring.',
+      slug: '/solutions/banking-framework',
+    },
+    {
       id: 'healthcare',
-      name: 'Healthcare & Medical Systems',
+      name: 'Healthcare & Clinical Systems',
       icon: HeartPulse,
-      challenge: 'Fragmented patient records and paper workforce registries cause clinical blindspots.',
-      solution: 'Turnkey EMRs, national health workforce platforms, and automated laboratory diagnostics.',
+      challenge: 'Fragmented patient records and paper workforce registries cause operational blindspots.',
+      solution: 'National health workforce platforms (HRHIS), clinical EMRs, and automated diagnostic registers.',
       slug: '/industries/healthcare',
     },
     {
       id: 'logistics',
       name: 'Logistics & Inter-State Freight',
       icon: Truck,
-      challenge: 'High fuel pilferage, unexpected vehicle downtime, and delayed paper delivery notes.',
+      challenge: 'High fuel pilferage, unexpected vehicle downtime, and delayed manual delivery notes.',
       solution: 'Sub-second GPS/CAN-Bus telematics, automated dispatch scheduling, and digital ePOD.',
       slug: '/industries/logistics',
     },
@@ -25,7 +33,7 @@ export const IndustriesSection: React.FC = () => {
       name: 'Government & Regulatory Councils',
       icon: Landmark,
       challenge: 'Manual queues for licensing, counterfeit credentials, and delayed revenue reporting.',
-      solution: 'Tamper-proof digital licensing, Remita automated payments, and verified registries.',
+      solution: 'Tamper-proof digital licensing, automated payment gateways, and verified registries.',
       slug: '/industries/government',
     },
     {
@@ -47,52 +55,52 @@ export const IndustriesSection: React.FC = () => {
   ]
 
   return (
-    <section className="py-20 lg:py-24 bg-[#000000] border-b border-[#1e1e1d]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl text-left mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
+    <section className="py-20 lg:py-24 bg-[#F5F7FA] border-b border-[#E2E8F0] text-left">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
             <span>SECTOR-SPECIFIC ARCHITECTURE</span>
           </div>
-          <h2 className="text-[32px] sm:text-[42px] font-normal text-[#faf9f6] tracking-[-1.13px] leading-[1.05]">
-            Industries we transform.
+          <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight">
+            Industries We Modernize with Engineered Reliability
           </h2>
-          <p className="text-[15px] text-[#868684] tracking-[-0.14px] mt-3 max-w-2xl leading-[1.4]">
-            We engineer systems purpose-built for the operational realities of African institutions and commercial enterprises.
+          <p className="text-[15px] text-[#64748B] mt-2.5 max-w-2xl leading-relaxed">
+            We engineer systems purpose-built for the operational realities of African institutions, financial bodies, and commercial enterprises.
           </p>
         </div>
 
-        {/* ─── Warp Industry Cards (Onyx #1e1e1d, 20px radius) ─── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* ─── Data Card Module Grid (UI/UX Spec §3.3: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) ─── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((ind) => {
             const Icon = ind.icon
             return (
               <div
                 key={ind.id}
-                className="bg-[#1e1e1d] rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] p-6 flex flex-col justify-between transition-colors text-left group"
+                className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
               >
                 <div>
-                  <div className="h-8 w-8 rounded-[4px] bg-[#121212] border border-[#333333] text-[#faf9f6] flex items-center justify-center group-hover:border-[#f0b66d] transition-colors">
-                    <Icon className="h-4 w-4 text-[#f0b66d]" />
+                  <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-[18px] font-semibold text-[#faf9f6] tracking-[-0.18px] mt-4 leading-snug">
+                  <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight mt-4">
                     {ind.name}
                   </h3>
-                  <div className="mt-3 space-y-2 text-[13px] tracking-[-0.14px]">
+                  <div className="mt-4 space-y-2.5 text-[13px]">
                     <div>
-                      <span className="text-[#868684] font-medium">Challenge:</span>{' '}
-                      <span className="text-[#b4b4b2]">{ind.challenge}</span>
+                      <span className="text-[#64748B] font-semibold block text-xs">CHALLENGE:</span>
+                      <span className="text-[#475569]">{ind.challenge}</span>
                     </div>
                     <div>
-                      <span className="text-[#868684] font-medium">Centrifuge Solution:</span>{' '}
-                      <span className="text-[#faf9f6]">{ind.solution}</span>
+                      <span className="text-[#008DDA] font-semibold block text-xs">CENTRIFUGE SOLUTION:</span>
+                      <span className="text-[#1A1A1A] font-medium">{ind.solution}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#333333]/50">
+                <div className="mt-6 pt-4 border-t border-[#F1F5F9]">
                   <Link
                     to={ind.slug}
-                    className="inline-flex items-center gap-1.5 text-[13px] text-[#faf9f6] group-hover:text-[#f0b66d] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
                   >
                     <span>Industry solutions & case studies</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

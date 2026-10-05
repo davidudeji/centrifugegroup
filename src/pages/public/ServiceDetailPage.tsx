@@ -210,93 +210,102 @@ export const ServiceDetailPage: React.FC = () => {
   const service = (slug && serviceDatabase[slug]) || serviceDatabase['software-development']
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title={`${service.title} | Centrifuge Group Capabilities`}
         description={service.solution}
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-5 relative z-10">
           <Link
             to="/services"
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#64748B] hover:text-[#008DDA] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Engineering Services</span>
           </Link>
 
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#f0b66d] mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>{service.category}</span>
             </div>
-            <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-[1.05]">
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
               {service.title}
             </h1>
           </div>
 
-          <p className="text-[16px] text-[#868684] leading-relaxed max-w-3xl tracking-[-0.14px]">
+          <p className="text-[16px] text-[#475569] leading-relaxed max-w-3xl">
             {service.solution}
           </p>
 
           <div className="pt-3 flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-sm font-semibold transition-colors duration-200"
             >
               <span>Discuss Your Requirements</span>
-              <ArrowRight className="h-3.5 w-3.5 ml-2" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-transparent border border-[#333333] text-[#b4b4b2] hover:text-[#faf9f6] text-[13px] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-transparent border border-[#008DDA] text-[#008DDA] hover:bg-[#008DDA] hover:text-white text-sm font-semibold transition-all duration-200"
             >
-              <span>Explore all 6 pillars</span>
+              <span>Explore All 6 Pillars</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ─── Main Body (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Problem vs Solution (Onyx #1e1e1d cards) */}
+      {/* ─── Main Body (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Problem vs Solution */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-3 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#EF4444] block">
                 The Operational Bottleneck
               </span>
-              <p className="text-[14px] text-[#b4b4b2] leading-relaxed">
+              <h3 className="text-[18px] font-bold text-[#0F2C59]">
+                Systemic Constraint
+              </h3>
+              <p className="text-[14px] text-[#475569] leading-relaxed">
                 {service.problem}
               </p>
             </div>
 
-            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d] block">
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-3 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#10B981] block">
                 The Centrifuge Approach
               </span>
-              <p className="text-[14px] text-[#faf9f6] leading-relaxed">
+              <h3 className="text-[18px] font-bold text-[#0F2C59]">
+                Architectural Resolution
+              </h3>
+              <p className="text-[14px] text-[#475569] leading-relaxed">
                 {service.solution}
               </p>
             </div>
           </div>
 
           {/* Capabilities Grid */}
-          <div className="bg-[#1e1e1d] p-8 rounded-[20px] border border-[#1e1e1d] space-y-5">
+          <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-6 shadow-2xs">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
                 SCOPE & DELIVERABLES
               </span>
-              <h3 className="text-[22px] font-normal text-[#faf9f6] tracking-[-0.29px] mt-1">
+              <h3 className="text-[22px] font-bold text-[#0F2C59] tracking-tight mt-1">
                 Engineered Capabilities
               </h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {service.capabilities.map((cap, i) => (
-                <div key={i} className="flex items-start gap-2.5 text-[13px] text-[#b4b4b2]">
-                  <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">{cap}</span>
+                <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#1A1A1A]">
+                  <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
+                  <span className="leading-relaxed font-medium">{cap}</span>
                 </div>
               ))}
             </div>
@@ -305,10 +314,10 @@ export const ServiceDetailPage: React.FC = () => {
           {/* 4-Step Process */}
           <div className="space-y-6">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
                 METHODOLOGY
               </span>
-              <h3 className="text-[22px] font-normal text-[#faf9f6] tracking-[-0.29px] mt-1">
+              <h3 className="text-[22px] font-bold text-[#0F2C59] tracking-tight mt-1">
                 Implementation Workflow
               </h3>
             </div>
@@ -316,15 +325,15 @@ export const ServiceDetailPage: React.FC = () => {
               {service.process.map((p) => (
                 <div
                   key={p.step}
-                  className="bg-[#1e1e1d] p-6 rounded-[20px] border border-[#1e1e1d] hover:border-[#333333] transition-colors"
+                  className="bg-[#FFFFFF] p-6 rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs transition-fin"
                 >
-                  <span className="text-[11px] font-mono text-[#f0b66d] px-2 py-0.5 rounded-[50px] border border-[#333333] bg-[#121212]">
-                    {p.step}
+                  <span className="text-[11px] font-mono font-bold text-[#008DDA] px-2 py-0.5 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 inline-block">
+                    STEP {p.step}
                   </span>
-                  <h4 className="text-[15px] font-semibold text-[#faf9f6] mt-4 tracking-[-0.18px]">
+                  <h4 className="text-[16px] font-bold text-[#0F2C59] mt-4 tracking-tight">
                     {p.title}
                   </h4>
-                  <p className="text-[12.5px] text-[#868684] mt-2 leading-relaxed">
+                  <p className="text-[13px] text-[#64748B] mt-2 leading-relaxed">
                     {p.desc}
                   </p>
                 </div>
@@ -334,15 +343,15 @@ export const ServiceDetailPage: React.FC = () => {
 
           {/* Technologies & Use Cases */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-4 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA] block">
                 Technology Standards
               </span>
               <div className="flex flex-wrap gap-2">
                 {service.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 rounded-[50px] bg-[#121212] border border-[#333333] text-[12px] font-mono text-[#b4b4b2]"
+                    className="px-3 py-1 rounded-[4px] bg-[#F1F5F9] border border-[#E2E8F0] text-xs font-mono font-medium text-[#475569]"
                   >
                     {t}
                   </span>
@@ -350,15 +359,15 @@ export const ServiceDetailPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-4 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA] block">
                 Representative Deployments
               </span>
               <div className="space-y-2.5">
                 {service.useCases.map((uc, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[13px] text-[#b4b4b2]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#f0b66d] shrink-0" />
-                    <span>{uc}</span>
+                  <div key={i} className="flex items-center gap-2.5 text-[13.5px] text-[#1A1A1A]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#008DDA] shrink-0" />
+                    <span className="font-medium">{uc}</span>
                   </div>
                 ))}
               </div>
@@ -366,21 +375,21 @@ export const ServiceDetailPage: React.FC = () => {
           </div>
 
           {/* Bottom Card CTA */}
-          <div className="p-8 sm:p-10 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="p-8 sm:p-10 rounded-[8px] bg-[#F8FAFC] border border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px]">
-                Ready to scope your requirements?
+              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight">
+                Ready to Scope Your Technical Requirements?
               </h3>
-              <p className="text-[13px] text-[#868684] mt-1">
-                Consult with our senior technical architects today.
+              <p className="text-[13px] text-[#64748B] mt-1">
+                Consult with our senior system architects and receive a detailed implementation breakdown.
               </p>
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold shrink-0 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold shrink-0 transition-colors"
             >
-              <span>Talk to Centrifuge</span>
-              <ArrowRight className="h-3.5 w-3.5 ml-2" />
+              <span>Consult With Engineers</span>
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
@@ -390,3 +399,4 @@ export const ServiceDetailPage: React.FC = () => {
 }
 
 export default ServiceDetailPage
+

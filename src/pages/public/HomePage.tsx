@@ -15,8 +15,8 @@ export const HomePage: React.FC = () => {
   return (
     <div className="w-full">
       <SEO
-        title="Centrifuge Group | Technology That Moves Business Forward"
-        description="We design and deliver enterprise software, healthcare platforms, logistics systems, and digital solutions that solve complex operational problems."
+        title="Centrifuge Group | Next-Generation Digital Banking Architecture & Enterprise Technology"
+        description="High-performance modular coreless banking framework, omnichannel orchestration, and enterprise technology systems."
       />
       <HeroSection />
       <TrustSection />

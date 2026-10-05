@@ -19,15 +19,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-[12px] font-normal text-[#b4b4b2] tracking-[-0.14px]"
+            className="block text-[12px] font-medium text-[#475569] tracking-[-0.1px]"
           >
             {label}
-            {props.required && <span className="text-[#ef4444] ml-1">*</span>}
+            {props.required && <span className="text-[#EF4444] ml-1">*</span>}
           </label>
         )}
         <div className="relative flex items-center">
           {leftIcon && (
-            <div className="absolute left-3 text-[#868684] pointer-events-none flex items-center">
+            <div className="absolute left-3 text-[#64748B] pointer-events-none flex items-center">
               {leftIcon}
             </div>
           )}
@@ -36,30 +36,30 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             className={twMerge(
               clsx(
-                'w-full bg-[#121212] text-[#faf9f6] text-[14px] placeholder:text-[#666469] border rounded-[7px] transition-colors duration-150 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#f0b66d] focus:border-[#f0b66d] disabled:bg-[#1e1e1d] disabled:text-[#666469] disabled:cursor-not-allowed tracking-[-0.14px]',
+                'w-full bg-[#FFFFFF] text-[#1A1A1A] text-[14px] placeholder:text-[#94A3B8] border rounded-[4px] transition-colors duration-150 py-2 focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA] disabled:bg-[#F8FAFC] disabled:text-[#94A3B8] disabled:cursor-not-allowed',
                 leftIcon ? 'pl-9.5' : 'pl-3.5',
                 rightIcon ? 'pr-9.5' : 'pr-3.5',
                 error
-                  ? 'border-[#ef4444] focus:border-[#ef4444] focus:ring-[#ef4444]/30'
-                  : 'border-[#333333] hover:border-[#868684]',
+                  ? 'border-[#EF4444] focus:border-[#EF4444] focus:ring-[#EF4444]/20'
+                  : 'border-[#CBD5E1] hover:border-[#94A3B8]',
                 className
               )
             )}
             {...props}
           />
           {rightIcon && (
-            <div className="absolute right-3 text-[#868684] flex items-center">
+            <div className="absolute right-3 text-[#64748B] flex items-center">
               {rightIcon}
             </div>
           )}
         </div>
         {error && (
-          <p className="text-[12px] text-[#f87171] font-normal flex items-center gap-1">
+          <p className="text-[12px] text-[#EF4444] font-medium flex items-center gap-1">
             <span>•</span> {error}
           </p>
         )}
         {helperText && !error && (
-          <p className="text-[12px] text-[#666469]">{helperText}</p>
+          <p className="text-[12px] text-[#64748B]">{helperText}</p>
         )}
       </div>
     )
@@ -67,3 +67,4 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 
 Input.displayName = 'Input'
+export default Input

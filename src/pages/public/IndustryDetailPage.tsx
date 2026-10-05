@@ -131,76 +131,82 @@ export const IndustryDetailPage: React.FC = () => {
   const ind = (slug && industryDetails[slug]) || industryDetails['healthcare']
 
   return (
-    <div className="w-full text-left bg-[#000000] text-[#faf9f6]">
+    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
       <SEO
         title={`${ind.title} | Centrifuge Industry Solutions`}
         description={ind.subtitle}
       />
 
-      {/* ─── Hero Header (Warp Obsidian #000000) ─── */}
-      <section className="bg-[#000000] text-[#faf9f6] py-16 sm:py-24 border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <Link
             to="/industries"
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-[#868684] hover:text-[#f0b66d] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#64748B] hover:text-[#008DDA] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Industries</span>
           </Link>
 
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[50px] border border-[#333333] bg-transparent text-[10px] uppercase tracking-[2px] text-[#868684] mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
+              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
               <span>INDUSTRY SPECIFICATION</span>
             </div>
-            <h1 className="text-[32px] sm:text-[48px] font-normal text-[#faf9f6] tracking-[-1.5px] leading-[1.05]">
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
               {ind.title}
             </h1>
           </div>
 
-          <p className="text-[16px] text-[#868684] leading-relaxed max-w-3xl tracking-[-0.14px]">
+          <p className="text-[16px] text-[#475569] leading-relaxed max-w-3xl">
             {ind.subtitle}
           </p>
 
           <div className="pt-3 flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-sm font-semibold transition-colors duration-200"
             >
               <span>Consult Industry Experts</span>
-              <ArrowRight className="h-3.5 w-3.5 ml-2" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ─── Main Content (Warp Graphite #121212) ─── */}
-      <section className="py-20 bg-[#121212] border-b border-[#1e1e1d]">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          {/* Operational Challenge (Onyx card) */}
-          <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
+      {/* ─── Main Content (UI/UX Spec §3.3 Data Card Module) ─── */}
+      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          {/* Operational Challenge */}
+          <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-2 shadow-2xs">
+            <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#EF4444] block">
               THE OPERATIONAL CHALLENGE IN THIS SECTOR
             </span>
-            <p className="text-[14px] text-[#b4b4b2] leading-relaxed">
+            <h3 className="text-[18px] font-bold text-[#0F2C59]">
+              Sector Bottleneck
+            </h3>
+            <p className="text-[14px] text-[#475569] leading-relaxed">
               {ind.problem}
             </p>
           </div>
 
           {/* How Centrifuge Solves It */}
-          <div className="bg-[#1e1e1d] p-8 rounded-[20px] border border-[#1e1e1d] space-y-5">
+          <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-5 shadow-2xs">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684]">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
                 DEPLOYED CAPABILITIES
               </span>
-              <h3 className="text-[20px] font-semibold text-[#faf9f6] tracking-[-0.29px] mt-1">
+              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mt-1">
                 How Centrifuge Solves It
               </h3>
             </div>
             <div className="space-y-3 pt-2">
               {ind.howCentrifugeHelps.map((point, i) => (
-                <div key={i} className="flex items-start gap-3 text-[13px] text-[#b4b4b2]">
-                  <CheckCircle2 className="h-4 w-4 text-[#f0b66d] shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">{point}</span>
+                <div key={i} className="flex items-start gap-3 text-[13.5px] text-[#1A1A1A]">
+                  <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
+                  <span className="leading-relaxed font-medium">{point}</span>
                 </div>
               ))}
             </div>
@@ -208,8 +214,8 @@ export const IndustryDetailPage: React.FC = () => {
 
           {/* Solutions & Services Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-3 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA] block">
                 Relevant Centrifuge Platforms
               </span>
               <div className="space-y-2 pt-1">
@@ -217,17 +223,17 @@ export const IndustryDetailPage: React.FC = () => {
                   <Link
                     key={sol.name}
                     to={sol.url}
-                    className="flex items-center justify-between p-3 rounded-[10px] bg-[#121212] hover:bg-[#1e1e1d] border border-[#333333] text-[13px] font-medium text-[#faf9f6] group transition-colors"
+                    className="flex items-center justify-between p-3 rounded-[4px] bg-[#F8FAFC] hover:bg-[#FFFFFF] border border-[#E2E8F0] text-[13px] font-medium text-[#1A1A1A] hover:text-[#008DDA] hover:border-[#CBD5E1] group transition-colors"
                   >
                     <span>{sol.name}</span>
-                    <ArrowRight className="h-3 w-3 text-[#f0b66d] group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="h-3.5 w-3.5 text-[#008DDA] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
             </div>
 
-            <div className="bg-[#1e1e1d] p-7 rounded-[20px] border border-[#1e1e1d] space-y-3">
-              <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#868684] block">
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-3 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA] block">
                 Related Engineering Services
               </span>
               <div className="space-y-2 pt-1">
@@ -235,10 +241,10 @@ export const IndustryDetailPage: React.FC = () => {
                   <Link
                     key={svc.name}
                     to={svc.url}
-                    className="flex items-center justify-between p-3 rounded-[10px] bg-[#121212] hover:bg-[#1e1e1d] border border-[#333333] text-[13px] font-medium text-[#faf9f6] group transition-colors"
+                    className="flex items-center justify-between p-3 rounded-[4px] bg-[#F8FAFC] hover:bg-[#FFFFFF] border border-[#E2E8F0] text-[13px] font-medium text-[#1A1A1A] hover:text-[#008DDA] hover:border-[#CBD5E1] group transition-colors"
                   >
                     <span>{svc.name}</span>
-                    <ArrowRight className="h-3 w-3 text-[#f0b66d] group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="h-3.5 w-3.5 text-[#008DDA] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
@@ -247,21 +253,21 @@ export const IndustryDetailPage: React.FC = () => {
 
           {/* Case Study Callout */}
           {ind.caseStudy && (
-            <div className="p-8 rounded-[20px] bg-[#1e1e1d] border border-[#1e1e1d] flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="p-6 sm:p-8 rounded-[8px] bg-[#0F2C59] text-white border border-[#1E3A8A] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-[2px] text-[#f0b66d]">
+                <span className="text-[11px] font-mono uppercase font-bold tracking-wider text-[#008DDA]">
                   PROVEN OUTCOME
                 </span>
-                <h4 className="text-[18px] font-semibold text-[#faf9f6] mt-1 tracking-[-0.18px]">
+                <h4 className="text-[18px] font-bold text-white mt-1 tracking-tight">
                   {ind.caseStudy.title}
                 </h4>
               </div>
               <Link
                 to={ind.caseStudy.url}
-                className="inline-flex items-center justify-center h-10 px-6 rounded-[33px] bg-[#121212] text-[#080808] hover:bg-[#e3e2e0] text-[13px] font-semibold shrink-0 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold shrink-0 transition-colors"
               >
                 <span>Read Case Study</span>
-                <ArrowRight className="h-3.5 w-3.5 ml-2" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           )}
@@ -272,3 +278,4 @@ export const IndustryDetailPage: React.FC = () => {
 }
 
 export default IndustryDetailPage
+
