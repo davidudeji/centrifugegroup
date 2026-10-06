@@ -26,8 +26,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
       <section className="bg-[#F5F7FA] border-b border-[#E2E8F0] py-16 sm:py-20">
         <div className="section-container">
           <div className="max-w-3xl">
-            <div className="badge-eyebrow mb-5">{eyebrow}</div>
-            <h1 className="text-h1 text-[#0F2C59] mb-4">{title}</h1>
+              <h1 className="text-h1 text-[#0F2C59] mb-4">{title}</h1>
             {description && (
               <p className="text-body-lg text-[#64748B] leading-relaxed">{description}</p>
             )}
@@ -51,7 +50,6 @@ export const PageHero: React.FC<PageHeroProps> = ({
       />
       <div className="section-container relative z-10">
         <div className="max-w-3xl">
-          <div className="badge-eyebrow-dark mb-5">{eyebrow}</div>
           <h1 className="text-h1 text-white mb-4">{title}</h1>
           {description && (
             <p className="text-body-lg text-[#94A3B8] leading-relaxed max-w-2xl">{description}</p>

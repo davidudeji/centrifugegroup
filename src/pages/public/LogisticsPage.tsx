@@ -115,7 +115,6 @@ export const LogisticsPage: React.FC = () => {
       <section className="section-py bg-[#0F2C59] text-white">
         <div className="section-container">
           <div className="max-w-2xl mb-12">
-            <div className="badge-eyebrow-dark mb-4">Proven Outcomes</div>
             <h2 className="text-h2 text-white">What clients achieve with Centrifuge Logistics.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

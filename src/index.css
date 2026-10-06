@@ -58,6 +58,7 @@
   --border: #E2E8F0;
   --success: #10B981;
   --alert: #EF4444;
+  --site-max-width: 1200px;
 
   /* Global Transition Curve (UI/UX Spec §5.2) */
   --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -65,11 +66,16 @@
   color-scheme: light;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #F5F7FA;
   color: #1A1A1A;
   font-family: var(--font-inter);
+  overflow-x: hidden;
 }
 
 body {
@@ -80,6 +86,57 @@ body {
   padding: 0;
   font-size: 14px;
   line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-container {
+  width: min(100%, var(--site-max-width));
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2.5vw, 2rem);
+}
+
+.section-py {
+  padding-top: clamp(4rem, 7vw, 6rem);
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 28px 40px;
+  align-items: center;
+}
+
+.why-centrifuge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .architecture-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-centrifuge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    padding-inline: 1rem;
+  }
 }
 
 h1 {
@@ -307,38 +364,6 @@ textarea {
 .warp-btn-ghost:hover {
   background-color: #008DDA;
   color: #FFFFFF;
-}
-
-/* ─── Badge / Eyebrow chip ───────────────────────── */
-.badge-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 14px;
-  background-color: rgba(0, 141, 218, 0.08);
-  border: 1px solid rgba(0, 141, 218, 0.25);
-  border-radius: 9999px;
-  color: #0077B6;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* On dark backgrounds */
-.badge-eyebrow-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 141, 218, 0.4);
-  background: rgba(0, 141, 218, 0.15);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #FFFFFF;
-  padding: 3px 10px;
 }
 
 .warp-pill-tag-active {

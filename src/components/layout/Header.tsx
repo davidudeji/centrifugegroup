@@ -47,53 +47,33 @@ export const Header: React.FC = () => {
   return (
     <>
       {/* ─── Enterprise Status & News Bar (UI/UX Spec §1.1 & §3.1) ─── */}
-      <aside
-        aria-label="Institutional Announcement"
-        className="w-full h-9 bg-[#0F2C59] text-white flex items-center justify-between px-4 sm:px-8 text-[12px] font-medium tracking-normal border-b border-[#1E3A8A]"
-      >
-        <div className="flex items-center gap-2 max-w-[1440px] mx-auto w-full justify-between">
-          <div className="flex items-center gap-4 text-xs">
-            <Link
-              to="/solutions/banking-framework"
-              className="text-[#008DDA] hover:text-white transition-colors inline-flex items-center gap-1 font-semibold"
-            >
-              <span>Explore Optimax ERP </span>
-              <ArrowRight className="h-3 w-3" />
-            </Link>
-          </div>
-        </div>
-      </aside>
-
       {/* ─── Global Top Navigation Bar (UI/UX Spec §3.1: 72px Fixed Height, #FFFFFF, 1px #E2E8F0 Border) ─── */}
       <header
-        className={`sticky top-0 z-40 w-full h-[72px] bg-[#FFFFFF] border-b border-[#E2E8F0] transition-shadow duration-200 ${
-          isScrolled ? "shadow-xs" : ""
+        className={`sticky top-0 z-40 w-full h-[72px] border-b border-[#E2E8F0] bg-[#0F2C59]/80 backdrop-blur-md transition-shadow duration-200 ${
+          isScrolled ? "shadow-sm shadow-[#0F2C59]/10" : ""
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex items-center justify-between h-full">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-full gap-4">
             {/* Brand Wordmark & Enterprise Identity */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-6 lg:gap-8 min-w-0">
               <Link
                 to="/"
-                className="flex items-center gap-3 focus:outline-none shrink-0"
+                className="flex items-center gap-3 focus:outline-none shrink-0 py-2"
                 aria-label="Centrifuge Group Home"
               >
-                <span className="h-[46px] w-[52px] shrink-0 overflow-hidden">
+                <span className="h-[40px] w-auto flex items-center overflow-hidden shrink-0">
                   <img
                     src={brandAssets.logo}
                     alt=""
                     aria-hidden="true"
-                    className="max-w-none w-[200px] sm:w-[240px] h-[46px] object-contain object-left"
+                    className="max-w-none h-[40px] w-auto object-contain object-left"
                   />
-                </span>
-                <span className="font-heading text-base font-bold text-[#0F2C59]">
-                  Centrifuge Group
                 </span>
               </Link>
 
               {/* Wireframe 4.1 Global Nav: Solutions, Products, Company, Resources */}
-              <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+              <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-white/90">
                 {/* 1. Solutions Dropdown */}
                 <div
                   className="relative"
@@ -103,13 +83,13 @@ export const Header: React.FC = () => {
                   <button
                     className={`flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium rounded-[4px] transition-fin ${
                       location.pathname.startsWith("/solutions")
-                        ? "text-[#008DDA] font-semibold bg-[#008DDA]/5"
-                        : "text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]"
+                        ? "text-white font-semibold bg-white/10"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     aria-expanded={activeDropdown === "solutions"}
                   >
                     <span>Solutions</span>
-                    <ChevronDown className="h-3.5 w-3.5 text-[#64748B] transition-transform duration-150" />
+                    <ChevronDown className="h-3.5 w-3.5 text-white/70 transition-transform duration-150" />
                   </button>
 
                   {activeDropdown === "solutions" && (
@@ -224,13 +204,13 @@ export const Header: React.FC = () => {
                       ["/about", "/clients", "/case-studies", "/careers"].some(
                         (p) => location.pathname.startsWith(p),
                       )
-                        ? "text-[#008DDA] font-semibold bg-[#008DDA]/5"
-                        : "text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]"
+                        ? "text-white font-semibold bg-white/10"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     aria-expanded={activeDropdown === "company"}
                   >
                     <span>Company</span>
-                    <ChevronDown className="h-3.5 w-3.5 text-[#64748B] transition-transform duration-150" />
+                    <ChevronDown className="h-3.5 w-3.5 text-white/70 transition-transform duration-150" />
                   </button>
 
                   {activeDropdown === "company" && (
@@ -280,13 +260,13 @@ export const Header: React.FC = () => {
                       ["/insights", "/services"].some((p) =>
                         location.pathname.startsWith(p),
                       )
-                        ? "text-[#008DDA] font-semibold bg-[#008DDA]/5"
-                        : "text-[#1A1A1A] hover:text-[#008DDA] hover:bg-[#F5F7FA]"
+                        ? "text-white font-semibold bg-white/10"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     aria-expanded={activeDropdown === "resources"}
                   >
                     <span>Resources</span>
-                    <ChevronDown className="h-3.5 w-3.5 text-[#64748B] transition-transform duration-150" />
+                    <ChevronDown className="h-3.5 w-3.5 text-white/70 transition-transform duration-150" />
                   </button>
 
                   {activeDropdown === "resources" && (
@@ -320,7 +300,7 @@ export const Header: React.FC = () => {
               {/* Cart Drawer Trigger */}
               <button
                 onClick={toggleCart}
-                className="relative p-2 rounded-[4px] text-[#64748B] hover:text-[#0F2C59] hover:bg-[#F1F5F9] transition-colors"
+                className="relative p-2 rounded-[4px] text-white/80 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label={`Shopping cart with ${totalCartCount} items`}
               >
                 <ShoppingBag className="h-5 w-5" />
@@ -334,7 +314,7 @@ export const Header: React.FC = () => {
               {/* Wireframe 4.1 Primary CTA: Contact Us Button */}
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-[4px] text-[14px] font-semibold bg-[#008DDA] text-white hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-[#0F2C59] transition-colors duration-200"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-[4px] text-[14px] font-semibold bg-[#008DDA] text-white hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-white/60 transition-colors duration-200"
               >
                 <span>Contact Us</span>
               </Link>
@@ -342,7 +322,7 @@ export const Header: React.FC = () => {
               {/* Mobile Drawer Toggle */}
               <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                className="lg:hidden p-2 rounded-[4px] text-[#64748B] hover:text-[#0F2C59] hover:bg-[#F1F5F9]"
+                className="lg:hidden p-2 rounded-[4px] text-white/80 hover:text-white hover:bg-white/10"
                 aria-label="Toggle Navigation Drawer"
               >
                 {mobileNavOpen ? (
@@ -358,8 +338,8 @@ export const Header: React.FC = () => {
 
       {/* ─── Responsive Slide-out Mobile Navigation Drawer ─── */}
       {mobileNavOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#FFFFFF] text-[#1A1A1A] overflow-y-auto animate-in fade-in duration-150">
-          <div className="flex items-center justify-between p-4 border-b border-[#E2E8F0] h-[72px]">
+        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#0F2C59] text-white overflow-y-auto animate-in fade-in duration-150">
+          <div className="flex items-center justify-between p-4 border-b border-white/10 h-[72px] bg-[#0F2C59]">
             <Link
               to="/"
               onClick={() => setMobileNavOpen(false)}
@@ -373,7 +353,7 @@ export const Header: React.FC = () => {
             </Link>
             <button
               onClick={() => setMobileNavOpen(false)}
-              className="p-2 rounded-[4px] text-[#64748B] hover:text-[#1A1A1A]"
+              className="p-2 rounded-[4px] text-white/80 hover:text-white"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
@@ -382,7 +362,7 @@ export const Header: React.FC = () => {
 
           <div className="p-4 space-y-4 flex-1">
             <div className="space-y-1">
-              <div className="text-[11px] font-bold text-[#64748B] uppercase tracking-wider px-3 py-1">
+              <div className="text-[11px] font-bold text-white/60 uppercase tracking-wider px-3 py-1">
                 Platform Architecture
               </div>
               <Link
@@ -395,68 +375,68 @@ export const Header: React.FC = () => {
               <Link
                 to="/solutions/optimax"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Optimax ERP Suite
               </Link>
               <Link
                 to="/solutions/healthcare"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Healthcare Technology (HRHIS)
               </Link>
               <Link
                 to="/solutions/logistics"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Logistics & Telematics
               </Link>
             </div>
 
-            <div className="space-y-1 pt-2 border-t border-[#E2E8F0]">
-              <div className="text-[11px] font-bold text-[#64748B] uppercase tracking-wider px-3 py-1">
+            <div className="space-y-1 pt-2 border-t border-white/10">
+              <div className="text-[11px] font-bold text-white/60 uppercase tracking-wider px-3 py-1">
                 Explore
               </div>
               <Link
                 to="/shop"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Products & Store
               </Link>
               <Link
                 to="/services"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Services & Consulting
               </Link>
               <Link
                 to="/projects"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Projects & Portfolio
               </Link>
               <Link
                 to="/clients"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 Clients & Partners
               </Link>
               <Link
                 to="/about"
                 onClick={() => setMobileNavOpen(false)}
-                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA]"
+                className="block px-3 py-2 rounded-[4px] text-[14px] font-medium text-white/80 hover:bg-white/5 hover:text-white"
               >
                 About Centrifuge
               </Link>
             </div>
 
-            <div className="pt-4 border-t border-[#E2E8F0] space-y-2">
+            <div className="pt-4 border-t border-white/10 space-y-2">
               <Link
                 to="/contact"
                 onClick={() => setMobileNavOpen(false)}
@@ -467,7 +447,7 @@ export const Header: React.FC = () => {
               <Link
                 to="/admin"
                 onClick={() => setMobileNavOpen(false)}
-                className="w-full inline-flex items-center justify-center px-4 py-2 rounded-[4px] text-[13px] font-medium text-[#0F2C59] bg-[#F1F5F9] border border-[#E2E8F0]"
+                className="w-full inline-flex items-center justify-center px-4 py-2 rounded-[4px] text-[13px] font-medium text-white bg-white/10 border border-white/10"
               >
                 Admin Portal
               </Link>
