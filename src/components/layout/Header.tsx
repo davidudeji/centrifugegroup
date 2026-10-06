@@ -46,10 +46,9 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* ─── Enterprise Status & News Bar (UI/UX Spec §1.1 & §3.1) ─── */}
-      {/* ─── Global Top Navigation Bar (UI/UX Spec §3.1: 72px Fixed Height, #FFFFFF, 1px #E2E8F0 Border) ─── */}
+      {/* ─── Global Top Navigation Bar ─── */}
       <header
-        className={`sticky top-0 z-40 w-full h-[72px] border-b border-[#E2E8F0] bg-[#0F2C59]/80 backdrop-blur-md transition-shadow duration-200 ${
+        className={`fixed inset-x-0 top-0 z-40 h-[72px] w-full border-b border-white/10 bg-[#0F2C59]/90 backdrop-blur-md transition-shadow duration-200 ${
           isScrolled ? "shadow-sm shadow-[#0F2C59]/10" : ""
         }`}
       >
@@ -335,6 +334,8 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </header>
+
+      <div aria-hidden="true" className="h-[72px] shrink-0" />
 
       {/* ─── Responsive Slide-out Mobile Navigation Drawer ─── */}
       {mobileNavOpen && (
