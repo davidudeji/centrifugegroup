@@ -1,70 +1,350 @@
-You are a senior UI/UX engineer and content implementation specialist.
+You are a senior UI/UX designer specializing in premium B2B enterprise technology websites.
 
-Go through the **entire website**, including every section, card, heading, description, button, navigation item, and internal link that currently contains or references **Banking Architecture** content.
+Redesign ONLY the HERO SECTION and NAVBAR of the current Centrifuge Group website shown in the provided reference screenshot.
 
-### Replace Banking Architecture Content
+GOAL
+Transform the current hero from a generic, oversized banner into a premium, modern enterprise technology hero that communicates trust, technical capability, and business value immediately.
 
-Completely replace the Banking Architecture content with content based on Centrifuge Group’s official **Project Development & Management** page:
+The design direction should be:
 
-[Centrifuge Group — Project Development & Management](https://www.centrifugegroup.com/project-development-and-management/?utm_source=chatgpt.com)
+“Trusted Enterprise Technology”
 
-Use the official page as the primary content reference. The replacement content should accurately represent Centrifuge Group's Project Development & Management services, including:
+Think:
+- Stripe-level spacing and clarity
+- Linear-level precision and subtle micro-interactions
+- Institutional enterprise credibility
+- Modern software/technology aesthetics
+- Clean, restrained, premium visual hierarchy
 
-* Project Development & Management
-* Project planning and organization
-* Project implementation and execution
-* Project monitoring and controlling
-* Project completion and closing
-* Project management training
-* Project management skills, knowledge, and tools
-* Managing projects within budget and timelines
-* Helping organizations overcome project complexity and execution challenges
-* Professional project management training and advisory services
+Do NOT make it look like a generic SaaS startup, AI landing page, or template.
 
-### Important
+==================================================
+1. NAVBAR
+==================================================
 
-1. **Remove all Banking Architecture references**
+Redesign the navbar so it feels integrated into the hero instead of being a separate solid block.
 
-   * Do not leave behind banking-related headings, descriptions, labels, buttons, metadata, or links.
-   * Search the entire project/codebase for terms such as:
+Structure:
 
-     * Banking Architecture
-     * Banking
-     * Bank
-     * Banking solutions
-     * Banking infrastructure
-     * Banking technology
-   * Replace relevant references rather than simply hiding them.
+LEFT:
+- Preserve the ORIGINAL CENTRIFUGE LOGO exactly.
+- Do not recreate, modify, distort, recolor, or replace the logo.
+- Give the logo comfortable left/right padding.
 
-2. **Update links**
+CENTER:
+- Solutions ▾
+- Company ▾
+- Resources ▾
 
-   * Any link or CTA that previously pointed to a Banking Architecture page should now point to the appropriate **Project Development & Management** destination.
-   * Ensure there are no broken links.
-   * Update link labels so they accurately describe the new content.
+Keep navigation clean and evenly spaced.
 
-3. **Preserve the existing design**
+RIGHT:
+- Shop
+- Contact Us
 
-   * Do not redesign the page.
-   * Keep the existing layout, spacing, typography, animations, cards, colors, and visual hierarchy unless a small adjustment is required to accommodate the new content.
-   * Maintain the existing Centrifuge Group branding and original logo.
+Make “Contact Us” the primary CTA using the existing Centrifuge cyan/blue accent.
 
-4. **Adapt the content naturally**
+NAVBAR STYLE:
+- Transparent/semi-transparent navy background.
+- Subtle glass effect.
+- backdrop blur.
+- Very subtle bottom border.
+- Integrate it visually into the hero.
+- Do not create a visually heavy rectangular navbar.
+- Use a maximum-width content container around 1280–1320px.
+- Vertically center all navigation items.
+- Height approximately 72–80px.
+- Maintain generous horizontal spacing.
 
-   * Do not perform a simple word-for-word replacement.
-   * Rewrite the content where necessary so it reads naturally within the existing UI.
-   * Make headings concise and suitable for website sections/cards.
-   * Keep descriptions professional, clear, and aligned with Centrifuge Group's enterprise positioning.
+On scroll:
+- Navbar should become slightly more opaque.
+- Maintain the same branding and visual hierarchy.
+- Add a subtle transition; do not use exaggerated animations.
 
-5. **Check the entire user journey**
+==================================================
+2. HERO STRUCTURE
+==================================================
 
-   * Verify navigation links.
-   * Verify buttons and CTAs.
-   * Verify cards and service sections.
-   * Verify mobile layouts.
-   * Verify that no Banking Architecture content remains anywhere in the website.
+Replace the current centered hero layout with a modern two-column enterprise hero.
 
-### Final Requirement
+Desktop:
 
-The finished website should make **Project Development & Management** feel like an intentional part of Centrifuge Group's service offering—not like content that was simply swapped into an existing Banking Architecture template.
+LEFT:
+- Eyebrow
+- Large headline
+- Supporting paragraph
+- Two CTAs
 
-Use the official Centrifuge Group page as the source of truth for the service information.
+RIGHT:
+- Premium technology visualization
+
+Use approximately a 55/45 or 50/50 split.
+
+Do NOT center all hero content.
+
+The hero should feel balanced, intentional, and visually rich without becoming cluttered.
+
+==================================================
+3. HERO COPY
+==================================================
+
+Use:
+
+EYEBROW:
+DIGITAL SOLUTIONS FOR COMPLEX BUSINESS
+
+HEADLINE:
+Technology that moves your business forward.
+
+SUPPORTING TEXT:
+We design and develop enterprise software, e-health solutions, and cloud platforms that help organizations operate smarter, scale faster, and create lasting impact.
+
+PRIMARY CTA:
+Explore Solutions →
+
+SECONDARY CTA:
+Talk to Us
+
+Keep the copy concise and highly readable.
+
+The headline should be the dominant visual element.
+
+Use a large desktop heading around 56–72px with strong typography and a controlled maximum width.
+
+==================================================
+4. HERO VISUAL
+==================================================
+
+Create a sophisticated abstract technology visualization on the right side.
+
+DO NOT use generic stock photography.
+
+DO NOT use a random laptop mockup.
+
+DO NOT use a generic AI brain graphic.
+
+Instead create a premium digital ecosystem visualization representing:
+
+- Enterprise Software
+- Cloud
+- Data
+- Integrations
+- Business systems
+
+Possible visual language:
+- Connected nodes
+- Fine network lines
+- Geometric structures
+- Subtle data flows
+- Abstract dashboard layers
+- Soft cyan/blue glows
+- Fine grid architecture
+- Floating interface fragments
+
+The visualization should feel like Centrifuge is connecting complex business systems.
+
+Keep it sophisticated and restrained.
+
+Avoid excessive neon effects.
+
+==================================================
+5. BACKGROUND
+==================================================
+
+Preserve the existing dark navy Centrifuge identity.
+
+Use a deep enterprise navy such as:
+
+#0B2A52
+or a visually similar existing brand navy.
+
+Use cyan/blue as the primary accent.
+
+Background should include:
+- Very subtle dotted grid
+- Extremely subtle radial glow
+- Fine architectural/grid lines
+- Controlled depth
+
+The existing dotted pattern should NOT dominate the page.
+
+It should support the content rather than compete with it.
+
+Do not introduce unrelated colors.
+
+==================================================
+6. HERO HEIGHT & SPACING
+==================================================
+
+Create a strong first viewport.
+
+Navbar:
+72–80px.
+
+Hero:
+Approximately 620–700px on desktop.
+
+Do NOT create large empty areas.
+
+Vertically center the hero content.
+
+Use generous but intentional spacing between:
+- Eyebrow
+- Headline
+- Description
+- CTAs
+
+Maintain strong whitespace while ensuring the hero feels populated.
+
+==================================================
+7. TRUST ELEMENT
+==================================================
+
+At the bottom of the hero, introduce a subtle credibility indicator without making it visually dominant.
+
+Example:
+
+TRUSTED TECHNOLOGY PARTNER
+
+Enterprise Software  •  e-Health  •  Cloud SaaS
+
+Optionally include:
+
+Since 2007
+
+This should act as a transition into the next section.
+
+==================================================
+8. HERO → NEXT SECTION TRANSITION
+==================================================
+
+Do not use a harsh visual break between the navy hero and the white section.
+
+Create a refined transition.
+
+The next section can begin with:
+
+Digitize your business today
+
+but improve the spacing and relationship between the hero and this section.
+
+Consider a subtle overlapping card or credibility strip if it improves the composition.
+
+Do not over-design the transition.
+
+==================================================
+9. RESPONSIVE DESIGN
+==================================================
+
+The design MUST be fully responsive.
+
+Desktop:
+- Two-column hero
+- Full navigation
+- Technology visualization visible
+
+Tablet:
+- Reduce typography and spacing
+- Maintain two-column layout where practical
+- Scale the visualization appropriately
+
+Mobile:
+- Compact navbar
+- Preserve the original logo
+- Replace desktop navigation with a clean hamburger menu
+- Hero becomes single-column
+- Headline approximately 40–48px
+- Technology visualization moves below the CTA
+- Maintain comfortable horizontal padding
+- Buttons should be easy to tap
+- No horizontal overflow
+- No cropped content
+- No excessive vertical spacing
+
+Ensure the mobile version feels intentionally designed rather than simply being a collapsed desktop layout.
+
+==================================================
+10. BRAND CONSISTENCY
+==================================================
+
+Preserve the existing Centrifuge visual identity.
+
+Use:
+- Existing logo
+- Existing navy
+- Existing cyan/blue accent
+- Clean enterprise typography
+- Consistent button styling
+- Consistent border radius
+- Consistent spacing system
+
+Do not introduce:
+- Purple gradients
+- Random neon colors
+- Glassmorphism everywhere
+- Cartoon illustrations
+- Generic startup imagery
+- Excessive rounded cards
+- Excessive shadows
+- Overly futuristic cyberpunk aesthetics
+
+==================================================
+11. INTERACTIONS
+==================================================
+
+Add subtle premium interactions:
+
+- Navbar transitions smoothly on scroll.
+- Navigation dropdowns have refined hover states.
+- CTA buttons have subtle hover/press states.
+- Technology visualization can have very subtle movement.
+- Network nodes can gently animate.
+- Background glow can have extremely subtle movement.
+
+Animations must be:
+- Fast
+- Smooth
+- Professional
+- Minimal
+
+Do not use distracting animations.
+
+==================================================
+12. IMPORTANT IMPLEMENTATION RULES
+==================================================
+
+Do not redesign unrelated sections of the website.
+
+Do not remove existing functionality or links.
+
+Do not change the original logo.
+
+Do not invent new brand colors.
+
+Do not sacrifice accessibility for visual effects.
+
+Ensure:
+- Strong contrast
+- Readable typography
+- Keyboard-friendly navigation
+- Accessible buttons
+- Responsive behavior
+- Consistent spacing
+- Proper visual hierarchy
+
+The final result should feel like a serious enterprise technology company with 15+ years of experience—not a generic web-development agency.
+
+The first viewport should communicate within 5 seconds:
+
+1. Who Centrifuge is.
+2. What Centrifuge does.
+3. Why the company is credible.
+4. What the visitor should do next.
+
+PRIORITY:
+Clarity > visual effects
+Enterprise credibility > trendiness
+Brand consistency > decoration
+Conversion > empty space
+
+Use the provided screenshot as the structural starting point, but significantly improve the composition, hierarchy, spacing, navigation, hero messaging, and visual storytelling.
