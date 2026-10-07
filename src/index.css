@@ -120,6 +120,122 @@ img {
   mask-image: radial-gradient(circle at center, black 25%, transparent 85%);
 }
 
+.architecture-visual {
+  position: relative;
+  width: min(100%, 540px);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(10, 20, 35, 0.82), rgba(8, 17, 29, 0.92));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05), 0 24px 60px rgba(5, 11, 21, 0.36);
+  overflow: hidden;
+}
+
+.architecture-visual__glow {
+  position: absolute;
+  inset: 12% 18% 18% 14%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 201, 255, 0.22), rgba(74, 201, 255, 0.06) 35%, transparent 72%);
+  filter: blur(26px);
+}
+
+.architecture-visual__board {
+  position: relative;
+  width: calc(100% - 54px);
+  height: calc(100% - 54px);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 24px;
+  background: rgba(4, 14, 25, 0.28);
+  z-index: 1;
+}
+
+.architecture-visual__header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.architecture-visual__dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.architecture-visual__dot--blue { background: #60d4ff; }
+.architecture-visual__dot--cyan { background: #98ecff; }
+.architecture-visual__dot--slate { background: rgba(148, 163, 184, 0.8); }
+
+.architecture-visual__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  height: calc(100% - 46px);
+  padding: 20px 18px 26px;
+}
+
+.architecture-visual__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.architecture-visual__stack span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 9px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.74);
+  color: rgba(226, 232, 240, 0.88);
+  font-size: 12px;
+  font-weight: 600;
+} 
+
+.architecture-visual__core {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+
+.architecture-node {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(148, 163, 184, 0.8);
+  background: linear-gradient(180deg, #dff8ff, #4cc3ff);
+  box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.1), 0 0 20px rgba(96, 165, 250, 0.36);
+}
+
+.architecture-node--1 { left: 10%; top: 32%; }
+.architecture-node--2 { left: 34%; top: 12%; }
+.architecture-node--3 { right: 12%; top: 20%; }
+.architecture-node--4 { left: 42%; bottom: 8%; }
+
+.architecture-line {
+  position: absolute;
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(146, 215, 255, 0.82), rgba(146, 215, 255, 0.16));
+  box-shadow: 0 0 10px rgba(103, 198, 255, 0.2);
+}
+
+.architecture-line--1 { left: 18%; top: 40%; width: 28%; transform: rotate(24deg); }
+.architecture-line--2 { left: 39%; top: 30%; width: 30%; transform: rotate(-10deg); }
+.architecture-line--3 { left: 30%; bottom: 29%; width: 38%; transform: rotate(38deg); }
+
 .enterprise-visual {
   position: relative;
   width: min(100%, 520px);

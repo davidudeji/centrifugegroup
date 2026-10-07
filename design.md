@@ -1,350 +1,143 @@
-You are a senior UI/UX designer specializing in premium B2B enterprise technology websites.
+Redesign the provided Software Development and Optimax sections of the Centrifuge Group website.
 
-Redesign ONLY the HERO SECTION and NAVBAR of the current Centrifuge Group website shown in the provided reference screenshot.
+The current design has excessive vertical whitespace, weak visual hierarchy, generic corporate copy, and insufficient visual evidence of Centrifuge's technical capabilities.
 
-GOAL
-Transform the current hero from a generic, oversized banner into a premium, modern enterprise technology hero that communicates trust, technical capability, and business value immediately.
-
-The design direction should be:
+Create a premium enterprise technology experience based on the design direction:
 
 “Trusted Enterprise Technology”
 
-Think:
-- Stripe-level spacing and clarity
-- Linear-level precision and subtle micro-interactions
-- Institutional enterprise credibility
-- Modern software/technology aesthetics
-- Clean, restrained, premium visual hierarchy
+SECTION 1 — SOFTWARE DEVELOPMENT
 
-Do NOT make it look like a generic SaaS startup, AI landing page, or template.
-
-==================================================
-1. NAVBAR
-==================================================
-
-Redesign the navbar so it feels integrated into the hero instead of being a separate solid block.
-
-Structure:
+Replace the current oversized empty layout with a balanced two-column composition.
 
 LEFT:
-- Preserve the ORIGINAL CENTRIFUGE LOGO exactly.
-- Do not recreate, modify, distort, recolor, or replace the logo.
-- Give the logo comfortable left/right padding.
+Eyebrow:
+SOFTWARE DEVELOPMENT
 
-CENTER:
-- Solutions ▾
-- Company ▾
-- Resources ▾
+Headline:
+ENGINEERING DIGITAL SOLUTIONS THAT SCALE
 
-Keep navigation clean and evenly spaced.
+Supporting headline:
+From complex challenges to connected digital solutions.
 
-RIGHT:
-- Shop
-- Contact Us
+Body:
+We design and develop tailored software solutions that help organizations simplify operations, connect systems, and create better experiences. From enterprise applications to integrations and cloud platforms, we turn complex requirements into technology built for growth.
 
-Make “Contact Us” the primary CTA using the existing Centrifuge cyan/blue accent.
-
-NAVBAR STYLE:
-- Transparent/semi-transparent navy background.
-- Subtle glass effect.
-- backdrop blur.
-- Very subtle bottom border.
-- Integrate it visually into the hero.
-- Do not create a visually heavy rectangular navbar.
-- Use a maximum-width content container around 1280–1320px.
-- Vertically center all navigation items.
-- Height approximately 72–80px.
-- Maintain generous horizontal spacing.
-
-On scroll:
-- Navbar should become slightly more opaque.
-- Maintain the same branding and visual hierarchy.
-- Add a subtle transition; do not use exaggerated animations.
-
-==================================================
-2. HERO STRUCTURE
-==================================================
-
-Replace the current centered hero layout with a modern two-column enterprise hero.
-
-Desktop:
-
-LEFT:
-- Eyebrow
-- Large headline
-- Supporting paragraph
-- Two CTAs
+Primary CTA:
+Explore Our Capabilities →
 
 RIGHT:
-- Premium technology visualization
-
-Use approximately a 55/45 or 50/50 split.
-
-Do NOT center all hero content.
-
-The hero should feel balanced, intentional, and visually rich without becoming cluttered.
-
-==================================================
-3. HERO COPY
-==================================================
-
-Use:
-
-EYEBROW:
-DIGITAL SOLUTIONS FOR COMPLEX BUSINESS
-
-HEADLINE:
-Technology that moves your business forward.
-
-SUPPORTING TEXT:
-We design and develop enterprise software, e-health solutions, and cloud platforms that help organizations operate smarter, scale faster, and create lasting impact.
-
-PRIMARY CTA:
-Explore Solutions →
-
-SECONDARY CTA:
-Talk to Us
-
-Keep the copy concise and highly readable.
-
-The headline should be the dominant visual element.
-
-Use a large desktop heading around 56–72px with strong typography and a controlled maximum width.
-
-==================================================
-4. HERO VISUAL
-==================================================
-
-Create a sophisticated abstract technology visualization on the right side.
-
-DO NOT use generic stock photography.
-
-DO NOT use a random laptop mockup.
-
-DO NOT use a generic AI brain graphic.
-
-Instead create a premium digital ecosystem visualization representing:
-
-- Enterprise Software
+Create a sophisticated abstract technology architecture visualization representing:
+- Enterprise software
 - Cloud
 - Data
-- Integrations
-- Business systems
+- APIs
+- System integrations
+- Business operations
 
-Possible visual language:
-- Connected nodes
-- Fine network lines
-- Geometric structures
-- Subtle data flows
-- Abstract dashboard layers
-- Soft cyan/blue glows
-- Fine grid architecture
-- Floating interface fragments
+Use subtle network nodes, connecting lines, architectural grids, and restrained cyan/blue glow.
 
-The visualization should feel like Centrifuge is connecting complex business systems.
+Do NOT use stock photography.
+Do NOT use generic AI imagery.
+Do NOT use excessive neon effects.
 
-Keep it sophisticated and restrained.
+Below the main content, add three compact capability cards:
 
-Avoid excessive neon effects.
+1. Enterprise Software
+Scalable digital platforms built around business operations.
 
-==================================================
-5. BACKGROUND
-==================================================
+2. Cloud & SaaS
+Secure and scalable cloud solutions for modern organizations.
 
-Preserve the existing dark navy Centrifuge identity.
+3. System Integration
+Connect business systems and workflows seamlessly.
 
-Use a deep enterprise navy such as:
+Cards should be elegant, compact, and enterprise-focused.
 
-#0B2A52
-or a visually similar existing brand navy.
+SECTION 2 — OPTIMAX
 
-Use cyan/blue as the primary accent.
+Transform the existing Optimax section into a product showcase rather than a text-only section.
 
-Background should include:
-- Very subtle dotted grid
-- Extremely subtle radial glow
-- Fine architectural/grid lines
-- Controlled depth
+Eyebrow:
+OPTIMAX SUITE ENTERPRISE PLATFORM
 
-The existing dotted pattern should NOT dominate the page.
+Headline:
+Everything your business needs. Finally in one place.
 
-It should support the content rather than compete with it.
+Supporting text:
+Optimax brings commerce, finance, HR, inventory, analytics, and business operations into one connected, enterprise-grade platform.
 
-Do not introduce unrelated colors.
+Feature categories:
+Commerce & POS
+Financial Ledgers
+HR & Payroll
+Inventory Management
+Analytics & Reporting
+CRM
 
-==================================================
-6. HERO HEIGHT & SPACING
-==================================================
+Keep these as compact navigation/filter chips, but make them visually secondary.
 
-Create a strong first viewport.
+CTAs:
+Explore Optimax Platform →
+Request Private Walkthrough
 
-Navbar:
-72–80px.
+Most importantly, introduce a large realistic Optimax dashboard/product interface visual beneath or beside the content.
 
-Hero:
-Approximately 620–700px on desktop.
+The product UI should look like an actual enterprise business platform with:
+- Revenue metrics
+- Sales
+- Inventory
+- Finance
+- Charts
+- Operational activity
+- Clean tables/cards
 
-Do NOT create large empty areas.
+Use the actual Optimax interface if an existing screenshot or UI asset is available. Do not invent a completely unrelated visual style.
 
-Vertically center the hero content.
-
-Use generous but intentional spacing between:
-- Eyebrow
-- Headline
-- Description
-- CTAs
-
-Maintain strong whitespace while ensuring the hero feels populated.
-
-==================================================
-7. TRUST ELEMENT
-==================================================
-
-At the bottom of the hero, introduce a subtle credibility indicator without making it visually dominant.
-
-Example:
-
-TRUSTED TECHNOLOGY PARTNER
-
-Enterprise Software  •  e-Health  •  Cloud SaaS
-
-Optionally include:
-
-Since 2007
-
-This should act as a transition into the next section.
-
-==================================================
-8. HERO → NEXT SECTION TRANSITION
-==================================================
-
-Do not use a harsh visual break between the navy hero and the white section.
-
-Create a refined transition.
-
-The next section can begin with:
-
-Digitize your business today
-
-but improve the spacing and relationship between the hero and this section.
-
-Consider a subtle overlapping card or credibility strip if it improves the composition.
-
-Do not over-design the transition.
-
-==================================================
-9. RESPONSIVE DESIGN
-==================================================
-
-The design MUST be fully responsive.
+LAYOUT
 
 Desktop:
-- Two-column hero
-- Full navigation
-- Technology visualization visible
-
-Tablet:
-- Reduce typography and spacing
-- Maintain two-column layout where practical
-- Scale the visualization appropriately
+- Max-width approximately 1280px
+- Strong 50/50 or 55/45 compositions
+- Reduce unnecessary vertical whitespace
+- Use intentional whitespace only
+- Maintain clear visual hierarchy
 
 Mobile:
-- Compact navbar
-- Preserve the original logo
-- Replace desktop navigation with a clean hamburger menu
-- Hero becomes single-column
-- Headline approximately 40–48px
-- Technology visualization moves below the CTA
-- Maintain comfortable horizontal padding
-- Buttons should be easy to tap
-- No horizontal overflow
-- No cropped content
-- No excessive vertical spacing
+- Single-column layout
+- Text first
+- Visual second
+- Cards stack vertically
+- Optimax dashboard scales without horizontal overflow
+- Buttons become full-width or appropriately stacked
 
-Ensure the mobile version feels intentionally designed rather than simply being a collapsed desktop layout.
+VISUAL SYSTEM
 
-==================================================
-10. BRAND CONSISTENCY
-==================================================
+Maintain Centrifuge's existing:
+- Navy
+- Cyan/blue accent
+- White
+- Light gray backgrounds
 
-Preserve the existing Centrifuge visual identity.
+Use subtle borders, restrained shadows, precise spacing, and enterprise typography.
 
-Use:
-- Existing logo
-- Existing navy
-- Existing cyan/blue accent
-- Clean enterprise typography
-- Consistent button styling
-- Consistent border radius
-- Consistent spacing system
+Do not introduce purple gradients, excessive glassmorphism, cartoon illustrations, or generic SaaS visuals.
 
-Do not introduce:
-- Purple gradients
-- Random neon colors
-- Glassmorphism everywhere
-- Cartoon illustrations
-- Generic startup imagery
-- Excessive rounded cards
-- Excessive shadows
-- Overly futuristic cyberpunk aesthetics
-
-==================================================
-11. INTERACTIONS
-==================================================
-
-Add subtle premium interactions:
-
-- Navbar transitions smoothly on scroll.
-- Navigation dropdowns have refined hover states.
-- CTA buttons have subtle hover/press states.
-- Technology visualization can have very subtle movement.
-- Network nodes can gently animate.
-- Background glow can have extremely subtle movement.
-
-Animations must be:
-- Fast
-- Smooth
-- Professional
-- Minimal
-
-Do not use distracting animations.
-
-==================================================
-12. IMPORTANT IMPLEMENTATION RULES
-==================================================
-
-Do not redesign unrelated sections of the website.
-
-Do not remove existing functionality or links.
-
-Do not change the original logo.
-
-Do not invent new brand colors.
-
-Do not sacrifice accessibility for visual effects.
-
-Ensure:
-- Strong contrast
-- Readable typography
-- Keyboard-friendly navigation
-- Accessible buttons
-- Responsive behavior
-- Consistent spacing
-- Proper visual hierarchy
-
-The final result should feel like a serious enterprise technology company with 15+ years of experience—not a generic web-development agency.
-
-The first viewport should communicate within 5 seconds:
-
-1. Who Centrifuge is.
-2. What Centrifuge does.
-3. Why the company is credible.
-4. What the visitor should do next.
+The overall result should feel like a mature technology company that builds real enterprise systems.
 
 PRIORITY:
-Clarity > visual effects
-Enterprise credibility > trendiness
-Brand consistency > decoration
-Conversion > empty space
+1. Visual hierarchy
+2. Technical credibility
+3. Product evidence
+4. Conversion
+5. Whitespace
+6. Animation
 
-Use the provided screenshot as the structural starting point, but significantly improve the composition, hierarchy, spacing, navigation, hero messaging, and visual storytelling.
+Avoid generic marketing language such as:
+“We are the best”
+“cutting-edge technology”
+“success knows no bounds”
+
+Use specific, credible language instead.
+
+Add subtle hover and scroll animations, but keep them professional and restrained.

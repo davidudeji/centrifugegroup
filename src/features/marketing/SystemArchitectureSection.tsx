@@ -1,94 +1,77 @@
-import React, { useEffect, useRef } from 'react'
-import { ArrowDown } from 'lucide-react'
+import React from 'react'
 
 const LAYERS = [
-  { id: 'users',   label: 'Users & Organizations', sublabel: 'Web · Mobile · API clients',          color: '#008DDA' },
-  { id: 'apps',    label: 'Applications',           sublabel: 'Optimax ERP · Health Systems · Logistics', color: '#008DDA' },
-  { id: 'api',     label: 'API Gateway',            sublabel: 'REST · GraphQL · WebSocket',          color: '#008DDA' },
-  { id: 'cloud',   label: 'Cloud Infrastructure',   sublabel: 'Compute · Storage · Networking',      color: '#008DDA' },
-  { id: 'data',    label: 'Data Layer',             sublabel: 'Databases · Data Warehouses · Streams', color: '#008DDA' },
-  { id: 'bi',      label: 'Analytics & Insights',   sublabel: 'BI Dashboards · GIS · Reporting',     color: '#008DDA' },
+  { id: 'users', label: 'Users & Organizations', sublabel: 'Web · Mobile · API clients' },
+  { id: 'apps', label: 'Applications', sublabel: 'Optimax ERP · Health Systems · Logistics' },
+  { id: 'api', label: 'API Gateway', sublabel: 'REST · GraphQL · WebSocket' },
+  { id: 'cloud', label: 'Cloud Infrastructure', sublabel: 'Compute · Storage · Networking' },
+  { id: 'data', label: 'Data Layer', sublabel: 'Databases · Warehouses · Streams' },
+  { id: 'bi', label: 'Analytics & Insights', sublabel: 'BI dashboards · GIS · reporting' },
 ]
 
 export const SystemArchitectureSection: React.FC = () => {
   return (
-    <section style={{ backgroundColor: '#0F2C59', borderBottom: '1px solid rgba(255,255,255,0.06)' }} className="section-py">
-      <div className="section-container">
-        <div style={{ marginBottom: '48px', maxWidth: '720px' }}>
-          <h2 style={{
-            fontFamily: 'Inter, Segoe UI, sans-serif', fontSize: 'clamp(32px, 4vw, 48px)',
-            fontWeight: 700, color: '#fff', lineHeight: 1.08,
-            letterSpacing: '-0.025em', margin: 0
-          }}>
+    <section className="relative overflow-hidden border-b border-white/10 bg-[#0B2A52] py-20 text-white lg:py-24">
+      <div className="absolute inset-0 opacity-30" aria-hidden="true">
+        <div className="hero-grid-overlay" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 max-w-[680px]">
+          <div className="mb-4 inline-flex items-center rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/85">
+            Connected enterprise architecture
+          </div>
+          <h2 className="text-[34px] font-semibold leading-[1.04] tracking-[-0.05em] text-white sm:text-[44px] lg:text-[56px]">
             Built to connect the systems behind the business.
           </h2>
         </div>
 
-        <div className="architecture-grid">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0', width: '100%' }}>
-            {LAYERS.map((layer, i) => (
-              <React.Fragment key={layer.id}>
-                <div style={{
-                  display: 'flex', alignItems: 'center', gap: '16px',
-                  padding: '18px 20px',
-                  backgroundColor: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '8px',
-                  transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                  width: '100%'
-                }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.backgroundColor = 'rgba(255,255,255,0.08)' }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.backgroundColor = 'rgba(255,255,255,0.04)' }}
-                >
-                  <div style={{
-                    width: 10, height: 10, borderRadius: '50%', flexShrink: 0,
-                    backgroundColor: layer.color,
-                    boxShadow: `0 0 8px ${layer.color}66`
-                  }} />
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#fff', fontFamily: 'Inter, Segoe UI, sans-serif', margin: 0, lineHeight: 1.3 }}>
-                      {layer.label}
-                    </p>
-                    <p style={{ fontSize: '12px', color: 'rgba(148,163,184,0.7)', margin: '2px 0 0' }}>
-                      {layer.sublabel}
-                    </p>
+        <div className="grid items-center gap-10 lg:grid-cols-[0.98fr_1.02fr]">
+          <div className="space-y-4">
+            {LAYERS.map((layer, index) => (
+              <div key={layer.id} className="group">
+                <div className="flex items-center gap-4 rounded-[16px] border border-white/10 bg-white/4 p-4 shadow-[inset_0_0_0_1px_rgba(148,163,184,0.06)] transition-all duration-200 hover:bg-white/7">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-300/20 bg-sky-400/10 text-[11px] font-semibold text-sky-100">
+                    {index + 1}
                   </div>
-                  <div style={{
-                    fontSize: '11px', fontFamily: 'monospace',
-                    color: 'rgba(255,255,255,0.2)',
-                    padding: '3px 8px', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px'
-                  }}>
-                    L{i + 1}
+
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[15px] font-semibold text-white">{layer.label}</p>
+                    <p className="mt-1 text-[12px] text-slate-300/80">{layer.sublabel}</p>
                   </div>
+
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#4cc3ff] shadow-[0_0_14px_rgba(76,195,255,0.8)]" />
                 </div>
-                {i < LAYERS.length - 1 && (
-                  <div style={{ display: 'flex', justifyContent: 'center', padding: '5px 0' }}>
-                    <ArrowDown style={{ width: 14, height: 14, color: 'rgba(255,255,255,0.15)' }} />
-                  </div>
-                )}
-              </React.Fragment>
+              </div>
             ))}
           </div>
 
-          <div style={{ color: '#fff' }}>
-            <h3 style={{ fontFamily: 'Inter, Segoe UI, sans-serif', fontSize: '25px', fontWeight: 700, color: '#fff', lineHeight: 1.2, marginBottom: '18px' }}>
-              Full-stack enterprise architecture, designed for operational environments.
-            </h3>
-            <p style={{ fontSize: '16px', color: 'rgba(148,163,184,0.85)', lineHeight: 1.7, marginBottom: '28px' }}>
-              Every Centrifuge system is built on a layered architecture designed for the realities of enterprise environments — high availability, secure integrations, offline capability, and compliance requirements.
+          <div className="rounded-[28px] border border-white/10 bg-[#0D1F39]/85 p-6 shadow-[0_30px_80px_rgba(2,7,18,0.32)] backdrop-blur-sm sm:p-8">
+            <div className="mb-6 flex items-center justify-between">
+              <div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/80">Platform Architecture</div>
+                <h3 className="mt-2 text-[28px] font-semibold tracking-[-0.04em] text-white">Operationally reliable by design.</h3>
+              </div>
+              <div className="rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-100">
+                Live systems
+              </div>
+            </div>
+
+            <p className="text-[15px] leading-7 text-slate-300/85">
+              Every Centrifuge system is built on a layered architecture designed for real enterprise conditions: secure integrations, resilient data flows, high availability, and long-term operational continuity.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div className="mt-7 space-y-4">
               {[
-                { label: 'Offline-capable mobile and field applications',      color: '#008DDA' },
-                { label: 'Secure API integrations with third-party systems',   color: '#008DDA' },
-                { label: 'Real-time data pipelines and event streaming',       color: '#008DDA' },
-                { label: 'Multi-region cloud deployments with SLA guarantees', color: '#008DDA' },
-                { label: 'HIPAA-aligned healthcare data handling',             color: '#008DDA' },
-              ].map(({ label, color }) => (
-                <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', backgroundColor: color, flexShrink: 0 }} />
-                  <span style={{ fontSize: '14px', color: 'rgba(203,213,225,0.9)', lineHeight: 1.5 }}>{label}</span>
+                'Offline-capable mobile and field applications',
+                'Secure API integrations with third-party systems',
+                'Real-time data pipelines and event streaming',
+                'Multi-region cloud deployments with SLA guarantees',
+                'HIPAA-aligned healthcare data handling',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-[12px] border border-white/8 bg-white/2 p-3">
+                  <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-[#60d4ff] shadow-[0_0_14px_rgba(96,212,255,0.9)]" />
+                  <span className="text-[14px] leading-6 text-slate-200/90">{item}</span>
                 </div>
               ))}
             </div>
