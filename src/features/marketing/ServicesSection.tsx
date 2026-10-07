@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import {
   Code2,
@@ -105,7 +105,7 @@ export const ServicesSection: React.FC = () => {
           label: 'Optimax ERP Core Suite',
           href: '/solutions/optimax',
         },
-        { label: 'Banking Framework Studio', href: '/solutions/banking-framework' },
+        { label: 'Project Development & Management Studio', href: '/solutions/project-development-management' },
         {
           label: 'Custom Institutional Digital Portals',
           href: '/services/software-development',
@@ -153,7 +153,7 @@ export const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* ─── 6 Pillars Grid (UI/UX Spec §3.3 Data Card Module: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) ─── */}
+        {/* â”€â”€â”€ 6 Pillars Grid (UI/UX Spec Â§3.3 Data Card Module: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) â”€â”€â”€ */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {pillars.map((pillar) => {
             const Icon = pillar.icon
@@ -190,7 +190,7 @@ export const ServicesSection: React.FC = () => {
                         className="group/link flex items-start gap-2 text-[13px] text-[#64748B] hover:text-[#008DDA] transition-colors"
                       >
                         <span className="text-[#008DDA] font-bold text-xs shrink-0 transition-transform group-hover/link:translate-x-0.5">
-                          →
+                          â†’
                         </span>
                         <span>{link.label}</span>
                       </Link>
@@ -231,3 +231,4 @@ export const ServicesSection: React.FC = () => {
   )
 }
 export default ServicesSection
+

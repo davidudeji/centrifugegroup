@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Cpu, Layers, Workflow, CheckCircle2 } from "lucide-react";
 
@@ -17,7 +17,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full text-left">
-      {/* ─── Template A: HERO SECTION (UI/UX Spec §4.1) ─── */}
+      {/* â”€â”€â”€ Template A: HERO SECTION (UI/UX Spec Â§4.1) â”€â”€â”€ */}
       <section className="relative flex min-h-[480px] items-center overflow-hidden border-b border-[#E2E8F0] bg-[#0F2C59] py-20 text-[#1A1A1A] sm:min-h-[540px] lg:min-h-[600px] lg:py-28">
         <div className="absolute inset-0" aria-hidden="true">
           {HERO_IMAGES.map((image, index) => (
@@ -35,12 +35,12 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px]" />
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          {/* Page Header (UI/UX Spec §1.2 H1: 32px-52px, Bold 700, Line Height 1.2) */}
+          {/* Page Header (UI/UX Spec Â§1.2 H1: 32px-52px, Bold 700, Line Height 1.2) */}
           <h1 className="text-[36px] sm:text-[46px] lg:text-[54px] font-bold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto drop-shadow-md">
             THE LATEST TRENDS FOR YOUR LATEST NEEDS
           </h1>
 
-          {/* Subheading Body Text (UI/UX Spec §1.2: Regular 400, Line Height 1.5) */}
+          {/* Subheading Body Text (UI/UX Spec Â§1.2: Regular 400, Line Height 1.5) */}
           <p className="mt-5 text-[16px] sm:text-[18px] text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow">
             With our experience in state of the art software development since
             2007 we have created various skill sets in developing tailor-fit
@@ -50,7 +50,7 @@ export const HeroSection: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── 3-COLUMN CORE CAPABILITIES (UI/UX Spec §4.1 Wireframe) ─── */}
+      {/* â”€â”€â”€ 3-COLUMN CORE CAPABILITIES (UI/UX Spec Â§4.1 Wireframe) â”€â”€â”€ */}
       <section className="py-20 lg:py-24 bg-[#F5F7FA] border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -89,7 +89,7 @@ export const HeroSection: React.FC = () => {
 
               <div className="mt-8 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
                 <Link
-                  to="/solutions/banking-framework"
+                  to="/solutions/project-development-management"
                   className="inline-flex items-center gap-1 text-xs font-semibold text-[#008DDA] group-hover:translate-x-1 transition-transform"
                 >
                   <span>Read More</span>
@@ -122,7 +122,7 @@ export const HeroSection: React.FC = () => {
 
               <div className="mt-8 pt-4 border-t border-[#E2E8F0] flex items-center justify-between">
                 <Link
-                  to="/solutions/banking-framework"
+                  to="/solutions/project-development-management"
                   className="inline-flex items-center gap-1 text-xs font-semibold text-[#008DDA] group-hover:translate-x-1 transition-transform"
                 >
                   <span>Read More</span>
@@ -145,7 +145,7 @@ export const HeroSection: React.FC = () => {
                   Centrifuge Group is the leading provider of an extensive
                   variety of advanced and specialized professional, executive,
                   corporate and personalized in-house training courses in
-                  Information Technology, Healthcare, Project management etc…
+                  Information Technology, Healthcare, Project management etcâ€¦
                   Our training covers all age groups and administrative levels.
                 </p>
               </div>
@@ -167,3 +167,4 @@ export const HeroSection: React.FC = () => {
   );
 };
 export default HeroSection;
+

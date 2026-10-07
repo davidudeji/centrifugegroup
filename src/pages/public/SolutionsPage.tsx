@@ -7,14 +7,14 @@ import { Button } from '../../components/ui/Button'
 export const SolutionsPage: React.FC = () => {
   const solutions = [
     {
-      slug: 'banking-framework',
-      name: 'Digital Banking Architecture & Visual Modeler',
-      category: 'Financial Technology Core',
+      slug: 'project-development-management',
+      name: 'Project Development & Management',
+      category: 'Delivery & Execution Advisory',
       icon: Cpu,
-      description: 'Decoupled event-sourced ledger, sub-3.2ms transaction consensus, ISO 20022 clearing gateways, and low-code visual process orchestration canvas.',
-      modules: ['Modular Coreless Ledger', 'Omnichannel API Gateway', 'Visual Modeler Studio', 'ISO 20022 Native Messaging', 'Multi-Rail Clearing'],
+      description: 'Structured project planning, execution oversight, stakeholder governance, and practical PM training to help organizations deliver complex initiatives on time and within budget.',
+      modules: ['Project Planning & Organization', 'Implementation & Execution', 'Monitoring & Controlling', 'Completion & Closure', 'PM Training & Advisory'],
       featured: true,
-      customLink: '/solutions/banking-framework',
+      customLink: '/solutions/project-development-management',
     },
     {
       slug: 'optimax',
@@ -66,8 +66,8 @@ export const SolutionsPage: React.FC = () => {
   return (
       <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
         <SEO
-          title="Enterprise Solutions & Banking Architecture | Centrifuge Group"
-          description="Explore Centrifuge Group platforms: Digital Banking Architecture, Optimax ERP, Logistics & Mobility, Healthcare Informatics, and Spatial GIS Data."
+          title="Enterprise Solutions & Project Development | Centrifuge Group"
+          description="Explore Centrifuge Group platforms: Project Development & Management, Optimax ERP, Logistics & Mobility, Healthcare Informatics, and Spatial GIS Data."
         />
 
         {/* ─── Header ─── */}

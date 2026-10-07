@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { PageHero } from '../../components/ui/PageHero'
@@ -32,7 +32,7 @@ export const AboutPage: React.FC = () => {
         description="Learn about Centrifuge Group, our mission, core engineering values, and institutional partnerships across Africa."
       />
 
-      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
+      {/* â”€â”€â”€ Hero Header (UI/UX Spec Â§1.1 & Â§4.1) â”€â”€â”€ */}
       <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
 
@@ -52,7 +52,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Mission & Operational Reality ─── */}
+      {/* â”€â”€â”€ Mission & Operational Reality â”€â”€â”€ */}
       <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-5">
@@ -71,7 +71,7 @@ export const AboutPage: React.FC = () => {
 
             <div className="pt-2">
               <Link
-                to="/solutions/banking-framework"
+                to="/solutions/project-development-management"
                 className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
               >
                 <span>Explore our digital banking framework</span>
@@ -105,7 +105,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Core Brand Values (UI/UX Spec §3.3 Data Card Module) ─── */}
+      {/* â”€â”€â”€ Core Brand Values (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
       <section className="py-16 sm:py-20 bg-[#FFFFFF] border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="max-w-2xl text-left">
@@ -146,7 +146,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Verified Institutional Partnerships ─── */}
+      {/* â”€â”€â”€ Verified Institutional Partnerships â”€â”€â”€ */}
       <section className="py-16 bg-[#F5F7FA] border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -184,7 +184,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── CTA ─────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-[#0F2C59] py-20">
         <div className="section-container text-center">
           <Reveal variant="blur" from="up" distance={20} duration={800}>
@@ -213,3 +213,4 @@ export const AboutPage: React.FC = () => {
 }
 
 export default AboutPage
+

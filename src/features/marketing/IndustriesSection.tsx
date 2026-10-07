@@ -1,15 +1,15 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, HeartPulse, Truck, Building2, Landmark, Store, Landmark as Bank } from 'lucide-react'
 
 const industries = [
     {
       id: 'banking',
-      name: 'Financial Services & Digital Banking',
+      name: 'Project Development & Management',
       icon: Bank,
       challenge: 'Rigid monolithic legacy core banking stacks with multi-day reconciliation windows.',
       solution: 'Decoupled event-sourced ledger, ISO 20022 clearing gateways, and real-time fraud scoring.',
-      slug: '/solutions/banking-framework',
+      slug: '/solutions/project-development-management',
     },
     {
       id: 'healthcare',
@@ -69,7 +69,7 @@ const industries = [
             </p>
           </div>
 
-          {/* ─── Data Card Module Grid (UI/UX Spec §3.3: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) ─── */}
+          {/* â”€â”€â”€ Data Card Module Grid (UI/UX Spec Â§3.3: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) â”€â”€â”€ */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((ind) => {
               const Icon = ind.icon
@@ -116,3 +116,4 @@ const industries = [
   }
 
   export default IndustriesSection
+

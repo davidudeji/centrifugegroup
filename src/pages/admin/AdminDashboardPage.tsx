@@ -34,7 +34,9 @@ import {
 } from 'recharts'
 
 export const AdminDashboardPage: React.FC = () => {
-  const [activeDashboardView, setActiveDashboardView] = useState<'banking' | 'store'>('banking')
+  const [activeDashboardView, setActiveDashboardView] = useState<
+    "project" | "store"
+  >("project");
   const [timeRange, setTimeRange] = useState<'7d' | '30d' | '90d'>('30d')
 
   const revenueChartData = [
@@ -58,46 +60,8 @@ export const AdminDashboardPage: React.FC = () => {
     <div className="space-y-8 text-left">
       <SEO title="Enterprise Architecture & Management Portal | Centrifuge Group" />
 
-      {/* Top Segmented Switcher: Template B Banking Studio vs Store Operations */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-[8px] bg-[#FFFFFF] border border-[#E2E8F0] shadow-xs">
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59] text-white flex items-center justify-center font-bold">
-            <Cpu className="h-5 w-5 text-[#008DDA]" />
-          </div>
-          <div>
-            <h2 className="text-base font-bold text-[#0F2C59]">Centrifuge Enterprise Cockpit</h2>
-            <p className="text-xs text-[#64748B]">Switch between Template B Architecture Studio and Store Management</p>
-          </div>
-        </div>
-
-        <div className="flex items-center rounded-[4px] border border-[#E2E8F0] bg-[#F8FAFC] p-1 text-xs">
-          <button
-            onClick={() => setActiveDashboardView('banking')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-[3px] font-semibold transition-all ${
-              activeDashboardView === 'banking'
-                ? 'bg-[#008DDA] text-white shadow-xs'
-                : 'text-[#64748B] hover:text-[#0F2C59]'
-            }`}
-          >
-            <Workflow className="h-3.5 w-3.5" />
-            <span>Banking Framework Studio (Template B)</span>
-          </button>
-          <button
-            onClick={() => setActiveDashboardView('store')}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-[3px] font-semibold transition-all ${
-              activeDashboardView === 'store'
-                ? 'bg-[#008DDA] text-white shadow-xs'
-                : 'text-[#64748B] hover:text-[#0F2C59]'
-            }`}
-          >
-            <ShoppingBag className="h-3.5 w-3.5" />
-            <span>Store & Inventory Operations</span>
-          </button>
-        </div>
-      </div>
-
       {/* ─── TEMPLATE B: TECHNICAL CAPABILITIES & VISUAL STUDIO DASHBOARD ─── */}
-      {activeDashboardView === 'banking' ? (
+      {activeDashboardView === "project" ? (
         <BankingProcessStudio />
       ) : (
         /* ─── Store & Hardware Operations View ─── */
@@ -108,18 +72,21 @@ export const AdminDashboardPage: React.FC = () => {
                 Hardware & Store Operations
               </h1>
               <p className="text-xs text-[#64748B] mt-0.5">
-                Consolidated overview of hardware inventory, dispatch orders, and commercial transactions.
+                Consolidated overview of hardware inventory, dispatch orders,
+                and commercial transactions.
               </p>
             </div>
 
             <div className="flex items-center gap-2">
               <div className="flex rounded-[4px] border border-[#E2E8F0] bg-[#FFFFFF] p-0.5 text-xs">
-                {(['7d', '30d', '90d'] as const).map((r) => (
+                {(["7d", "30d", "90d"] as const).map((r) => (
                   <button
                     key={r}
                     onClick={() => setTimeRange(r)}
                     className={`px-2.5 py-1 rounded-[3px] font-medium transition-colors ${
-                      timeRange === r ? 'bg-[#0F2C59] text-white font-semibold' : 'text-[#64748B] hover:text-[#0F2C59]'
+                      timeRange === r
+                        ? "bg-[#0F2C59] text-white font-semibold"
+                        : "text-[#64748B] hover:text-[#0F2C59]"
                     }`}
                   >
                     {r.toUpperCase()}
@@ -127,7 +94,11 @@ export const AdminDashboardPage: React.FC = () => {
                 ))}
               </div>
 
-              <Button variant="outline" size="sm" leftIcon={<Download className="h-3.5 w-3.5" />}>
+              <Button
+                variant="outline"
+                size="sm"
+                leftIcon={<Download className="h-3.5 w-3.5" />}
+              >
                 Export CSV
               </Button>
             </div>
@@ -191,7 +162,9 @@ export const AdminDashboardPage: React.FC = () => {
                   <h3 className="text-sm font-bold text-[#0F2C59]">
                     Revenue & Turnover Overview
                   </h3>
-                  <p className="text-xs text-[#64748B]">Daily consolidated transaction volume</p>
+                  <p className="text-xs text-[#64748B]">
+                    Daily consolidated transaction volume
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-xs font-semibold text-[#10B981]">
                   <TrendingUp className="h-4 w-4" />
@@ -201,15 +174,35 @@ export const AdminDashboardPage: React.FC = () => {
 
               <div className="h-72 w-full pt-4">
                 <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={revenueChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                  <AreaChart
+                    data={revenueChartData}
+                    margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+                  >
                     <defs>
                       <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#008DDA" stopOpacity={0.25} />
-                        <stop offset="95%" stopColor="#008DDA" stopOpacity={0} />
+                        <stop
+                          offset="5%"
+                          stopColor="#008DDA"
+                          stopOpacity={0.25}
+                        />
+                        <stop
+                          offset="95%"
+                          stopColor="#008DDA"
+                          stopOpacity={0}
+                        />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" vertical={false} />
-                    <XAxis dataKey="date" stroke="#94A3B8" fontSize={11} tickLine={false} />
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="#E2E8F0"
+                      vertical={false}
+                    />
+                    <XAxis
+                      dataKey="date"
+                      stroke="#94A3B8"
+                      fontSize={11}
+                      tickLine={false}
+                    />
                     <YAxis
                       stroke="#94A3B8"
                       fontSize={11}
@@ -217,10 +210,26 @@ export const AdminDashboardPage: React.FC = () => {
                       tickFormatter={(val) => `₦${(val / 1000000).toFixed(1)}M`}
                     />
                     <Tooltip
-                      formatter={(val: any) => [`₦${Number(val).toLocaleString()}`, 'Revenue']}
-                      contentStyle={{ backgroundColor: '#FFFFFF', borderColor: '#E2E8F0', borderRadius: '4px', color: '#1A1A1A', fontSize: '12px' }}
+                      formatter={(val: any) => [
+                        `₦${Number(val).toLocaleString()}`,
+                        "Revenue",
+                      ]}
+                      contentStyle={{
+                        backgroundColor: "#FFFFFF",
+                        borderColor: "#E2E8F0",
+                        borderRadius: "4px",
+                        color: "#1A1A1A",
+                        fontSize: "12px",
+                      }}
                     />
-                    <Area type="monotone" dataKey="revenue" stroke="#008DDA" strokeWidth={2.5} fillOpacity={1} fill="url(#colorRev)" />
+                    <Area
+                      type="monotone"
+                      dataKey="revenue"
+                      stroke="#008DDA"
+                      strokeWidth={2.5}
+                      fillOpacity={1}
+                      fill="url(#colorRev)"
+                    />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -232,20 +241,52 @@ export const AdminDashboardPage: React.FC = () => {
                 <h3 className="text-sm font-bold text-[#0F2C59]">
                   Sales by Category
                 </h3>
-                <p className="text-xs text-[#64748B]">Revenue distribution across lines</p>
+                <p className="text-xs text-[#64748B]">
+                  Revenue distribution across lines
+                </p>
               </div>
 
               <div className="h-72 w-full pt-4">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={categorySalesData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" vertical={false} />
-                    <XAxis dataKey="category" stroke="#94A3B8" fontSize={10} tickLine={false} />
-                    <YAxis stroke="#94A3B8" fontSize={10} tickLine={false} tickFormatter={(val) => `₦${(val / 1000000).toFixed(0)}M`} />
-                    <Tooltip
-                      formatter={(val: any) => [`₦${Number(val).toLocaleString()}`, 'Sales']}
-                      contentStyle={{ backgroundColor: '#FFFFFF', borderColor: '#E2E8F0', borderRadius: '4px', color: '#1A1A1A', fontSize: '11px' }}
+                  <BarChart
+                    data={categorySalesData}
+                    margin={{ top: 10, right: 0, left: -20, bottom: 0 }}
+                  >
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="#E2E8F0"
+                      vertical={false}
                     />
-                    <Bar dataKey="amount" fill="#0F2C59" radius={[4, 4, 0, 0]} />
+                    <XAxis
+                      dataKey="category"
+                      stroke="#94A3B8"
+                      fontSize={10}
+                      tickLine={false}
+                    />
+                    <YAxis
+                      stroke="#94A3B8"
+                      fontSize={10}
+                      tickLine={false}
+                      tickFormatter={(val) => `₦${(val / 1000000).toFixed(0)}M`}
+                    />
+                    <Tooltip
+                      formatter={(val: any) => [
+                        `₦${Number(val).toLocaleString()}`,
+                        "Sales",
+                      ]}
+                      contentStyle={{
+                        backgroundColor: "#FFFFFF",
+                        borderColor: "#E2E8F0",
+                        borderRadius: "4px",
+                        color: "#1A1A1A",
+                        fontSize: "11px",
+                      }}
+                    />
+                    <Bar
+                      dataKey="amount"
+                      fill="#0F2C59"
+                      radius={[4, 4, 0, 0]}
+                    />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -260,7 +301,10 @@ export const AdminDashboardPage: React.FC = () => {
                 <h3 className="text-sm font-bold text-[#0F2C59]">
                   Recent Customer Orders
                 </h3>
-                <Link to="/admin/orders" className="text-xs font-semibold text-[#008DDA] hover:underline">
+                <Link
+                  to="/admin/orders"
+                  className="text-xs font-semibold text-[#008DDA] hover:underline"
+                >
                   View All Orders →
                 </Link>
               </div>
@@ -291,11 +335,11 @@ export const AdminDashboardPage: React.FC = () => {
                         <td className="px-5 py-3.5">
                           <Badge
                             variant={
-                              ord.orderStatus === 'delivered'
-                                ? 'success'
-                                : ord.orderStatus === 'shipped'
-                                ? 'info'
-                                : 'warning'
+                              ord.orderStatus === "delivered"
+                                ? "success"
+                                : ord.orderStatus === "shipped"
+                                  ? "info"
+                                  : "warning"
                             }
                             size="sm"
                             dot
@@ -304,7 +348,10 @@ export const AdminDashboardPage: React.FC = () => {
                           </Badge>
                         </td>
                         <td className="px-5 py-3.5 text-right">
-                          <Link to="/admin/orders" className="text-xs font-semibold text-[#008DDA] hover:underline">
+                          <Link
+                            to="/admin/orders"
+                            className="text-xs font-semibold text-[#008DDA] hover:underline"
+                          >
                             Manage
                           </Link>
                         </td>
@@ -321,22 +368,37 @@ export const AdminDashboardPage: React.FC = () => {
                 <h3 className="text-sm font-bold text-[#0F2C59]">
                   Low Stock Warnings
                 </h3>
-                <Link to="/admin/inventory" className="text-xs text-[#EF4444] font-semibold hover:underline">
+                <Link
+                  to="/admin/inventory"
+                  className="text-xs text-[#EF4444] font-semibold hover:underline"
+                >
                   Adjust Stock →
                 </Link>
               </div>
 
               <div className="space-y-3">
                 {mockProducts.slice(0, 4).map((p) => (
-                  <div key={p.id} className="flex items-center justify-between p-2.5 rounded-[4px] bg-[#F8FAFC] border border-[#E2E8F0]">
+                  <div
+                    key={p.id}
+                    className="flex items-center justify-between p-2.5 rounded-[4px] bg-[#F8FAFC] border border-[#E2E8F0]"
+                  >
                     <div>
                       <span className="text-xs font-semibold text-[#1A1A1A] line-clamp-1 block">
                         {p.name}
                       </span>
-                      <span className="text-[10px] font-mono text-[#64748B]">SKU: {p.sku}</span>
+                      <span className="text-[10px] font-mono text-[#64748B]">
+                        SKU: {p.sku}
+                      </span>
                     </div>
                     <div className="text-right">
-                      <Badge variant={p.stockQuantity <= p.lowStockThreshold ? 'warning' : 'neutral'} size="sm">
+                      <Badge
+                        variant={
+                          p.stockQuantity <= p.lowStockThreshold
+                            ? "warning"
+                            : "neutral"
+                        }
+                        size="sm"
+                      >
                         {p.stockQuantity} left
                       </Badge>
                     </div>
@@ -348,6 +410,6 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
       )}
     </div>
-  )
+  );
 }
 export default AdminDashboardPage

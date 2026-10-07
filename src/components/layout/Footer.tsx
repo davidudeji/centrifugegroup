@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { Mail, Phone, MapPin, ArrowUpRight, Briefcase, MessageCircle, Play, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react'
@@ -93,8 +93,8 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-[13px]">
               <li>
-                <Link to="/solutions/banking-framework" className="hover:text-white transition-colors flex items-center gap-1.5 text-[#008DDA]">
-                  <span>Banking Architecture</span>
+                <Link to="/solutions/project-development-management" className="hover:text-white transition-colors flex items-center gap-1.5 text-[#008DDA]">
+                  <span>Project Development & Management</span>
                   <span className="text-[9px] bg-[#008DDA]/20 text-white px-1.5 py-0.5 rounded-[2px] font-mono">v3.8</span>
                 </Link>
               </li>
@@ -269,7 +269,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Legal Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[12px] text-[#A0AEC0] gap-4">
-          <p>© {new Date().getFullYear()} Centrifuge Group. Enterprise Financial Technology & Institutional Engineering. All rights reserved.</p>
+          <p>Â© {new Date().getFullYear()} Centrifuge Group. Enterprise Financial Technology & Institutional Engineering. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link to="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/about" className="hover:text-white transition-colors">Terms of Service</Link>
@@ -282,3 +282,4 @@ export const Footer: React.FC = () => {
 }
 
 export default Footer
+

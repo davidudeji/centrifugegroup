@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+﻿import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 // Layouts
@@ -74,19 +74,20 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          {/* ─── Auth Routes (standalone, no layout) ─── */}
+          {/* â”€â”€â”€ Auth Routes (standalone, no layout) â”€â”€â”€ */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
 
-          {/* ─── Public / Marketing Routes ─── */}
+          {/* â”€â”€â”€ Public / Marketing Routes â”€â”€â”€ */}
           <Route element={<PublicLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
 
             {/* Solutions */}
             <Route path="/solutions" element={<SolutionsPage />} />
-            <Route path="/solutions/banking-framework" element={<BankingFrameworkPage />} />
-            <Route path="/studio" element={<Navigate to="/solutions/banking-framework" replace />} />
+            <Route path="/solutions/project-development-management" element={<BankingFrameworkPage />} />
+            <Route path="/solutions/banking-framework" element={<Navigate to="/solutions/project-development-management" replace />} />
+            <Route path="/studio" element={<Navigate to="/solutions/project-development-management" replace />} />
             <Route path="/solutions/optimax" element={<OptimaxPage />} />
             <Route path="/solutions/logistics" element={<LogisticsPage />} />
             <Route path="/solutions/healthcare" element={<HealthcarePage />} />
@@ -131,7 +132,7 @@ export default function App() {
             <Route path="/account/:section" element={<CustomerAccountPage />} />
           </Route>
 
-          {/* ─── Admin Routes ─── */}
+          {/* â”€â”€â”€ Admin Routes â”€â”€â”€ */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboardPage />} />
             <Route path="orders" element={<AdminOrdersPage />} />
@@ -151,7 +152,7 @@ export default function App() {
             <Route path="users" element={<AdminUsersPage />} />
           </Route>
 
-          {/* ─── Legacy URL Redirects (spec §50) ─── */}
+          {/* â”€â”€â”€ Legacy URL Redirects (spec Â§50) â”€â”€â”€ */}
           <Route path="/career" element={<Navigate to="/careers" replace />} />
           <Route path="/career/" element={<Navigate to="/careers" replace />} />
           <Route path="/job-openings" element={<Navigate to="/careers/jobs" replace />} />
@@ -165,10 +166,11 @@ export default function App() {
           <Route path="/human-resource-for-health-information-system" element={<Navigate to="/solutions/healthcare" replace />} />
           <Route path="/human-resource-for-health-information-system/" element={<Navigate to="/solutions/healthcare" replace />} />
 
-          {/* Catch-all → 404 */}
+          {/* Catch-all â†’ 404 */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
   )
 }
+

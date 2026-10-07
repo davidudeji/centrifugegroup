@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { SEO } from '../../components/ui/SEO'
 import { PageHero } from '../../components/ui/PageHero'
 import { Button } from '../../components/ui/Button'
@@ -31,7 +31,7 @@ const contactDetails = [
   {
     icon: Clock,
     label: 'Operational Hours',
-    lines: ['Monday – Friday: 08:00 – 17:30 WAT'],
+    lines: ['Monday â€“ Friday: 08:00 â€“ 17:30 WAT'],
     note: '24/7 Priority SLA for active hospital & logistics clusters',
   },
 ]
@@ -68,7 +68,7 @@ export const ContactPage: React.FC = () => {
         description="Have a problem worth solving? Speak directly with Centrifuge enterprise systems architects and specialists."
       />
 
-      {/* ─── Header Strip (UI/UX Spec §1.1 & §4.1) ─── */}
+      {/* â”€â”€â”€ Header Strip (UI/UX Spec Â§1.1 & Â§4.1) â”€â”€â”€ */}
       <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
 
@@ -88,7 +88,7 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Contact Body (UI/UX Spec §3.3 Data Card Module) ─── */}
+      {/* â”€â”€â”€ Contact Body (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
       <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   >
-                    <option value="Banking Architecture & Visual Studio">Digital Banking Architecture & Visual Modeler</option>
+                    <option value="Project Development & Management">Project Development & Management</option>
                     <option value="Optimax ERP Platform">Optimax ERP Enterprise Platform</option>
                     <option value="Healthcare & Hospital Informatics">Healthcare & Hospital Informatics</option>
                     <option value="Logistics & Fleet Telematics">Logistics & Fleet Telematics</option>
@@ -225,7 +225,7 @@ export const ContactPage: React.FC = () => {
                     <Clock className="h-5 w-5 text-[#008DDA] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-[#1A1A1A]">Operational Hours</p>
-                      <p className="mt-0.5 text-[#64748B]">Monday – Friday: 08:00 – 17:30 WAT</p>
+                      <p className="mt-0.5 text-[#64748B]">Monday â€“ Friday: 08:00 â€“ 17:30 WAT</p>
                       <p className="text-[#008DDA] text-[11px] font-mono font-semibold mt-0.5">24/7 Priority SLA for active hospital & core financial clusters</p>
                     </div>
                   </div>
@@ -254,3 +254,4 @@ export const ContactPage: React.FC = () => {
 }
 
 export default ContactPage
+

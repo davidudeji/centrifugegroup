@@ -1,36 +1,70 @@
-You are a senior UI/UX engineer. Refine the existing design while preserving the current visual identity and branding.
+You are a senior UI/UX engineer and content implementation specialist.
 
-### Required Changes
+Go through the **entire website**, including every section, card, heading, description, button, navigation item, and internal link that currently contains or references **Banking Architecture** content.
 
-1. **Section 3 & 4 Layout**
+### Replace Banking Architecture Content
 
-- Make the content in Sections 3 and 4 more contained and visually organized.
-- Reduce excessive horizontal spacing and prevent content from feeling too wide or spread out.
-- Use a consistent max-width/container system to improve readability and visual hierarchy.
-- Maintain balanced spacing between headings, text, cards, and other elements.
+Completely replace the Banking Architecture content with content based on Centrifuge Group’s official **Project Development & Management** page:
 
-2. **Navbar**
+[Centrifuge Group — Project Development & Management](https://www.centrifugegroup.com/project-development-and-management/?utm_source=chatgpt.com)
 
-- Change the navbar background to a color that closely matches the footer.
-- Keep the navbar **semi-transparent** so it blends naturally with the page while maintaining readability.
-- Preserve the **original logo exactly as provided**. Do not redesign, replace, recolor, or distort it.
-- Add appropriate padding around the logo and navbar content so the header feels spacious and polished.
-- Maintain consistent alignment between the logo, navigation links, and CTA elements.
+Use the official page as the primary content reference. The replacement content should accurately represent Centrifuge Group's Project Development & Management services, including:
 
-3. **Mobile Responsiveness**
+* Project Development & Management
+* Project planning and organization
+* Project implementation and execution
+* Project monitoring and controlling
+* Project completion and closing
+* Project management training
+* Project management skills, knowledge, and tools
+* Managing projects within budget and timelines
+* Helping organizations overcome project complexity and execution challenges
+* Professional project management training and advisory services
 
-- Make the entire website fully responsive across desktop, tablet, and mobile screen sizes.
-- Ensure Sections 3 and 4 remain properly contained and readable on smaller screens.
-- Adjust typography, spacing, grids, cards, buttons, navigation, and containers appropriately for mobile.
-- Ensure there is no horizontal scrolling, overlapping content, clipped elements, or broken layouts.
-- Implement a clean mobile navigation experience.
+### Important
 
-4. **Brand Consistency**
+1. **Remove all Banking Architecture references**
 
-- Preserve the existing brand identity, including the original logo, color palette, typography, visual language, and overall design direction.
-- Ensure the navbar, sections, footer, buttons, cards, and other components feel like part of the same design system.
-- Avoid introducing unnecessary colors, styles, gradients, or visual elements that conflict with the existing branding.
+   * Do not leave behind banking-related headings, descriptions, labels, buttons, metadata, or links.
+   * Search the entire project/codebase for terms such as:
 
-### Design Principle
+     * Banking Architecture
+     * Banking
+     * Bank
+     * Banking solutions
+     * Banking infrastructure
+     * Banking technology
+   * Replace relevant references rather than simply hiding them.
 
-Do not redesign the website from scratch. **Refine and improve the existing design.** The final result should feel more contained, polished, responsive, consistent, and professional while clearly maintaining the original brand identity.
+2. **Update links**
+
+   * Any link or CTA that previously pointed to a Banking Architecture page should now point to the appropriate **Project Development & Management** destination.
+   * Ensure there are no broken links.
+   * Update link labels so they accurately describe the new content.
+
+3. **Preserve the existing design**
+
+   * Do not redesign the page.
+   * Keep the existing layout, spacing, typography, animations, cards, colors, and visual hierarchy unless a small adjustment is required to accommodate the new content.
+   * Maintain the existing Centrifuge Group branding and original logo.
+
+4. **Adapt the content naturally**
+
+   * Do not perform a simple word-for-word replacement.
+   * Rewrite the content where necessary so it reads naturally within the existing UI.
+   * Make headings concise and suitable for website sections/cards.
+   * Keep descriptions professional, clear, and aligned with Centrifuge Group's enterprise positioning.
+
+5. **Check the entire user journey**
+
+   * Verify navigation links.
+   * Verify buttons and CTAs.
+   * Verify cards and service sections.
+   * Verify mobile layouts.
+   * Verify that no Banking Architecture content remains anywhere in the website.
+
+### Final Requirement
+
+The finished website should make **Project Development & Management** feel like an intentional part of Centrifuge Group's service offering—not like content that was simply swapped into an existing Banking Architecture template.
+
+Use the official Centrifuge Group page as the source of truth for the service information.

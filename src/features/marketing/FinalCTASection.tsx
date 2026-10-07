@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Mail, Phone, ShieldCheck } from 'lucide-react'
 
@@ -22,7 +22,7 @@ export const FinalCTASection: React.FC = () => {
           Whether you require modern coreless financial infrastructure, specialized healthcare registries, or an integrated commercial ERP, Centrifuge engineers systems you can depend on.
         </p>
 
-        {/* Action Button Row (UI/UX Spec §5.1) */}
+        {/* Action Button Row (UI/UX Spec Â§5.1) */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/contact"
@@ -32,7 +32,7 @@ export const FinalCTASection: React.FC = () => {
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            to="/solutions/banking-framework"
+            to="/solutions/project-development-management"
             className="inline-flex items-center justify-center px-6 py-3 rounded-[4px] text-[15px] font-semibold bg-transparent border border-white/60 text-white hover:bg-white hover:text-[#0F2C59] transition-fin"
           >
             <span>Launch Visual Studio</span>
@@ -60,3 +60,4 @@ export const FinalCTASection: React.FC = () => {
 }
 
 export default FinalCTASection
+

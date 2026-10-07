@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { useUIStore } from '../../stores/uiStore'
@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* ─── Global Top Navigation Bar ─── */}
+      {/* â”€â”€â”€ Global Top Navigation Bar â”€â”€â”€ */}
       <header
         className={`fixed inset-x-0 top-0 z-40 h-[72px] w-full border-b border-white/10 bg-[#0F2C59]/90 backdrop-blur-md transition-shadow duration-200 ${
           isScrolled ? "shadow-sm shadow-[#0F2C59]/10" : ""
@@ -97,7 +97,7 @@ export const Header: React.FC = () => {
                         Financial & Enterprise Tech
                       </div>
                       <Link
-                        to="/solutions/banking-framework"
+                        to="/solutions/project-development-management"
                         className="flex items-start gap-3 p-2.5 rounded-[4px] hover:bg-[#F5F7FA] transition-colors group"
                       >
                         <div className="p-1.5 rounded-[4px] bg-[#008DDA]/10 text-[#008DDA] shrink-0 mt-0.5">
@@ -337,7 +337,7 @@ export const Header: React.FC = () => {
 
       <div aria-hidden="true" className="h-[72px] shrink-0" />
 
-      {/* ─── Responsive Slide-out Mobile Navigation Drawer ─── */}
+      {/* â”€â”€â”€ Responsive Slide-out Mobile Navigation Drawer â”€â”€â”€ */}
       {mobileNavOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#0F2C59] text-white overflow-y-auto animate-in fade-in duration-150">
           <div className="flex items-center justify-between p-4 border-b border-white/10 h-[72px] bg-[#0F2C59]">
@@ -367,11 +367,11 @@ export const Header: React.FC = () => {
                 Platform Architecture
               </div>
               <Link
-                to="/solutions/banking-framework"
+                to="/solutions/project-development-management"
                 onClick={() => setMobileNavOpen(false)}
                 className="block px-3 py-2 rounded-[4px] text-[14px] font-semibold text-[#008DDA] bg-[#008DDA]/10"
               >
-                Banking Framework & Visual Studio (Template B)
+                Project Development & Management
               </Link>
               <Link
                 to="/solutions/optimax"
@@ -461,3 +461,4 @@ export const Header: React.FC = () => {
 }
 
 export default Header
+
