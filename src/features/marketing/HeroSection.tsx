@@ -1,11 +1,30 @@
-﻿import React from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+﻿import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const heroImages = [
+  new URL("../../assets/digital solution that scale.avif", import.meta.url)
+    .href,
+  new URL("../../assets/digital solution 1.avif", import.meta.url).href,
+];
 
 export const HeroSection: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % heroImages.length);
+    }, 4000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-[#071d39] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(26,167,240,0.24),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(103,198,255,0.12),transparent_30%)]" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(26,167,240,0.24),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(103,198,255,0.12),transparent_30%)]"
+        aria-hidden="true"
+      />
       <div className="absolute inset-0 opacity-40" aria-hidden="true">
         <div className="hero-grid-overlay" />
       </div>
@@ -23,7 +42,9 @@ export const HeroSection: React.FC = () => {
               </h1>
 
               <p className="mt-6 max-w-[540px] text-base leading-7 text-slate-200/80 sm:text-lg">
-                We design and develop enterprise software, e-health solutions, and cloud platforms that help organizations operate smarter, scale faster, and create lasting impact.
+                We design and develop enterprise software, e-health solutions,
+                and cloud platforms that help organizations operate smarter,
+                scale faster, and create lasting impact.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -47,62 +68,24 @@ export const HeroSection: React.FC = () => {
             <div className="relative flex justify-center lg:justify-end">
               <div className="enterprise-visual">
                 <div className="enterprise-visual__halo" />
-
-                <div className="enterprise-visual__panel panel-left">
-                  <div className="panel-header">
-                    <span className="panel-dot dot-blue" />
-                    <span className="panel-dot dot-cyan" />
-                    <span className="panel-dot dot-slate" />
-                  </div>
-                  <div className="panel-body">
-                    <div className="panel-metric">
-                      <span className="metric-label">Platforms</span>
-                      <strong>24</strong>
-                    </div>
-                    <div className="panel-grid">
-                      <span className="grid-cell active" />
-                      <span className="grid-cell" />
-                      <span className="grid-cell active" />
-                      <span className="grid-cell" />
-                      <span className="grid-cell" />
-                      <span className="grid-cell active" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="enterprise-visual__panel panel-right">
-                  <div className="mini-stack">
-                    <span>Cloud</span>
-                    <span>Data</span>
-                    <span>Integrations</span>
-                  </div>
-                  <div className="signal-row">
-                    <span className="signal signal-1" />
-                    <span className="signal signal-2" />
-                    <span className="signal signal-3" />
-                  </div>
-                </div>
-
-                <div className="network-core">
-                  <span className="node node-1" />
-                  <span className="node node-2" />
-                  <span className="node node-3" />
-                  <span className="node node-4" />
-                  <span className="node node-5" />
-                  <span className="link link-1" />
-                  <span className="link link-2" />
-                  <span className="link link-3" />
-                </div>
-
-                <div className="floating-card card-primary">
-                  <CheckCircle2 className="h-4 w-4" />
-                  Enterprise software
-                </div>
-
-                <div className="floating-card card-secondary">
-                  <CheckCircle2 className="h-4 w-4" />
-                  Unified systems
-                </div>
+                <div className="enterprise-visual__frame" />
+                {heroImages.map((image, index) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={
+                      index === 0
+                        ? "Digital solution that scales"
+                        : "Digital solution platform"
+                    }
+                    className="enterprise-visual__image"
+                    style={{
+                      opacity: activeIndex === index ? 1 : 0,
+                      transform:
+                        activeIndex === index ? "scale(1)" : "scale(1.02)",
+                    }}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -124,7 +107,7 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

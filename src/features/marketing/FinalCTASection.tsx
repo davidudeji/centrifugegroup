@@ -21,7 +21,9 @@ export const FinalCTASection: React.FC = () => {
           </h2>
 
           <p className="mx-auto mt-5 max-w-[680px] text-[15px] leading-7 text-slate-200/80 sm:text-[16px]">
-            Whether you need financial infrastructure, healthcare information systems, or a connected operational platform, Centrifuge engineers dependable technology built for real business conditions.
+            Whether you need financial infrastructure, healthcare information
+            systems, or a connected operational platform, Centrifuge engineers
+            dependable technology built for real business conditions.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -32,28 +34,28 @@ export const FinalCTASection: React.FC = () => {
               <span>Speak with an Enterprise Architect</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              to="/solutions/project-development-management"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:border-sky-200/40 hover:bg-white/8"
-            >
-              Launch Visual Studio
-            </Link>
           </div>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-8 border-t border-white/10 pt-8 text-[13px] text-slate-200/70">
-          <a href="mailto:enquiries@centrifugegroup.com" className="inline-flex items-center gap-2 transition-colors hover:text-white">
+          <a
+            href="mailto:enquiries@centrifugegroup.com"
+            className="inline-flex items-center gap-2 transition-colors hover:text-white"
+          >
             <Mail className="h-4 w-4 text-[#60d4ff]" />
             enquiries@centrifugegroup.com
           </a>
-          <a href="tel:+2348155026555" className="inline-flex items-center gap-2 transition-colors hover:text-white">
+          <a
+            href="tel:+2348155026555"
+            className="inline-flex items-center gap-2 transition-colors hover:text-white"
+          >
             <Phone className="h-4 w-4 text-[#60d4ff]" />
             +234 815 5026 555
           </a>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default FinalCTASection

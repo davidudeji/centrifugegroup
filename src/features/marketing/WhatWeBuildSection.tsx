@@ -39,7 +39,11 @@ export const WhatWeBuildSection: React.FC = () => {
             </p>
 
             <p className="mt-5 max-w-[520px] text-[15px] leading-7 text-[#475569]">
-              We design and develop tailored software solutions that help organizations simplify operations, connect systems, and create better experiences. From enterprise applications to integrations and cloud platforms, we turn complex requirements into technology built for growth.
+              We design and develop tailored software solutions that help
+              organizations simplify operations, connect systems, and create
+              better experiences. From enterprise applications to integrations
+              and cloud platforms, we turn complex requirements into technology
+              built for growth.
             </p>
 
             <Link
@@ -54,56 +58,31 @@ export const WhatWeBuildSection: React.FC = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="architecture-visual" aria-hidden="true">
               <div className="architecture-visual__glow" />
-
-              <div className="architecture-visual__board">
-                <div className="architecture-visual__header">
-                  <span className="architecture-visual__dot architecture-visual__dot--blue" />
-                  <span className="architecture-visual__dot architecture-visual__dot--cyan" />
-                  <span className="architecture-visual__dot architecture-visual__dot--slate" />
-                </div>
-
-                <div className="architecture-visual__content">
-                  <div className="architecture-visual__stack architecture-visual__stack--left">
-                    <span>Enterprise</span>
-                    <span>Cloud</span>
-                    <span>Data</span>
-                  </div>
-
-                  <div className="architecture-visual__core">
-                    <span className="architecture-node architecture-node--1" />
-                    <span className="architecture-node architecture-node--2" />
-                    <span className="architecture-node architecture-node--3" />
-                    <span className="architecture-node architecture-node--4" />
-                    <span className="architecture-line architecture-line--1" />
-                    <span className="architecture-line architecture-line--2" />
-                    <span className="architecture-line architecture-line--3" />
-                  </div>
-
-                  <div className="architecture-visual__stack architecture-visual__stack--right">
-                    <span>APIs</span>
-                    <span>Integrations</span>
-                    <span>Operations</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
         <div className="mt-14 grid gap-4 md:grid-cols-3">
           {capabilityCards.map(({ title, text, icon: Icon }) => (
-            <div key={title} className="group rounded-[14px] border border-[#E2E8F0] bg-white p-5 shadow-[0_10px_30px_rgba(15,44,89,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#BEE7FF] hover:shadow-[0_18px_42px_rgba(15,44,89,0.08)]">
+            <div
+              key={title}
+              className="group rounded-[14px] border border-[#E2E8F0] bg-white p-5 shadow-[0_10px_30px_rgba(15,44,89,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#BEE7FF] hover:shadow-[0_18px_42px_rgba(15,44,89,0.08)]"
+            >
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#008DDA]/10 text-[#008DDA] transition-colors group-hover:bg-[#008DDA] group-hover:text-white">
                 <Icon className="h-5 w-5" />
               </div>
-              <h3 className="text-[18px] font-semibold text-[#0F2C59]">{title}</h3>
-              <p className="mt-2 text-[14px] leading-6 text-[#475569]">{text}</p>
+              <h3 className="text-[18px] font-semibold text-[#0F2C59]">
+                {title}
+              </h3>
+              <p className="mt-2 text-[14px] leading-6 text-[#475569]">
+                {text}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default WhatWeBuildSection
