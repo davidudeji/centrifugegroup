@@ -6,7 +6,7 @@ import { useCartStore } from '../../stores/cartStore'
 import { useUIStore } from '../../stores/uiStore'
 import type { Product } from '../../types'
 import { mockCategories } from '../../data/mockData'
-import { Search, ShoppingBag, Check, SlidersHorizontal, ArrowUpDown } from 'lucide-react'
+import { Search, ShoppingBag } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import { Badge } from '../../components/ui/Badge'
@@ -69,9 +69,9 @@ export const ShopPage: React.FC = () => {
       <section className="bg-[#0F2C59] text-white py-14 sm:py-20 border-b border-[#1E3A8A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/15 border border-[#008DDA]/30 text-xs font-mono font-bold text-white">
-              <span>COMMERCIAL HARDWARE STORE · DEMO INVENTORY</span>
-            </div>
+            <p className="text-xs font-semibold text-sky-100">
+              Demonstration inventory
+            </p>
             <h1 className="text-3xl sm:text-5xl font-extrabold font-heading tracking-tight">
               Technology for the way you work.
             </h1>

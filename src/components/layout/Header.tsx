@@ -10,9 +10,6 @@ import {
   ShoppingBag,
   Cpu,
   Layers,
-  Activity,
-  Truck,
-  ArrowRight,
 } from 'lucide-react'
 
 export const Header: React.FC = () => {
@@ -37,6 +34,17 @@ export const Header: React.FC = () => {
     setActiveDropdown(null)
     setMobileNavOpen(false)
   }, [location.pathname, setMobileNavOpen])
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveDropdown(null)
+        setMobileNavOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [setMobileNavOpen])
 
   return (
     <>
@@ -67,6 +75,7 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
+                    onClick={() => setActiveDropdown(activeDropdown === 'solutions' ? null : 'solutions')}
                     className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-[14px] font-medium transition-colors ${
                       location.pathname.startsWith('/solutions')
                         ? 'bg-white/10 text-white'
@@ -79,7 +88,7 @@ export const Header: React.FC = () => {
                   </button>
 
                   {activeDropdown === 'solutions' && (
-                    <div className="absolute left-0 top-full mt-2 w-[280px] rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-[0_18px_48px_rgba(15,32,59,0.18)] backdrop-blur-sm">
+                    <div className="absolute left-0 top-full w-[280px] rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-[0_18px_48px_rgba(15,32,59,0.18)] backdrop-blur-sm">
                       <div className="px-2 pb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                         Enterprise Technology
                       </div>
@@ -119,6 +128,7 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
+                    onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
                     className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-[14px] font-medium transition-colors ${
                       ['/about', '/clients', '/case-studies', '/careers'].some((p) =>
                         location.pathname.startsWith(p),
@@ -133,7 +143,7 @@ export const Header: React.FC = () => {
                   </button>
 
                   {activeDropdown === 'company' && (
-                    <div className="absolute left-0 top-full mt-2 w-[220px] rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-[0_18px_48px_rgba(15,32,59,0.18)] backdrop-blur-sm">
+                    <div className="absolute left-0 top-full w-[220px] rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-[0_18px_48px_rgba(15,32,59,0.18)] backdrop-blur-sm">
                       <Link to="/about" className="block rounded-xl px-3 py-2 text-[14px] text-slate-700 hover:bg-slate-50 hover:text-[#008DDA]">About</Link>
                       <Link to="/clients" className="block rounded-xl px-3 py-2 text-[14px] text-slate-700 hover:bg-slate-50 hover:text-[#008DDA]">Clients</Link>
                       <Link to="/case-studies" className="block rounded-xl px-3 py-2 text-[14px] text-slate-700 hover:bg-slate-50 hover:text-[#008DDA]">Case Studies</Link>
@@ -148,6 +158,7 @@ export const Header: React.FC = () => {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
+                    onClick={() => setActiveDropdown(activeDropdown === 'resources' ? null : 'resources')}
                     className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-[14px] font-medium transition-colors ${
                       ['/insights', '/services', '/industries'].some((p) =>
                         location.pathname.startsWith(p),
@@ -162,7 +173,7 @@ export const Header: React.FC = () => {
                   </button>
 
                   {activeDropdown === 'resources' && (
-                    <div className="absolute left-0 top-full mt-2 w-[220px] rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-[0_18px_48px_rgba(15,32,59,0.18)] backdrop-blur-sm">
+                    <div className="absolute left-0 top-full w-[220px] rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-[0_18px_48px_rgba(15,32,59,0.18)] backdrop-blur-sm">
                       <Link to="/services" className="block rounded-xl px-3 py-2 text-[14px] text-slate-700 hover:bg-slate-50 hover:text-[#008DDA]">Services</Link>
                       <Link to="/insights" className="block rounded-xl px-3 py-2 text-[14px] text-slate-700 hover:bg-slate-50 hover:text-[#008DDA]">Insights</Link>
                       <Link to="/industries" className="block rounded-xl px-3 py-2 text-[14px] text-slate-700 hover:bg-slate-50 hover:text-[#008DDA]">Industries</Link>
@@ -203,7 +214,8 @@ export const Header: React.FC = () => {
               <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
                 className="lg:hidden rounded-full p-2 text-white/80 hover:bg-white/5 hover:text-white"
-                aria-label="Toggle Navigation Drawer"
+                aria-label={mobileNavOpen ? 'Close navigation' : 'Open navigation'}
+                aria-expanded={mobileNavOpen}
               >
                 {mobileNavOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -215,7 +227,7 @@ export const Header: React.FC = () => {
       <div aria-hidden="true" className="h-[72px] shrink-0" />
 
       {mobileNavOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0b2a52] text-white lg:hidden">
+        <nav aria-label="Mobile site navigation" className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0b2a52] text-white lg:hidden">
           <div className="flex h-[72px] items-center justify-between border-b border-white/10 px-4">
             <Link to="/" onClick={() => setMobileNavOpen(false)} className="flex items-center gap-2">
               <img src={brandAssets.logo} alt="Centrifuge Group" className="h-8 w-auto" />
@@ -237,6 +249,7 @@ export const Header: React.FC = () => {
               <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-200/70">Company</p>
               <Link to="/about" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">About</Link>
               <Link to="/clients" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Clients</Link>
+              <Link to="/case-studies" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Case Studies</Link>
               <Link to="/careers" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Careers</Link>
             </div>
 
@@ -245,6 +258,10 @@ export const Header: React.FC = () => {
               <Link to="/services" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Services</Link>
               <Link to="/insights" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Insights</Link>
               <Link to="/industries" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Industries</Link>
+            </div>
+
+            <div className="border-t border-white/10 pt-4">
+              <Link to="/shop" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Shop</Link>
             </div>
 
             <div className="border-t border-white/10 pt-4">
@@ -257,7 +274,7 @@ export const Header: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </nav>
       )}
     </>
   )

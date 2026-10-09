@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { mockCaseStudies } from '../../data/mockData'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 export const CaseStudiesSection: React.FC = () => {
   const featured = mockCaseStudies[0]
@@ -13,9 +12,6 @@ export const CaseStudiesSection: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
-              <span>VERIFIED CLIENT OUTCOMES</span>
-            </div>
             <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight">
               Case Studies in Production & Active Deployment
             </h2>
@@ -46,12 +42,6 @@ export const CaseStudiesSection: React.FC = () => {
                   <img src={featured.clientLogo} alt={featured.client} className="h-6 max-w-[110px] object-contain" />
                 </div>
               )}
-              {/* Industry badge */}
-              <div className="absolute bottom-4 left-4">
-                <span className="text-[11px] font-semibold uppercase tracking-widest bg-[#008DDA] text-white px-2.5 py-1 rounded-[4px]">
-                  {featured.industry}
-                </span>
-              </div>
             </div>
 
             <div className="lg:col-span-6 p-8 sm:p-10 space-y-4">

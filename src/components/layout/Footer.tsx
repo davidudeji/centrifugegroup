@@ -1,7 +1,7 @@
 ﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { brandAssets } from '../../assets'
-import { Mail, Phone, MapPin, ArrowUpRight, Briefcase, MessageCircle, Play, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { Mail, Phone, MapPin, Briefcase, MessageCircle, Play, Globe, ShieldCheck } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear()
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-[13px] text-[#A0AEC0] leading-relaxed max-w-sm">
-              High-performance digital banking architecture, modular coreless systems, healthcare workforce registers, and mission-critical enterprise engineering.
+              Enterprise software engineering, systems integration, and digital infrastructure for complex operational environments.
             </p>
 
             <div className="pt-2 text-[12px] text-[#A0AEC0] space-y-2">
@@ -95,7 +95,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/solutions/project-development-management" className="hover:text-white transition-colors flex items-center gap-1.5 text-[#008DDA]">
                   <span>Project Development & Management</span>
-                  <span className="text-[9px] bg-[#008DDA]/20 text-white px-1.5 py-0.5 rounded-[2px] font-mono">v3.8</span>
                 </Link>
               </li>
               <li>
@@ -245,34 +244,10 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Institutional Trust & Compliance Banner */}
-        <div className="py-6 border-b border-[#1E3A8A] flex flex-wrap items-center justify-between gap-4 text-xs">
-          <div className="flex flex-wrap items-center gap-6 text-[#A0AEC0]">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-[#10B981]" />
-              <span>ISO 27001 Certified Security Standards</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-[#10B981]" />
-              <span>ISO 20022 Financial Messaging Compliance</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-[#10B981]" />
-              <span>NDPR & GDPR Data Governance</span>
-            </span>
-          </div>
-
-          <div className="text-[#A0AEC0]">
-            Operational Latency: <span className="text-[#10B981] font-semibold">&lt; 3.2ms</span>
-          </div>
-        </div>
-
         {/* Bottom Legal Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[12px] text-[#A0AEC0] gap-4">
-          <p>Â© {new Date().getFullYear()} Centrifuge Group. Enterprise Financial Technology & Institutional Engineering. All rights reserved.</p>
+          <p>&copy; {year} Centrifuge Group. Enterprise technology and engineering. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link to="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/about" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link to="/contact" className="hover:text-white transition-colors">Security Disclosure</Link>
           </div>
         </div>
@@ -282,4 +257,3 @@ export const Footer: React.FC = () => {
 }
 
 export default Footer
-

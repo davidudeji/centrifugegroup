@@ -1,6 +1,6 @@
 ﻿import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Mail, Phone, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Mail, Phone } from 'lucide-react'
 
 export const FinalCTASection: React.FC = () => {
   return (
@@ -11,11 +11,6 @@ export const FinalCTASection: React.FC = () => {
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[760px] text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-300/25 bg-sky-400/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/90">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            Ready to operate at institutional scale?
-          </div>
-
           <h2 className="text-[34px] font-semibold leading-[1.04] tracking-[-0.05em] text-white sm:text-[48px] lg:text-[60px]">
             Let’s build the architecture your enterprise needs.
           </h2>

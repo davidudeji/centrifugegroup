@@ -29,9 +29,6 @@ export const OptimaxShowcaseSection: React.FC = () => {
     <section className="relative border-b border-[#E2E8F0] bg-[#FFFFFF] py-20 text-left lg:py-24">
       <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[760px] text-center">
-          <div className="mb-4 inline-flex items-center rounded-full border border-[#008DDA]/20 bg-[#008DDA]/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A6CAE]">
-            Optimax Suite Enterprise Platform
-          </div>
 
           <h2 className="text-[32px] font-semibold tracking-[-0.05em] text-[#0F2C59] sm:text-[42px] lg:text-[52px]">
             Everything your business needs. Finally in one place.

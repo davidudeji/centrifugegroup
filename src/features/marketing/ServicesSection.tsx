@@ -85,9 +85,6 @@ export const ServicesSection: React.FC = () => {
     <section className="border-b border-[#E2E8F0] bg-white py-20 text-left lg:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-[760px]">
-          <div className="mb-4 inline-flex items-center rounded-full border border-[#008DDA]/20 bg-[#008DDA]/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A6CAE]">
-            Core services & solutions
-          </div>
           <h2 className="text-[34px] font-semibold tracking-[-0.05em] text-[#0F2C59] sm:text-[42px] lg:text-[52px]">
             Capabilities engineered for institutional scale.
           </h2>

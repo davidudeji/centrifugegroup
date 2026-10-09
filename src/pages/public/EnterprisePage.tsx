@@ -17,15 +17,14 @@ export const EnterprisePage: React.FC = () => {
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>PILLAR 5: ENTERPRISE SOLUTIONS</span>
-            </div>
             <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
               Custom Core Enterprise Platforms & ERP Systems
             </h1>
             <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
               Turnkey ERP implementations, specialized workflow engines, and mission-critical enterprise integrations engineered to withstand complex regulatory environments across West Africa and emerging markets.
+            </p>
+            <p className="text-[14px] text-[#64748B] leading-relaxed max-w-2xl">
+              For growing operations teams, requirements discovery can identify where connected applications and workflow automation may reduce reliance on spreadsheets and disconnected tools.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link

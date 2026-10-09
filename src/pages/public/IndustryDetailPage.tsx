@@ -151,10 +151,6 @@ export const IndustryDetailPage: React.FC = () => {
           </Link>
 
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
-              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>INDUSTRY SPECIFICATION</span>
-            </div>
             <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
               {ind.title}
             </h1>
@@ -279,4 +275,3 @@ export const IndustryDetailPage: React.FC = () => {
 }
 
 export default IndustryDetailPage
-

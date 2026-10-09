@@ -33,10 +33,6 @@ export const HeroSection: React.FC = () => {
         <div className="flex min-h-[620px] items-center">
           <div className="grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="max-w-[560px]">
-              <div className="mb-6 inline-flex items-center rounded-full border border-sky-300/30 bg-sky-400/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/90">
-                Digital Solutions for Complex Business
-              </div>
-
               <h1 className="max-w-[620px] text-[42px] font-semibold leading-[1.02] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[68px]">
                 Technology that moves your business forward.
               </h1>

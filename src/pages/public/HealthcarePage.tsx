@@ -1,32 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { ArrowRight, CheckCircle2, Activity, ShieldCheck, Database, Cpu } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export const HealthcarePage: React.FC = () => {
   const systems = [
     {
       title: 'Human Resource for Health Information System (HRHIS)',
       desc: 'National and state-level healthcare workforce database tracking accreditation, postings, credentials, and capacity building for healthcare practitioners across Nigeria.',
-      badge: 'Deployed with FMOH, WHO, UNICEF',
+      context: 'Health workforce information system',
       features: ['Digital licensing & CPD tracking', 'Health facility workforce modeling', 'Biometric validation', 'Interoperable DHIS2 APIs'],
     },
     {
       title: 'Electronic Hospital Management Platform (EHMP)',
       desc: 'Complete paperless clinical workflow management for public teaching hospitals and private healthcare networks.',
-      badge: 'Clinical EMR',
+      context: 'Clinical information system',
       features: ['Outpatient & Inpatient EMR', 'Laboratory Information System (LIS)', 'Pharmacy stock & dispensing', 'NHIS/HMO claims billing'],
     },
     {
       title: 'Digital Credentialing & Licensing Portals',
       desc: 'Tamper-proof digital licensing, examination registration, and instant QR verification for professional regulatory councils.',
-      badge: 'Regulatory Grade',
+      context: 'Credentialing and licensing',
       features: ['Cryptographic QR certificates', 'Online credential verification', 'Remita payment reconciliation', 'Examination seat scheduling'],
     },
     {
       title: 'Vaccine & Cold-Chain IoT Monitoring',
       desc: 'Cellular IoT sensor probes continuously monitoring temperature and humidity in pharmaceutical storage and regional depots.',
-      badge: 'Cold Chain',
+      context: 'Cold-chain monitoring',
       features: ['24/7 continuous temperature logs', 'Automated SMS & audible alarms', 'Regulatory audit trail PDFs', '72-hour power backup'],
     },
   ]
@@ -44,15 +44,11 @@ export const HealthcarePage: React.FC = () => {
 
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-                <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
-                <span>CENTRIFUGE HEALTH INFORMATICS</span>
-              </div>
               <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
                 National Health Registries & Clinical Information Systems
               </h1>
               <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
-                We design and operate resilient public health informatics systems in partnership with the Federal Ministry of Health, national regulatory councils, and multilateral bodies including the WHO and UNICEF.
+                We design public health and workforce information systems for complex institutional environments. Programme reporting, data standards, and interoperability requirements are confirmed with stakeholders for each engagement.
               </p>
               <div className="pt-2 flex flex-wrap gap-3">
                 <Link
@@ -77,14 +73,14 @@ export const HealthcarePage: React.FC = () => {
         <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="max-w-2xl text-left">
-              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
-                SPECIALIZED HEALTHCARE SUITES
-              </span>
               <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight mt-2">
-                Field-Proven Healthcare Infrastructure
+                Healthcare Information Systems
               </h2>
               <p className="text-[14px] text-[#64748B] mt-2">
-                Architectures compliant with WHO data standards and national health interoperability frameworks.
+                System requirements and reporting structures should be agreed with relevant institutions and aligned with applicable guidance.
+              </p>
+              <p className="text-[14px] text-[#64748B] mt-2">
+                For NGO and public health programmes, discovery may include field data capture, programme and beneficiary information, and coordinated reporting. Fit depends on each programme's scope, data governance, and interoperability requirements.
               </p>
             </div>
 
@@ -95,14 +91,10 @@ export const HealthcarePage: React.FC = () => {
                   className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs transition-fin flex flex-col justify-between text-left"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="px-2.5 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/25 text-[#0077B6] text-[11px] font-mono font-semibold uppercase tracking-wider">
-                        {sys.badge}
-                      </span>
-                    </div>
                     <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight">
                       {sys.title}
                     </h3>
+                    <p className="text-[13px] font-medium text-[#64748B] mt-1">{sys.context}</p>
                     <p className="text-[14px] text-[#475569] mt-2.5 leading-relaxed">
                       {sys.desc}
                     </p>

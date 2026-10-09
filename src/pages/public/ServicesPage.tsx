@@ -153,10 +153,6 @@ export const ServicesPage: React.FC = () => {
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>FULL LIFECYCLE CAPABILITIES</span>
-            </div>
             <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
               From Architectural Strategy to High-Scale Production Systems
             </h1>
@@ -194,14 +190,8 @@ export const ServicesPage: React.FC = () => {
                   className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
                 >
                   <div>
-                    {/* Icon & Badge */}
-                    <div className="flex items-center justify-between">
-                      <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <span className="text-[11px] uppercase font-mono font-semibold px-2 py-0.5 rounded-[4px] border border-[#E2E8F0] text-[#64748B] bg-[#F1F5F9]">
-                        Pillar
-                      </span>
+                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
+                      <Icon className="h-5 w-5" />
                     </div>
 
                     {/* Title & Subtitle */}

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { ArrowRight, Layers, Truck, Activity, Building, BarChart2, CheckCircle2, Cpu, ShieldCheck } from 'lucide-react'
-import { Button } from '../../components/ui/Button'
+import { ArrowRight, Layers, Truck, Activity, Building, BarChart2, CheckCircle2, Cpu } from 'lucide-react'
 
 export const SolutionsPage: React.FC = () => {
   const solutions = [
@@ -74,9 +73,6 @@ export const SolutionsPage: React.FC = () => {
         <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#E2E8F0]">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-                <span>CENTRIFUGE PLATFORM SUITE</span>
-              </div>
               <h1 className="text-[34px] sm:text-[48px] font-bold text-[#0F2C59] tracking-tight leading-tight">
                 Integrated Platforms for Complex Institutional Operations
               </h1>
