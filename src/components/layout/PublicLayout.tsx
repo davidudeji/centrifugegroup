@@ -4,6 +4,7 @@ import { Header } from './Header'
 import { Footer } from './Footer'
 import { CartDrawer } from './CartDrawer'
 import { ToastContainer } from '../ui/ToastContainer'
+import { Chatbot } from '../chatbot/Chatbot'
 
 export const PublicLayout: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ export const PublicLayout: React.FC = () => {
       <Footer />
       <CartDrawer />
       <ToastContainer />
+      <Chatbot />
     </div>
   )
 }
