@@ -10,10 +10,14 @@ import womenForWealthLogo from './Women for wealth.jpg'
 
 import optimaxSalesDashboard from './optimax sales dashboard.PNG'
 import heroImage from './hero image.jpg'
+import digitalSolution1 from './digital solution 1.avif'
+import digitalSolutionThatScale from './digital solution that scale.avif'
 
 export const brandAssets = {
   logo: centrifugeLogo,
   heroImage,
+  digitalSolution1,
+  digitalSolutionThatScale,
   name: 'Centrifuge Group',
   tagline: 'Technology that moves business forward.',
 }
@@ -21,6 +25,8 @@ export const brandAssets = {
 export const productAssets = {
   optimaxSalesDashboard,
   heroImage,
+  digitalSolution1,
+  digitalSolutionThatScale,
 }
 
 export const verifiedClients = [
