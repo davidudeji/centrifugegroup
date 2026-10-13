@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { SEO } from '../../components/ui/SEO'
 import { HeroSection } from '../../features/marketing/HeroSection'
 import { TrustSection } from '../../features/marketing/TrustSection'
@@ -17,8 +17,8 @@ export const HomePage: React.FC = () => {
   return (
     <div className="w-full">
       <SEO
-        title="Centrifuge Group | Project Development & Management & Enterprise Technology"
-        description="Structured project planning, implementation leadership, monitoring, and management capability building for complex organizations."
+        title="Centrifuge Group | Enterprise Technology & Digital Solutions"
+        description="Technology that moves business forward. Enterprise software, healthcare platforms, logistics systems, and mission-critical digital solutions."
       />
       <HeroSection />
       <TrustSection />

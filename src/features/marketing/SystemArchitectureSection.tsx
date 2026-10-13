@@ -18,10 +18,6 @@ export const SystemArchitectureSection: React.FC = () => {
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-[680px]">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
-            <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-            <span>Connected enterprise architecture</span>
-          </div>
           <h2 className="text-[34px] font-semibold leading-[1.04] tracking-[-0.05em] text-white sm:text-[44px] lg:text-[56px]">
             Built to connect the systems behind the business.
           </h2>

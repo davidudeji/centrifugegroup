@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { mockCaseStudies } from '../../data/mockData'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
 
 export const CaseStudiesSection: React.FC = () => {
   const featured = mockCaseStudies[0]
@@ -13,11 +12,7 @@ export const CaseStudiesSection: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-              <span>Verified Client Outcomes</span>
-            </div>
-            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0B1F33] tracking-tight">
+            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight">
               Case Studies in Production & Active Deployment
             </h2>
             <p className="text-[15px] text-[#64748B] mt-2 max-w-xl leading-relaxed">
@@ -47,12 +42,6 @@ export const CaseStudiesSection: React.FC = () => {
                   <img src={featured.clientLogo} alt={featured.client} className="h-6 max-w-[110px] object-contain" />
                 </div>
               )}
-              {/* Industry badge */}
-              <div className="absolute bottom-4 left-4">
-                <span className="text-[11px] font-semibold uppercase tracking-widest bg-[#008DDA] text-white px-2.5 py-1 rounded-[4px]">
-                  {featured.industry}
-                </span>
-              </div>
             </div>
 
             <div className="lg:col-span-6 p-8 sm:p-10 space-y-4">
@@ -92,52 +81,52 @@ export const CaseStudiesSection: React.FC = () => {
         </div>
 
 
-      {/* ─── Secondary Case Study Cards ─── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {secondary.map((cs) => (
-          <div
-            key={cs.id}
-            className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono font-semibold text-[#008DDA] uppercase tracking-wider">
-                  {cs.industry}
-                </span>
-                {cs.clientLogo && (
-                  <img src={cs.clientLogo} alt={cs.client} className="h-6 max-w-[90px] object-contain opacity-85" />
-                )}
-              </div>
-              <h4 className="text-[18px] font-bold text-[#0F2C59] tracking-tight leading-snug">
-                {cs.title}
-              </h4>
-              <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
-                {cs.challenge}
-              </p>
+        {/* ─── Secondary Case Study Cards ─── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {secondary.map((cs) => (
+            <div
+              key={cs.id}
+              className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono font-semibold text-[#008DDA] uppercase tracking-wider">
+                    {cs.industry}
+                  </span>
+                  {cs.clientLogo && (
+                    <img src={cs.clientLogo} alt={cs.client} className="h-6 max-w-[90px] object-contain opacity-85" />
+                  )}
+                </div>
+                <h4 className="text-[18px] font-bold text-[#0F2C59] tracking-tight leading-snug">
+                  {cs.title}
+                </h4>
+                <p className="text-[13px] text-[#475569] mt-2 line-clamp-3 leading-relaxed">
+                  {cs.challenge}
+                </p>
 
-              <div className="mt-4 pt-3 border-t border-[#F1F5F9] space-y-1.5">
-                {cs.results.slice(0, 2).map((r, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-[#64748B]">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#10B981] shrink-0" />
-                    <span>{r}</span>
-                  </div>
-                ))}
+                <div className="mt-4 pt-3 border-t border-[#F1F5F9] space-y-1.5">
+                  {cs.results.slice(0, 2).map((r, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs text-[#64748B]">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-[#10B981] shrink-0" />
+                      <span>{r}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-[#F1F5F9]">
+                <Link
+                  to={`/case-studies/${cs.slug}`}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
+                >
+                  <span>Read Complete Case Study</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </Link>
               </div>
             </div>
-
-            <div className="mt-6 pt-4 border-t border-[#F1F5F9]">
-              <Link
-                to={`/case-studies/${cs.slug}`}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
-              >
-                <span>Read Complete Case Study</span>
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </section>
   )
 }

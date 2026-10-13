@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { mockArticles } from '../../data/mockData'
-import { ArrowRight, Clock, User } from 'lucide-react'
-import { Reveal, StaggerReveal } from '../../components/ui/Reveal'
+import { ArrowRight, Clock } from 'lucide-react'
 
 export const InsightsSection: React.FC = () => {
   return (
@@ -10,9 +9,6 @@ export const InsightsSection: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
-              <span>ENGINEERING & FINANCIAL RESEARCH</span>
-            </div>
             <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight">
               Technical Insights & Architectural Perspectives
             </h2>

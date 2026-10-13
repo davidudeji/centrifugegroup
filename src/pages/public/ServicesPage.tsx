@@ -147,17 +147,17 @@ export const ServicesPage: React.FC = () => {
         description="Explore our six core engineering and advisory pillars: Application Development, IT Training, IT Consultancy, Infrastructure and Connectivity, Enterprise Solutions, and Business Solutions."
       />
 
-      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
-      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
+      {/* ─── Hero Header ─── */}
+      <section className="bg-[#FFFFFF] text-[#0B1F33] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>FULL LIFECYCLE CAPABILITIES</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+              <span>Core Capabilities & Advisory</span>
             </div>
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
               From Architectural Strategy to High-Scale Production Systems
             </h1>
             <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
@@ -194,14 +194,8 @@ export const ServicesPage: React.FC = () => {
                   className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 flex flex-col justify-between transition-fin group text-left"
                 >
                   <div>
-                    {/* Icon & Badge */}
-                    <div className="flex items-center justify-between">
-                      <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <span className="text-[11px] uppercase font-mono font-semibold px-2 py-0.5 rounded-[4px] border border-[#E2E8F0] text-[#64748B] bg-[#F1F5F9]">
-                        Pillar
-                      </span>
+                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
+                      <Icon className="h-5 w-5" />
                     </div>
 
                     {/* Title & Subtitle */}
@@ -284,7 +278,7 @@ export const ServicesPage: React.FC = () => {
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-sm font-semibold transition-colors shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[8px] bg-[#E87916] text-white shadow-[0_10px_24px_rgba(232,121,22,0.28)] hover:bg-[#D0690E] hover:shadow-[0_14px_30px_rgba(232,121,22,0.36)] hover:-translate-y-0.5 text-sm font-semibold transition-all duration-200 shrink-0"
             >
               <span>Schedule Architecture Consultation</span>
               <ArrowRight className="h-4 w-4" />

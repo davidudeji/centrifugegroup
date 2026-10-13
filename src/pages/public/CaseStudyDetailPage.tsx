@@ -28,11 +28,9 @@ export const CaseStudyDetailPage: React.FC = () => {
             <span>All Case Studies</span>
           </Link>
 
-          <div className="pt-2 flex items-center gap-2">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008DDA] px-2.5 py-0.5 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/30">
-              {cs.industry}
-            </span>
-            <span className="text-xs text-[#64748B]">· {cs.client}</span>
+          <div className="pt-2 text-sm text-[#64748B]">
+            <span>{cs.industry}</span>
+            <span> · {cs.client}</span>
           </div>
 
           <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">

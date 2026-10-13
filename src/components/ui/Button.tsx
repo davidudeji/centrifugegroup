@@ -27,30 +27,30 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     // Global transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1) per spec §5.2
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-fin disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99] rounded-[4px] cursor-pointer'
+      'inline-flex items-center justify-center font-semibold transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.99] rounded-[8px] cursor-pointer'
 
     const sizeStyles = {
-      sm: 'text-xs px-3 py-1.5 gap-1.5',
-      md: 'text-sm px-4.5 py-2 gap-2',
-      lg: 'text-base px-6 py-2.5 gap-2.5 font-semibold',
+      sm: 'text-xs px-3.5 py-2 gap-1.5',
+      md: 'text-sm px-5 py-2.5 gap-2',
+      lg: 'text-base px-6 py-3.5 gap-2.5 font-semibold',
     }
 
-    // Button state styling per UI/UX Spec §5.1
+    // Button state styling per Centrifuge Brand Design System
     const variantStyles = {
       primary:
-        'bg-[#008DDA] text-[#FFFFFF] font-semibold hover:bg-[#0077B6] focus:outline-none focus:ring-2 focus:ring-[#0F2C59] focus:ring-offset-1 border border-transparent shadow-xs',
+        'bg-[#E87916] text-[#FFFFFF] font-semibold hover:bg-[#D0690E] shadow-[0_4px_14px_rgba(232,121,22,0.28)] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#E87916] focus:ring-offset-2 border border-transparent',
       secondary:
-        'bg-transparent text-[#008DDA] border border-[#008DDA] hover:bg-[#008DDA] hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/40',
+        'bg-[#008DDA] text-[#FFFFFF] font-semibold hover:bg-[#0077B6] shadow-[0_4px_14px_rgba(0,141,218,0.25)] hover:shadow-[0_6px_18px_rgba(0,141,218,0.32)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#008DDA] focus:ring-offset-2 border border-transparent',
       dark:
-        'bg-[#0F2C59] text-[#FFFFFF] hover:bg-[#1E3A8A] focus:outline-none focus:ring-2 focus:ring-[#008DDA] border border-transparent',
+        'bg-[#0B1F33] text-[#FFFFFF] font-semibold hover:bg-[#071521] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#0B1F33] focus:ring-offset-2 border border-white/10 shadow-xs',
       outline:
-        'bg-[#FFFFFF] text-[#1A1A1A] border border-[#E2E8F0] hover:bg-[#F5F7FA] hover:border-[#CBD5E1] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/30',
+        'bg-[#FFFFFF] text-[#0B1F33] font-semibold border border-[#CBD5E1] hover:bg-slate-50 hover:border-[#0B1F33]/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#0B1F33]/20 shadow-2xs',
       ghost:
-        'bg-transparent text-[#1A1A1A] hover:bg-[#E2E8F0]/60 hover:text-[#0F2C59] focus:outline-none',
+        'bg-transparent text-[#0B1F33] font-medium hover:bg-[#0B1F33]/5 hover:text-[#0B1F33] focus:outline-none',
       'code-pill':
-        'bg-[#F5F7FA] text-[#0F2C59] border border-[#E2E8F0] font-mono text-xs px-2.5 py-1 hover:border-[#008DDA] hover:bg-[#FFFFFF]',
+        'bg-[#F7F9FA] text-[#0B1F33] border border-[#E2E8F0] font-mono text-xs px-2.5 py-1 hover:border-[#E87916] hover:bg-[#FFFFFF]',
       danger:
-        'bg-[#EF4444] text-[#FFFFFF] hover:bg-[#DC2626] focus:outline-none focus:ring-2 focus:ring-[#EF4444]/40 border border-transparent',
+        'bg-[#DC2626] text-[#FFFFFF] font-semibold hover:bg-[#B91C1C] focus:outline-none focus:ring-2 focus:ring-[#DC2626]/40 border border-transparent shadow-xs',
     }
 
     return (

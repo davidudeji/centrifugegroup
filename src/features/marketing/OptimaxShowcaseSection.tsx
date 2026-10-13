@@ -29,10 +29,6 @@ export const OptimaxShowcaseSection: React.FC = () => {
     <section className="relative border-b border-[#E2E8F0] bg-[#FFFFFF] py-20 text-left lg:py-24">
       <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[760px] text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-            <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-            <span>Optimax Suite Enterprise Platform</span>
-          </div>
 
           <h2 className="text-[32px] font-semibold tracking-[-0.05em] text-[#0B1F33] sm:text-[42px] lg:text-[52px]">
             Everything your business needs. Finally in one place.
@@ -52,11 +48,10 @@ export const OptimaxShowcaseSection: React.FC = () => {
                 <button
                   key={m.id}
                   onClick={() => setActiveModule(m.id)}
-                  className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[12px] font-semibold transition-all duration-200 ${
-                    isActive
+                  className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[12px] font-semibold transition-all duration-200 ${isActive
                       ? "border-[#E87916] bg-[#E87916]/10 text-[#D0690E]"
                       : "border-[#E2E8F0] bg-[#F8FAFC] text-[#475569] hover:border-[#CBD5E1] hover:text-[#0B1F33]"
-                  }`}
+                    }`}
                 >
                   <Icon className="h-3.5 w-3.5" />
                   <span>{m.label}</span>

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
-import { ArrowRight, Layers, Truck, Activity, Building, BarChart2, CheckCircle2, Cpu, ShieldCheck } from 'lucide-react'
-import { Button } from '../../components/ui/Button'
+import { ArrowRight, Layers, Truck, Activity, Building, BarChart2, CheckCircle2, Cpu } from 'lucide-react'
 
 export const SolutionsPage: React.FC = () => {
   const solutions = [
@@ -71,13 +70,15 @@ export const SolutionsPage: React.FC = () => {
         />
 
         {/* ─── Header ─── */}
-        <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#E2E8F0]">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#FFFFFF] text-[#0B1F33] py-16 sm:py-24 border-b border-[#E2E8F0] relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-                <span>CENTRIFUGE PLATFORM SUITE</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+                <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+                <span>Enterprise Technology Solutions</span>
               </div>
-              <h1 className="text-[34px] sm:text-[48px] font-bold text-[#0F2C59] tracking-tight leading-tight">
+              <h1 className="text-[34px] sm:text-[48px] font-bold text-[#0B1F33] tracking-tight leading-tight">
                 Integrated Platforms for Complex Institutional Operations
               </h1>
               <p className="text-[16px] text-[#475569] leading-relaxed">
@@ -142,14 +143,14 @@ export const SolutionsPage: React.FC = () => {
                   <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
                     <Link
                       to={targetUrl}
-                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] text-sm font-semibold bg-[#008DDA] text-white hover:bg-[#0077B6] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[8px] text-sm font-semibold bg-[#E87916] text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] hover:-translate-y-0.5 transition-all duration-200"
                     >
                       <span>Explore Solution</span>
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                     <Link
                       to="/contact"
-                      className="text-xs font-semibold text-[#64748B] hover:text-[#008DDA] transition-colors"
+                      className="text-xs font-semibold text-[#64748B] hover:text-[#E87916] transition-colors"
                     >
                       Request Technical Overview →
                     </Link>
@@ -161,7 +162,7 @@ export const SolutionsPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#0F2C59] py-20">
+        <section className="bg-[#0B1F33] py-20 border-t border-white/10">
           <div className="section-container text-center">
             <h2 className="text-h2 text-white mb-4">Not sure which platform fits?</h2>
             <p className="text-body-lg text-[#94A3B8] mb-8 max-w-xl mx-auto">

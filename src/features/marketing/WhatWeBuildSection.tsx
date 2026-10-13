@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Layers3, Database, Workflow, Cloud, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Layers3, Workflow, Cloud } from 'lucide-react'
 
 const capabilityCards = [
   {
@@ -26,12 +26,7 @@ export const WhatWeBuildSection: React.FC = () => {
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="max-w-[560px]">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-              <span>Software Development</span>
-            </div>
-
-            <h2 className="text-[34px] font-semibold leading-[1.02] tracking-[-0.05em] text-[#0B1F33] sm:text-[46px] lg:text-[54px]">
+            <h2 className="text-[34px] font-semibold leading-[1.02] tracking-[-0.05em] text-[#0F2C59] sm:text-[46px] lg:text-[54px]">
               Engineering digital solutions that scale
             </h2>
 

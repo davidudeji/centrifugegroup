@@ -3,7 +3,7 @@ import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'success' | 'warning' | 'error' | 'info' | 'neutral' | 'outline' | 'brand' | 'navy'
+  variant?: 'default' | 'success' | 'warning' | 'error' | 'info' | 'neutral' | 'outline' | 'brand' | 'navy' | 'accent'
   size?: 'sm' | 'md'
   dot?: boolean
 }
@@ -23,8 +23,9 @@ export const Badge: React.FC<BadgeProps> = ({
 
   const variantStyles = {
     default: 'bg-[#F1F5F9] text-[#475569] border border-[#E2E8F0]',
+    accent: 'bg-[#E87916]/10 text-[#D0690E] border border-[#E87916]/30',
     brand: 'bg-[#008DDA]/10 text-[#0077B6] border border-[#008DDA]/30',
-    navy: 'bg-[#0F2C59]/10 text-[#0F2C59] border border-[#0F2C59]/25',
+    navy: 'bg-[#0B1F33]/10 text-[#0B1F33] border border-[#0B1F33]/25',
     success: 'bg-[#D1FAE5] text-[#065F46] border border-[#A7F3D0]',
     warning: 'bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A]',
     error: 'bg-[#FEE2E2] text-[#B91C1C] border border-[#FECACA]',
@@ -35,8 +36,9 @@ export const Badge: React.FC<BadgeProps> = ({
 
   const dotColors = {
     default: 'bg-[#64748B]',
+    accent: 'bg-[#E87916]',
     brand: 'bg-[#008DDA]',
-    navy: 'bg-[#0F2C59]',
+    navy: 'bg-[#0B1F33]',
     success: 'bg-[#10B981]',
     warning: 'bg-[#F59E0B]',
     error: 'bg-[#EF4444]',

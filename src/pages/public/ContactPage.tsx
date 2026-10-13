@@ -1,6 +1,5 @@
 ﻿import React, { useState } from 'react'
 import { SEO } from '../../components/ui/SEO'
-import { PageHero } from '../../components/ui/PageHero'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from 'lucide-react'
@@ -74,10 +73,6 @@ export const ContactPage: React.FC = () => {
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] border border-[#008DDA]/30 bg-[#008DDA]/10 text-xs font-semibold uppercase tracking-wider text-[#0077B6]">
-              <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>DIRECT TECHNICAL ACCESS</span>
-            </div>
             <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
               Have an Operational Challenge Worth Solving?
             </h1>
@@ -254,4 +249,3 @@ export const ContactPage: React.FC = () => {
 }
 
 export default ContactPage
-

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0F2C59;
-  --color-primary-brand: #0F2C59;
+  --color-primary: #0B1F33;
+  --color-primary-brand: #0B1F33;
   --color-brand-primary: #0B1F33;
   --color-brand-dark: #071521;
   --color-brand-accent: #E87916;
@@ -12,17 +12,17 @@
   --color-brand-blue: #008DDA;
   --color-secondary: #008DDA;
   --color-secondary-hover: #0077B6;
-  --color-neutral-dark: #1A1A1A;
-  --color-neutral-light: #F5F7FA;
+  --color-neutral-dark: #0B1F33;
+  --color-neutral-light: #F7F9FA;
   --color-surface: #FFFFFF;
   --color-border-ui: #E2E8F0;
   --color-border: #E2E8F0;
-  --color-success: #10B981;
-  --color-alert: #EF4444;
-  --color-sidebar-bg: #0F2C59;
-  --color-sidebar-hover: #1E3A8A;
+  --color-success: #16A34A;
+  --color-alert: #DC2626;
+  --color-sidebar-bg: #0B1F33;
+  --color-sidebar-hover: #132D48;
   --color-sidebar-text: #A0AEC0;
-  --color-sidebar-active: #008DDA;
+  --color-sidebar-active: #E87916;
   --font-inter: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -37,7 +37,7 @@
   --leading-body: 1.5;
   --text-caption: 12px;
   --leading-caption: 1.4;
-  --radius-btn: 4px;
+  --radius-btn: 6px;
   --radius-card: 8px;
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -58,18 +58,18 @@
   --color-text-primary: #0B1F33;
   --color-text-secondary: #64748B;
   --color-border: #E2E8F0;
-  --primary: #0F2C59;
+  --primary: #0B1F33;
   --secondary: #008DDA;
   --secondary-hover: #0077B6;
-  --neutral-dark: #1A1A1A;
-  --neutral-light: #F5F7FA;
+  --neutral-dark: #0B1F33;
+  --neutral-light: #F7F9FA;
   --surface: #FFFFFF;
   --border: #E2E8F0;
-  --success: #10B981;
-  --alert: #EF4444;
+  --success: #16A34A;
+  --alert: #DC2626;
   --site-max-width: 1280px;
   --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -78,15 +78,15 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #F5F7FA;
-  color: #1A1A1A;
+  background-color: #F7F9FA;
+  color: #0B1F33;
   font-family: var(--font-inter);
   overflow-x: hidden;
 }
 
 body {
-  background-color: #F5F7FA;
-  color: #1A1A1A;
+  background-color: #F7F9FA;
+  color: #0B1F33;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -517,6 +517,175 @@ img {
 .link-1 { left: 18%; top: 42%; width: 30%; transform: rotate(24deg); }
 .link-2 { left: 39%; top: 31%; width: 32%; transform: rotate(-10deg); }
 .link-3 { left: 31%; bottom: 28%; width: 36%; transform: rotate(38deg); }
+
+.chatbot-shell {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.chatbot-launcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0B1F33 0%, #E87916 100%);
+  box-shadow: 0 14px 32px rgba(11, 31, 51, 0.35);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chatbot-launcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(15, 44, 89, 0.38);
+}
+
+.chatbot-panel {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  width: min(92vw, 820px);
+  height: min(75vh, 640px);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 60px rgba(15, 32, 59, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+}
+
+.chatbot-panel--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.chatbot-shell--dark .chatbot-panel {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.4);
+}
+
+.chatbot-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  height: calc(100% - 72px);
+}
+
+.chatbot-sidebar {
+  border-right: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(248, 250, 252, 0.8);
+  padding: 16px 12px;
+}
+
+.chatbot-shell--dark .chatbot-sidebar {
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.chatbot-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-shell--dark .chatbot-main {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.chatbot-messages {
+  flex: 1;
+  min-height: 180px;
+  overflow-y: auto;
+  padding: 16px 16px 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(248, 250, 252, 0.64));
+}
+
+.chatbot-shell--dark .chatbot-messages {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.7));
+}
+
+.chatbot-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  background: rgba(226, 232, 240, 0.8);
+  color: #334155;
+  width: fit-content;
+}
+
+.chatbot-loader__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.chatbot-loader__dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.chatbot-loader__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #0F2C59;
+  animation: chatbotPulse 0.9s ease-in-out infinite alternate;
+}
+
+.chatbot-loader__dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chatbot-loader__dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes chatbotPulse {
+  from {
+    opacity: 0.3;
+    transform: translateY(2px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-1px) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .chatbot-shell {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .chatbot-panel {
+    width: min(92vw, 420px);
+    height: min(78vh, 560px);
+  }
+
+  .chatbot-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chatbot-sidebar {
+    display: none;
+  }
+}
 
 .floating-card {
   position: absolute;
