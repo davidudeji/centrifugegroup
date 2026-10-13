@@ -8,7 +8,7 @@ import {
   Layers,
   Sparkles,
 } from "lucide-react";
-import optimaxDashboard from "../../assets/optimax sales dashboard.PNG";
+import heroImage from "../../assets/hero image.jpg";
 
 const EASING: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -268,9 +268,9 @@ export const HeroSection: React.FC = () => {
                   {/* Browser Address Bar / Context Pill */}
                   <div className="flex items-center gap-1.5 rounded-md border border-slate-200/80 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-2xs">
                     <Lock className="h-3 w-3 text-emerald-600" aria-hidden="true" />
-                    <span className="font-mono text-slate-500">optimax.centrifugegroup.com</span>
+                    <span className="font-mono text-slate-500">centrifugegroup.com</span>
                     <span className="text-slate-300">/</span>
-                    <span className="text-slate-700">sales-command</span>
+                    <span className="text-slate-700">solutions-architecture</span>
                   </div>
 
                   {/* Live Status Badge */}
@@ -279,20 +279,20 @@ export const HeroSection: React.FC = () => {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                     </span>
-                    <span className="hidden sm:inline text-[11px]">Live System</span>
+                    <span className="hidden sm:inline text-[11px]">Active Production</span>
                   </div>
                 </div>
 
                 {/* Main Screenshot Container (Stable aspect ratio prevents layout shifts) */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                   <img
-                    src={optimaxDashboard}
-                    alt="OptimaX ERP Suite Sales Command Center dashboard showing enterprise revenue analytics, live quotes, and operational workflows"
+                    src={heroImage}
+                    alt="Centrifuge Group enterprise software engineering, cloud systems, and digital solutions architecture"
                     width={1280}
                     height={800}
                     loading="eager"
                     decoding="async"
-                    className="h-full w-full object-cover object-top select-none transition-transform duration-500 group-hover:scale-[1.01]"
+                    className="h-full w-full object-cover object-center select-none transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
               </div>
@@ -309,10 +309,10 @@ export const HeroSection: React.FC = () => {
                 </div>
                 <div className="text-left">
                   <div className="text-[12px] font-bold text-[#0B1F33]">
-                    OptimaX ERP Suite
+                    Enterprise Digital Engineering
                   </div>
                   <div className="text-[11px] text-[#64748B]">
-                    Multi-Entity Operations & Revenue Engine
+                    Scalable Architecture & Secure Platforms
                   </div>
                 </div>
               </motion.div>
