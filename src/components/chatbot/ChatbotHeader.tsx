@@ -18,16 +18,16 @@ export function ChatbotHeader({ isDark, onToggleTheme, onNewConversation }: Chat
         <div
           className={[
             'flex h-9 w-9 items-center justify-center rounded-xl',
-            isDark ? 'bg-slate-800 text-sky-300' : 'bg-[#EAF7FF] text-[#0F2C59]',
+            isDark ? 'bg-slate-800 text-[#E87916]' : 'bg-[#E87916]/10 text-[#E87916]',
           ].join(' ')}
         >
           <Sparkles className="h-4 w-4" />
         </div>
         <div>
-          <p className={['text-sm font-semibold', isDark ? 'text-slate-100' : 'text-slate-800'].join(' ')}>
+          <p className={['text-sm font-semibold', isDark ? 'text-slate-100' : 'text-[#0B1F33]'].join(' ')}>
             Centrifuge AI
           </p>
-          <p className={['text-[11px]', isDark ? 'text-slate-400' : 'text-slate-500'].join(' ')}>
+          <p className={['text-[11px]', isDark ? 'text-slate-400' : 'text-[#64748B]'].join(' ')}>
             Knowledge assistant
           </p>
         </div>
@@ -50,7 +50,7 @@ export function ChatbotHeader({ isDark, onToggleTheme, onNewConversation }: Chat
         <button
           type="button"
           onClick={onNewConversation}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#0F2C59] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#183d73]"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#E87916] px-3.5 py-2 text-xs font-semibold text-white shadow-[0_2px_8px_rgba(232,121,22,0.25)] transition hover:bg-[#D0690E]"
         >
           <Plus className="h-3.5 w-3.5" />
           New chat

@@ -46,7 +46,7 @@ export function ChatInput({ value, onChange, onSubmit, disabled, isSubmitting, i
         <button
           type="submit"
           disabled={submitDisabled}
-          className="inline-flex h-[48px] items-center justify-center rounded-2xl bg-[#0F2C59] px-5 text-sm font-semibold text-white transition hover:bg-[#173d73] disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500"
+          className="inline-flex h-[48px] items-center justify-center rounded-2xl bg-[#E87916] px-5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] transition hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none"
         >
           {isSubmitting ? 'Sending...' : 'Send'}
         </button>

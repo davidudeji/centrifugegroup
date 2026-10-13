@@ -19,8 +19,8 @@ export function ChatMessage({ message }: ChatMessageProps) {
         className={[
           'max-w-[80%] rounded-2xl px-4 py-3 shadow-sm',
           isUser
-            ? 'rounded-br-md bg-[#0F2C59] text-white'
-            : 'rounded-bl-md border border-slate-200 bg-slate-100 text-slate-700',
+            ? 'rounded-br-md bg-[#0B1F33] text-white'
+            : 'rounded-bl-md border border-[#E2E8F0] bg-[#F7F9FA] text-[#0B1F33]',
         ].join(' ')}
       >
         <p className="whitespace-pre-wrap text-sm leading-6">{message.text}</p>

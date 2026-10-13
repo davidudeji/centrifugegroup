@@ -171,10 +171,14 @@ export function Chatbot() {
         },
       }))
     } catch (requestError) {
-      const message =
-        requestError instanceof Error
-          ? requestError.message
-          : 'Something went wrong while contacting the chatbot service.'
+      const isConnectionError =
+        requestError instanceof TypeError ||
+        (requestError instanceof Error && requestError.message.toLowerCase().includes('fetch'))
+      const message = isConnectionError
+        ? 'Unable to connect to the Centrifuge assistant backend on http://localhost:5000. Please start the backend service (cd backend && npm run dev).'
+        : requestError instanceof Error
+        ? requestError.message
+        : 'Something went wrong while contacting the chatbot service.'
       setError(message)
     } finally {
       setIsSubmitting(false)
@@ -217,7 +221,7 @@ export function Chatbot() {
                   className={[
                     'flex w-full items-center justify-between rounded-xl border px-3 py-2 text-left transition',
                     activeConversation?.id === conversation.id
-                      ? 'border-[#008DDA]/30 bg-[#EAF7FF] text-[#0F2C59]'
+                      ? 'border-[#E87916]/30 bg-[#E87916]/10 text-[#0B1F33] font-semibold'
                       : 'border-transparent bg-slate-50 text-slate-600 hover:border-slate-200 hover:bg-slate-100',
                   ].join(' ')}
                 >
