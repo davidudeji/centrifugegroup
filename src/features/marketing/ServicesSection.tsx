@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import {
   BarChart3,
@@ -85,10 +85,11 @@ export const ServicesSection: React.FC = () => {
     <section className="border-b border-[#E2E8F0] bg-white py-20 text-left lg:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-[760px]">
-          <div className="mb-4 inline-flex items-center rounded-full border border-[#008DDA]/20 bg-[#008DDA]/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A6CAE]">
-            Core services & solutions
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+            <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+            <span>Core services & solutions</span>
           </div>
-          <h2 className="text-[34px] font-semibold tracking-[-0.05em] text-[#0F2C59] sm:text-[42px] lg:text-[52px]">
+          <h2 className="text-[34px] font-semibold tracking-[-0.05em] text-[#0B1F33] sm:text-[42px] lg:text-[52px]">
             Capabilities engineered for institutional scale.
           </h2>
           <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#475569] sm:text-[16px]">
@@ -102,11 +103,11 @@ export const ServicesSection: React.FC = () => {
             return (
               <div
                 key={pillar.id}
-                className="group flex min-h-[360px] flex-col justify-between rounded-[18px] border border-[#E2E8F0] bg-white p-6 shadow-[0_14px_32px_rgba(15,44,89,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#BEE7FF] hover:shadow-[0_20px_42px_rgba(15,44,89,0.08)]"
+                className="group flex min-h-[360px] flex-col justify-between rounded-[18px] border border-[#E2E8F0] bg-white p-6 shadow-[0_14px_32px_rgba(15,44,89,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#E87916]/40 hover:shadow-[0_20px_42px_rgba(15,44,89,0.08)]"
               >
                 <div>
                   <div className="mb-5 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-[#0F2C59]/10 text-[#0F2C59] transition-colors duration-200 group-hover:bg-[#008DDA] group-hover:text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-[#0B1F33]/5 text-[#0B1F33] transition-colors duration-200 group-hover:bg-[#E87916] group-hover:text-white">
                       <Icon className="h-5 w-5" />
                     </div>
                     <span className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#64748B]">

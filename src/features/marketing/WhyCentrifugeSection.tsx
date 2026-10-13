@@ -35,8 +35,8 @@ export const WhyCentrifugeSection: React.FC = () => {
     <section
       style={{
         position: 'relative',
-        background: 'linear-gradient(180deg, #0b2347 0%, #0d2340 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: 'linear-gradient(180deg, #0B1F33 0%, #071521 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         overflow: 'hidden',
       }}
       className="section-py"
@@ -69,7 +69,7 @@ export const WhyCentrifugeSection: React.FC = () => {
               }}
             >
               Built for organizations where
-              <span style={{ display: 'block', color: '#1bb7ff', fontStyle: 'italic', fontWeight: 500 }}>
+              <span style={{ display: 'block', color: '#E87916', fontStyle: 'italic', fontWeight: 500 }}>
                 technology has to work.
               </span>
             </h2>
@@ -122,14 +122,14 @@ export const WhyCentrifugeSection: React.FC = () => {
                     height: 40,
                     borderRadius: '8px',
                     flexShrink: 0,
-                    backgroundColor: 'rgba(27, 183, 255, 0.12)',
-                    border: '1px solid rgba(27, 183, 255, 0.25)',
+                    backgroundColor: 'rgba(232, 121, 22, 0.12)',
+                    border: '1px solid rgba(232, 121, 22, 0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
-                  <Icon style={{ width: 18, height: 18, color: '#1bb7ff' }} />
+                  <Icon style={{ width: 18, height: 18, color: '#E87916' }} />
                 </div>
                 <p
                   style={{
@@ -205,16 +205,24 @@ export const WhyCentrifugeSection: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '10px',
-                padding: '16px 26px',
-                background: 'linear-gradient(180deg, #1bb7ff 0%, #0d9ef0 100%)',
+                padding: '14px 26px',
+                background: '#E87916',
                 color: '#FFFFFF',
-                borderRadius: '10px',
+                borderRadius: '8px',
                 fontSize: '15px',
-                fontWeight: 700,
+                fontWeight: 600,
                 textDecoration: 'none',
                 flexShrink: 0,
-                boxShadow: '0 18px 32px rgba(13, 158, 240, 0.22)',
-                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: '0 10px 24px rgba(232, 121, 22, 0.28)',
+                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+              }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#D0690E'
+                ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E87916'
+                ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'
               }}
             >
               Talk to Centrifuge

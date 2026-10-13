@@ -13,10 +13,11 @@ export const ProjectsShowcaseSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-mono font-bold text-[#008DDA] uppercase tracking-wider">
-              SHOWCASE & DELIVERED SYSTEMS
-            </span>
-            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight mt-1">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+              <span>Showcase & Delivered Systems</span>
+            </div>
+            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0B1F33] tracking-tight mt-1">
               Delivered Institutional & Enterprise Systems
             </h2>
             <p className="text-[15px] text-[#64748B] mt-2 max-w-2xl leading-relaxed">

@@ -11,15 +11,16 @@ const LAYERS = [
 
 export const SystemArchitectureSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden border-b border-white/10 bg-[#0B2A52] py-20 text-white lg:py-24">
+    <section className="relative overflow-hidden border-b border-white/10 bg-[#0B1F33] py-20 text-white lg:py-24">
       <div className="absolute inset-0 opacity-30" aria-hidden="true">
         <div className="hero-grid-overlay" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-[680px]">
-          <div className="mb-4 inline-flex items-center rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/85">
-            Connected enterprise architecture
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
+            <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+            <span>Connected enterprise architecture</span>
           </div>
           <h2 className="text-[34px] font-semibold leading-[1.04] tracking-[-0.05em] text-white sm:text-[44px] lg:text-[56px]">
             Built to connect the systems behind the business.
@@ -31,7 +32,7 @@ export const SystemArchitectureSection: React.FC = () => {
             {LAYERS.map((layer, index) => (
               <div key={layer.id} className="group">
                 <div className="flex items-center gap-4 rounded-[16px] border border-white/10 bg-white/4 p-4 shadow-[inset_0_0_0_1px_rgba(148,163,184,0.06)] transition-all duration-200 hover:bg-white/7">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-300/20 bg-sky-400/10 text-[11px] font-semibold text-sky-100">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-[12px] font-bold text-[#E87916]">
                     {index + 1}
                   </div>
 
@@ -40,13 +41,13 @@ export const SystemArchitectureSection: React.FC = () => {
                     <p className="mt-1 text-[12px] text-slate-300/80">{layer.sublabel}</p>
                   </div>
 
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#4cc3ff] shadow-[0_0_14px_rgba(76,195,255,0.8)]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#E87916] shadow-[0_0_12px_rgba(232,121,22,0.8)]" />
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="rounded-[28px] border border-white/10 bg-[#0D1F39]/85 p-6 shadow-[0_30px_80px_rgba(2,7,18,0.32)] backdrop-blur-sm sm:p-8">
+          <div className="rounded-[28px] border border-white/10 bg-[#071521]/90 p-6 shadow-[0_30px_80px_rgba(2,7,18,0.32)] backdrop-blur-sm sm:p-8">
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/80">Platform Architecture</div>

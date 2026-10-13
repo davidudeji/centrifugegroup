@@ -13,10 +13,11 @@ export const CaseStudiesSection: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/20 text-xs font-semibold uppercase tracking-wider text-[#0077B6] mb-3">
-              <span>VERIFIED CLIENT OUTCOMES</span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+              <span>Verified Client Outcomes</span>
             </div>
-            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight">
+            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0B1F33] tracking-tight">
               Case Studies in Production & Active Deployment
             </h2>
             <p className="text-[15px] text-[#64748B] mt-2 max-w-xl leading-relaxed">

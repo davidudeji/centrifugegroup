@@ -8,10 +8,16 @@ import nursingCouncilLogo from './Nursing & Mid Wife.jpg'
 import carterCenterLogo from './The Carter Center.png'
 import womenForWealthLogo from './Women for wealth.jpg'
 
+import optimaxSalesDashboard from './optimax sales dashboard.PNG'
+
 export const brandAssets = {
   logo: centrifugeLogo,
   name: 'Centrifuge Group',
   tagline: 'Technology that moves business forward.',
+}
+
+export const productAssets = {
+  optimaxSalesDashboard,
 }
 
 export const verifiedClients = [

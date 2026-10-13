@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { useUIStore } from '../../stores/uiStore'
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-40 w-full border-b border-white/10 transition-all duration-300 ${
-          isScrolled ? 'bg-[#0b2a52]/90 shadow-[0_16px_40px_rgba(10,20,35,0.22)] backdrop-blur-xl' : 'bg-[#0b2a52]/60 backdrop-blur-xl'
+          isScrolled ? 'bg-[#0B1F33]/95 shadow-[0_16px_40px_rgba(10,20,35,0.28)] backdrop-blur-xl' : 'bg-[#0B1F33]/90 backdrop-blur-xl'
         }`}
       >
         <div className="mx-auto h-[72px] max-w-[1280px] px-4 sm:px-6 lg:px-8">
@@ -187,7 +187,7 @@ export const Header: React.FC = () => {
               >
                 <ShoppingBag className="h-4 w-4" />
                 {totalCartCount > 0 && (
-                  <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#1aa7f0] px-1 text-[10px] font-bold text-white">
+                  <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#E87916] px-1 text-[10px] font-bold text-white">
                     {totalCartCount}
                   </span>
                 )}
@@ -195,7 +195,7 @@ export const Header: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#1aa7f0] px-4 py-2 text-[14px] font-semibold text-white shadow-[0_12px_24px_rgba(26,167,240,0.28)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#38b4f8]"
+                className="inline-flex items-center justify-center rounded-[8px] bg-[#E87916] px-4.5 py-2 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)]"
               >
                 Contact Us
               </Link>
@@ -215,7 +215,7 @@ export const Header: React.FC = () => {
       <div aria-hidden="true" className="h-[72px] shrink-0" />
 
       {mobileNavOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0b2a52] text-white lg:hidden">
+        <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0B1F33] text-white lg:hidden">
           <div className="flex h-[72px] items-center justify-between border-b border-white/10 px-4">
             <Link to="/" onClick={() => setMobileNavOpen(false)} className="flex items-center gap-2">
               <img src={brandAssets.logo} alt="Centrifuge Group" className="h-8 w-auto" />
@@ -227,21 +227,21 @@ export const Header: React.FC = () => {
 
           <div className="space-y-6 p-4">
             <div className="space-y-2">
-              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-200/70">Solutions</p>
+              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E87916]">Solutions</p>
               <Link to="/solutions/project-development-management" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Project Development & Management</Link>
               <Link to="/solutions/optimax" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Optimax ERP Suite</Link>
               <Link to="/solutions/healthcare" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Healthcare Technology</Link>
             </div>
 
             <div className="space-y-2 border-t border-white/10 pt-4">
-              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-200/70">Company</p>
+              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E87916]">Company</p>
               <Link to="/about" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">About</Link>
               <Link to="/clients" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Clients</Link>
               <Link to="/careers" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Careers</Link>
             </div>
 
             <div className="space-y-2 border-t border-white/10 pt-4">
-              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-200/70">Resources</p>
+              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E87916]">Resources</p>
               <Link to="/services" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Services</Link>
               <Link to="/insights" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Insights</Link>
               <Link to="/industries" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Industries</Link>
@@ -251,7 +251,7 @@ export const Header: React.FC = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileNavOpen(false)}
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#1aa7f0] px-4 py-3 text-[15px] font-semibold text-white shadow-[0_12px_24px_rgba(26,167,240,0.28)]"
+                className="inline-flex w-full items-center justify-center rounded-[8px] bg-[#E87916] px-4 py-3 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] hover:bg-[#D0690E]"
               >
                 Contact Us
               </Link>

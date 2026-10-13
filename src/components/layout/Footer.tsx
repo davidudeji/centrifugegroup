@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { Mail, Phone, MapPin, ArrowUpRight, Briefcase, MessageCircle, Play, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react'
@@ -7,16 +7,16 @@ export const Footer: React.FC = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#0F2C59] text-[#A0AEC0] pt-16 pb-12 border-t border-[#1E3A8A]">
+    <footer className="bg-[#0B1F33] text-[#A0AEC0] pt-16 pb-12 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 pb-12 border-b border-[#1E3A8A]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Brand & Corporate Presence Column */}
           <div className="lg:col-span-2 space-y-4 text-left">
             <Link to="/" className="flex items-center gap-3">
               <img
                 src={brandAssets.logo}
                 alt="Centrifuge Group"
-                className="w-[240px] sm:w-[280px] h-[52px] object-contain object-left brightness-125"
+                className="w-[240px] sm:w-[280px] h-[52px] object-contain object-left"
               />
             </Link>
 
@@ -26,17 +26,17 @@ export const Footer: React.FC = () => {
 
             <div className="pt-2 text-[12px] text-[#A0AEC0] space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-[#008DDA] shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 text-[#E87916] shrink-0 mt-0.5" />
                 <span>Suite 203, 2nd Floor, Jinifa Plaza, Central Business District, Abuja, Nigeria.</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-[#008DDA] shrink-0" />
+                <Mail className="h-4 w-4 text-[#E87916] shrink-0" />
                 <a href="mailto:enquiries@centrifugegroup.com" className="hover:text-white transition-colors">
                   enquiries@centrifugegroup.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-[#008DDA] shrink-0" />
+                <Phone className="h-4 w-4 text-[#E87916] shrink-0" />
                 <a href="tel:+2348155026555" className="hover:text-white transition-colors">
                   +234 815 5026 555
                 </a>
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Centrifuge Group on LinkedIn"
-                className="h-8 w-8 rounded-[4px] bg-[#1E3A8A]/50 border border-[#1E3A8A] flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#008DDA] transition-colors"
+                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
               >
                 <Briefcase className="h-4 w-4" />
               </a>
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Centrifuge Group on X"
-                className="h-8 w-8 rounded-[4px] bg-[#1E3A8A]/50 border border-[#1E3A8A] flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#008DDA] transition-colors"
+                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Centrifuge Group on YouTube"
-                className="h-8 w-8 rounded-[4px] bg-[#1E3A8A]/50 border border-[#1E3A8A] flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#008DDA] transition-colors"
+                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
               >
                 <Play className="h-4 w-4" />
               </a>
@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Centrifuge Group Website"
-                className="h-8 w-8 rounded-[4px] bg-[#1E3A8A]/50 border border-[#1E3A8A] flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#008DDA] transition-colors"
+                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
               >
                 <Globe className="h-4 w-4" />
               </a>
