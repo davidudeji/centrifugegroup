@@ -209,26 +209,7 @@ export const HeroSection: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Micro Credential Pills */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={buttonsVariants}
-              className="mt-8 flex flex-wrap items-center gap-y-2 gap-x-5 text-[13px] font-medium text-slate-300"
-            >
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-[#E87916]" />
-                <span>Enterprise Grade</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Layers className="h-4 w-4 text-[#008DDA]" />
-                <span>Mission-Critical Systems</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Sparkles className="h-4 w-4 text-[#10B981]" />
-                <span>Since 2007</span>
-              </div>
-            </motion.div>
+
           </div>
 
           {/* Right Column: Hero Image in Responsive Application Frame */}
@@ -250,29 +231,6 @@ export const HeroSection: React.FC = () => {
 
                 {/* Title Bar */}
                 <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/80 px-4 py-2.5 backdrop-blur-md">
-                  {/* Window Controls */}
-                  <div className="flex items-center gap-1.5" aria-hidden="true">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#EF4444]/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#10B981]/80" />
-                  </div>
-
-                  {/* Browser Address Bar / Context Pill */}
-                  <div className="flex items-center gap-1.5 rounded-md border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-slate-200 shadow-2xs">
-                    <Lock className="h-3 w-3 text-emerald-400" aria-hidden="true" />
-                    <span className="font-mono text-slate-300">centrifugegroup.com</span>
-                    <span className="text-slate-400">/</span>
-                    <span className="text-white">solutions-architecture</span>
-                  </div>
-
-                  {/* Live Status Badge */}
-                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-300">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                    </span>
-                    <span className="hidden sm:inline text-[11px]">Active Production</span>
-                  </div>
                 </div>
 
                 {/* Main Image Container */}
@@ -289,25 +247,7 @@ export const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Floating Engineering Badge */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={badgeVariants}
-                className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 z-10 flex items-center gap-3 rounded-xl border border-white/20 bg-[#0B1F33]/95 px-4 py-2.5 shadow-[0_14px_32px_rgba(0,0,0,0.4)] backdrop-blur-md"
-              >
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E87916]/15 text-[#E87916]">
-                  <ShieldCheck className="h-4 w-4" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[12px] font-bold text-white">
-                    Enterprise Digital Engineering
-                  </div>
-                  <div className="text-[11px] text-slate-300">
-                    Scalable Architecture & Secure Platforms
-                  </div>
-                </div>
-              </motion.div>
+
             </motion.div>
           </div>
         </div>

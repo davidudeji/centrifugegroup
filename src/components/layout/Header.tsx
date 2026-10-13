@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
           isScrolled ? 'bg-[#0B1F33]/95 shadow-[0_16px_40px_rgba(10,20,35,0.28)] backdrop-blur-xl' : 'bg-[#0B1F33]/90 backdrop-blur-xl'
         }`}
       >
-        <div className="mx-auto h-[72px] max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto h-[72px] max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <div className="flex h-full items-center justify-between gap-4">
             <div className="flex min-w-0 items-center gap-6 lg:gap-8">
               <Link

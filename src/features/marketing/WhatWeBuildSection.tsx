@@ -55,10 +55,7 @@ export const WhatWeBuildSection: React.FC = () => {
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           {/* Left Column: Heading, Description & CTA */}
           <div className="max-w-[560px]">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-              <span>Software Development</span>
-            </div>
+
 
             <h2 className="text-[34px] font-bold leading-[1.04] tracking-tight text-[#0B1F33] sm:text-[46px] lg:text-[52px]">
               Engineering digital solutions that scale
@@ -88,47 +85,11 @@ export const WhatWeBuildSection: React.FC = () => {
           {/* Right Column: Transitioning Digital Solution Images in Application Frame */}
           <div className="relative flex justify-center lg:justify-end w-full">
             <div className="relative w-full max-w-[620px] group">
-              {/* Subtle Ambient Shadow Glow */}
-              <div
-                className="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-[#008DDA]/15 via-[#E87916]/10 to-transparent blur-xl opacity-70 transition-opacity duration-300 group-hover:opacity-90"
-                aria-hidden="true"
-              />
+
 
               {/* Application Browser Frame */}
               <div className="relative rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_45px_rgba(11,31,51,0.08),0_6px_16px_rgba(11,31,51,0.04)] overflow-hidden transition-all duration-300 group-hover:shadow-[0_24px_55px_rgba(11,31,51,0.12)]">
-                {/* Title Bar */}
-                <div className="flex items-center justify-between border-b border-slate-200/90 bg-slate-50/95 px-4 py-2.5 backdrop-blur-xs">
-                  <div className="flex items-center gap-1.5" aria-hidden="true">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#EF4444]/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#10B981]/80" />
-                  </div>
 
-                  <div className="flex items-center gap-1.5 rounded-md border border-slate-200/80 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-2xs">
-                    <Lock className="h-3 w-3 text-emerald-600" aria-hidden="true" />
-                    <span className="font-mono text-slate-500">centrifugegroup.com</span>
-                    <span className="text-slate-300">/</span>
-                    <span className="text-slate-700">engineering-scale</span>
-                  </div>
-
-                  {/* Slide Switcher Controls */}
-                  <div className="flex items-center gap-1.5" aria-label="Digital solution image slides">
-                    {solutionImages.map((img, idx) => (
-                      <button
-                        key={img.id}
-                        type="button"
-                        onClick={() => setActiveImageIndex(idx)}
-                        title={img.caption}
-                        aria-label={`View ${img.caption}`}
-                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          activeImageIndex === idx
-                            ? 'w-4 bg-[#E87916]'
-                            : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
 
                 {/* Smooth Crossfading Digital Solution Images Container */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
@@ -141,30 +102,16 @@ export const WhatWeBuildSection: React.FC = () => {
                       height={800}
                       loading="lazy"
                       decoding="async"
-                      className={`absolute inset-0 h-full w-full object-cover object-center select-none transition-all duration-700 ease-in-out ${
-                        activeImageIndex === idx
-                          ? 'opacity-100 scale-100'
-                          : 'opacity-0 scale-102 pointer-events-none'
-                      }`}
+                      className={`absolute inset-0 h-full w-full object-cover object-center select-none transition-all duration-700 ease-in-out ${activeImageIndex === idx
+                        ? 'opacity-100 scale-100'
+                        : 'opacity-0 scale-102 pointer-events-none'
+                        }`}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* Floating Engineering Badge */}
-              <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 z-10 flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white/95 px-4 py-2.5 shadow-[0_12px_28px_rgba(11,31,51,0.1)] backdrop-blur-md">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E87916]/10 text-[#E87916]">
-                  <ShieldCheck className="h-4 w-4" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[12px] font-bold text-[#0B1F33]">
-                    {solutionImages[activeImageIndex].caption}
-                  </div>
-                  <div className="text-[11px] text-[#64748B]">
-                    Scalable Architecture & Secure Operations
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
