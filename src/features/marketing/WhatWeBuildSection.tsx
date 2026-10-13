@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Layers3, Workflow, Cloud, Lock, ShieldCheck } from 'lucide-react'
-import heroImage from '../../assets/hero image.jpg'
+import digitalSolutionThatScale from '../../assets/digital solution that scale.avif'
+import digitalSolution1 from '../../assets/digital solution 1.avif'
+
+const solutionImages = [
+  {
+    id: 'scale',
+    src: digitalSolutionThatScale,
+    alt: 'Engineering digital solutions that scale - Enterprise platform architecture',
+    caption: 'Cloud Infrastructure & Microservices',
+  },
+  {
+    id: 'solutions',
+    src: digitalSolution1,
+    alt: 'Engineering digital solutions that scale - Tailored digital solutions and system integrations',
+    caption: 'Data Orchestration & API Gateways',
+  },
+]
 
 const capabilityCards = [
   {
@@ -22,6 +38,17 @@ const capabilityCards = [
 ]
 
 export const WhatWeBuildSection: React.FC = () => {
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
+
+  // Smooth periodic transition between digital solution images
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveImageIndex((prev) => (prev + 1) % solutionImages.length)
+    }, 5000)
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="border-b border-[#E2E8F0] bg-[#F7F9FA] py-20 lg:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
@@ -58,7 +85,7 @@ export const WhatWeBuildSection: React.FC = () => {
             </Link>
           </div>
 
-          {/* Right Column: Hero Image in Responsive Application Frame */}
+          {/* Right Column: Transitioning Digital Solution Images in Application Frame */}
           <div className="relative flex justify-center lg:justify-end w-full">
             <div className="relative w-full max-w-[620px] group">
               {/* Subtle Ambient Shadow Glow */}
@@ -76,32 +103,51 @@ export const WhatWeBuildSection: React.FC = () => {
                     <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#10B981]/80" />
                   </div>
+
                   <div className="flex items-center gap-1.5 rounded-md border border-slate-200/80 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-2xs">
                     <Lock className="h-3 w-3 text-emerald-600" aria-hidden="true" />
                     <span className="font-mono text-slate-500">centrifugegroup.com</span>
                     <span className="text-slate-300">/</span>
                     <span className="text-slate-700">engineering-scale</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-600">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                    </span>
-                    <span className="hidden sm:inline text-[11px]">Production Scale</span>
+
+                  {/* Slide Switcher Controls */}
+                  <div className="flex items-center gap-1.5" aria-label="Digital solution image slides">
+                    {solutionImages.map((img, idx) => (
+                      <button
+                        key={img.id}
+                        type="button"
+                        onClick={() => setActiveImageIndex(idx)}
+                        title={img.caption}
+                        aria-label={`View ${img.caption}`}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                          activeImageIndex === idx
+                            ? 'w-4 bg-[#E87916]'
+                            : 'w-1.5 bg-slate-300 hover:bg-slate-400'
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
 
-                {/* Hero Image Container */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={heroImage}
-                    alt="Engineering digital solutions that scale - Centrifuge Group software architecture and cloud development"
-                    width={1280}
-                    height={800}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover object-center select-none transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
+                {/* Smooth Crossfading Digital Solution Images Container */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  {solutionImages.map((img, idx) => (
+                    <img
+                      key={img.id}
+                      src={img.src}
+                      alt={img.alt}
+                      width={1280}
+                      height={800}
+                      loading="lazy"
+                      decoding="async"
+                      className={`absolute inset-0 h-full w-full object-cover object-center select-none transition-all duration-700 ease-in-out ${
+                        activeImageIndex === idx
+                          ? 'opacity-100 scale-100'
+                          : 'opacity-0 scale-102 pointer-events-none'
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -112,10 +158,10 @@ export const WhatWeBuildSection: React.FC = () => {
                 </div>
                 <div className="text-left">
                   <div className="text-[12px] font-bold text-[#0B1F33]">
-                    Scalable Engineering Architecture
+                    {solutionImages[activeImageIndex].caption}
                   </div>
                   <div className="text-[11px] text-[#64748B]">
-                    High-Concurrency Systems & Cloud APIs
+                    Scalable Architecture & Secure Operations
                   </div>
                 </div>
               </div>

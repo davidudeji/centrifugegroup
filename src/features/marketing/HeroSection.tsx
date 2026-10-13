@@ -7,28 +7,13 @@ import {
   Layers,
   Sparkles,
 } from "lucide-react";
-import digitalSolutionThatScale from "../../assets/digital solution that scale.avif";
-import digitalSolution1 from "../../assets/digital solution 1.avif";
+import heroImage from "../../assets/hero image.jpg";
 
 const EASING: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-const HERO_BACKGROUNDS = [
-  {
-    id: "scale",
-    image: digitalSolutionThatScale,
-    title: "Connected Enterprise Infrastructure",
-  },
-  {
-    id: "architecture",
-    image: digitalSolution1,
-    title: "High-Scale Digital Platforms",
-  },
-];
 
 export const HeroSection: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
   const [device, setDevice] = useState<"mobile" | "tablet" | "desktop">("desktop");
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,15 +30,6 @@ export const HeroSection: React.FC = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Smooth periodic background transition
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentBgIndex((prev) => (prev + 1) % HERO_BACKGROUNDS.length);
-    }, 6500);
-
-    return () => clearInterval(timer);
   }, []);
 
   const isReduced = Boolean(prefersReducedMotion);
@@ -130,25 +106,18 @@ export const HeroSection: React.FC = () => {
       aria-label="Hero"
       className="relative overflow-hidden bg-[#071521] text-white pt-12 sm:pt-16 lg:pt-20 pb-16 lg:pb-24 border-b border-white/10"
     >
-      {/* ─── Smoothly Transitioning Digital Solution Background Images ─── */}
+      {/* ─── Hero Engineering Background Image & Protective Overlay ─── */}
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        {HERO_BACKGROUNDS.map((bg, index) => (
-          <div
-            key={bg.id}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out ${
-              currentBgIndex === index
-                ? "opacity-40 scale-100 filter brightness-95"
-                : "opacity-0 scale-105 pointer-events-none"
-            }`}
-            style={{ backgroundImage: `url("${bg.image}")` }}
-          />
-        ))}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35 filter brightness-95"
+          style={{ backgroundImage: `url("${heroImage}")` }}
+        />
 
         {/* Layer 1: Protective multi-stop dark navy gradient guaranteeing clear AAA text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071521]/96 via-[#0B1F33]/92 to-[#071521]/80" />
 
         {/* Layer 2: Targeted radial vignette focused over the left text area */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_45%,rgba(7,21,33,0.95)_0%,rgba(11,31,51,0.88)_55%,rgba(7,21,33,0.78)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_45%,rgba(7,21,33,0.96)_0%,rgba(11,31,51,0.88)_55%,rgba(7,21,33,0.78)_100%)]" />
 
         {/* Layer 3: Subtle architectural grid overlay */}
         <div className="hero-grid-overlay opacity-25" />
@@ -260,24 +229,6 @@ export const HeroSection: React.FC = () => {
             <span>Cloud & SaaS Platforms</span>
             <span className="hidden h-1 w-1 rounded-full bg-slate-500 sm:block" aria-hidden="true" />
             <span className="hidden sm:block font-semibold text-white">Since 2007</span>
-          </div>
-
-          {/* Background Slide Indicators */}
-          <div className="flex items-center gap-2 pt-1 md:pt-0" aria-label="Hero background controls">
-            {HERO_BACKGROUNDS.map((bg, idx) => (
-              <button
-                key={bg.id}
-                type="button"
-                onClick={() => setCurrentBgIndex(idx)}
-                title={bg.title}
-                aria-label={`Switch to ${bg.title}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentBgIndex === idx
-                    ? "w-6 bg-[#E87916]"
-                    : "w-2 bg-white/30 hover:bg-white/60"
-                }`}
-              />
-            ))}
           </div>
         </div>
       </div>
