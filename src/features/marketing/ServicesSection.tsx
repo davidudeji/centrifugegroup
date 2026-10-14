@@ -8,6 +8,7 @@ import {
   Layers,
   PieChart,
 } from 'lucide-react'
+import { StaggerReveal } from '../../components/ui/Reveal'
 
 export const ServicesSection: React.FC = () => {
   const pillars = [
@@ -85,21 +86,21 @@ export const ServicesSection: React.FC = () => {
     <section className="border-b border-[#E2E8F0] bg-white py-20 text-left lg:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-[760px]">
-          <h2 className="text-[34px] font-semibold tracking-[-0.05em] text-[#0F2C59] sm:text-[42px] lg:text-[52px]">
+          <h2 className="marketing-section-heading font-semibold text-[#0F2C59]">
             Capabilities engineered for institutional scale.
           </h2>
-          <p className="mt-4 max-w-[680px] text-[15px] leading-7 text-[#475569] sm:text-[16px]">
+          <p className="marketing-section-copy mt-4">
             From application design and systems integration to cloud operations and enterprise advisory, we support every stage of digital evolution.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <StaggerReveal className="grid gap-6 md:grid-cols-2 xl:grid-cols-3" childClassName="h-full" stagger={65}>
           {pillars.map((pillar) => {
             const Icon = pillar.icon
             return (
-              <div
+              <article
                 key={pillar.id}
-                className="group flex min-h-[360px] flex-col justify-between rounded-[18px] border border-[#E2E8F0] bg-white p-6 shadow-[0_14px_32px_rgba(15,44,89,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#E87916]/40 hover:shadow-[0_20px_42px_rgba(15,44,89,0.08)]"
+                className="group flex h-full min-h-[360px] flex-col justify-between rounded-[var(--radius-md)] border border-[#E2E8F0] bg-white p-6 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-1 hover:border-[#E87916]/40 hover:shadow-[0_20px_42px_rgba(15,44,89,0.08)]"
               >
                 <div>
                   <div className="mb-5 flex items-center justify-between">
@@ -127,10 +128,10 @@ export const ServicesSection: React.FC = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </article>
             )
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

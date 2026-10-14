@@ -1,58 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion, type Variants } from "motion/react";
-import {
-  ArrowRight,
-  ShieldCheck,
-  Lock,
-  Layers,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "../../assets/hero-image.jpg";
 
 const EASING: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export const HeroSection: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
-  const [device, setDevice] = useState<"mobile" | "tablet" | "desktop">("desktop");
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 640) {
-        setDevice("mobile");
-      } else if (width < 1024) {
-        setDevice("tablet");
-      } else {
-        setDevice("desktop");
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const isReduced = Boolean(prefersReducedMotion);
-  const headlineX = isReduced ? 0 : device === "mobile" ? -20 : -40;
-  const paragraphX = isReduced ? 0 : device === "mobile" ? -14 : -28;
+  const headlineX = isReduced ? 0 : -36;
+  const paragraphX = isReduced ? 0 : -24;
   const buttonsY = isReduced ? 0 : 16;
-
-  const eyebrowVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: isReduced ? 0 : -10,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: isReduced ? 0.2 : 0.55,
-        delay: 0.05,
-        ease: EASING,
-      },
-    },
-  };
 
   const headlineVariants: Variants = {
     hidden: {
@@ -63,8 +22,8 @@ export const HeroSection: React.FC = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: isReduced ? 0.2 : 0.8,
-        delay: 0.1,
+        duration: isReduced ? 0 : 0.7,
+        delay: 0,
         ease: EASING,
       },
     },
@@ -79,8 +38,8 @@ export const HeroSection: React.FC = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: isReduced ? 0.2 : 0.75,
-        delay: 0.22,
+        duration: isReduced ? 0 : 0.75,
+        delay: isReduced ? 0 : 0.1,
         ease: EASING,
       },
     },
@@ -95,8 +54,8 @@ export const HeroSection: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: isReduced ? 0.2 : 0.6,
-        delay: 0.35,
+        duration: isReduced ? 0 : 0.6,
+        delay: isReduced ? 0 : 0.2,
         ease: EASING,
       },
     },
@@ -105,30 +64,14 @@ export const HeroSection: React.FC = () => {
   const imageVariants: Variants = {
     hidden: {
       opacity: isReduced ? 1 : 0,
-      x: isReduced ? 0 : 30,
+      x: isReduced ? 0 : 40,
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: isReduced ? 0.2 : 0.8,
-        delay: 0.2,
-        ease: EASING,
-      },
-    },
-  };
-
-  const badgeVariants: Variants = {
-    hidden: {
-      opacity: isReduced ? 1 : 0,
-      y: isReduced ? 0 : 12,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: isReduced ? 0.2 : 0.5,
-        delay: 0.5,
+        duration: isReduced ? 0 : 0.85,
+        delay: isReduced ? 0 : 0.1,
         ease: EASING,
       },
     },
@@ -155,7 +98,7 @@ export const HeroSection: React.FC = () => {
 
       {/* ─── Hero Content (2-Column Composition) ─── */}
       <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="grid items-center gap-12 lg:grid-cols-[48%_52%] xl:grid-cols-[46%_54%] lg:gap-14 xl:gap-16 py-4 sm:py-6 lg:py-8">
+        <div className="grid items-center gap-12 py-4 sm:py-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-14 lg:py-8 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:gap-16">
 
           {/* Left Column: Text & CTAs */}
           <div className="flex flex-col text-left max-w-[620px] lg:max-w-none">
@@ -164,17 +107,17 @@ export const HeroSection: React.FC = () => {
 
             {/* Headline */}
             <motion.h1
-              initial="hidden"
+              initial={isReduced ? false : 'hidden'}
               animate="visible"
               variants={headlineVariants}
-              className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-white drop-shadow-sm sm:text-[46px] md:text-[52px] lg:text-[56px] xl:text-[62px]"
+              className="marketing-hero__heading font-extrabold text-white drop-shadow-sm"
             >
               Technology that moves your business forward.
             </motion.h1>
 
             {/* Supporting Paragraph */}
             <motion.p
-              initial="hidden"
+              initial={isReduced ? false : 'hidden'}
               animate="visible"
               variants={paragraphVariants}
               className="mt-6 text-[16px] leading-[1.65] text-slate-200 sm:text-[18px] lg:text-[19px] max-w-[560px] drop-shadow-2xs"
@@ -186,7 +129,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Primary & Secondary CTA Buttons */}
             <motion.div
-              initial="hidden"
+              initial={isReduced ? false : 'hidden'}
               animate="visible"
               variants={buttonsVariants}
               className="mt-8 flex flex-wrap items-center gap-4 sm:gap-4"
@@ -215,7 +158,7 @@ export const HeroSection: React.FC = () => {
           {/* Right Column: Hero Image in Responsive Application Frame */}
           <div className="relative flex justify-center lg:justify-end w-full">
             <motion.div
-              initial="hidden"
+              initial={isReduced ? false : 'hidden'}
               animate="visible"
               variants={imageVariants}
               className="relative w-full max-w-[660px] lg:max-w-none group"

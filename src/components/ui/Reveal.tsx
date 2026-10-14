@@ -1,4 +1,5 @@
 import React from 'react'
+import { useReducedMotion } from 'motion/react'
 import { useInView } from '../../hooks/useInView'
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none'
@@ -30,7 +31,7 @@ const directionMap: Record<Direction, string> = {
   none:  'none',
 }
 
-const EASING = 'cubic-bezier(0.16, 1, 0.3, 1)'
+const EASING = 'cubic-bezier(0.22, 1, 0.36, 1)'
 
 function buildStyles(
   inView: boolean,
@@ -76,7 +77,7 @@ function buildStyles(
 /**
  * Wraps children in a container that animates in when scrolled into view.
  * Supports slide (default), scale, blur, clip, and fade variants.
- * Uses the design-spec easing: cubic-bezier(0.16, 1, 0.3, 1)
+ * Uses the shared design-system easing curve.
  */
 export const Reveal: React.FC<RevealProps> = ({
   children,
@@ -90,13 +91,15 @@ export const Reveal: React.FC<RevealProps> = ({
   style,
 }) => {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold, rootMargin: '0px 0px -48px 0px' })
-  const { hidden, visible } = buildStyles(inView, variant, from, distance, duration, delay)
+  const prefersReducedMotion = useReducedMotion()
+  const isVisible = inView || Boolean(prefersReducedMotion)
+  const { hidden, visible } = buildStyles(isVisible, variant, from, distance, duration, delay)
 
   return (
     <div
       ref={ref}
       className={className}
-      style={{ ...style, ...(inView ? visible : hidden) }}
+      style={{ ...style, ...(isVisible ? visible : hidden) }}
     >
       {children}
     </div>
@@ -138,13 +141,15 @@ export const StaggerReveal: React.FC<StaggerProps> = ({
   style,
 }) => {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold, rootMargin: '0px 0px -48px 0px' })
+  const prefersReducedMotion = useReducedMotion()
+  const isVisible = inView || Boolean(prefersReducedMotion)
 
   return (
     <div ref={ref} className={className} style={style}>
       {React.Children.map(children, (child, i) => {
-        const { hidden, visible } = buildStyles(inView, variant, from, distance, duration, i * stagger)
+        const { hidden, visible } = buildStyles(isVisible, variant, from, distance, duration, i * stagger)
         return (
-          <div className={childClassName} style={inView ? visible : hidden}>
+          <div className={childClassName} style={isVisible ? visible : hidden}>
             {child}
           </div>
         )

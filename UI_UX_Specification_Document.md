@@ -1,662 +1,690 @@
-# CENTRIFUGE GROUP — HERO ANIMATION & BRAND DESIGN IMPLEMENTATION SPECIFICATION
+# CENTRIFUGE WEBSITE: VISUAL POLISH AND DESIGN SYSTEM IMPLEMENTATION
 
-## 1. ROLE
+## 1. OBJECTIVE
 
-Act as a senior frontend engineer, motion designer, and design systems architect.
+Act as a Senior Frontend Engineer, UI/UX Designer, and Motion Design Specialist.
 
-Your task is to implement a premium animated hero section for the existing Centrifuge Group website using:
+Your task is to improve the existing Centrifuge Group website using professional CSS techniques, CSS generators, a consistent design system, responsive layouts, and subtle animations.
 
-- React
-- Vite
-- TypeScript
-- Tailwind CSS
-- Framer Motion (`motion` package)
-- Lucide React where icons are needed
+The website must communicate enterprise credibility, technical expertise, innovation, and trust.
 
-The website is an enterprise technology company's corporate platform, showcasing enterprise software, healthcare technology, logistics systems, digital services, projects, and products.
+The visual direction is:
 
-The implementation must integrate into the existing codebase rather than create a disconnected demonstration.
+**Trusted Enterprise Slate — Light Mode**
 
-**Primary objectives:**
-1. Create a smooth, coordinated hero entrance animation.
-2. Make the text slide in from the left.
-3. Make the supporting paragraph follow with a gradual opacity transition.
-4. Make the hero image slide in from the right.
-5. Align the website's color system with the actual Centrifuge Group logo.
-6. Maintain responsive design, accessibility, performance, and visual consistency.
+The website should combine the clarity of Stripe, the precision of Linear, and the credibility of an established enterprise technology company while maintaining Centrifuge's own brand identity.
 
-Do not rebuild unrelated parts of the website.
+This is an improvement of an existing website, not a request to rebuild it from scratch.
 
----
-
-## 2. FIRST: INSPECT THE EXISTING PROJECT
+## 2. PROJECT CONSTRAINTS
 
 Before writing code:
 
-1. Inspect the project structure.
-2. Identify the existing homepage and hero component.
-3. Inspect the current navigation, buttons, layout, and typography.
-4. Identify the installed Tailwind CSS version.
-5. Check whether Framer Motion or `motion` is already installed.
-6. Locate the Centrifuge Group logo and available product screenshots.
-7. Identify the existing design tokens, CSS variables, and reusable components.
-8. Preserve the existing routing and functionality.
+1. Inspect the existing React + Vite project structure.
+2. Identify the current routing system, component architecture, stylesheets, assets, and installed dependencies.
+3. Review the existing homepage, navbar, footer, services, projects, and About pages.
+4. Identify the actual Centrifuge logo and existing brand colors.
+5. Reuse existing components and dependencies wherever practical.
+6. Preserve working routes, navigation, content, integrations, and project links.
+7. Do not replace existing sections with generic placeholder content.
+8. Do not invent testimonials, client logos, project statistics, or business claims.
+9. Do not introduce unnecessary dependencies.
+10. Implement changes directly in the existing codebase.
 
-Do not create duplicate components or introduce conflicting styling systems.
+Do not begin by rewriting the entire application.
 
-If the project already contains reusable buttons, containers, or design tokens, extend them rather than recreating them.
-
-If Framer Motion is not installed, install the compatible `motion` package and import its React components from `motion/react`.
-
-Do not install multiple animation libraries for the same task.
+First understand the existing implementation, then make focused improvements.
 
 ---
 
-## 3. BRAND IDENTITY AND COLOR SYSTEM
+# 3. DESIGN SYSTEM
 
-### Objective
+Create or refine a centralized design system.
 
-Create a consistent visual identity derived from the actual Centrifuge Group logo.
+Recommended file structure, adapted to the existing project:
 
-The logo is the source of truth for the primary brand color and accent color.
+src/
+├── styles/
+│   ├── tokens.css
+│   ├── typography.css
+│   ├── animations.css
+│   └── global.css
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── Button.jsx
+│   ├── SectionHeading.jsx
+│   ├── Reveal.jsx
+│   └── ServiceCard.jsx
+└── pages/
+    └── ...
 
-Do not select the final colors solely from visual guesswork.
+These filenames are suggestions. Preserve the current architecture when it already provides equivalent functionality.
 
-### Step 1: Inspect the logo
+## 3.1 Brand colors
 
-If the logo is available locally:
+Use the actual Centrifuge brand identity as the source of truth.
 
-- Inspect its SVG fill and stroke values when applicable.
-- Inspect its actual colors.
-- Identify the primary brand color.
-- Identify any secondary or accent colors.
-- Determine whether the logo has separate light and dark variants.
+If the current website does not have a complete design-token system, begin with this proposed palette and validate it against the logo:
 
-If the logo is not available, ask the user to provide it or use the existing brand colors temporarily.
+Primary navy: #17365D
+Primary hover: #102844
+Accent teal: #2C8C91
+Page background: #F7F9FC
+Surface: #FFFFFF
+Primary text: #172B3A
+Secondary text: #637386
+Border: #DFE6ED
 
-Do not invent a new logo.
+Do not force these proposed colors onto an established brand palette if the logo or existing design system indicates otherwise.
 
-### Step 2: Define design tokens
+Use accent colors sparingly.
 
-Create or update centralized color tokens.
+Navy should establish authority and visual hierarchy. Teal should highlight selected actions, links, icons, or important interface elements.
 
-Use this palette as the initial fallback, subject to verification against the logo:
+Avoid excessive gradients, saturated backgrounds, and unrelated accent colors.
 
-Primary brand:
-#0B1F33
+## 3.2 CSS variables
 
-Dark brand:
-#071521
+Create reusable CSS variables for:
 
-Accent:
-#16C7D9
+- Brand colors.
+- Typography.
+- Font weights.
+- Spacing.
+- Content width.
+- Page gutters.
+- Border radii.
+- Shadows.
+- Animation durations.
+- Easing curves.
+- Focus indicators.
 
-Light accent:
-#67E8F9
-
-Main background:
-#F7F9FA
-
-Surface:
-#FFFFFF
-
-Primary text:
-#172333
-
-Secondary text:
-#64748B
-
-Border:
-#E2E8F0
-
-Success:
-#16A34A
-
-Warning:
-#D97706
-
-Error:
-#DC2626
-
-Replace the provisional primary and accent values if the actual logo establishes a better match.
-
-### Step 3: Centralize the tokens
-
-Create CSS custom properties or extend the existing token system.
-
-Example:
+Example starting point:
 
 :root {
-  --color-brand-primary: #0B1F33;
-  --color-brand-dark: #071521;
-  --color-brand-accent: #16C7D9;
-  --color-brand-accent-light: #67E8F9;
+  --color-primary: #17365D;
+  --color-primary-hover: #102844;
+  --color-accent: #2C8C91;
 
-  --color-background: #F7F9FA;
+  --color-background: #F7F9FC;
   --color-surface: #FFFFFF;
+  --color-border: #DFE6ED;
 
-  --color-text-primary: #172333;
-  --color-text-secondary: #64748B;
+  --color-text-primary: #172B3A;
+  --color-text-secondary: #637386;
 
-  --color-border: #E2E8F0;
+  --container-width: 1200px;
+  --page-gutter: clamp(20px, 5vw, 72px);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --duration-fast: 180ms;
+  --duration-normal: 350ms;
+  --duration-slow: 700ms;
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-These values are provisional until checked against the actual logo.
+Use these variables consistently throughout the application.
 
-Use the centralized tokens throughout the hero.
-
-Do not scatter arbitrary hex values throughout component files.
-
-### Color application
-
-The hero must use:
-
-- A clean white or off-white background.
-- Dark navy or the verified brand-primary color for the headline.
-- Neutral secondary text.
-- The logo-aligned accent color for the primary CTA.
-- A restrained border or surface treatment around the hero image.
-
-Avoid excessive gradients, neon colors, and unnecessary glow effects.
-
-The logo and the hero must look like parts of the same brand.
+Do not scatter duplicate color, spacing, or animation values across unrelated components.
 
 ---
 
-## 4. HERO SECTION CONTENT
+# 4. CSS GENERATOR TOOLKIT
 
-Use the following content.
+Use CSS generators as experimentation tools, not as runtime dependencies.
 
-### Headline
+The generated CSS must be reviewed, adapted, and integrated into the existing architecture.
 
-"Technology that moves your business forward."
+## 4.1 Animation generator
 
-Use natural text wrapping.
+Tool: https://animista.net/
 
-Do not split the headline into individual animated letters.
+Purpose:
+- Prototype entrance animations.
+- Explore subtle slide and fade effects.
+- Generate reusable animation keyframes.
 
-### Supporting paragraph
+Implementation requirements:
+- Prefer opacity and transform animations.
+- Avoid animating layout properties unnecessarily.
+- Remove unused generated declarations.
+- Respect reduced-motion preferences.
 
-"We design and deliver enterprise software, healthcare platforms, logistics systems and digital solutions that solve complex operational problems."
+## 4.2 Easing generator
 
-### Primary CTA
+Tool: https://cubic-bezier.com/
 
-"Talk to an Expert"
+Purpose:
+- Refine motion timing.
+- Create natural deceleration.
+- Standardize easing across components.
 
-Link to the existing contact page.
+Starting easing curve:
 
-### Secondary CTA
+cubic-bezier(0.22, 1, 0.36, 1)
 
-"Explore Solutions"
+Use this curve for entrance animations where appropriate.
 
-Link to the existing solutions section or solutions page.
+Do not apply identical motion to every component if the interaction requires different timing.
 
-Use the actual routes present in the project. Do not invent routes without checking the router.
+## 4.3 Color palette generator
 
-### Hero visual
+Tool: https://coolors.co/
 
-Use an authentic Centrifuge product screenshot whenever possible.
+Purpose:
+- Explore complementary brand colors.
+- Check the consistency of the visual palette.
+- Develop restrained color variations.
 
-Preferred order:
+The actual Centrifuge logo and established brand identity take precedence over automatically generated palettes.
 
-1. Optimax ERP dashboard.
-2. Logistics management dashboard.
-3. Healthcare software interface.
-4. Another verified Centrifuge product interface.
+## 4.4 Typography generator
 
-The image should communicate that Centrifuge builds real technology products.
+Tool: https://type-scale.com/
 
-Do not use a generic AI-generated robot, random stock photo, or fabricated customer dashboard.
+Purpose:
+- Establish a consistent typographic hierarchy.
+- Refine heading and body-text proportions.
+- Test visual rhythm between sections.
 
-If no suitable image exists, create a clearly identifiable placeholder that can be replaced later.
+Prefer the existing brand typeface when one has already been established.
+
+## 4.5 Grid generator
+
+Tool: https://grid.layoutit.com/
+
+Purpose:
+- Experiment with service layouts.
+- Develop responsive project grids.
+- Improve content hierarchy.
+
+Translate useful layouts into maintainable CSS Grid or Flexbox implementations.
+
+Do not embed generated layout code blindly.
+
+## 4.6 Shadow generator
+
+Tool: https://shadows.brumm.af/
+
+Purpose:
+- Create subtle shadows.
+- Add depth to selected surfaces.
+- Improve the separation between foreground content and backgrounds.
+
+Use shadows sparingly.
+
+Cards should not all appear to float above the page.
+
+## 4.7 Gradient generator
+
+Tool: https://cssgradient.io/
+
+Purpose:
+- Refine image overlays.
+- Create subtle background transitions.
+- Establish controlled color transitions.
+
+Avoid using decorative gradients on every section.
+
+Use gradients only when they support the content hierarchy or improve the composition.
 
 ---
 
-## 5. HERO LAYOUT
+# 5. HOMEPAGE HERO ANIMATION
 
-Create a premium, responsive, two-column hero.
+The homepage hero is a priority.
 
-### Desktop
+Preserve the existing content, image assets, and working CTA links.
 
-Use a centered container with a maximum width of approximately 1440px.
+The main headline should communicate Centrifuge's digital solutions offering.
 
-Use generous horizontal padding.
+Use the existing approved headline. If no approved copy exists, the following is a suitable starting point:
 
-Suggested layout:
+"Engineering digital solutions that scale."
 
-- Left column: approximately 45%.
-- Right column: approximately 55%.
+Supporting message:
 
-Left column:
-- Eyebrow label, if appropriate.
+"From complex challenges to connected digital solutions."
+
+The hero should have a clear two-column layout on desktop:
+
+LEFT:
 - Headline.
 - Supporting paragraph.
-- CTA buttons.
+- Primary CTA.
+- Secondary CTA.
 
-Right column:
-- Main product screenshot.
-- Optional restrained browser-frame treatment.
-- Optional small product interface details, only if actual assets are available.
+RIGHT:
+- Existing hero image, project screenshot, or approved visual.
 
-Vertically center both columns.
+## 5.1 Entrance animations
 
-The headline must be the strongest element.
+Implement the following sequence:
 
-Avoid excessive decorative elements that compete with the headline or product screenshot.
+1. Headline slides in from the left.
+2. Supporting paragraph follows with a short delay.
+3. CTA buttons appear with a slight upward movement.
+4. Hero image slides in from the right.
 
-### Tablet
+Suggested settings:
 
-Adapt the column proportions to preserve readability.
+Headline:
+- Translation: 36px from the left.
+- Duration: 700ms.
 
-Reduce headline size and horizontal spacing as necessary.
+Supporting paragraph:
+- Translation: 24px from the left.
+- Duration: 750ms.
+- Delay: 100ms.
 
-Keep the image large enough to understand.
+CTA buttons:
+- Translation: 16px upward.
+- Duration: 600ms.
+- Delay: 200ms.
 
-### Mobile
+Hero image:
+- Translation: 40px from the right.
+- Duration: 850ms.
+- Delay: 100ms.
 
-Stack the layout vertically.
+Use the shared easing token.
 
-Order:
+Keep the movement subtle and professional.
 
-1. Headline.
-2. Supporting paragraph.
-3. CTA buttons.
-4. Product image.
+Do not introduce unnecessary bouncing, spinning, or dramatic zoom effects.
 
-Reduce the animation distance.
+## 5.2 Animation implementation
 
-Prevent horizontal overflow.
+Use CSS for simple entrance effects.
 
-Ensure buttons have comfortable touch targets.
+Use the existing Framer Motion or Motion dependency for coordinated animations and scroll-triggered effects where necessary.
 
-Do not shrink the desktop design until it becomes unreadable.
+Do not install a second animation library if the project already has an appropriate solution.
 
----
+All animations must respect:
 
-## 6. ANIMATION DESIGN
+@media (prefers-reduced-motion: reduce)
 
-Use Framer Motion to create a coordinated entrance sequence.
+Ensure that essential content remains accessible if animations do not run.
 
-The motion should communicate confidence, precision, and forward movement.
-
-The animations should be smooth rather than flashy.
-
-Use the easing curve:
-
-[0.22, 1, 0.36, 1]
-
-Avoid spring bounce, elastic movement, spinning elements, and aggressive zoom effects.
-
-### A. Headline
-
-Initial state:
-- opacity: 0
-- x: -60
-
-Final state:
-- opacity: 1
-- x: 0
-
-Duration:
-0.85 seconds.
-
-Delay:
-0.10 seconds.
-
-The headline should slide from left to right into its final position.
-
-Use a slight fade-in alongside the movement.
-
-### B. Supporting paragraph
-
-Initial state:
-- opacity: 0
-- x: -40
-
-Final state:
-- opacity: 1
-- x: 0
-
-Duration:
-0.80 seconds.
-
-Delay:
-0.25 seconds.
-
-The supporting paragraph must follow the headline.
-
-Its opacity should gradually increase until the paragraph is fully visible.
-
-Do not animate each word or letter independently.
-
-### C. Primary and secondary CTA buttons
-
-Initial state:
-- opacity: 0
-- y: 20
-
-Final state:
-- opacity: 1
-- y: 0
-
-Duration:
-0.65 seconds.
-
-Delay:
-0.45 seconds.
-
-Both buttons should enter together or with a very small stagger.
-
-Preserve all button functionality and accessibility.
-
-### D. Hero image
-
-Initial state:
-- opacity: 0
-- x: 70
-
-Final state:
-- opacity: 1
-- x: 0
-
-Duration:
-1.00 second.
-
-Delay:
-0.15 seconds.
-
-The image should slide from right to left.
-
-Use the same easing curve as the text.
-
-Keep the image container dimensions stable to minimize layout shift.
-
-The image must not stretch or lose important content.
-
-### E. Optional dashboard details
-
-If the screenshot or product composition contains suitable independent elements, they may fade into view with a small upward movement.
-
-Duration:
-Approximately 0.55 seconds.
-
-Delay:
-Approximately 0.70 seconds.
-
-Do not fabricate interface elements just to animate them.
-
-This step is optional.
+Avoid causing layout shifts during animation.
 
 ---
 
-## 7. ANIMATION IMPLEMENTATION ARCHITECTURE
+# 6. HERO IMAGE STYLING
 
-Create reusable Framer Motion variants rather than repeating configuration across multiple elements.
-
-Use variants similar to the following:
-
-const textFromLeft = {
-  hidden: {
-    opacity: 0,
-    x: -60,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.85,
-      delay: 0.1,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const paragraphFromLeft = {
-  hidden: {
-    opacity: 0,
-    x: -40,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      delay: 0.25,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const imageFromRight = {
-  hidden: {
-    opacity: 0,
-    x: 70,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      delay: 0.15,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const buttonsFromBelow = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.65,
-      delay: 0.45,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-Use the project's existing conventions if they differ.
-
-Ensure the variants are correctly typed with TypeScript if necessary.
-
-Do not use `any` unnecessarily.
-
-### Animation trigger
-
-The hero should animate when the page first loads.
-
-It should not repeatedly replay whenever the user scrolls slightly.
-
-Use an appropriate initial/animate configuration or a viewport configuration that plays the entrance once.
-
-Ensure essential content remains available if animation is disabled or fails.
-
----
-
-## 8. MOTION RESPONSIVENESS
-
-The animation must adapt to the device.
-
-Desktop:
-- Headline translation: 60px.
-- Paragraph translation: 40px.
-- Image translation: 70px.
-
-Tablet:
-- Reduce horizontal translation to approximately 35–45px.
-
-Mobile:
-- Reduce translation to approximately 20–25px.
-- Shorten durations where appropriate.
-- Avoid moving the content so far that it appears disconnected from the layout.
-
-Use responsive variants or another maintainable approach.
-
-Do not create multiple conflicting animation configurations.
-
----
-
-## 9. ACCESSIBILITY AND REDUCED MOTION
-
-Respect the user's operating-system motion preference.
-
-Use Framer Motion's reduced-motion support or an equivalent accessible implementation.
-
-When reduced motion is requested:
-
-- Do not use large horizontal translations.
-- Render the content immediately or use a minimal opacity transition.
-- Do not hide essential content indefinitely.
-- Keep buttons, links, and navigation fully usable.
-
-Maintain:
-
-- Semantic HTML.
-- Logical heading order.
-- Visible keyboard focus.
-- Accessible link names.
-- Sufficient color contrast.
-- Keyboard-accessible CTA buttons.
-
-Use appropriate alt text for product screenshots.
-
-Do not put important information exclusively inside an image.
-
----
-
-## 10. IMAGE PERFORMANCE
-
-Use a stable image container with an appropriate aspect ratio.
+Improve the hero visual without obscuring the actual image.
 
 Requirements:
 
-- Preserve image proportions.
-- Prevent layout shifts.
-- Optimize image file sizes.
-- Use WebP or AVIF where appropriate and supported by the project's asset pipeline.
-- Provide a useful alt attribute.
-- Use lazy loading only when appropriate.
+- Use an appropriate aspect ratio.
+- Maintain image quality.
+- Avoid unintended cropping.
+- Apply consistent border radii.
+- Use subtle borders or shadows only where appropriate.
+- Ensure mobile images fit the available width.
+- Preserve meaningful image content.
 
-The above-the-fold hero image is important to the initial page experience. Do not automatically lazy-load it if doing so delays the main visual.
+If a gradient overlay improves the image, use a restrained navy or teal treatment.
 
-If the hero image is an `<img>`, provide explicit dimensions or an aspect ratio.
+Do not introduce decorative imagery that misrepresents Centrifuge's actual products or capabilities.
 
-If using `object-fit`, choose the behavior that preserves the product screenshot's important content.
-
-Avoid applying aggressive cropping to dashboard interfaces.
-
----
-
-## 11. HOVER INTERACTIONS
-
-The primary CTA may use a subtle hover transition.
-
-Suggested behavior:
-
-- Slight color change.
-- Small upward movement of approximately 1–2px.
-- Smooth transition around 150–200ms.
-
-The secondary CTA should have a subtle color or border transition.
-
-The hero image may use a very slight hover effect on desktop, but it must not interfere with the entrance animation.
-
-Do not add continuous floating animations.
-
-Do not introduce unnecessary cursor effects.
+Prioritize real project screenshots and existing approved assets.
 
 ---
 
-## 12. FRAMER MOTION IMPLEMENTATION RULES
+# 7. TYPOGRAPHY SYSTEM
 
-- Use `motion` components from the installed package.
-- Keep animation definitions reusable.
-- Do not animate every element on the page.
-- Do not animate layout properties unnecessarily.
-- Prefer opacity and transform animations.
-- Avoid layout shifts.
-- Avoid animation dependencies that duplicate existing functionality.
-- Keep animations independent from routing and business logic.
-- Ensure the hero works without JavaScript-dependent decorative behavior where practical.
+Use a consistent typographic scale.
 
-The hero must remain responsive if the animation is removed.
+Suggested desktop sizes:
+
+Hero heading: 56–68px.
+Section heading: 36–44px.
+Card heading: 20–24px.
+Body text: 16–18px.
+Small labels: 12–14px.
+
+Suggested mobile sizes:
+
+Hero heading: 36–44px.
+Section heading: 28–34px.
+Card heading: 20–22px.
+Body text: 16px.
+
+These are starting ranges and must be adjusted for actual content and available space.
+
+Use clamp() for fluid sizing.
+
+Example:
+
+.hero h1 {
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.section-heading {
+  font-size: clamp(1.875rem, 3vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.section-description {
+  max-width: 680px;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+Requirements:
+
+- Maintain readable line lengths.
+- Avoid overly wide paragraphs.
+- Prevent headings from overflowing.
+- Preserve consistent font weights.
+- Maintain strong text contrast.
+- Avoid excessive letter spacing in body copy.
 
 ---
 
-## 13. IMPLEMENTATION WORKFLOW
+# 8. NAVBAR AND BUTTONS
 
-Execute the task in this order:
+Refine the existing navigation without removing working links.
 
-PHASE 1 — INSPECTION
-Inspect the project, hero component, logo, assets, dependencies, and existing design tokens.
+Navbar requirements:
 
-PHASE 2 — BRAND TOKENS
-Verify the logo's colors and update centralized design tokens.
+- Clear logo placement.
+- Consistent spacing.
+- Readable labels.
+- Distinct active states.
+- Accessible mobile navigation.
+- Clear primary CTA.
+- Appropriate contrast.
+- Keyboard accessibility.
+- Visible focus states.
 
-PHASE 3 — HERO LAYOUT
-Implement the responsive two-column layout while preserving existing routes and content.
+If the current navbar has an established transparent or light appearance, preserve that design direction unless there is a clear reason to improve it.
 
-PHASE 4 — ANIMATION
-Implement the headline, paragraph, CTA, and image entrance animations.
+Button requirements:
 
-PHASE 5 — ACCESSIBILITY
-Add reduced-motion handling, semantic markup, alt text, and keyboard checks.
+- Consistent height.
+- Consistent padding.
+- Shared border radius.
+- Clear primary and secondary variants.
+- Subtle hover and focus transitions.
+- Visible keyboard focus.
+- Adequate touch targets.
 
-PHASE 6 — RESPONSIVENESS
-Verify desktop, tablet, and mobile layouts.
+Avoid unnecessary animation on navigation items.
 
-PHASE 7 — QUALITY ASSURANCE
-Run the existing build and lint/test commands where available.
+Do not change destinations or break existing route behavior.
 
-Fix any errors introduced by the implementation.
+---
 
-Check for horizontal overflow, layout shifts, unreadable text, and broken navigation.
+# 9. SERVICES SECTION
 
-PHASE 8 — REPORT
-Summarize:
+Refine the existing service section using responsive CSS Grid.
+
+Preserve the existing service information.
+
+Relevant business areas may include:
+
+- Enterprise Software.
+- e-Health.
+- Cloud SaaS.
+- Project Development & Management.
+
+Only display service categories that match the current website's actual offerings.
+
+Desktop:
+- Three columns where appropriate.
+
+Tablet:
+- Two columns.
+
+Mobile:
+- One column.
+
+Card requirements:
+
+- Consistent padding.
+- Clear headings.
+- Readable descriptions.
+- Consistent spacing.
+- Restrained borders and shadows.
+- Clear links where relevant.
+- Optional subtle hover effects.
+
+Avoid excessive card decoration.
+
+Use icons consistently and ensure that decorative icons do not interfere with accessibility.
+
+---
+
+# 10. PROJECT SHOWCASE
+
+Improve the existing project portfolio.
+
+The purpose of this section is to demonstrate actual work and encourage prospective clients to explore it.
+
+Requirements:
+
+- Responsive grid.
+- Consistent image proportions.
+- Appropriate cropping.
+- Clear project names.
+- Concise descriptions.
+- Functional project links.
+- Accessible image descriptions.
+- Consistent spacing.
+- Clear hover and focus states.
+
+Where appropriate, highlight one featured project with a larger grid area.
+
+Use real screenshots and approved project information.
+
+Do not fabricate project details, client relationships, performance metrics, or testimonials.
+
+If a project does not have a public URL, do not invent one.
+
+---
+
+# 11. SCROLL-TRIGGERED ANIMATIONS
+
+Create reusable reveal effects for appropriate content sections.
+
+Suitable elements include:
+
+- Section headings.
+- Service cards.
+- Project cards.
+- Supporting images.
+- Selected statistics.
+- Call-to-action sections.
+
+Suggested effect:
+
+Initial state:
+- Opacity: 0.
+- Vertical translation: 18px.
+
+Final state:
+- Opacity: 1.
+- Vertical translation: 0.
+
+Suggested duration:
+- 500–650ms.
+
+Requirements:
+
+- Trigger animations when elements enter the viewport.
+- Avoid repeating animations unnecessarily.
+- Use staggered sequences sparingly.
+- Respect reduced-motion settings.
+- Prevent hidden content from remaining inaccessible.
+- Avoid animating every element.
+- Avoid expensive layout-triggering effects.
+
+If using Framer Motion, create a reusable Reveal component rather than duplicating animation logic throughout the application.
+
+---
+
+# 12. RESPONSIVE LAYOUTS
+
+Test the website at:
+
+- 1440px desktop.
+- 1024px tablet landscape.
+- 768px tablet portrait.
+- 390px mobile.
+- 320px narrow mobile.
+
+Check:
+
+- Horizontal overflow.
+- Heading wrapping.
+- Navbar behavior.
+- Hero stacking.
+- Image scaling.
+- Card layouts.
+- Button wrapping.
+- Content spacing.
+- Footer layout.
+- Touch-target dimensions.
+
+Do not simply scale desktop layouts down.
+
+Reorganize content where necessary to preserve usability on mobile devices.
+
+---
+
+# 13. ACCESSIBILITY
+
+Ensure:
+
+- Semantic HTML is used.
+- Keyboard navigation works.
+- Focus indicators are visible.
+- Text contrast is sufficient.
+- Images have appropriate alternative text.
+- Decorative images use appropriate empty alt attributes.
+- Interactive elements have accessible names.
+- Mobile navigation supports keyboard interaction.
+- Reduced-motion preferences are respected.
+- Information is not communicated by color alone.
+- Links and buttons are used according to their purpose.
+
+Do not sacrifice accessibility for visual effects.
+
+---
+
+# 14. PERFORMANCE
+
+Requirements:
+
+- Avoid unnecessary dependencies.
+- Prefer transform and opacity for animations.
+- Avoid excessive blur and filter effects.
+- Use optimized image assets.
+- Prevent cumulative layout shifts.
+- Avoid unnecessary re-renders.
+- Preserve lazy loading for appropriate below-the-fold images.
+- Avoid loading large animation libraries for simple CSS effects.
+- Avoid excessive simultaneous animations.
+
+Test on a lower-powered device as well as desktop.
+
+---
+
+# 15. IMPLEMENTATION WORKFLOW
+
+Follow this sequence.
+
+PHASE 1 — AUDIT
+- Inspect the existing application.
+- Identify shared components.
+- Review the current brand assets.
+- Check installed dependencies.
+- Identify existing visual inconsistencies.
+
+PHASE 2 — DESIGN TOKENS
+- Create or refine shared CSS variables.
+- Establish typography.
+- Standardize spacing and radii.
+- Define reusable animation timing.
+
+PHASE 3 — HERO
+- Refine the layout.
+- Implement the entrance sequence.
+- Improve the visual treatment.
+- Check responsive behavior.
+
+PHASE 4 — SHARED COMPONENTS
+- Refine navbar.
+- Standardize buttons.
+- Improve cards.
+- Refine focus and hover states.
+
+PHASE 5 — PAGE SECTIONS
+- Improve services.
+- Improve project showcases.
+- Refine section spacing.
+- Apply consistent typography.
+
+PHASE 6 — MOTION
+- Add reusable scroll reveals.
+- Refine interactive transitions.
+- Implement reduced-motion support.
+
+PHASE 7 — VALIDATION
+- Run the existing build command.
+- Run linting if configured.
+- Check browser console errors.
+- Test the main routes.
+- Verify project and navigation links.
+- Check mobile responsiveness.
+- Fix regressions.
+
+---
+
+# 16. ACCEPTANCE CRITERIA
+
+The implementation is complete only when:
+
+1. The existing application builds successfully, or any pre-existing build failures are clearly documented.
+2. Existing working routes and links are preserved.
+3. The homepage has a consistent visual system.
+4. The hero entrance animation matches the specified direction and timing.
+5. The design works on desktop, tablet, and mobile.
+6. Typography and colors are consistent.
+7. Service and project layouts are responsive.
+8. Buttons have visible hover and focus states.
+9. Reduced-motion preferences are respected.
+10. No essential content depends on animations running.
+11. No fabricated business information has been introduced.
+12. The browser console has no new errors.
+13. No unnecessary animation or styling dependencies have been added.
+14. The final implementation remains maintainable.
+
+# 17. FINAL REPORT
+
+After implementation, provide:
+
+- Summary of changes.
 - Files created or modified.
-- Dependencies added, if any.
-- Brand color tokens used.
-- Animation behavior implemented.
-- Responsive and accessibility considerations.
-- Any missing logo or product assets that need to be supplied.
+- Design tokens introduced.
+- Animations implemented.
+- Responsive improvements.
+- Accessibility improvements.
+- Dependencies added or reused.
+- Build and lint results.
+- Any unresolved issues.
 
----
+Do not stop after producing a plan.
 
-## 14. ACCEPTANCE CRITERIA
-
-The implementation is complete when:
-
-1. The headline slides smoothly from the left.
-2. The paragraph follows with a gradual opacity increase.
-3. The CTA buttons appear after the text begins entering.
-4. The hero image slides from the right.
-5. The animations use coordinated timing and easing.
-6. The hero looks polished on desktop, tablet, and mobile.
-7. The primary brand and accent colors are aligned with the actual logo when available.
-8. The hero remains functional with reduced motion enabled.
-9. The image does not distort or cause significant layout shifts.
-10. The existing navigation and links continue to work.
-11. The implementation introduces no unnecessary animation libraries.
-12. The project builds successfully.
-13. The final design remains consistent with the broader Centrifuge design system.
-
-FINAL CREATIVE DIRECTION:
-
-The headline should feel like it is entering with purpose.
-
-The supporting text should follow naturally.
-
-The product image should arrive from the opposite direction.
-
-Everything should settle into a clean, balanced composition.
-
-The animation should feel premium without drawing attention to the animation itself.
-
-The final result must communicate:
-
-"Technology that moves your business forward."
+Inspect the codebase, implement the improvements, test the result, and report what was actually completed.

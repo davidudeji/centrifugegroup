@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { useUIStore } from '../../stores/uiStore'
@@ -15,6 +15,8 @@ import {
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const mobileNavRef = useRef<HTMLElement>(null)
+  const mobileNavToggleRef = useRef<HTMLButtonElement>(null)
   const { mobileNavOpen, setMobileNavOpen } = useUIStore()
   const toggleCart = useCartStore((state) => state.toggleCart)
   const totalCartCount = useCartStore((state) =>
@@ -36,15 +38,35 @@ export const Header: React.FC = () => {
   }, [location.pathname, setMobileNavOpen])
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setActiveDropdown(null)
-        setMobileNavOpen(false)
-      }
+    if (!mobileNavOpen) return
+
+    const firstLink = mobileNavRef.current?.querySelector<HTMLElement>('a[href], button:not([disabled])')
+    firstLink?.focus()
+  }, [mobileNavOpen])
+
+  const handleMobileNavKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Escape') {
+      setMobileNavOpen(false)
+      mobileNavToggleRef.current?.focus()
+      return
     }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [setMobileNavOpen])
+
+    if (event.key !== 'Tab') return
+
+    const focusable = event.currentTarget.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])',
+    )
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+
+    if (event.shiftKey && (document.activeElement === first || !event.currentTarget.contains(document.activeElement))) {
+      event.preventDefault()
+      last?.focus()
+    } else if (!event.shiftKey && (document.activeElement === last || !event.currentTarget.contains(document.activeElement))) {
+      event.preventDefault()
+      first?.focus()
+    }
+  }
 
   return (
     <>
@@ -64,11 +86,11 @@ export const Header: React.FC = () => {
                 <img
                   src={brandAssets.logo}
                   alt="Centrifuge Group"
-                  className="h-[40px] w-auto object-contain object-left"
+                  className="h-[40px] w-auto object-contain object-left max-[380px]:h-8"
                 />
               </Link>
 
-              <nav className="hidden items-center gap-1 lg:flex xl:gap-2">
+              <nav aria-label="Main navigation" className="hidden items-center gap-1 lg:flex xl:gap-2">
                 <div
                   className="relative"
                   onMouseEnter={() => setActiveDropdown('solutions')}
@@ -193,7 +215,7 @@ export const Header: React.FC = () => {
 
               <button
                 onClick={toggleCart}
-                className="relative rounded-full p-2 text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                className="relative flex min-h-11 min-w-11 items-center justify-center rounded-full p-2 text-white/80 transition-colors hover:bg-white/5 hover:text-white"
                 aria-label={`Shopping cart with ${totalCartCount} items`}
               >
                 <ShoppingBag className="h-4 w-4" />
@@ -206,16 +228,18 @@ export const Header: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-[8px] bg-[#E87916] px-4.5 py-2 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)]"
+                className="inline-flex min-h-11 items-center justify-center rounded-[8px] bg-[#E87916] px-4.5 py-2 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] max-[440px]:hidden"
               >
                 Contact Us
               </Link>
 
               <button
+                ref={mobileNavToggleRef}
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                className="lg:hidden rounded-full p-2 text-white/80 hover:bg-white/5 hover:text-white"
+                className="lg:hidden flex min-h-11 min-w-11 items-center justify-center rounded-full p-2 text-white/80 hover:bg-white/5 hover:text-white"
                 aria-label={mobileNavOpen ? 'Close navigation' : 'Open navigation'}
                 aria-expanded={mobileNavOpen}
+                aria-controls="mobile-site-navigation"
               >
                 {mobileNavOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -227,12 +251,18 @@ export const Header: React.FC = () => {
       <div aria-hidden="true" className="h-[72px] shrink-0" />
 
       {mobileNavOpen && (
-        <nav aria-label="Mobile site navigation" className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0B1F33] text-white lg:hidden">
+        <nav
+          ref={mobileNavRef}
+          id="mobile-site-navigation"
+          aria-label="Mobile site navigation"
+          onKeyDown={handleMobileNavKeyDown}
+          className="mobile-site-navigation fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0B1F33] text-white lg:hidden"
+        >
           <div className="flex h-[72px] items-center justify-between border-b border-white/10 px-4">
             <Link to="/" onClick={() => setMobileNavOpen(false)} className="flex items-center gap-2">
               <img src={brandAssets.logo} alt="Centrifuge Group" className="h-8 w-auto" />
             </Link>
-            <button onClick={() => setMobileNavOpen(false)} className="rounded-full p-2 text-white/80 hover:bg-white/5 hover:text-white" aria-label="Close menu">
+            <button onClick={() => setMobileNavOpen(false)} className="flex min-h-11 min-w-11 items-center justify-center rounded-full p-2 text-white/80 hover:bg-white/5 hover:text-white" aria-label="Close menu">
               <X className="h-5 w-5" />
             </button>
           </div>

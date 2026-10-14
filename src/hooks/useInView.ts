@@ -16,11 +16,13 @@ export function useInView<T extends Element = HTMLDivElement>(
 ): [React.RefObject<T>, boolean] {
   const { threshold = 0.12, rootMargin = '0px 0px -60px 0px', once = true } = options
   const ref = useRef<T>(null!)
-  const [inView, setInView] = useState(false)
+  const [inView, setInView] = useState(() => typeof IntersectionObserver === 'undefined')
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    if (typeof IntersectionObserver === 'undefined') return
 
     const observer = new IntersectionObserver(
       ([entry]) => {

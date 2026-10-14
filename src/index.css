@@ -46,6 +46,19 @@
 }
 
 :root {
+  --color-primary: #0B1F33;
+  --color-primary-hover: #071521;
+  --color-accent: #E87916;
+  --color-accent-hover: #D0690E;
+  --color-secondary: #008DDA;
+  --color-secondary-hover: #0077B6;
+  --color-background: #F7F9FA;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #0B1F33;
+  --color-text-secondary: #64748B;
+  --color-border: #E2E8F0;
+  --color-focus: #008DDA;
+
   --color-brand-primary: #0B1F33;
   --color-brand-dark: #071521;
   --color-brand-accent: #E87916;
@@ -68,7 +81,20 @@
   --success: #16A34A;
   --alert: #DC2626;
   --site-max-width: 1280px;
-  --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --container-width: 1440px;
+  --page-gutter: clamp(1rem, 3.2vw, 3rem);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-card: 0 14px 32px rgba(15, 44, 89, 0.04);
+  --duration-fast: 180ms;
+  --duration-normal: 350ms;
+  --duration-slow: 700ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-standard: all var(--duration-normal) var(--ease-standard);
+  --font-size-hero: clamp(2.25rem, 4.6vw, 4rem);
+  --font-size-section: clamp(1.875rem, 3.2vw, 2.75rem);
+  --font-size-body: 0.875rem;
   color-scheme: light;
 }
 
@@ -78,21 +104,49 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #F7F9FA;
-  color: #0B1F33;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
   font-family: var(--font-inter);
   overflow-x: hidden;
 }
 
 body {
-  background-color: #F7F9FA;
-  color: #0B1F33;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: var(--font-size-body);
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.marketing-hero__heading {
+  font-size: var(--font-size-hero);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.marketing-section-heading {
+  font-size: var(--font-size-section);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.marketing-section-copy {
+  max-width: 680px;
+  color: var(--color-text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+nav.mobile-site-navigation a {
+  min-height: 44px;
 }
 
 img {
@@ -808,6 +862,21 @@ textarea {
   line-height: 1.2;
   color: #1A1A1A;
   letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .text-fin-h2 {
