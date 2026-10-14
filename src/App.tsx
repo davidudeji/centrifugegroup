@@ -74,7 +74,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          {/* â”€â”€â”€ Auth Routes (standalone, no layout) â”€â”€â”€ */}
+          {/*  Auth Routes (standalone, no layout) */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
 
@@ -85,14 +85,36 @@ export default function App() {
 
             {/* Solutions */}
             <Route path="/solutions" element={<SolutionsPage />} />
-            <Route path="/solutions/project-development-management" element={<BankingFrameworkPage />} />
-            <Route path="/solutions/banking-framework" element={<Navigate to="/solutions/project-development-management" replace />} />
-            <Route path="/studio" element={<Navigate to="/solutions/project-development-management" replace />} />
+            <Route
+              path="/solutions/project-development-management"
+              element={<BankingFrameworkPage />}
+            />
+            <Route
+              path="/solutions/banking-framework"
+              element={
+                <Navigate
+                  to="/solutions/project-development-management"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="/studio"
+              element={
+                <Navigate
+                  to="/solutions/project-development-management"
+                  replace
+                />
+              }
+            />
             <Route path="/solutions/optimax" element={<OptimaxPage />} />
             <Route path="/solutions/logistics" element={<LogisticsPage />} />
             <Route path="/solutions/healthcare" element={<HealthcarePage />} />
             <Route path="/solutions/enterprise" element={<EnterprisePage />} />
-            <Route path="/solutions/data-analytics" element={<DataAnalyticsPage />} />
+            <Route
+              path="/solutions/data-analytics"
+              element={<DataAnalyticsPage />}
+            />
 
             {/* Services */}
             <Route path="/services" element={<ServicesPage />} />
@@ -105,7 +127,10 @@ export default function App() {
             {/* Company */}
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
-            <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
+            <Route
+              path="/case-studies/:slug"
+              element={<CaseStudyDetailPage />}
+            />
 
             {/* Insights */}
             <Route path="/insights" element={<InsightsPage />} />
@@ -132,14 +157,17 @@ export default function App() {
             <Route path="/account/:section" element={<CustomerAccountPage />} />
           </Route>
 
-          {/* â”€â”€â”€ Admin Routes â”€â”€â”€ */}
+          {/*  Admin Routes */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboardPage />} />
             <Route path="orders" element={<AdminOrdersPage />} />
             <Route path="orders/:id" element={<AdminOrderDetailPage />} />
             <Route path="products" element={<AdminProductsPage />} />
             <Route path="products/new" element={<AdminProductFormPage />} />
-            <Route path="products/:id/edit" element={<AdminProductFormPage />} />
+            <Route
+              path="products/:id/edit"
+              element={<AdminProductFormPage />}
+            />
             <Route path="categories" element={<AdminCategoriesPage />} />
             <Route path="inventory" element={<AdminInventoryPage />} />
             <Route path="customers" element={<AdminCustomersPage />} />
@@ -152,25 +180,55 @@ export default function App() {
             <Route path="users" element={<AdminUsersPage />} />
           </Route>
 
-          {/* â”€â”€â”€ Legacy URL Redirects (spec Â§50) â”€â”€â”€ */}
+          {/* Legacy URL Redirects  */}
           <Route path="/career" element={<Navigate to="/careers" replace />} />
           <Route path="/career/" element={<Navigate to="/careers" replace />} />
-          <Route path="/job-openings" element={<Navigate to="/careers/jobs" replace />} />
-          <Route path="/job-openings/" element={<Navigate to="/careers/jobs" replace />} />
-          <Route path="/our-clients" element={<Navigate to="/clients" replace />} />
-          <Route path="/our-clients/" element={<Navigate to="/clients" replace />} />
-          <Route path="/logistic-management-software" element={<Navigate to="/solutions/logistics" replace />} />
-          <Route path="/logistic-management-software/" element={<Navigate to="/solutions/logistics" replace />} />
-          <Route path="/web-application-development" element={<Navigate to="/services/software-development" replace />} />
-          <Route path="/web-application-development/" element={<Navigate to="/services/software-development" replace />} />
-          <Route path="/human-resource-for-health-information-system" element={<Navigate to="/solutions/healthcare" replace />} />
-          <Route path="/human-resource-for-health-information-system/" element={<Navigate to="/solutions/healthcare" replace />} />
+          <Route
+            path="/job-openings"
+            element={<Navigate to="/careers/jobs" replace />}
+          />
+          <Route
+            path="/job-openings/"
+            element={<Navigate to="/careers/jobs" replace />}
+          />
+          <Route
+            path="/our-clients"
+            element={<Navigate to="/clients" replace />}
+          />
+          <Route
+            path="/our-clients/"
+            element={<Navigate to="/clients" replace />}
+          />
+          <Route
+            path="/logistic-management-software"
+            element={<Navigate to="/solutions/logistics" replace />}
+          />
+          <Route
+            path="/logistic-management-software/"
+            element={<Navigate to="/solutions/logistics" replace />}
+          />
+          <Route
+            path="/web-application-development"
+            element={<Navigate to="/services/software-development" replace />}
+          />
+          <Route
+            path="/web-application-development/"
+            element={<Navigate to="/services/software-development" replace />}
+          />
+          <Route
+            path="/human-resource-for-health-information-system"
+            element={<Navigate to="/solutions/healthcare" replace />}
+          />
+          <Route
+            path="/human-resource-for-health-information-system/"
+            element={<Navigate to="/solutions/healthcare" replace />}
+          />
 
-          {/* Catch-all â†’ 404 */}
+          {/* Catch-all 404 */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
-  )
+  );
 }
 

@@ -1,8 +1,8 @@
 # Centrifuge Group Website
 
-A React + TypeScript web platform for Centrifuge Group, an enterprise software and digital solutions company. It combines a corporate marketing site, a hardware shop with an admin console, and an AI chatbot backed by a retrieval-augmented generation (RAG) service.
+A React + TypeScript web platform for Centrifuge Group, an enterprise software and digital solutions company. It combines a corporate marketing site, a hardware shop with an admin console, and Tawk.to live chat with a verified webhook receiver.
 
-> **Status:** active development. The marketing site, shop flow and admin UI run entirely in the browser on mock data. The chatbot is the only part with a real backend. See [Current Limitations](#current-limitations).
+> **Status:** active development. The marketing site, shop flow and admin UI run entirely in the browser on mock data. Tawk.to provides live chat; the optional Express service receives its webhooks. See [Current Limitations](#current-limitations).
 
 ## Features
 
@@ -27,10 +27,9 @@ A React + TypeScript web platform for Centrifuge Group, an enterprise software a
 - Users and roles, system settings
 - Collapsible, responsive sidebar and toast notifications
 
-### AI chatbot
-- Floating chat widget with multiple conversation threads, saved in `localStorage`
-- Express API that embeds the question, retrieves relevant chunks from Pinecone and asks Gemini to answer using only that context
-- Ingestion script that loads a web page, chunks it and indexes it
+### Tawk.to live chat
+- Official Tawk.to JavaScript widget embed, enabled with property and widget IDs from the Tawk.to dashboard
+- Optional Express webhook endpoint that verifies Tawk.to's HMAC-SHA1 signature against the original request body
 
 ## Tech Stack
 
@@ -40,19 +39,20 @@ A React + TypeScript web platform for Centrifuge Group, an enterprise software a
 | Styling | Tailwind CSS v4, `clsx`, `tailwind-merge`, Lucide icons |
 | State | Zustand (with `persist`), TanStack Query provider |
 | Charts | Recharts |
-| Chatbot backend | Node.js, Express, CORS, dotenv |
-| AI / RAG | OpenAI embeddings (via LangChain), Pinecone vector database, Google Gemini (`gemini-2.0-flash`) |
+| Live chat | Tawk.to JavaScript API |
+| Webhook backend | Node.js, Express, dotenv, Node.js crypto |
 | Tooling | ESLint, TypeScript project references |
 
 ## Architecture
 
-**Chat request flow**
+**Tawk.to chat and webhook flow**
 
-1. The widget sends `question`, `history` and `conversationId` to `POST /api/chat`.
-2. The server validates the input (400 if empty) and checks that API keys are configured (503 if not).
-3. The question is embedded and the top 5 matching chunks are fetched from Pinecone.
-4. Gemini receives the retrieved context, the conversation history and the question, with a system instruction to answer only from that context.
-5. The server returns `{ "answer": "..." }`.
+1. The frontend loads Tawk.to's official widget script when `VITE_TAWK_PROPERTY_ID` and `VITE_TAWK_WIDGET_ID` are configured.
+2. Tawk.to sends selected chat and ticket events to `POST /tawk-webhook`.
+3. The Express endpoint verifies `X-Tawk-Signature` using HMAC-SHA1 over the exact raw JSON request body and `TAWK_WEBHOOK_SECRET`.
+4. Verified events are acknowledged with HTTP 200; the server logs only the event name and retry-stable `X-Hook-Event-Id`, not visitor or transcript contents.
+
+Configure the webhook URL and selected events in the Tawk.to dashboard. The endpoint must be publicly reachable over HTTPS in production.
 
 **Data layer (shop and admin):** `productService`, `orderService` and `projectService` expose async methods and currently read and write `localStorage`, seeded from `src/data/mockData.ts`. `paymentService` defines a `PaymentGateway` interface with a simulated gateway, so a real provider such as Paystack can be plugged in without changing the checkout page.
 
@@ -60,13 +60,12 @@ A React + TypeScript web platform for Centrifuge Group, an enterprise software a
 
 ```
 .
-├── backend/                 # Chatbot API
-│   ├── server.js            # Express server, /api/health and /api/chat
-│   ├── ingest.js            # URL -> chunks -> embeddings -> Pinecone
+├── backend/                 # Tawk.to webhook receiver
+│   ├── server.js            # Express health check and signed webhook endpoint
 │   └── .env.example
 ├── src/
 │   ├── components/
-│   │   ├── chatbot/         # Chat widget
+│   │   ├── chatbot/         # Tawk.to JavaScript widget embed
 │   │   ├── layout/          # Public and admin layouts, header, footer, cart drawer
 │   │   └── ui/              # Button, Input, Modal, Badge, SEO, etc.
 │   ├── features/marketing/  # Homepage sections
@@ -89,9 +88,18 @@ A React + TypeScript web platform for Centrifuge Group, an enterprise software a
 
 ### Prerequisites
 - Node.js 20.19+ (or 22+) and npm
-- For the chatbot only: OpenAI, Google Gemini and Pinecone API keys, and a Pinecone index whose dimension matches your OpenAI embedding model
+- A Tawk.to property and chat widget; configure their IDs for the frontend integration
 
 ### 1. Run the frontend
+
+Set these values in the root `.env` file using the IDs from **Tawk.to Admin > Channels > Chat Widget**:
+
+```dotenv
+VITE_TAWK_PROPERTY_ID=your-property-id
+VITE_TAWK_WIDGET_ID=your-widget-id
+```
+
+These IDs are public identifiers needed by the browser widget, not API secrets. Restart Vite after changing them.
 
 ```bash
 npm install
@@ -100,37 +108,27 @@ npm run dev
 
 The app runs at `http://localhost:5173`.
 
-### 2. Run the chatbot backend (optional)
+### 2. Run the Tawk.to webhook backend (optional)
 
 ```bash
 cd backend
 npm install
-cp .env.example .env     # then fill in your keys
+cp .env.example .env     # then set TAWK_WEBHOOK_SECRET
 npm run dev
 ```
 
-The API runs at `http://localhost:5000`. Check it with `curl http://localhost:5000/api/health`.
-
-### 3. Index content for the chatbot
-
-```bash
-cd backend
-node ingest.js https://example.com/page-to-index
-```
-
-Run it once per page you want the chatbot to know about.
+The service runs at `http://localhost:5000`. Check it with `curl http://localhost:5000/api/health`. Configure the Tawk.to webhook URL as `https://your-domain/tawk-webhook`, and copy its webhook secret into `backend/.env`.
 
 ### Environment variables (`backend/.env`)
 
 | Variable | Required | Description |
 |---|---|---|
 | `PORT` | No | Server port (default `5000`) |
-| `GEMINI_API_KEY` | Yes | Google Gemini API key |
-| `OPENAI_API_KEY` | Yes | Used to create embeddings |
-| `PINECONE_API_KEY` | Yes | Pinecone API key |
-| `PINECONE_INDEX_NAME` | Yes for ingestion | Index name (server falls back to `centrifuge-docs`) |
+| `TAWK_WEBHOOK_SECRET` | For webhook delivery | Secret configured for the webhook in the Tawk.to dashboard; keep this on the server only |
 
-Never commit `.env`. Without these keys the chat endpoint returns a `503` with a configuration message and the rest of the site keeps working.
+Never commit `.env`. Without the frontend widget IDs, the Tawk.to widget is not loaded. Without the webhook secret, the endpoint returns HTTP 503 and Tawk.to will retry delivery.
+
+For the provider API contract, see the official [JavaScript API documentation](https://developer.tawk.to/jsapi/) and [webhook documentation](https://developer.tawk.to/webhooks/).
 
 ## Scripts
 
@@ -155,9 +153,9 @@ Authentication and commerce are simulated so the whole UI can be explored withou
 
 - No database: shop and admin data live in `localStorage` and are not shared between users.
 - Authentication and role permissions are not enforced on the server or on admin routes.
-- The chatbot URL is hardcoded to `http://localhost:5000`, and CORS only allows local dev origins, so the chatbot needs configuration before deployment.
+- Tawk.to Secure Mode is not enabled: the current demo authentication is stored in the browser and cannot securely prove visitor identity to the server. Enable it only after adding trusted server-side authentication.
+- Webhook events are signature-verified and acknowledged, but are not persisted or forwarded; transcript contents are discarded and only event metadata is logged.
 - No automated tests or CI pipeline yet.
-- Chat history is sent by the client and is not validated or stored on the server.
 
 ## Roadmap
 
@@ -169,7 +167,3 @@ Authentication and commerce are simulated so the whole UI can be explored withou
 - [ ] Docker setup and a deployed demo
 - [ ] Streaming chat responses, rate limiting and source citations
 - [ ] Route-level code splitting and error boundaries
-
-## Author
-
-Built by [David Udeji](https://github.com/davidudeji).
