@@ -36,6 +36,7 @@ export const Header: React.FC = () => {
   const menuTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const mobileTriggerRef = useRef<HTMLButtonElement>(null)
   const groupTriggerRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const focusFirstMenuLinkRef = useRef(false)
   const mobileNavRef = useRef<HTMLElement>(null)
   const toggleCart = useCartStore((state) => state.toggleCart)
   const cartCount = useCartStore((state) =>
@@ -129,6 +130,14 @@ export const Header: React.FC = () => {
     mobileNavRef.current?.querySelector<HTMLElement>('a[href], button:not([disabled])')?.focus()
   }, [mobileNavigationOpen])
 
+  useEffect(() => {
+    if (!activeMenu || !focusFirstMenuLinkRef.current) return
+    focusFirstMenuLinkRef.current = false
+    document
+      .querySelector<HTMLElement>(`#site-mega-menu-${activeMenu} a`)
+      ?.focus()
+  }, [activeMenu])
+
   useEffect(
     () => () => {
       if (menuTimerRef.current) clearTimeout(menuTimerRef.current)
@@ -163,15 +172,14 @@ export const Header: React.FC = () => {
   ) => {
     if (event.key === 'ArrowDown') {
       event.preventDefault()
-      const firstLink = document.querySelector<HTMLElement>('[id^="site-mega-menu-"] a')
       if (activeMenu) {
-        firstLink?.focus()
+        document
+          .querySelector<HTMLElement>(`#site-mega-menu-${activeMenu} a`)
+          ?.focus()
       } else {
         const group = siteNavigationGroups[index]
+        focusFirstMenuLinkRef.current = true
         openGroup(group)
-        window.requestAnimationFrame(() => {
-          document.querySelector<HTMLElement>('[id^="site-mega-menu-"] a')?.focus()
-        })
       }
       return
     }
@@ -227,7 +235,6 @@ export const Header: React.FC = () => {
                     aria-expanded={expanded}
                     aria-controls={expanded ? `site-mega-menu-${group.id}` : undefined}
                     onMouseEnter={() => openGroup(group)}
-                    onFocus={() => openGroup(group)}
                     onClick={() => openGroup(group)}
                     onKeyDown={(event) => handleDesktopKeyDown(event, index)}
                   >
