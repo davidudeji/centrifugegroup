@@ -38,17 +38,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // Button state styling per Centrifuge Brand Design System
     const variantStyles = {
       primary:
-        'bg-[#E87916] text-[#FFFFFF] font-semibold hover:bg-[#D0690E] shadow-[0_4px_14px_rgba(232,121,22,0.28)] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#E87916] focus:ring-offset-2 border border-transparent',
+        'bg-[#0756A5] text-[#FFFFFF] font-semibold hover:bg-[#073B70] shadow-[0_4px_14px_rgba(7,86,165,0.22)] hover:shadow-[0_6px_18px_rgba(7,86,165,0.3)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1677D2] focus:ring-offset-2 border border-transparent',
       secondary:
-        'bg-[#008DDA] text-[#FFFFFF] font-semibold hover:bg-[#0077B6] shadow-[0_4px_14px_rgba(0,141,218,0.25)] hover:shadow-[0_6px_18px_rgba(0,141,218,0.32)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#008DDA] focus:ring-offset-2 border border-transparent',
+        'bg-[#F28C28] text-[#102A43] font-semibold hover:bg-[#D96F12] hover:text-white shadow-[0_4px_14px_rgba(242,140,40,0.2)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#F28C28] focus:ring-offset-2 border border-transparent',
       dark:
-        'bg-[#0B1F33] text-[#FFFFFF] font-semibold hover:bg-[#071521] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#0B1F33] focus:ring-offset-2 border border-white/10 shadow-xs',
+        'bg-[#073B70] text-[#FFFFFF] font-semibold hover:bg-[#102A43] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1677D2] focus:ring-offset-2 border border-white/10 shadow-xs',
       outline:
-        'bg-[#FFFFFF] text-[#0B1F33] font-semibold border border-[#CBD5E1] hover:bg-slate-50 hover:border-[#0B1F33]/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#0B1F33]/20 shadow-2xs',
+        'bg-[#FFFFFF] text-[#0756A5] font-semibold border border-[#CBD5E1] hover:bg-[#F5F8FC] hover:border-[#0756A5]/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1677D2]/30 shadow-2xs',
       ghost:
-        'bg-transparent text-[#0B1F33] font-medium hover:bg-[#0B1F33]/5 hover:text-[#0B1F33] focus:outline-none',
+        'bg-transparent text-[#0756A5] font-medium hover:bg-[#EAF3FC] hover:text-[#073B70] focus:outline-none',
       'code-pill':
-        'bg-[#F7F9FA] text-[#0B1F33] border border-[#E2E8F0] font-mono text-xs px-2.5 py-1 hover:border-[#E87916] hover:bg-[#FFFFFF]',
+        'bg-[#F5F8FC] text-[#102A43] border border-[#E2E8F0] font-mono text-xs px-2.5 py-1 hover:border-[#F28C28] hover:bg-[#FFFFFF]',
       danger:
         'bg-[#DC2626] text-[#FFFFFF] font-semibold hover:bg-[#B91C1C] focus:outline-none focus:ring-2 focus:ring-[#DC2626]/40 border border-transparent shadow-xs',
     }

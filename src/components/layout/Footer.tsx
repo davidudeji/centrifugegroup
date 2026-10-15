@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#0B1F33] text-[#A0AEC0] pt-16 pb-12 border-t border-white/10">
+    <footer className="site-footer bg-[#073B70] text-[#D0DBE9] pt-16 pb-12 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-10 lg:gap-7 pb-12 border-b border-white/10">
           {/* Brand & Corporate Presence Column */}
@@ -205,7 +205,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/managed-it" className="hover:text-white transition-colors">
+                <Link to="/services/infrastructure" className="hover:text-white transition-colors">
                   Managed IT Services
                 </Link>
               </li>

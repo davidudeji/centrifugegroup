@@ -8,7 +8,7 @@ import TawkChatWidget from '../chatbot/TawkChatWidget'
 
 export const PublicLayout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F7FA] text-[#1A1A1A] font-sans antialiased selection:bg-[#008DDA]/20 selection:text-[#0F2C59]">
+    <div className="min-h-screen flex flex-col bg-[#F5F8FC] text-[#102A43] font-sans antialiased selection:bg-[#1677D2]/20 selection:text-[#073B70]">
       <Header />
       <main className="flex-1">
         <Outlet />
