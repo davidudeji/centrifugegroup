@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0B1F33] text-[#A0AEC0] pt-16 pb-12 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-10 lg:gap-7 pb-12 border-b border-white/10">
           {/* Brand & Corporate Presence Column */}
           <div className="lg:col-span-2 space-y-4 text-left">
             <Link to="/" className="flex items-center gap-3">
@@ -122,6 +122,24 @@ export const Footer: React.FC = () => {
                   Business Intelligence
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          <div className="text-left">
+            <h4 className="text-[12px] font-bold uppercase tracking-[1px] text-white mb-3">
+              OptimaXCloud
+            </h4>
+            <p className="mb-4 text-[12px] leading-5 text-[#A0AEC0]">
+              Explore cloud infrastructure, application deployment, and managed cloud services from Centrifuge Group.
+            </p>
+            <ul className="space-y-2.5 text-[13px]">
+              <li><Link to="/optima-xcloud/" className="hover:text-white transition-colors">Overview</Link></li>
+              <li><Link to="/optima-xcloud/platform/" className="hover:text-white transition-colors">Platform</Link></li>
+              <li><Link to="/optima-xcloud/integrations/" className="hover:text-white transition-colors">Integrations</Link></li>
+              <li><Link to="/optima-xcloud/solutions/" className="hover:text-white transition-colors">Solutions</Link></li>
+              <li><Link to="/optima-xcloud/migration/" className="hover:text-white transition-colors">Cloud Migration</Link></li>
+              <li><Link to="/optima-xcloud/pricing/" className="hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link to="/optima-xcloud/documentation/" className="hover:text-white transition-colors">Documentation</Link></li>
             </ul>
           </div>
 

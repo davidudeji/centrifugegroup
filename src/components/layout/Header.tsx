@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { brandAssets } from '../../assets'
 import { useUIStore } from '../../stores/uiStore'
 import { useCartStore } from '../../stores/cartStore'
+import { optimaXCloudLinks } from '../../data/optimaXCloud'
 import {
   ChevronDown,
   Menu,
@@ -13,17 +14,30 @@ import {
 } from 'lucide-react'
 
 export const Header: React.FC = () => {
+  const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [dropdownState, setDropdownState] = useState<{ pathname: string; value: string | null }>({
+    pathname: location.pathname,
+    value: null,
+  })
+  const activeDropdown = dropdownState.pathname === location.pathname ? dropdownState.value : null
+  const setActiveDropdown = useCallback((next: string | null | ((current: string | null) => string | null)) => {
+    setDropdownState((current) => ({
+      pathname: location.pathname,
+      value: typeof next === 'function'
+        ? next(current.pathname === location.pathname ? current.value : null)
+        : next,
+    }))
+  }, [location.pathname])
   const mobileNavRef = useRef<HTMLElement>(null)
   const mobileNavToggleRef = useRef<HTMLButtonElement>(null)
+  const cloudDropdownRef = useRef<HTMLDivElement>(null)
+  const cloudDropdownTriggerRef = useRef<HTMLButtonElement>(null)
   const { mobileNavOpen, setMobileNavOpen } = useUIStore()
   const toggleCart = useCartStore((state) => state.toggleCart)
   const totalCartCount = useCartStore((state) =>
     state.items.reduce((total, item) => total + item.quantity, 0),
   )
-  const location = useLocation()
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -33,9 +47,28 @@ export const Header: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    setActiveDropdown(null)
     setMobileNavOpen(false)
   }, [location.pathname, setMobileNavOpen])
+
+  useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent) => {
+      if (cloudDropdownRef.current && !cloudDropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown((current) => current === 'optima-xcloud' ? null : current)
+      }
+    }
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && activeDropdown === 'optima-xcloud') {
+        setActiveDropdown(null)
+        cloudDropdownTriggerRef.current?.focus()
+      }
+    }
+    document.addEventListener('click', handleDocumentClick)
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+      document.removeEventListener('click', handleDocumentClick)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [activeDropdown, setActiveDropdown])
 
   useEffect(() => {
     if (!mobileNavOpen) return
@@ -140,6 +173,44 @@ export const Header: React.FC = () => {
                           </p>
                         </div>
                       </Link>
+                    </div>
+                  )}
+                </div>
+
+                <div
+                  ref={cloudDropdownRef}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown('optima-xcloud')}
+                  onMouseLeave={() => setActiveDropdown((current) => current === 'optima-xcloud' ? null : current)}
+                >
+                  <button
+                    ref={cloudDropdownTriggerRef}
+                    type="button"
+                    onClick={() => setActiveDropdown(activeDropdown === 'optima-xcloud' ? null : 'optima-xcloud')}
+                    className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-[14px] font-medium transition-colors ${
+                      location.pathname.startsWith('/optima-xcloud')
+                        ? 'bg-white/10 text-white'
+                        : 'text-white/75 hover:bg-white/5 hover:text-white'
+                    }`}
+                    aria-expanded={activeDropdown === 'optima-xcloud'}
+                    aria-controls="optima-xcloud-menu"
+                  >
+                    <span>OptimaXCloud</span>
+                    <ChevronDown className="h-3.5 w-3.5 text-white/70" aria-hidden="true" />
+                  </button>
+                  {activeDropdown === 'optima-xcloud' && (
+                    <div id="optima-xcloud-menu" className="absolute left-0 top-full w-[310px] rounded-xl border border-slate-200 bg-white p-3 shadow-[0_18px_48px_rgba(15,32,59,0.18)]">
+                      <p className="px-3 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0B1F33]">OPTIMAXCLOUD</p>
+                      <p className="px-3 pb-2 pt-1 text-xs leading-5 text-slate-500">Cloud infrastructure and application operations.</p>
+                      {optimaXCloudLinks.map((item) => (
+                        <Link key={item.path} to={item.path} className={`block rounded-lg px-3 py-2 text-sm hover:bg-slate-50 hover:text-[#008DDA] ${location.pathname === item.path ? 'font-semibold text-[#008DDA]' : 'text-slate-700'}`} aria-current={location.pathname === item.path ? 'page' : undefined}>
+                          {item.label}
+                        </Link>
+                      ))}
+                      <div className="mt-2 border-t border-slate-100 pt-3">
+                        <Link to="/optima-xcloud/" className="block rounded-lg bg-[#0B1F33] px-3 py-2.5 text-center text-sm font-semibold text-white hover:bg-[#071521]">Explore OptimaXCloud</Link>
+                        <Link to="/contact" className="mt-2 block px-3 py-2 text-center text-sm font-semibold text-[#0B1F33] hover:text-[#008DDA]">Request a Consultation</Link>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -273,6 +344,15 @@ export const Header: React.FC = () => {
               <Link to="/solutions/project-development-management" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Project Development & Management</Link>
               <Link to="/solutions/optimax" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Optimax ERP Suite</Link>
               <Link to="/solutions/healthcare" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">Healthcare Technology</Link>
+            </div>
+
+            <div className="space-y-2 border-t border-white/10 pt-4">
+              <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E87916]">OptimaXCloud</p>
+              <p className="px-3 text-sm leading-6 text-white/65">Cloud infrastructure and application operations.</p>
+              {optimaXCloudLinks.map((item) => (
+                <Link key={item.path} to={item.path} onClick={() => setMobileNavOpen(false)} aria-current={location.pathname === item.path ? 'page' : undefined} className="block rounded-xl px-3 py-2 text-[15px] text-white/80 hover:bg-white/5 hover:text-white">{item.label}</Link>
+              ))}
+              <Link to="/contact" onClick={() => setMobileNavOpen(false)} className="block rounded-xl px-3 py-2 text-[15px] font-semibold text-[#FDBA74] hover:bg-white/5">Request a Consultation</Link>
             </div>
 
             <div className="space-y-2 border-t border-white/10 pt-4">

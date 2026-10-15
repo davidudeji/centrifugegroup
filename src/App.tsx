@@ -30,6 +30,7 @@ import { JobDetailPage } from './pages/public/JobDetailPage'
 import { ContactPage } from './pages/public/ContactPage'
 import { ProjectsPage } from './pages/public/ProjectsPage'
 import { ProjectDetailPage } from './pages/public/ProjectDetailPage'
+import { OptimaXCloudPage } from './pages/public/OptimaXCloudPage'
 
 // Shop Pages
 import { ShopPage } from './pages/shop/ShopPage'
@@ -82,6 +83,16 @@ export default function App() {
           <Route element={<PublicLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+
+            {/* OptimaXCloud product pages */}
+            <Route path="/optima-xcloud" element={<Navigate to="/optima-xcloud/" replace />} />
+            <Route path="/optima-xcloud/" element={<OptimaXCloudPage page="overview" />} />
+            <Route path="/optima-xcloud/platform/" element={<OptimaXCloudPage page="platform" />} />
+            <Route path="/optima-xcloud/integrations/" element={<OptimaXCloudPage page="integrations" />} />
+            <Route path="/optima-xcloud/solutions/" element={<OptimaXCloudPage page="solutions" />} />
+            <Route path="/optima-xcloud/migration/" element={<OptimaXCloudPage page="migration" />} />
+            <Route path="/optima-xcloud/pricing/" element={<OptimaXCloudPage page="pricing" />} />
+            <Route path="/optima-xcloud/documentation/" element={<OptimaXCloudPage page="documentation" />} />
 
             {/* Solutions */}
             <Route path="/solutions" element={<SolutionsPage />} />
@@ -231,4 +242,3 @@ export default function App() {
     </QueryClientProvider>
   );
 }
-

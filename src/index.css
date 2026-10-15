@@ -165,6 +165,68 @@ img {
   padding-bottom: clamp(4rem, 7vw, 6rem);
 }
 
+.cloud-primary-button,
+.cloud-outline-button,
+.cloud-light-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 8px;
+  padding: 0.7rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.cloud-primary-button {
+  border: 1px solid #E87916;
+  background: #E87916;
+  color: #fff;
+}
+
+.cloud-primary-button:hover {
+  border-color: #D0690E;
+  background: #D0690E;
+}
+
+.cloud-outline-button {
+  border: 1px solid #CBD5E1;
+  background: #fff;
+  color: #0B1F33;
+}
+
+.cloud-outline-button:hover {
+  border-color: #008DDA;
+  color: #006FAE;
+}
+
+.cloud-light-button {
+  border: 1px solid rgb(255 255 255 / 35%);
+  background: transparent;
+  color: #fff;
+}
+
+.cloud-light-button:hover {
+  background: rgb(255 255 255 / 10%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 .architecture-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
