@@ -1,273 +1,203 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { brandAssets } from '../../assets'
-import { Mail, Phone, MapPin, Briefcase, MessageCircle, Play, Globe, ShieldCheck } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Globe, ShieldCheck } from 'lucide-react'
+
+const footerLinks = {
+  solutions: [
+    { label: 'Project Development & Management', href: '/solutions/project-development-management' },
+    { label: 'Optimax ERP Suite', href: '/solutions/optimax' },
+    { label: 'Healthcare Systems (HRHIS)', href: '/solutions/healthcare' },
+    { label: 'Logistics & Telematics', href: '/solutions/logistics' },
+    { label: 'Enterprise Integration', href: '/solutions/enterprise' },
+    { label: 'Business Intelligence', href: '/solutions/data-analytics' },
+  ],
+  optimaxCloud: [
+    { label: 'Overview', href: '/optima-xcloud/' },
+    { label: 'Platform', href: '/optima-xcloud/platform/' },
+    { label: 'Integrations', href: '/optima-xcloud/integrations/' },
+    { label: 'Solutions', href: '/optima-xcloud/solutions/' },
+    { label: 'Cloud Migration', href: '/optima-xcloud/migration/' },
+    { label: 'Pricing', href: '/optima-xcloud/pricing/' },
+    { label: 'Documentation', href: '/optima-xcloud/documentation/' },
+  ],
+  services: [
+    { label: 'Software Engineering', href: '/services/software-development' },
+    { label: 'Mobile Development', href: '/services/mobile-development' },
+    { label: 'Cloud Infrastructure', href: '/services/cloud' },
+    { label: 'Managed IT Services', href: '/services/infrastructure' },
+    { label: 'Capacity Building', href: '/services/training' },
+    { label: 'Project Showcase', href: '/projects' },
+  ],
+  company: [
+    { label: 'About Centrifuge', href: '/about' },
+    { label: 'Institutional Clients', href: '/clients' },
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Technical Insights', href: '/insights' },
+    { label: 'Careers & Openings', href: '/careers' },
+    { label: 'Contact Advisory', href: '/contact' },
+  ],
+}
+
+const socialLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/centrifuge-information-technology',
+    icon: Linkedin,
+  },
+  {
+    label: 'X / Twitter',
+    href: 'https://twitter.com/centrifugegroup',
+    icon: Twitter,
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@centrifugegroup',
+    icon: Youtube,
+  },
+  {
+    label: 'Website',
+    href: 'https://centrifugegroup.co',
+    icon: Globe,
+  },
+]
+
+interface FooterColumnProps {
+  heading: string
+  links: Array<{ label: string; href: string }>
+  highlight?: string
+}
+
+const FooterColumn: React.FC<FooterColumnProps> = ({ heading, links, highlight }) => (
+  <div>
+    <h4 className="mb-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
+      {heading}
+    </h4>
+    <ul className="space-y-2.5 text-[13.5px]">
+      {links.map((link) => (
+        <li key={link.href}>
+          <Link
+            to={link.href}
+            className={`transition-colors hover:text-white ${
+              link.label === highlight
+                ? 'text-[#60A5FA] font-medium'
+                : 'text-[#8BAACC]'
+            }`}
+          >
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+)
 
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="site-footer bg-[#073B70] text-[#D0DBE9] pt-16 pb-12 border-t border-white/10">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-10 lg:gap-7 pb-12 border-b border-white/10">
-          {/* Brand & Corporate Presence Column */}
-          <div className="lg:col-span-2 space-y-4 text-left">
-            <Link to="/" className="flex items-center gap-3">
+    <footer className="site-footer bg-[#0A2540] text-[#8BAACC] border-t border-white/8">
+
+      {/* Main footer grid */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr_1fr]">
+
+          {/* Brand column */}
+          <div className="space-y-6">
+            <Link to="/" className="inline-block" aria-label="Centrifuge Group home">
               <img
                 src={brandAssets.logo}
                 alt="Centrifuge Group"
-                className="w-[240px] sm:w-[280px] h-[52px] object-contain object-left"
+                className="h-[48px] w-auto object-contain object-left"
+                style={{ maxWidth: 220 }}
               />
             </Link>
 
-            <p className="text-[13px] text-[#A0AEC0] leading-relaxed max-w-sm">
+            <p className="text-[13.5px] leading-[1.75] text-[#7A9BBC] max-w-[280px]">
               Enterprise software engineering, systems integration, and digital infrastructure for complex operational environments.
             </p>
 
-            <div className="pt-2 text-[12px] text-[#A0AEC0] space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-[#E87916] shrink-0 mt-0.5" />
-                <span>Suite 203, 2nd Floor, Jinifa Plaza, Central Business District, Abuja, Nigeria.</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-[#E87916] shrink-0" />
-                <a href="mailto:enquiries@centrifugegroup.com" className="hover:text-white transition-colors">
-                  enquiries@centrifugegroup.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-[#E87916] shrink-0" />
-                <a href="tel:+2348155026555" className="hover:text-white transition-colors">
-                  +234 815 5026 555
-                </a>
+            {/* Contact details */}
+            <div className="space-y-3 text-[13px] text-[#7A9BBC]">
+              <a
+                href="mailto:enquiries@centrifugegroup.com"
+                className="flex items-center gap-2.5 hover:text-white transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5 text-[#E87916] shrink-0" />
+                <span>enquiries@centrifugegroup.com</span>
+              </a>
+              <a
+                href="tel:+2348155026555"
+                className="flex items-center gap-2.5 hover:text-white transition-colors"
+              >
+                <Phone className="h-3.5 w-3.5 text-[#E87916] shrink-0" />
+                <span>+234 815 5026 555</span>
+              </a>
+              <div className="flex items-start gap-2.5">
+                <MapPin className="h-3.5 w-3.5 text-[#E87916] shrink-0 mt-0.5" />
+                <span>Suite 203, Jinifa Plaza, CBD, Abuja, Nigeria</span>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-2 pt-2">
-              <a
-                href="https://www.linkedin.com/company/centrifuge-information-technology"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Centrifuge Group on LinkedIn"
-                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
-              >
-                <Briefcase className="h-4 w-4" />
-              </a>
-              {/* X / Twitter */}
-              <a
-                href="https://twitter.com/centrifugegroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Centrifuge Group on X"
-                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
-              >
-                <MessageCircle className="h-4 w-4" />
-              </a>
-              {/* YouTube */}
-              <a
-                href="https://www.youtube.com/@centrifugegroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Centrifuge Group on YouTube"
-                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
-              >
-                <Play className="h-4 w-4" />
-              </a>
-              <a
-                href="https://centrifugegroup.co"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Centrifuge Group Website"
-                className="h-8 w-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-[#A0AEC0] hover:text-white hover:bg-[#E87916] hover:border-[#E87916] transition-colors"
-              >
-                <Globe className="h-4 w-4" />
-              </a>
+            {/* Social links */}
+            <div className="flex items-center gap-2 pt-1">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Centrifuge Group on ${label}`}
+                  className="flex h-8 w-8 items-center justify-center rounded-[5px] border border-white/10 bg-white/4 text-[#7A9BBC] transition-colors hover:border-[#E87916]/50 hover:bg-[#E87916] hover:text-white"
+                >
+                  <Icon className="h-3.5 w-3.5" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Solutions Column */}
-          <div className="text-left">
-            <h4 className="text-[12px] font-bold uppercase tracking-[1px] text-white mb-4">
-              Solutions
-            </h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li>
-                <Link to="/solutions/project-development-management" className="hover:text-white transition-colors flex items-center gap-1.5 text-[#008DDA]">
-                  <span>Project Development & Management</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/optimax" className="hover:text-white transition-colors">
-                  Optimax ERP Suite
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/healthcare" className="hover:text-white transition-colors">
-                  Healthcare Systems (HRHIS)
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/logistics" className="hover:text-white transition-colors">
-                  Logistics & Telematics
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/enterprise" className="hover:text-white transition-colors">
-                  Enterprise Integration
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/data-analytics" className="hover:text-white transition-colors">
-                  Business Intelligence
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Solutions */}
+          <FooterColumn heading="Solutions" links={footerLinks.solutions} highlight="Project Development & Management" />
 
-          <div className="text-left">
-            <h4 className="text-[12px] font-bold uppercase tracking-[1px] text-white mb-3">
-              OptimaXCloud
-            </h4>
-            <p className="mb-4 text-[12px] leading-5 text-[#A0AEC0]">
-              Explore cloud infrastructure, application deployment, and managed cloud services from Centrifuge Group.
+          {/* OptimaXCloud */}
+          <div>
+            <h4 className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white">OptimaXCloud</h4>
+            <p className="mb-4 text-[12px] leading-[1.6] text-[#6A8AA8]">
+              Cloud infrastructure & managed services from Centrifuge Group.
             </p>
-            <ul className="space-y-2.5 text-[13px]">
-              <li><Link to="/optima-xcloud/" className="hover:text-white transition-colors">Overview</Link></li>
-              <li><Link to="/optima-xcloud/platform/" className="hover:text-white transition-colors">Platform</Link></li>
-              <li><Link to="/optima-xcloud/integrations/" className="hover:text-white transition-colors">Integrations</Link></li>
-              <li><Link to="/optima-xcloud/solutions/" className="hover:text-white transition-colors">Solutions</Link></li>
-              <li><Link to="/optima-xcloud/migration/" className="hover:text-white transition-colors">Cloud Migration</Link></li>
-              <li><Link to="/optima-xcloud/pricing/" className="hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link to="/optima-xcloud/documentation/" className="hover:text-white transition-colors">Documentation</Link></li>
+            <ul className="space-y-2.5 text-[13.5px]">
+              {footerLinks.optimaxCloud.map((link) => (
+                <li key={link.href}>
+                  <Link to={link.href} className="text-[#8BAACC] transition-colors hover:text-white">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Products & Store */}
-          <div className="text-left">
-            <h4 className="text-[12px] font-bold uppercase tracking-[1px] text-white mb-4">
-              Products & Hardware
-            </h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
-                  All Hardware Catalog
-                </Link>
-              </li>
-              <li>
-                <Link to="/shop/titan-5kva-inverter" className="hover:text-white transition-colors">
-                  Titan 5kVA Inverters
-                </Link>
-              </li>
-              <li>
-                <Link to="/shop/apex-online-ups-10kva" className="hover:text-white transition-colors">
-                  Data Center UPS Systems
-                </Link>
-              </li>
-              <li>
-                <Link to="/shop/solartrac-mppt-controller-80a" className="hover:text-white transition-colors">
-                  MPPT Controllers
-                </Link>
-              </li>
-              <li>
-                <Link to="/cart" className="hover:text-white transition-colors">
-                  Procurement Cart
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin" className="hover:text-white transition-colors flex items-center gap-1 text-[#008DDA]">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  <span>Admin Console</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Services */}
+          <FooterColumn heading="Services" links={footerLinks.services} />
 
-          {/* Services & Capabilities */}
-          <div className="text-left">
-            <h4 className="text-[12px] font-bold uppercase tracking-[1px] text-white mb-4">
-              Services
-            </h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li>
-                <Link to="/services/software-development" className="hover:text-white transition-colors">
-                  Software Engineering
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/mobile-development" className="hover:text-white transition-colors">
-                  Mobile Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/cloud" className="hover:text-white transition-colors">
-                  Cloud Infrastructure
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/infrastructure" className="hover:text-white transition-colors">
-                  Managed IT Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/training" className="hover:text-white transition-colors">
-                  Capacity Building
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="hover:text-white transition-colors">
-                  Project Showcase
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Institutional Company */}
-          <div className="text-left">
-            <h4 className="text-[12px] font-bold uppercase tracking-[1px] text-white mb-4">
-              Company
-            </h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li>
-                <Link to="/about" className="hover:text-white transition-colors">
-                  About Centrifuge
-                </Link>
-              </li>
-              <li>
-                <Link to="/clients" className="hover:text-white transition-colors">
-                  Institutional Clients
-                </Link>
-              </li>
-              <li>
-                <Link to="/case-studies" className="hover:text-white transition-colors">
-                  Client Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link to="/insights" className="hover:text-white transition-colors">
-                  Technical Insights
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="hover:text-white transition-colors">
-                  Careers & Openings
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-white transition-colors">
-                  Contact Advisory
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Company */}
+          <FooterColumn heading="Company" links={footerLinks.company} />
         </div>
+      </div>
 
-        {/* Bottom Legal Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[12px] text-[#A0AEC0] gap-4">
-          <p>&copy; {year} Centrifuge Group. Enterprise technology and engineering. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link to="/contact" className="hover:text-white transition-colors">Security Disclosure</Link>
-          </div>
+      {/* Divider */}
+      <div className="border-t border-white/8" />
+
+      {/* Bottom bar */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-[12.5px] text-[#5A7A9A]">
+        <p>
+          &copy; {year} Centrifuge Group. Enterprise technology and engineering. All rights reserved.
+        </p>
+        <div className="flex items-center gap-5">
+          <Link to="/contact" className="hover:text-white transition-colors">Security Disclosure</Link>
+          <Link to="/admin" className="inline-flex items-center gap-1 hover:text-white transition-colors">
+            <ShieldCheck className="h-3.5 w-3.5" />
+            <span>Admin</span>
+          </Link>
         </div>
       </div>
     </footer>

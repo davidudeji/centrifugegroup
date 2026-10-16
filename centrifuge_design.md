@@ -1,155 +1,353 @@
-AI BUILD SPECIFICATION: CENTRIFUGE GROUP WEBSITE REDESIGN
-Enterprise Blue & Orange Design System · Premium UI/UX · Animated Mega Navigation · Responsive Architecture
-Project: Centrifuge Group Corporate Website
-Objective: Build a polished, modern enterprise technology website inspired by the reference website's excellent navigation, spacing, typography, and visual hierarchy, while maintaining Centrifuge's own brand identity through a consistent blue-and-orange color system.
-Design direction: Enterprise-grade, modern, confident, clean, spacious, and technologically sophisticated.
-Primary design reference: The website screenshots supplied in this conversation. Use them to understand the design principles, particularly the full-width mega menu, organized navigation, spacious layouts, and smooth transitions. Do not copy the reference website's logo, text, proprietary assets, or exact visual identity.
-Primary requirement: Every page and component must feel like part of the same Centrifuge Group website. Blue and orange must be integrated consistently throughout the navigation, hero sections, buttons, links, cards, animations, illustrations, and footer.
+# CENTRIFUGE GROUP
+## Enterprise Website Design Excellence, UI/UX Refinement & Frontend Engineering Specification
 
-1. PROJECT OBJECTIVES
-   Redesign and refine the Centrifuge Group website into a cohesive corporate digital experience that communicates trust, technical expertise, innovation, and business value.
-   The website should help visitors understand:
+**Project:** Centrifuge Group Corporate Website  
+**Project type:** Existing website enhancement and design-system refinement  
+**Primary objective:** Transform the existing website into a distinctive, polished, modern enterprise technology experience without unnecessarily rebuilding its architecture or sacrificing existing functionality.
 
-- Who Centrifuge Group is.
-- What the company does.
-- Which industries it serves.
-- What software solutions and services it offers.
-- How it approaches project development and management.
-- Which projects and digital products it has delivered.
-- What cloud and infrastructure services it offers.
-- How potential clients can engage with the company.
-  The finished website must be visually impressive without sacrificing usability, accessibility, responsiveness, performance, or maintainability.
-  Core design principles
+**Implementation principle:** Audit first. Establish the design direction. Improve the system. Implement carefully. Test thoroughly. Refine until the result meets the acceptance criteria.
 
-1. Brand consistency: Blue establishes trust and professionalism; orange provides emphasis and directs attention.
-2. Clarity: Visitors should understand each section without having to decipher complicated layouts.
-3. Generous spacing: Use deliberate whitespace to separate content and establish hierarchy.
-4. Strong typography: Large, confident headings paired with readable body text.
-5. Purposeful animation: Motion should guide attention and communicate transitions, not distract.
-6. Structured navigation: Visitors must be able to explore complex services through an intuitive mega menu.
-7. Reusable architecture: Shared components should provide the same visual and behavioral standards across the website.
-8. Enterprise credibility: Use real company information, relevant imagery, clear service descriptions, and meaningful calls to action.
-9. BRAND IDENTITY AND COLOR SYSTEM
-   2.1 Primary brand direction
-   Build a unified blue-and-orange design system.
-   Blue should dominate the brand experience, while orange should be used strategically to highlight important interactions and visual details.
-   Do not distribute blue and orange randomly across the interface.
-   Proposed color tokens
-   Use the following as initial design tokens. Verify them against the existing Centrifuge logo and brand assets before implementation.
-   Token Color Intended use
-   Primary Blue #0756A5 Primary brand color, links, buttons, and interactive elements
-   Deep Blue #073B70 Dark backgrounds, footer, and high-contrast sections
-   Navy #102A43 Headings, dark text, and enterprise visual elements
-   Bright Blue #1677D2 Hover states, highlights, and secondary accents
-   Brand Orange #F28C28 Primary accent, selected states, and key highlights
-   Orange Hover #D96F12 Hover state for orange buttons and links
-   White #FFFFFF Main surfaces, navigation dropdowns, and cards
-   Light Background #F5F8FC Alternating section backgrounds
-   Light Blue #EAF3FC Subtle highlights and informational panels
-   Body Text #344054 Paragraphs and supporting content
-   Muted Text #667085 Secondary descriptions and metadata
-   Border #E2E8F0 Dividers, card borders, and form fields
+---
 
-Important: These colors establish the proposed system, not an instruction to change the existing logo. Preserve the official logo and derive the final tokens from its actual blue and orange tones where necessary.
-2.2 The 60–30–10 principle
-Use an approximate distribution to prevent visual clutter.
+# 1. YOUR ROLE
 
-- 60% neutral surfaces: White and very light backgrounds.
-- 30% blue: Navigation, major visual areas, headings, links, and important brand elements.
-- 10% orange: CTAs, active indicators, selected elements, and small visual accents.
-  This is a directional guideline rather than a strict measurement.
-  Appropriate use of blue
-  Use blue for:
-- The primary navigation background or brand treatments.
-- Important section headings.
-- Primary links and interactive elements.
-- Selected service categories.
-- Dark hero backgrounds where appropriate.
-- Footer backgrounds.
-- Subtle decorative lines and diagrams.
-  Appropriate use of orange
-  Use orange for:
-- The main CTA or a carefully selected secondary CTA.
-- Small navigation indicators.
-- Active menu markers.
-- Selected words within headlines.
-- Eyebrow labels.
-- Small icon accents.
-- Important metrics or statistics.
-- Focused highlights in diagrams and illustrations.
-  Avoid
-- Large orange backgrounds throughout the site.
-- Blue and orange gradients on every component.
-- Orange body text on white when contrast is insufficient.
-- Multiple competing accent colors.
-- Unnecessary glassmorphism, glowing edges, and decorative gradients.
-- Giving every card a different color.
-  The visual result should feel professional and restrained.
+Act as a senior digital product designer, creative director, UI/UX specialist, brand-focused web designer, and senior frontend engineer.
 
-3. TYPOGRAPHY SYSTEM
-   Create a consistent typographic hierarchy across all pages.
-   Recommended typography
-   Use Inter as the primary font, or retain an existing brand font if one is already established.
-   Use a sans-serif typeface with clear letterforms, strong headings, and excellent readability at smaller sizes.
-   Typography scale
-   Element Desktop size Mobile size Weight
-   Hero heading 56–72px 36–44px 700
-   Page heading 44–56px 32–40px 700
-   Section heading 32–40px 26–32px 650–700
-   Card heading 20–24px 18–22px 600
-   Body text 16–18px 16px 400
-   Navigation 14–15px 16px 500
-   Mega menu heading 12–13px 12px 700
-   Mega menu links 14–15px 15–16px 400–500
-   Eyebrow labels 12–14px 12px 700
+Approach this project as an experienced multidisciplinary team combining:
 
-Use fluid typography where appropriate.
-For example:
-.hero-title {
-font-size: clamp(2.5rem, 5vw, 4.5rem);
-line-height: 1.05;
-letter-spacing: -0.04em;
-font-weight: 700;
-}
+- Enterprise digital strategy.
+- Visual art direction.
+- Information architecture.
+- Interaction and motion design.
+- Accessibility engineering.
+- Frontend architecture.
+- Performance optimization.
+- Conversion-focused content design.
+- Quality assurance.
 
-Avoid oversized text that wraps awkwardly on laptops or small mobile devices. 4. GLOBAL LAYOUT AND SPACING
-The website should feel spacious and carefully aligned.
-Layout rules
+Your responsibility is not simply to make the website look more modern.
 
-- Use a consistent centered content container.
-- Set a maximum content width of approximately 1280–1440px.
-- Use responsive horizontal padding.
-- Align headings, paragraphs, images, cards, and buttons to a predictable grid.
-- Use consistent vertical spacing between sections.
-- Avoid placing text too close to the edges of the viewport.
-- Use a consistent border-radius system.
-- Ensure every section feels connected to the sections above and below it.
-  Suggested design tokens
-  :root {
-  --brand-blue: #0756A5;
-  --brand-blue-dark: #073B70;
-  --brand-navy: #102A43;
-  --brand-blue-bright: #1677D2;
+Your responsibility is to create a cohesive digital experience that communicates Centrifuge Group's capabilities, establishes trust, makes information easy to discover, and helps visitors understand how to engage with the company.
 
-  --brand-orange: #F28C28;
-  --brand-orange-hover: #D96F12;
+The result must feel deliberately designed for Centrifuge Group rather than generated from a generic corporate website template.
 
-  --surface-white: #FFFFFF;
-  --surface-light: #F5F8FC;
-  --surface-blue: #EAF3FC;
+**Fundamental principle: Every significant design and engineering decision must have a clear purpose.**
 
-  --text-primary: #102A43;
-  --text-body: #344054;
-  --text-muted: #667085;
+Do not add visual effects, components, dependencies, or content simply because they are fashionable.
 
-  --border-default: #E2E8F0;
+## 1.1 Definition of success
 
-  --container-width: 1360px;
-  --page-gutter: clamp(20px, 4vw, 64px);
+The finished website must demonstrate:
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+1. A recognizable and consistent brand identity.
+2. Strong visual hierarchy and intentional composition.
+3. Excellent typography, spacing, alignment, and image treatment.
+4. Clear navigation and intuitive information architecture.
+5. Purposeful, polished interactions.
+6. Responsive layouts across mobile, tablet, laptop, and desktop.
+7. Accessible controls and readable content.
+8. Efficient loading and maintainable frontend code.
+9. Functional links, buttons, menus, forms, and existing integrations.
+10. Clear communication of the company's actual services and capabilities.
+
+Visual excellence, usability, performance, and business effectiveness must reinforce one another.
+
+---
+
+# 2. PROJECT CONTEXT AND SOURCE OF TRUTH
+
+The existing Centrifuge Group website and its approved content are the primary sources of truth.
+
+Before making changes, inspect the existing codebase, project assets, website pages, and available brand references.
+
+Use the following source hierarchy when resolving conflicting information:
+
+1. Existing working functionality and verified application behavior.
+2. Approved company information and existing business content.
+3. Existing logo and official brand assets.
+4. Existing project architecture and established coding conventions.
+5. Approved design references and explicit project requirements.
+6. Professional design judgment for decisions that remain unspecified.
+
+Do not invent company facts, customer relationships, project results, certifications, statistics, testimonials, or capabilities.
+
+If information cannot be verified, preserve the existing approved content or identify the uncertainty rather than fabricating a replacement.
+
+## 2.1 Project constraints
+
+- Improve the existing website rather than rebuilding it unnecessarily.
+- Preserve working routes, navigation destinations, integrations, forms, and business functionality.
+- Maintain the existing framework and package manager unless a compelling technical reason requires a change.
+- Reuse existing components when they are suitable.
+- Refactor inconsistent or fragile components when doing so improves maintainability.
+- Avoid introducing dependencies that duplicate existing capabilities.
+- Preserve SEO-relevant URLs and content wherever possible.
+- Do not replace real application functionality with static demonstrations.
+- Do not delete existing pages or features merely because they do not fit the new visual direction.
+
+If a significant architectural change is genuinely necessary, explain the reason and minimize disruption.
+
+---
+
+# 3. PHASE ONE: COMPLETE WEBSITE AUDIT
+
+Do not begin by immediately rewriting components or replacing CSS.
+
+First, understand what exists.
+
+## 3.1 Inspect the codebase
+
+Identify:
+
+- Framework and version.
+- Package manager and available scripts.
+- Application entry points.
+- Routing and page structure.
+- Global styles and design tokens.
+- Component architecture.
+- Styling conventions.
+- Existing animation libraries.
+- Available icon libraries.
+- Logo and image assets.
+- Font files and font-loading strategy.
+- API clients and integrations.
+- Form handling and validation.
+- Environment-variable requirements.
+- Build and deployment configuration.
+- Existing automated tests.
+- Current errors and technical limitations.
+
+Inspect the package manifest and relevant configuration files before installing dependencies or changing project settings.
+
+## 3.2 Audit the website experience
+
+Review every accessible major page and reusable interface, including:
+
+- Homepage.
+- Navigation and dropdown menus.
+- About and company information.
+- Services and capability pages.
+- Cloud and infrastructure pages, where present.
+- Projects and case studies.
+- Contact and inquiry forms.
+- Resources and other existing content pages.
+- Footer.
+- Mobile navigation.
+- Error and loading states, where applicable.
+
+Inspect all available routes rather than assuming that the homepage represents the entire website.
+
+## 3.3 Create a functionality inventory
+
+Record the existing behavior of:
+
+- Internal and external links.
+- Navigation menus.
+- Dropdowns and mega-menus.
+- Mobile navigation.
+- Forms and validation.
+- Search, if available.
+- Tabs and accordions.
+- Calls to action.
+- Authentication, if present.
+- API-backed components.
+- Third-party integrations.
+- Downloadable resources.
+- Project links.
+- Analytics and tracking integrations.
+- Any other meaningful interactive features.
+
+Do not assume a feature works merely because its button is visible.
+
+Verify its behavior when the environment allows.
+
+## 3.4 Classify issues by impact
+
+Classify identified issues into these categories:
+
+- Brand inconsistency.
+- Visual hierarchy.
+- Layout and composition.
+- Typography.
+- Spacing and alignment.
+- Imagery and asset quality.
+- Navigation and information architecture.
+- Interaction and usability.
+- Accessibility.
+- Responsiveness.
+- Performance.
+- SEO.
+- Functional defects.
+- Maintainability.
+
+Prioritize issues using the following order:
+
+**Priority 1 — Critical:** Broken functionality, inaccessible navigation, serious mobile failures, unusable forms, and major content or routing problems.
+
+**Priority 2 — High:** Confusing hierarchy, inconsistent branding, poor layouts, weak navigation, and significant accessibility or performance issues.
+
+**Priority 3 — Medium:** Typography inconsistencies, uneven spacing, weak imagery, awkward transitions, and inconsistent component behavior.
+
+**Priority 4 — Polish:** Minor animation refinements, subtle alignment adjustments, decorative details, and other low-impact improvements.
+
+Address high-impact problems before cosmetic refinements.
+
+## 3.5 Establish a baseline
+
+Before implementation, determine what can actually be verified.
+
+Where tools are available:
+
+- Run the existing application.
+- Capture representative desktop and mobile screenshots.
+- Record current build errors.
+- Inspect browser-console errors.
+- Test critical user journeys.
+- Check existing responsive behavior.
+
+Do not claim that a problem was introduced by the redesign if it already existed.
+
+Do not claim that a problem was fixed without verifying the relevant behavior.
+
+---
+
+# 4. PHASE TWO: ART DIRECTION AND DESIGN STRATEGY
+
+Establish a deliberate visual direction before implementing the redesign.
+
+## 4.1 Brand positioning
+
+The website should communicate a credible, capable, professional technology company that helps organizations address complex business and technical challenges.
+
+The visual language should feel:
+
+- Professional.
+- Confident.
+- Contemporary.
+- Technically capable.
+- Structured.
+- Trustworthy.
+- Distinctive without being unnecessarily experimental.
+
+Avoid making the website feel like a generic startup landing page or a collection of unrelated service templates.
+
+Do not automatically use dark backgrounds, glassmorphism, excessive gradients, oversized typography, or floating decorative objects.
+
+Select design treatments based on the actual brand, content, and audience.
+
+## 4.2 Establish one primary visual direction
+
+Choose a coherent visual approach that works across the website.
+
+For example, an appropriate direction might combine:
+
+- Refined enterprise typography.
+- Strong editorial composition.
+- Restrained brand-color accents.
+- Structured grids.
+- Carefully selected technical imagery.
+- Generous but controlled whitespace.
+- Subtle, directional motion.
+- Clear navigation and information hierarchy.
+
+Treat this as a possible direction, not a rigid template.
+
+The actual implementation must reflect the existing Centrifuge Group identity and the characteristics of its content.
+
+## 4.3 Use references intelligently
+
+If reference websites, screenshots, or design examples are available:
+
+- Identify the specific qualities worth adopting.
+- Study their spacing, typography, alignment, navigation, dropdown behavior, image treatment, and transitions.
+- Adapt those principles to Centrifuge Group.
+- Maintain Centrifuge Group's own branding and information architecture.
+
+Do not copy an entire reference website indiscriminately.
+
+Do not introduce visual patterns simply because a reference website uses them.
+
+---
+
+# 5. BRAND IDENTITY AND CENTRALIZED DESIGN SYSTEM
+
+The website must use a consistent visual language across every page.
+
+## 5.1 Inspect the existing brand
+
+Inspect the existing Centrifuge Group logo and other approved assets before selecting colors or typography.
+
+Determine the established brand colors from available source files, existing styles, or official brand references.
+
+Do not invent precise brand values or replace the existing logo.
+
+If a brand color is unclear, identify the best-supported value and make it easy to adjust centrally.
+
+## 5.2 Establish design tokens
+
+Create or refine a centralized token system using the project's existing styling approach.
+
+The system should cover:
+
+**Colors**
+- Primary brand color.
+- Secondary brand color.
+- Accent color.
+- Primary and secondary text.
+- Muted text.
+- Main background.
+- Alternate background.
+- Surface background.
+- Borders and dividers.
+- Hover and active states.
+- Focus indicators.
+- Success, warning, and error states where needed.
+
+**Typography**
+- Font families.
+- Font weights.
+- Display sizes.
+- Heading sizes.
+- Body sizes.
+- Supporting text sizes.
+- Line heights.
+- Letter spacing.
+
+**Layout**
+- Content maximum width.
+- Horizontal page padding.
+- Grid gaps.
+- Section spacing.
+- Column proportions.
+
+**Components**
+- Border radii.
+- Border widths.
+- Shadow levels.
+- Button heights.
+- Input dimensions.
+- Transition durations.
+- Standard interaction easing.
+
+Example token structure:
+
+```css
+:root {
+  /* Replace with verified Centrifuge brand values. */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+
+  --color-text-primary: #202938;
+  --color-text-secondary: #536174;
+  --color-text-muted: #687587;
+
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f6f8fa;
+  --color-border: #e2e7ed;
+
+  --container-max-width: 1280px;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -160,696 +358,1254 @@ Layout rules
   --space-12: 48px;
   --space-16: 64px;
   --space-20: 80px;
-  --space-24: 96px;
+  --space-28: 112px;
 
-  --motion-fast: 140ms;
-  --motion-normal: 220ms;
-  --motion-slow: 450ms;
+  --radius-sm: 4px;
+  --radius-md: 8px;
 
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  --motion-fast: 160ms;
+  --motion-standard: 220ms;
+  --motion-slow: 500ms;
+}
+```
 
-Treat these tokens as the single source of truth. Components should reference them rather than introduce arbitrary colors and spacing values. 5. NAVIGATION BAR
-The navigation bar is one of the most important elements of the redesign.
-Implement a clean, enterprise-style navbar inspired by the supplied reference.
-Desktop structure
-┌────────────────────────────────────────────────────────────────────┐
-│ │
-│ CENTRIFUGE Solutions⌄ Services⌄ Industries⌄ Projects Company⌄ │
-│ [Get in Touch]│
-│ │
-└────────────────────────────────────────────────────────────────────┘
+The example's neutral colors and component values are starting points, not approved brand specifications.
 
-Adapt the exact menu labels to the existing website's content and routes.
-Visual specifications
+Replace placeholders with values appropriate to the actual project. Do not reference undefined CSS variables.
 
-- Preserve the official Centrifuge logo.
-- Position the logo on the left.
-- Keep the primary navigation aligned horizontally.
-- Place the main CTA on the right.
-- Use sufficient spacing between navigation items.
-- Keep the header visually balanced at common laptop widths.
-- Use the official blue brand color for the header or a restrained white header with blue navigation elements, depending on the existing site direction.
-- Use orange for the active navigation indicator and carefully selected interaction highlights.
-- Avoid oversized navigation labels.
-- Do not place decorative icons beside every navigation item.
-  Navbar interaction
-  When a user hovers over or focuses on a menu item that contains submenus:
+## 5.3 Prevent design-token drift
 
-1. Highlight the active menu trigger.
-2. Display the corresponding mega menu.
-3. Animate the menu into view.
-4. Keep the active state visually connected to the dropdown.
-5. Allow users to move their pointer into the menu without it closing unexpectedly.
-   Use a subtle orange underline, indicator, or chevron transition to identify the active trigger.
-   The active indicator must remain consistent across every dropdown.
-   Sticky behavior
-   If the existing website uses a sticky header, preserve or refine it.
-   When scrolling:
+Do not scatter arbitrary colors, spacing values, border radii, and transition timings throughout the codebase.
 
-- Keep the navbar visible if that supports the established design.
-- Avoid a large layout jump.
-- Use a subtle background or shadow transition if necessary.
-- Ensure the mega menu remains correctly positioned beneath the header.
-- Do not allow the sticky header to obscure page headings or anchor targets.
+Use centralized tokens for recurring design decisions.
 
-6. FULL-WIDTH MEGA MENU
-   This is a high-priority component. Reproduce the interaction principles shown in the reference screenshots.
-   The mega menu must feel spacious, responsive, and integrated into the navbar.
-   6.1 Visual design
-   When activated, display a broad dropdown panel beneath the navigation.
-   Required characteristics
+Local exceptions are permitted when justified by a particular composition or component.
 
-- White or very light neutral background.
-- Dark blue headings.
-- Readable submenu links.
-- No repeated logo inside the dropdown.
-- Multiple organized columns.
-- Generous internal padding.
-- Clear spacing between categories.
-- Optional subtle vertical dividers.
-- Restrained shadow.
-- Subtle border or radius where appropriate.
-- Consistent orange accents for hover and active states.
-  The panel should span approximately 94–96% of the viewport width, subject to the navbar's container and responsive layout.
-  On wide screens, align the menu to the primary content container.
-  Avoid allowing the dropdown to extend beyond the viewport.
-  6.2 Example content structure
-  Use the following as an illustrative structure, adapting it to verified Centrifuge offerings.
-  SOLUTIONS
-- Enterprise Applications
-- Custom Software Development
-- Business Automation
-- System Integration
-  SERVICES
-- Software Development
-- IT Consulting
-- Cloud Services
-- Project Development & Management
-  INDUSTRIES
-- Healthcare
-- Financial Services
-- Logistics
-- Public Sector
-  COMPANY
-- About Centrifuge
-- Our Approach
-- Projects
-- Careers
-- Contact
-  Do not invent products or claim services that the company does not actually provide. Reuse existing website content wherever possible.
-  6.3 Column layout
-  Use CSS Grid.
-  Example:
-  .mega-menu\_\_grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
-  }
+The objective is consistent design, not forcing every element to look identical.
 
-Each column should have a clear heading and a vertically spaced list of links.
-On smaller desktop screens, reduce the gap before reducing text readability.
-If four columns no longer fit comfortably, switch to a three-column or two-column arrangement.
-6.4 Link styling
-Normal state:
+## 5.4 Color application
 
-- Dark blue or dark neutral text.
-- No unnecessary decoration.
-- Clear visual separation between links.
-  Hover state:
-- Text transitions to the primary blue.
-- An optional small orange indicator appears.
-- Background highlighting may be used sparingly.
-- The entire link remains an accessible click target.
-  Do not animate links with large movements.
-  6.5 Directional animation
-  The mega menu must transition smoothly from a slight horizontal offset.
-  Implement directional entrance animations based on the active menu item.
-  For example:
-- Solutions: slight movement from the left.
-- Services: slight movement from the right.
-- Company: slight movement from the left.
-  Use consistent timing and easing.
-  Recommended values:
-  Property Value
-  Initial opacity 0
-  Initial horizontal offset 10px
-  Initial vertical offset 5px
-  Final opacity 1
-  Final horizontal offset 0
-  Final vertical offset 0
-  Entrance duration 200–260ms
-  Exit duration 120–180ms
-  Easing Ease-out
+Use color to communicate hierarchy, identity, interaction, and content grouping.
 
-Do not make the menu slide across the entire screen.
-Prevent flickering
-Treat the navbar trigger and mega menu as a single interaction region.
-The menu must not close when the pointer moves from the trigger into the panel.
-Use a small, intentional closing delay if necessary, and cancel the delay when the user enters another trigger or the dropdown.
-When switching between menu items, update the panel smoothly rather than unnecessarily closing and reopening the entire menu.
-Accessibility
+- Maintain sufficient text contrast.
+- Use accent colors selectively.
+- Keep backgrounds consistent with the brand.
+- Avoid alternating background colors without a clear reason.
+- Avoid multiple competing gradients.
+- Distinguish links from ordinary text.
+- Ensure important information is not communicated by color alone.
 
+Verify contrast for important text and interactive elements.
+
+---
+
+# 6. TYPOGRAPHY AND CONTENT PRESENTATION
+
+Typography must make the website easier to understand while reinforcing the brand's identity.
+
+## 6.1 Typography system
+
+Inspect the current fonts before introducing replacements.
+
+Prefer existing approved fonts when they are suitable.
+
+If a new typeface is justified, choose one that supports the brand's character, readability, available weights, and performance requirements.
+
+Define consistent styles for:
+
+- Hero headlines.
+- Page titles.
+- Section headings.
+- Subsection headings.
+- Body paragraphs.
+- Supporting text.
+- Navigation.
+- Buttons.
+- Labels and captions.
+
+Suggested desktop starting points:
+
+| Element | Suggested size |
+|---|---:|
+| Hero heading | 52–72px |
+| Page title | 44–60px |
+| Section heading | 32–44px |
+| Subsection heading | 22–28px |
+| Body text | 16–18px |
+| Supporting text | 14–16px |
+| Small labels | 12–14px |
+
+Adapt these values to the actual composition and existing brand.
+
+Use fluid typography when appropriate:
+
+```css
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+```
+
+Do not apply these exact values indiscriminately to every page.
+
+## 6.2 Typography quality requirements
+
+- Control heading width and line wrapping.
+- Use comfortable paragraph line heights.
+- Avoid excessively long text lines.
+- Maintain clear differences between headings and body text.
+- Avoid unnecessary uppercase text.
+- Avoid excessive letter spacing.
+- Use font weights consistently.
+- Prevent headings from colliding with adjacent imagery.
+- Ensure mobile headings remain readable.
+- Load fonts efficiently and avoid unnecessary font variants.
+
+Do not center every heading or paragraph.
+
+Choose alignment according to the content and composition.
+
+## 6.3 Content integrity
+
+Improve the presentation and clarity of existing copy without changing its factual meaning.
+
+Preserve approved business information.
+
+Do not invent services, partnerships, project outcomes, customer results, or company history.
+
+When content is repetitive, reorganize it carefully rather than deleting important information.
+
+When copy requires clarification, use the existing content as the starting point.
+
+---
+
+# 7. LAYOUT, GRID AND WHITESPACE
+
+Create a layout system that feels cohesive while allowing each section to have its own composition.
+
+## 7.1 Main container
+
+Use a centered, responsive content container.
+
+Suggested starting values:
+
+- Maximum content width: approximately 1280px.
+- Large desktop horizontal padding: 40–64px.
+- Standard desktop padding: 32–48px.
+- Tablet padding: 24–32px.
+- Mobile padding: 20–24px.
+
+Adapt the container to the existing layout and the content's requirements.
+
+Full-width backgrounds may extend beyond the content container while their text and internal elements remain aligned to the grid.
+
+## 7.2 Composition
+
+Use CSS Grid and Flexbox according to the design requirements.
+
+Appropriate patterns include:
+
+- Two-column text and imagery layouts.
+- Asymmetric editorial compositions.
+- Three-column capability summaries.
+- Full-width statements.
+- Horizontal timelines.
+- Image-led case studies.
+- Vertical content sequences.
+- Structured information sections.
+
+Do not force every section into the same number of columns.
+
+Avoid repeating identical rows of rounded cards throughout the website.
+
+Vary the composition while maintaining consistent typography, spacing, colors, and interaction behavior.
+
+## 7.3 Whitespace
+
+Use spacing to clarify relationships and establish hierarchy.
+
+Suggested spacing scale:
+
+- 4px: Fine adjustments.
+- 8px: Tight spacing.
+- 12px: Compact content.
+- 16px: Standard spacing.
+- 24px: Related elements.
+- 32px: Component separation.
+- 48px: Smaller section spacing.
+- 64px: Medium section spacing.
+- 80–112px: Major desktop section spacing.
+
+These values are flexible design tokens, not mandatory spacing for every component.
+
+Reduce section spacing appropriately on smaller screens.
+
+Do not make the website excessively long by adding whitespace without purpose.
+
+Do not compress information-rich pages so tightly that they become difficult to read.
+
+---
+
+# 8. NAVIGATION AND DROPDOWN EXPERIENCE
+
+Navigation is a critical shared component and must be treated as a first-class part of the design system.
+
+## 8.1 Navbar
+
+Inspect the existing navigation and preserve its routes and destinations.
+
+Refine the navbar to establish a clear hierarchy between:
+
+- Logo.
+- Primary navigation items.
+- Dropdown indicators.
+- Important contact or conversion action.
+
+Requirements:
+
+- Preserve logo proportions and appropriate clear space.
+- Maintain consistent alignment.
+- Use deliberate spacing between links.
+- Avoid crowding the navbar.
+- Keep text readable.
+- Make interactive states visually clear.
+- Ensure the navbar works on narrow screens.
+- Avoid introducing unnecessary decorative elements.
+
+If the existing website uses a transparent, sticky, or changing navbar, preserve that behavior unless there is a clear usability reason to improve it.
+
+Any changes must be implemented consistently across relevant pages.
+
+## 8.2 Dropdown design
+
+Use a clean dropdown panel that fits the existing brand.
+
+Where appropriate, use a white or restrained neutral background that contrasts clearly with the surrounding navigation.
+
+The dropdown should:
+
+- Align naturally with its trigger or the intended navigation region.
+- Have a clear relationship with the navbar.
+- Use strong typographic hierarchy.
+- Present bold, readable submenu titles.
+- Avoid unnecessary logos inside submenu items.
+- Include concise descriptions only when useful.
+- Maintain consistent internal spacing.
+- Use restrained borders or shadows when needed.
+- Display visible hover, focus, and active states.
+
+If the information architecture supports a wider menu, allow it to occupy a substantial portion of the navbar's width.
+
+Do not introduce a large mega-menu simply because it looks impressive.
+
+The menu structure must reflect the actual number, hierarchy, and relationships of the site's pages.
+
+## 8.3 Dropdown motion
+
+Use subtle directional movement to make menu transitions feel natural.
+
+Suggested behavior:
+
+- Fade in.
+- Translate approximately 8–12px from the appropriate direction.
+- Settle into position.
+- Fade out cleanly.
+
+Suggested duration: 160–240ms.
+
+Requirements:
+
+- Prevent flickering between the trigger and dropdown.
+- Do not introduce pointer gaps that close the menu unexpectedly.
+- Keep links immediately usable.
+- Avoid animations that delay interaction.
 - Support keyboard navigation.
-- Support Enter and Space to activate menu triggers.
-- Use Escape to close an open menu.
-- Use appropriate aria-expanded and aria-controls attributes.
-- Ensure visible keyboard focus.
-- Do not rely exclusively on hover.
-- Support touch devices with explicit tap interactions.
+- Support touch interaction.
+- Handle Escape where appropriate.
+- Close menus predictably when focus or interaction moves elsewhere.
+- Ensure expanded states are communicated accessibly.
 
-7. HERO SECTION
-   Create a visually strong hero that establishes the company's value immediately.
-   Use the existing Centrifuge hero concept and content wherever appropriate.
-   Hero copy
-   Eyebrow: CENTRIFUGE GROUP
-   Headline:
-   Technology that moves your business forward.
-   Supporting headline:
-   From complex challenges to connected digital solutions.
-   Description:
-   We design and develop tailored software solutions that help organizations simplify operations, connect systems, and create better experiences. From enterprise applications to integrations and cloud platforms, we turn complex requirements into technology built for growth.
-   Primary CTA: Explore Our Solutions
-   Secondary CTA: Discuss Your Project
-   Adjust CTA destinations to existing working routes or contact functionality.
-   Hero layout
-   Use a two-column layout on desktop.
-   Left column:
+On mobile, use explicit tap-to-expand behavior instead of relying on hover.
 
-- Eyebrow label.
-- Large headline.
-- Supporting headline or paragraph.
-- Primary and secondary CTA buttons.
-  Right column:
-- A relevant, high-quality image or custom visual representing enterprise technology, software systems, cloud infrastructure, or connected digital operations.
-  Do not use generic stock imagery that feels unrelated to the company's services.
-  Hero animation
-  Use Framer Motion if the project is React-based.
-  The animation should follow this sequence:
+Use semantic links for navigation and buttons for actions that control menu state.
 
-1. The headline moves from the left into its final position.
-2. The supporting copy appears underneath, following the headline.
-3. The text becomes visible gradually as it enters.
-4. The right-side image moves from right to left into position.
-5. The CTA buttons appear after the main text begins to settle.
-   Motion guidelines
+---
 
-- Use a small horizontal translation.
-- Use opacity transitions.
-- Use a consistent easing curve.
-- Avoid excessive scale effects.
-- Avoid bouncing or elastic motion.
-- Avoid delaying the content so long that the page initially appears empty.
-- Ensure the hero remains readable and usable if animations are disabled.
-  Use orange to emphasize one carefully chosen phrase, eyebrow detail, or small graphic element. Keep the headline predominantly blue or white, depending on the background.
-  Background treatment
-  Choose either:
-- A white or light background with blue typography and orange accents; or
-- A deep blue background with white text and restrained orange highlights.
-  Do not alternate between unrelated visual styles. The choice should fit the existing Centrifuge brand and the image used.
+# 9. HERO SECTION AND FIRST IMPRESSION
 
-8. WEBSITE-WIDE PAGE STRUCTURE
-   Apply the design system to the complete website, not only the homepage.
-   Preserve existing pages, features, and functioning links unless a change is explicitly required.
-   Homepage
-   Recommended structure:
-1. Global navbar.
-1. Hero section.
-1. Company introduction.
-1. Core solutions.
-1. Services overview.
-1. Industries served.
-1. Featured projects.
-1. Technology and delivery capabilities.
-1. Cloud and infrastructure services, where applicable.
-1. Project engagement process.
-1. Call-to-action section.
-1. Global footer.
-   Use alternating white and light-blue section backgrounds to establish visual rhythm.
-   Use dark-blue sections selectively for high-impact content.
-   Orange should guide attention toward important actions rather than decorate every section.
-   Solutions pages
-   Each solution page should contain:
+The hero must immediately communicate what Centrifuge Group does and help visitors understand where to go next.
 
-- Page-specific hero.
-- A clear explanation of the business problem.
-- The proposed solution.
-- Key capabilities.
-- Business benefits.
-- Relevant use cases.
-- Related services or projects.
-- A clear CTA.
-  Services pages
-  Organize services into a coherent structure.
-  Each service page should explain:
-- What the service involves.
-- Which business problems it addresses.
-- How Centrifuge approaches delivery.
-- Relevant capabilities.
-- Expected business value, without unsupported numerical claims.
-- How clients can initiate a project.
-  Industries pages
-  Each industry page should use relevant examples, language, and imagery.
-  Avoid creating near-identical pages that only change the industry name.
-  Projects page
-  Create a dedicated project portfolio.
-  Each project card should support:
+Use existing approved messaging where available.
+
+Potential messaging direction:
+
+**Eyebrow:** CENTRIFUGE GROUP
+
+**Headline:** Technology that moves your business forward.
+
+**Supporting message:** From complex challenges to connected digital solutions. We design and develop tailored software that helps organizations simplify operations, connect systems, and create better experiences.
+
+**Primary action:** Explore Our Solutions
+
+**Secondary action:** Discuss Your Project
+
+Treat this as a reference direction. Preserve the approved copy already present in the project unless a content change is required or explicitly authorized.
+
+Do not add unsupported claims about the company's services or results.
+
+## 9.1 Hero composition
+
+Use a composition appropriate to the actual brand and available assets.
+
+A two-column layout is suitable when it improves the message:
+
+**Left side**
+- Main headline.
+- Supporting paragraph.
+- Primary call to action.
+- Secondary action, if useful.
+
+**Right side**
+- Relevant product interface.
+- Approved project imagery.
+- Technical illustration.
+- Meaningful architectural visualization.
+- Other relevant visual material.
+
+The headline must remain the primary focal point.
+
+The visual must support the message rather than merely fill space.
+
+Ensure that the text, image, and calls to action form one coherent composition.
+
+Avoid excessive decoration, arbitrary floating objects, and unrelated stock photography.
+
+On mobile, reorder the content so the main message and primary action remain easy to discover.
+
+## 9.2 Hero animation
+
+Use Framer Motion if the existing React project already includes it or if its capabilities justify adding it.
+
+Implement the intended movement:
+
+1. The headline enters smoothly from the left.
+2. Supporting text follows with a subtle stagger.
+3. The main image enters from the right.
+4. Calls to action appear in coordination with the message.
+5. The final layout settles without ongoing movement.
+
+Suggested starting values:
+
+- Headline horizontal offset: approximately 24px.
+- Supporting text offset: approximately 16px.
+- Image horizontal offset: approximately 24px.
+- Duration: approximately 500–750ms.
+- Stagger interval: approximately 100–140ms.
+
+Example animation concept:
+
+```tsx
+const textContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const textItemVariants = {
+  hidden: {
+    opacity: 0,
+    x: -24,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+```
+
+Implement the actual behavior using the animation library's supported APIs and the existing component architecture.
+
+The image should use corresponding motion from the right.
+
+Do not animate every child independently when a parent-level sequence would be cleaner.
+
+Ensure that the content remains accessible if animation is disabled.
+
+Avoid hiding meaningful content until a long animation finishes.
+
+---
+
+# 10. SECTION DESIGN AND INFORMATION ARCHITECTURE
+
+Every major section must have a distinct role in the visitor's journey.
+
+Consistency comes from the design system, not from forcing every section to use the same layout.
+
+Before implementing a section, determine:
+
+- What is its purpose?
+- What should visitors notice first?
+- What information do they need?
+- What visual supports the message?
+- What action should follow?
+- How does it connect to the preceding and following sections?
+
+## 10.1 Services and capabilities
+
+Present existing services according to their actual importance and relationships.
+
+Each service should explain, where applicable:
+
+- What the service is.
+- Which problem it addresses.
+- Why it matters.
+- Where the visitor can learn more.
+
+Use concise descriptions and clear navigation links.
+
+Use cards only where they improve grouping or scanning.
+
+Alternative layouts may include open grids, typography-led lists, divided columns, or asymmetric compositions.
+
+Preserve existing service pages and their routes.
+
+Do not add a service merely to fill an empty layout.
+
+## 10.2 Company introduction
+
+Explain who Centrifuge Group is and what the company does.
+
+Use verified company information.
+
+Avoid repeating the hero's message word for word.
+
+Use a clear heading, concise supporting narrative, and a relevant visual where appropriate.
+
+Ensure that this section contributes new information rather than repeating the services section.
+
+## 10.3 Projects and case studies
+
+Provide an appropriate way to discover existing projects.
+
+Each project may include:
+
 - Project name.
-- Relevant image or screenshot.
-- Short description.
-- Industry or category.
-- Technologies or capabilities, where appropriate.
-- A working link to the project or a case study.
-  If a project is not publicly accessible, provide a case-study page or an appropriate alternative.
-  Do not invent client names, testimonials, performance metrics, or project outcomes.
-  Company pages
-  Provide clear access to:
-- About Centrifuge.
-- Project Development & Management.
-- Careers.
-- Contact.
-- Other existing company pages.
-  Preserve established company content and routes.
-  Cloud and infrastructure pages
-  Integrate the cloud and infrastructure content relevant to Centrifuge's actual offerings.
-  Use a consistent page structure and link related services together.
-  Do not claim certifications, availability guarantees, infrastructure ownership, or service-level agreements unless verified.
+- Approved preview image.
+- Concise description.
+- Relevant technologies or capabilities.
+- Link to the project or case study.
+- External destination where one exists and is accessible.
 
-9. CONSISTENT CARD AND SECTION DESIGN
-   Every card should belong to the same design system.
-   Card appearance
+Use project data already present in the codebase or approved content.
 
-- White background on neutral surfaces.
-- Light border.
-- Consistent corner radius.
-- Comfortable internal padding.
-- Dark-blue headings.
-- Readable descriptions.
-- Restrained use of orange.
-- Consistent icon sizing.
-  Hover behavior
-  On hover:
-- Slightly emphasize the border.
-- Transition the title or link toward the primary blue.
-- Optionally raise the card by 2–4px.
-- Reveal an orange arrow or subtle accent if it helps communicate interactivity.
-  Keep the movement short and restrained.
-  Do not give every card a different gradient, shadow, or animation.
-  Section headings
-  Use a consistent pattern:
-  EYEBROW LABEL
+Do not fabricate client names, project results, technologies, testimonials, or metrics.
 
-Clear, meaningful section heading.
+For confidential projects, display only information approved for publication.
 
-A concise explanation that establishes why
-the section matters to the visitor.
+Ensure project links are meaningful and functional.
 
-Use orange for the eyebrow or a small accent line.
-Maintain consistent heading widths and paragraph lengths. 10. BUTTON DESIGN SYSTEM
-Create reusable primary, secondary, and text-link buttons.
-Primary button
+## 10.4 Process and methodology
 
-- Blue background.
-- White text.
-- Clear hover state.
-- Comfortable horizontal padding.
-- Consistent height.
-- Visible keyboard focus.
-  Secondary button
-  Use either:
-- White background with a blue border and blue text; or
-- Transparent background with a blue border.
-  For dark-blue backgrounds, use a white or light-background treatment.
-  Orange CTA
-  Orange may be used for a strategically important CTA, especially where it provides stronger contrast than blue.
-  Do not make every button orange.
-  Button interactions
-- Use a subtle color transition.
-- Optionally move an arrow icon by a few pixels.
-- Avoid dramatic scaling.
-- Maintain adequate touch targets.
-- Ensure contrast in all states.
-  All buttons must be functional and connected to the correct destination or action.
+Where the company has an established delivery process, communicate it clearly.
 
-11. GLOBAL FOOTER
-    Build a comprehensive footer consistent with the supplied reference.
-    Use a deep-blue background, white text, and restrained orange accents.
-    Recommended structure
-    Column 1: Company
+If the existing content supports it, a sequence might include:
 
-- Centrifuge logo.
-- Short company description.
-- Relevant social or professional links, if verified.
-  Column 2: Solutions
-- Enterprise Applications.
-- Custom Software.
-- Business Automation.
-- System Integration.
-  Column 3: Services
-- Software Development.
-- IT Consulting.
-- Project Development & Management.
-- Cloud Services.
-  Column 4: Company & Resources
-- About.
+1. Discovery.
+2. Planning.
+3. Design.
+4. Development.
+5. Testing.
+6. Deployment and ongoing improvement.
+
+Adapt the sequence to the company's actual methodology.
+
+Do not present an illustrative process as a verified company procedure without supporting evidence.
+
+Choose a timeline, numbered sequence, or other layout that best communicates the stages.
+
+Avoid unnecessary cards when a simple connected sequence is clearer.
+
+## 10.5 Call-to-action sections
+
+Make each call to action relevant to the preceding content.
+
+Examples include:
+
+- Discuss Your Project.
+- Explore Our Services.
+- View Selected Projects.
+- Contact Our Team.
+
+Avoid placing several competing primary actions in the same section.
+
+Use descriptive action labels.
+
+Ensure each button leads to the correct page, form, or contact method.
+
+Do not introduce a new conversion flow that lacks a valid destination or supporting functionality.
+
+## 10.6 Footer
+
+Maintain the existing footer functionality while improving its hierarchy and presentation.
+
+Group relevant links into categories such as:
+
+- Company.
+- Services.
 - Projects.
-- Careers.
 - Resources.
 - Contact.
-  Only include relevant, verified destinations.
-  Footer bottom bar
-  Include existing and applicable links, such as:
-- Copyright.
-- Privacy Policy.
-- Terms of Use.
-- Other required legal information.
-  Footer behavior
-- Use consistent column spacing.
-- Ensure links have visible hover states.
-- Use orange sparingly to identify important actions.
-- Make the footer responsive.
-- Ensure the logo remains legible against the background.
-- Avoid excessive text density.
-- Do not repeat the entire navbar verbatim if a more useful grouping is possible.
+- Legal.
 
-12. RESPONSIVE DESIGN
-    The website must work well across desktop, laptop, tablet, and mobile.
-    Desktop: 1200px and above
+Use only categories supported by actual site content.
 
-- Full horizontal navbar.
-- Full-width mega menu.
-- Multi-column page layouts.
-- Two-column hero.
-- Large headings.
-- Generous whitespace.
-  Tablet: 768–1199px
-- Reduce navigation gaps.
-- Adjust hero proportions.
-- Reduce heading sizes where necessary.
-- Reduce mega menu column count when required.
-- Keep menu content readable.
-- Prevent CTA buttons from wrapping awkwardly.
-  If the desktop navigation no longer fits, switch to a compact menu rather than compressing everything.
-  Mobile: below 768px
-- Use a mobile menu button.
-- Present navigation in a clear vertical layout.
-- Convert mega menus into expandable accordion sections or nested navigation panels.
-- Keep links comfortably tappable.
-- Stack hero text and imagery.
-- Use full-width or appropriately sized CTA buttons.
-- Reduce excessive vertical spacing.
-- Prevent horizontal overflow.
-- Maintain consistent brand colors.
-  Mobile menu requirements
-- Support opening and closing by touch.
-- Support keyboard and screen-reader interaction.
-- Display clear expansion indicators.
-- Provide a visible close action.
-- Close appropriately after navigation.
-- Keep focus within the open modal-style menu if one is used.
-- Restore focus to the trigger when the menu closes.
-  Do not simply shrink the desktop mega menu to fit a phone screen.
+Ensure that the footer complements the navbar rather than mechanically repeating it.
 
-13. ANIMATION SYSTEM
-    All animations should follow a unified motion language.
-    Permitted motion patterns
+Preserve existing legal links, contact details, social links, and other approved information.
 
-- Fade and slide entrance.
-- Subtle image reveals.
-- Short directional mega menu transitions.
-- Small button-arrow movements.
-- Gentle card hover elevation.
-- Subtle scroll-triggered section entrances.
-- Simple accordion expansion.
-  Motion guidelines
-  Element Recommended duration
-  Button hover 140–180ms
-  Link hover 140–180ms
-  Mega menu 200–260ms
-  Card hover 180–240ms
-  Hero entrance 450–700ms
-  Section reveal 350–550ms
+Verify that destinations remain correct.
 
-These values are starting points. Refine them through testing.
-Accessibility and performance
-Respect prefers-reduced-motion.
+---
+
+# 11. IMAGERY AND ART DIRECTION
+
+Treat imagery as a fundamental design decision.
+
+For every major visual asset, determine:
+
+- What it communicates.
+- Whether it supports the adjacent content.
+- Whether its composition fits the layout.
+- Whether its colors complement the brand.
+- Whether the image quality is sufficient.
+- Whether its aspect ratio is appropriate.
+- Whether it is optimized for delivery.
+- Whether it requires alternative text.
+
+## 11.1 Asset rules
+
+Prioritize assets in this order:
+
+1. Existing approved company assets.
+2. Existing project screenshots and demonstrations.
+3. Approved project imagery.
+4. Verified external assets where permitted.
+5. Clearly identified placeholders when necessary.
+
+Never reference nonexistent local image files.
+
+Never invent image URLs.
+
+Do not use unrelated stock photography when a more relevant technical visual is available.
+
+## 11.2 Image implementation
+
+- Use appropriate aspect ratios.
+- Apply `object-fit` and `object-position` deliberately.
+- Preserve image proportions.
+- Avoid stretching or arbitrary cropping.
+- Reserve image space to prevent layout shifts.
+- Use responsive image techniques where supported.
+- Lazy-load appropriate below-the-fold images.
+- Prioritize the main hero asset when it is essential to the first impression.
+- Avoid lazy-loading the primary image when doing so would unnecessarily delay its appearance.
+
+Provide meaningful alternative text for informative images.
+
+Use empty alternative text for purely decorative images.
+
+---
+
+# 12. MOTION DESIGN AND MICROINTERACTIONS
+
+Motion must improve comprehension, feedback, or visual continuity.
+
+It must not become the main attraction.
+
+## 12.1 Appropriate motion patterns
+
+Use animation where it serves a clear purpose:
+
+- Hero entrance transitions.
+- Navigation dropdowns.
+- Button hover and active states.
+- Small image transitions.
+- Tabs and accordions.
+- Meaningful loading indicators.
+- Subtle section reveals.
+- Page transitions where genuinely useful.
+
+## 12.2 Timing and movement
+
+Suggested starting points:
+
+| Interaction | Duration |
+|---|---:|
+| Small hover feedback | 120–180ms |
+| Standard control transition | 160–220ms |
+| Dropdown transition | 160–240ms |
+| Larger entrance animation | 400–800ms |
+
+Use consistent easing.
+
+Keep movement restrained, generally around 8–24px for small directional transitions.
+
+Adjust the values according to the content, device, and actual interaction.
+
+## 12.3 Motion restrictions
+
+Avoid:
+
+- Repeated bouncing.
+- Excessive parallax.
+- Large decorative movement.
+- Scroll hijacking.
+- Unnecessary infinite animations.
+- Animations that delay access to content.
+- Animations that cause layout shifts.
+- Motion that makes reading difficult.
+- Replaying entrance animations unnecessarily.
+- Animating every element independently.
+
+## 12.4 Reduced motion
+
+Respect the user's operating-system reduced-motion preference.
+
+For CSS transitions and animations, use an appropriate reduced-motion media query.
+
+For JavaScript-driven animations, configure the animation library's reduced-motion behavior as well.
+
+Do not rely exclusively on CSS to control JavaScript animations.
+
 When reduced motion is enabled:
 
-- Remove large translations.
-- Avoid unnecessary entrance delays.
-- Disable nonessential scroll animations.
-- Preserve immediate access to content.
-  Do not use animation to hide important information.
-  Avoid running multiple elaborate animations simultaneously.
+- Avoid unnecessary entrance movement.
+- Remove nonessential parallax.
+- Minimize animated transitions.
+- Keep all content immediately available.
+- Preserve meaningful functional feedback.
 
-14. ACCESSIBILITY REQUIREMENTS
-    Implement accessibility as part of the component design, not as a final patch.
-    Requirements include:
+---
 
-- Semantic HTML.
-- Correct heading hierarchy.
-- Descriptive links and buttons.
-- Visible keyboard focus.
-- Accessible navigation controls.
-- Appropriate ARIA attributes.
-- Sufficient color contrast.
-- Text alternatives for meaningful images.
-- Empty alternative text for decorative images.
-- Proper form labels and validation messages.
-- Keyboard-accessible dropdowns and accordions.
-- Reduced-motion support.
-  Do not use orange or blue alone to communicate an error, selection, or status.
-  Test navigation with a keyboard and screen reader.
+# 13. COMPONENT SYSTEM AND INTERACTION STATES
 
-15. TECHNICAL IMPLEMENTATION
-    First inspect the existing repository and identify the actual framework. Do not replace the existing stack merely to match this design specification.
-    The animation implementation depends on the framework.
-    If the project uses React
-    Use:
+Build reusable components when they improve consistency and maintainability.
 
-- Existing React architecture.
-- Existing routing solution.
-- Framer Motion for motion and transitions, if already compatible with the project.
-- CSS variables or the existing styling system for design tokens.
-- Reusable components and data-driven navigation.
-  If the project uses Angular
-  Use:
-- Existing Angular architecture.
-- Standalone components where consistent with the codebase.
-- Signals or the existing state-management approach for navigation state.
-- CSS transitions or a compatible Angular animation solution.
-- Reusable components and typed menu configuration.
-  Do not introduce Framer Motion directly into an Angular application.
-  General requirements
-- Preserve existing routing.
-- Reuse existing components when appropriate.
-- Avoid duplicate implementations of the navbar and footer.
-- Centralize design tokens.
-- Keep menu data separate from presentation.
-- Use type-safe configuration where supported.
-- Avoid unnecessary dependencies.
-- Preserve existing integrations and working features.
-- Do not replace working content with placeholder text.
-- Ensure all internal links resolve correctly.
-- Verify that direct navigation to individual pages works.
+Potential shared components include:
 
-16. COMPONENT ARCHITECTURE
-    Build the design using reusable components.
-    Suggested structure:
-    components/
-    ├── layout/
-    │ ├── SiteHeader
-    │ ├── DesktopNavigation
-    │ ├── MegaMenu
-    │ ├── MobileNavigation
-    │ └── SiteFooter
-    │
-    ├── navigation/
-    │ ├── NavigationTrigger
-    │ ├── MegaMenuColumn
-    │ └── NavigationLink
-    │
-    ├── ui/
-    │ ├── Button
-    │ ├── Container
-    │ ├── SectionHeading
-    │ ├── ServiceCard
-    │ ├── ProjectCard
-    │ ├── IconLink
-    │ └── CallToAction
-    │
-    ├── sections/
-    │ ├── HeroSection
-    │ ├── CompanyIntroduction
-    │ ├── SolutionsSection
-    │ ├── ServicesSection
-    │ ├── IndustriesSection
-    │ ├── ProjectsSection
-    │ └── ContactSection
-    │
-    └── styles/
-    ├── tokens
-    ├── typography
-    ├── layout
-    └── motion
+- Navbar.
+- Dropdown and mobile menu.
+- Buttons.
+- Text links.
+- Form fields.
+- Service summaries.
+- Project previews.
+- Accordions.
+- Tabs.
+- CTA sections.
+- Footer.
+- Loading and error states.
 
-Adapt this structure to the existing project instead of blindly creating every directory.
-The goal is a maintainable component system, not unnecessary abstraction. 17. FUNCTIONAL REQUIREMENTS
-The redesign is not complete if it only looks good in screenshots.
+Do not create an abstraction for every individual element.
+
+The component architecture should reflect meaningful reuse in the existing application.
+
+## 13.1 Interactive states
+
+Every interactive component must have appropriate states.
+
+Depending on the component, these include:
+
+- Default.
+- Hover.
+- Focus-visible.
+- Active.
+- Disabled.
+- Loading.
+- Expanded or collapsed.
+- Selected.
+- Error.
+- Success.
+
+Do not make every component animate, scale, glow, and change color simultaneously.
+
+Use restrained feedback that communicates what happened.
+
+## 13.2 Functional integrity
+
+Every visible interactive element must have meaningful behavior.
+
+Examples:
+
+- Navigation links navigate correctly.
+- Dropdown triggers open and close menus.
+- Mobile menu controls respond to touch and keyboard input.
+- Forms validate their inputs.
+- Form submissions use the actual configured submission mechanism.
+- Buttons perform their stated actions.
+- Accordions expand and collapse.
+- Tabs change the displayed content.
+- Project links lead to valid destinations.
+- Loading states correspond to actual asynchronous operations.
+- Errors are communicated clearly.
+
+Do not use placeholder event handlers for production interactions.
+
+Do not simulate successful form submissions, transactions, or API operations when no real operation has occurred.
+
+If a feature depends on an unavailable backend, API key, external service, or configuration, identify the dependency and implement as much of the actual behavior as the environment permits.
+
+---
+
+# 14. RESPONSIVE DESIGN
+
+Design intentionally for different viewport sizes.
+
+At minimum, test:
+
+- 360px.
+- 390px.
+- 768px.
+- 1024px.
+- 1280px.
+- 1440px.
+
+These are representative test widths, not the only widths that matter.
+
+## 14.1 Responsive requirements
+
+Verify:
+
+- Navbar layout and mobile-menu behavior.
+- Dropdown positioning and expansion.
+- Heading wrapping.
+- Paragraph readability.
+- Hero composition.
+- Image scaling and cropping.
+- Grid column transitions.
+- Section spacing.
+- Button sizing.
+- Form usability.
+- Footer layout.
+- Long navigation labels.
+- Overflow and clipping.
+- Focus indicators.
+- Touch-target usability.
+
+## 14.2 Mobile-specific behavior
+
+Do not merely shrink the desktop layout.
+
+Where necessary:
+
+- Stack columns in a logical order.
+- Adjust heading sizes and line heights.
+- Reposition images.
+- Simplify complex decorative compositions.
+- Reduce section spacing appropriately.
+- Make navigation easier to operate.
+- Ensure important actions remain discoverable.
+- Prevent buttons from overflowing their containers.
+- Avoid excessively tall sections caused by poor ordering.
+
+Do not hide important content merely to simplify the mobile design.
+
+Use breakpoints based on actual layout requirements rather than device names alone.
+
+---
+
+# 15. ACCESSIBILITY AND INCLUSIVE DESIGN
+
+Accessibility is a core implementation requirement.
+
+## 15.1 Semantic structure
+
+Use:
+
+- Semantic HTML elements.
+- Logical heading hierarchy.
+- Descriptive link text.
+- Properly associated form labels.
+- Accessible button names.
+- Appropriate alternative text.
+- Native controls where practical.
+
+Use ARIA only when necessary and correctly.
+
+Do not use generic clickable containers when a native button or link is more appropriate.
+
+## 15.2 Keyboard navigation
+
 Verify that:
 
-- Every navbar item works.
-- Every mega menu link navigates correctly.
-- The mega menu opens and closes reliably.
-- Switching between menus does not cause flickering.
-- The mobile menu works.
-- All CTAs have meaningful destinations.
-- Contact forms validate and submit through the existing integration.
-- Project links work.
-- Internal routes load directly.
-- The logo links to the homepage.
-- The footer links work.
-- Search and language controls, if present, function correctly.
-- No existing feature has been unintentionally removed.
-- There are no horizontal scrolling issues.
-- There are no obvious console errors.
-- Animations do not block interaction.
-  Do not present decorative controls as functional features unless they actually work.
+- Interactive elements can be reached by keyboard.
+- Focus order follows the visual and logical structure.
+- Focus indicators remain visible.
+- Dropdowns can be operated without a mouse.
+- Escape closes appropriate overlays and menus.
+- Focus is managed appropriately when dialogs open and close.
+- Keyboard users are not trapped in unintended interactions.
 
-18. SEO AND PERFORMANCE
-    Maintain the website's search visibility while implementing the redesign.
-    Requirements:
+## 15.3 Forms and feedback
 
-- Preserve useful existing URLs.
-- Use redirects when URLs must change.
-- Provide unique page titles and meta descriptions.
-- Use semantic page structure.
-- Use descriptive image alternative text.
-- Optimize image formats and sizes.
-- Lazy-load appropriate below-the-fold images.
-- Avoid lazy-loading the primary hero image when doing so would harm perceived loading performance.
+Forms must provide:
+
+- Clear labels.
+- Understandable instructions.
+- Useful validation messages.
+- Accessible error identification.
+- Submission feedback.
+- Loading feedback when necessary.
+- Correct focus behavior when errors occur.
+
+Do not rely on color alone to communicate errors or success.
+
+## 15.4 Contrast and motion
+
+Check text and control contrast against their actual backgrounds.
+
+Maintain readable text sizes and clear interaction states.
+
+Respect reduced-motion preferences.
+
+Do not remove native focus outlines without providing a visible and accessible replacement.
+
+---
+
+# 16. PERFORMANCE, SEO AND TECHNICAL QUALITY
+
+The redesigned website must remain efficient and maintainable.
+
+## 16.1 Performance
+
+- Avoid unnecessary dependencies.
+- Avoid duplicate component implementations.
+- Minimize unnecessary client-side rendering.
+- Optimize images and fonts.
+- Use lazy loading where appropriate.
 - Prevent layout shifts.
-- Avoid unnecessary animation libraries or oversized dependencies.
-- Ensure text remains readable while images load.
-- Preserve existing analytics and tracking integrations.
-- Verify canonical URLs and sitemap behavior where applicable.
-  Do not sacrifice performance for decorative effects.
+- Avoid expensive animation effects.
+- Remove obsolete code only after confirming it is unused.
+- Avoid unnecessarily large JavaScript bundles.
+- Preserve appropriate caching and deployment behavior.
+- Keep critical content available without unnecessary delays.
 
-19. IMPLEMENTATION WORKFLOW
-    Follow this sequence rather than redesigning every page simultaneously.
-    Phase 1: Audit
-    Inspect the current repository.
-    Identify:
+Do not add an animation library solely for a simple CSS transition.
 
-- Framework and version.
-- Routing structure.
-- Existing navbar and footer.
-- Current brand assets.
-- Existing colors and typography.
-- Existing pages and routes.
-- Existing animations.
-- Current responsive behavior.
-- Existing forms and integrations.
-  Document what should be preserved, improved, or replaced.
-  Phase 2: Establish the design system
-  Implement:
-- Brand color tokens.
-- Typography scale.
-- Container widths.
-- Spacing tokens.
-- Border and shadow styles.
-- Button variants.
-- Motion settings.
-- Shared layout rules.
-  Verify the colors against the official logo.
-  Phase 3: Build the navigation
-  Implement and test:
-- Desktop navbar.
-- Full-width mega menu.
-- Directional transitions.
-- Keyboard interactions.
-- Mobile navigation.
-- Active states.
-- Sticky behavior, if applicable.
-  Use the supplied screenshots as the primary interaction reference.
-  Phase 4: Build the homepage
-  Implement the hero first, followed by the introduction, solutions, services, industries, projects, CTA, and footer.
-  Apply the same design tokens and spacing rules throughout.
-  Phase 5: Update the remaining pages
-  Refine existing pages to match the system.
-  Preserve existing content and functionality.
-  Avoid creating new pages unnecessarily if the required content already exists.
-  Phase 6: Responsive and accessibility testing
-  Test common desktop, tablet, and mobile viewport sizes.
-  Verify keyboard access, contrast, reduced motion, menu behavior, and layout stability.
-  Phase 7: Quality assurance
-  Check:
-- Console errors.
-- Broken links.
-- Incorrect routes.
-- Missing images.
-- Layout overflow.
-- Navigation flickering.
-- Animation performance.
-- Mobile menu behavior.
-- Form submissions.
-- SEO metadata.
-- Existing integrations.
-  Phase 8: Final visual refinement
-  Compare the implementation with the supplied screenshots.
-  Refine:
-- Menu width.
-- Column alignment.
-- Internal padding.
-- Typography.
-- Hover behavior.
-- Animation timing.
-- Section spacing.
-- Blue and orange balance.
-- Footer consistency.
-  Do not finish simply because the page renders. Finish when the visual system and interaction behavior are coherent.
+Do not introduce a new styling system when the existing system can meet the requirements.
 
-20. ACCEPTANCE CRITERIA
-    The project is complete when all the following are satisfied.
-    Branding
+## 16.2 SEO
 
-- [ ] Blue and orange are used consistently throughout the website.
-- [ ] Official Centrifuge branding is preserved.
-- [ ] Shared components use the same design tokens.
-- [ ] Orange is used strategically rather than excessively.
-- [ ] Typography and spacing are consistent.
-      Navigation
-- [ ] The desktop navbar is clean and balanced.
-- [ ] The mega menu has a white or light neutral background.
-- [ ] The mega menu contains no repeated logo.
-- [ ] Menu content is organized into readable columns.
-- [ ] Directional animations are smooth and restrained.
-- [ ] Hover transitions do not flicker.
-- [ ] Keyboard and touch interactions work.
-      Page design
-- [ ] The hero has a clear headline, description, and CTA.
-- [ ] The hero animation is smooth and accessible.
-- [ ] Cards and sections follow consistent design rules.
-- [ ] The project portfolio includes working links.
-- [ ] The footer is structured and responsive.
-- [ ] Existing content and features are preserved.
-      Engineering
-- [ ] The existing framework is preserved.
-- [ ] Components are reusable.
-- [ ] Internal links work.
+Preserve existing SEO-relevant content and routes.
+
+Where appropriate, verify:
+
+- Page titles.
+- Meta descriptions.
+- Canonical URLs.
+- Heading structure.
+- Descriptive link text.
+- Image alternative text.
+- Open Graph metadata.
+- Internal linking.
+- Indexability.
+- Sitemap and robots configuration.
+- Structured data, where accurate and relevant.
+
+Do not invent organization details or structured-data claims.
+
+Follow the existing framework's conventions.
+
+If URLs must change, provide appropriate redirects and preserve important existing destinations.
+
+## 16.3 Code quality
+
+Write code that is:
+
+- Readable.
+- Maintainable.
+- Consistent with existing conventions.
+- Accessible.
+- Responsive.
+- Efficient.
+- Appropriately typed when using TypeScript.
+- Organized around clear component responsibilities.
+
+Avoid:
+
+- Giant components with unrelated responsibilities.
+- Duplicate styles.
+- Fragile CSS selectors.
+- Excessive nested conditionals.
+- Unexplained magic numbers.
+- Unnecessary abstractions.
+- Hardcoded secrets.
+- Unused dependencies.
+- Destructive changes without justification.
+- Fake functionality.
+- Suppressed errors that conceal real problems.
+
+Prefer targeted improvements over unnecessary rewrites.
+
+---
+
+# 17. IMPLEMENTATION WORKFLOW
+
+Follow the workflow below.
+
+## Phase 1 — Understand
+
+Inspect the codebase, pages, assets, routing, existing interactions, and project constraints.
+
+Establish what must be preserved.
+
+## Phase 2 — Audit
+
+Identify visual, functional, responsive, accessibility, and performance issues.
+
+Prioritize issues by impact.
+
+## Phase 3 — Art-direct
+
+Define the visual direction, typography, brand palette, layout principles, imagery approach, and motion strategy.
+
+Use existing brand assets as the source of truth.
+
+## Phase 4 — Plan
+
+Define:
+
+- Design tokens.
+- Component responsibilities.
+- Page-level changes.
+- Navigation behavior.
+- Responsive layouts.
+- Interaction states.
+- Implementation order.
+- Acceptance criteria.
+
+Keep the plan proportional to the project's complexity.
+
+Do not spend excessive time planning when the requirements are already clear.
+
+## Phase 5 — Implement
+
+Improve the shared design system and high-impact components first.
+
+Then apply the system across the website.
+
+Prioritize:
+
+1. Critical functional issues.
+2. Shared navigation and layout.
+3. Typography and visual hierarchy.
+4. Hero and major page compositions.
+5. Section-level refinements.
+6. Interaction and animation.
+7. Responsive refinements.
+8. Accessibility and performance improvements.
+
+Preserve working functionality throughout implementation.
+
+## Phase 6 — Validate
+
+Run the available build, test, and development commands.
+
+Fix issues discovered during verification.
+
+Test the actual application when a runtime environment is available.
+
+Do not stop after editing files if verification is possible.
+
+## Phase 7 — Refine
+
+Inspect the resulting interface.
+
+Correct:
+
+- Misalignment.
+- Awkward heading wraps.
+- Inconsistent spacing.
+- Poor image cropping.
+- Inconsistent component states.
+- Weak contrast.
+- Unnecessary decoration.
+- Mobile layout problems.
+- Animation inconsistencies.
+- Functional regressions.
+
+Repeat the implementation and verification cycle until the important acceptance criteria are satisfied.
+
+## Phase 8 — Deliver
+
+Summarize what changed, what was verified, and what remains.
+
+Never claim to have tested behavior that was not actually tested.
+
+---
+
+# 18. QUALITY ASSURANCE AND TESTING
+
+Testing is part of implementation, not an optional final recommendation.
+
+## 18.1 Build verification
+
+Where the environment permits:
+
+- Run the existing build command.
+- Run available automated tests.
+- Run linting and type checking when configured.
+- Resolve errors introduced by the changes.
+- Check for missing imports and invalid references.
+- Verify that required environment variables are documented.
+- Confirm that the application starts correctly.
+
+Do not alter package versions unnecessarily to make the project fit a preferred implementation.
+
+## 18.2 Functional testing
+
+Test the following where applicable:
+
+- Main navigation.
+- Every dropdown.
+- Mobile menu.
+- Internal routes.
+- External links.
+- Calls to action.
+- Contact forms.
+- Form validation.
+- Form submission and error handling.
+- Accordions and tabs.
+- Project links.
+- Footer links.
+- Keyboard navigation.
+- Reduced-motion behavior.
+
+Use the actual configured integrations.
+
+Do not claim that a backend integration works merely because the frontend displays a success message.
+
+## 18.3 Visual testing
+
+When browser access or screenshots are available, inspect representative pages at desktop and mobile widths.
+
+Look for:
+
+- Incorrect alignment.
+- Inconsistent spacing.
+- Broken grids.
+- Unexpected text wrapping.
+- Missing assets.
+- Image distortion.
+- Overflow.
+- Weak hierarchy.
+- Excessive whitespace.
+- Inconsistent brand colors.
+- Navigation collisions.
+- Poor contrast.
+- Unintended animation behavior.
+
+Compare the result against the intended design direction.
+
+If visual inspection tools are unavailable, state that visual verification remains incomplete.
+
+## 18.4 Performance and accessibility testing
+
+Use available tools to assess:
+
+- Loading performance.
+- Layout stability.
+- Excessive JavaScript.
+- Accessibility violations.
+- Keyboard usability.
+- Color contrast.
+- Responsive behavior.
+
+Use Lighthouse or equivalent tools when available.
+
+Treat automated scores as diagnostic evidence rather than proof that the website is perfect.
+
+---
+
+# 19. VISUAL QUALITY REVIEW
+
+Evaluate the completed work against these categories.
+
+| Category | Evaluation question |
+|---|---|
+| Brand identity | Does the website clearly reflect Centrifuge Group? |
+| Visual distinction | Does it avoid generic template-like composition? |
+| Typography | Is the hierarchy readable and intentional? |
+| Composition | Are alignment, balance, and spacing well executed? |
+| Imagery | Are visuals relevant and properly integrated? |
+| Hierarchy | Can visitors quickly identify the important information? |
+| Consistency | Do pages and components share a design language? |
+| Navigation | Can visitors find the information they need? |
+| Interaction | Do controls behave predictably and feel polished? |
+| Responsiveness | Does the experience work across screen sizes? |
+| Accessibility | Can users navigate and understand the interface accessibly? |
+| Performance | Does the implementation avoid unnecessary loading costs? |
+| Functionality | Do existing and updated features work as intended? |
+| Content | Is the information clear, accurate, and useful? |
+| Business effectiveness | Does the experience support meaningful visitor actions? |
+| Maintainability | Is the implementation understandable and sustainable? |
+
+Score each category from 1 to 10 when sufficient evidence is available.
+
+Do not assign high scores merely because the page looks attractive.
+
+Use the review to identify remaining problems and fix them.
+
+Prioritize major functionality, hierarchy, usability, and responsive issues over minor decorative details.
+
+---
+
+# 20. DEFINITION OF DONE
+
+The project is ready for delivery only when the following conditions have been addressed.
+
+## Design
+
+- [ ] The website has a coherent, recognizable visual direction.
+- [ ] Existing brand identity is preserved.
+- [ ] Colors and typography are consistent.
+- [ ] Major sections have intentional compositions.
+- [ ] Whitespace supports hierarchy.
+- [ ] Imagery is relevant and appropriately displayed.
+- [ ] Components do not rely on repetitive generic layouts.
+- [ ] Animations are purposeful and restrained.
+
+## Functionality
+
+- [ ] Existing routes are preserved.
+- [ ] Navigation links work.
+- [ ] Dropdowns and mobile navigation work.
+- [ ] Existing forms and integrations are preserved.
+- [ ] Calls to action have meaningful destinations.
+- [ ] Interactive components behave correctly.
+- [ ] No decorative controls have been introduced as fake functionality.
+
+## Responsive behavior
+
+- [ ] Mobile layouts have been checked.
+- [ ] Tablet layouts have been checked.
+- [ ] Desktop layouts have been checked.
+- [ ] No unintended horizontal overflow remains.
+- [ ] Important content remains visible and readable.
+- [ ] Touch and keyboard interaction are supported.
+
+## Accessibility
+
+- [ ] Semantic HTML is used appropriately.
+- [ ] Interactive controls have accessible names.
+- [ ] Keyboard navigation works.
+- [ ] Focus indicators remain visible.
+- [ ] Forms provide understandable feedback.
+- [ ] Important text has sufficient contrast.
+- [ ] Reduced-motion preferences are respected.
+
+## Engineering
+
+- [ ] The existing architecture has been respected.
 - [ ] No unnecessary dependencies have been introduced.
-- [ ] No significant console errors remain.
-- [ ] The website works across desktop, tablet, and mobile.
-- [ ] Accessibility and reduced-motion requirements are implemented.
-- [ ] SEO and performance have not been unnecessarily degraded.
-      FINAL INSTRUCTION TO THE AI DEVELOPER
-      Act as a senior UI/UX designer, design-system architect, and senior frontend engineer.
-      Redesign the existing Centrifuge Group website using the supplied website screenshots as inspiration for its navigation, spacing, typography, and overall layout quality.
-      Use Centrifuge's official blue-and-orange brand identity consistently throughout the website.
-      Prioritize the full-width white mega menu with bold category headings, organized submenu links, no repeated logo, and subtle directional transitions. Ensure the navbar and dropdown behave as one cohesive interactive system.
-      Carry the same design language into the hero, service sections, project portfolio, buttons, cards, inner pages, and footer.
-      Do not rebuild the website as a static mockup. Implement the actual responsive interface, working links, navigation behavior, and animations.
-      Inspect the existing project before modifying it. Preserve all functioning features, existing content, routes, integrations, and brand assets unless a change is necessary and explicitly justified.
-      Do not invent company capabilities, client projects, certifications, testimonials, or performance claims.
-      Finally, test the completed implementation at desktop, tablet, and mobile sizes. Correct visual inconsistencies, broken interactions, accessibility issues, and layout problems before declaring the work finished.
-      The final result should feel like one cohesive, premium enterprise technology website—not a collection of individually styled pages.
+- [ ] The build has been verified where possible.
+- [ ] Available tests have been run.
+- [ ] Errors introduced by the changes have been resolved.
+- [ ] SEO-relevant content and routes have been preserved.
+- [ ] Remaining technical limitations are documented.
+
+Mark each item as verified, not verified, or not applicable.
+
+Do not mark a condition as verified without supporting evidence.
+
+---
+
+# 21. FINAL DELIVERY REPORT
+
+After implementation, provide a concise but informative report containing:
+
+### 1. Summary
+Explain the main improvements and their intended benefits.
+
+### 2. Design decisions
+Describe the visual direction, branding, typography, layout, and interaction choices.
+
+### 3. Pages and components
+Identify the pages, shared components, and important styles changed.
+
+### 4. Functional changes
+Explain what functionality was improved and which existing features were preserved.
+
+### 5. Verification
+List the actual build commands, tests, responsive checks, and accessibility checks performed, together with their results.
+
+### 6. Remaining issues
+Identify any unresolved defects, unverified behavior, unavailable integrations, or missing assets.
+
+### 7. Running and deployment
+Explain how to run the project and identify any required configuration.
+
+Do not present incomplete work as production-ready.
+
+Do not claim a test passed unless it was actually executed and its result was checked.
+
+---
+
+# 22. OPERATING RULES
+
+Throughout the project:
+
+1. Think like a creative director before acting like a coder.
+2. Understand the existing website before modifying it.
+3. Preserve working functionality.
+4. Make design decisions based on brand, content, and audience.
+5. Prefer distinctive composition over generic templates.
+6. Use color, typography, spacing, and imagery intentionally.
+7. Keep animation meaningful.
+8. Make accessibility part of implementation.
+9. Prioritize high-impact improvements.
+10. Avoid unnecessary dependencies and architectural changes.
+11. Never fabricate company information, assets, integrations, or test results.
+12. Implement requested changes rather than merely describing how to implement them when the necessary tools are available.
+13. Inspect the result when visual inspection is possible.
+14. Fix discovered problems rather than simply documenting them.
+15. Be transparent about environmental limitations.
+
+If a requested effect is technically difficult, find a practical implementation that preserves its design intent.
+
+If a feature cannot be completed because a dependency, credential, backend, or external service is unavailable, implement the remaining work and explain the specific limitation.
+
+Do not sacrifice functionality, accessibility, or performance for visual novelty.
+
+---
+
+# FINAL COMMAND
+
+Audit and enhance the existing Centrifuge Group website according to this specification.
+
+Begin by understanding the current codebase, brand assets, routes, content, and working functionality.
+
+Establish a distinctive visual direction grounded in the existing brand.
+
+Create or refine the design system, improve the shared components, and implement the design consistently across the relevant pages.
+
+Preserve existing functionality and business information.
+
+Refine the composition, typography, spacing, imagery, navigation, interactions, responsive layouts, accessibility, and performance.
+
+Run the available tests, inspect the actual interface when possible, and fix discovered issues.
+
+Deliver a coherent, visually distinctive, commercially useful, and technically maintainable enterprise website.
+
+**Do not stop at the audit. Do not stop at the design plan. Do not stop when the page merely looks attractive. Implement the improvements, verify what can be verified, and clearly report what remains.**
+
+The final result should demonstrate professional design judgment, excellent frontend engineering, and a consistent Centrifuge Group brand experience across the entire website.

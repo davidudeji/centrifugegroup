@@ -33,200 +33,132 @@ const PILLARS = [
 export const WhyCentrifugeSection: React.FC = () => {
   return (
     <section
-      style={{
-        position: 'relative',
-        background: 'linear-gradient(180deg, #0B1F33 0%, #071521 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-        overflow: 'hidden',
-      }}
-      className="section-py"
+      className="relative overflow-hidden section-py border-b border-white/8"
+      style={{ background: 'linear-gradient(160deg, #0B1F33 0%, #071521 100%)' }}
     >
+      {/* Subtle grid */}
       <div
         aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          position: 'absolute',
-          inset: 0,
           backgroundImage:
-            'linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-          maskImage: 'radial-gradient(circle at center, black 30%, transparent 78%)',
-          pointerEvents: 'none',
+            'linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+          maskImage: 'radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 80%)',
+        }}
+      />
+      {/* Accent glow */}
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          top: 0,
+          right: '-10%',
+          width: '55%',
+          height: '80%',
+          background: 'radial-gradient(ellipse at top right, rgba(7,86,165,0.22) 0%, transparent 65%)',
         }}
       />
 
-      <div className="section-container" style={{ position: 'relative', zIndex: 1 }}>
-        <Reveal from="up" duration={700}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '40px', maxWidth: '820px' }}>
-            <h2
-              style={{
-                fontFamily: 'Inter, Segoe UI, sans-serif',
-                fontSize: 'clamp(36px, 4vw, 68px)',
-                fontWeight: 800,
-                color: '#fff',
-                lineHeight: 1.04,
-                letterSpacing: '-0.06em',
-                margin: 0,
-              }}
-            >
-              Built for organizations where
-              <span style={{ display: 'block', color: '#E87916', fontStyle: 'italic', fontWeight: 500 }}>
-                technology has to work.
-              </span>
-            </h2>
-            <p
-              style={{
-                fontSize: '17px',
-                color: 'rgba(191, 219, 254, 0.8)',
-                lineHeight: 1.65,
-                margin: '18px 0 0',
-                maxWidth: '620px',
-              }}
-            >
-              We build systems for ministries, enterprises, and institutions that operate in environments where downtime, data loss, and integration failures have real consequences.
-            </p>
-          </div>
-        </Reveal>
+      <div className="section-container relative z-10">
+        {/* Split header */}
+        <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <Reveal from="up" duration={700}>
+            <div className="max-w-[620px]">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-px w-8 bg-[#F28C28]" aria-hidden="true" />
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#F28C28]">
+                  Why Centrifuge
+                </p>
+              </div>
+              <h2
+                className="text-white"
+                style={{
+                  fontSize: 'clamp(2.125rem, 4vw, 3.625rem)',
+                  fontWeight: 800,
+                  lineHeight: 1.04,
+                  letterSpacing: '-0.05em',
+                }}
+              >
+                Built for organizations where{' '}
+                <em style={{ color: '#FDBA74', fontStyle: 'italic', fontWeight: 500 }}>
+                  technology has to work.
+                </em>
+              </h2>
+              <p className="mt-5 max-w-[520px] text-[1rem] leading-[1.8] text-blue-100/65">
+                We build systems for ministries, enterprises, and institutions that operate in
+                environments where downtime, data loss, and integration failures have real consequences.
+              </p>
+            </div>
+          </Reveal>
+        </div>
 
+        {/* Pillar grid — 2×2 */}
         <StaggerReveal
           variant="scale"
           stagger={100}
           duration={600}
-          className="why-centrifuge-grid"
+          className="grid grid-cols-1 gap-px sm:grid-cols-2 rounded-[14px] overflow-hidden border border-white/8 bg-white/6"
           childClassName=""
-          style={{ marginBottom: '32px' }}
         >
           {PILLARS.map(({ num, icon: Icon, title, desc }) => (
             <div
               key={num}
-              style={{
-                backgroundColor: 'rgba(16, 37, 68, 0.72)',
-                padding: '26px 24px 24px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                border: '1px solid rgba(148, 163, 184, 0.2)',
-                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                minHeight: '190px',
-              }}
-              onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLDivElement).style.backgroundColor = 'rgba(23, 54, 96, 0.92)'
-              }}
-              onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLDivElement).style.backgroundColor = 'rgba(16, 37, 68, 0.72)'
-              }}
+              className="group flex flex-col gap-4 bg-[#102540]/70 p-7 sm:p-8 transition-all duration-200 hover:bg-[#16305A]/80"
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              {/* Icon + number row */}
+              <div className="flex items-center justify-between">
                 <div
+                  className="flex h-10 w-10 items-center justify-center rounded-[9px]"
                   style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: '8px',
-                    flexShrink: 0,
-                    backgroundColor: 'rgba(232, 121, 22, 0.12)',
-                    border: '1px solid rgba(232, 121, 22, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    background: 'rgba(232,121,22,0.12)',
+                    border: '1px solid rgba(232,121,22,0.22)',
                   }}
                 >
                   <Icon style={{ width: 18, height: 18, color: '#E87916' }} />
                 </div>
-                <p
-                  style={{
-                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-                    fontSize: '11px',
-                    color: 'rgba(191,219,254,0.6)',
-                    margin: 0,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                  }}
+                <span
+                  className="font-mono text-[11px] uppercase tracking-[0.1em]"
+                  style={{ color: 'rgba(191,219,254,0.4)' }}
                 >
                   {num}
-                </p>
+                </span>
               </div>
 
               <h3
-                style={{
-                  fontFamily: 'Inter, Segoe UI, sans-serif',
-                  fontSize: '20px',
-                  fontWeight: 700,
-                  color: '#fff',
-                  letterSpacing: '-0.03em',
-                  margin: 0,
-                }}
+                className="text-white"
+                style={{ fontSize: '1.125rem', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.3 }}
               >
                 {title}
               </h3>
-
-              <p
-                style={{
-                  fontSize: '14px',
-                  color: 'rgba(191, 219, 254, 0.72)',
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
+              <p style={{ fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(191,219,254,0.65)' }}>
                 {desc}
               </p>
             </div>
           ))}
         </StaggerReveal>
 
+        {/* CTA strip */}
         <Reveal from="up" delay={100}>
           <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '16px',
-              paddingTop: '26px',
-              borderTop: '1px solid rgba(112, 146, 204, 0.26)',
-              flexWrap: 'wrap',
-            }}
+            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-[12px] border border-white/10 bg-white/4 px-7 py-6"
           >
-            <p
-              style={{
-                fontSize: '18px',
-                fontWeight: 600,
-                color: '#fff',
-                fontFamily: 'Inter, Segoe UI, sans-serif',
-                margin: 0,
-                maxWidth: '560px',
-                lineHeight: 1.5,
-              }}
-            >
-              Ready to discuss your organization's technology needs?
-            </p>
+            <div>
+              <p className="text-[1.0625rem] font-semibold text-white leading-snug">
+                Ready to discuss your organization's technology needs?
+              </p>
+              <p className="mt-1 text-[0.875rem] text-blue-100/55">
+                Our team works with government, enterprise, and NGO partners.
+              </p>
+            </div>
             <Link
               to="/contact"
               id="why-centrifuge-cta"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '10px',
-                padding: '14px 26px',
-                background: '#E87916',
-                color: '#FFFFFF',
-                borderRadius: '8px',
-                fontSize: '15px',
-                fontWeight: 600,
-                textDecoration: 'none',
-                flexShrink: 0,
-                boxShadow: '0 10px 24px rgba(232, 121, 22, 0.28)',
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-              }}
-              onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#D0690E'
-                ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'
-              }}
-              onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E87916'
-                ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'
-              }}
+              className="group inline-flex shrink-0 items-center gap-2.5 rounded-[8px] bg-[#E87916] px-6 py-3.5 text-[0.9375rem] font-semibold text-white shadow-[0_10px_24px_rgba(232,121,22,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D0690E] hover:shadow-[0_14px_30px_rgba(232,121,22,0.38)]"
             >
-              Talk to Centrifuge
-              <ArrowRight style={{ width: 16, height: 16 }} />
+              <span>Talk to Centrifuge</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
         </Reveal>

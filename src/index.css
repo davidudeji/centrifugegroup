@@ -124,6 +124,9 @@ html {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-inter);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
@@ -133,9 +136,13 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-size: var(--font-size-body);
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
 }
 
 :focus-visible {
@@ -145,18 +152,18 @@ body {
 
 .marketing-hero__heading {
   font-size: var(--font-size-hero);
-  line-height: 1.08;
-  letter-spacing: -0.045em;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
 }
 
 .marketing-section-heading {
   font-size: var(--font-size-section);
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 }
 
 .marketing-section-copy {
-  max-width: 680px;
+  max-width: 660px;
   color: var(--color-text-secondary);
   font-size: 1.0625rem;
   line-height: 1.8;
@@ -1369,23 +1376,26 @@ img {
 
 h1 {
   font-family: var(--font-heading);
-  font-size: var(--text-h1);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: var(--leading-h1);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 h2 {
   font-family: var(--font-heading);
-  font-size: var(--text-h2);
-  font-weight: 600;
-  line-height: var(--leading-h2);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 h3 {
   font-family: var(--font-heading);
-  font-size: var(--text-h3);
-  font-weight: 500;
-  line-height: var(--leading-h3);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
 }
 
 a,
