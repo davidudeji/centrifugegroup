@@ -18,8 +18,12 @@ export const CaseStudiesPage: React.FC = () => {
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
-              Case Studies in Production
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+              <span>Case Studies in Production</span>
+            </div>
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
+              Client Outcomes & Real-World Impact
             </h1>
             <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
               Explore how we solved critical operational challenges for government ministries, medical regulatory councils, and corporate enterprises across the continent.
@@ -87,7 +91,7 @@ export const CaseStudiesPage: React.FC = () => {
                   </div>
                   <Link
                     to={`/case-studies/${cs.slug}`}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#0756A5] text-white hover:bg-[#073B70] text-xs font-semibold transition-colors"
                   >
                     <span>Read Case Study</span>
                     <ArrowRight className="h-3.5 w-3.5" />

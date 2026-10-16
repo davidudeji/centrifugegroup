@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react'
+import React, { useState } from 'react'
 import { SEO } from '../../components/ui/SEO'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
@@ -73,7 +73,11 @@ export const ContactPage: React.FC = () => {
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
+              <span>Contact & Enquiries</span>
+            </div>
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
               Have an Operational Challenge Worth Solving?
             </h1>
             <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">

@@ -88,10 +88,9 @@ export const JobsPage: React.FC = () => {
 
                 <Link
                   to={`/careers/jobs/${job.slug}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#008DDA] text-white hover:bg-[#0077B6] text-xs font-semibold shrink-0 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#0756A5] text-white hover:bg-[#073B70] text-xs font-semibold shrink-0 transition-colors"
                 >
                   <span>View Role & Apply</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
