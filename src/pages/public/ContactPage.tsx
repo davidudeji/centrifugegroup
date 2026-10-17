@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { SEO } from '../../components/ui/SEO'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
@@ -61,42 +61,40 @@ export const ContactPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
+    <div className="dark-page">
       <SEO
         title="Contact Us | Centrifuge Group"
         description="Have a problem worth solving? Speak directly with Centrifuge enterprise systems architects and specialists."
       />
 
-      {/* â”€â”€â”€ Header Strip (UI/UX Spec Â§1.1 & Â§4.1) â”€â”€â”€ */}
-      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
-
+      {/* â”€â”€â”€ Header Strip â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-              <span>Contact & Enquiries</span>
-            </div>
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
+          <div className="max-w-3xl space-y-5">
+            <span className="dark-badge">
+              <span className="h-2 w-2 rounded-full bg-[#F28C28] ring-4 ring-[#F28C28]/20" aria-hidden="true" />
+              Contact & Enquiries
+            </span>
+            <h1 className="text-[32px] sm:text-[48px] font-bold text-[#F0F4FF] tracking-tight leading-[1.1]">
               Have an Operational Challenge Worth Solving?
             </h1>
-            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
+            <p className="text-[17px] text-[#8BA4C8] leading-relaxed max-w-2xl">
               Whether you represent a federal ministry, commercial corporate group, or healthcare network, our senior technology architects are prepared to review your operational requirements and provide detailed implementation specifications.
             </p>
           </div>
         </div>
       </section>
 
-      {/* â”€â”€â”€ Contact Body (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
-      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+      {/* â”€â”€â”€ Contact Body â”€â”€â”€ */}
+      <section className="dark-section-b py-16 sm:py-20">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Contact Form */}
-            <div className="lg:col-span-7 bg-[#FFFFFF] p-6 sm:p-10 rounded-[8px] border border-[#E2E8F0] shadow-2xs">
-              <h2 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-6">
+            <div className="lg:col-span-7 dark-card p-6 sm:p-10">
+              <h2 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mb-2">
                 Send an Inquiry to Our Senior Engineers
               </h2>
-              <p className="text-[14px] text-[#64748B] mb-6">
+              <p className="text-[14px] text-[#8BA4C8] mb-6">
                 All fields marked * are required.
               </p>
 
@@ -138,11 +136,9 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[12px] font-medium text-[#475569] mb-1.5">
-                    Operational Domain / Subject
-                  </label>
+                  <label className="dark-label">Operational Domain / Subject</label>
                   <select
-                    className="w-full bg-[#FFFFFF] text-[#1A1A1A] text-[14px] p-2.5 border border-[#CBD5E1] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA] transition-colors"
+                    className="dark-select"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   >
@@ -157,14 +153,14 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[12px] font-medium text-[#475569] mb-1.5">
-                    Project Details & Operational Bottlenecks <span className="text-[#EF4444]">*</span>
+                  <label className="dark-label">
+                    Project Details & Operational Bottlenecks <span className="text-red-400">*</span>
                   </label>
                   <textarea
                     rows={5}
                     required
                     placeholder="Describe your current system challenge, facility count or user volume, and desired implementation timeline..."
-                    className="w-full bg-[#FFFFFF] text-[#1A1A1A] text-[14px] p-3 border border-[#CBD5E1] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA] transition-colors"
+                    className="dark-input resize-none"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
@@ -185,66 +181,62 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Contact Details & Direct Channels */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-6 shadow-2xs">
-                <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight">
+            <div className="lg:col-span-5 space-y-5">
+              <div className="dark-card p-6 sm:p-8 space-y-6">
+                <h3 className="text-[18px] font-bold text-[#F0F4FF] tracking-tight">
                   Headquarters & Regional Reach
                 </h3>
 
-                <div className="space-y-4 text-[13px] text-[#475569]">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-[#008DDA] shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-[#1A1A1A]">Principal Office</p>
-                      <p className="mt-0.5 leading-relaxed text-[#64748B]">
-                        Suite 203, 2nd Floor, Jinifa Plaza, Central Business District, Abuja, Federal Capital Territory, Nigeria.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-[#008DDA] shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-[#1A1A1A]">Inquiries</p>
-                      <p className="mt-0.5 text-[#008DDA] font-medium">enquiries@centrifugegroup.com</p>
-                      <p className="text-[#64748B]">solutions@centrifugegroup.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-[#008DDA] shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-[#1A1A1A]">Direct Telephone</p>
-                      <p className="mt-0.5 font-mono text-[#1A1A1A] font-semibold">+234 815 5026 555</p>
-                      <p className="text-[#64748B] font-mono">+234 (0) 901 000 5678</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-[#008DDA] shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-bold text-[#1A1A1A]">Operational Hours</p>
-                      <p className="mt-0.5 text-[#64748B]">Monday â€“ Friday: 08:00 â€“ 17:30 WAT</p>
-                      <p className="text-[#008DDA] text-[11px] font-mono font-semibold mt-0.5">24/7 Priority SLA for active hospital & core financial clusters</p>
-                    </div>
-                  </div>
+                <div className="space-y-5 text-[13px]">
+                  {contactDetails.map((detail) => {
+                    const Icon = detail.icon
+                    return (
+                      <div key={detail.label} className="flex items-start gap-3">
+                        <div className="dark-icon-bubble mt-0.5 shrink-0">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-[#F0F4FF] text-[13px]">{detail.label}</p>
+                          {detail.hrefs
+                            ? detail.lines.map((line, i) => (
+                                <a
+                                  key={i}
+                                  href={detail.hrefs![i]}
+                                  className="block mt-0.5 text-[#60ABFF] hover:text-[#F28C28] transition-colors"
+                                >
+                                  {line}
+                                </a>
+                              ))
+                            : detail.lines.map((line, i) => (
+                                <p key={i} className="text-[#8BA4C8] mt-0.5 leading-relaxed">
+                                  {line}
+                                </p>
+                              ))}
+                          {detail.note && (
+                            <p className="text-[#60ABFF] text-[11px] font-mono font-semibold mt-1">
+                              {detail.note}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
 
               {/* Data Privacy Note */}
-              <div className="p-6 rounded-[8px] bg-[#FFFFFF] border border-[#E2E8F0] space-y-2 shadow-2xs">
+              <div className="dark-card p-6 space-y-2">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-[#10B981]" />
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008DDA]">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#60ABFF]">
                     CONFIDENTIALITY ASSURANCE
                   </span>
                 </div>
-                <p className="text-xs text-[#64748B] leading-relaxed">
+                <p className="text-xs text-[#8BA4C8] leading-relaxed">
                   All enterprise technical requests are safeguarded by strict institutional non-disclosure standards in full compliance with the Nigeria Data Protection Act (NDPA).
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -253,3 +245,4 @@ export const ContactPage: React.FC = () => {
 }
 
 export default ContactPage
+

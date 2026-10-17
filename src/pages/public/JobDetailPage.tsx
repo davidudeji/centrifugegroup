@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { mockJobs } from '../../data/mockData'
@@ -46,38 +46,38 @@ export const JobDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
+    <div className="dark-page">
       <SEO
         title={`${job.title} | Centrifuge Careers`}
         description={job.shortDescription}
       />
 
-      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
-      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+      {/* â”€â”€â”€ Hero Header (UI/UX Spec Â§1.1 & Â§4.1) â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
 
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <Link
             to="/careers/jobs"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#64748B] hover:text-[#008DDA] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8BA4C8] hover:text-[#60ABFF] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Open Positions</span>
           </Link>
 
           <div className="flex flex-wrap items-center gap-2 pt-2">
-            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/30 text-[#008DDA] text-[11px] font-mono font-bold uppercase tracking-wider">
+            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/30 text-[#60ABFF] text-[11px] font-mono font-bold uppercase tracking-wider">
               {job.department}
             </span>
-            <span className="text-xs text-[#64748B] font-mono">• {job.type}</span>
+            <span className="text-xs text-[#8BA4C8] font-mono">â€¢ {job.type}</span>
           </div>
 
-          <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+          <h1 className="text-[32px] sm:text-[44px] font-bold text-[#F0F4FF] tracking-tight leading-[1.2]">
             {job.title}
           </h1>
 
-          <div className="flex items-center gap-1.5 text-xs text-[#64748B] font-mono">
-            <MapPin className="h-4 w-4 text-[#008DDA]" />
+          <div className="flex items-center gap-1.5 text-xs text-[#8BA4C8] font-mono">
+            <MapPin className="h-4 w-4 text-[#60ABFF]" />
             <span>{job.location}</span>
           </div>
 
@@ -94,32 +94,32 @@ export const JobDetailPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Main Content (UI/UX Spec §3.3 Data Card Module) ─── */}
-      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+      {/* â”€â”€â”€ Main Content (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
+      <section className="dark-section-b py-16 sm:py-20">
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="bg-[#FFFFFF] p-6 sm:p-10 rounded-[8px] border border-[#E2E8F0] space-y-8 shadow-2xs">
+          <div className="bg-white/[0.04] p-6 sm:p-10 rounded-[8px] border border-white/[0.09] space-y-8 shadow-2xs">
             <div>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008DDA] block mb-2">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#60ABFF] block mb-2">
                 OVERVIEW
               </span>
-              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-2">
+              <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mb-2">
                 About the Role
               </h3>
-              <p className="text-[14px] text-[#475569] leading-relaxed">
+              <p className="text-[14px] text-[#8BA4C8] leading-relaxed">
                 {job.aboutRole}
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[#F1F5F9]">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008DDA] block mb-2">
+            <div className="pt-6 border-t border-white/[0.07]">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#60ABFF] block mb-2">
                 DUTIES
               </span>
-              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-3">
+              <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mb-3">
                 Key Responsibilities
               </h3>
               <div className="space-y-2.5">
                 {job.responsibilities.map((resp, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#1A1A1A]">
+                  <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#F0F4FF]">
                     <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
                     <span>{resp}</span>
                   </div>
@@ -127,16 +127,16 @@ export const JobDetailPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#F1F5F9]">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008DDA] block mb-2">
+            <div className="pt-6 border-t border-white/[0.07]">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#60ABFF] block mb-2">
                 QUALIFICATIONS
               </span>
-              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-3">
+              <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mb-3">
                 Requirements & Experience
               </h3>
               <div className="space-y-2.5">
                 {job.requirements.map((req, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#1A1A1A]">
+                  <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#F0F4FF]">
                     <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
                     <span>{req}</span>
                   </div>
@@ -145,13 +145,13 @@ export const JobDetailPage: React.FC = () => {
             </div>
 
             {job.niceToHave.length > 0 && (
-              <div className="pt-6 border-t border-[#F1F5F9]">
-                <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-3">
+              <div className="pt-6 border-t border-white/[0.07]">
+                <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mb-3">
                   Nice to Have
                 </h3>
                 <div className="space-y-2.5">
                   {job.niceToHave.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#64748B]">
+                    <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#8BA4C8]">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#008DDA] shrink-0 mt-2" />
                       <span>{item}</span>
                     </div>
@@ -160,16 +160,16 @@ export const JobDetailPage: React.FC = () => {
               </div>
             )}
 
-            <div className="pt-6 border-t border-[#F1F5F9]">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#008DDA] block mb-2">
+            <div className="pt-6 border-t border-white/[0.07]">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#60ABFF] block mb-2">
                 COMPENSATION & PERKS
               </span>
-              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mb-3">
+              <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mb-3">
                 What We Offer
               </h3>
               <div className="space-y-2.5">
                 {job.benefits.map((b, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#1A1A1A]">
+                  <div key={i} className="flex items-start gap-2.5 text-[13.5px] text-[#F0F4FF]">
                     <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
                     <span>{b}</span>
                   </div>
@@ -177,9 +177,9 @@ export const JobDetailPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[#F1F5F9] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <span className="text-xs font-mono text-[#64748B]">
-                Position ID: {job.id} · Centrifuge Talent Team
+            <div className="pt-8 border-t border-white/[0.07] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <span className="text-xs font-mono text-[#8BA4C8]">
+                Position ID: {job.id} Â· Centrifuge Talent Team
               </span>
               <button
                 onClick={() => setIsApplyModalOpen(true)}
@@ -229,28 +229,28 @@ export const JobDetailPage: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-[12px] font-medium text-[#475569] mb-1.5">
+            <label className="block text-[12px] font-medium text-[#8BA4C8] mb-1.5">
               Cover Letter / Introduction <span className="text-[#EF4444]">*</span>
             </label>
             <textarea
               rows={3}
               required
               placeholder="Tell us briefly why you want to build technology at Centrifuge..."
-              className="w-full text-[14px] p-3 bg-[#FFFFFF] text-[#1A1A1A] border border-[#CBD5E1] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA]"
+              className="w-full text-[14px] p-3 bg-white/[0.04] text-[#F0F4FF] border border-white/20 rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA]"
               value={formData.coverLetter}
               onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
             />
           </div>
 
           <div>
-            <label className="block text-[12px] font-medium text-[#475569] mb-1.5">
+            <label className="block text-[12px] font-medium text-[#8BA4C8] mb-1.5">
               Resume / Curriculum Vitae (PDF or DOCX) <span className="text-[#EF4444]">*</span>
             </label>
-            <div className="border border-dashed border-[#CBD5E1] rounded-[4px] p-4 text-center bg-[#F8FAFC]">
-              <UploadCloud className="h-6 w-6 text-[#008DDA] mx-auto mb-1" />
-              <p className="text-xs text-[#64748B]">
+            <div className="border border-dashed border-white/20 rounded-[4px] p-4 text-center bg-white/[0.03]">
+              <UploadCloud className="h-6 w-6 text-[#60ABFF] mx-auto mb-1" />
+              <p className="text-xs text-[#8BA4C8]">
                 {formData.cvFileName ? (
-                  <span className="font-semibold text-[#008DDA]">{formData.cvFileName} attached</span>
+                  <span className="font-semibold text-[#60ABFF]">{formData.cvFileName} attached</span>
                 ) : (
                   <span>Click to select or drag and drop your resume file</span>
                 )}
@@ -258,7 +258,7 @@ export const JobDetailPage: React.FC = () => {
               <input
                 type="file"
                 accept=".pdf,.docx,.doc"
-                className="mt-2 text-xs text-[#64748B] file:mr-2 file:py-1 file:px-3 file:rounded-[4px] file:border-0 file:text-xs file:bg-[#0F2C59] file:text-white file:font-semibold"
+                className="mt-2 text-xs text-[#8BA4C8] file:mr-2 file:py-1 file:px-3 file:rounded-[4px] file:border-0 file:text-xs file:bg-[#0F2C59] file:text-white file:font-semibold"
                 onChange={(e) => {
                   if (e.target.files?.[0]) {
                     setFormData({ ...formData, cvFileName: e.target.files[0].name })
@@ -275,9 +275,9 @@ export const JobDetailPage: React.FC = () => {
               required
               checked={formData.consent}
               onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-              className="rounded-[3px] border-[#CBD5E1] text-[#008DDA] focus:ring-[#008DDA]"
+              className="rounded-[3px] border-white/20 text-[#60ABFF] focus:ring-[#008DDA]"
             />
-            <label htmlFor="consent" className="text-xs text-[#64748B]">
+            <label htmlFor="consent" className="text-xs text-[#8BA4C8]">
               I confirm that the details provided are accurate and consent to NDPR data storage.
             </label>
           </div>
@@ -305,3 +305,6 @@ export const JobDetailPage: React.FC = () => {
 }
 
 export default JobDetailPage
+
+
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+﻿import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { projectService } from '../../services/projectService'
@@ -30,9 +30,9 @@ export const ProjectDetailPage: React.FC = () => {
 
   if (!project) {
     return (
-      <div className="py-32 text-center space-y-4 bg-white text-[#0F2C59]">
+      <div className="py-32 text-center space-y-4 bg-white text-[#F0F4FF]">
         <h2 className="text-[20px] font-bold">Project not found</h2>
-        <p className="text-[14px] text-[#475569]">The requested project does not exist or has been archived.</p>
+        <p className="text-[14px] text-[#8BA4C8]">The requested project does not exist or has been archived.</p>
         <Link to="/projects">
           <Button variant="secondary" size="sm">Back to Projects</Button>
         </Link>
@@ -41,29 +41,29 @@ export const ProjectDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full text-left bg-white text-[#0F2C59]">
+    <div className="dark-page">
       <SEO
         title={`${project.name} | Projects Showcase`}
         description={project.description}
       />
 
       {/* Hero Header */}
-      <section className="bg-[#0F2C59] text-white py-16 sm:py-24 border-b border-white/10">
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
         <div className="w-[min(92%,1440px)] mx-auto space-y-4">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#008DDA] transition-fin"
+            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[#94A3B8] hover:text-[#60ABFF] transition-fin"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Projects & Products</span>
           </Link>
 
           <div className="flex flex-wrap items-center gap-2 pt-1">
-            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/30 text-[#008DDA] text-[11px] font-semibold">
+            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#008DDA]/10 border border-[#008DDA]/30 text-[#60ABFF] text-[11px] font-semibold">
               {project.category}
             </span>
             <span className="text-[12px] text-[#94A3B8]">
-              • {project.industry}
+              â€¢ {project.industry}
             </span>
             {project.status === 'live' && (
               <span className="px-2.5 py-0.5 rounded-[4px] bg-white/10 border border-white/20 text-white text-[10px] font-semibold uppercase tracking-[1px]">
@@ -104,7 +104,7 @@ export const ProjectDetailPage: React.FC = () => {
                 className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-transparent border border-white/20 text-white hover:border-white/40 text-[13px] transition-fin"
               >
                 <span>Interactive Demo</span>
-                <ExternalLink className="h-3.5 w-3.5 text-[#008DDA]" />
+                <ExternalLink className="h-3.5 w-3.5 text-[#60ABFF]" />
               </a>
             )}
 
@@ -122,10 +122,10 @@ export const ProjectDetailPage: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+      <section className="py-16 bg-white/[0.03] border-b border-white/[0.07]">
         <div className="w-[min(92%,1440px)] mx-auto space-y-10">
           {/* Visual Container */}
-          <div className="rounded-[8px] overflow-hidden border border-[#E2E8F0] bg-[#0F2C59]">
+          <div className="rounded-[8px] overflow-hidden border border-white/[0.09] bg-[#0F2C59]">
             <img
               src={project.image}
               alt={project.name}
@@ -135,16 +135,16 @@ export const ProjectDetailPage: React.FC = () => {
 
           {/* Grid Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-8 space-y-8 bg-white p-8 sm:p-10 rounded-[8px] border border-[#E2E8F0]">
+            <div className="lg:col-span-8 space-y-8 bg-white p-8 sm:p-10 rounded-[8px] border border-white/[0.09]">
               {project.overview && (
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                     SYSTEM OVERVIEW
                   </span>
-                  <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-[-0.025em] mb-3">
+                  <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-[-0.025em] mb-3">
                     Architectural Overview
                   </h3>
-                  <p className="text-[14px] text-[#475569] leading-relaxed">
+                  <p className="text-[14px] text-[#8BA4C8] leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
@@ -155,10 +155,10 @@ export const ProjectDetailPage: React.FC = () => {
                   <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
                     THE PROBLEM
                   </span>
-                  <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-[-0.025em] mb-3">
+                  <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-[-0.025em] mb-3">
                     Operational Challenge
                   </h3>
-                  <p className="text-[14px] text-[#475569] leading-relaxed">
+                  <p className="text-[14px] text-[#8BA4C8] leading-relaxed">
                     {project.challenge}
                   </p>
                 </div>
@@ -166,10 +166,10 @@ export const ProjectDetailPage: React.FC = () => {
 
               {project.solution && (
                 <div className="pt-6 border-t border-[#E2E8F0]">
-                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#008DDA] block mb-2">
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#60ABFF] block mb-2">
                     THE SOLUTION
                   </span>
-                  <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-[-0.025em] mb-3">
+                  <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-[-0.025em] mb-3">
                     Centrifuge Solution
                   </h3>
                   <p className="text-[14px] text-[#334155] leading-relaxed">
@@ -180,13 +180,13 @@ export const ProjectDetailPage: React.FC = () => {
 
               {project.capabilities && project.capabilities.length > 0 && (
                 <div className="pt-6 border-t border-[#E2E8F0]">
-                  <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-[-0.025em] mb-4">
+                  <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-[-0.025em] mb-4">
                     Key Engineered Capabilities
                   </h3>
                   <div className="space-y-2.5">
                     {project.capabilities.map((cap, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-[13px] text-[#475569]">
-                        <CheckCircle2 className="h-4 w-4 text-[#008DDA] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2.5 text-[13px] text-[#8BA4C8]">
+                        <CheckCircle2 className="h-4 w-4 text-[#60ABFF] shrink-0 mt-0.5" />
                         <span>{cap}</span>
                       </div>
                     ))}
@@ -197,7 +197,7 @@ export const ProjectDetailPage: React.FC = () => {
 
             {/* Sidebar Meta Box */}
             <div className="lg:col-span-4 space-y-5">
-              <div className="bg-white p-6 rounded-[8px] border border-[#E2E8F0] space-y-4">
+              <div className="bg-white p-6 rounded-[8px] border border-white/[0.09] space-y-4">
                 <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block">
                   Technology Stack
                 </span>
@@ -205,7 +205,7 @@ export const ProjectDetailPage: React.FC = () => {
                   {project.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-0.5 rounded-[4px] bg-[#F8FAFC] border border-[#E2E8F0] text-[11px] text-[#475569] font-medium"
+                      className="px-2.5 py-0.5 rounded-[4px] bg-white/[0.03] border border-white/[0.09] text-[11px] text-[#8BA4C8] font-medium"
                     >
                       {t}
                     </span>
@@ -215,11 +215,11 @@ export const ProjectDetailPage: React.FC = () => {
                 <div className="pt-4 border-t border-[#E2E8F0] space-y-2.5 text-[13px]">
                   <div className="flex justify-between">
                     <span className="text-[#94A3B8]">Industry</span>
-                    <span className="font-semibold text-[#0F2C59]">{project.industry}</span>
+                    <span className="font-semibold text-[#F0F4FF]">{project.industry}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#94A3B8]">Category</span>
-                    <span className="font-semibold text-[#0F2C59]">{project.category}</span>
+                    <span className="font-semibold text-[#F0F4FF]">{project.category}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#94A3B8]">Delivery Status</span>
@@ -255,3 +255,5 @@ export const ProjectDetailPage: React.FC = () => {
 }
 
 export default ProjectDetailPage
+
+

@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react'
@@ -131,36 +131,34 @@ export const IndustryDetailPage: React.FC = () => {
   const ind = (slug && industryDetails[slug]) || industryDetails['healthcare']
 
   return (
-    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
+    <div className="dark-page">
       <SEO
         title={`${ind.title} | Centrifuge Industry Solutions`}
         description={ind.subtitle}
       />
 
-      {/* ─── Hero Header ─── */}
-      <section className="bg-[#FFFFFF] text-[#0B1F33] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
-
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
+      {/* â”€â”€â”€ Hero Header â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
+<div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <Link
             to="/industries"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#64748B] hover:text-[#E87916] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8BA4C8] hover:text-[#E87916] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>All Industries</span>
           </Link>
 
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33] mb-3">
+            <div className="inline-flex items-center gap-2 dark-badge mb-3">
               <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
               <span>Industry Focus</span>
             </div>
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#F0F4FF] tracking-tight leading-[1.2]">
               {ind.title}
             </h1>
           </div>
 
-          <p className="text-[16px] text-[#475569] leading-relaxed max-w-3xl">
+          <p className="text-[16px] text-[#8BA4C8] leading-relaxed max-w-3xl">
             {ind.subtitle}
           </p>
 
@@ -176,35 +174,35 @@ export const IndustryDetailPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Main Content (UI/UX Spec §3.3 Data Card Module) ─── */}
-      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+      {/* â”€â”€â”€ Main Content (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
+      <section className="dark-section-b py-16 sm:py-20">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Operational Challenge */}
-          <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-2 shadow-2xs">
+          <div className="bg-white/[0.04] p-6 sm:p-8 rounded-[8px] border border-white/[0.09] space-y-2 shadow-2xs">
             <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#EF4444] block">
               THE OPERATIONAL CHALLENGE IN THIS SECTOR
             </span>
-            <h3 className="text-[18px] font-bold text-[#0F2C59]">
+            <h3 className="text-[18px] font-bold text-[#F0F4FF]">
               Sector Bottleneck
             </h3>
-            <p className="text-[14px] text-[#475569] leading-relaxed">
+            <p className="text-[14px] text-[#8BA4C8] leading-relaxed">
               {ind.problem}
             </p>
           </div>
 
           {/* How Centrifuge Solves It */}
-          <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-5 shadow-2xs">
+          <div className="bg-white/[0.04] p-6 sm:p-8 rounded-[8px] border border-white/[0.09] space-y-5 shadow-2xs">
             <div>
-              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#60ABFF]">
                 DEPLOYED CAPABILITIES
               </span>
-              <h3 className="text-[20px] font-bold text-[#0F2C59] tracking-tight mt-1">
+              <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-tight mt-1">
                 How Centrifuge Solves It
               </h3>
             </div>
             <div className="space-y-3 pt-2">
               {ind.howCentrifugeHelps.map((point, i) => (
-                <div key={i} className="flex items-start gap-3 text-[13.5px] text-[#1A1A1A]">
+                <div key={i} className="flex items-start gap-3 text-[13.5px] text-[#F0F4FF]">
                   <CheckCircle2 className="h-4 w-4 text-[#10B981] shrink-0 mt-0.5" />
                   <span className="leading-relaxed font-medium">{point}</span>
                 </div>
@@ -214,8 +212,8 @@ export const IndustryDetailPage: React.FC = () => {
 
           {/* Solutions & Services Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-3 shadow-2xs">
-              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA] block">
+            <div className="bg-white/[0.04] p-6 sm:p-8 rounded-[8px] border border-white/[0.09] space-y-3 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#60ABFF] block">
                 Relevant Centrifuge Platforms
               </span>
               <div className="space-y-2 pt-1">
@@ -223,17 +221,17 @@ export const IndustryDetailPage: React.FC = () => {
                   <Link
                     key={sol.name}
                     to={sol.url}
-                    className="flex items-center justify-between p-3 rounded-[4px] bg-[#F8FAFC] hover:bg-[#FFFFFF] border border-[#E2E8F0] text-[13px] font-medium text-[#1A1A1A] hover:text-[#008DDA] hover:border-[#CBD5E1] group transition-colors"
+                    className="flex items-center justify-between p-3 rounded-[4px] bg-white/[0.03] hover: text-[13px] font-medium text-[#F0F4FF] hover:text-[#60ABFF] hover:border-white/20 group transition-colors"
                   >
                     <span>{sol.name}</span>
-                    <ArrowRight className="h-3.5 w-3.5 text-[#008DDA] group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="h-3.5 w-3.5 text-[#60ABFF] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
             </div>
 
-            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-[8px] border border-[#E2E8F0] space-y-3 shadow-2xs">
-              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA] block">
+            <div className="bg-white/[0.04] p-6 sm:p-8 rounded-[8px] border border-white/[0.09] space-y-3 shadow-2xs">
+              <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#60ABFF] block">
                 Related Engineering Services
               </span>
               <div className="space-y-2 pt-1">
@@ -241,10 +239,10 @@ export const IndustryDetailPage: React.FC = () => {
                   <Link
                     key={svc.name}
                     to={svc.url}
-                    className="flex items-center justify-between p-3 rounded-[4px] bg-[#F8FAFC] hover:bg-[#FFFFFF] border border-[#E2E8F0] text-[13px] font-medium text-[#1A1A1A] hover:text-[#008DDA] hover:border-[#CBD5E1] group transition-colors"
+                    className="flex items-center justify-between p-3 rounded-[4px] bg-white/[0.03] hover: text-[13px] font-medium text-[#F0F4FF] hover:text-[#60ABFF] hover:border-white/20 group transition-colors"
                   >
                     <span>{svc.name}</span>
-                    <ArrowRight className="h-3.5 w-3.5 text-[#008DDA] group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="h-3.5 w-3.5 text-[#60ABFF] group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 ))}
               </div>
@@ -255,7 +253,7 @@ export const IndustryDetailPage: React.FC = () => {
           {ind.caseStudy && (
             <div className="p-6 sm:p-8 rounded-[8px] bg-[#0F2C59] text-white border border-[#1E3A8A] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
               <div>
-                <span className="text-[11px] font-mono uppercase font-bold tracking-wider text-[#008DDA]">
+                <span className="text-[11px] font-mono uppercase font-bold tracking-wider text-[#60ABFF]">
                   PROVEN OUTCOME
                 </span>
                 <h4 className="text-[18px] font-bold text-white mt-1 tracking-tight">
@@ -279,3 +277,6 @@ export const IndustryDetailPage: React.FC = () => {
 }
 
 export default IndustryDetailPage
+
+
+

@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { ArrowRight, Layers, Truck, Activity, Building, BarChart2, CheckCircle2, Cpu } from 'lucide-react'
@@ -63,118 +63,118 @@ export const SolutionsPage: React.FC = () => {
   ]
 
   return (
-      <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
-        <SEO
-          title="Enterprise Solutions & Project Development | Centrifuge Group"
-          description="Explore Centrifuge Group platforms: Project Development & Management, Optimax ERP, Logistics & Mobility, Healthcare Informatics, and Spatial GIS Data."
-        />
+    <div className="dark-page">
+      <SEO
+        title="Enterprise Solutions & Project Development | Centrifuge Group"
+        description="Explore Centrifuge Group platforms: Project Development & Management, Optimax ERP, Logistics & Mobility, Healthcare Informatics, and Spatial GIS Data."
+      />
 
-        {/* ─── Header ─── */}
-        <section className="bg-[#FFFFFF] text-[#0B1F33] py-16 sm:py-24 border-b border-[#E2E8F0] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-                <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-                <span>Enterprise Technology Solutions</span>
-              </div>
-              <h1 className="text-[34px] sm:text-[48px] font-bold text-[#0B1F33] tracking-tight leading-tight">
-                Integrated Platforms for Complex Institutional Operations
-              </h1>
-              <p className="text-[16px] text-[#475569] leading-relaxed">
-                We design, build, and operate digital systems that eliminate operational blind spots, connect departments, and scale seamlessly with organizational growth.
-              </p>
-            </div>
+      {/* â”€â”€â”€ Header â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl space-y-5">
+            <span className="dark-badge">
+              <span className="h-2 w-2 rounded-full bg-[#F28C28] ring-4 ring-[#F28C28]/20" aria-hidden="true" />
+              Enterprise Technology Solutions
+            </span>
+            <h1 className="text-[34px] sm:text-[48px] font-bold text-[#F0F4FF] tracking-tight leading-[1.1]">
+              Integrated Platforms for Complex Institutional Operations
+            </h1>
+            <p className="text-[17px] text-[#8BA4C8] leading-relaxed">
+              We design, build, and operate digital systems that eliminate operational blind spots, connect departments, and scale seamlessly with organizational growth.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ─── Solutions List (Data Card Module §3.3: 8px radius, #FFFFFF, 1px #E2E8F0, 24px padding) ─── */}
-        <section className="py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            {solutions.map((sol, index) => {
-              const Icon = sol.icon
-              const targetUrl = sol.customLink || `/solutions/${sol.slug}`
-              return (
-                <div
-                  key={sol.slug}
-                  className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs p-6 lg:p-8 transition-fin grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left"
-                >
-                  <div className="lg:col-span-8 space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="h-9 w-9 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <span className="text-xs font-mono font-bold text-[#008DDA] uppercase tracking-wider">
-                        0{index + 1} · {sol.category}
-                      </span>
-                      {sol.featured && (
-                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-[#D1FAE5] text-[#065F46] border border-[#A7F3D0]">
-                          Flagship
-                        </span>
-                      )}
+      {/* â”€â”€â”€ Solutions List â”€â”€â”€ */}
+      <section className="dark-section-b py-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          {solutions.map((sol, index) => {
+            const Icon = sol.icon
+            const targetUrl = sol.customLink || `/solutions/${sol.slug}`
+            return (
+              <div
+                key={sol.slug}
+                className="dark-card p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left"
+              >
+                <div className="lg:col-span-8 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="dark-icon-bubble">
+                      <Icon className="h-5 w-5" />
                     </div>
-
-                    <h3 className="text-[22px] sm:text-[24px] font-bold text-[#0F2C59] tracking-tight">
-                      {sol.name}
-                    </h3>
-
-                    <p className="text-[14px] text-[#475569] leading-relaxed max-w-2xl">
-                      {sol.description}
-                    </p>
-
-                    <div className="pt-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#0F2C59] block mb-2">
-                        Core Modules & Capabilities:
+                    <span className="text-xs font-mono font-bold text-[#60ABFF] uppercase tracking-wider">
+                      0{index + 1} Â· {sol.category}
+                    </span>
+                    {sol.featured && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">
+                        Flagship
                       </span>
-                      <div className="flex flex-wrap gap-2">
-                        {sol.modules.map((mod) => (
-                          <span
-                            key={mod}
-                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-[#F8FAFC] border border-[#E2E8F0] text-xs font-medium text-[#475569]"
-                          >
-                            <CheckCircle2 className="h-3 w-3 text-[#10B981]" />
-                            {mod}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    )}
                   </div>
 
-                  <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
-                    <Link
-                      to={targetUrl}
-                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[8px] text-sm font-semibold bg-[#E87916] text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] hover:-translate-y-0.5 transition-all duration-200"
-                    >
-                      <span>Explore Solution</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                    <Link
-                      to="/contact"
-                      className="text-xs font-semibold text-[#64748B] hover:text-[#E87916] transition-colors"
-                    >
-                      Request Technical Overview →
-                    </Link>
+                  <h3 className="text-[22px] sm:text-[24px] font-bold text-[#F0F4FF] tracking-tight">
+                    {sol.name}
+                  </h3>
+
+                  <p className="text-[14px] text-[#8BA4C8] leading-relaxed max-w-2xl">
+                    {sol.description}
+                  </p>
+
+                  <div className="pt-2">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#8BA4C8] block mb-2">
+                      Core Modules & Capabilities:
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {sol.modules.map((mod) => (
+                        <span
+                          key={mod}
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-white/[0.04] border border-white/[0.09] text-xs font-medium text-[#8BA4C8]"
+                        >
+                          <CheckCircle2 className="h-3 w-3 text-[#10B981]" />
+                          {mod}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              )
-            })}
-          </div>
-        </section>
 
-        {/* CTA */}
-        <section className="bg-[#0B1F33] py-20 border-t border-white/10">
-          <div className="section-container text-center">
-            <h2 className="text-h2 text-white mb-4">Not sure which platform fits?</h2>
-            <p className="text-body-lg text-[#94A3B8] mb-8 max-w-xl mx-auto">
-              Our team will help you identify the right solution for your organisation's specific operational context.
-            </p>
-            <Link to="/contact" className="btn-accent" id="solutions-cta">
-              Talk to an Expert <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-      </div>
-    )
-  }
+                <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-3">
+                  <Link
+                    to={targetUrl}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[8px] text-sm font-semibold bg-[#E87916] text-white shadow-[0_4px_14px_rgba(232,121,22,0.28)] hover:bg-[#D0690E] hover:shadow-[0_6px_18px_rgba(232,121,22,0.36)] hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    <span>Explore Solution</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="text-xs font-semibold text-[#8BA4C8] hover:text-[#F28C28] transition-colors"
+                  >
+                    Request Technical Overview â†’
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
 
-  export default SolutionsPage
+      {/* CTA */}
+      <section className="dark-section-a py-20">
+        <div className="section-container text-center">
+          <h2 className="text-h2 text-[#F0F4FF] mb-4">Not sure which platform fits?</h2>
+          <p className="text-body-lg text-[#8BA4C8] mb-8 max-w-xl mx-auto">
+            Our team will help you identify the right solution for your organisation's specific operational context.
+          </p>
+          <Link to="/contact" className="btn-accent" id="solutions-cta">
+            Talk to an Expert <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default SolutionsPage
+

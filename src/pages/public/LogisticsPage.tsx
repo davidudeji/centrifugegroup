@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import {
@@ -23,32 +23,30 @@ const capabilities = [
 const outcomes = [
   'Reduced unauthorised fuel losses to near-zero across multi-depot fleets.',
   'Real-time visibility of all vehicles, cargo status, and ETAs from a single control room.',
-  'Eliminated paper delivery notes — digital ePOD with offline capability.',
+  'Eliminated paper delivery notes â€” digital ePOD with offline capability.',
   'Automated driver compliance alerts before licence or vehicle roadworthiness expiry.',
 ]
 
 export const LogisticsPage: React.FC = () => {
   return (
-    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
+    <div className="dark-page">
       <SEO
         title="Centrifuge Logistics & Mobility | Fleet Telematics & Dispatch Suite"
         description="Hardware-agnostic GPS fleet tracking, dispatch control room, and electronic proof of delivery software."
       />
 
-      {/* ─── Hero Header ─── */}
-      <section className="bg-[#FFFFFF] text-[#0B1F33] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
-
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* â”€â”€â”€ Hero Header â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
+<div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
+            <div className="inline-flex items-center gap-2 dark-badge">
               <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
               <span>Logistics & Telematics Architecture</span>
             </div>
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
+            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#F0F4FF] tracking-tight leading-[1.2]">
               Fleet Telematics & Intelligent Dispatch Architecture
             </h1>
-            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
+            <p className="text-[16px] text-[#8BA4C8] leading-relaxed max-w-2xl">
               Transform unpredictable transit corridors into audited, high-efficiency supply networks with sub-second GPS telematics, automated dispatch algorithms, CAN-Bus fuel sensors, and offline driver proof-of-delivery.
             </p>
             <div className="pt-2 flex flex-wrap gap-3">
@@ -61,7 +59,7 @@ export const LogisticsPage: React.FC = () => {
               </Link>
               <Link
                 to="/shop"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[8px] bg-white border border-[#CBD5E1] text-[#0B1F33] hover:border-[#0B1F33]/40 hover:bg-slate-50 hover:-translate-y-0.5 text-sm font-semibold transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[8px] bg-white border border-white/20 text-[#F0F4FF] hover:border-[#0B1F33]/40 hover:bg-white/[0.08] hover:-translate-y-0.5 text-sm font-semibold transition-all duration-200"
               >
                 <span>Browse Telemetry Hardware</span>
               </Link>
@@ -70,17 +68,17 @@ export const LogisticsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Platform Capabilities (UI/UX Spec §3.3 Data Card Module) ─── */}
-      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+      {/* â”€â”€â”€ Platform Capabilities (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
+      <section className="dark-section-b py-16 sm:py-20">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl text-left mb-12">
-            <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#008DDA]">
+            <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#60ABFF]">
               PLATFORM CAPABILITIES
             </span>
-            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#0F2C59] tracking-tight mt-2">
+            <h2 className="text-[28px] sm:text-[34px] font-bold text-[#F0F4FF] tracking-tight mt-2">
               End-to-End Fleet & Dispatch Infrastructure
             </h2>
-            <p className="text-[14px] text-[#64748B] mt-2">
+            <p className="text-[14px] text-[#8BA4C8] mt-2">
               Engineered to endure severe heat, remote satellite gaps, and multi-depot transit operations.
             </p>
           </div>
@@ -90,16 +88,16 @@ export const LogisticsPage: React.FC = () => {
               return (
                 <div
                   key={cap.name}
-                  className="bg-[#FFFFFF] p-6 rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs transition-fin flex flex-col justify-between group text-left"
+                  className="dark-card p-6"
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center mb-4 group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200">
+                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#F0F4FF] flex items-center justify-center mb-4 group-hover:bg-[rgba(7,86,165,0.5)] transition-colors duration-200">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight">
+                    <h3 className="text-[18px] font-bold text-[#F0F4FF] tracking-tight">
                       {cap.name}
                     </h3>
-                    <p className="text-[13px] text-[#475569] mt-2 leading-relaxed">
+                    <p className="text-[13px] text-[#8BA4C8] mt-2 leading-relaxed">
                       {cap.desc}
                     </p>
                   </div>
@@ -120,7 +118,7 @@ export const LogisticsPage: React.FC = () => {
             {outcomes.map((o, i) => (
               <div key={i} className="flex items-start gap-4 p-6 rounded-[16px] bg-white/[0.05] border border-white/[0.08]">
                 <div className="h-7 w-7 rounded-[4px] bg-[#008DDA]/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-[11px] font-mono font-bold text-[#008DDA]">{i + 1}</span>
+                  <span className="text-[11px] font-mono font-bold text-[#60ABFF]">{i + 1}</span>
                 </div>
                 <p className="text-[15px] text-[#94A3B8] leading-relaxed">{o}</p>
               </div>
@@ -139,3 +137,6 @@ export const LogisticsPage: React.FC = () => {
 }
 
 export default LogisticsPage
+
+
+

@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { HeartPulse, Truck, Landmark, Building2, Store, ArrowRight } from 'lucide-react'
@@ -43,34 +43,32 @@ export const IndustriesPage: React.FC = () => {
   ]
 
   return (
-    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
+    <div className="dark-page">
       <SEO
         title="Industries We Transform | Centrifuge Group"
         description="Sector-specific enterprise systems for healthcare, logistics, government, corporate enterprises, and SMEs."
       />
 
-      {/* ─── Hero Banner ─── */}
-      <section className="bg-[#FFFFFF] text-[#0B1F33] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
-
+      {/* â”€â”€â”€ Hero Banner â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#0B1F33]/15 bg-[#0B1F33]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0B1F33]">
-              <span className="h-2 w-2 rounded-full bg-[#E87916] ring-4 ring-[#E87916]/20" aria-hidden="true" />
-              <span>Target Sectors & Verticals</span>
-            </div>
-            <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0B1F33] tracking-tight leading-[1.2]">
+          <div className="max-w-3xl space-y-5">
+            <span className="dark-badge">
+              <span className="h-2 w-2 rounded-full bg-[#F28C28] ring-4 ring-[#F28C28]/20" aria-hidden="true" />
+              Target Sectors & Verticals
+            </span>
+            <h1 className="text-[32px] sm:text-[48px] font-bold text-[#F0F4FF] tracking-tight leading-[1.1]">
               Deep Domain Expertise for Complex Industries
             </h1>
-            <p className="text-[16px] text-[#475569] leading-relaxed max-w-2xl">
+            <p className="text-[17px] text-[#8BA4C8] leading-relaxed max-w-2xl">
               We design software, cloud connectivity, and institutional capacity around the exact operational, legal, and regulatory requirements of our partner sectors.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── Industries Grid (UI/UX Spec §3.3 Data Card Module) ─── */}
-      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+      {/* â”€â”€â”€ Industries Grid â”€â”€â”€ */}
+      <section className="dark-section-b py-16 sm:py-20">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((ind) => {
@@ -78,30 +76,30 @@ export const IndustriesPage: React.FC = () => {
               return (
                 <div
                   key={ind.slug}
-                  className="bg-[#FFFFFF] rounded-[8px] border border-[#E2E8F0] p-6 sm:p-8 flex flex-col justify-between hover:border-[#CBD5E1] hover:shadow-xs transition-fin group text-left"
+                  className="dark-card p-6 sm:p-8 flex flex-col justify-between group text-left"
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-[4px] bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center group-hover:bg-[#008DDA] group-hover:text-white transition-colors duration-200 mb-5">
+                    <div className="dark-icon-bubble group-hover:bg-[rgba(7,86,165,0.45)] transition-colors mb-5">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight group-hover:text-[#008DDA] transition-colors">
+                    <h3 className="text-[18px] font-bold text-[#F0F4FF] tracking-tight group-hover:text-[#60ABFF] transition-colors">
                       {ind.title}
                     </h3>
-                    <p className="text-[14px] text-[#475569] mt-2.5 leading-relaxed">
+                    <p className="text-[14px] text-[#8BA4C8] mt-2.5 leading-relaxed">
                       {ind.desc}
                     </p>
-                    <div className="mt-5 pt-4 border-t border-[#F1F5F9] text-xs">
-                      <span className="font-mono text-[#008DDA] text-[11px] block uppercase font-bold tracking-wider mb-1">
+                    <div className="mt-5 pt-4 border-t border-white/[0.07] text-xs">
+                      <span className="font-mono text-[#60ABFF] text-[11px] block uppercase font-bold tracking-wider mb-1">
                         Verified Partners:
                       </span>
-                      <span className="text-[#64748B] leading-relaxed block">{ind.clients}</span>
+                      <span className="text-[#8BA4C8] leading-relaxed block">{ind.clients}</span>
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-[#F1F5F9]">
+                  <div className="mt-8 pt-4 border-t border-white/[0.07]">
                     <Link
                       to={`/industries/${ind.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008DDA] hover:text-[#0077B6] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#60ABFF] hover:text-[#F28C28] transition-colors"
                     >
                       <span>Explore industry solutions</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -118,3 +116,4 @@ export const IndustriesPage: React.FC = () => {
 }
 
 export default IndustriesPage
+

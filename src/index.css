@@ -1603,3 +1603,246 @@ textarea {
 .trust-marquee:hover {
   animation-play-state: paused;
 }
+
+/* ═══════════════════════════════════════════════════
+   PREMIUM DARK PAGE SYSTEM — shared across all public pages
+   Mirrors the landing page deep-space palette.
+   ═══════════════════════════════════════════════════ */
+
+/* ── Dark page root ── */
+.dark-page {
+  width: 100%;
+  background: transparent;   /* body already has the fixed gradient */
+  color: #F0F4FF;
+}
+
+/* ── Alternating section backgrounds ── */
+/* dark-A  → slightly lighter surface (card-like) */
+.dark-section-a {
+  background: rgba(26, 24, 80, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* dark-B  → deeper navy (true "trough") */
+.dark-section-b {
+  background: rgba(17, 39, 78, 0.40);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Hero header — most prominent */
+.dark-section-hero {
+  position: relative;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(26, 24, 80, 0.85) 0%, transparent 70%),
+    rgba(14, 13, 50, 0.70);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+}
+
+/* Subtle dot-grid overlay for hero sections */
+.dark-section-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* ── Dark page badge (replaces light pill) ── */
+.dark-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C8D8F0;
+}
+
+/* ── Dark glass cards ── */
+.dark-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.dark-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Dark icon bubble ── */
+.dark-icon-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(7, 86, 165, 0.25);
+  color: #60ABFF;
+  border: 1px solid rgba(96, 171, 255, 0.18);
+  flex-shrink: 0;
+  transition: background 200ms ease;
+}
+
+.dark-card:hover .dark-icon-bubble {
+  background: rgba(7, 86, 165, 0.45);
+}
+
+/* ── Dark divider ── */
+.dark-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Dark form inputs ── */
+.dark-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #F0F4FF;
+  font-size: 14px;
+  transition: border-color 180ms ease, background 180ms ease;
+  outline: none;
+}
+
+.dark-input::placeholder {
+  color: rgba(176, 196, 222, 0.45);
+}
+
+.dark-input:focus {
+  border-color: rgba(96, 171, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Dark select ── */
+.dark-select {
+  appearance: none;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #F0F4FF;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.dark-select option {
+  background: #14133B;
+  color: #F0F4FF;
+}
+
+.dark-select:focus {
+  border-color: rgba(96, 171, 255, 0.5);
+}
+
+/* ── Dark label ── */
+.dark-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8BA4C8;
+  margin-bottom: 6px;
+}
+
+/* ── Dark filter pill (toggle buttons) ── */
+.dark-pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #8BA4C8;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.dark-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #F0F4FF;
+}
+
+.dark-pill.is-active {
+  background: #0756A5;
+  border-color: #0756A5;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(7, 86, 165, 0.4);
+}
+
+/* ── Dark CTA banner ── */
+.dark-cta-banner {
+  padding: 40px 48px;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse 100% 100% at 50% 0%, rgba(7, 86, 165, 0.22) 0%, transparent 65%),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* ── Accent text colors ── */
+.dark-text-accent   { color: #F28C28; }
+.dark-text-blue     { color: #60ABFF; }
+.dark-text-muted    { color: #8BA4C8; }
+.dark-text-heading  { color: #F0F4FF; }
+
+/* ── Logo / partner card in dark context ── */
+.dark-logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.dark-logo-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.dark-logo-card img {
+  max-height: 48px;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: brightness(1.4) saturate(0.6);
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.dark-logo-card:hover img {
+  opacity: 1;
+  filter: brightness(1.6) saturate(0.8);
+}
+
+/* ── Section header group ── */
+.dark-section-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #60ABFF;
+  font-family: var(--font-mono);
+}
+

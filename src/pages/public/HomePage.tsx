@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { SEO } from '../../components/ui/SEO'
 import { HeroSection } from '../../features/marketing/HeroSection'
 import { TrustSection } from '../../features/marketing/TrustSection'
@@ -32,4 +32,5 @@ export const HomePage: React.FC = () => {
   );
 };
 export default HomePage
+
 

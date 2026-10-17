@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowDown,
@@ -150,7 +150,7 @@ const resources = [
 function PageHero({ page }: { page: CloudPageKey }) {
   const meta = pageMeta[page]
   return (
-    <section className="relative overflow-hidden border-b border-[#E2E8F0] bg-white py-14 sm:py-20">
+    <section className="relative overflow-hidden border-b border-[#E2E8F0] bg-transparent py-14 sm:py-20">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:radial-gradient(#0B1F33_1px,transparent_1px)] [background-size:24px_24px]" />
       <div className="section-container relative z-10">
         <Breadcrumbs current={meta.eyebrow} />
@@ -181,13 +181,13 @@ function ConceptualCloudVisual() {
     { label: 'Operations', icon: Workflow },
   ]
   return (
-    <figure className="mx-auto w-full max-w-xl rounded-lg border border-[#CBD5E1] bg-[#F7F9FA] p-5 sm:p-7">
+    <figure className="mx-auto w-full max-w-xl rounded-lg border border-white/20 bg-[#F7F9FA] p-5 sm:p-7">
       <figcaption className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#475569]"><Cloud size={16} className="text-[#008DDA]" aria-hidden="true" /> Conceptual cloud operations model</figcaption>
       <div className="grid grid-cols-2 gap-3">
-        {nodes.map(({ label, icon: Icon }) => <div key={label} className="flex min-h-20 items-center gap-3 border border-[#E2E8F0] bg-white p-4"><Icon className="h-5 w-5 shrink-0 text-[#008DDA]" aria-hidden="true" /><span className="text-sm font-semibold">{label}</span></div>)}
+        {nodes.map(({ label, icon: Icon }) => <div key={label} className="flex min-h-20 items-center gap-3 border border-[#E2E8F0] bg-transparent p-4"><Icon className="h-5 w-5 shrink-0 text-[#008DDA]" aria-hidden="true" /><span className="text-sm font-semibold">{label}</span></div>)}
       </div>
       <div className="my-4 flex items-center justify-center gap-2 text-[#E87916]"><span className="h-px flex-1 bg-[#CBD5E1]" /><ArrowDown size={18} aria-hidden="true" /><span className="h-px flex-1 bg-[#CBD5E1]" /></div>
-      <div className="flex items-center gap-3 border border-[#CBD5E1] bg-[#0B1F33] p-4 text-white"><Globe2 className="h-5 w-5 text-[#FDBA74]" aria-hidden="true" /><span className="text-sm font-semibold">Customer environments</span></div>
+      <div className="flex items-center gap-3 border border-white/20 bg-[#0B1F33] p-4 text-white"><Globe2 className="h-5 w-5 text-[#FDBA74]" aria-hidden="true" /><span className="text-sm font-semibold">Customer environments</span></div>
       <p className="mt-4 text-xs leading-5 text-[#64748B]">Illustrative concept only; this is not a live platform screenshot or a representation of production metrics.</p>
     </figure>
   )
@@ -240,7 +240,7 @@ function OverviewPage() {
       <PageHero page="overview" />
       <Section title="One connected approach to cloud operations." description="Cloud environments involve more than servers. Infrastructure, applications, networking, access, billing, backups, and support all need to work together. OptimaXCloud brings these operational concerns into one product experience, helping teams manage cloud services through a more consistent and structured workflow.">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map(({ title, text, href, icon: Icon }) => <Link key={title} to={href} className="group rounded-lg border border-[#E2E8F0] bg-white p-6 transition-colors hover:border-[#008DDA]/50">
+          {capabilities.map(({ title, text, href, icon: Icon }) => <Link key={title} to={href} className="group rounded-lg border border-[#E2E8F0] bg-transparent p-6 transition-colors hover:border-[#008DDA]/50">
             <Icon className="h-6 w-6 text-[#008DDA]" aria-hidden="true" /><h3 className="mt-4 text-lg font-semibold">{title}</h3><p className="mt-2 leading-6 text-[#64748B]">{text}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0B1F33]">Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
           </Link>)}
         </div>
@@ -253,7 +253,7 @@ function OverviewPage() {
             ['02', 'Provision infrastructure', 'Use the relevant provider or infrastructure workflow to establish the required environment.'],
             ['03', 'Deploy the application', 'Configure the application, networking, DNS, and operational requirements.'],
             ['04', 'Operate and support', 'Manage the environment through appropriate monitoring, backups, support, and operating procedures.'],
-          ].map(([number, title, text]) => <li key={number} className="border-l-2 border-[#E87916] bg-white p-5"><span className="font-mono text-xs font-semibold text-[#008DDA]">{number}</span><h3 className="mt-3 font-semibold">{title}</h3><p className="mt-2 leading-6 text-[#64748B]">{text}</p></li>)}
+          ].map(([number, title, text]) => <li key={number} className="border-l-2 border-[#E87916] bg-transparent p-5"><span className="font-mono text-xs font-semibold text-[#008DDA]">{number}</span><h3 className="mt-3 font-semibold">{title}</h3><p className="mt-2 leading-6 text-[#64748B]">{text}</p></li>)}
         </ol>
       </Section>
       <Section title="Built around the workloads organizations depend on." description="Workload suitability and deployment availability depend on specific requirements. Explore the planning considerations for each type.">
@@ -265,7 +265,7 @@ function OverviewPage() {
             ['Collaboration platforms', 'collaboration-open-source'],
             ['Healthcare and institutional systems', 'healthcare-institutional'],
             ['AI and specialized computing', 'ai-computing'],
-          ].map(([workload, anchor]) => <Link key={workload} to={`${root}/solutions/#${anchor}`} className="flex min-h-20 items-center justify-between gap-3 rounded-md border border-[#E2E8F0] bg-white p-4 font-medium hover:border-[#008DDA]/60">{workload}<ArrowUpRight className="h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" /></Link>)}
+          ].map(([workload, anchor]) => <Link key={workload} to={`${root}/solutions/#${anchor}`} className="flex min-h-20 items-center justify-between gap-3 rounded-md border border-[#E2E8F0] bg-transparent p-4 font-medium hover:border-[#008DDA]/60">{workload}<ArrowUpRight className="h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" /></Link>)}
         </div>
       </Section>
       <Section title="An integration strategy built for different infrastructure environments." description="The documented architecture aims to separate the customer-facing workspace from provider-specific infrastructure operations. Status and availability require confirmation for each implementation.">
@@ -284,8 +284,8 @@ function OverviewPage() {
 }
 
 function IntegrationCards({ compact = false }: { compact?: boolean }) {
-  return <div className="grid gap-4 md:grid-cols-3">{integrations.map((item) => <article key={item.name} className="flex flex-col rounded-lg border border-[#E2E8F0] bg-white p-5">
-    <div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold">{item.name}</h3><span className="max-w-48 rounded-sm bg-[#F1F5F9] px-2 py-1 text-[11px] font-medium text-[#475569]">Contact us to confirm availability</span></div>
+  return <div className="grid gap-4 md:grid-cols-3">{integrations.map((item) => <article key={item.name} className="flex flex-col rounded-lg border border-[#E2E8F0] bg-transparent p-5">
+    <div className="flex items-start justify-between gap-3"><h3 className="text-lg font-semibold">{item.name}</h3><span className="max-w-48 rounded-sm bg-transparent/[0.03] px-2 py-1 text-[11px] font-medium text-[#475569]">Contact us to confirm availability</span></div>
     <p className="mt-3 text-sm font-medium text-[#475569]">{item.role}</p><p className="mt-2 flex-1 leading-6 text-[#64748B]">{item.use}</p>
     {!compact && <p className="mt-4 border-t border-[#E2E8F0] pt-4 text-sm text-[#475569]">Contact us to confirm availability. The presence of a guide does not confirm an active production integration.</p>}
     <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold"><a href={item.official} className="inline-flex items-center gap-1.5 text-[#0B1F33] underline underline-offset-4 hover:text-[#008DDA]">Official website<ExternalLink size={13} aria-hidden="true" /></a><a href={item.guide} className="inline-flex items-center gap-1.5 text-[#0B1F33] underline underline-offset-4 hover:text-[#008DDA]">Product guide<ExternalLink size={13} aria-hidden="true" /></a></div>
@@ -301,7 +301,7 @@ function PlatformPage() {
     </Section>)}
     {sections.slice(4).map((section) => <Section key={section.title} title={section.title} description={section.text} />)}
     <Section title="A conceptual service workflow" description="The sequence below is a conceptual workflow. The live implementation and payment model should be confirmed for the selected service.">
-      <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{['Customer request', 'Plan validation', 'Order and payment', 'Provisioning job', 'Infrastructure provider', 'Application configuration', 'Validation', 'Service handover'].map((step, i) => <li key={step} className="flex items-center gap-3 border border-[#E2E8F0] bg-white p-4"><span className="font-mono text-xs font-bold text-[#008DDA]">{String(i + 1).padStart(2, '0')}</span><span className="font-medium">{step}</span></li>)}</ol>
+      <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{['Customer request', 'Plan validation', 'Order and payment', 'Provisioning job', 'Infrastructure provider', 'Application configuration', 'Validation', 'Service handover'].map((step, i) => <li key={step} className="flex items-center gap-3 border border-[#E2E8F0] bg-transparent p-4"><span className="font-mono text-xs font-bold text-[#008DDA]">{String(i + 1).padStart(2, '0')}</span><span className="font-medium">{step}</span></li>)}</ol>
     </Section>
     <CloudCTA title="Need a cloud environment for a specific workload?" text="Discuss your requirements and confirm which platform capabilities and provider options are available." secondary="Explore Integrations" to="/contact" />
   </>
@@ -332,7 +332,7 @@ function IntegrationsPage() {
         'Provisioning request to a provider deployment operation.',
         'Provider resource identifiers to platform service records.',
         'Provider results to job and service status.',
-      ].map((item) => <li key={item} className="flex items-start gap-3 border border-[#E2E8F0] bg-white p-4 leading-6 text-[#475569]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" />{item}</li>)}</ul>
+      ].map((item) => <li key={item} className="flex items-start gap-3 border border-[#E2E8F0] bg-transparent p-4 leading-6 text-[#475569]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" />{item}</li>)}</ul>
     </Section>
     <Section title="Documented integration technologies" description="These technologies describe possible roles in the integration approach, not confirmation of active production connections.">
       <IntegrationCards />
@@ -351,11 +351,11 @@ function SolutionsPage() {
       <div className="grid gap-4 md:grid-cols-2">{sections.map((section, index) => {
         const Icon = icons[index]
         const ids = ['websites-ecommerce', 'enterprise-applications', 'crm-business-tools', 'healthcare-institutional', 'ai-computing', 'collaboration-open-source']
-        return <article id={ids[index]} key={section.title} className="scroll-mt-24 rounded-lg border border-[#E2E8F0] bg-white p-6"><Icon className="h-6 w-6 text-[#008DDA]" aria-hidden="true" /><h3 className="mt-4 text-lg font-semibold">{section.title}</h3><p className="mt-2 leading-7 text-[#64748B]">{section.text}</p></article>
+        return <article id={ids[index]} key={section.title} className="scroll-mt-24 rounded-lg border border-[#E2E8F0] bg-transparent p-6"><Icon className="h-6 w-6 text-[#008DDA]" aria-hidden="true" /><h3 className="mt-4 text-lg font-semibold">{section.title}</h3><p className="mt-2 leading-7 text-[#64748B]">{section.text}</p></article>
       })}</div>
     </Section>
     <Section title="Workload requirements planning" description="Use these planning prompts to prepare for a technical discussion. They are not a self-service sizing calculator.">
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{['Application or workload', 'Estimated user count', 'CPU and memory needs', 'Storage requirements', 'Network requirements', 'Backup requirements', 'Availability expectations', 'Data location or compliance constraints'].map((item) => <div key={item} className="flex items-center gap-3 border border-[#E2E8F0] bg-white p-4"><Database className="h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" /><span className="text-sm font-medium">{item}</span></div>)}</div>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{['Application or workload', 'Estimated user count', 'CPU and memory needs', 'Storage requirements', 'Network requirements', 'Backup requirements', 'Availability expectations', 'Data location or compliance constraints'].map((item) => <div key={item} className="flex items-center gap-3 border border-[#E2E8F0] bg-transparent p-4"><Database className="h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" /><span className="text-sm font-medium">{item}</span></div>)}</div>
     </Section>
     <CloudCTA title="Not sure which environment your application needs?" text="Share your application requirements and discuss a suitable cloud approach with our team." primary="Discuss Your Workload" secondary="" />
   </>
@@ -366,7 +366,7 @@ function MigrationPage() {
   return <>
     <PageHero page="migration" />
     <Section title="A structured migration, from assessment to support" description="A migration plan is specific to each current environment and target service. We work through key dependencies before cutover.">
-      <div className="grid gap-4 md:grid-cols-2">{sections.map((section) => <article key={section.title} className="rounded-lg border border-[#E2E8F0] bg-white p-6"><h3 className="text-lg font-semibold">{section.title}</h3><p className="mt-3 leading-7 text-[#64748B]">{section.text}</p>{section.bullets && <ul className="mt-4 space-y-2">{section.bullets.map((bullet) => <li key={bullet} className="flex items-start gap-2 text-sm leading-6 text-[#475569]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" />{bullet}</li>)}</ul>}</article>)}</div>
+      <div className="grid gap-4 md:grid-cols-2">{sections.map((section) => <article key={section.title} className="rounded-lg border border-[#E2E8F0] bg-transparent p-6"><h3 className="text-lg font-semibold">{section.title}</h3><p className="mt-3 leading-7 text-[#64748B]">{section.text}</p>{section.bullets && <ul className="mt-4 space-y-2">{section.bullets.map((bullet) => <li key={bullet} className="flex items-start gap-2 text-sm leading-6 text-[#475569]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" />{bullet}</li>)}</ul>}</article>)}</div>
     </Section>
     <Section title="IONOS and Plesk migration" description="The OptimaXCloud migration guide provides a reference for planning Plesk subscriptions, website files, databases, domains, email accounts, DNS, and SSL certificates. Compatibility depends on the source configuration and should be assessed before migration.">
       <a href="https://be.optimaxsuites.com/iaas/xcw/migration-ionos-plesk.html" className="inline-flex items-center gap-2 font-semibold text-[#0B1F33] underline underline-offset-4 hover:text-[#008DDA]">Read the migration guide<ExternalLink size={15} aria-hidden="true" /></a>
@@ -380,8 +380,8 @@ function MigrationPage() {
 
 function PricingPage() {
   const plans = [
-    { title: 'Starter Cloud', price: '₦35,000–₦60,000', period: 'per month', description: 'Suitable for evaluating a small, managed cloud environment.', features: ['One managed instance', 'DNS and public IP workflow', 'Basic backup policy'] },
-    { title: 'Business Cloud', price: '₦95,000–₦180,000', period: 'per month', description: 'For business workloads requiring a more substantial managed environment.', features: ['Production compute', 'Marketplace deployment support', 'Support and operations workflow'] },
+    { title: 'Starter Cloud', price: 'â‚¦35,000â€“â‚¦60,000', period: 'per month', description: 'Suitable for evaluating a small, managed cloud environment.', features: ['One managed instance', 'DNS and public IP workflow', 'Basic backup policy'] },
+    { title: 'Business Cloud', price: 'â‚¦95,000â€“â‚¦180,000', period: 'per month', description: 'For business workloads requiring a more substantial managed environment.', features: ['Production compute', 'Marketplace deployment support', 'Support and operations workflow'] },
     { title: 'GPU / AI', price: 'Custom pricing', period: 'based on assessment', description: 'Specialized workloads requiring assessment of the infrastructure and capacity needed.', features: ['GPU-capable plans', 'Quota and governance controls', 'Observability and backup options'] },
   ]
   const faqs = [
@@ -396,11 +396,11 @@ function PricingPage() {
   return <>
     <PageHero page="pricing" />
     <Section title="Published indicative plans" description="The following ranges reproduce the indicative prices specified for OptimaXCloud. Confirm the current approved commercial offering and full quotation before publication or purchase.">
-      <div className="grid gap-4 lg:grid-cols-3">{plans.map((plan) => <article key={plan.title} className="flex flex-col rounded-lg border border-[#E2E8F0] bg-white p-6"><h3 className="text-lg font-semibold">{plan.title}</h3><p className="mt-5 text-2xl font-bold tracking-tight text-[#0B1F33]">{plan.price}</p><p className="text-sm text-[#64748B]">{plan.period}</p><p className="mt-4 min-h-12 leading-6 text-[#475569]">{plan.description}</p><ul className="mt-5 flex-1 space-y-3 border-t border-[#E2E8F0] pt-5">{plan.features.map((feature) => <li key={feature} className="flex items-start gap-2 text-sm leading-6 text-[#475569]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" />{feature}</li>)}</ul><Link className="cloud-outline-button mt-6 w-full" to="/contact">Request a Cloud Quote<ArrowRight size={15} aria-hidden="true" /></Link></article>)}</div>
-      <p className="mt-6 border-l-4 border-[#E87916] bg-white p-4 text-sm leading-6 text-[#475569]"><strong className="text-[#0B1F33]">Pricing clarification:</strong> Published prices are indicative. Final pricing may vary depending on the infrastructure provider, service configuration, software package, support requirements, and partner arrangements. Confirm the complete quotation before placing an order.</p>
+      <div className="grid gap-4 lg:grid-cols-3">{plans.map((plan) => <article key={plan.title} className="flex flex-col rounded-lg border border-[#E2E8F0] bg-transparent p-6"><h3 className="text-lg font-semibold">{plan.title}</h3><p className="mt-5 text-2xl font-bold tracking-tight text-[#0B1F33]">{plan.price}</p><p className="text-sm text-[#64748B]">{plan.period}</p><p className="mt-4 min-h-12 leading-6 text-[#475569]">{plan.description}</p><ul className="mt-5 flex-1 space-y-3 border-t border-[#E2E8F0] pt-5">{plan.features.map((feature) => <li key={feature} className="flex items-start gap-2 text-sm leading-6 text-[#475569]"><Check className="mt-1 h-4 w-4 shrink-0 text-[#008DDA]" aria-hidden="true" />{feature}</li>)}</ul><Link className="cloud-outline-button mt-6 w-full" to="/contact">Request a Cloud Quote<ArrowRight size={15} aria-hidden="true" /></Link></article>)}</div>
+      <p className="mt-6 border-l-4 border-[#E87916] bg-transparent p-4 text-sm leading-6 text-[#475569]"><strong className="text-[#0B1F33]">Pricing clarification:</strong> Published prices are indicative. Final pricing may vary depending on the infrastructure provider, service configuration, software package, support requirements, and partner arrangements. Confirm the complete quotation before placing an order.</p>
     </Section>
     <Section title="Pricing questions">
-      <div className="mx-auto max-w-3xl divide-y divide-[#E2E8F0] rounded-lg border border-[#E2E8F0] bg-white">{faqs.map(([question, answer]) => <details key={question} className="group p-5"><summary className="cursor-pointer list-none pr-7 font-semibold marker:hidden focus-visible:rounded-sm">{question}<span className="float-right text-[#008DDA]" aria-hidden="true">+</span></summary><p className="mt-3 leading-7 text-[#64748B]">{answer}</p></details>)}</div>
+      <div className="mx-auto max-w-3xl divide-y divide-[#E2E8F0] rounded-lg border border-[#E2E8F0] bg-transparent">{faqs.map(([question, answer]) => <details key={question} className="group p-5"><summary className="cursor-pointer list-none pr-7 font-semibold marker:hidden focus-visible:rounded-sm">{question}<span className="float-right text-[#008DDA]" aria-hidden="true">+</span></summary><p className="mt-3 leading-7 text-[#64748B]">{answer}</p></details>)}</div>
       <p className="mt-5 text-sm text-[#64748B]">Payment methods and checkout availability depend on the relevant flow, currency, and implementation. No recurring billing, automatic renewals, refunds, or payment method availability is implied here.</p>
     </Section>
     <CloudCTA title="Need a plan tailored to your organization?" text="Discuss your workload, service requirements, and indicative budget with our team." primary="Request a Cloud Quote" secondary="" />
@@ -411,7 +411,7 @@ function DocumentationPage() {
   return <>
     <PageHero page="documentation" />
     <Section title="Product information, guides, and access" description="The resources below point to the original OptimaXCloud documentation and product pages. External links open in the current tab.">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{resources.map((resource) => <article key={resource.href} className="flex flex-col rounded-lg border border-[#E2E8F0] bg-white p-5">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{resources.map((resource) => <article key={resource.href} className="flex flex-col rounded-lg border border-[#E2E8F0] bg-transparent p-5">
         <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#008DDA]">{resource.category}</span><h3 className="mt-3 text-lg font-semibold">{resource.title}</h3><p className="mt-2 flex-1 leading-6 text-[#64748B]">{resource.text}</p><a href={resource.href} className="mt-5 inline-flex min-h-11 items-center gap-2 font-semibold text-[#0B1F33] underline underline-offset-4 hover:text-[#008DDA]">Visit {resource.title}<ExternalLink size={14} aria-hidden="true" /></a>
       </article>)}</div>
     </Section>
@@ -420,7 +420,7 @@ function DocumentationPage() {
 }
 
 function ArchitectureLayer({ title, items, icon: Icon }: { title: string; items: string[]; icon: React.ElementType }) {
-  return <div className="rounded-lg border border-[#CBD5E1] bg-white p-5 shadow-sm sm:p-6">
+  return <div className="rounded-lg border border-white/20 bg-transparent p-5 shadow-sm sm:p-6">
     <div className="flex items-center gap-3"><Icon className="h-5 w-5 text-[#008DDA]" aria-hidden="true" /><h3 className="font-semibold uppercase tracking-wide text-[#0B1F33]">{title}</h3></div>
     <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">{items.map((item) => <li key={item} className="border border-[#E2E8F0] bg-[#F7F9FA] px-3 py-2 text-sm text-[#475569]">{item}</li>)}</ul>
   </div>
@@ -446,3 +446,5 @@ export function OptimaXCloudPage({ page }: { page: CloudPageKey }) {
     {content}
   </div>
 }
+
+

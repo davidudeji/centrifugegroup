@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SEO } from '../../components/ui/SEO'
 import { mockJobs } from '../../data/mockData'
@@ -14,45 +14,45 @@ export const JobsPage: React.FC = () => {
       : mockJobs.filter((j) => j.department === selectedDept)
 
   return (
-    <div className="w-full text-left bg-[#F5F7FA] text-[#1A1A1A]">
+    <div className="dark-page">
       <SEO
         title="Open Positions | Centrifuge Careers"
         description="Explore open engineering, product design, and health informatics roles at Centrifuge Group."
       />
 
-      {/* ─── Hero Header (UI/UX Spec §1.1 & §4.1) ─── */}
-      <section className="bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-20 border-b border-[#E2E8F0] relative overflow-hidden">
+      {/* â”€â”€â”€ Hero Header (UI/UX Spec Â§1.1 & Â§4.1) â”€â”€â”€ */}
+      <section className="dark-section-hero pt-32 pb-20 sm:pt-36 sm:pb-24">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0F2C59_1px,transparent_1px)] [background-size:24px_24px]" />
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <Link
             to="/careers"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#64748B] hover:text-[#008DDA] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8BA4C8] hover:text-[#60ABFF] transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Careers Overview</span>
           </Link>
-          <h1 className="text-[32px] sm:text-[44px] font-bold text-[#0F2C59] tracking-tight leading-[1.2]">
+          <h1 className="text-[32px] sm:text-[44px] font-bold text-[#F0F4FF] tracking-tight leading-[1.2]">
             Job Openings at Centrifuge Group
           </h1>
-          <p className="text-[16px] text-[#475569] max-w-2xl leading-relaxed">
+          <p className="text-[16px] text-[#8BA4C8] max-w-2xl leading-relaxed">
             We are actively expanding our software engineering, health informatics, and product design teams across Abuja and remote African hubs.
           </p>
         </div>
       </section>
 
-      {/* ─── Main Content (UI/UX Spec §3.3 Data Card Module) ─── */}
-      <section className="py-16 sm:py-20 bg-[#F5F7FA] border-b border-[#E2E8F0]">
+      {/* â”€â”€â”€ Main Content (UI/UX Spec Â§3.3 Data Card Module) â”€â”€â”€ */}
+      <section className="dark-section-b py-16 sm:py-20">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Department Filter */}
-          <div className="flex flex-wrap gap-2 pb-6 border-b border-[#E2E8F0]">
+          <div className="flex flex-wrap gap-2 pb-6 border-b border-white/[0.07]">
             {departments.map((dept) => (
               <button
                 key={dept}
                 onClick={() => setSelectedDept(dept)}
                 className={`text-xs font-semibold px-3.5 py-1.5 rounded-[4px] transition-colors cursor-pointer ${selectedDept === dept
                     ? 'bg-[#008DDA] text-white shadow-xs'
-                    : 'bg-[#FFFFFF] text-[#475569] border border-[#CBD5E1] hover:border-[#008DDA] hover:text-[#008DDA]'
+                    : 'bg-[#FFFFFF] text-[#8BA4C8] border border-white/20 hover:border-[#008DDA] hover:text-[#60ABFF]'
                   }`}
               >
                 {dept}
@@ -66,22 +66,22 @@ export const JobsPage: React.FC = () => {
             {filtered.map((job) => (
               <div
                 key={job.id}
-                className="bg-[#FFFFFF] p-6 sm:p-7 rounded-[8px] border border-[#E2E8F0] hover:border-[#CBD5E1] hover:shadow-xs transition-fin flex flex-col sm:flex-row sm:items-center justify-between gap-5 text-left"
+                className="bg-white/[0.04] p-6 sm:p-7 rounded-[8px] border border-white/[0.09] hover:border-white/20 hover:shadow-xs transition-fin flex flex-col sm:flex-row sm:items-center justify-between gap-5 text-left"
               >
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 rounded-[4px] border border-[#008DDA]/30 text-[#008DDA] bg-[#008DDA]/10">
+                    <span className="text-[11px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 rounded-[4px] border border-[#008DDA]/30 text-[#60ABFF] bg-[#008DDA]/10">
                       {job.department}
                     </span>
-                    <span className="text-xs font-mono text-[#64748B]">
+                    <span className="text-xs font-mono text-[#8BA4C8]">
                       {job.type}
                     </span>
                   </div>
-                  <h3 className="text-[18px] font-bold text-[#0F2C59] tracking-tight">
+                  <h3 className="text-[18px] font-bold text-[#F0F4FF] tracking-tight">
                     {job.title}
                   </h3>
-                  <div className="flex items-center gap-1.5 text-xs text-[#64748B] font-mono">
-                    <MapPin className="h-3.5 w-3.5 text-[#008DDA]" />
+                  <div className="flex items-center gap-1.5 text-xs text-[#8BA4C8] font-mono">
+                    <MapPin className="h-3.5 w-3.5 text-[#60ABFF]" />
                     <span>{job.location}</span>
                   </div>
                 </div>
@@ -103,3 +103,6 @@ export const JobsPage: React.FC = () => {
 }
 
 export default JobsPage
+
+
+
