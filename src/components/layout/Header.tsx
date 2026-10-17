@@ -195,13 +195,13 @@ export const Header: React.FC = () => {
   return (
     <div
       ref={shellRef}
-      className="site-header-shell relative z-50"
+      className="site-header-shell"
       onMouseEnter={cancelMenuClose}
       onMouseLeave={scheduleMenuClose}
     >
       <header
-        className={`site-header fixed inset-x-0 top-0 z-50 border-b border-white/10 text-white transition-shadow duration-200 ${
-          scrolled ? 'shadow-[0_10px_28px_rgba(7,31,58,0.2)]' : ''
+        className={`site-header text-white ${
+          scrolled ? 'is-scrolled' : ''
         }`}
       >
         <div className="site-header__bar">
@@ -339,7 +339,7 @@ export const Header: React.FC = () => {
         </AnimatePresence>
       </header>
 
-      <div className="site-header__spacer" aria-hidden="true" />
+
 
       <AnimatePresence>
         {mobileNavigationOpen && (

@@ -3,16 +3,42 @@ import { verifiedClients } from '../../assets'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
-const STATS = [
-  { num: "10+", label: "Federal institutions" },
-  { num: "17+", label: "Years engineering" },
-  { num: "6", label: "Sectors served" },
-]
+// Triplicate for seamless infinite loop — the CSS animates translateX(-100%/3)
+const TRACK = [...verifiedClients, ...verifiedClients, ...verifiedClients]
 
 export const TrustSection: React.FC = () => {
   return (
-    <section className="bg-white border-b border-[#E2E8F0] py-14 lg:py-18">
-      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative overflow-hidden border-b py-14 lg:py-20"
+      style={{
+        background: 'linear-gradient(160deg, #14133B 0%, #11274E 60%, #11143C 100%)',
+        borderColor: 'rgba(255,255,255,0.07)',
+      }}
+    >
+      {/* Subtle grid texture */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+          maskImage: 'radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 85%)',
+        }}
+      />
+      {/* Accent glow */}
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          top: '-30%', right: '-10%',
+          width: '55%', height: '120%',
+          background: 'radial-gradient(ellipse at top right, rgba(17,39,78,0.45) 0%, transparent 65%)',
+        }}
+      />
+
+      {/* ── Contained header ── */}
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
 
         {/* Top strip: label + link */}
         <div className="flex flex-col items-start gap-3 mb-10 sm:flex-row sm:items-center sm:justify-between">
@@ -24,75 +50,93 @@ export const TrustSection: React.FC = () => {
           </div>
           <Link
             to="/clients"
-            className="inline-flex shrink-0 items-center gap-1.5 text-[0.8125rem] font-semibold text-[#0756A5] hover:text-[#073B70] transition-colors group"
+            className="inline-flex shrink-0 items-center gap-1.5 text-[0.8125rem] font-semibold text-blue-300 hover:text-white transition-colors group"
           >
             <span>View all clients</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
 
-        {/* Split layout: heading left + logos right */}
-        <div className="grid gap-10 lg:grid-cols-[1fr_2fr] lg:gap-14 lg:items-center">
-
-          {/* Left: heading + stats */}
-          <div>
-            <h2 className="text-[1.75rem] sm:text-[2.125rem] font-bold text-[#0F2C59] tracking-tight leading-tight">
-              Trusted by Federal Ministries, Regulators & Multinationals
-            </h2>
-            <p className="mt-4 text-[1rem] leading-[1.75] text-[#475569]">
-              From national healthcare informatics to enterprise technology for energy and regulatory bodies, our systems operate at institutional scale.
-            </p>
-
-            {/* Stats */}
-            <div className="mt-8 flex flex-wrap gap-8">
-              {STATS.map(({ num, label }) => (
-                <div key={label} className="flex flex-col gap-1">
-                  <span className="text-[2rem] font-extrabold tracking-[-0.04em] text-[#0756A5] leading-none">{num}</span>
-                  <span className="text-[0.875rem] text-[#64748B]">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: client logos */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
-            {verifiedClients.slice(0, 8).map((client) => (
-              <div
-                key={client.id}
-                title={`${client.name} — ${client.role}`}
-                className="group flex flex-col items-center justify-center gap-2 rounded-[10px] border border-[#E8EDF3] bg-[#FAFBFC] p-4 transition-all duration-200 hover:border-[#0756A5]/20 hover:bg-white hover:shadow-[0_8px_24px_rgba(7,86,165,0.07)]"
-              >
-                <div className="flex h-11 w-full items-center justify-center">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="max-h-full max-w-[100px] object-contain grayscale opacity-60 transition-all duration-200 group-hover:grayscale-0 group-hover:opacity-100"
-                  />
-                </div>
-                <span className="text-center text-[10px] font-medium leading-tight text-[#64748B] line-clamp-2 group-hover:text-[#0F2C59] transition-colors">
-                  {client.name}
-                </span>
-              </div>
-            ))}
-          </div>
+        {/* Heading block */}
+        <div className="max-w-[520px] mb-12">
+          <h2 className="text-[1.75rem] sm:text-[2.125rem] font-bold tracking-tight leading-tight text-white">
+            Trusted by Federal Ministries, Regulators &amp; Multinationals
+          </h2>
+          <p className="mt-4 text-[1rem] leading-[1.75]" style={{ color: 'rgba(191,219,254,0.65)' }}>
+            From national healthcare informatics to enterprise technology for energy and
+            regulatory bodies, our systems operate at institutional scale.
+          </p>
         </div>
+      </div>
 
-        {/* Bottom banner */}
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 rounded-[10px] border border-[#E8EDF3] bg-[#F5F8FC] px-6 py-4 text-[0.875rem]">
-          <span className="text-[#475569]">
-            Enterprise Technology Partner · <span className="font-semibold text-[#102A43]">Abuja, Nigeria</span>
-          </span>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-1.5 font-semibold text-[#0756A5] hover:text-[#073B70] transition-colors group"
-          >
-            <span>Start a conversation</span>
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+      {/* ── Full-width infinite marquee ── */}
+      <div className="relative w-full overflow-hidden" aria-label="Trusted client logos">
+
+        {/* Left edge fade */}
+        <div
+          className="absolute left-0 top-0 bottom-0 z-10 pointer-events-none"
+          style={{
+            width: '100px',
+            background: 'linear-gradient(90deg, #14133B 0%, transparent 100%)',
+          }}
+        />
+        {/* Right edge fade */}
+        <div
+          className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
+          style={{
+            width: '100px',
+            background: 'linear-gradient(270deg, #11274E 0%, transparent 100%)',
+          }}
+        />
+
+        {/* Scrolling track — animation defined in index.css as .trust-marquee */}
+        <div className="trust-marquee py-2">
+          {TRACK.map((client, i) => (
+            <div
+              key={`${client.id}-${i}`}
+              className="group flex-shrink-0 flex flex-col items-center justify-center gap-3 rounded-[12px] mx-3 transition-all duration-300 hover:scale-[1.04]"
+              style={{
+                width: '160px',
+                padding: '20px 18px',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.09)',
+              }}
+              title={client.name}
+            >
+              {/* Image: natural colors, slightly desaturated, full opacity on hover */}
+              <div className="flex h-12 w-full items-center justify-center overflow-hidden rounded-[6px]">
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-h-full max-w-[110px] object-contain transition-all duration-300"
+                  style={{
+                    opacity: 0.72,
+                    filter: 'grayscale(0.3) brightness(1.1)',
+                  }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget
+                    el.style.opacity = '1'
+                    el.style.filter = 'grayscale(0) brightness(1.25)'
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget
+                    el.style.opacity = '0.72'
+                    el.style.filter = 'grayscale(0.3) brightness(1.1)'
+                  }}
+                />
+              </div>
+              <span
+                className="text-center text-[10px] font-medium leading-tight line-clamp-2"
+                style={{ color: 'rgba(191,219,254,0.5)' }}
+              >
+                {client.name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TrustSection;
+export default TrustSection

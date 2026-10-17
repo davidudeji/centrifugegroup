@@ -112,7 +112,23 @@
   --font-size-hero: clamp(2.25rem, 4.6vw, 4rem);
   --font-size-section: clamp(1.875rem, 3.2vw, 2.75rem);
   --font-size-body: 0.875rem;
-  color-scheme: light;
+  color-scheme: dark;
+
+  /* ── Premium dark palette ── */
+  --deep-indigo: #14133B;
+  --deep-navy: #11274E;
+  --deep-base: #11143C;
+  --deep-indigo-mid: #1A1850;
+  --deep-navy-surface: #162140;
+  --deep-card: rgba(255,255,255,0.04);
+  --deep-border: rgba(255,255,255,0.08);
+
+  /* ── Override surface/background to dark palette ── */
+  --color-background: #11143C;
+  --color-surface: #14133B;
+  --color-text-primary: #F0F4FF;
+  --color-text-secondary: #8BA4C8;
+  --color-border: rgba(255,255,255,0.09);
 }
 
 * {
@@ -121,8 +137,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
+  background-color: var(--deep-indigo);
+  color: #F0F4FF;
   font-family: var(--font-inter);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
@@ -131,8 +147,14 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
+  /* Deep-space gradient: indigo → navy → base, flowing top-to-bottom */
+  background:
+    radial-gradient(ellipse 120% 60% at 50% 0%,   rgba(26,24,80,0.72) 0%, transparent 65%),
+    radial-gradient(ellipse 80%  50% at 80% 55%,  rgba(17,39,78,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 70%  55% at 10% 70%,  rgba(20,19,59,0.60) 0%, transparent 65%),
+    linear-gradient(175deg, #14133B 0%, #11143C 38%, #11274E 72%, #14133B 100%);
+  background-attachment: fixed;
+  color: #F0F4FF;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -234,7 +256,41 @@ img {
 }
 
 .site-footer {
-  background: var(--brand-blue-dark);
+  /* Footer uses the deepest anchor of the palette with a frosted depth layer */
+  position: relative;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(17,39,78,0.70) 0%, transparent 70%),
+    linear-gradient(180deg, #0D1030 0%, #0A0D28 60%, #080C22 100%);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+
+/* Subtle top-edge glow for the footer */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(242,140,40,0.55) 30%, rgba(100,160,255,0.35) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Ambient light blob behind footer content */
+.site-footer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 40% at 20% 50%, rgba(17,39,78,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 80% 30%, rgba(20,19,59,0.40) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.site-footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 .site-footer h4 {
@@ -250,12 +306,28 @@ img {
 }
 
 .site-header {
-  height: 72px;
-  background: var(--brand-blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 50;
+  background: transparent;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    backdrop-filter 220ms ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(4, 15, 35, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 28px rgba(4, 15, 35, 0.28);
 }
 
 .site-header__bar {
-  height: 72px;
+  height: 80px;
 }
 
 .site-header__inner {
@@ -431,10 +503,7 @@ img {
   display: none;
 }
 
-.site-header__spacer {
-  display: block;
-  height: 72px;
-}
+/* Spacer removed — header now overlays hero */
 
 .site-mega-menu {
   position: absolute;
@@ -622,9 +691,10 @@ img {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  /* Reduce motion for non-essential UI transitions only */
+  *:not(.trust-marquee):not(.floating-card):not(.trust-marquee *),
+  *:not(.trust-marquee):not(.floating-card):not(.trust-marquee *)::before,
+  *:not(.trust-marquee):not(.floating-card):not(.trust-marquee *)::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -668,7 +738,7 @@ img {
 
   .site-mobile-nav {
     position: fixed;
-    inset: 72px 0 0;
+    inset: 80px 0 0;
     z-index: 60;
     display: flex;
     flex-direction: column;
@@ -1412,16 +1482,16 @@ textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #0D1030;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: rgba(100,140,200,0.35);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: rgba(100,140,200,0.58);
 }
 
 @keyframes dataFlashAnimation {
@@ -1450,14 +1520,13 @@ textarea {
   letter-spacing: -0.02em;
 }
 
+/* prefers-reduced-motion — scoped, does NOT kill marquee or float animations */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 
-  *,
-  *::before,
-  *::after {
+  *:not(.trust-marquee):not(.floating-card):not(.trust-marquee *),
+  *:not(.trust-marquee):not(.floating-card):not(.trust-marquee *)::before,
+  *:not(.trust-marquee):not(.floating-card):not(.trust-marquee *)::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
@@ -1516,4 +1585,21 @@ textarea {
   50% {
     transform: translateY(-8px);
   }
+}
+
+/* ── Trust section marquee ── */
+@keyframes trustScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
+
+.trust-marquee {
+  display: flex;
+  width: max-content;
+  animation: trustScroll 38s linear infinite;
+  will-change: transform;
+}
+
+.trust-marquee:hover {
+  animation-play-state: paused;
 }

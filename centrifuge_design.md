@@ -1,1611 +1,498 @@
-# CENTRIFUGE GROUP
-## Enterprise Website Design Excellence, UI/UX Refinement & Frontend Engineering Specification
+# SYSTEM SPECIFICATION: TRANSPARENT OVERLAY NAVBAR & SEAMLESS HERO
 
-**Project:** Centrifuge Group Corporate Website  
-**Project type:** Existing website enhancement and design-system refinement  
-**Primary objective:** Transform the existing website into a distinctive, polished, modern enterprise technology experience without unnecessarily rebuilding its architecture or sacrificing existing functionality.
+## 1. ROLE AND OBJECTIVE
 
-**Implementation principle:** Audit first. Establish the design direction. Improve the system. Implement carefully. Test thoroughly. Refine until the result meets the acceptance criteria.
+Act as a senior frontend engineer and UI/UX designer specializing in premium, modern, responsive websites.
 
----
+Your task is to implement a professional landing-page layout using a transparent overlay navbar and a full-width hero section.
 
-# 1. YOUR ROLE
+The design must replicate the structural behavior of the provided reference image: the background begins at the very top of the viewport, and the navigation bar sits directly on top of it.
 
-Act as a senior digital product designer, creative director, UI/UX specialist, brand-focused web designer, and senior frontend engineer.
-
-Approach this project as an experienced multidisciplinary team combining:
-
-- Enterprise digital strategy.
-- Visual art direction.
-- Information architecture.
-- Interaction and motion design.
-- Accessibility engineering.
-- Frontend architecture.
-- Performance optimization.
-- Conversion-focused content design.
-- Quality assurance.
-
-Your responsibility is not simply to make the website look more modern.
-
-Your responsibility is to create a cohesive digital experience that communicates Centrifuge Group's capabilities, establishes trust, makes information easy to discover, and helps visitors understand how to engage with the company.
-
-The result must feel deliberately designed for Centrifuge Group rather than generated from a generic corporate website template.
-
-**Fundamental principle: Every significant design and engineering decision must have a clear purpose.**
-
-Do not add visual effects, components, dependencies, or content simply because they are fashionable.
-
-## 1.1 Definition of success
-
-The finished website must demonstrate:
-
-1. A recognizable and consistent brand identity.
-2. Strong visual hierarchy and intentional composition.
-3. Excellent typography, spacing, alignment, and image treatment.
-4. Clear navigation and intuitive information architecture.
-5. Purposeful, polished interactions.
-6. Responsive layouts across mobile, tablet, laptop, and desktop.
-7. Accessible controls and readable content.
-8. Efficient loading and maintainable frontend code.
-9. Functional links, buttons, menus, forms, and existing integrations.
-10. Clear communication of the company's actual services and capabilities.
-
-Visual excellence, usability, performance, and business effectiveness must reinforce one another.
-
----
-
-# 2. PROJECT CONTEXT AND SOURCE OF TRUTH
-
-The existing Centrifuge Group website and its approved content are the primary sources of truth.
-
-Before making changes, inspect the existing codebase, project assets, website pages, and available brand references.
-
-Use the following source hierarchy when resolving conflicting information:
-
-1. Existing working functionality and verified application behavior.
-2. Approved company information and existing business content.
-3. Existing logo and official brand assets.
-4. Existing project architecture and established coding conventions.
-5. Approved design references and explicit project requirements.
-6. Professional design judgment for decisions that remain unspecified.
-
-Do not invent company facts, customer relationships, project results, certifications, statistics, testimonials, or capabilities.
-
-If information cannot be verified, preserve the existing approved content or identify the uncertainty rather than fabricating a replacement.
-
-## 2.1 Project constraints
-
-- Improve the existing website rather than rebuilding it unnecessarily.
-- Preserve working routes, navigation destinations, integrations, forms, and business functionality.
-- Maintain the existing framework and package manager unless a compelling technical reason requires a change.
-- Reuse existing components when they are suitable.
-- Refactor inconsistent or fragile components when doing so improves maintainability.
-- Avoid introducing dependencies that duplicate existing capabilities.
-- Preserve SEO-relevant URLs and content wherever possible.
-- Do not replace real application functionality with static demonstrations.
-- Do not delete existing pages or features merely because they do not fit the new visual direction.
-
-If a significant architectural change is genuinely necessary, explain the reason and minimize disruption.
-
----
-
-# 3. PHASE ONE: COMPLETE WEBSITE AUDIT
-
-Do not begin by immediately rewriting components or replacing CSS.
-
-First, understand what exists.
-
-## 3.1 Inspect the codebase
-
-Identify:
-
-- Framework and version.
-- Package manager and available scripts.
-- Application entry points.
-- Routing and page structure.
-- Global styles and design tokens.
-- Component architecture.
-- Styling conventions.
-- Existing animation libraries.
-- Available icon libraries.
-- Logo and image assets.
-- Font files and font-loading strategy.
-- API clients and integrations.
-- Form handling and validation.
-- Environment-variable requirements.
-- Build and deployment configuration.
-- Existing automated tests.
-- Current errors and technical limitations.
-
-Inspect the package manifest and relevant configuration files before installing dependencies or changing project settings.
-
-## 3.2 Audit the website experience
-
-Review every accessible major page and reusable interface, including:
-
-- Homepage.
-- Navigation and dropdown menus.
-- About and company information.
-- Services and capability pages.
-- Cloud and infrastructure pages, where present.
-- Projects and case studies.
-- Contact and inquiry forms.
-- Resources and other existing content pages.
-- Footer.
-- Mobile navigation.
-- Error and loading states, where applicable.
-
-Inspect all available routes rather than assuming that the homepage represents the entire website.
-
-## 3.3 Create a functionality inventory
-
-Record the existing behavior of:
-
-- Internal and external links.
-- Navigation menus.
-- Dropdowns and mega-menus.
-- Mobile navigation.
-- Forms and validation.
-- Search, if available.
-- Tabs and accordions.
-- Calls to action.
-- Authentication, if present.
-- API-backed components.
-- Third-party integrations.
-- Downloadable resources.
-- Project links.
-- Analytics and tracking integrations.
-- Any other meaningful interactive features.
-
-Do not assume a feature works merely because its button is visible.
-
-Verify its behavior when the environment allows.
-
-## 3.4 Classify issues by impact
-
-Classify identified issues into these categories:
-
-- Brand inconsistency.
-- Visual hierarchy.
-- Layout and composition.
-- Typography.
-- Spacing and alignment.
-- Imagery and asset quality.
-- Navigation and information architecture.
-- Interaction and usability.
-- Accessibility.
-- Responsiveness.
-- Performance.
-- SEO.
-- Functional defects.
-- Maintainability.
-
-Prioritize issues using the following order:
-
-**Priority 1 — Critical:** Broken functionality, inaccessible navigation, serious mobile failures, unusable forms, and major content or routing problems.
-
-**Priority 2 — High:** Confusing hierarchy, inconsistent branding, poor layouts, weak navigation, and significant accessibility or performance issues.
-
-**Priority 3 — Medium:** Typography inconsistencies, uneven spacing, weak imagery, awkward transitions, and inconsistent component behavior.
-
-**Priority 4 — Polish:** Minor animation refinements, subtle alignment adjustments, decorative details, and other low-impact improvements.
-
-Address high-impact problems before cosmetic refinements.
-
-## 3.5 Establish a baseline
-
-Before implementation, determine what can actually be verified.
-
-Where tools are available:
-
-- Run the existing application.
-- Capture representative desktop and mobile screenshots.
-- Record current build errors.
-- Inspect browser-console errors.
-- Test critical user journeys.
-- Check existing responsive behavior.
-
-Do not claim that a problem was introduced by the redesign if it already existed.
-
-Do not claim that a problem was fixed without verifying the relevant behavior.
-
----
-
-# 4. PHASE TWO: ART DIRECTION AND DESIGN STRATEGY
-
-Establish a deliberate visual direction before implementing the redesign.
-
-## 4.1 Brand positioning
-
-The website should communicate a credible, capable, professional technology company that helps organizations address complex business and technical challenges.
-
-The visual language should feel:
-
-- Professional.
-- Confident.
-- Contemporary.
-- Technically capable.
-- Structured.
-- Trustworthy.
-- Distinctive without being unnecessarily experimental.
-
-Avoid making the website feel like a generic startup landing page or a collection of unrelated service templates.
-
-Do not automatically use dark backgrounds, glassmorphism, excessive gradients, oversized typography, or floating decorative objects.
-
-Select design treatments based on the actual brand, content, and audience.
-
-## 4.2 Establish one primary visual direction
-
-Choose a coherent visual approach that works across the website.
-
-For example, an appropriate direction might combine:
-
-- Refined enterprise typography.
-- Strong editorial composition.
-- Restrained brand-color accents.
-- Structured grids.
-- Carefully selected technical imagery.
-- Generous but controlled whitespace.
-- Subtle, directional motion.
-- Clear navigation and information hierarchy.
-
-Treat this as a possible direction, not a rigid template.
-
-The actual implementation must reflect the existing Centrifuge Group identity and the characteristics of its content.
-
-## 4.3 Use references intelligently
-
-If reference websites, screenshots, or design examples are available:
-
-- Identify the specific qualities worth adopting.
-- Study their spacing, typography, alignment, navigation, dropdown behavior, image treatment, and transitions.
-- Adapt those principles to Centrifuge Group.
-- Maintain Centrifuge Group's own branding and information architecture.
-
-Do not copy an entire reference website indiscriminately.
-
-Do not introduce visual patterns simply because a reference website uses them.
-
----
-
-# 5. BRAND IDENTITY AND CENTRALIZED DESIGN SYSTEM
-
-The website must use a consistent visual language across every page.
-
-## 5.1 Inspect the existing brand
-
-Inspect the existing Centrifuge Group logo and other approved assets before selecting colors or typography.
-
-Determine the established brand colors from available source files, existing styles, or official brand references.
-
-Do not invent precise brand values or replace the existing logo.
-
-If a brand color is unclear, identify the best-supported value and make it easy to adjust centrally.
-
-## 5.2 Establish design tokens
-
-Create or refine a centralized token system using the project's existing styling approach.
-
-The system should cover:
-
-**Colors**
-- Primary brand color.
-- Secondary brand color.
-- Accent color.
-- Primary and secondary text.
-- Muted text.
-- Main background.
-- Alternate background.
-- Surface background.
-- Borders and dividers.
-- Hover and active states.
-- Focus indicators.
-- Success, warning, and error states where needed.
-
-**Typography**
-- Font families.
-- Font weights.
-- Display sizes.
-- Heading sizes.
-- Body sizes.
-- Supporting text sizes.
-- Line heights.
-- Letter spacing.
-
-**Layout**
-- Content maximum width.
-- Horizontal page padding.
-- Grid gaps.
-- Section spacing.
-- Column proportions.
-
-**Components**
-- Border radii.
-- Border widths.
-- Shadow levels.
-- Button heights.
-- Input dimensions.
-- Transition durations.
-- Standard interaction easing.
-
-Example token structure:
-
-```css
-:root {
-  /* Replace with verified Centrifuge brand values. */
-  --color-brand-primary: var(--brand-primary);
-  --color-brand-secondary: var(--brand-secondary);
-  --color-brand-accent: var(--brand-accent);
-
-  --color-text-primary: #202938;
-  --color-text-secondary: #536174;
-  --color-text-muted: #687587;
-
-  --color-background: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-subtle: #f6f8fa;
-  --color-border: #e2e7ed;
-
-  --container-max-width: 1280px;
-
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-28: 112px;
-
-  --radius-sm: 4px;
-  --radius-md: 8px;
-
-  --motion-fast: 160ms;
-  --motion-standard: 220ms;
-  --motion-slow: 500ms;
-}
-```
-
-The example's neutral colors and component values are starting points, not approved brand specifications.
-
-Replace placeholders with values appropriate to the actual project. Do not reference undefined CSS variables.
-
-## 5.3 Prevent design-token drift
-
-Do not scatter arbitrary colors, spacing values, border radii, and transition timings throughout the codebase.
-
-Use centralized tokens for recurring design decisions.
-
-Local exceptions are permitted when justified by a particular composition or component.
-
-The objective is consistent design, not forcing every element to look identical.
-
-## 5.4 Color application
-
-Use color to communicate hierarchy, identity, interaction, and content grouping.
-
-- Maintain sufficient text contrast.
-- Use accent colors selectively.
-- Keep backgrounds consistent with the brand.
-- Avoid alternating background colors without a clear reason.
-- Avoid multiple competing gradients.
-- Distinguish links from ordinary text.
-- Ensure important information is not communicated by color alone.
-
-Verify contrast for important text and interactive elements.
-
----
-
-# 6. TYPOGRAPHY AND CONTENT PRESENTATION
-
-Typography must make the website easier to understand while reinforcing the brand's identity.
-
-## 6.1 Typography system
-
-Inspect the current fonts before introducing replacements.
-
-Prefer existing approved fonts when they are suitable.
-
-If a new typeface is justified, choose one that supports the brand's character, readability, available weights, and performance requirements.
-
-Define consistent styles for:
-
-- Hero headlines.
-- Page titles.
-- Section headings.
-- Subsection headings.
-- Body paragraphs.
-- Supporting text.
-- Navigation.
-- Buttons.
-- Labels and captions.
-
-Suggested desktop starting points:
-
-| Element | Suggested size |
-|---|---:|
-| Hero heading | 52–72px |
-| Page title | 44–60px |
-| Section heading | 32–44px |
-| Subsection heading | 22–28px |
-| Body text | 16–18px |
-| Supporting text | 14–16px |
-| Small labels | 12–14px |
-
-Adapt these values to the actual composition and existing brand.
-
-Use fluid typography when appropriate:
-
-```css
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  font-weight: 600;
-}
-```
-
-Do not apply these exact values indiscriminately to every page.
-
-## 6.2 Typography quality requirements
-
-- Control heading width and line wrapping.
-- Use comfortable paragraph line heights.
-- Avoid excessively long text lines.
-- Maintain clear differences between headings and body text.
-- Avoid unnecessary uppercase text.
-- Avoid excessive letter spacing.
-- Use font weights consistently.
-- Prevent headings from colliding with adjacent imagery.
-- Ensure mobile headings remain readable.
-- Load fonts efficiently and avoid unnecessary font variants.
-
-Do not center every heading or paragraph.
-
-Choose alignment according to the content and composition.
-
-## 6.3 Content integrity
-
-Improve the presentation and clarity of existing copy without changing its factual meaning.
-
-Preserve approved business information.
-
-Do not invent services, partnerships, project outcomes, customer results, or company history.
-
-When content is repetitive, reorganize it carefully rather than deleting important information.
-
-When copy requires clarification, use the existing content as the starting point.
-
----
-
-# 7. LAYOUT, GRID AND WHITESPACE
-
-Create a layout system that feels cohesive while allowing each section to have its own composition.
-
-## 7.1 Main container
-
-Use a centered, responsive content container.
-
-Suggested starting values:
-
-- Maximum content width: approximately 1280px.
-- Large desktop horizontal padding: 40–64px.
-- Standard desktop padding: 32–48px.
-- Tablet padding: 24–32px.
-- Mobile padding: 20–24px.
-
-Adapt the container to the existing layout and the content's requirements.
-
-Full-width backgrounds may extend beyond the content container while their text and internal elements remain aligned to the grid.
-
-## 7.2 Composition
-
-Use CSS Grid and Flexbox according to the design requirements.
-
-Appropriate patterns include:
-
-- Two-column text and imagery layouts.
-- Asymmetric editorial compositions.
-- Three-column capability summaries.
-- Full-width statements.
-- Horizontal timelines.
-- Image-led case studies.
-- Vertical content sequences.
-- Structured information sections.
-
-Do not force every section into the same number of columns.
-
-Avoid repeating identical rows of rounded cards throughout the website.
-
-Vary the composition while maintaining consistent typography, spacing, colors, and interaction behavior.
-
-## 7.3 Whitespace
-
-Use spacing to clarify relationships and establish hierarchy.
-
-Suggested spacing scale:
-
-- 4px: Fine adjustments.
-- 8px: Tight spacing.
-- 12px: Compact content.
-- 16px: Standard spacing.
-- 24px: Related elements.
-- 32px: Component separation.
-- 48px: Smaller section spacing.
-- 64px: Medium section spacing.
-- 80–112px: Major desktop section spacing.
-
-These values are flexible design tokens, not mandatory spacing for every component.
-
-Reduce section spacing appropriately on smaller screens.
-
-Do not make the website excessively long by adding whitespace without purpose.
-
-Do not compress information-rich pages so tightly that they become difficult to read.
-
----
-
-# 8. NAVIGATION AND DROPDOWN EXPERIENCE
-
-Navigation is a critical shared component and must be treated as a first-class part of the design system.
-
-## 8.1 Navbar
-
-Inspect the existing navigation and preserve its routes and destinations.
-
-Refine the navbar to establish a clear hierarchy between:
-
-- Logo.
-- Primary navigation items.
-- Dropdown indicators.
-- Important contact or conversion action.
-
-Requirements:
-
-- Preserve logo proportions and appropriate clear space.
-- Maintain consistent alignment.
-- Use deliberate spacing between links.
-- Avoid crowding the navbar.
-- Keep text readable.
-- Make interactive states visually clear.
-- Ensure the navbar works on narrow screens.
-- Avoid introducing unnecessary decorative elements.
-
-If the existing website uses a transparent, sticky, or changing navbar, preserve that behavior unless there is a clear usability reason to improve it.
-
-Any changes must be implemented consistently across relevant pages.
-
-## 8.2 Dropdown design
-
-Use a clean dropdown panel that fits the existing brand.
-
-Where appropriate, use a white or restrained neutral background that contrasts clearly with the surrounding navigation.
-
-The dropdown should:
-
-- Align naturally with its trigger or the intended navigation region.
-- Have a clear relationship with the navbar.
-- Use strong typographic hierarchy.
-- Present bold, readable submenu titles.
-- Avoid unnecessary logos inside submenu items.
-- Include concise descriptions only when useful.
-- Maintain consistent internal spacing.
-- Use restrained borders or shadows when needed.
-- Display visible hover, focus, and active states.
-
-If the information architecture supports a wider menu, allow it to occupy a substantial portion of the navbar's width.
-
-Do not introduce a large mega-menu simply because it looks impressive.
-
-The menu structure must reflect the actual number, hierarchy, and relationships of the site's pages.
-
-## 8.3 Dropdown motion
-
-Use subtle directional movement to make menu transitions feel natural.
-
-Suggested behavior:
-
-- Fade in.
-- Translate approximately 8–12px from the appropriate direction.
-- Settle into position.
-- Fade out cleanly.
-
-Suggested duration: 160–240ms.
-
-Requirements:
-
-- Prevent flickering between the trigger and dropdown.
-- Do not introduce pointer gaps that close the menu unexpectedly.
-- Keep links immediately usable.
-- Avoid animations that delay interaction.
-- Support keyboard navigation.
-- Support touch interaction.
-- Handle Escape where appropriate.
-- Close menus predictably when focus or interaction moves elsewhere.
-- Ensure expanded states are communicated accessibly.
-
-On mobile, use explicit tap-to-expand behavior instead of relying on hover.
-
-Use semantic links for navigation and buttons for actions that control menu state.
-
----
-
-# 9. HERO SECTION AND FIRST IMPRESSION
-
-The hero must immediately communicate what Centrifuge Group does and help visitors understand where to go next.
-
-Use existing approved messaging where available.
-
-Potential messaging direction:
-
-**Eyebrow:** CENTRIFUGE GROUP
-
-**Headline:** Technology that moves your business forward.
-
-**Supporting message:** From complex challenges to connected digital solutions. We design and develop tailored software that helps organizations simplify operations, connect systems, and create better experiences.
-
-**Primary action:** Explore Our Solutions
-
-**Secondary action:** Discuss Your Project
-
-Treat this as a reference direction. Preserve the approved copy already present in the project unless a content change is required or explicitly authorized.
-
-Do not add unsupported claims about the company's services or results.
-
-## 9.1 Hero composition
-
-Use a composition appropriate to the actual brand and available assets.
-
-A two-column layout is suitable when it improves the message:
-
-**Left side**
-- Main headline.
-- Supporting paragraph.
-- Primary call to action.
-- Secondary action, if useful.
-
-**Right side**
-- Relevant product interface.
-- Approved project imagery.
-- Technical illustration.
-- Meaningful architectural visualization.
-- Other relevant visual material.
-
-The headline must remain the primary focal point.
-
-The visual must support the message rather than merely fill space.
-
-Ensure that the text, image, and calls to action form one coherent composition.
-
-Avoid excessive decoration, arbitrary floating objects, and unrelated stock photography.
-
-On mobile, reorder the content so the main message and primary action remain easy to discover.
-
-## 9.2 Hero animation
-
-Use Framer Motion if the existing React project already includes it or if its capabilities justify adding it.
-
-Implement the intended movement:
-
-1. The headline enters smoothly from the left.
-2. Supporting text follows with a subtle stagger.
-3. The main image enters from the right.
-4. Calls to action appear in coordination with the message.
-5. The final layout settles without ongoing movement.
-
-Suggested starting values:
-
-- Headline horizontal offset: approximately 24px.
-- Supporting text offset: approximately 16px.
-- Image horizontal offset: approximately 24px.
-- Duration: approximately 500–750ms.
-- Stagger interval: approximately 100–140ms.
-
-Example animation concept:
-
-```tsx
-const textContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const textItemVariants = {
-  hidden: {
-    opacity: 0,
-    x: -24,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-```
-
-Implement the actual behavior using the animation library's supported APIs and the existing component architecture.
-
-The image should use corresponding motion from the right.
-
-Do not animate every child independently when a parent-level sequence would be cleaner.
-
-Ensure that the content remains accessible if animation is disabled.
-
-Avoid hiding meaningful content until a long animation finishes.
-
----
-
-# 10. SECTION DESIGN AND INFORMATION ARCHITECTURE
-
-Every major section must have a distinct role in the visitor's journey.
-
-Consistency comes from the design system, not from forcing every section to use the same layout.
-
-Before implementing a section, determine:
-
-- What is its purpose?
-- What should visitors notice first?
-- What information do they need?
-- What visual supports the message?
-- What action should follow?
-- How does it connect to the preceding and following sections?
-
-## 10.1 Services and capabilities
-
-Present existing services according to their actual importance and relationships.
-
-Each service should explain, where applicable:
-
-- What the service is.
-- Which problem it addresses.
-- Why it matters.
-- Where the visitor can learn more.
-
-Use concise descriptions and clear navigation links.
-
-Use cards only where they improve grouping or scanning.
-
-Alternative layouts may include open grids, typography-led lists, divided columns, or asymmetric compositions.
-
-Preserve existing service pages and their routes.
-
-Do not add a service merely to fill an empty layout.
-
-## 10.2 Company introduction
-
-Explain who Centrifuge Group is and what the company does.
-
-Use verified company information.
-
-Avoid repeating the hero's message word for word.
-
-Use a clear heading, concise supporting narrative, and a relevant visual where appropriate.
-
-Ensure that this section contributes new information rather than repeating the services section.
-
-## 10.3 Projects and case studies
-
-Provide an appropriate way to discover existing projects.
-
-Each project may include:
-
-- Project name.
-- Approved preview image.
-- Concise description.
-- Relevant technologies or capabilities.
-- Link to the project or case study.
-- External destination where one exists and is accessible.
-
-Use project data already present in the codebase or approved content.
-
-Do not fabricate client names, project results, technologies, testimonials, or metrics.
-
-For confidential projects, display only information approved for publication.
-
-Ensure project links are meaningful and functional.
-
-## 10.4 Process and methodology
-
-Where the company has an established delivery process, communicate it clearly.
-
-If the existing content supports it, a sequence might include:
-
-1. Discovery.
-2. Planning.
-3. Design.
-4. Development.
-5. Testing.
-6. Deployment and ongoing improvement.
-
-Adapt the sequence to the company's actual methodology.
-
-Do not present an illustrative process as a verified company procedure without supporting evidence.
-
-Choose a timeline, numbered sequence, or other layout that best communicates the stages.
-
-Avoid unnecessary cards when a simple connected sequence is clearer.
-
-## 10.5 Call-to-action sections
-
-Make each call to action relevant to the preceding content.
-
-Examples include:
-
-- Discuss Your Project.
-- Explore Our Services.
-- View Selected Projects.
-- Contact Our Team.
-
-Avoid placing several competing primary actions in the same section.
-
-Use descriptive action labels.
-
-Ensure each button leads to the correct page, form, or contact method.
-
-Do not introduce a new conversion flow that lacks a valid destination or supporting functionality.
-
-## 10.6 Footer
-
-Maintain the existing footer functionality while improving its hierarchy and presentation.
-
-Group relevant links into categories such as:
-
-- Company.
-- Services.
-- Projects.
-- Resources.
-- Contact.
-- Legal.
-
-Use only categories supported by actual site content.
-
-Ensure that the footer complements the navbar rather than mechanically repeating it.
-
-Preserve existing legal links, contact details, social links, and other approved information.
-
-Verify that destinations remain correct.
-
----
-
-# 11. IMAGERY AND ART DIRECTION
-
-Treat imagery as a fundamental design decision.
-
-For every major visual asset, determine:
-
-- What it communicates.
-- Whether it supports the adjacent content.
-- Whether its composition fits the layout.
-- Whether its colors complement the brand.
-- Whether the image quality is sufficient.
-- Whether its aspect ratio is appropriate.
-- Whether it is optimized for delivery.
-- Whether it requires alternative text.
-
-## 11.1 Asset rules
-
-Prioritize assets in this order:
-
-1. Existing approved company assets.
-2. Existing project screenshots and demonstrations.
-3. Approved project imagery.
-4. Verified external assets where permitted.
-5. Clearly identified placeholders when necessary.
-
-Never reference nonexistent local image files.
-
-Never invent image URLs.
-
-Do not use unrelated stock photography when a more relevant technical visual is available.
-
-## 11.2 Image implementation
-
-- Use appropriate aspect ratios.
-- Apply `object-fit` and `object-position` deliberately.
-- Preserve image proportions.
-- Avoid stretching or arbitrary cropping.
-- Reserve image space to prevent layout shifts.
-- Use responsive image techniques where supported.
-- Lazy-load appropriate below-the-fold images.
-- Prioritize the main hero asset when it is essential to the first impression.
-- Avoid lazy-loading the primary image when doing so would unnecessarily delay its appearance.
-
-Provide meaningful alternative text for informative images.
-
-Use empty alternative text for purely decorative images.
-
----
-
-# 12. MOTION DESIGN AND MICROINTERACTIONS
-
-Motion must improve comprehension, feedback, or visual continuity.
-
-It must not become the main attraction.
-
-## 12.1 Appropriate motion patterns
-
-Use animation where it serves a clear purpose:
-
-- Hero entrance transitions.
-- Navigation dropdowns.
-- Button hover and active states.
-- Small image transitions.
-- Tabs and accordions.
-- Meaningful loading indicators.
-- Subtle section reveals.
-- Page transitions where genuinely useful.
-
-## 12.2 Timing and movement
-
-Suggested starting points:
-
-| Interaction | Duration |
-|---|---:|
-| Small hover feedback | 120–180ms |
-| Standard control transition | 160–220ms |
-| Dropdown transition | 160–240ms |
-| Larger entrance animation | 400–800ms |
-
-Use consistent easing.
-
-Keep movement restrained, generally around 8–24px for small directional transitions.
-
-Adjust the values according to the content, device, and actual interaction.
-
-## 12.3 Motion restrictions
-
-Avoid:
-
-- Repeated bouncing.
-- Excessive parallax.
-- Large decorative movement.
-- Scroll hijacking.
-- Unnecessary infinite animations.
-- Animations that delay access to content.
-- Animations that cause layout shifts.
-- Motion that makes reading difficult.
-- Replaying entrance animations unnecessarily.
-- Animating every element independently.
-
-## 12.4 Reduced motion
-
-Respect the user's operating-system reduced-motion preference.
-
-For CSS transitions and animations, use an appropriate reduced-motion media query.
-
-For JavaScript-driven animations, configure the animation library's reduced-motion behavior as well.
-
-Do not rely exclusively on CSS to control JavaScript animations.
-
-When reduced motion is enabled:
-
-- Avoid unnecessary entrance movement.
-- Remove nonessential parallax.
-- Minimize animated transitions.
-- Keep all content immediately available.
-- Preserve meaningful functional feedback.
-
----
-
-# 13. COMPONENT SYSTEM AND INTERACTION STATES
-
-Build reusable components when they improve consistency and maintainability.
-
-Potential shared components include:
-
-- Navbar.
-- Dropdown and mobile menu.
-- Buttons.
-- Text links.
-- Form fields.
-- Service summaries.
-- Project previews.
-- Accordions.
-- Tabs.
-- CTA sections.
-- Footer.
-- Loading and error states.
-
-Do not create an abstraction for every individual element.
-
-The component architecture should reflect meaningful reuse in the existing application.
-
-## 13.1 Interactive states
-
-Every interactive component must have appropriate states.
-
-Depending on the component, these include:
-
-- Default.
-- Hover.
-- Focus-visible.
-- Active.
-- Disabled.
-- Loading.
-- Expanded or collapsed.
-- Selected.
-- Error.
-- Success.
-
-Do not make every component animate, scale, glow, and change color simultaneously.
-
-Use restrained feedback that communicates what happened.
-
-## 13.2 Functional integrity
-
-Every visible interactive element must have meaningful behavior.
-
-Examples:
-
-- Navigation links navigate correctly.
-- Dropdown triggers open and close menus.
-- Mobile menu controls respond to touch and keyboard input.
-- Forms validate their inputs.
-- Form submissions use the actual configured submission mechanism.
-- Buttons perform their stated actions.
-- Accordions expand and collapse.
-- Tabs change the displayed content.
-- Project links lead to valid destinations.
-- Loading states correspond to actual asynchronous operations.
-- Errors are communicated clearly.
-
-Do not use placeholder event handlers for production interactions.
-
-Do not simulate successful form submissions, transactions, or API operations when no real operation has occurred.
-
-If a feature depends on an unavailable backend, API key, external service, or configuration, identify the dependency and implement as much of the actual behavior as the environment permits.
-
----
-
-# 14. RESPONSIVE DESIGN
-
-Design intentionally for different viewport sizes.
-
-At minimum, test:
-
-- 360px.
-- 390px.
-- 768px.
-- 1024px.
-- 1280px.
-- 1440px.
-
-These are representative test widths, not the only widths that matter.
-
-## 14.1 Responsive requirements
-
-Verify:
-
-- Navbar layout and mobile-menu behavior.
-- Dropdown positioning and expansion.
-- Heading wrapping.
-- Paragraph readability.
-- Hero composition.
-- Image scaling and cropping.
-- Grid column transitions.
-- Section spacing.
-- Button sizing.
-- Form usability.
-- Footer layout.
-- Long navigation labels.
-- Overflow and clipping.
-- Focus indicators.
-- Touch-target usability.
-
-## 14.2 Mobile-specific behavior
-
-Do not merely shrink the desktop layout.
-
-Where necessary:
-
-- Stack columns in a logical order.
-- Adjust heading sizes and line heights.
-- Reposition images.
-- Simplify complex decorative compositions.
-- Reduce section spacing appropriately.
-- Make navigation easier to operate.
-- Ensure important actions remain discoverable.
-- Prevent buttons from overflowing their containers.
-- Avoid excessively tall sections caused by poor ordering.
-
-Do not hide important content merely to simplify the mobile design.
-
-Use breakpoints based on actual layout requirements rather than device names alone.
-
----
-
-# 15. ACCESSIBILITY AND INCLUSIVE DESIGN
-
-Accessibility is a core implementation requirement.
-
-## 15.1 Semantic structure
-
-Use:
-
-- Semantic HTML elements.
-- Logical heading hierarchy.
-- Descriptive link text.
-- Properly associated form labels.
-- Accessible button names.
-- Appropriate alternative text.
-- Native controls where practical.
-
-Use ARIA only when necessary and correctly.
-
-Do not use generic clickable containers when a native button or link is more appropriate.
-
-## 15.2 Keyboard navigation
-
-Verify that:
-
-- Interactive elements can be reached by keyboard.
-- Focus order follows the visual and logical structure.
-- Focus indicators remain visible.
-- Dropdowns can be operated without a mouse.
-- Escape closes appropriate overlays and menus.
-- Focus is managed appropriately when dialogs open and close.
-- Keyboard users are not trapped in unintended interactions.
-
-## 15.3 Forms and feedback
-
-Forms must provide:
-
-- Clear labels.
-- Understandable instructions.
-- Useful validation messages.
-- Accessible error identification.
-- Submission feedback.
-- Loading feedback when necessary.
-- Correct focus behavior when errors occur.
-
-Do not rely on color alone to communicate errors or success.
-
-## 15.4 Contrast and motion
-
-Check text and control contrast against their actual backgrounds.
-
-Maintain readable text sizes and clear interaction states.
-
-Respect reduced-motion preferences.
-
-Do not remove native focus outlines without providing a visible and accessible replacement.
-
----
-
-# 16. PERFORMANCE, SEO AND TECHNICAL QUALITY
-
-The redesigned website must remain efficient and maintainable.
-
-## 16.1 Performance
-
-- Avoid unnecessary dependencies.
-- Avoid duplicate component implementations.
-- Minimize unnecessary client-side rendering.
-- Optimize images and fonts.
-- Use lazy loading where appropriate.
-- Prevent layout shifts.
-- Avoid expensive animation effects.
-- Remove obsolete code only after confirming it is unused.
-- Avoid unnecessarily large JavaScript bundles.
-- Preserve appropriate caching and deployment behavior.
-- Keep critical content available without unnecessary delays.
-
-Do not add an animation library solely for a simple CSS transition.
-
-Do not introduce a new styling system when the existing system can meet the requirements.
-
-## 16.2 SEO
-
-Preserve existing SEO-relevant content and routes.
-
-Where appropriate, verify:
-
-- Page titles.
-- Meta descriptions.
-- Canonical URLs.
-- Heading structure.
-- Descriptive link text.
-- Image alternative text.
-- Open Graph metadata.
-- Internal linking.
-- Indexability.
-- Sitemap and robots configuration.
-- Structured data, where accurate and relevant.
-
-Do not invent organization details or structured-data claims.
-
-Follow the existing framework's conventions.
-
-If URLs must change, provide appropriate redirects and preserve important existing destinations.
-
-## 16.3 Code quality
-
-Write code that is:
-
-- Readable.
-- Maintainable.
-- Consistent with existing conventions.
-- Accessible.
-- Responsive.
-- Efficient.
-- Appropriately typed when using TypeScript.
-- Organized around clear component responsibilities.
-
-Avoid:
-
-- Giant components with unrelated responsibilities.
-- Duplicate styles.
-- Fragile CSS selectors.
-- Excessive nested conditionals.
-- Unexplained magic numbers.
-- Unnecessary abstractions.
-- Hardcoded secrets.
-- Unused dependencies.
-- Destructive changes without justification.
-- Fake functionality.
-- Suppressed errors that conceal real problems.
-
-Prefer targeted improvements over unnecessary rewrites.
-
----
-
-# 17. IMPLEMENTATION WORKFLOW
-
-Follow the workflow below.
-
-## Phase 1 — Understand
-
-Inspect the codebase, pages, assets, routing, existing interactions, and project constraints.
-
-Establish what must be preserved.
-
-## Phase 2 — Audit
-
-Identify visual, functional, responsive, accessibility, and performance issues.
-
-Prioritize issues by impact.
-
-## Phase 3 — Art-direct
-
-Define the visual direction, typography, brand palette, layout principles, imagery approach, and motion strategy.
-
-Use existing brand assets as the source of truth.
-
-## Phase 4 — Plan
-
-Define:
-
-- Design tokens.
-- Component responsibilities.
-- Page-level changes.
-- Navigation behavior.
-- Responsive layouts.
-- Interaction states.
-- Implementation order.
-- Acceptance criteria.
-
-Keep the plan proportional to the project's complexity.
-
-Do not spend excessive time planning when the requirements are already clear.
-
-## Phase 5 — Implement
-
-Improve the shared design system and high-impact components first.
-
-Then apply the system across the website.
+The navbar, hero and trust section must feel like one continuous visual composition rather than two separate sections.
 
 Prioritize:
+- Visual hierarchy
+- Premium aesthetics
+- Responsive behavior
+- Accessibility
+- Readability
+- Performance
+- Maintainable code
+- Consistency with the existing brand identity
 
-1. Critical functional issues.
-2. Shared navigation and layout.
-3. Typography and visual hierarchy.
-4. Hero and major page compositions.
-5. Section-level refinements.
-6. Interaction and animation.
-7. Responsive refinements.
-8. Accessibility and performance improvements.
+IMPORTANT: Implement this design within the existing project. Do not rebuild unrelated components or change the established brand identity without authorization.
 
-Preserve working functionality throughout implementation.
+## 2. CORE DESIGN PRINCIPLE
 
-## Phase 6 — Validate
+Implement a transparent overlay navbar.
+
+The background image or visual backdrop must extend behind the navigation bar and begin at the top edge of the browser viewport.
+
+The navbar must overlay the hero section instead of occupying a separate vertical space above it.
+
+Correct structural behavior:
+
+- The page begins with the hero background.
+- The navbar is positioned above the hero background.
+- The hero content begins below the navigation area.
+- The background remains visually continuous behind both elements.
+
+Avoid:
+- Placing the navbar in a separate opaque header above the hero.
+- Adding an unintended gap between the navbar and hero.
+- Duplicating the background across separate sections.
+- Applying unnecessary borders or shadows that separate the two areas.
 
-Run the available build, test, and development commands.
+## 3. NAVBAR STRUCTURE
 
-Fix issues discovered during verification.
+Create a responsive navigation bar with the following structure:
 
-Test the actual application when a runtime environment is available.
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" href="/" aria-label="Home">
+      <!-- Existing brand logo or wordmark -->
+    </a>
 
-Do not stop after editing files if verification is possible.
+    <div class="nav-links">
+      <!-- Existing primary navigation links -->
+    </div>
 
-## Phase 7 — Refine
+    <div class="nav-actions">
+      <!-- Existing CTA, login, or account controls -->
+    </div>
 
-Inspect the resulting interface.
+    <button class="mobile-menu-toggle">
+      <!-- Accessible mobile menu control -->
+    </button>
+  </nav>
+</header>
 
-Correct:
+Use the existing navigation labels, brand assets, and calls to action.
 
-- Misalignment.
-- Awkward heading wraps.
-- Inconsistent spacing.
-- Poor image cropping.
-- Inconsistent component states.
-- Weak contrast.
-- Unnecessary decoration.
-- Mobile layout problems.
-- Animation inconsistencies.
-- Functional regressions.
+Do not invent additional business features or change the website's information architecture.
 
-Repeat the implementation and verification cycle until the important acceptance criteria are satisfied.
+### Navbar positioning
 
-## Phase 8 — Deliver
+Use:
+- Position: absolute or fixed, depending on the existing scrolling requirements.
+- Top: 0.
+- Left: 0.
+- Width: 100%.
+- Appropriate z-index to keep navigation above the hero.
+- Transparent background by default.
 
-Summarize what changed, what was verified, and what remains.
+Recommended CSS:
 
-Never claim to have tested behavior that was not actually tested.
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+}
 
----
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 80px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
 
-# 18. QUALITY ASSURANCE AND TESTING
+Do not apply a maximum width to the outer header if doing so would prevent its background or positioning from spanning the viewport. Constrain the inner navigation content instead.
 
-Testing is part of implementation, not an optional final recommendation.
+## 4. HERO BACKGROUND
 
-## 18.1 Build verification
+The hero must occupy the full available viewport width.
 
-Where the environment permits:
+Use the existing hero image, video, illustration, gradient, or background asset whenever possible.
 
-- Run the existing build command.
-- Run available automated tests.
-- Run linting and type checking when configured.
-- Resolve errors introduced by the changes.
-- Check for missing imports and invalid references.
-- Verify that required environment variables are documented.
-- Confirm that the application starts correctly.
+The background must:
+- Begin at the very top of the viewport.
+- Extend behind the navbar.
+- Fill the hero container without distortion.
+- Maintain a visually balanced focal point.
+- Adapt to desktop, tablet, and mobile screens.
 
-Do not alter package versions unnecessarily to make the project fit a preferred implementation.
+For an image background, use:
 
-## 18.2 Functional testing
+.hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/images/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-Test the following where applicable:
+Replace the sample image path with the project's actual asset.
 
-- Main navigation.
-- Every dropdown.
-- Mobile menu.
-- Internal routes.
-- External links.
-- Calls to action.
-- Contact forms.
-- Form validation.
-- Form submission and error handling.
-- Accordions and tabs.
-- Project links.
-- Footer links.
-- Keyboard navigation.
-- Reduced-motion behavior.
+For a mobile-first implementation, consider:
 
-Use the actual configured integrations.
+.hero {
+  min-height: 100svh;
+}
 
-Do not claim that a backend integration works merely because the frontend displays a success message.
+Use a sensible minimum height if the page contains substantial hero content.
 
-## 18.3 Visual testing
+Do not force every hero to exactly one viewport high if doing so would clip content on smaller screens.
 
-When browser access or screenshots are available, inspect representative pages at desktop and mobile widths.
+### Background positioning
 
-Look for:
+Desktop:
+- Preserve the intended focal point.
+- Avoid cropping important visual elements.
+- Maintain sufficient space for the headline and CTA.
 
-- Incorrect alignment.
-- Inconsistent spacing.
-- Broken grids.
-- Unexpected text wrapping.
-- Missing assets.
-- Image distortion.
-- Overflow.
-- Weak hierarchy.
-- Excessive whitespace.
-- Inconsistent brand colors.
-- Navigation collisions.
-- Poor contrast.
-- Unintended animation behavior.
-
-Compare the result against the intended design direction.
+Mobile:
+- Adjust background positioning to preserve the most important visual elements.
+- Use a dedicated mobile image if one already exists.
+- Avoid excessive cropping caused by applying desktop positioning unchanged.
 
-If visual inspection tools are unavailable, state that visual verification remains incomplete.
-
-## 18.4 Performance and accessibility testing
-
-Use available tools to assess:
-
-- Loading performance.
-- Layout stability.
-- Excessive JavaScript.
-- Accessibility violations.
-- Keyboard usability.
-- Color contrast.
-- Responsive behavior.
+## 5. OVERLAY AND TEXT READABILITY
 
-Use Lighthouse or equivalent tools when available.
+Implement a subtle overlay between the background and foreground content.
 
-Treat automated scores as diagnostic evidence rather than proof that the website is perfect.
+The overlay must improve readability without destroying the original image.
 
----
+Example:
 
-# 19. VISUAL QUALITY REVIEW
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 15, 35, 0.55) 0%,
+    rgba(4, 15, 35, 0.30) 45%,
+    rgba(4, 15, 35, 0.65) 100%
+  );
+}
 
-Evaluate the completed work against these categories.
+Important implementation note:
+Ensure the background and overlay layering is correct. Do not place the overlay above the navbar or hero content.
 
-| Category | Evaluation question |
-|---|---|
-| Brand identity | Does the website clearly reflect Centrifuge Group? |
-| Visual distinction | Does it avoid generic template-like composition? |
-| Typography | Is the hierarchy readable and intentional? |
-| Composition | Are alignment, balance, and spacing well executed? |
-| Imagery | Are visuals relevant and properly integrated? |
-| Hierarchy | Can visitors quickly identify the important information? |
-| Consistency | Do pages and components share a design language? |
-| Navigation | Can visitors find the information they need? |
-| Interaction | Do controls behave predictably and feel polished? |
-| Responsiveness | Does the experience work across screen sizes? |
-| Accessibility | Can users navigate and understand the interface accessibly? |
-| Performance | Does the implementation avoid unnecessary loading costs? |
-| Functionality | Do existing and updated features work as intended? |
-| Content | Is the information clear, accurate, and useful? |
-| Business effectiveness | Does the experience support meaningful visitor actions? |
-| Maintainability | Is the implementation understandable and sustainable? |
+For complex designs, use a dedicated overlay element or CSS pseudo-element with an explicitly managed stacking context.
 
-Score each category from 1 to 10 when sufficient evidence is available.
+Adjust overlay opacity according to the existing brand palette and background brightness.
 
-Do not assign high scores merely because the page looks attractive.
+Never sacrifice text contrast for visual effects.
 
-Use the review to identify remaining problems and fix them.
+## 6. HERO CONTENT
 
-Prioritize major functionality, hierarchy, usability, and responsive issues over minor decorative details.
+Position the hero content below the navbar's visual area without pushing the entire hero background down.
 
----
+Recommended structure:
 
-# 20. DEFINITION OF DONE
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-eyebrow">
+      <!-- Existing supporting label -->
+    </p>
 
-The project is ready for delivery only when the following conditions have been addressed.
+    <h1>
+      <!-- Existing primary headline -->
+    </h1>
 
-## Design
+    <p class="hero-description">
+      <!-- Existing supporting copy -->
+    </p>
 
-- [ ] The website has a coherent, recognizable visual direction.
-- [ ] Existing brand identity is preserved.
-- [ ] Colors and typography are consistent.
-- [ ] Major sections have intentional compositions.
-- [ ] Whitespace supports hierarchy.
-- [ ] Imagery is relevant and appropriately displayed.
-- [ ] Components do not rely on repetitive generic layouts.
-- [ ] Animations are purposeful and restrained.
+    <div class="hero-actions">
+      <!-- Existing primary and secondary CTAs -->
+    </div>
+  </div>
+</section>
 
-## Functionality
+Use flexbox or grid to position the content.
 
-- [ ] Existing routes are preserved.
-- [ ] Navigation links work.
-- [ ] Dropdowns and mobile navigation work.
-- [ ] Existing forms and integrations are preserved.
-- [ ] Calls to action have meaningful destinations.
-- [ ] Interactive components behave correctly.
-- [ ] No decorative controls have been introduced as fake functionality.
+Example:
 
-## Responsive behavior
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(100% - 10%, 1200px);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-top: 100px;
+  padding-bottom: 64px;
+}
 
-- [ ] Mobile layouts have been checked.
-- [ ] Tablet layouts have been checked.
-- [ ] Desktop layouts have been checked.
-- [ ] No unintended horizontal overflow remains.
-- [ ] Important content remains visible and readable.
-- [ ] Touch and keyboard interaction are supported.
+The top padding creates visual breathing room beneath the overlaid navbar. It must not create a separate section or a gap above the hero background.
 
-## Accessibility
+### Typography
 
-- [ ] Semantic HTML is used appropriately.
-- [ ] Interactive controls have accessible names.
-- [ ] Keyboard navigation works.
-- [ ] Focus indicators remain visible.
-- [ ] Forms provide understandable feedback.
-- [ ] Important text has sufficient contrast.
-- [ ] Reduced-motion preferences are respected.
+Use the existing brand font when available.
 
-## Engineering
+Otherwise, select a modern, highly legible sans-serif typeface.
 
-- [ ] The existing architecture has been respected.
-- [ ] No unnecessary dependencies have been introduced.
-- [ ] The build has been verified where possible.
-- [ ] Available tests have been run.
-- [ ] Errors introduced by the changes have been resolved.
-- [ ] SEO-relevant content and routes have been preserved.
-- [ ] Remaining technical limitations are documented.
+Recommended hierarchy:
+- Eyebrow: small, medium-weight text.
+- Headline: large, bold, and visually dominant.
+- Description: readable, restrained line length.
+- Primary CTA: high contrast and clearly identifiable.
+- Secondary CTA: visually distinct but less prominent.
 
-Mark each item as verified, not verified, or not applicable.
+Suggested headline sizing:
 
-Do not mark a condition as verified without supporting evidence.
+.hero h1 {
+  max-width: 900px;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
 
----
+.hero-description {
+  max-width: 640px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+}
 
-# 21. FINAL DELIVERY REPORT
+Preserve the existing website's content and meaning.
 
-After implementation, provide a concise but informative report containing:
+Do not add arbitrary marketing copy merely to fill empty space.
 
-### 1. Summary
-Explain the main improvements and their intended benefits.
+## 7. NAVIGATION COLORS
 
-### 2. Design decisions
-Describe the visual direction, branding, typography, layout, and interaction choices.
+The navbar must remain visually integrated with the hero.
 
-### 3. Pages and components
-Identify the pages, shared components, and important styles changed.
+For dark backgrounds:
+- Use a white or near-white logo where appropriate.
+- Use white or light-neutral navigation text.
+- Use the brand accent for the primary CTA.
+- Ensure hover and focus states remain visible.
 
-### 4. Functional changes
-Explain what functionality was improved and which existing features were preserved.
+For light backgrounds:
+- Use dark navigation text.
+- Preserve sufficient contrast.
+- Use the brand's existing primary accent for actions.
 
-### 5. Verification
-List the actual build commands, tests, responsive checks, and accessibility checks performed, together with their results.
+Do not hardcode white navigation text if the background requires a different treatment.
 
-### 6. Remaining issues
-Identify any unresolved defects, unverified behavior, unavailable integrations, or missing assets.
+Use CSS variables for maintainability:
 
-### 7. Running and deployment
-Explain how to run the project and identify any required configuration.
+:root {
+  --nav-height: 80px;
+  --content-max-width: 1200px;
+  --page-gutter: clamp(20px, 5vw, 72px);
+  --header-text: #ffffff;
+  --header-surface: transparent;
+}
 
-Do not present incomplete work as production-ready.
+Replace these example values with the established brand tokens when available.
 
-Do not claim a test passed unless it was actually executed and its result was checked.
+## 8. SCROLL BEHAVIOR
 
----
+At the top of the page:
+- Keep the navbar transparent.
+- Allow the hero background to remain visible behind it.
+- Avoid an unnecessary border or opaque background.
 
-# 22. OPERATING RULES
+When the user scrolls:
+- Optionally introduce a subtle translucent background.
+- Preserve readability.
+- Apply a restrained backdrop blur if appropriate.
+- Keep the navbar accessible and visually consistent.
+
+Example:
 
-Throughout the project:
+.site-header.is-scrolled {
+  background: rgba(4, 15, 35, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
 
-1. Think like a creative director before acting like a coder.
-2. Understand the existing website before modifying it.
-3. Preserve working functionality.
-4. Make design decisions based on brand, content, and audience.
-5. Prefer distinctive composition over generic templates.
-6. Use color, typography, spacing, and imagery intentionally.
-7. Keep animation meaningful.
-8. Make accessibility part of implementation.
-9. Prioritize high-impact improvements.
-10. Avoid unnecessary dependencies and architectural changes.
-11. Never fabricate company information, assets, integrations, or test results.
-12. Implement requested changes rather than merely describing how to implement them when the necessary tools are available.
-13. Inspect the result when visual inspection is possible.
-14. Fix discovered problems rather than simply documenting them.
-15. Be transparent about environmental limitations.
+Only activate the scrolled state when the navbar is intended to remain visible during scrolling.
 
-If a requested effect is technically difficult, find a practical implementation that preserves its design intent.
+If using an absolute-positioned header, do not add a scrolled state that assumes the header is fixed. Change its positioning deliberately if the design requires a persistent navbar.
 
-If a feature cannot be completed because a dependency, credential, backend, or external service is unavailable, implement the remaining work and explain the specific limitation.
+Use a small, smooth transition:
 
-Do not sacrifice functionality, accessibility, or performance for visual novelty.
+.site-header {
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    backdrop-filter 200ms ease;
+}
 
----
+Avoid excessive motion or transitions that interfere with navigation.
 
-# FINAL COMMAND
+## 9. RESPONSIVE NAVIGATION
 
-Audit and enhance the existing Centrifuge Group website according to this specification.
+Desktop:
+- Display primary navigation links horizontally.
+- Keep the logo aligned to the left.
+- Keep primary actions aligned to the right.
+- Maintain consistent spacing.
+- Avoid wrapping navigation links unexpectedly.
+
+Tablet:
+- Reduce horizontal gaps when needed.
+- Preserve the most important actions.
+- Switch to the mobile menu before the layout becomes cramped.
 
-Begin by understanding the current codebase, brand assets, routes, content, and working functionality.
+Mobile:
+- Keep the logo visible.
+- Replace the desktop navigation with an accessible menu toggle.
+- Use a sufficiently large touch target.
+- Prevent the menu from being clipped by the hero container.
+- Ensure the opened menu remains readable against the background.
+- Support keyboard navigation and Escape to close the menu.
+- Close the menu after navigation when appropriate.
 
-Establish a distinctive visual direction grounded in the existing brand.
+Recommended breakpoint:
 
-Create or refine the design system, improve the shared components, and implement the design consistently across the relevant pages.
+@media (max-width: 768px) {
+  .navbar {
+    min-height: 72px;
+  }
 
-Preserve existing functionality and business information.
+  .hero-content {
+    min-height: 100svh;
+    padding-top: 110px;
+    padding-bottom: 48px;
+  }
 
-Refine the composition, typography, spacing, imagery, navigation, interactions, responsive layouts, accessibility, and performance.
+  .hero h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+}
 
-Run the available tests, inspect the actual interface when possible, and fix discovered issues.
+Treat these values as starting points. Adjust them to match the actual content and design.
 
-Deliver a coherent, visually distinctive, commercially useful, and technically maintainable enterprise website.
+## 10. ACCESSIBILITY
 
-**Do not stop at the audit. Do not stop at the design plan. Do not stop when the page merely looks attractive. Implement the improvements, verify what can be verified, and clearly report what remains.**
+Follow WCAG accessibility principles.
 
-The final result should demonstrate professional design judgment, excellent frontend engineering, and a consistent Centrifuge Group brand experience across the entire website.
+Requirements:
+- Use semantic header, nav, main, and section elements.
+- Provide a descriptive accessible name for the logo link.
+- Provide an accessible name for the mobile menu button.
+- Expose the mobile menu state through aria-expanded.
+- Associate the menu button with the menu using aria-controls.
+- Support keyboard navigation.
+- Provide visible focus indicators.
+- Maintain readable foreground/background contrast.
+- Avoid relying exclusively on color to communicate state.
+- Respect prefers-reduced-motion.
+- Ensure hidden mobile navigation links are not keyboard-focusable while the menu is closed.
+
+Do not add unnecessary ARIA attributes when native HTML semantics are sufficient.
+
+## 11. PERFORMANCE
+
+Use existing optimized assets wherever possible.
+
+Requirements:
+- Avoid unnecessarily large background images.
+- Prefer modern image formats when supported by existing assets and infrastructure.
+- Avoid downloading multiple competing hero backgrounds.
+- Prevent layout shifts.
+- Use lightweight transitions.
+- Avoid introducing new dependencies solely for this layout.
+- Lazy-load below-the-fold imagery when appropriate.
+- Do not lazy-load the main hero image if doing so would noticeably delay the initial visual rendering.
+
+If using a CSS background image for the hero, consider preloading it only when appropriate for the page's loading strategy.
+
+## 12. IMPLEMENTATION RULES
+
+Before making changes:
+
+1. Inspect the existing project structure.
+2. Identify the current navbar, hero section, global styles, and responsive breakpoints.
+3. Identify the current framework and styling conventions.
+4. Locate the existing logo, background assets, and design tokens.
+5. Determine whether the navbar currently uses normal flow, absolute positioning, or fixed positioning.
+
+Then:
+
+1. Modify the existing components rather than duplicating them.
+2. Make the navbar overlay the hero background.
+3. Correct the hero's background positioning and height.
+4. Add the readability overlay.
+5. Preserve existing content and brand identity.
+6. Implement responsive navigation behavior.
+7. Verify layering, scrolling, and keyboard accessibility.
+8. Test the page at desktop, tablet, and mobile widths.
+
+Do not:
+- Replace the project's framework.
+- Rewrite unrelated components.
+- Remove existing functionality.
+- Introduce unnecessary packages.
+- Invent image paths without checking the actual project assets.
+- leave placeholder implementations where working behavior is required.
+
+If the project uses Next.js, follow the existing App Router or Pages Router architecture.
+
+If the project uses React, keep the implementation component-based.
+
+If the project uses plain HTML, CSS, and JavaScript, implement the same behavior without introducing a framework.
+
+## 13. ACCEPTANCE CRITERIA
+
+The implementation is complete only when all the following conditions are satisfied:
+
+[ ] The hero background begins at the top edge of the viewport.
+
+[ ] The background extends behind the navbar.
+
+[ ] The navbar does not create an unwanted opaque band above the hero.
+
+[ ] The logo, links, and actions remain readable.
+
+[ ] Hero content does not overlap the navbar unintentionally.
+
+[ ] The background image scales and crops appropriately.
+
+[ ] The layout works on desktop, tablet, and mobile.
+
+[ ] The mobile navigation opens, closes, and supports keyboard interaction.
+
+[ ] Navigation remains usable while scrolling.
+
+[ ] Any optional scrolled navbar state works correctly.
+
+[ ] The implementation preserves the existing brand identity.
+
+[ ] No unrelated functionality is broken.
+
+[ ] No unnecessary dependencies are introduced.
+
+[ ] The browser console contains no new errors.
+
+[ ] The final implementation is tested at realistic viewport sizes.
+
+## 14. FINAL DELIVERABLE
+
+Implement the design directly in the existing project.
+
+After implementation, provide:
+
+1. A concise summary of the changes.
+2. The files created or modified.
+3. An explanation of how the navbar overlays the hero.
+4. A description of responsive and scrolling behavior.
+5. Any remaining issues discovered during testing.
+
+Do not merely describe the implementation or provide disconnected code snippets.
+
+Inspect the project, make the actual changes, and verify the result.
+
+FINAL DESIGN PRINCIPLE:
+
+The navbar must feel like a natural part of the hero rather than a separate box placed above it. The background should flow seamlessly from the top of the viewport into the hero section, creating a polished, modern, and visually integrated landing page.

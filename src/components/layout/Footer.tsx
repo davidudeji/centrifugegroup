@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="site-footer bg-[#0A2540] text-[#8BAACC] border-t border-white/8">
+    <footer className="site-footer text-[#8BAACC]">
 
       {/* Main footer grid */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
@@ -170,7 +170,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Centrifuge Group on ${label}`}
-                  className="flex h-8 w-8 items-center justify-center rounded-[5px] border border-white/10 bg-white/4 text-[#7A9BBC] transition-colors hover:border-[#E87916]/50 hover:bg-[#E87916] hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-white/[0.1] bg-white/[0.04] text-[#7A9BBC] transition-all hover:border-[#F28C28]/60 hover:bg-[#F28C28] hover:text-white hover:scale-105"
                 >
                   <Icon className="h-3.5 w-3.5" />
                 </a>
@@ -207,10 +207,10 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-white/8" />
+      <div className="border-t border-white/[0.07]" />
 
       {/* Bottom bar */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-[12.5px] text-[#5A7A9A]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-[12.5px] text-[#4A6A8C]">
         <p>
           &copy; {year} Centrifuge Group. Enterprise technology and engineering. All rights reserved.
         </p>

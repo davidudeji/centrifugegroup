@@ -6,30 +6,60 @@ export const FinalCTASection: React.FC = () => {
   return (
     <section
       className="relative overflow-hidden text-white"
-      style={{ background: 'linear-gradient(155deg, #073B70 0%, #0B1F33 55%, #071521 100%)' }}
+      style={{
+        background:
+          'linear-gradient(170deg, #14133B 0%, #11143C 35%, #11274E 68%, #0D1030 100%)',
+      }}
     >
-      {/* Grid texture */}
+      {/* Fine grid texture — same opacity/size as footer's sibling sections */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-20"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)',
+            'linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)',
           backgroundSize: '52px 52px',
-          maskImage: 'radial-gradient(ellipse 85% 65% at 50% 50%, black 20%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 10%, transparent 100%)',
         }}
       />
-      {/* Accent glow */}
+
+      {/* Top-edge brand hairline — mirrors footer's ::before glow */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 pointer-events-none"
+        style={{
+          height: '1px',
+          background:
+            'linear-gradient(90deg, transparent 0%, rgba(242,140,40,0.5) 30%, rgba(100,160,255,0.3) 65%, transparent 100%)',
+        }}
+      />
+
+      {/* Ambient radial glow — deep indigo bloom at centre-bottom */}
       <div
         aria-hidden="true"
         className="absolute pointer-events-none"
         style={{
-          bottom: '-20%',
+          bottom: '-25%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '80%',
+          width: '90%',
           height: '160%',
-          background: 'radial-gradient(ellipse, rgba(7,86,165,0.28) 0%, transparent 65%)',
+          background:
+            'radial-gradient(ellipse, rgba(17,39,78,0.55) 0%, rgba(20,19,59,0.25) 40%, transparent 70%)',
+        }}
+      />
+
+      {/* Secondary glow — top-right accent */}
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          top: '-10%',
+          right: '-5%',
+          width: '45%',
+          height: '80%',
+          background:
+            'radial-gradient(ellipse, rgba(26,24,80,0.45) 0%, transparent 68%)',
         }}
       />
 
@@ -41,7 +71,7 @@ export const FinalCTASection: React.FC = () => {
           {/* Left: Main CTA content */}
           <div>
             {/* Eyebrow */}
-            <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/18 bg-white/6 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#FDBA74]">
+            <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/[0.12] bg-white/[0.05] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#FDBA74]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#F28C28] shadow-[0_0_6px_rgba(242,140,40,0.7)]" aria-hidden="true" />
               Enterprise Architecture Consultation
             </div>
@@ -59,7 +89,7 @@ export const FinalCTASection: React.FC = () => {
               <span style={{ color: '#FDBA74' }}>your enterprise needs.</span>
             </h2>
 
-            <p className="mt-6 max-w-[580px] text-[1rem] leading-[1.8] text-slate-200/70">
+            <p className="mt-6 max-w-[580px] text-[1rem] leading-[1.8] text-[#8BA4C8]">
               Whether you need financial infrastructure, healthcare information systems, or a
               connected operational platform, Centrifuge engineers dependable technology built
               for real business conditions.
@@ -78,15 +108,22 @@ export const FinalCTASection: React.FC = () => {
               <Link
                 to="/projects"
                 id="final-cta-secondary"
-                className="inline-flex items-center gap-2 rounded-[8px] border border-white/25 bg-transparent px-6 py-4 text-[1rem] font-semibold text-white transition-all duration-200 hover:border-white/45 hover:bg-white/8"
+                className="inline-flex items-center gap-2 rounded-[8px] border border-white/[0.18] bg-white/[0.04] px-6 py-4 text-[1rem] font-semibold text-white transition-all duration-200 hover:border-white/40 hover:bg-white/[0.08]"
               >
                 View Our Work
               </Link>
             </div>
           </div>
 
-          {/* Right: Contact details card */}
-          <div className="rounded-[20px] border border-white/12 bg-white/5 p-8 backdrop-blur-sm">
+          {/* Right: Contact details card — glassy panel matching footer depth */}
+          <div
+            className="rounded-[20px] p-8 backdrop-blur-sm"
+            style={{
+              background: 'linear-gradient(145deg, rgba(26,24,80,0.55) 0%, rgba(17,39,78,0.40) 100%)',
+              border: '1px solid rgba(255,255,255,0.09)',
+              boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.04), 0 24px 56px rgba(8,10,28,0.45)',
+            }}
+          >
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F28C28] mb-5">
               Get In Touch
             </p>
@@ -103,8 +140,8 @@ export const FinalCTASection: React.FC = () => {
                   <Mail className="h-4 w-4 text-[#E87916]" />
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-slate-300/55 mb-0.5">Email</p>
-                  <span className="text-[0.9375rem] font-medium text-slate-200 group-hover:text-white transition-colors">
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-[#8BA4C8]/60 mb-0.5">Email</p>
+                  <span className="text-[0.9375rem] font-medium text-[#C8D8EE] group-hover:text-white transition-colors">
                     enquiries@centrifugegroup.com
                   </span>
                 </div>
@@ -118,8 +155,8 @@ export const FinalCTASection: React.FC = () => {
                   <Phone className="h-4 w-4 text-[#E87916]" />
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-slate-300/55 mb-0.5">Phone</p>
-                  <span className="text-[0.9375rem] font-medium text-slate-200 group-hover:text-white transition-colors">
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-[#8BA4C8]/60 mb-0.5">Phone</p>
+                  <span className="text-[0.9375rem] font-medium text-[#C8D8EE] group-hover:text-white transition-colors">
                     +234 815 5026 555
                   </span>
                 </div>
@@ -130,15 +167,15 @@ export const FinalCTASection: React.FC = () => {
                   <MapPin className="h-4 w-4 text-[#E87916]" />
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-slate-300/55 mb-0.5">Office</p>
-                  <span className="text-[0.9375rem] text-slate-200 leading-snug">
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-[#8BA4C8]/60 mb-0.5">Office</p>
+                  <span className="text-[0.9375rem] text-[#C8D8EE] leading-snug">
                     Suite 203, Jinifa Plaza, Abuja, Nigeria
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-2 rounded-[8px] border border-[#22C55E]/25 bg-[#22C55E]/8 px-4 py-3">
+            <div className="mt-8 flex items-center gap-2 rounded-[8px] border border-[#22C55E]/20 bg-[#22C55E]/[0.06] px-4 py-3">
               <span className="h-2 w-2 rounded-full bg-[#22C55E] shadow-[0_0_6px_rgba(34,197,94,0.8)] shrink-0" aria-hidden="true" />
               <span className="text-[0.8125rem] font-medium text-[#4ADE80]">
                 Response typically within 1 business day
