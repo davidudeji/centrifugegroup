@@ -59,7 +59,7 @@ export const LogisticsPage: React.FC = () => {
               </Link>
               <Link
                 to="/shop"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[8px] bg-white border border-white/20 text-[#F0F4FF] hover:border-[#0B1F33]/40 hover:bg-white/[0.08] hover:-translate-y-0.5 text-sm font-semibold transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[8px] bg-white border border-white/20 text-[#102A43] hover:border-[#0B1F33]/40 hover:bg-white/[0.08] hover:text-white hover:-translate-y-0.5 text-sm font-semibold transition-all duration-200"
               >
                 <span>Browse Telemetry Hardware</span>
               </Link>

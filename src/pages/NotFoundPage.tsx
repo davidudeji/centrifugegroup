@@ -19,7 +19,7 @@ export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="w-full text-left min-h-[calc(100vh-64px)] flex flex-col">
+    <div className="not-found-page w-full text-left min-h-[calc(100vh-64px)] flex flex-col">
       <SEO
         title="Page Not Found | Centrifuge Group"
         description="The page you're looking for doesn't exist or has been moved."

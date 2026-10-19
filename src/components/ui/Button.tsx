@@ -40,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       primary:
         'bg-[#0756A5] text-[#FFFFFF] font-semibold hover:bg-[#073B70] shadow-[0_4px_14px_rgba(7,86,165,0.22)] hover:shadow-[0_6px_18px_rgba(7,86,165,0.3)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1677D2] focus:ring-offset-2 border border-transparent',
       secondary:
-        'bg-[#F28C28] text-[#102A43] font-semibold hover:bg-[#D96F12] hover:text-white shadow-[0_4px_14px_rgba(242,140,40,0.2)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#F28C28] focus:ring-offset-2 border border-transparent',
+        'bg-[#F28C28] text-[#102A43] font-semibold hover:bg-[#E87916] hover:text-[#102A43] shadow-[0_4px_14px_rgba(242,140,40,0.2)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#F28C28] focus:ring-offset-2 border border-transparent',
       dark:
         'bg-[#073B70] text-[#FFFFFF] font-semibold hover:bg-[#102A43] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1677D2] focus:ring-offset-2 border border-white/10 shadow-xs',
       outline:

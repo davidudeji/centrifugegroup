@@ -179,7 +179,7 @@ export const HeroSection: React.FC = () => {
               <Link
                 to="/solutions"
                 id="hero-primary-cta"
-                className="group inline-flex min-h-[52px] items-center gap-2.5 rounded-[6px] bg-[#F28C28] px-7 py-3.5 text-[1rem] font-semibold text-[#102A43] transition-all duration-200 hover:bg-[#D96F12] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F28C28] shadow-[0_8px_24px_rgba(242,140,40,0.30)]"
+                className="group inline-flex min-h-[52px] items-center gap-2.5 rounded-[6px] bg-[#F28C28] px-7 py-3.5 text-[1rem] font-semibold text-[#102A43] transition-all duration-200 hover:bg-[#E87916] hover:text-[#102A43] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F28C28] shadow-[0_8px_24px_rgba(242,140,40,0.30)]"
               >
                 <span>Explore Our Solutions</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

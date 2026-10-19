@@ -199,7 +199,7 @@ export const AdminLayout: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search accounts, components, or documentation..."
-              className="w-full h-10 pl-9 pr-4 bg-[#F8FAFC] text-[13px] text-[#1A1A1A] placeholder:text-[#94A3B8] border border-[#E2E8F0] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA] transition-colors"
+              className="w-full h-10 pl-9 pr-4 bg-[#F8FAFC] text-[13px] text-[#1A1A1A] placeholder:text-[#64748B] border border-[#E2E8F0] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[#008DDA]/20 focus:border-[#008DDA] transition-colors"
             />
           </div>
         </div>

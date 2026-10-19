@@ -23,7 +23,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   const variantStyles = {
     default: 'bg-[#F1F5F9] text-[#475569] border border-[#E2E8F0]',
-    accent: 'bg-[#E87916]/10 text-[#D0690E] border border-[#E87916]/30',
+    accent: 'bg-[#E87916]/10 text-[#B65300] border border-[#E87916]/30',
     brand: 'bg-[#008DDA]/10 text-[#0077B6] border border-[#008DDA]/30',
     navy: 'bg-[#0B1F33]/10 text-[#0B1F33] border border-[#0B1F33]/25',
     success: 'bg-[#D1FAE5] text-[#065F46] border border-[#A7F3D0]',

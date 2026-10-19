@@ -22,7 +22,7 @@ export const ProjectDetailPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="py-32 text-center text-[13px] font-medium text-[#94A3B8] bg-white">
+      <div className="py-32 text-center text-[13px] font-medium text-[#475569] bg-white">
         Loading project specification...
       </div>
     )
@@ -30,7 +30,7 @@ export const ProjectDetailPage: React.FC = () => {
 
   if (!project) {
     return (
-      <div className="py-32 text-center space-y-4 bg-white text-[#F0F4FF]">
+      <div className="dark-page py-32 text-center space-y-4">
         <h2 className="text-[20px] font-bold">Project not found</h2>
         <p className="text-[14px] text-[#8BA4C8]">The requested project does not exist or has been archived.</p>
         <Link to="/projects">
@@ -135,7 +135,7 @@ export const ProjectDetailPage: React.FC = () => {
 
           {/* Grid Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-8 space-y-8 bg-white p-8 sm:p-10 rounded-[8px] border border-white/[0.09]">
+            <div className="lg:col-span-8 space-y-8 bg-white/[0.04] p-8 sm:p-10 rounded-[8px] border border-white/[0.09]">
               {project.overview && (
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block mb-2">
@@ -172,7 +172,7 @@ export const ProjectDetailPage: React.FC = () => {
                   <h3 className="text-[20px] font-bold text-[#F0F4FF] tracking-[-0.025em] mb-3">
                     Centrifuge Solution
                   </h3>
-                  <p className="text-[14px] text-[#334155] leading-relaxed">
+                  <p className="text-[14px] text-[#8BA4C8] leading-relaxed">
                     {project.solution}
                   </p>
                 </div>
@@ -197,7 +197,7 @@ export const ProjectDetailPage: React.FC = () => {
 
             {/* Sidebar Meta Box */}
             <div className="lg:col-span-4 space-y-5">
-              <div className="bg-white p-6 rounded-[8px] border border-white/[0.09] space-y-4">
+              <div className="bg-white/[0.04] p-6 rounded-[8px] border border-white/[0.09] space-y-4">
                 <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#94A3B8] block">
                   Technology Stack
                 </span>

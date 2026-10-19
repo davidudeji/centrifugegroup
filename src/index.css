@@ -59,6 +59,14 @@
   --text-body: #344054;
   --text-muted: #667085;
   --border-default: #E2E8F0;
+  --text-on-dark: #F0F4FF;
+  --text-on-light: #102A43;
+  --link-color: #0756A5;
+  --focus-color: #1677D2;
+  --status-success: #15803D;
+  --status-warning: #92400E;
+  --status-error: #B91C1C;
+  --status-info: #0756A5;
   --container-width: 1360px;
   --page-gutter: clamp(20px, 4vw, 64px);
   --motion-fast: 140ms;
@@ -77,19 +85,6 @@
   --color-text-secondary: #667085;
   --color-border: #E2E8F0;
   --color-focus: #1677D2;
-
-  --color-brand-primary: #0756A5;
-  --color-brand-dark: #073B70;
-  --color-brand-accent: #F28C28;
-  --color-brand-accent-hover: #D96F12;
-  --color-brand-accent-light: #FDBA74;
-  --color-brand-cyan: #1677D2;
-  --color-brand-blue: #1677D2;
-  --color-background: #F5F8FC;
-  --color-surface: #FFFFFF;
-  --color-text-primary: #102A43;
-  --color-text-secondary: #667085;
-  --color-border: #E2E8F0;
   --primary: #0756A5;
   --secondary: #1677D2;
   --secondary-hover: #0756A5;
@@ -112,7 +107,7 @@
   --font-size-hero: clamp(2.25rem, 4.6vw, 4rem);
   --font-size-section: clamp(1.875rem, 3.2vw, 2.75rem);
   --font-size-body: 0.875rem;
-  color-scheme: dark;
+  color-scheme: light;
 
   /* ── Premium dark palette ── */
   --deep-indigo: #14133B;
@@ -123,12 +118,6 @@
   --deep-card: rgba(255,255,255,0.04);
   --deep-border: rgba(255,255,255,0.08);
 
-  /* ── Override surface/background to dark palette ── */
-  --color-background: #11143C;
-  --color-surface: #14133B;
-  --color-text-primary: #F0F4FF;
-  --color-text-secondary: #8BA4C8;
-  --color-border: rgba(255,255,255,0.09);
 }
 
 * {
@@ -137,8 +126,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--deep-indigo);
-  color: #F0F4FF;
+  background-color: var(--surface-light);
+  color: var(--text-primary);
   font-family: var(--font-inter);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
@@ -147,14 +136,8 @@ html {
 }
 
 body {
-  /* Deep-space gradient: indigo → navy → base, flowing top-to-bottom */
-  background:
-    radial-gradient(ellipse 120% 60% at 50% 0%,   rgba(26,24,80,0.72) 0%, transparent 65%),
-    radial-gradient(ellipse 80%  50% at 80% 55%,  rgba(17,39,78,0.55) 0%, transparent 60%),
-    radial-gradient(ellipse 70%  55% at 10% 70%,  rgba(20,19,59,0.60) 0%, transparent 65%),
-    linear-gradient(175deg, #14133B 0%, #11143C 38%, #11274E 72%, #14133B 100%);
-  background-attachment: fixed;
-  color: #F0F4FF;
+  background: var(--surface-light);
+  color: var(--text-primary);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -168,8 +151,60 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-focus);
+  outline: 3px solid var(--focus-color);
   outline-offset: 3px;
+}
+
+[class*="bg-[#E87916]"][class~="text-white"] {
+  color: var(--text-on-light);
+}
+
+[class*="bg-[#E87916]"][class~="text-white"]:hover {
+  background-color: #B65300;
+  color: #FFFFFF;
+}
+
+[class*="bg-[#008DDA]"][class~="text-white"] {
+  background-color: var(--brand-blue);
+}
+
+[class*="bg-[#008DDA]"][class~="text-white"]:hover {
+  background-color: var(--brand-blue-dark);
+}
+
+[class~="text-[#008DDA]"],
+[class~="hover:text-[#008DDA]"]:hover,
+.group:hover [class~="group-hover:text-[#008DDA]"] {
+  color: var(--brand-blue);
+}
+
+[class~="text-[#10B981]"],
+[class~="hover:text-[#10B981]"]:hover {
+  color: var(--status-success);
+}
+
+[class~="text-[#EF4444]"],
+[class~="hover:text-[#EF4444]"]:hover {
+  color: var(--status-error);
+}
+
+.dark-page [class~="text-[#008DDA]"],
+.dark-page [class~="hover:text-[#008DDA]"]:hover,
+.dark-page .group:hover [class~="group-hover:text-[#008DDA]"] {
+  color: #60ABFF;
+}
+
+.dark-page [class~="text-[#10B981]"],
+.dark-page [class~="hover:text-[#10B981]"]:hover,
+.dark-page [class~="text-[#EF4444]"],
+.dark-page [class~="hover:text-[#EF4444]"]:hover {
+  color: #10B981;
+}
+
+.not-found-page [class~="text-[#008DDA]"],
+.not-found-page [class~="hover:text-[#008DDA]"]:hover,
+.not-found-page .group:hover [class~="group-hover:text-[#008DDA]"] {
+  color: #60ABFF;
 }
 
 .marketing-hero__heading {
@@ -1612,7 +1647,11 @@ textarea {
 /* ── Dark page root ── */
 .dark-page {
   width: 100%;
-  background: transparent;   /* body already has the fixed gradient */
+  background:
+    radial-gradient(ellipse 120% 60% at 50% 0%, rgba(26, 24, 80, 0.72) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 50% at 80% 55%, rgba(17, 39, 78, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 55% at 10% 70%, rgba(20, 19, 59, 0.60) 0%, transparent 65%),
+    linear-gradient(175deg, #14133B 0%, #11143C 38%, #11274E 72%, #14133B 100%);
   color: #F0F4FF;
 }
 
